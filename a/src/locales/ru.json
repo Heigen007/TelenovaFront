@@ -1,0 +1,16 @@
+{
+    "Header": {
+        "Greeting": "Привет Мир",
+        "AboutUs": "About Us",
+        "FAQs": "FAQs",
+        "ContactUs": "Contact Us",
+        "Support": "Support",
+        "PhoneNumber": "(+800) 856 800 604",
+        "E-mailTitle": "E-mail: ",
+        "E-mailValue": "info@electro.com",
+        "AccordionTitle": "Shop By Department",
+        "SearchInputPlaceholder": "Search for Products",
+        "SearchSuggestion": "Search",
+        "CartSuggestion": "Cart"
+    }
+}

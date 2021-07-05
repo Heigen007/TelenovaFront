@@ -1,0 +1,140 @@
+<template>
+<div class="MAINERROR">
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main id="content" role="main">
+
+            <div class="container mt-6">
+                <div class="mb-5 text-center pb-3 border-bottom border-color-1">
+                    <h1 class="font-size-sl-72 font-weight-light mb-3">{{localizeFilter('ErrorTitle')}}</h1>
+                    <p class="text-gray-90 font-size-20 mb-0 font-weight-light">{{localizeFilter('ErrorText')}}</p>
+                </div>
+            </div>
+        </main>
+        <!-- ========== END MAIN CONTENT ========== -->
+
+</div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            Component: 'ErrorPage'
+        }
+    },
+    mounted(){
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                direction: 'horizontal',
+                pageContainer: $('.container'),
+                breakpoint: 767.98,
+                hideTimeOut: 0
+            });
+        });
+
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of animation
+            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                }
+            });
+
+            // initialization of HSScrollNav component
+            $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+                duration: 700
+            });
+
+            // initialization of quantity counter
+            $.HSCore.components.HSQantityCounter.init('.js-quantity');
+
+            // initialization of popups
+            $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+            // initialization of countdowns
+            var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+                yearsElSelector: '.js-cd-years',
+                monthsElSelector: '.js-cd-months',
+                daysElSelector: '.js-cd-days',
+                hoursElSelector: '.js-cd-hours',
+                minutesElSelector: '.js-cd-minutes',
+                secondsElSelector: '.js-cd-seconds'
+            });
+
+            // initialization of malihu scrollbar
+            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+            // initialization of forms
+            $.HSCore.components.HSFocusState.init();
+
+            // initialization of form validation
+            $.HSCore.components.HSValidation.init('.js-validate', {
+                rules: {
+                    confirmPassword: {
+                        equalTo: '#signupPassword'
+                    }
+                }
+            });
+
+            // initialization of forms
+            $.HSCore.components.HSRangeSlider.init('.js-range-slider');
+
+            // initialization of show animations
+            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+            // initialization of fancybox
+            $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+            // initialization of slick carousel
+            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+            // initialization of hamburgers
+            $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                beforeClose: function () {
+                    $('#hamburgerTrigger').removeClass('is-active');
+                },
+                afterClose: function() {
+                    $('#headerSidebarList .collapse.show').collapse('hide');
+                }
+            });
+
+            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
+                e.preventDefault();
+
+                var target = $(this).data('target');
+
+                if($(this).attr('aria-expanded') === "true") {
+                    $(target).collapse('hide');
+                } else {
+                    $(target).collapse('show');
+                }
+            });
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+
+            // initialization of select picker
+            $.HSCore.components.HSSelectPicker.init('.js-select');
+        });
+    },
+    methods: {
+        localizeFilter(key, key2, key3) {
+            if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
+            else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
+            else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
+        }
+    }
+}
+</script>
