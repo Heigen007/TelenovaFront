@@ -461,7 +461,7 @@
                                         "slidesToScroll": 1
                                       }
                                     }]'>
-                                    <div class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
+                                    <div class="js-slide products-group" v-for="(el,i) in newestProducts" :key='i'>
                                         <div class="product-item">
                                             <div class="product-item__outer h-100">
                                                 <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -591,7 +591,7 @@
                             "slidesToScroll": 1
                             }
                         }]'>
-                            <div class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
+                            <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(0,10)" :key='i'>
                                 <div class="product-item">
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -668,7 +668,7 @@
                                     "slidesToScroll": 1
                                     }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
+                                <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(10,20)" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -789,7 +789,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -869,7 +869,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -981,7 +981,9 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            Component: 'MainPage'
+            Component: 'MainPage',
+            popularProducts: [],
+            newestProducts: []
         }
     },
     watch: {
@@ -990,6 +992,25 @@ export default {
         //         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
         //     }
         // }
+    },
+    created(){
+        axios.get('http://157.230.225.244/storage/mostPopular/products/20')
+        .then(response => {
+            console.log(response);
+            this.popularProducts = response.data
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.get('http://157.230.225.244/storage/mostPopular/freshProducts/10')
+        .then(response => {
+            console.log(response);
+            this.newestProducts = response.data
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
     },
     mounted(){
         setTimeout(() => {

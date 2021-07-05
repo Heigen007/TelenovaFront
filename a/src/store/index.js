@@ -173,13 +173,13 @@ export const mutations = {
       }
     }
     state.ws.send(JSON.stringify(obj))
-  }
+  },
 }
 
 export const actions = {
-  FrontInit({ commit }) {
+  FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
-
+    dispatch('connect')
     axios.get(`http://157.230.225.244/storage`)
     .then(response => {
       commit('SetProducts', response.data)
@@ -195,26 +195,26 @@ export const actions = {
     .catch(function (error) {
       console.log(error);
     })
-
-    const ws = new WebSocket(`ws://157.230.225.244:2000`)
-    commit('SetWs', ws)
-    ws.onopen = function () {
-      console.log('START WEBSOCKET CONNECTION');
-    };
-    ws.onclose = function () {
-      console.log('CLOSE WEBSOCKET CONNECTION')
-    };
-
-    ws.onmessage = function (event) {
-      let data = JSON.parse(event.data)
+  },
+  async connect ({ commit, dispatch }) {
+    var connection = new WebSocket(`ws://157.230.225.244:2000`)
+    connection.onmessage = async (msg) => {
+      let data = JSON.parse(msg.data)
       console.log(data);
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
     }
-    setInterval(() => {
-      ws.send("Hello Dimash))))")
-      console.log('WS Update');
-    }, 30000);
+    connection.onopen = function () {
+      console.log('START WEBSOCKET CONNECTION');
+      commit('SetWs',connection)
+    };
+    connection.onclose = async e => {
+      console.log('CLOSE WEBSOCKET CONNECTION')
+      setTimeout(() => dispatch('connect'), 1)
+    }
+    connection.onerror = (err) => {
+      console.log(err)
+    }
   }
 }
 

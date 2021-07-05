@@ -9,36 +9,14 @@
                             <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('FirstCategory')}}</h3>
                         </div>
                         <ul class="list-unstyled products-group">
-                            <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
+                            <li v-for='(el,i) in popularProducts.slice(0,3)' :key='i' class="product-item product-item__list row no-gutters mb-6 remove-divider">
                                 <div class="col-auto">
-                                    <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img1.jpg" alt="Image Description"></NuxtLink>
+                                    <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                 </div>
                                 <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Purple Wireless Headphones Solo 2 HD</NuxtLink></h5>
+                                    <h5 class="product-item__title mb-0"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</NuxtLink></h5>
                                     <div class="prodcut-price mt-auto">
-                                        <div class="font-size-15">114900 тг.</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                                <div class="col-auto">
-                                    <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img2.jpg" alt="Image Description"></NuxtLink>
-                                </div>
-                                <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Powerbank 1130 mAh Blue</NuxtLink></h5>
-                                    <div class="prodcut-price mt-auto">
-                                        <div class="font-size-15">21000 тг.</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                                <div class="col-auto">
-                                    <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img3.jpg" alt="Image Description"></NuxtLink>
-                                </div>
-                                <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Nerocool EN52377 Dead Silence Gaming Cube Case</NuxtLink></h5>
-                                    <div class="prodcut-price mt-auto">
-                                        <div class="font-size-15">18000 тг.</div>
+                                        <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                     </div>
                                 </div>
                             </li>
@@ -50,39 +28,14 @@
                         <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('SecondCategory')}}</h3>
                     </div>
                     <ul class="list-unstyled products-group">
-                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
+                        <li v-for='(el,i) in popularProducts.slice(4,7)' :key='i' class="product-item product-item__list row no-gutters mb-6 remove-divider">
                             <div class="col-auto">
-                                <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img4.jpg" alt="Image Description"></NuxtLink>
+                                <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                             </div>
                             <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Yellow Earphones Waterproof with Bluetooth</NuxtLink></h5>
-                                <div class="prodcut-price mt-auto flex-horizontal-center">
-                                    <ins class="font-size-15 text-decoration-none">110000 тг.</ins>
-                                    <del class="font-size-12 text-gray-9 ml-2">25000 тг.</del>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                            <div class="col-auto">
-                                <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img5.jpg" alt="Image Description"></NuxtLink>
-                            </div>
-                            <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Camera C430W 4k Waterproof</NuxtLink></h5>
-                                <div class="prodcut-price mt-auto flex-horizontal-center">
-                                    <ins class="font-size-15 text-decoration-none">89900тг.</ins>
-                                    <del class="font-size-12 text-gray-9 ml-2">120000тг.</del>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                            <div class="col-auto">
-                                <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img6.jpg" alt="Image Description"></NuxtLink>
-                            </div>
-                            <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Smartphone 6S 32GB LTE</NuxtLink></h5>
-                                <div class="prodcut-price mt-auto flex-horizontal-center">
-                                    <ins class="font-size-15 text-decoration-none">100000тг.</ins>
-                                    <del class="font-size-12 text-gray-9 ml-2">329900 тг.</del>
+                                <h5 class="product-item__title mb-0"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</NuxtLink></h5>
+                                <div class="prodcut-price mt-auto">
+                                    <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                 </div>
                             </div>
                         </li>
@@ -93,64 +46,25 @@
                         <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('ThirdCategory')}}</h3>
                     </div>
                     <ul class="list-unstyled products-group">
-                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
+                        <li v-for="(el,i) in popularProducts.slice(7,10)" :key='i' class="product-item product-item__list row no-gutters mb-6 remove-divider">
                             <div class="col-auto">
-                                <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img7.jpg" alt="Image Description"></NuxtLink>
+                                <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                             </div>
                             <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Smartwatch 2.0 LTE Wifi Waterproof</NuxtLink></h5>
+                                <h5 class="product-item__title mb-0"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</NuxtLink></h5>
                                 <div class="text-warning mb-2">
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
+                                    <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating)" :key='o' class="fas fa-star"></small>
+                                    <small v-for="(fil,o) in 5 - Math.floor(el.offerData.kaspi_rating)" :key='o' class="fas fa-star text-muted"></small>
                                 </div>
                                 <div class="prodcut-price mt-auto">
-                                    <div class="font-size-15">72500 тг.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                            <div class="col-auto">
-                                <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img8.jpg" alt="Image Description"></NuxtLink>
-                            </div>
-                            <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">22Mps Camera 6200U with 500GB SDcard</NuxtLink></h5>
-                                <div class="text-warning mb-2">
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="far fa-star text-muted"></small>
-                                </div>
-                                <div class="prodcut-price mt-auto">
-                                    <div class="font-size-15">299900 тг.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                            <div class="col-auto">
-                                <NuxtLink to="/product" class="d-block width-75 text-center"><img class="img-fluid" src="/img/75X75/img9.jpg" alt="Image Description"></NuxtLink>
-                            </div>
-                            <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink to="/product" class="text-blue font-weight-bold">Full Color LaserJet Pro M452dn</NuxtLink></h5>
-                                <div class="text-warning mb-2">
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="fas fa-star"></small>
-                                    <small class="far fa-star text-muted"></small>
-                                </div>
-                                <div class="prodcut-price mt-auto">
-                                    <div class="font-size-15">43900 тг.</div>
+                                    <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-wd-3 d-none d-wd-block">
-                    <NuxtLink to="/shop" class="d-block"><img class="img-fluid" src="/img/330X360/img1.jpg" alt="Image Description"></NuxtLink>
+                    <img class="img-fluid d-block img360x330" src="/img/330X360/img1.jpg" alt="Image Description">
                 </div>
             </div>
         </div>
@@ -367,10 +281,12 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return{
-            Component: 'Footer'
+            Component: 'Footer',
+            popularProducts: []
         }
     },
     methods: {
@@ -382,6 +298,16 @@ export default {
         changeLang(lang){
             this.$store.commit('lang/changeLang', lang)
         }
+    },
+    created() {
+        axios.get('http://157.230.225.244/storage/mostPopular/products/25')
+        .then(response => {
+            console.log(response);
+            this.popularProducts = response.data.reverse()
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
     },
     mounted(){
         $(window).on('load', function () {
@@ -456,3 +382,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.img360x330{
+    height: 360px;
+    width: 330px;
+}
+</style>

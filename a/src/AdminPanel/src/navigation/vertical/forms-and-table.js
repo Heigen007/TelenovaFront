@@ -7,10 +7,10 @@ export default [
           title: 'All categories',
           route: 'AllCategories',
         },
-        {
-          title: 'Create new',
-          route: 'ChCategory'
-        },
+        // {
+        //   title: 'Create new',
+        //   route: 'ChCategory'
+        // },
       ],
     },
   // {

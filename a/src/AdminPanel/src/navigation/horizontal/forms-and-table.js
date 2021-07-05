@@ -7,10 +7,10 @@ export default [
         title: 'All categories',
         route: { name: 'AllCategories', params: { id: 1 } },
       },
-      {
-        title: 'Create new',
-        route: { name: 'ChCategory', params: { id: 1 } },
-      },
+      // {
+      //   title: 'Edit',
+      //   route: { name: 'ChCategory', params: { id: 1 } },
+      // },
     ],
   },
 ]

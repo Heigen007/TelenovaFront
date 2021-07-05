@@ -89,7 +89,7 @@
             class="mr-1"
             @click="CrCat"
           >
-            Create Category
+            Change Photo
           </b-button>
         </b-col>
       </b-row>

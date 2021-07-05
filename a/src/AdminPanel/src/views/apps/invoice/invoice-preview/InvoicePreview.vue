@@ -91,10 +91,10 @@
               <!-- Col: Invoice To -->
               <b-col
                 cols="12"
-                xl="6"
                 class="p-0"
+                style='margin: 10px 0 10px 0'
               >
-                <h6 class="mb-2">
+                <h6>
                   Invoice To:
                 </h6>
                 <h6 class="mb-20">
@@ -113,12 +113,12 @@
 
               <!-- Col: Payment Details -->
               <b-col
-                xl="6"
                 cols="12"
-                class="p-0 mt-xl-0 mt-2 d-flex justify-content-xl-end"
+                class="p-0"
+                style='margin: 10px 0 10px 0'
               >
                 <div>
-                  <h6 class="mb-2">
+                  <h6 >
                     Payment Details:
                   </h6>
                   <table>
@@ -158,12 +158,12 @@
                 </div>
               </b-col>
               <b-col
-                xl="6"
                 cols="12"
-                class="p-0 mt-xl-0 mt-2 d-flex justify-content-xl-end"
+                class="p-0"
+                style='margin: 10px 0 10px 0'
               >
                 <div>
-                  <h6 class="mb-2">
+                  <h6>
                     Payment & Delivery:
                   </h6>
                   <table>
@@ -261,7 +261,7 @@
                       Subtotal:
                     </p>
                     <p class="invoice-total-amount">
-                      {{invInfo.total}}
+                      {{invInfo.total}} тг.
                     </p>
                   </div>
                   <div class="invoice-total-item">
@@ -286,7 +286,7 @@
                       Total:
                     </p>
                     <p class="invoice-total-amount">
-                      {{invInfo.total}}
+                      {{invInfo.total}} тг.
                     </p>
                   </div>
                 </div>
@@ -316,7 +316,7 @@
         <b-card>
 
           <!-- Button: Send Invoice -->
-          <b-button
+          <!-- <b-button
             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
             v-b-toggle.sidebar-send-invoice
             variant="primary"
@@ -324,7 +324,7 @@
             block
           >
             Send Invoice
-          </b-button>
+          </b-button> -->
 
           <!-- Button: DOwnload -->
           <b-button
@@ -430,9 +430,9 @@ export default {
         for(var y = 0; y < UpdatedGoods.length; y++){
           UpdatedGoods[y] = {
             Name: UpdatedGoods[y].product.offerData.kaspi_name,
-            price: UpdatedGoods[y].price + ' тг.',
+            price: UpdatedGoods[y].price/UpdatedGoods[y].count + ' тг.',
             count: UpdatedGoods[y].count,
-            total: Number(UpdatedGoods[y].price) * Number(UpdatedGoods[y].count) + ' тг.'
+            total: Number(UpdatedGoods[y].price)+ ' тг.'
           }
         }
         filteredData[i] = {
@@ -454,7 +454,9 @@ export default {
           orderStatus: filteredData[i].orderStatus
         }
       }
-      self.invInfo = filteredData[1]
+      var find = filteredData.find(el => el.id == this.$route.params.id)
+      self.invInfo = find
+      console.log(filteredData,'LLLLLLLLLLLLLLL',find);
     })
     .catch(error => {
       console.log(error)
@@ -466,22 +468,6 @@ export default {
 
     // Invoice Description
     // ? Your real data will contain this information
-    const invoiceDescription = [
-      {
-        taskTitle: 'Native App Development',
-        taskDescription: 'Developed a full stack native app using React Native, Bootstrap & Python',
-        rate: '$60.00',
-        hours: '30',
-        total: '$1,800.00',
-      },
-      {
-        taskTitle: 'UI Kit Design',
-        taskDescription: 'Designed a UI kit for native app using Sketch, Figma & Adobe XD',
-        rate: '$60.00',
-        hours: '20',
-        total: '$1200.00',
-      },
-    ]
 
     const INVOICE_APP_STORE_MODULE_NAME = 'app-invoice'
 
@@ -499,7 +485,6 @@ export default {
 
     return {
       paymentDetails,
-      invoiceDescription,
       printInvoice,
     }
   },
@@ -536,7 +521,7 @@ export default {
     },
     downloadJSON(){
       var blob = new Blob([JSON.stringify(this.invInfo.goods)], {type: "application/json;charset=utf-8"});
-      saveAs(blob, "helloworld.json");
+      saveAs(blob, "OrderProducts.json");
     }
   }
 }

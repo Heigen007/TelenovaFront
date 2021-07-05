@@ -470,17 +470,17 @@
                                                 </tr>
                                             </tbody>
                                             <tfoot>
-                                                <tr>
+                                                <!-- <tr>
                                                     <th>{{localizeFilter('Order', 'SecondProductsTitle')}}</th>
                                                     <td>{{TotalPrice()}} тг.</td>
                                                 </tr>
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'ThirdProductsTitle')}}</th>
                                                     <td>Flat rate: {{ShippingCost}} тг.</td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong>{{TotalPrice() + ShippingCost}} тг.</strong></td>
+                                                    <td><strong>{{TotalPrice()}} тг.</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -680,7 +680,7 @@ export default {
                     phoneNumber: this.info.Phone, // номер телефона
                     email: this.info.Email, // почта
                     goods: filteredCart,
-                    name: this.info.FName + this.info.SName, // имя
+                    name: this.info.FName + ' ' + this.info.SName, // имя
                     paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
                 }
                 axios.post('http://157.230.225.244/order', checkout)

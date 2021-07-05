@@ -2112,8 +2112,8 @@ export default {
         SliderProducts(){
             if(process.browser && this.$store.state.products) {
                 var a = JSON.parse(JSON.stringify(this.$store.state.products))
-                a = a.splice(0,10)
-                return a
+                a = a.splice(7,20)
+                return a.reverse()
             }
         },
         AllProducts(){
