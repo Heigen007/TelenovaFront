@@ -341,14 +341,7 @@ export default {
       .then(response => {
         console.log(response)
         self.product = response.data
-        axios.get(`http://157.230.225.244/storage/kaspi_id/${this.$route.params.slug}`)
-        .then(response => {
-          console.log(response)
-          self.product = response.data
-        })
-        .catch(error => {
-          console.log(error)
-        })
+        location.reload()
       })
       .catch(error => {
         console.log(error)

@@ -60,7 +60,7 @@
               <b-media-body
                 style="min-width:200px"
               >
-                <small class="text-muted">Required image resolution 800x400, image size 10mb.</small>
+                <small class="text-muted">Required image resolution 446x262, image should be with text on it</small>
                 <b-card-text class="my-50">
                   <b-link id="blog-image-text">
                     C:\fakepath\{{ blogFile ? blogFile.name : 'banner.jpg' }}
@@ -87,6 +87,13 @@
                     @click="FReset"
                   >
                     Clear
+                  </b-button>
+                  <b-button
+                    v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                    variant="primary"
+                    class="ml-1"
+                  >
+                    Create
                   </b-button>
                 </b-col>
               </b-media-body>
@@ -134,12 +141,18 @@
               <b-media-body
                 style="min-width:200px"
               >
-                <small class="text-muted">Required image resolution 200x50, image size 10mb.</small>
+                <small class="text-muted">Required image resolution 446x262, image should be without text on it, write the promo text down below</small>
                 <b-card-text class="my-50">
                   <b-link id="blog-image-text">
                     C:\fakepath\{{ blogFile ? blogFile.name : 'banner.jpg' }}
                   </b-link>
                 </b-card-text>
+                  <b-col
+                    md="6"
+                    xl="4"
+                    class="mb-1"
+                  >
+                  </b-col>
                 <div class="d-inline-block">
                   <b-form-file
                     ref="refInputEl2"
@@ -150,6 +163,40 @@
                     @input="inputImageRenderer2"
                   />
                 </div>
+                <b-form-group
+                  label="Bold Text Input"
+                  label-for="basicInput"
+                  class='my-2'
+                >
+                  <b-form-input
+                    v-model='Promo.BoldText'
+                    id="basicInput"
+                    placeholder="Enter Text"
+                  />
+                </b-form-group>
+                <b-form-group
+                  label="Light Text Input"
+                  label-for="basicInput2"
+                  class='my-2'
+                >
+                  <b-form-input
+                    v-model='Promo.LightText'
+                    id="basicInput2"
+                    placeholder="Enter Text"
+                  />
+                </b-form-group>
+                <b-form-group
+                  label="Price Input(number only)"
+                  label-for="basicInput3"
+                  class='my-2'
+                >
+                  <b-form-input
+                    type='number'
+                    v-model='Promo.PriceFrom'
+                    id="basicInput3"
+                    placeholder="Enter Price"
+                  />
+                </b-form-group>
                 <b-col
                   cols="12"
                   class="mt-50"
@@ -161,6 +208,13 @@
                     @click="SReset"
                   >
                     Clear
+                  </b-button>
+                  <b-button
+                    v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                    variant="primary"
+                    class="ml-1"
+                  >
+                    Create
                   </b-button>
                 </b-col>
               </b-media-body>
@@ -224,6 +278,60 @@
                     @input="inputImageRenderer3"
                   />
                 </div>
+                <b-form-group
+                  label="Big Promo Text(e.g. Week Deal)"
+                  label-for="basicInput"
+                  class='my-2'
+                >
+                  <b-form-input
+                    v-model='Promo.SBoldText'
+                    id="basicInput"
+                    placeholder="Enter Text"
+                  />
+                </b-form-group>
+                <b-form-group
+                  label="Small Bold Promo Text(e.g. HURRY UP BEFORE OFFER WILL END)"
+                  label-for="basicInput2"
+                  class='my-2'
+                >
+                  <b-form-input
+                    v-model='Promo.SSmallText'
+                    id="basicInput2"
+                    placeholder="Enter Text"
+                  />
+                </b-form-group>
+                <b-form-group
+                  label="Id of Product of Promo(e.g. 7823467781342)"
+                  label-for="basicInput3"
+                  class='my-2'
+                >
+                  <b-form-input
+                    v-model='Promo.SId'
+                    id="basicInput3"
+                    placeholder="Enter Id"
+                  />
+                </b-form-group>
+                <b-form-group
+                  label="New Price of Product(Number)"
+                  label-for="basicInput4"
+                  class='my-2'
+                >
+                  <b-form-input
+                    type='number'
+                    v-model='Promo.SPrice'
+                    id="basicInput4"
+                    placeholder="Enter Price"
+                  />
+                </b-form-group>
+                <b-form-group>
+                  <h5 class="font-weight-bold">
+                    Time of Promo Ending
+                  </h5>
+                  <flat-pickr
+                    v-model="Promo.dateDefault"
+                    class="form-control"
+                  />
+                </b-form-group>
                 <b-col
                   cols="12"
                   class="mt-50"
@@ -236,6 +344,13 @@
                   >
                     Clear
                   </b-button>
+                  <b-button
+                    v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                    variant="primary"
+                    class="ml-1"
+                  >
+                    Create
+                  </b-button>
                 </b-col>
               </b-media-body>
             </b-media>
@@ -245,23 +360,17 @@
           cols="12"
           class="mt-50"
         >
-          <b-button
-            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-            variant="primary"
-            class="mr-1"
-          >
-            Create
-          </b-button>
         </b-col>
       </b-row>
     </b-form>
     <!--/ form -->
   </b-card>
 </template>
-
 <script>
+
+import flatPickr from 'vue-flatpickr-component'
 import {
-  BCard, BMedia, BCardText, BMediaAside, BMediaBody, BForm, BRow, BCol, BFormGroup, BFormInput, BImg, BFormFile, BLink, BButton,
+  BCard, BMedia, BCardText, BMediaAside, BMediaBody, BForm, BRow, BCol, BFormGroup, BFormInput, BImg, BFormFile, BLink, BButton, BFormDatepicker
 } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import { useInputImageRenderer } from '@core/comp-functions/forms/form-utils'
@@ -283,16 +392,19 @@ export default {
     BFormGroup,
     BFormInput,
     BFormFile,
+    BFormDatepicker,
+    flatPickr
   },
   directives: {
     Ripple,
   },
   data() {
     return {
+      Promo: {},
       blogEdit: {},
-      blogFile: null,
-      blogFile2: null,
-      blogFile3: null,
+      blogFile: [],
+      blogFile2: [],
+      blogFile3: [],
       categoryOption: ['Fashion', 'Food', 'Gaming', 'Quote', 'Video'],
       statusOption: ['Published', 'Pending', 'Draft'],
       snowOption: {
@@ -371,4 +483,5 @@ export default {
 @import '@core/scss/vue/libs/vue-select.scss';
 @import '@core/scss/vue/libs/quill.scss';
 @import '@core/scss/vue/pages/page-blog.scss';
+@import '@core/scss/vue/libs/vue-flatpicker.scss';
 </style>

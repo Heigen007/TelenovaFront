@@ -47,7 +47,7 @@
               <b-media-body
                 style="min-width:200px"
               >
-                <small class="text-muted">Required image resolution 800x400, image size 10mb.</small>
+                <small class="text-muted">Required image resolution 500x400, image size 10mb.</small>
                 <b-card-text class="my-50">
                   <b-link id="blog-image-text">
                     
@@ -172,6 +172,7 @@ export default {
       axios.post('http://157.230.225.244/categoryTree/addImage', formData)
       .then(function (response) {
         console.log(response);
+        history.back(1)
       })
       .catch(function (error) {
         console.log(error);
