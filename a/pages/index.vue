@@ -435,7 +435,7 @@
                         <client-only>
                         <div class="tab-content" id="Bpills-tabContent">
                             <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1" role="tabpanel" aria-labelledby="Bpills-one-example1-tab">
-                                <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                                <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                     data-slides-show="5"
                                     data-slides-scroll="2"
@@ -514,7 +514,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink to="/shop?SCat?Смартфоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10">
                                         <img class="img-fluid" src="/img/246X176/img1.jpg" alt="Image Description">
                                     </div>
@@ -534,7 +534,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink to="/shop?SCat?Смартфоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10">
                                         <img class="img-fluid" src="/img/246X176/img3.jpg" alt="Image Description">
                                     </div>
@@ -565,7 +565,7 @@
                         <!-- <NuxtLink class="d-block text-gray-16" to="/shop">{{localizeFilter('SecondPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink> -->
                     </div>
                     <client-only>
-                    <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                    <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                         data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                         data-slides-show="5"
                         data-slides-scroll="2"
@@ -591,7 +591,7 @@
                             "slidesToScroll": 1
                             }
                         }]'>
-                            <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(0,9)" :key='i'>
+                            <div  class="js-slide products-group" v-for="(el,i) in popularProducts.slice(0,9)" :key='i'>
                                 <div class="product-item">
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -642,7 +642,7 @@
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Apills-tabContent">
                         <div class="tab-pane fade pt-2 show active" id="Apills-one-example1" role="tabpanel" aria-labelledby="Apills-one-example1-tab">
-                            <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                            <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
@@ -715,7 +715,7 @@
                 <!-- End Popular Products -->
                 <!-- Full banner -->
                 <div class="mb-6">
-                    <NuxtLink to="/shop" class="d-block text-gray-90">
+                    <NuxtLink to="/shop?SCat?Смартфоны" class="d-block text-gray-90">
                         <div class="" style="background-image: url(/img/1400X206/img1.jpg);">
                             <div class="space-top-2-md p-4 pt-8 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
                                 <div class="flex-horizontal-center overflow-auto overflow-md-visble">
@@ -743,7 +743,7 @@
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Rpills-tabContent">
                         <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel" aria-labelledby="Rpills-one-example1-tab">
-                            <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                            <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
@@ -769,7 +769,7 @@
                                     "slidesToScroll": 1
                                     }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
+                                <div  class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -823,7 +823,7 @@
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Ypills-tabContent">
                         <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel" aria-labelledby="Rpills-one-example1-tab">
-                            <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                            <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
@@ -896,13 +896,13 @@
                 <!-- End Television Entertainment -->
                 <!-- Categories Card -->
                 <div class="mb-6">
-                    <div v-if="Categories" class="row flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
+                    <div v-if="Categories && IsC" class="row flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
                         <div v-for="(el,i) in Categories.slice(0,9)" :key="i" class="col-md-6 col-xl-4 mb-5 flex-shrink-0 flex-md-shrink-1">
                             <div class="bg-gray-1 overflow-hidden shadow-on-hover h-100 d-flex align-items-center">
                                 <NuxtLink :to="'/shop?FCat?'+Object.keys(el)[0]" class="d-block  pr-2 pr-wd-6">
                                     <div class="media align-items-center">
                                         <div class="max-width-148">
-                                            <img class="img-fluid transform-rotate-15" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" alt="Image Description">
+                                            <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" alt="Image Description">
                                         </div>
                                         <div class="ml-4 media-body">
                                             <h4 class="mb-0 text-gray-90">{{Object.keys(el)[0]}}</h4>
@@ -919,7 +919,7 @@
                     <div class="row">
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-17">
-                                <NuxtLink to="/shop" class="row align-items-center">
+                                <NuxtLink to="/shop?SCat%3FСмартфоны" class="row align-items-center">
                                     <div class="col-md-6">
                                         <div class="ml-md-7 mt-6 mt-md-0 ml-4 text-gray-90">
                                             <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">G9 Laptops with Ultra 4K HD Display</h2>
@@ -931,24 +931,24 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img class="img-fluid" src="/img/446X262/img1.jpg" alt="Image Description">
+                                        <img class="img-fluid MFluid" src="/img/446X262/img1.jpg " alt="Image Description">
                                     </div>
                                 </NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink to="/shop" class="d-block"><img class="img-fluid" src="/img/446X262/img3.jpg" alt="Image Description"></NuxtLink>
+                                <NuxtLink to="/shop?SCat%3FСмартфоны" class="d-block"><img class="img-fluid MFluid" src="/img/446X262/img3.jpg" alt="Image Description"></NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink to="/shop" class=""><img class="img-fluid" src="/img/446X262/img4.jpg" alt="Image Description"></NuxtLink>
+                            <NuxtLink to="/shop?SCat%3FСмартфоны" class=""><img class="img-fluid MFluid" src="/img/446X262/img4.jpg" alt="Image Description"></NuxtLink>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
-                                <NuxtLink to="/shop" class="row align-items-center">
+                                <NuxtLink to="/shop?SCat%3FСмартфоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
-                                        <img class="img-fluid" src="/img/446X262/img2.jpg" alt="Image Description">
+                                        <img class="img-fluid MFluid" src="/img/446X262/img2.jpg" alt="Image Description">
                                     </div>
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <div class="ml-4 ml-md-0 ml-wd-4 text-gray-90">
@@ -982,8 +982,9 @@ export default {
     data(){
         return{
             Component: 'MainPage',
-            popularProducts: [],
-            newestProducts: []
+            popularProducts: null,
+            newestProducts: null,
+            IsC: false
         }
     },
     watch: {
@@ -1013,9 +1014,14 @@ export default {
         })
     },
     mounted(){
+        this.IsC = true
         setTimeout(() => {
-            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-        }, 3000);
+            this.Slick()            
+        }, 1500);
+
+    },
+    beforeDestroy(){
+        this.IsC = false
     },
     updated(){
         console.log(1);
@@ -1091,6 +1097,15 @@ export default {
         $.HSCore.components.HSSelectPicker.init('.js-select');
     },
     methods: {
+        Slick(){
+            if(this.Products && this.newestProducts && this.popularProducts && this.Categories) {
+                $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+            } else {
+                setTimeout(() => {
+                    this.Slick()
+                }, 200);
+            }
+        },
         localizeFilter(key, key2, key3) {
             if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
             else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
@@ -1137,5 +1152,15 @@ export default {
 .MyImg{
     width: 200px;
     height: 150px;
+}
+.img-fluid {
+    height: 139px;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.MFluid{
+    max-width: 100%;
+    height: auto;
 }
 </style>

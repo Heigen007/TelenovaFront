@@ -54,10 +54,4 @@ export default {
   font-weight: normal;
   font-style: normal;
 }
-/* .img-fluid {
-    height: 139px;
-    width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-} */
 </style>

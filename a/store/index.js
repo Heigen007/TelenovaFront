@@ -97,7 +97,49 @@ export const mutations = {
         }
       }
     }
-    state.ws.send(JSON.stringify(JSON_Obj))
+    var send = function(){
+      if(state?.ws){
+        state.ws.send(JSON.stringify(JSON_Obj))
+      } else {
+        setTimeout(() => {
+          send()
+        }, 200);
+      }
+    }
+    send()
+  },
+  FilterProductsQuery(state, MyArray){
+    var ExceptionsArray = []
+    MyArray[0].forEach(element => {
+      ExceptionsArray.push(
+        {
+          name: element[0],
+          value: element[1]
+        }
+      )
+    });
+      var JSON_Obj = 
+      {
+        "action": "search",
+        "agent": "client",
+        "data": {
+          "query": MyArray[2],
+          "filters": {
+            "priceRange": MyArray[1],
+            "exceptions": ExceptionsArray
+          }
+        }
+    }
+    var send = function(){
+      if(state?.ws){
+        state.ws.send(JSON.stringify(JSON_Obj))
+      } else {
+        setTimeout(() => {
+          send()
+        }, 200);
+      }
+    }
+    send()
   },
   DefaultSorting(state){
     state.productsFilteredCopyCopy = state.productsFilteredCopy
@@ -117,13 +159,16 @@ export const mutations = {
         }
       }
     }
-    if(state?.ws){
-      state.ws.send(JSON.stringify(JSON_Obj))
-    } else {
-      setTimeout(() => {
+    var send = function(){
+      if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
-      }, 1000);
+      } else {
+        setTimeout(() => {
+          send()
+        }, 200);
+      }
     }
+    send()
   },
   FirstCategoryFilter(state,string){
     var JSON_Obj = 
@@ -138,13 +183,16 @@ export const mutations = {
       }
     }
     console.log(JSON_Obj);
-    if(state?.ws){
-      state.ws.send(JSON.stringify(JSON_Obj))
-    } else {
-      setTimeout(() => {
+    var send = function(){
+      if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
-      }, 1000);
+      } else {
+        setTimeout(() => {
+          send()
+        }, 200);
+      }
     }
+    send()
   },
   SecondCategoryFilter(state,string){
     var JSON_Obj = 
@@ -158,14 +206,16 @@ export const mutations = {
         }
       }
     }
-    if(state?.ws){
-      state.ws.send(JSON.stringify(JSON_Obj))
-    } else {
-      setTimeout(() => {
+    var send = function(){
+      if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
-      }, 1000);
+      } else {
+        setTimeout(() => {
+          send()
+        }, 200);
+      }
     }
-
+    send()
   },
   SearchByQuery(state, query){
     var obj = 
@@ -176,7 +226,16 @@ export const mutations = {
         "query": query
       }
     }
-    state.ws.send(JSON.stringify(obj))
+    var send = function(){
+      if(state?.ws){
+        state.ws.send(JSON.stringify(obj))
+      } else {
+        setTimeout(() => {
+          send()
+        }, 200);
+      }
+    }
+    send()
   },
 }
 
@@ -184,7 +243,7 @@ export const actions = {
   FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
     dispatch('connect')
-    axios.get(`https://textforeva.ru/storage`)
+    axios.get(`http://157.230.225.244/storage/mostPopular/freshProducts/40`)
     .then(response => {
       commit('SetProducts', response.data)
     })
@@ -203,8 +262,8 @@ export const actions = {
   async connect ({ commit, dispatch }) {
     var connection = new WebSocket(`wss://textforeva.ru/ws/`)
     connection.onmessage = async (msg) => {
+      console.log(msg)
       let data = JSON.parse(msg.data)
-      console.log(data);
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
     }

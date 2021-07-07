@@ -1,7 +1,8 @@
 export default {
     namespaced: true,
     state: {
-      cart: []
+      cart: [],
+      cartCount: 0
     },
     getters: {
       cart: s => s.cart
@@ -21,10 +22,14 @@ export default {
           currentCart.forEach(function(item) {
             if (item.offerData.name == product.offerData.name) {
               item.offerData.count += 1
+              state.cartCount += 1
               Updated = true
             }
           });
-          if(!Updated) currentCart.push(product)
+          if(!Updated) {
+            currentCart.push(product)
+            state.cartCount += 1
+          }
           localStorage.setItem('cart', JSON.stringify(currentCart))
         } else {
           localStorage.setItem('cart', JSON.stringify([product]))

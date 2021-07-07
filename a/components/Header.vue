@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style='position: sticky; width: 100%; top: 0; z-index: 1000;'>
         <!-- ========== HEADER ========== -->
         <header id="header" class="u-header u-header-left-aligned-nav mb-3">
             <div class="u-header__section shadow-none">
@@ -212,10 +212,10 @@
                             <!-- End Logo -->
                             <!-- Search Bar -->
                             <div class="col d-none d-xl-block">
-                                <form class="js-focus-state">
+                                <div class="js-focus-state">
                                     <label class="sr-only" for="searchproduct">Search</label>
                                     <div class="input-group">
-                                        <input type="email" v-model='InputValue' class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="email" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
+                                        <input v-model='InputValue' class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1">
                                         <div class="input-group-append">
                                             <!-- End Select -->
                                             <button @click='InputSearch' class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
@@ -223,11 +223,11 @@
                                             </button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                             <!-- End Search Bar -->
                             <!-- Header Icons -->
-                            <div class="col-auto position-static" style="padding-left: 0">
+                            <div class="col-auto position-static">
                                 <div class="d-flex">
                                     <ul class="d-flex list-unstyled mb-0">
                                         <!-- Search -->
@@ -251,12 +251,12 @@
 
                                             <!-- Input -->
                                             <div id="searchClassic" class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2" aria-labelledby="searchClassicInvoker">
-                                                <form class="js-focus-state input-group px-3">
-                                                    <input v-model="InputValue" class="form-control" type="search" placeholder="Search Product">
+                                                <div class="js-focus-state input-group px-3">
+                                                    <input v-model="InputValue" class="form-control ChIn" type="search" placeholder="Search Product">
                                                     <div class="input-group-append">
                                                         <button @click='InputSearch' class="btn btn-primary px-3" type="button"><i class="font-size-18 ec ec-search"></i></button>
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                             <!-- End Input -->
                                         </li>
@@ -282,17 +282,17 @@
                 <div class="container d-none d-xl-block">
                     <div class="secondary-menu flex-horizontal-center position-relative pt-2">
                         <div class="ml-wd-4 flex-shrink-0">
-                            <h6 class="font-weight-bold font-size-13 mb-0 mr-2">Electro Best Selling: </h6>
+                            <h6 class="font-weight-bold font-size-13 mb-0 mr-2">Telenova Best Selling: </h6>
                         </div>
                         <!-- Nav -->
                         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space position-static">
                             <!-- Navigation -->
                             <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                <ul v-if="BestCategories" class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
+                                <ul v-if="bestC" class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
                                     <!-- Pages -->
                                     <!-- End Pages -->
-                                    <li v-for="(el, i) in BestCategories.slice(0,10)" :key="i">
-                                        <NuxtLink class="nav-link u-header__nav-link" :to="'/shop?FCat?'+Object.keys(el)[0]">{{Object.keys(el)[0]}}</NuxtLink>
+                                    <li v-for="(el, i) in bestC.slice(0,10)" :key="i">
+                                        <NuxtLink class="nav-link u-header__nav-link" :to="'/shop?SCat?'+el.name">{{el.name}}</NuxtLink>
                                     </li>
                                     <!-- End Samsung Smart TVs -->
                                     <!-- End Button -->
@@ -340,17 +340,17 @@
                         <!-- Search bar -->
                         <div class="col align-self-center">
                             <!-- Search-Form -->
-                            <form class="js-focus-state">
+                            <div class="js-focus-state">
                                 <label class="sr-only" for="searchProduct">{{localizeFilter('SearchSuggestion')}}</label>
                                 <div class="input-group">
-                                        <input v-model="InputValue" type="email" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill" name="email" id="searchProduct" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
+                                        <input v-model="InputValue" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill ChIn"  id="searchProduct" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
                                     <div class="input-group-append">
-                                        <button @click='InputSearch' class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                                        <button @click='InputSearch' @keypress="alert(1)" @keydown="alert(1)" class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
                                             <span class="ec ec-search font-size-24"></span>
                                         </button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                             <!-- End Search-Form -->
                         </div>
                         <!-- End Search bar -->
@@ -457,13 +457,35 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import axios from 'axios'
 export default {
     name: 'Header',
     data: () => ({
         Component: 'Header',
-        InputValue: ''
+        InputValue: '',
+        bestC: []
     }),
+    watch: {
+        CartCount: function (val){
+            console.log('change');
+        }
+    },
+    created(){
+        var self = this
+        axios.get('http://157.230.225.244/storage/mostPopular/secondLevelCategories/10')
+        .then(res => {
+            console.log(res);
+            self.bestC = res.data
+        })
+    },
     mounted(){
+        var self = this
+        document.querySelector('.ChIn').addEventListener('keydown', function(e) {
+            if (e.code === 'Enter') {
+                self.InputSearch()
+            }
+        })
+
         $(window).on('load', function () {
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
@@ -544,15 +566,17 @@ export default {
             this.$store.commit('lang/changeLang', lang)
         },
         InputSearch(){
-            this.$store.commit('SearchByQuery', this.InputValue)
+            var copy = this.InputValue
             this.InputValue = ''
-            this.$router.push('/shop')
+            this.$router.push(`/shop?query=${copy}`)
+        },
+        InputJustSearch(){
+            this.$store.commit('SearchByQuery', this.InputValue)
         }
     },
     computed: {
         ...mapGetters({
-            Cart: 'cart/cart',
-            BestCategories: 'BestCategories'
+            Cart: 'cart/cart'
         }),
         Cost(){
             if(process.browser && this.Cart!=null){
@@ -571,6 +595,9 @@ export default {
         },
         Categories(){
             return this.$store.state.categories
+        },
+        CartCount(){
+            return this.$store.state.cart.cartCount
         }
     }
 }

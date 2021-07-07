@@ -11,21 +11,8 @@
                             <div class="border-bottom border-color-1 mb-5">
                                 <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('FilterPart', 'SecondPartTitle')}}</h3>
                             </div>
-                            <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
-                                <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
-
-                                <!-- Checkboxes -->
-                                <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
-                                        <label class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
-                                    </div>
-                                </div>
-                                <!-- End Checkboxes -->
-
-                            </div>
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
-                            <div class="wrapper">
+                            <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider">
                                     <input type="range" id="input-left" min="0" step="1" max="1500" value="0">
                                     <input type="range" id="input-right" min="0" step="1" max="1500" value="1500">
@@ -40,87 +27,37 @@
                                     <span class="price-to"></span>
                                 </div>
                             </div>
-                            <button type="submit" class="btn px-4 mt-1 btn-primary-dark-w py-2 rounded-lg" @click='Sort'>{{localizeFilter('FilterPart', 'ButtonText')}}</button>
+                            <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
+                                <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
+
+                                <!-- Checkboxes -->
+                                <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
+                                        <label class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
+                                    </div>
+                                </div>
+                                <!-- End Checkboxes -->
+
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-xl-9 col-wd-9gdot5">
                         <!-- Recommended Products -->
-                        <client-only>
                         <div class="mb-6 d-none d-xl-block">
                             <div class="position-relative">
                                 <div class="border-bottom border-color-1 mb-2">
-                                    <h3 class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalTitle')}}</h3>
+                                    <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalTitle')}} {{$route.query.query}}</h3>
+                                     <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
                                 </div>
-                            <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
-                                data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                                data-slides-show="4"
-                                data-slides-scroll="3"
-                                data-responsive='[{
-                                    "breakpoint": 1481,
-                                    "settings": {
-                                      "slidesToShow": 3,
-                                      "slidesToScroll": 2
-                                    }
-                                }, {
-                                  "breakpoint": 768,
-                                  "settings": {
-                                    "slidesToShow": 2,
-                                    "slidesToScroll": 2
-                                  }
-                                }, {
-                                    "breakpoint": 500,
-                                    "settings": {
-                                    "slidesToShow": 1,
-                                    "slidesToScroll": 1
-                                    }
-                                }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in SliderProducts" :key='i'>
-                                    <div class="product-item">
-                                        <div class="product-item__outer h-100">
-                                            <div class="product-item__inner px-wd-4 p-2 p-md-3">
-                                                <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
-                                                    <div class="mb-2">
-                                                        <img style="width: 268px; height: 180px" class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
-                                                    </div>
-                                                    <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
-                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</NuxtLink>
-                                                        </div>
-                                                        <div class="d-xl-block prodcut-add-cart">
-                                                            <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
-                                                    <div class="mb-2">
-                                                        <img style="width: 268px; height: 180px" class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
-                                                    </div>
-                                                    <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
-                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</NuxtLink>
-                                                        </div>
-                                                        <div class="d-xl-block prodcut-add-cart">
-                                                            <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
-                        </client-only>
                         <!-- End Recommended Products -->
                         <!-- Shop-control-bar Title -->
                         <div class="flex-center-between mb-3">
-                            <h3 class="font-size-25 mb-0">{{localizeFilter('SecondTitle')}}</h3>
-                            <p class="font-size-14 text-gray-90 mb-0">Showing {{ProductCounter*50 + 1}}-{{(ProductCounter + 1) * 50 > Products.length ? Products.length : (ProductCounter + 1) * 50}} of {{Products.length}} results</p>
+                            <h3 id='Popper' class="font-size-25 mb-0">{{localizeFilter('SecondTitle')}}</h3>
+                            <p class="font-size-14 text-gray-90 mb-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</p>
                         </div>
                         <!-- End shop-control-bar Title -->
                         <!-- Shop-control-bar -->
@@ -190,7 +127,7 @@
                                 <div style='transform: rotate(180deg); cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">→</div>
                                 <form method="post" class="min-width-50 mr-1">
                                     <input @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
-                                </form> of {{Math.ceil(Products.length / 50)}}
+                                </form> of {{Math.ceil(Products.length / 60)}}
                                 <div style="cursor: pointer" class="text-gray-30 font-size-20 ml-2" @click="NextProductsPage">→</div>
                             </nav>
                         </div>
@@ -1599,7 +1536,7 @@
                         <!-- End Shop Body -->
                         <!-- Shop Pagination -->
                         <nav class="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
-                            <div class="text-center text-md-left mb-3 mb-md-0">Showing {{ProductCounter*50 + 1}}-{{(ProductCounter + 1) * 50 > Products.length ? Products.length : (ProductCounter + 1) * 50}} of {{Products.length}} results</div>
+                            <div class="text-center text-md-left mb-3 mb-md-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
                             <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
                                 <div @click="PrevProductsPage" class="text-gray-30 font-size-20 mx-2" style="transform: rotate(180deg); cursor: pointer;">→</div>
                                 <li class="page-item"><div class="page-link current">{{ProductCounter + 1}}</div></li>
@@ -1641,119 +1578,60 @@
                             <div class="border-bottom border-color-1 mb-5">
                                 <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('FilterPart', 'SecondPartTitle')}}</h3>
                             </div>
-                            <div class="border-bottom pb-4 mb-4">
-                                <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartFirstSubTitle')}}</h4>
+                            <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
+                            <div class="wrapper" style='margin-bottom: 20px'>
+                                <div class="multi-range-slider2">
+                                    <input type="range" id="input-left2" min="0" step="1" max="1500" value="0">
+                                    <input type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
+
+                                    <div class="slider2">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                    </div>
+                                </div>
+                                <div class="price__wrapper2">
+                                    <span class="price-from2"></span>
+                                    <span class="price-to2"></span>
+                                </div>
+                            </div>
+                            <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
+                                <h4 class="font-size-14 mb-3 font-weight-bold">{{i}}</h4>
 
                                 <!-- Checkboxes -->
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Adidas" type="checkbox" class="chCat">
-                                        <label>Adidas</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="New Balance" type="checkbox" class="chCat">
-                                        <label>New Balance</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Nike" type="checkbox" class="chCat">
-                                        <label>Nike</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Fred Perry" type="checkbox" class="chCat">
-                                        <label>Fred Perry</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="The North Face" type="checkbox" class="chCat">
-                                        <label>The North Face</label>
+                                <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                    <div id='Tipy' class="custom-control custom-checkbox">
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+1">
+                                        <label class="custom-control-label" :for="'Fil'+fil+1">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
-
-                            </div>
-                            <div class="border-bottom pb-4 mb-4">
-                                <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartSecondSubTitle')}}</h4>
-
-                                <!-- Checkboxes -->
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Black" type="checkbox" class="chCat">
-                                        <label>Black</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Black Leather" type="checkbox" class="chCat">
-                                        <label>Black Leather</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Black with Red" type="checkbox" class="chCat">
-                                        <label>Black with Red</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Gold" type="checkbox" class="chCat">
-                                        <label>Gold</label>
-                                    </div>
-                                </div>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div>
-                                        <input name="Spacegrey" type="checkbox" class="chCat">
-                                        <label>Spacegrey</label>
-                                    </div>
-                                </div>
-                                <!-- End Checkboxes -->
-
-                            </div>
-                                <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
-                                <div class="wrapper2">
-                                    <div class="multi-range-slider2">
-                                        <input type="range" id="input-left2" min="0" step="1" max="1500" value="0">
-                                        <input type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
-
-                                        <div class="slider2">
-                                        <div class="track2"></div>
-                                        <div class="range"></div>
-                                        </div>
-                                    </div>
-                                    <div class="price__wrapper2">
-                                        <span class="price-from2"></span>
-                                        <span class="price-to2"></span>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn px-4 mt-1 btn-primary-dark-w py-2 rounded-lg" @click='Sort'>{{localizeFilter('FilterPart', 'ButtonText')}}</button>
                             </div>
                             </div>
+                        </div>
                         </div>
                         <!-- End Content -->
                     </div>
                 </div>
             </div>
         </aside>
-       
+       <div style='position: absolute; top: -100%' id="tooltip" role="tooltip">
+           <button style='color: white' type="submit" class="btn px-4 mt-1 btn-primary-dark-w py-2 rounded-lg" @click='Sort'>Применить</button>
+       </div>
 
     </div>
 </template>
 
 <script>
 // import axios from 'axios'
+import { createPopper } from '@popperjs/core';
 export default {
     data(){
         return{
             Component: 'ShopPage',
             MainInfo: null,
             ProductCounter: 0,
-            carouselCounter: true
+            carouselCounter: true,
+            IdResult: []
         }
     },
     watch: {
@@ -1764,15 +1642,28 @@ export default {
                 this.$store.commit('FirstCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
             } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat') {
                 this.$store.commit('SecondCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
+            } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
+                this.$store.commit('SearchByQuery', this.$route.query.query)
+                console.log('query',this.$route.query.query);
             } else if(Object.keys(this.$route.query).length > 0){
                 this.$store.commit('ThirdCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' '))
             }
             }
         },
+        Filters(newV){
+            if(this.IdResult){
+                this.$nextTick(() => {
+                    this.IdResult.forEach(id => {
+                        if(document.getElementById(id)){
+                            document.getElementById(id).checked = true
+                        }
+                    })
+                });
+            }
+        },
         Products(newV){
             if(this.carouselCounter){
                 setTimeout(() => {
-                    console.log('LOL')
                     this.carouselCounter = false
                     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
                 }, 1000);
@@ -1787,6 +1678,26 @@ export default {
 //     })
 // },
     updated(){
+        var inpF = function(){
+            if(document.querySelectorAll('.custom-control').length != 0){
+                var inputs = document.querySelectorAll('.custom-control')
+                console.log(inputs,'Inputs');
+                inputs.forEach(input => {
+                    input.addEventListener('click', () => {
+                        console.log(1, '#'+input.id);
+                        const tooltip = document.querySelector('#tooltip');
+                        createPopper(input, tooltip, {
+                            placement: 'left',
+                        });
+                    })
+                })
+            } else{
+                setTimeout(() => {
+                    inpF()
+                }, 500);
+            }
+        }
+        inpF()
         $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
             beforeClose: function () {
                 $('#hamburgerTrigger').removeClass('is-active');
@@ -1810,13 +1721,37 @@ export default {
         setTimeout(() => {
             this.RangeInit()
             this.RangeInit2()
-        }, 4000);
+        }, 1000);
     },
     mounted() {
+        var inpF = function(){
+            if(document.querySelectorAll('.custom-control').length != 0){
+                var inputs = document.querySelectorAll('.custom-control')
+                console.log(inputs,'Inputs');
+                inputs.forEach(input => {
+                    input.addEventListener('click', () => {
+                        console.log(1, '#'+input.id);
+                        const tooltip = document.querySelector('#tooltip');
+                        createPopper(input, tooltip, {
+                            placement: 'left',
+                        });
+                    })
+                })
+            } else{
+                setTimeout(() => {
+                    inpF()
+                }, 500);
+            }
+        }
+        inpF()
+
         if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
             this.$store.commit('FirstCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
         } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat') {
             this.$store.commit('SecondCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
+        } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
+            this.$store.commit('SearchByQuery', this.$route.query.query)
+            console.log('query',this.$route.query.query);
         } else if(Object.keys(this.$route.query).length > 0){
             this.$store.commit('ThirdCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' '))
         }
@@ -1846,7 +1781,7 @@ export default {
     },
     methods: {
         NextProductsPage(){
-            if(this.ProductCounter+2 <= Math.ceil(this.Products.length / 50)) this.ProductCounter += 1
+            if(this.ProductCounter+2 <= Math.ceil(this.Products.length / 60)) this.ProductCounter += 1
         },
         PrevProductsPage(){
             if(this.ProductCounter >= 1) this.ProductCounter -= 1
@@ -1858,10 +1793,12 @@ export default {
             console.log(2);
             if(process.browser){
             var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
+            console.log(Checkboxes);
             var result = []
 
             Checkboxes.forEach(element => {
-                if(element.checked == true) {
+                if(element?.checked == true) {
+                    this.IdResult.push(element.id)
                     result.push([element.name.split('/')[0],element.name.split('/')[1]])
                 }
             });
@@ -1890,6 +1827,9 @@ export default {
                 this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['FCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
             } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat'){
                 this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['SCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
+            } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
+                this.$store.commit('FilterProductsQuery', [result, [MinPrice, MaxPrice], this.$route.query.query])
+                console.log('query');
             } else {
                 this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['TCat', Object.keys(this.$route.query)[0]?.split('+').join(' ')]])
             }
@@ -2082,9 +2022,6 @@ export default {
                 inputRight.classList.remove("active");
             });
         },
-        AddToCartSwiper(el){
-            this.$store.commit('cart/cartChange', el)
-        },
         DefaultSorting(){
             this.$store.commit('DefaultSorting')
         },
@@ -2133,7 +2070,7 @@ export default {
         },
         ProductsPage(){
             if(process.browser) {
-                return this.$store.state.productsFilteredCopyCopy.slice(this.ProductCounter * 50, (this.ProductCounter + 1) * 50)
+                return this.$store.state.productsFilteredCopyCopy.slice(this.ProductCounter * 50, (this.ProductCounter + 1) * 60)
             }
         }
     }
@@ -2335,11 +2272,20 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 0.875rem !important;
     line-height: 1.125rem !important;
 }
-.img-fluid{
-    width: 186px;
+.img-fluid {
     height: 139px;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 .FLB::first-letter{
     text-transform: uppercase;
+}
+#tooltip {
+/* background-color: #333; */
+color: white;
+padding: 5px 10px;
+border-radius: 4px;
+font-size: 13px;
 }
 </style>

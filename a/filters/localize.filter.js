@@ -1,10 +1,12 @@
 import store from '../store'
 import ru from '../locales/ru.json'
 import en from '../locales/en.json'
+import en from '../locales/kz.json'
 
 const locales = {
   'ru-RU': ru,
-  'en-US': en
+  'en-US': en,
+  'kz-KZ': kz
 }
 
 export default function localizeFilter(key) {

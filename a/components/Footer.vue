@@ -11,10 +11,10 @@
                         <ul class="list-unstyled products-group">
                             <li v-for='(el,i) in popularProducts.slice(0,3)' :key='i' class="product-item product-item__list row no-gutters mb-6 remove-divider">
                                 <div class="col-auto">
-                                    <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
+                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></a>
                                 </div>
                                 <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</NuxtLink></h5>
+                                    <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</a></h5>
                                     <div class="prodcut-price mt-auto">
                                         <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                     </div>
@@ -30,10 +30,10 @@
                     <ul class="list-unstyled products-group">
                         <li v-for='(el,i) in popularProducts.slice(4,7)' :key='i' class="product-item product-item__list row no-gutters mb-6 remove-divider">
                             <div class="col-auto">
-                                <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
+                                <a :href="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></a>
                             </div>
                             <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</NuxtLink></h5>
+                                <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</a></h5>
                                 <div class="prodcut-price mt-auto">
                                     <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                 </div>
@@ -48,10 +48,10 @@
                     <ul class="list-unstyled products-group">
                         <li v-for="(el,i) in popularProducts.slice(7,10)" :key='i' class="product-item product-item__list row no-gutters mb-6 remove-divider">
                             <div class="col-auto">
-                                <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
+                                <a :href="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></a>
                             </div>
                             <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</NuxtLink></h5>
+                                <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</a></h5>
                                 <div class="text-warning mb-2">
                                     <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating)" :key='o' class="fas fa-star"></small>
                                     <small v-for="(fil,o) in 5 - Math.floor(el.offerData.kaspi_rating)" :key='o' class="fas fa-star text-muted"></small>
@@ -156,11 +156,11 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="row">
-                            <div class="col-12 col-md mb-4 mb-md-0">
+                            <div v-if='bestC' class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('CategoriesTitle')}}</h6>
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                    <li v-for="(el,i) in this.$store.state.categories" :key="i"><NuxtLink class="list-group-item list-group-item-action" :to="'/shop?FCat?'+Object.keys(el)[0]">{{Object.keys(el)[0]}}</NuxtLink></li>
+                                    <li v-for="(el,i) in bestC.slice(0,10)" :key="i"><NuxtLink class="list-group-item list-group-item-action" :to="'/shop?SCat?'+el.name">{{el.name}}</NuxtLink></li>
                                 </ul>
                                 <!-- End List Group -->
                             </div>
@@ -248,7 +248,8 @@ export default {
     data() {
         return{
             Component: 'Footer',
-            popularProducts: []
+            popularProducts: [],
+            bestC: []
         }
     },
     methods: {
@@ -266,6 +267,15 @@ export default {
         .then(response => {
             console.log(response);
             this.popularProducts = response.data.reverse()
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.get('http://157.230.225.244/storage/mostPopular/secondLevelCategories/10')
+        .then(res => {
+            console.log(res,'Footer');
+            this.bestC = res.data
         })
         .catch(function(error) {
             console.log(error);

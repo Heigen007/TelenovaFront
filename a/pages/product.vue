@@ -284,9 +284,9 @@
                         <h3 class="section-title mb-0 pb-2 font-size-22">{{localizeFilter('RelatedProductsPartTitle')}}</h3>
                     </div>
                     <client-only>
-                    <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                    <div style='min-height: 400px' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-2 px-1"
                         data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                        data-slides-show="5"
+                        data-slides-show="4"
                         data-slides-scroll="2"
                         data-responsive='[{
                             "breakpoint": 1200,
@@ -318,7 +318,7 @@
                                             <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                             <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                             <div class="mb-2">
-                                                <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
                                             </div>
                                             <div class="flex-center-between mb-1">
                                                 <div class="prodcut-price">
@@ -333,7 +333,7 @@
                                             <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                             <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                             <div class="mb-2">
-                                                <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
                                             </div>
                                             <div class="flex-center-between mb-1">
                                                 <div class="prodcut-price">
@@ -493,5 +493,11 @@ export default {
 <style>
 .slick-track{
     display: flex;
+}
+.SCode{
+    height: 139px;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 </style>

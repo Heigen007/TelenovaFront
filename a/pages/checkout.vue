@@ -611,6 +611,7 @@
 <script>
 import axios from 'axios'
 import CryptoJS from 'crypto-js'
+import Swal from 'sweetalert2'
 export default {
     data(){
         return{
@@ -666,6 +667,7 @@ export default {
     methods: {
         Ship(e){
             if(document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id != 'FourstylishRadio1'){
+                var self = this
                 e.preventDefault()
                 var filteredCart = JSON.parse(JSON.stringify(this.items.cart))
                 for(var el = 0; el < filteredCart.length ; el++) {
@@ -686,6 +688,12 @@ export default {
                 axios.post('https://textforeva.ru/order', checkout)
                 .then(response => {
                     console.log(response)
+                    Swal.fire(
+                    'Success!',
+                    'Your order has been created!',
+                    'success'
+                    )
+                    self.$router.push('/')
                 })
                 .catch(error => {
                     console.log(error);
