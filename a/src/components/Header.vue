@@ -108,8 +108,8 @@
                                             <!-- End Fullscreen Toggle Button -->
 
                                             <!-- Logo -->
-                                            <router-link style='width: 8rem' class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-1 ml-xl-0" to="/" aria-label="Electro">
-                                                <img style='width: 8rem; margin-top: 5px' src='logo.svg'>
+                                            <router-link style='width: 9rem' class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-1 ml-xl-0" to="/" aria-label="Electro">
+                                                <img style='width: 9rem; margin-top: 5px' src='logo.svg'>
                                             </router-link>
                                             <!-- End Logo -->
                                         </nav>
@@ -399,8 +399,8 @@
                         <div class="js-scrollbar u-sidebar__body">
                             <div id="headerSidebarContent" class="u-sidebar__content u-header-sidebar__content">
                                 <!-- Logo -->
-                                <NuxtLink class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3" to="/" aria-label="Electro">
-                                    <img src='logo.svg'>
+                                <NuxtLink style='width: 9rem' class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3" to="/" aria-label="Electro">
+                                    <img style='width: 9rem' src='logo.svg'>
                                 </NuxtLink>
                                 <!-- End Logo -->
 

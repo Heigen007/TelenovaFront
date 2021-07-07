@@ -292,8 +292,6 @@ export default {
             // initialization of quantity counter
             $.HSCore.components.HSQantityCounter.init('.js-quantity');
 
-            // initialization of popups
-            $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
             // initialization of countdowns
             var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
@@ -326,11 +324,6 @@ export default {
             // initialization of show animations
             $.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
-            // initialization of fancybox
-            $.HSCore.components.HSFancyBox.init('.js-fancybox');
-
-            // initialization of slick carousel
-            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 
             // initialization of hamburgers
             $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');

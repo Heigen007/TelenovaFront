@@ -429,7 +429,7 @@
                                 </li>
                             </ul> -->
 
-                            <NuxtLink class="d-block text-gray-16" to="#">{{localizeFilter('FirstPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink>
+                            <!-- <NuxtLink class="d-block text-gray-16" to="#">{{localizeFilter('FirstPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink> -->
                         </div>
                         <!-- Tab Content -->
                         <client-only>
@@ -562,7 +562,7 @@
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</h3>
-                        <NuxtLink class="d-block text-gray-16" to="/shop">{{localizeFilter('SecondPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink>
+                        <!-- <NuxtLink class="d-block text-gray-16" to="/shop">{{localizeFilter('SecondPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink> -->
                     </div>
                     <client-only>
                     <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
@@ -1029,8 +1029,6 @@ export default {
             }
         });
 
-        // initialization of popups
-        $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
         // initialization of countdowns
         var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
@@ -1059,9 +1057,6 @@ export default {
 
         // initialization of show animations
         $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-        // initialization of fancybox
-        $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
         // initialization of hamburgers
         $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');

@@ -67,20 +67,9 @@ export default {
       },
       {
         type: 'text/javascript',
-        src: 'vendor/fancybox/jquery.fancybox.min.js',
-        body: true
-      },
-      {
-        type: 'text/javascript',
         src: 'vendor/slick-carousel/slick/slick.js',
         body: true
       },
-      {
-        type: 'text/javascript',
-        src: 'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
-        body: true
-      },
-
       {
         type: 'text/javascript',
         src: 'js/hs.core.js',

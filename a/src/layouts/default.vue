@@ -17,7 +17,7 @@
 
 <style>
 ::-webkit-scrollbar {width: 10px;}
-::-webkit-scrollbar-thumb {background: #fed700;}
+::-webkit-scrollbar-thumb {background: #3d84ec;}
 </style>
 
 <script>
@@ -42,3 +42,16 @@ export default {
     methods: mapActions(["FrontInit"]),
 }
 </script>
+
+<style>
+@font-face {
+  font-family: "font-electro";
+  src:url("../static/fonts/font-electro.eot");
+  src:url("../static/fonts/font-electro.eot?#iefix") format("embedded-opentype"),
+    url("../static/fonts/font-electro.woff") format("woff"),
+    url("../static/fonts/font-electro.ttf") format("truetype"),
+    url("../static/fonts/font-electro.svg#font-electro") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+</style>
