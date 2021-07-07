@@ -789,7 +789,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                    <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -869,7 +869,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                    <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
