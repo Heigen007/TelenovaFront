@@ -1,7 +1,7 @@
 export default {
     namespaced: true,
     state: {
-      cart: null
+      cart: []
     },
     getters: {
       cart: s => s.cart

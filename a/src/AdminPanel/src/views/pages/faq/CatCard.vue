@@ -3,7 +3,7 @@
         v-b-tooltip.hover.top="Object.keys(icon)[0]"
         class="icon-card cursor-pointer text-center mb-2 mx-50"
     >
-    <img :src="'http://157.230.225.244/categoryTree/download/' + Object.keys(icon)[0]" class = 'BIMG' alt="">
+    <img :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(icon)[0]" class = 'BIMG' alt="">
         <b-card-text class="icon-name text-truncate mb-0 mt-1">
           {{ Object.keys(icon)[0] }}
         </b-card-text>

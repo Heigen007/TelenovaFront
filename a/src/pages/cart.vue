@@ -107,7 +107,7 @@
                                     </tr> -->
                                     <tr class="order-total" style="border-bottom: 1px solid #dcdcdc">
                                         <th>{{localizeFilter('CartConcludedThirdSubTitle')}}</th>
-                                        <td data-title="Total"><strong><span class="amount">{{TotalPrice() + ShippingCost}} тг.</span></strong></td>
+                                        <td data-title="Total"><strong><span class="amount">{{TotalPrice()}} тг.</span></strong></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -176,8 +176,8 @@ export default {
     methods: {
         TotalPrice(){
             if(process.browser){
-                var total = this.items.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
-                return total
+                var total = this.items?.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
+                return total || 0
             }
         },
         localizeFilter(key, key2, key3) {

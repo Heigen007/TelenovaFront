@@ -11,7 +11,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state:({
-    BackUrl: 'http://157.230.225.244',
+    BackUrl: 'https://textforeva.ru',
     WsConnection: null,
     AllProducts: [],
     AllProductsCopy: [],
@@ -23,7 +23,7 @@ export default new Vuex.Store({
     },
     StartShopGetter(state){
       console.log(1)
-      axios.get(`http://157.230.225.244/storage`)
+      axios.get(`https://textforeva.ru/storage`)
       .then(response => {
         console.log('success')
         state.AllProducts = response.data
@@ -33,7 +33,7 @@ export default new Vuex.Store({
         console.log(error);
       })
   
-      axios.get(`http://157.230.225.244/storage/getAllCategories`)
+      axios.get(`https://textforeva.ru/storage/getAllCategories`)
       .then(response => {
         console.log(response.data);
         state.Categories = response.data

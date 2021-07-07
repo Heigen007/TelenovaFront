@@ -252,7 +252,7 @@ export default {
   },
   created(){
     var self = this
-    axios.get('http://157.230.225.244/order')
+    axios.get('https://textforeva.ru/order')
     .then(response => {
       var filteredData = JSON.parse(JSON.stringify(response.data))
       for(var i = 0; i < response.data.length; i++){

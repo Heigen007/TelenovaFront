@@ -4,7 +4,7 @@ export const state = () => ({
   products: null,
   productsFilteredCopy: null,
   productsFilteredCopyCopy: null,
-  BackUrl: 'http://157.230.225.244',
+  BackUrl: 'https://textforeva.ru',
   ws: null,
   filters: []
 })
@@ -24,8 +24,12 @@ export const mutations = {
     state.filters = filters
   },
   ChProductsCopy(state, products){
-    state.productsFilteredCopy = products
-    state.productsFilteredCopyCopy = products
+    var arr = products
+    while(arr.length%3 != 0 && arr.length>3){
+      arr.pop()
+    }
+    state.productsFilteredCopy = arr
+    state.productsFilteredCopyCopy = arr
   },
   FilterProducts(state, MyArray){
     var ExceptionsArray = []
@@ -180,7 +184,7 @@ export const actions = {
   FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
     dispatch('connect')
-    axios.get(`http://157.230.225.244/storage`)
+    axios.get(`https://textforeva.ru/storage`)
     .then(response => {
       commit('SetProducts', response.data)
     })
@@ -188,7 +192,7 @@ export const actions = {
       console.log(error);
     })
 
-    axios.get(`http://157.230.225.244/storage/getAllCategories`)
+    axios.get(`https://textforeva.ru/storage/getAllCategories`)
     .then(response => {
       commit('SetCategories', response.data)
     })
@@ -197,7 +201,7 @@ export const actions = {
     })
   },
   async connect ({ commit, dispatch }) {
-    var connection = new WebSocket(`ws://157.230.225.244:2000`)
+    var connection = new WebSocket(`wss://textforeva.ru/ws/`)
     connection.onmessage = async (msg) => {
       let data = JSON.parse(msg.data)
       console.log(data);

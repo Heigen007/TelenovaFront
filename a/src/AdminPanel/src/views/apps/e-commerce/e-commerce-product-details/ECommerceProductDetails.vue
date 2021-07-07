@@ -297,7 +297,7 @@ export default {
   watch: {
     $route: function (val) {
       var self = this
-      axios.get(`http://157.230.225.244/storage/kaspi_id/${this.$route.params.slug}`)
+      axios.get(`https://textforeva.ru/storage/kaspi_id/${this.$route.params.slug}`)
       .then(response => {
         console.log(response)
         self.product = response.data
@@ -309,7 +309,7 @@ export default {
   },
   created(){
     var self = this
-    axios.get(`http://157.230.225.244/storage/kaspi_id/${this.$route.params.slug}`)
+    axios.get(`https://textforeva.ru/storage/kaspi_id/${this.$route.params.slug}`)
     .then(response => {
       console.log(response)
       self.product = response.data
@@ -334,7 +334,7 @@ export default {
         arr.push(element.value)
       });
       console.log(arr);
-      axios.post('http://157.230.225.244/storage/addSimilarGoods',{
+      axios.post('https://textforeva.ru/storage/addSimilarGoods',{
         "kaspi_id": this.$route.params.slug, 
         "similarProductsId": arr
       })

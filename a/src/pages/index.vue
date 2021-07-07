@@ -469,7 +469,7 @@
                                                         <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                         <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                         <div class="mb-2">
-                                                            <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                            <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
@@ -591,7 +591,7 @@
                             "slidesToScroll": 1
                             }
                         }]'>
-                            <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(0,10)" :key='i'>
+                            <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(0,9)" :key='i'>
                                 <div class="product-item">
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -599,7 +599,7 @@
                                                 <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                 <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                 <div class="mb-2">
-                                                    <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                    <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                 </div>
                                                 <div class="flex-center-between mb-1">
                                                     <div class="prodcut-price">
@@ -668,7 +668,7 @@
                                     "slidesToScroll": 1
                                     }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(10,20)" :key='i'>
+                                <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(10,19)" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -676,7 +676,7 @@
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
-                                                        <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                        <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
@@ -777,7 +777,7 @@
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
-                                                        <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                        <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
@@ -857,7 +857,7 @@
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
-                                                        <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                        <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
@@ -896,13 +896,13 @@
                 <!-- End Television Entertainment -->
                 <!-- Categories Card -->
                 <div class="mb-6">
-                    <div class="row flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
-                        <div v-for="(el,i) in Categories" :key="i" class="col-md-6 col-xl-4 mb-5 flex-shrink-0 flex-md-shrink-1">
+                    <div v-if="Categories" class="row flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
+                        <div v-for="(el,i) in Categories.slice(0,9)" :key="i" class="col-md-6 col-xl-4 mb-5 flex-shrink-0 flex-md-shrink-1">
                             <div class="bg-gray-1 overflow-hidden shadow-on-hover h-100 d-flex align-items-center">
                                 <NuxtLink :to="'/shop?FCat?'+Object.keys(el)[0]" class="d-block  pr-2 pr-wd-6">
                                     <div class="media align-items-center">
                                         <div class="max-width-148">
-                                            <img class="img-fluid transform-rotate-15" src="/img/300X300/img9.png" alt="Image Description">
+                                            <img class="img-fluid transform-rotate-15" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" alt="Image Description">
                                         </div>
                                         <div class="ml-4 media-body">
                                             <h4 class="mb-0 text-gray-90">{{Object.keys(el)[0]}}</h4>
@@ -994,7 +994,7 @@ export default {
         // }
     },
     created(){
-        axios.get('http://157.230.225.244/storage/mostPopular/products/20')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
             console.log(response);
             this.popularProducts = response.data
@@ -1003,7 +1003,7 @@ export default {
             console.log(error);
         })
 
-        axios.get('http://157.230.225.244/storage/mostPopular/freshProducts/10')
+        axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
         .then(response => {
             console.log(response);
             this.newestProducts = response.data
@@ -1015,7 +1015,7 @@ export default {
     mounted(){
         setTimeout(() => {
             $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-        }, 2000);
+        }, 3000);
     },
     updated(){
         console.log(1);
@@ -1138,5 +1138,9 @@ export default {
 .product-item__title{
     font-size: 0.875rem !important;
     line-height: 1.125rem !important;
+}
+.MyImg{
+    width: 200px;
+    height: 150px;
 }
 </style>

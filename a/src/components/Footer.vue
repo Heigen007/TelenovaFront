@@ -300,7 +300,7 @@ export default {
         }
     },
     created() {
-        axios.get('http://157.230.225.244/storage/mostPopular/products/25')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/25')
         .then(response => {
             console.log(response);
             this.popularProducts = response.data.reverse()

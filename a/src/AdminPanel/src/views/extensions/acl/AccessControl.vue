@@ -169,7 +169,7 @@ export default {
       formData.append('file', this.blogFile)
       formData.append('category', this.Name)
       
-      axios.post('http://157.230.225.244/categoryTree/addImage', formData)
+      axios.post('https://textforeva.ru/categoryTree/addImage', formData)
       .then(function (response) {
         console.log(response);
         history.back(1)

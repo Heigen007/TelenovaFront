@@ -16,7 +16,8 @@
 </template>
 
 <style>
-
+::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar-thumb {background: #fed700;}
 </style>
 
 <script>

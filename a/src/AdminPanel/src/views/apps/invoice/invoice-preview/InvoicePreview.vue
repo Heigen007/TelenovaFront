@@ -422,7 +422,7 @@ export default {
   },
   created(){
     var self = this
-    axios.get('http://157.230.225.244/order')
+    axios.get('https://textforeva.ru/order')
     .then(response => {
       var filteredData = JSON.parse(JSON.stringify(response.data))
       for(var i = 0; i < response.data.length; i++){
@@ -491,7 +491,7 @@ export default {
   methods: {
     ChPayment(type) {
       var self = this
-      axios.post('http://157.230.225.244/order/paymentStatus', 
+      axios.post('https://textforeva.ru/order/paymentStatus', 
       {
         id: this.invInfo.id,
         paymentStatus: type
@@ -506,7 +506,7 @@ export default {
     },
     ChDelivery(type) {
       var self = this
-      axios.post('http://157.230.225.244/order/orderStatus', 
+      axios.post('https://textforeva.ru/order/orderStatus', 
       {
         id: this.invInfo.id,
         orderStatus: type

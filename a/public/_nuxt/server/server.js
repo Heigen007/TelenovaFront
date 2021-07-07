@@ -115,7 +115,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -240,13 +240,13 @@ function normalizeComponent (
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("vuex");
+module.exports = require("axios");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("axios");
+module.exports = require("vuex");
 
 /***/ }),
 /* 5 */
@@ -262,402 +262,17 @@ module.exports = require("vue-no-ssr");
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Header.vue?vue&type=template&id=4aa3d754&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('header',{staticClass:"u-header u-header-left-aligned-nav",attrs:{"id":"header"}},[_vm._ssrNode("<div class=\"u-header__section\">","</div>",[_vm._ssrNode("<div class=\"u-header-topbar py-2 d-none d-xl-block\">","</div>",[_vm._ssrNode("<div class=\"container\">","</div>",[_vm._ssrNode("<div class=\"d-flex align-items-center\">","</div>",[_vm._ssrNode("<div class=\"topbar-left\">","</div>",[_c('NuxtLink',{staticClass:"text-gray-110 font-size-13 u-header-topbar__nav-link",attrs:{"to":"#"}},[_vm._v(_vm._s(_vm.localizeFilter( 'Greeting')))])],1),_vm._ssrNode(" <div class=\"topbar-right ml-auto\" style=\"margin-right: 100px !important\"><ul class=\"list-inline mb-0\" style=\"display: flex; align-items: center; justify-content: center\"><li class=\"list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single\"><div class=\"d-flex align-items-center\"><div class=\"position-relative\"><a id=\"languageDropdownInvoker\" href=\"javascript:;\" role=\"button\" aria-controls=\"languageDropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"hover\" data-unfold-target=\"#languageDropdown\" data-unfold-type=\"css-animation\" data-unfold-duration=\"300\" data-unfold-delay=\"300\" data-unfold-hide-on-scroll=\"true\" data-unfold-animation-in=\"slideInUp\" data-unfold-animation-out=\"fadeOut\" class=\"dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal\"><span class=\"d-inline-block d-sm-none\">US</span> <span class=\"d-none d-sm-inline-flex align-items-center\"><i class=\"ec ec-dollar mr-1\"></i>"+_vm._ssrEscape(_vm._s(this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'))+"</span></a> <div id=\"languageDropdown\" aria-labelledby=\"languageDropdownInvoker\" class=\"dropdown-menu dropdown-unfold\"><div class=\"dropdown-item\" style=\"cursor: pointer\">English</div> <div class=\"dropdown-item\" style=\"cursor: pointer\">Russian</div> <div class=\"dropdown-item\" style=\"cursor: pointer\">Kazakh‎</div></div></div></div></li></ul></div>")],2)])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"py-2 py-xl-4 bg-primary-down-lg\">","</div>",[_vm._ssrNode("<div class=\"container my-0dot5 my-xl-0\">","</div>",[_vm._ssrNode("<div class=\"row align-items-center\">","</div>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_vm._ssrNode("<nav class=\"navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270\">","</nav>",[_c('NuxtLink',{staticClass:"order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center",attrs:{"to":"/","aria-label":"Electro"}},[_c('svg',{staticStyle:{"margin-bottom":"0"},attrs:{"version":"1.1","x":"0px","y":"0px","width":"175.748px","height":"42.52px","viewBox":"0 0 175.748 42.52","enable-background":"new 0 0 175.748 42.52"}},[_c('ellipse',{staticClass:"ellipse-bg",attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#FDD700","cx":"170.05","cy":"36.341","rx":"5.32","ry":"5.367"}}),_vm._v(" "),_c('path',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#333E48","d":"M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056\n                                        C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187\n                                        c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731\n                                        c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733\n                                        c-0.719-0.2-1.969,0-3.01,0h-3.01c-0.238,0.273-0.625,0.431-0.725,0.847c-0.203,0.852,0,2.399,0,3.725\n                                        c0,1.393,0.045,2.748-0.055,3.725h-6.41c-0.184,0.237-0.629,0.434-0.725,0.791c-0.178,0.654,0,1.813,0,2.765v2.766\n                                        c0.232,0.188,0.439,0.64,0.779,0.733c0.777,0.216,2.109,0,3.234,0c1.154,0,2.291-0.045,3.176,0.057v21.277\n                                        c0.232,0.189,0.439,0.639,0.781,0.734c0.719,0.199,1.969,0,3.01,0h3.01c1.008-0.451,0.725-1.889,0.725-3.443\n                                        c-0.002-6.164-0.047-12.867,0.055-18.625h6.299c0.182-0.236,0.627-0.434,0.725-0.79c0.176-0.653,0-1.813,0-2.765V12.731z\n                                        M135.851,18.262c0.201-0.746,0-2.029,0-3.104v-3.104c-0.287-0.245-0.434-0.637-0.781-0.733c-0.824-0.229-1.992-0.044-2.898,0\n                                        c-2.158,0.104-4.506,0.675-5.74,1.411c-0.146-0.362-0.451-0.853-0.893-0.96c-0.693-0.169-1.859,0-2.842,0h-2.842\n                                        c-0.258,0.319-0.625,0.42-0.725,0.79c-0.223,0.82,0,2.338,0,3.443c0,8.109-0.002,16.635,0,24.381\n                                        c0.232,0.189,0.439,0.639,0.779,0.734c0.707,0.195,1.93,0,2.955,0h3.01c0.918-0.463,0.725-1.352,0.725-2.822V36.21\n                                        c-0.002-3.902-0.242-9.117,0-12.473c0.297-4.142,3.836-4.877,8.527-4.686C135.312,18.816,135.757,18.606,135.851,18.262z\n                                        M14.796,11.376c-5.472,0.262-9.443,3.178-11.76,7.056c-2.435,4.075-2.789,10.62-0.501,15.126c2.043,4.023,5.91,7.115,10.701,7.9\n                                        c6.051,0.992,10.992-1.219,14.324-3.838c-0.687-1.1-1.419-2.664-2.118-3.951c-0.398-0.734-0.652-1.486-1.616-1.467\n                                        c-1.942,0.787-4.272,2.262-7.134,2.145c-3.791-0.154-6.659-1.842-7.524-4.91h19.452c0.146-2.793,0.22-5.338-0.279-7.563\n                                        C26.961,15.728,22.503,11.008,14.796,11.376z M9,23.284c0.921-2.508,3.033-4.514,6.298-4.627c3.083-0.107,4.994,1.976,5.685,4.627\n                                        C17.119,23.38,12.865,23.38,9,23.284z M52.418,11.376c-5.551,0.266-9.395,3.142-11.76,7.056\n                                        c-2.476,4.097-2.829,10.493-0.557,15.069c1.997,4.021,5.895,7.156,10.646,7.957c6.068,1.023,11-1.227,14.379-3.781\n                                        c-0.479-0.896-0.875-1.742-1.393-2.709c-0.312-0.582-1.024-2.234-1.561-2.539c-0.912-0.52-1.428,0.135-2.23,0.508\n                                        c-0.564,0.262-1.223,0.523-1.672,0.676c-4.768,1.621-10.372,0.268-11.537-4.176h19.451c0.668-5.443-0.419-9.953-2.73-13.037\n                                        C61.197,13.388,57.774,11.12,52.418,11.376z M46.622,23.343c0.708-2.553,3.161-4.578,6.242-4.686\n                                        c3.08-0.107,5.08,1.953,5.686,4.686H46.622z M160.371,15.497c-2.455-2.453-6.143-4.291-10.869-4.064\n                                        c-2.268,0.109-4.297,0.65-6.02,1.524c-1.719,0.873-3.092,1.957-4.234,3.217c-2.287,2.519-4.164,6.004-3.902,11.007\n                                        c0.248,4.736,1.979,7.813,4.627,10.326c2.568,2.439,6.148,4.254,10.867,4.064c4.457-0.18,7.889-2.115,10.199-4.684\n                                        c2.469-2.746,4.012-5.971,3.959-11.063C164.949,21.134,162.732,17.854,160.371,15.497z M149.558,33.952\n                                        c-3.246-0.221-5.701-2.615-6.41-5.418c-0.174-0.689-0.26-1.25-0.4-2.166c-0.035-0.234,0.072-0.523-0.045-0.77\n                                        c0.682-3.698,2.912-6.257,6.799-6.547c2.543-0.189,4.258,0.735,5.52,1.863c1.322,1.182,2.303,2.715,2.451,4.967\n                                        C157.789,30.669,154.185,34.267,149.558,33.952z M88.812,29.55c-1.232,2.363-2.9,4.307-6.13,4.402\n                                        c-4.729,0.141-8.038-3.16-8.025-7.563c0.004-1.412,0.324-2.65,0.947-3.726c1.197-2.061,3.507-3.688,6.633-3.612\n                                        c3.222,0.079,4.966,1.708,6.632,3.668c1.328-1.059,2.529-1.948,3.9-2.99c0.416-0.315,1.076-0.688,1.227-1.072\n                                        c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846\n                                        c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377\n                                        c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z"}})])]),_vm._ssrNode(" <button id=\"sidebarHeaderInvokerMenu\" type=\"button\" aria-controls=\"sidebarHeader\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"click\" data-unfold-hide-on-scroll=\"false\" data-unfold-target=\"#sidebarHeader1\" data-unfold-type=\"css-animation\" data-unfold-animation-in=\"fadeInLeft\" data-unfold-animation-out=\"fadeOutLeft\" data-unfold-duration=\"500\" class=\"navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0\"><span id=\"hamburgerTriggerMenu\" class=\"u-hamburger__box\"><span class=\"u-hamburger__inner\"></span></span></button>")],2),_vm._ssrNode(" "),_vm._ssrNode("<aside id=\"sidebarHeader1\" aria-labelledby=\"sidebarHeaderInvokerMenu\" class=\"u-sidebar u-sidebar--left\">","</aside>",[_vm._ssrNode("<div class=\"u-sidebar__scroller\">","</div>",[_vm._ssrNode("<div class=\"u-sidebar__container\">","</div>",[_vm._ssrNode("<div class=\"u-header-sidebar__footer-offset pb-0\">","</div>",[_vm._ssrNode("<div class=\"position-absolute top-0 right-0 z-index-2 pt-4 pr-7\"><button type=\"button\" aria-controls=\"sidebarHeader\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"click\" data-unfold-hide-on-scroll=\"false\" data-unfold-target=\"#sidebarHeader1\" data-unfold-type=\"css-animation\" data-unfold-animation-in=\"fadeInLeft\" data-unfold-animation-out=\"fadeOutLeft\" data-unfold-duration=\"500\" class=\"close ml-auto\"><span aria-hidden=\"true\"><i class=\"ec ec-close-remove text-gray-90 font-size-20\"></i></span></button></div> "),_vm._ssrNode("<div class=\"js-scrollbar u-sidebar__body\">","</div>",[_vm._ssrNode("<div id=\"headerSidebarContent\" class=\"u-sidebar__content u-header-sidebar__content\">","</div>",[_c('NuxtLink',{staticClass:"d-flex ml-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-vertical",attrs:{"to":"/","aria-label":"Electro"}},[_c('svg',{staticStyle:{"margin-bottom":"0"},attrs:{"version":"1.1","x":"0px","y":"0px","width":"175.748px","height":"42.52px","viewBox":"0 0 175.748 42.52","enable-background":"new 0 0 175.748 42.52"}},[_c('ellipse',{staticClass:"ellipse-bg",attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#FDD700","cx":"170.05","cy":"36.341","rx":"5.32","ry":"5.367"}}),_vm._v(" "),_c('path',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#333E48","d":"M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056\n                                                            C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187\n                                                            c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731\n                                                            c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733\n                                                            c-0.719-0.2-1.969,0-3.01,0h-3.01c-0.238,0.273-0.625,0.431-0.725,0.847c-0.203,0.852,0,2.399,0,3.725\n                                                            c0,1.393,0.045,2.748-0.055,3.725h-6.41c-0.184,0.237-0.629,0.434-0.725,0.791c-0.178,0.654,0,1.813,0,2.765v2.766\n                                                            c0.232,0.188,0.439,0.64,0.779,0.733c0.777,0.216,2.109,0,3.234,0c1.154,0,2.291-0.045,3.176,0.057v21.277\n                                                            c0.232,0.189,0.439,0.639,0.781,0.734c0.719,0.199,1.969,0,3.01,0h3.01c1.008-0.451,0.725-1.889,0.725-3.443\n                                                            c-0.002-6.164-0.047-12.867,0.055-18.625h6.299c0.182-0.236,0.627-0.434,0.725-0.79c0.176-0.653,0-1.813,0-2.765V12.731z\n                                                            M135.851,18.262c0.201-0.746,0-2.029,0-3.104v-3.104c-0.287-0.245-0.434-0.637-0.781-0.733c-0.824-0.229-1.992-0.044-2.898,0\n                                                            c-2.158,0.104-4.506,0.675-5.74,1.411c-0.146-0.362-0.451-0.853-0.893-0.96c-0.693-0.169-1.859,0-2.842,0h-2.842\n                                                            c-0.258,0.319-0.625,0.42-0.725,0.79c-0.223,0.82,0,2.338,0,3.443c0,8.109-0.002,16.635,0,24.381\n                                                            c0.232,0.189,0.439,0.639,0.779,0.734c0.707,0.195,1.93,0,2.955,0h3.01c0.918-0.463,0.725-1.352,0.725-2.822V36.21\n                                                            c-0.002-3.902-0.242-9.117,0-12.473c0.297-4.142,3.836-4.877,8.527-4.686C135.312,18.816,135.757,18.606,135.851,18.262z\n                                                            M14.796,11.376c-5.472,0.262-9.443,3.178-11.76,7.056c-2.435,4.075-2.789,10.62-0.501,15.126c2.043,4.023,5.91,7.115,10.701,7.9\n                                                            c6.051,0.992,10.992-1.219,14.324-3.838c-0.687-1.1-1.419-2.664-2.118-3.951c-0.398-0.734-0.652-1.486-1.616-1.467\n                                                            c-1.942,0.787-4.272,2.262-7.134,2.145c-3.791-0.154-6.659-1.842-7.524-4.91h19.452c0.146-2.793,0.22-5.338-0.279-7.563\n                                                            C26.961,15.728,22.503,11.008,14.796,11.376z M9,23.284c0.921-2.508,3.033-4.514,6.298-4.627c3.083-0.107,4.994,1.976,5.685,4.627\n                                                            C17.119,23.38,12.865,23.38,9,23.284z M52.418,11.376c-5.551,0.266-9.395,3.142-11.76,7.056\n                                                            c-2.476,4.097-2.829,10.493-0.557,15.069c1.997,4.021,5.895,7.156,10.646,7.957c6.068,1.023,11-1.227,14.379-3.781\n                                                            c-0.479-0.896-0.875-1.742-1.393-2.709c-0.312-0.582-1.024-2.234-1.561-2.539c-0.912-0.52-1.428,0.135-2.23,0.508\n                                                            c-0.564,0.262-1.223,0.523-1.672,0.676c-4.768,1.621-10.372,0.268-11.537-4.176h19.451c0.668-5.443-0.419-9.953-2.73-13.037\n                                                            C61.197,13.388,57.774,11.12,52.418,11.376z M46.622,23.343c0.708-2.553,3.161-4.578,6.242-4.686\n                                                            c3.08-0.107,5.08,1.953,5.686,4.686H46.622z M160.371,15.497c-2.455-2.453-6.143-4.291-10.869-4.064\n                                                            c-2.268,0.109-4.297,0.65-6.02,1.524c-1.719,0.873-3.092,1.957-4.234,3.217c-2.287,2.519-4.164,6.004-3.902,11.007\n                                                            c0.248,4.736,1.979,7.813,4.627,10.326c2.568,2.439,6.148,4.254,10.867,4.064c4.457-0.18,7.889-2.115,10.199-4.684\n                                                            c2.469-2.746,4.012-5.971,3.959-11.063C164.949,21.134,162.732,17.854,160.371,15.497z M149.558,33.952\n                                                            c-3.246-0.221-5.701-2.615-6.41-5.418c-0.174-0.689-0.26-1.25-0.4-2.166c-0.035-0.234,0.072-0.523-0.045-0.77\n                                                            c0.682-3.698,2.912-6.257,6.799-6.547c2.543-0.189,4.258,0.735,5.52,1.863c1.322,1.182,2.303,2.715,2.451,4.967\n                                                            C157.789,30.669,154.185,34.267,149.558,33.952z M88.812,29.55c-1.232,2.363-2.9,4.307-6.13,4.402\n                                                            c-4.729,0.141-8.038-3.16-8.025-7.563c0.004-1.412,0.324-2.65,0.947-3.726c1.197-2.061,3.507-3.688,6.633-3.612\n                                                            c3.222,0.079,4.966,1.708,6.632,3.668c1.328-1.059,2.529-1.948,3.9-2.99c0.416-0.315,1.076-0.688,1.227-1.072\n                                                            c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846\n                                                            c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377\n                                                            c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z"}})])]),_vm._ssrNode(" "),_vm._ssrNode("<ul id=\"headerSidebarList\" class=\"u-header-collapse__nav\">","</ul>",[_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebarHomeCollapse\" data-target=\"#headerSidebarHomeCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Home &amp; Static Pages\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebarHomeCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebarHomeMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/index.html"}},[_vm._v("Home v1")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v2.html"}},[_vm._v("Home v2")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v3.html"}},[_vm._v("Home v3")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v3-full-color-bg.html"}},[_vm._v("Home v3.1")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v4.html"}},[_vm._v("Home v4")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v5.html"}},[_vm._v("Home v5")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v6.html"}},[_vm._v("Home v6")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/home-v7.html"}},[_vm._v("Home v7")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/about"}},[_vm._v("About")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/contact"}},[_vm._v("Contact v1")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/contact-v2.html"}},[_vm._v("Contact v2")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/faq"}},[_vm._v("FAQ")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/store-directory.html"}},[_vm._v("Store Directory")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/terms-and-conditions.html"}},[_vm._v("Terms and Conditions")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../home/404.html"}},[_vm._v("404")])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" data-target=\"#headerSidebarPagesCollapse\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebarPagesCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Shop Pages\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebarPagesCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebarPagesMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-grid.html"}},[_vm._v("Shop Grid")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-grid-extended.html"}},[_vm._v("Shop Grid Extended")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-list-view.html"}},[_vm._v("Shop List View")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-list-view-small.html"}},[_vm._v("Shop List View Small")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-left-sidebar.html"}},[_vm._v("Shop Left Sidebar")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-full-width.html"}},[_vm._v("Shop Full width")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-right-sidebar.html"}},[_vm._v("Shop Right Sidebar")])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" data-target=\"#headerSidebarBlogCollapse\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebarBlogCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Product Categories\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebarBlogCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebarBlogMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("4 Column Sidebar")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("5 Column Sidebar")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("6 Column Full width")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("7 Column Full width")])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" data-target=\"#headerSidebarShopCollapse\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebarShopCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Single Product Pages\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebarShopCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebarShopMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("Single Product Extended")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("Single Product Fullwidth")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/product"}},[_vm._v("Single Product Sidebar")])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" data-target=\"#headerSidebarDemosCollapse\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebarDemosCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Ecommerce Pages\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebarDemosCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebarDemosMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li><a to=\"/shop\" class=\"u-header-collapse__submenu-nav-link\">Shop</a></li> "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/cart"}},[_vm._v("Cart"),_c('a',{attrs:{"href":""}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/checkout"}},[_vm._v("Checkout")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"/myAccount"}},[_vm._v("My Account")])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" data-target=\"#headerSidebardocsCollapse\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebardocsCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Shop Columns\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebardocsCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebardocsMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-7-columns-full-width.html"}},[_vm._v("7 Column Full width")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-6-columns-full-width.html"}},[_vm._v("6 Column Full width")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-5-columns-sidebar.html"}},[_vm._v("5 Column Sidebar")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-4-columns-sidebar.html"}},[_vm._v("4 Column Sidebar")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../shop/shop-3-columns-sidebar.html"}},[_vm._v("3 Column Sidebar")])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\">","</li>",[_vm._ssrNode("<a href=\"javascript:;\" data-target=\"#headerSidebarblogsCollapse\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"headerSidebarblogsCollapse\" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\">\n                                                            Blog Pages\n                                                        </a> "),_vm._ssrNode("<div id=\"headerSidebarblogsCollapse\" data-parent=\"#headerSidebarContent\" class=\"collapse\">","</div>",[_vm._ssrNode("<ul id=\"headerSidebarblogsMenu\" class=\"u-header-collapse__nav-list\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../blog/blog-v1.html"}},[_vm._v("Blog v1")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../blog/blog-v2.html"}},[_vm._v("Blog v2")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../blog/blog-v3.html"}},[_vm._v("Blog v3")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../blog/blog-full-width.html"}},[_vm._v("Blog Full Width")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__submenu-nav-link",attrs:{"to":"../blog/single-blog-post.html"}},[_vm._v("Single Blog Post")])],1)],2)])],2)],2)],2)])],2)])])])],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col d-none d-xl-block\">","</div>",[_vm._ssrNode("<nav class=\"js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space\">","</nav>",[_vm._ssrNode("<div id=\"navBar\" class=\"collapse navbar-collapse u-header__navbar-collapse\">","</div>",[_vm._ssrNode("<ul class=\"navbar-nav u-header__navbar-nav\">","</ul>",[_vm._ssrNode("<li class=\"nav-item u-header__nav-item\">","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link",attrs:{"to":"/about"}},[_vm._v(_vm._s(_vm.localizeFilter('AboutUs')))])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"nav-item u-header__nav-item\">","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link",attrs:{"to":"/faq"}},[_vm._v(_vm._s(_vm.localizeFilter('FAQs')))])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"nav-item u-header__nav-item\">","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link",attrs:{"to":"/contact"}},[_vm._v(_vm._s(_vm.localizeFilter('ContactUs')))])],1)],2)])])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"d-none d-xl-block col-md-auto\">","</div>",[_vm._ssrNode("<div class=\"d-flex\">","</div>",[_vm._ssrNode("<i class=\"ec ec-support font-size-50 text-primary\"></i> "),_vm._ssrNode("<div class=\"ml-2\">","</div>",[_vm._ssrNode("<div class=\"phone\">","</div>",[_vm._ssrNode("<strong>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter( 'Support')))+"</strong> "),_c('NuxtLink',{staticClass:"text-gray-90",attrs:{"to":"tel:800856800604"}},[_vm._v(_vm._s(_vm.localizeFilter('PhoneNumber')))])],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"email\">","</div>",[_vm._ssrNode(_vm._ssrEscape("\n                                    "+_vm._s(_vm.localizeFilter( 'E-mailTitle')))),_c('NuxtLink',{staticClass:"text-gray-90",attrs:{"to":"mailto:info@electro.com?subject=Help Need"}},[_vm._v(_vm._s(_vm.localizeFilter('E-mailValue')))])],2)],2)],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"d-xl-none col col-xl-auto text-right text-xl-left pl-0 pl-xl-3 position-static\">","</div>",[_vm._ssrNode("<div class=\"d-inline-flex\">","</div>",[_vm._ssrNode("<ul class=\"d-flex list-unstyled mb-0 align-items-center\">","</ul>",[_vm._ssrNode("<li class=\"col d-xl-none px-2 px-sm-3 position-static\"><a id=\"searchClassicInvoker\" href=\"javascript:;\" role=\"button\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Search\" aria-controls=\"searchClassic\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-target=\"#searchClassic\" data-unfold-type=\"css-animation\" data-unfold-duration=\"300\" data-unfold-delay=\"300\" data-unfold-hide-on-scroll=\"true\" data-unfold-animation-in=\"slideInUp\" data-unfold-animation-out=\"fadeOut\" class=\"font-size-22 text-gray-90 text-lh-1 btn-text-secondary\"><span class=\"ec ec-search\"></span></a> <div id=\"searchClassic\" aria-labelledby=\"searchClassicInvoker\" class=\"dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2\"><form class=\"js-focus-state input-group px-3\"><input type=\"search\" placeholder=\"Search Product\" class=\"form-control\"> <div class=\"input-group-append\"><button type=\"button\" class=\"btn btn-primary px-3\"><i class=\"font-size-18 ec ec-search\"></i></button></div></form></div></li> "),_vm._ssrNode("<li class=\"col pr-xl-0 px-2 px-sm-3\">","</li>",[_c('NuxtLink',{staticClass:"text-gray-90 position-relative d-flex ",attrs:{"to":"/cart","data-toggle":"tooltip","data-placement":"top","title":_vm.localizeFilter('CartSuggestion')}},[_c('i',{staticClass:"font-size-22 ec ec-shopping-bag",staticStyle:{"display":"flex","align-items":"center","justify-content":"center"}}),_vm._v(" "),_c('span',{staticClass:"width-22 height-22 bg-dark position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12 text-white"},[_vm._v("2")]),_vm._v(" "),_c('span',{staticClass:"d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-4"},[_vm._v("$1785.00")])])],1)],2)])])],2)])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"d-none d-xl-block bg-primary\">","</div>",[_vm._ssrNode("<div class=\"container\">","</div>",[_vm._ssrNode("<div class=\"row align-items-stretch min-height-50\">","</div>",[_vm._ssrNode("<div class=\"col-md-auto d-none d-xl-flex align-items-end\">","</div>",[_vm._ssrNode("<div class=\"max-width-270 min-width-270\">","</div>",[_vm._ssrNode("<div id=\"basicsAccordion\">","</div>",[_vm._ssrNode("<div class=\"card border-0 rounded-0\">","</div>",[_vm._ssrNode("<div id=\"basicsHeadingOne\" class=\"card-header bg-primary rounded-0 card-collapse border-0\"><button type=\"button\" data-toggle=\"collapse\" data-target=\"#basicsCollapseOne\" aria-expanded=\"true\" aria-controls=\"basicsCollapseOne\" class=\"btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90\"><span class=\"pl-1 text-gray-90\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('AccordionTitle')))+"</span> <span class=\"text-gray-90 ml-3\"><span class=\"ec ec-arrow-down-search\"></span></span></button></div> "),_c('client-only',[_c('div',{staticClass:"collapse vertical-menu v1",attrs:{"id":"basicsCollapseOne","aria-labelledby":"basicsHeadingOne","data-parent":"#basicsAccordion"}},[_c('div',{staticClass:"card-body p-0"},[_c('nav',{staticClass:"js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized"},[_c('div',{staticClass:"collapse navbar-collapse u-header__navbar-collapse",attrs:{"id":"navBar"}},[_c('ul',{staticClass:"navbar-nav u-header__navbar-nav border-primary border-top-0"},[_c('li',{staticClass:"nav-item u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"#"}},[_vm._v("Value of the Day")])],1),_vm._v(" "),_c('li',{staticClass:"nav-item u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"#"}},[_vm._v("Top 100 Offers")])],1),_vm._v(" "),_c('li',{staticClass:"nav-item u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"#"}},[_vm._v("New Arrivals")])],1),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-animation-in":"slideInUp","data-animation-out":"fadeOut","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("Computers & Accessories")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu",attrs:{"aria-labelledby":"basicMegaMenu"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img1.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Computers & Accessories")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Computers & Accessories")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Laptops, Desktops & Monitors")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Printers & Ink")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Networking & Internet Devices")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Computer Accessories")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Software")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start",attrs:{"to":"#"}},[_c('div',{},[_vm._v("All Electronics")]),_vm._v(" "),_c('div',{staticClass:"u-nav-subtext font-size-11 text-gray-30"},[_vm._v("Discover more products")])])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Office & Stationery")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Office & Stationery")])],1)])])])])]),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu1","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("Cameras, Audio & Video")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu",attrs:{"aria-labelledby":"basicMegaMenu1"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img4.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Cameras & Photography")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Lenses")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Camera Accessories")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Security & Surveillance")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Binoculars & Telescopes")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Camcorders")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Software")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start",attrs:{"to":"#"}},[_c('div',{},[_vm._v("All Electronics")]),_vm._v(" "),_c('div',{staticClass:"u-nav-subtext font-size-11 text-gray-30"},[_vm._v("Discover more products")])])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Audio & Video")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Audio & Video")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Headphones & Speakers")])],1)])])])])]),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu2","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("Mobiles & Tablets")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu vmm-bg-extended",attrs:{"aria-labelledby":"basicMegaMenu2"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img3.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Mobiles & Tablets")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Mobile Phones")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Smartphones")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Refurbished Mobiles")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link border-top pt-2",attrs:{"to":"#"}},[_vm._v("All Mobile Accessories")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Cases & Covers")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start",attrs:{"to":"#"}},[_c('div',{},[_vm._v("All Electronics")]),_vm._v(" "),_c('div',{staticClass:"u-nav-subtext font-size-11 text-gray-30"},[_vm._v("Discover more products")])])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Tablets")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Tablet Accessories")])],1)])])])])]),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu3","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("Movies, Music & Video")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu",attrs:{"aria-labelledby":"basicMegaMenu3"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img2.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Movies & TV Shows")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Movies & TV Shows")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All English")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link border-bottom pb-3",attrs:{"to":"#"}},[_vm._v("All Hindi")])],1)]),_vm._v(" "),_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Video Games")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("PC Games")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Consoles")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Accessories")])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Music")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Music")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Indian Classical")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Musical Instruments")])],1)])])])])]),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu4","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("TV & Audio")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu",attrs:{"aria-labelledby":"basicMegaMenu4"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img5.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Audio & Video")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Audio & Video")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Televisions")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Headphones")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Speakers")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Audio & Video Accessories")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start",attrs:{"to":"#"}},[_c('div',{},[_vm._v("Electro Home Appliances")]),_vm._v(" "),_c('div',{staticClass:"u-nav-subtext font-size-11 text-gray-30"},[_vm._v("Available in select cities")])])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Music")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Televisions")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Headphones")])],1)])])])])]),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu5","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("Watches & Eyewear")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu",attrs:{"aria-labelledby":"basicMegaMenu5"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img6.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Watches")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Watches")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Men's Watches")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Women's Watches")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Premium Watches")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Deals on Watches")])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Eyewear")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Men's Sunglasses")])],1)])])])])]),_vm._v(" "),_c('li',{staticClass:"nav-item hs-has-mega-menu u-header__nav-item",attrs:{"data-event":"hover","data-position":"left"}},[_c('a',{staticClass:"nav-link u-header__nav-link u-header__nav-link-toggle",attrs:{"id":"basicMegaMenu3","href":"javascript:;","aria-haspopup":"true","aria-expanded":"false"}},[_vm._v("Car, Motorbike & Industrial")]),_vm._v(" "),_c('div',{staticClass:"hs-mega-menu vmm-tfw u-header__sub-menu",attrs:{"aria-labelledby":"basicMegaMenu3"}},[_c('div',{staticClass:"vmm-bg"},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/500X400/img7.png","alt":"Image Description"}})]),_vm._v(" "),_c('div',{staticClass:"row u-header__mega-menu-wrapper"},[_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Car & Motorbike")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group mb-3"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Cars & Bikes")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Car & Bike Care")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link border-bottom pb-3",attrs:{"to":"#"}},[_vm._v("Lubricants")])],1)]),_vm._v(" "),_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Shop for Bike")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Helmets & Gloves")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Bike Parts")])],1)])]),_vm._v(" "),_c('div',{staticClass:"col mb-3 mb-sm-0"},[_c('span',{staticClass:"u-header__sub-menu-title"},[_vm._v("Industrial Supplies")]),_vm._v(" "),_c('ul',{staticClass:"u-header__sub-menu-nav-group"},[_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("All Industrial Supplies")])],1),_vm._v(" "),_c('li',[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":"#"}},[_vm._v("Lab & Scientific")])],1)])])])])])])])])])])])],2)])])]),_vm._ssrNode(" <div class=\"col align-self-center\"><form class=\"js-focus-state\"><label for=\"searchProduct\" class=\"sr-only\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SearchSuggestion')))+"</label> <div class=\"input-group\"><input type=\"email\" name=\"email\" id=\"searchProduct\" placeholder=\"Search for Products\" aria-label=\"Search for Products\" aria-describedby=\"searchProduct1\" required=\"required\" class=\"form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill\"> <div class=\"input-group-append\"><button type=\"button\" id=\"searchProduct1\" class=\"btn btn-dark height-40 py-2 px-3 rounded-right-pill\"><span class=\"ec ec-search font-size-24\"></span></button></div></div></form></div> "),_vm._ssrNode("<div class=\"col-md-auto align-self-center\">","</div>",[_vm._ssrNode("<div class=\"d-flex\">","</div>",[_vm._ssrNode("<ul class=\"d-flex list-unstyled mb-0\">","</ul>",[_vm._ssrNode("<li class=\"col pr-0\">","</li>",[_c('NuxtLink',{staticClass:"text-gray-90 position-relative d-flex ",attrs:{"to":"/cart","data-toggle":"tooltip","data-placement":"top","title":_vm.localizeFilter('CartSuggestion')}},[_c('i',{staticClass:"font-size-22 ec ec-shopping-bag"}),_vm._v(" "),_c('span',{staticClass:"width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12"},[_vm._v(_vm._s(_vm.AmountOfCartProducts))]),_vm._v(" "),_c('span',{staticClass:"font-weight-bold font-size-16 text-gray-90 ml-4"},[_vm._v("$"+_vm._s(_vm.Cost))])])],1)])])])],2)])])],2)])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Header.vue?vue&type=template&id=42178b5c&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<header id=\"header\" class=\"u-header u-header-left-aligned-nav mb-3\" data-v-42178b5c>","</header>",[_vm._ssrNode("<div class=\"u-header__section shadow-none\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"u-header-topbar py-2 d-none d-xl-block\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"container\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"d-flex align-items-center\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"topbar-left\" data-v-42178b5c>","</div>",[_c('NuxtLink',{staticClass:"text-gray-110 font-size-13 u-header-topbar__nav-link",attrs:{"to":"#"}},[_vm._v(_vm._s(_vm.localizeFilter( 'Greeting')))])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"topbar-right ml-auto\" style=\"margin-right: 100px !important\" data-v-42178b5c>","</div>",[_vm._ssrNode("<ul class=\"list-inline mb-0\" style=\"display: flex; align-items: center; justify-content: center\" data-v-42178b5c>","</ul>",[_vm._ssrNode("<li data-event=\"hover\" data-position=\"left\" class=\"nav-item u-header__nav-item\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"/"}},[_vm._v("Home")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-event=\"hover\" data-position=\"left\" class=\"nav-item u-header__nav-item\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"/cart"}},[_vm._v("Cart")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-event=\"hover\" data-position=\"left\" class=\"nav-item u-header__nav-item\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"/about"}},[_vm._v("Adout Us")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-event=\"hover\" data-position=\"left\" class=\"nav-item u-header__nav-item\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"/terms"}},[_vm._v("Terms")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-event=\"hover\" data-position=\"left\" class=\"nav-item u-header__nav-item\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"/faq"}},[_vm._v("FAQ")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-event=\"hover\" data-position=\"left\" class=\"nav-item u-header__nav-item mr-5\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link font-weight-bold",attrs:{"to":"/contact"}},[_vm._v("Contact Us")])],1),_vm._ssrNode(" <li class=\"list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single\" data-v-42178b5c><div class=\"d-flex align-items-center\" data-v-42178b5c><div class=\"position-relative\" data-v-42178b5c><a id=\"languageDropdownInvoker\" href=\"javascript:;\" role=\"button\" aria-controls=\"languageDropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"hover\" data-unfold-target=\"#languageDropdown\" data-unfold-type=\"css-animation\" data-unfold-duration=\"300\" data-unfold-delay=\"300\" data-unfold-hide-on-scroll=\"true\" data-unfold-animation-in=\"slideInUp\" data-unfold-animation-out=\"fadeOut\" class=\"dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal\" data-v-42178b5c><span class=\"d-inline-block d-sm-none\" data-v-42178b5c>US</span> <span class=\"d-none d-sm-inline-flex align-items-center\" data-v-42178b5c><i class=\"ec ec-dollar mr-1\" data-v-42178b5c></i>"+_vm._ssrEscape(_vm._s(this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'))+"</span></a> <div id=\"languageDropdown\" aria-labelledby=\"languageDropdownInvoker\" class=\"dropdown-menu dropdown-unfold\" data-v-42178b5c><div class=\"dropdown-item\" style=\"cursor: pointer\" data-v-42178b5c>English</div> <div class=\"dropdown-item\" style=\"cursor: pointer\" data-v-42178b5c>Russian</div> <div class=\"dropdown-item\" style=\"cursor: pointer\" data-v-42178b5c>Kazakh‎</div></div></div></div></li>")],2)])],2)])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"border-bottom border-lg-down-0 bg-primary bg-xl-transparent min-height-64 flex-horizontal-center\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"container\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"row align-items-center justify-content-between justify-content-xl-start\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"col-auto\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"d-inline-flex d-xl-flex align-items-center justify-content-xl-between position-relative\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div id=\"logoAndNav\" data-v-42178b5c>","</div>",[_vm._ssrNode("<nav class=\"navbar navbar-expand u-header__navbar\" data-v-42178b5c>","</nav>",[_vm._ssrNode("<button id=\"sidebarHeaderInvoker\" type=\"button\" aria-controls=\"sidebarHeader\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"click\" data-unfold-hide-on-scroll=\"false\" data-unfold-target=\"#sidebarHeader\" data-unfold-type=\"css-animation\" data-unfold-animation-in=\"fadeInLeft\" data-unfold-animation-out=\"fadeOutLeft\" data-unfold-duration=\"500\" class=\"mr-2 pl-0 navbar-toggler d-block d-xl-none btn u-hamburger ml-auto\" data-v-42178b5c><span id=\"hamburgerTrigger\" class=\"u-hamburger__box\" data-v-42178b5c><span class=\"u-hamburger__inner\" data-v-42178b5c></span></span></button> "),_c('router-link',{staticClass:"navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-1 ml-xl-0",attrs:{"to":"/","aria-label":"Electro"}},[_c('svg',{staticStyle:{"margin-bottom":"0"},attrs:{"version":"1.1","x":"0px","y":"0px","width":"175.748px","height":"42.52px","viewBox":"0 0 175.748 42.52","enable-background":"new 0 0 175.748 42.52"}},[_c('ellipse',{staticClass:"ellipse-bg",attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#FDD700","cx":"170.05","cy":"36.341","rx":"5.32","ry":"5.367"}}),_vm._v(" "),_c('path',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#333E48","d":"M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056\r\n                                                        C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187\r\n                                                        c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731\r\n                                                        c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733\r\n                                                        c-0.719-0.2-1.969,0-3.01,0h-3.01c-0.238,0.273-0.625,0.431-0.725,0.847c-0.203,0.852,0,2.399,0,3.725\r\n                                                        c0,1.393,0.045,2.748-0.055,3.725h-6.41c-0.184,0.237-0.629,0.434-0.725,0.791c-0.178,0.654,0,1.813,0,2.765v2.766\r\n                                                        c0.232,0.188,0.439,0.64,0.779,0.733c0.777,0.216,2.109,0,3.234,0c1.154,0,2.291-0.045,3.176,0.057v21.277\r\n                                                        c0.232,0.189,0.439,0.639,0.781,0.734c0.719,0.199,1.969,0,3.01,0h3.01c1.008-0.451,0.725-1.889,0.725-3.443\r\n                                                        c-0.002-6.164-0.047-12.867,0.055-18.625h6.299c0.182-0.236,0.627-0.434,0.725-0.79c0.176-0.653,0-1.813,0-2.765V12.731z\r\n                                                        M135.851,18.262c0.201-0.746,0-2.029,0-3.104v-3.104c-0.287-0.245-0.434-0.637-0.781-0.733c-0.824-0.229-1.992-0.044-2.898,0\r\n                                                        c-2.158,0.104-4.506,0.675-5.74,1.411c-0.146-0.362-0.451-0.853-0.893-0.96c-0.693-0.169-1.859,0-2.842,0h-2.842\r\n                                                        c-0.258,0.319-0.625,0.42-0.725,0.79c-0.223,0.82,0,2.338,0,3.443c0,8.109-0.002,16.635,0,24.381\r\n                                                        c0.232,0.189,0.439,0.639,0.779,0.734c0.707,0.195,1.93,0,2.955,0h3.01c0.918-0.463,0.725-1.352,0.725-2.822V36.21\r\n                                                        c-0.002-3.902-0.242-9.117,0-12.473c0.297-4.142,3.836-4.877,8.527-4.686C135.312,18.816,135.757,18.606,135.851,18.262z\r\n                                                        M14.796,11.376c-5.472,0.262-9.443,3.178-11.76,7.056c-2.435,4.075-2.789,10.62-0.501,15.126c2.043,4.023,5.91,7.115,10.701,7.9\r\n                                                        c6.051,0.992,10.992-1.219,14.324-3.838c-0.687-1.1-1.419-2.664-2.118-3.951c-0.398-0.734-0.652-1.486-1.616-1.467\r\n                                                        c-1.942,0.787-4.272,2.262-7.134,2.145c-3.791-0.154-6.659-1.842-7.524-4.91h19.452c0.146-2.793,0.22-5.338-0.279-7.563\r\n                                                        C26.961,15.728,22.503,11.008,14.796,11.376z M9,23.284c0.921-2.508,3.033-4.514,6.298-4.627c3.083-0.107,4.994,1.976,5.685,4.627\r\n                                                        C17.119,23.38,12.865,23.38,9,23.284z M52.418,11.376c-5.551,0.266-9.395,3.142-11.76,7.056\r\n                                                        c-2.476,4.097-2.829,10.493-0.557,15.069c1.997,4.021,5.895,7.156,10.646,7.957c6.068,1.023,11-1.227,14.379-3.781\r\n                                                        c-0.479-0.896-0.875-1.742-1.393-2.709c-0.312-0.582-1.024-2.234-1.561-2.539c-0.912-0.52-1.428,0.135-2.23,0.508\r\n                                                        c-0.564,0.262-1.223,0.523-1.672,0.676c-4.768,1.621-10.372,0.268-11.537-4.176h19.451c0.668-5.443-0.419-9.953-2.73-13.037\r\n                                                        C61.197,13.388,57.774,11.12,52.418,11.376z M46.622,23.343c0.708-2.553,3.161-4.578,6.242-4.686\r\n                                                        c3.08-0.107,5.08,1.953,5.686,4.686H46.622z M160.371,15.497c-2.455-2.453-6.143-4.291-10.869-4.064\r\n                                                        c-2.268,0.109-4.297,0.65-6.02,1.524c-1.719,0.873-3.092,1.957-4.234,3.217c-2.287,2.519-4.164,6.004-3.902,11.007\r\n                                                        c0.248,4.736,1.979,7.813,4.627,10.326c2.568,2.439,6.148,4.254,10.867,4.064c4.457-0.18,7.889-2.115,10.199-4.684\r\n                                                        c2.469-2.746,4.012-5.971,3.959-11.063C164.949,21.134,162.732,17.854,160.371,15.497z M149.558,33.952\r\n                                                        c-3.246-0.221-5.701-2.615-6.41-5.418c-0.174-0.689-0.26-1.25-0.4-2.166c-0.035-0.234,0.072-0.523-0.045-0.77\r\n                                                        c0.682-3.698,2.912-6.257,6.799-6.547c2.543-0.189,4.258,0.735,5.52,1.863c1.322,1.182,2.303,2.715,2.451,4.967\r\n                                                        C157.789,30.669,154.185,34.267,149.558,33.952z M88.812,29.55c-1.232,2.363-2.9,4.307-6.13,4.402\r\n                                                        c-4.729,0.141-8.038-3.16-8.025-7.563c0.004-1.412,0.324-2.65,0.947-3.726c1.197-2.061,3.507-3.688,6.633-3.612\r\n                                                        c3.222,0.079,4.966,1.708,6.632,3.668c1.328-1.059,2.529-1.948,3.9-2.99c0.416-0.315,1.076-0.688,1.227-1.072\r\n                                                        c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846\r\n                                                        c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377\r\n                                                        c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z"}})])])],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div id=\"basicsAccordion\" class=\"d-none d-xl-block\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"card border-0 py-3 position-static\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div id=\"basicsHeadingOne\" class=\"card-header bg-transparent card-collapse border-0 my-1 d-none d-xl-block\" data-v-42178b5c><button type=\"button\" data-toggle=\"collapse\" data-target=\"#basicsCollapseOne\" aria-expanded=\"true\" aria-controls=\"basicsCollapseOne\" class=\"btn-link btn-block d-flex card-btn py-3 text-lh-1 px-0 shadow-none rounded-0 bg-transparent border-0 font-weight-bold text-gray-90\" data-v-42178b5c><span class=\"text-gray-90 font-size-15\" data-v-42178b5c>Categories <i class=\"ml-2 ec ec-arrow-down-search\" data-v-42178b5c></i></span></button></div> "),_vm._ssrNode("<div id=\"basicsCollapseOne\" aria-labelledby=\"basicsHeadingOne\" data-parent=\"#basicsAccordion\" class=\"collapse vertical-menu v3 border-top-primary border-top border-width-2\" style=\"min-height: 500px\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"card-body p-0\" data-v-42178b5c>","</div>",[_vm._ssrNode("<nav class=\"js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized\" data-v-42178b5c>","</nav>",[_vm._ssrNode("<div id=\"navBar\" class=\"collapse navbar-collapse u-header__navbar-collapse\" data-v-42178b5c>","</div>",[_vm._ssrNode("<ul class=\"navbar-nav u-header__navbar-nav\" data-v-42178b5c>","</ul>",_vm._l((_vm.Categories),function(el,i){return _vm._ssrNode("<li data-event=\"hover\" data-animation-in=\"slideInUp\" data-animation-out=\"fadeOut\" data-position=\"left\" class=\"nav-item hs-has-mega-menu u-header__nav-item\" data-v-42178b5c>","</li>",[_vm._ssrNode("<a id=\"basicMegaMenu\" href=\"javascript:;\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link u-header__nav-link u-header__nav-link-toggle\" data-v-42178b5c>"+_vm._ssrEscape(_vm._s(Object.keys(el)[0]))+"</a> "),_vm._ssrNode("<div aria-labelledby=\"basicMegaMenu\" class=\"hs-mega-menu vmm-tfw u-header__sub-menu\" style=\"overflow-y: scroll; min-height: 500px\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"vmm-bg\" style=\"bottom: auto\" data-v-42178b5c><img"+(_vm._ssrAttr("src","https://textforeva.ru/categoryTree/download/" + Object.keys(el)[0] || false))+" alt=\"Image Description\" class=\"img-fluid\" style=\"width: 400px; height: 300px; opacity: 0.8\" data-v-42178b5c></div> "),_vm._ssrNode("<div class=\"row u-header__mega-menu-wrapper\" data-v-42178b5c>","</div>",_vm._l((el),function(cat,o){return _vm._ssrNode("<div data-v-42178b5c>","</div>",_vm._l((cat),function(fil,y){return _vm._ssrNode("<div class=\"col mb-3 mb-sm-0\" data-v-42178b5c>","</div>",[_c('NuxtLink',{staticClass:"u-header__sub-menu-title",attrs:{"to":'/shop?SCat?'+y}},[_vm._v(_vm._s(y))]),_vm._ssrNode(" "),_vm._ssrNode("<ul class=\"u-header__sub-menu-nav-group mb-3\" data-v-42178b5c>","</ul>",_vm._l((fil),function(fil2,l){return _vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__sub-menu-nav-link",attrs:{"to":'/shop?'+fil2}},[(!fil2.includes("not show"))?_c('div',[_vm._v(_vm._s(fil2))]):_vm._e()])],1)}),0)],2)}),0)}),0)],2)],2)}),0)])])])])],2)])],2)]),_vm._ssrNode(" <div class=\"col d-none d-xl-block\" data-v-42178b5c><form class=\"js-focus-state\" data-v-42178b5c><label for=\"searchproduct\" class=\"sr-only\" data-v-42178b5c>Search</label> <div class=\"input-group\" data-v-42178b5c><input type=\"email\" name=\"email\" id=\"searchproduct-item\" placeholder=\"Search for Products\" aria-label=\"Search for Products\" aria-describedby=\"searchProduct1\" required=\"required\""+(_vm._ssrAttr("value",(_vm.InputValue)))+" class=\"form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary\" data-v-42178b5c> <div class=\"input-group-append\" data-v-42178b5c><button type=\"button\" id=\"searchProduct1\" class=\"btn btn-primary height-40 py-2 px-3 rounded-right-pill\" data-v-42178b5c><span class=\"ec ec-search font-size-24\" data-v-42178b5c></span></button></div></div></form></div> "),_vm._ssrNode("<div class=\"col-auto position-static\" style=\"padding-left: 0\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"d-flex\" data-v-42178b5c>","</div>",[_vm._ssrNode("<ul class=\"d-flex list-unstyled mb-0\" data-v-42178b5c>","</ul>",[_vm._ssrNode("<li class=\"col d-xl-none px-2 px-sm-3 position-static\" data-v-42178b5c><a id=\"searchClassicInvoker\" href=\"javascript:;\" role=\"button\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Search\" aria-controls=\"searchClassic\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-target=\"#searchClassic\" data-unfold-type=\"css-animation\" data-unfold-duration=\"300\" data-unfold-delay=\"300\" data-unfold-hide-on-scroll=\"true\" data-unfold-animation-in=\"slideInUp\" data-unfold-animation-out=\"fadeOut\" class=\"font-size-22 text-gray-90 text-lh-1 btn-text-secondary\" data-v-42178b5c><span class=\"ec ec-search\" data-v-42178b5c></span></a> <div id=\"searchClassic\" aria-labelledby=\"searchClassicInvoker\" class=\"dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2\" data-v-42178b5c><form class=\"js-focus-state input-group px-3\" data-v-42178b5c><input type=\"search\" placeholder=\"Search Product\""+(_vm._ssrAttr("value",(_vm.InputValue)))+" class=\"form-control\" data-v-42178b5c> <div class=\"input-group-append\" data-v-42178b5c><button type=\"button\" class=\"btn btn-primary px-3\" data-v-42178b5c><i class=\"font-size-18 ec ec-search\" data-v-42178b5c></i></button></div></form></div></li> "),_vm._ssrNode("<li class=\"col pr-xl-0 px-2 px-sm-3\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"text-gray-90 position-relative d-flex ",attrs:{"to":"/cart","data-toggle":"tooltip","data-placement":"top","title":"Cart"}},[_c('i',{staticClass:"font-size-22 ec ec-shopping-bag"}),_vm._v(" "),_c('span',{staticClass:"width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12"},[_vm._v(_vm._s(_vm.AmountOfCartProducts))]),_vm._v(" "),_c('span',{staticClass:"Cost font-weight-bold font-size-16 text-gray-90 ml-4"},[_vm._v(_vm._s(_vm.Cost)+_vm._s('\xa0')+"тг.")])])],1)],2)])])],2)])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"container d-none d-xl-block\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"secondary-menu flex-horizontal-center position-relative pt-2\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"ml-wd-4 flex-shrink-0\" data-v-42178b5c><h6 class=\"font-weight-bold font-size-13 mb-0 mr-2\" data-v-42178b5c>Electro Best Selling: </h6></div> "),_vm._ssrNode("<nav class=\"js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space position-static\" data-v-42178b5c>","</nav>",[_vm._ssrNode("<div id=\"navBar\" class=\"collapse navbar-collapse u-header__navbar-collapse\" data-v-42178b5c>","</div>",[_vm._ssrNode("<ul class=\"navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap\" data-v-42178b5c>","</ul>",_vm._l((_vm.BestCategories),function(el,i){return _vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"nav-link u-header__nav-link",attrs:{"to":'/shop?FCat?'+Object.keys(el)[0]}},[_vm._v(_vm._s(Object.keys(el)[0]))])],1)}),0)])])],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"d-none d-xl-block bg-primary\" style=\"display: none !important\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"container\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"row align-items-stretch min-height-50\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"col-md-auto d-none d-xl-flex align-items-end\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"max-width-270 min-width-270\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div id=\"basicsAccordion\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"card border-0 rounded-0\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div id=\"basicsHeadingOne\" class=\"card-header bg-primary rounded-0 card-collapse border-0\" data-v-42178b5c><button type=\"button\" data-toggle=\"collapse\" data-target=\"#basicsCollapseOne\" aria-expanded=\"true\" aria-controls=\"basicsCollapseOne\" class=\"btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90\" data-v-42178b5c><span class=\"pl-1 text-gray-90\" data-v-42178b5c>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('AccordionTitle')))+"</span> <span class=\"text-gray-90 ml-3\" data-v-42178b5c><span class=\"ec ec-arrow-down-search\" data-v-42178b5c></span></span></button></div> "),_c('client-only')],2)])])]),_vm._ssrNode(" <div class=\"col align-self-center\" data-v-42178b5c><form class=\"js-focus-state\" data-v-42178b5c><label for=\"searchProduct\" class=\"sr-only\" data-v-42178b5c>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SearchSuggestion')))+"</label> <div class=\"input-group\" data-v-42178b5c><input type=\"email\" name=\"email\" id=\"searchProduct\" placeholder=\"Search for Products\" aria-label=\"Search for Products\" aria-describedby=\"searchProduct1\" required=\"required\""+(_vm._ssrAttr("value",(_vm.InputValue)))+" class=\"form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill\" data-v-42178b5c> <div class=\"input-group-append\" data-v-42178b5c><button type=\"button\" id=\"searchProduct1\" class=\"btn btn-dark height-40 py-2 px-3 rounded-right-pill\" data-v-42178b5c><span class=\"ec ec-search font-size-24\" data-v-42178b5c></span></button></div></div></form></div> "),_vm._ssrNode("<div class=\"col-md-auto align-self-center\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"d-flex\" data-v-42178b5c>","</div>",[_vm._ssrNode("<ul class=\"d-flex list-unstyled mb-0\" data-v-42178b5c>","</ul>",[_vm._ssrNode("<li class=\"col pr-0\" data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"text-gray-90 position-relative d-flex ",attrs:{"to":"/cart","data-toggle":"tooltip","data-placement":"top","title":_vm.localizeFilter('CartSuggestion')}},[_c('i',{staticClass:"font-size-22 ec ec-shopping-bag"}),_vm._v(" "),_c('span',{staticClass:"width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12"},[_vm._v(_vm._s(_vm.AmountOfCartProducts))]),_vm._v(" "),_c('span',{staticClass:"Cost font-weight-bold font-size-16 text-gray-90 ml-4"},[_vm._v(_vm._s(_vm.Cost)+_vm._s('\xa0')+"тг.")])])],1)])])])],2)])])],2),_vm._ssrNode(" "),_vm._ssrNode("<aside id=\"sidebarHeader\" aria-labelledby=\"sidebarHeaderInvoker\" class=\"u-sidebar u-sidebar--left\" data-v-42178b5c>","</aside>",[_vm._ssrNode("<div class=\"u-sidebar__scroller\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"u-sidebar__container\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"u-header-sidebar__footer-offset\" style=\"padding-bottom: 0\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div class=\"d-sm-none position-absolute top-0 right-0 z-index-2 pt-4 pr-4 bg-white\" data-v-42178b5c><button type=\"button\" aria-controls=\"sidebarHeader\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"click\" data-unfold-hide-on-scroll=\"false\" data-unfold-target=\"#sidebarHeader\" data-unfold-type=\"css-animation\" data-unfold-animation-in=\"fadeInLeft\" data-unfold-animation-out=\"fadeOutLeft\" data-unfold-duration=\"500\" class=\"close ml-auto\" data-v-42178b5c><span aria-hidden=\"true\" data-v-42178b5c><i class=\"ec ec-close-remove text-gray-90 font-size-20\" data-v-42178b5c></i></span></button></div> "),_vm._ssrNode("<div class=\"js-scrollbar u-sidebar__body\" data-v-42178b5c>","</div>",[_vm._ssrNode("<div id=\"headerSidebarContent\" class=\"u-sidebar__content u-header-sidebar__content\" data-v-42178b5c>","</div>",[_c('NuxtLink',{staticClass:"navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3",attrs:{"to":"/","aria-label":"Electro"}},[_c('svg',{staticStyle:{"margin-bottom":"0"},attrs:{"version":"1.1","x":"0px","y":"0px","width":"175.748px","height":"42.52px","viewBox":"0 0 175.748 42.52","enable-background":"new 0 0 175.748 42.52"}},[_c('ellipse',{staticClass:"ellipse-bg",attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#FDD700","cx":"170.05","cy":"36.341","rx":"5.32","ry":"5.367"}}),_vm._v(" "),_c('path',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#333E48","d":"M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056\r\n                                            C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187\r\n                                            c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731\r\n                                            c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733\r\n                                            c-0.719-0.2-1.969,0-3.01,0h-3.01c-0.238,0.273-0.625,0.431-0.725,0.847c-0.203,0.852,0,2.399,0,3.725\r\n                                            c0,1.393,0.045,2.748-0.055,3.725h-6.41c-0.184,0.237-0.629,0.434-0.725,0.791c-0.178,0.654,0,1.813,0,2.765v2.766\r\n                                            c0.232,0.188,0.439,0.64,0.779,0.733c0.777,0.216,2.109,0,3.234,0c1.154,0,2.291-0.045,3.176,0.057v21.277\r\n                                            c0.232,0.189,0.439,0.639,0.781,0.734c0.719,0.199,1.969,0,3.01,0h3.01c1.008-0.451,0.725-1.889,0.725-3.443\r\n                                            c-0.002-6.164-0.047-12.867,0.055-18.625h6.299c0.182-0.236,0.627-0.434,0.725-0.79c0.176-0.653,0-1.813,0-2.765V12.731z\r\n                                            M135.851,18.262c0.201-0.746,0-2.029,0-3.104v-3.104c-0.287-0.245-0.434-0.637-0.781-0.733c-0.824-0.229-1.992-0.044-2.898,0\r\n                                            c-2.158,0.104-4.506,0.675-5.74,1.411c-0.146-0.362-0.451-0.853-0.893-0.96c-0.693-0.169-1.859,0-2.842,0h-2.842\r\n                                            c-0.258,0.319-0.625,0.42-0.725,0.79c-0.223,0.82,0,2.338,0,3.443c0,8.109-0.002,16.635,0,24.381\r\n                                            c0.232,0.189,0.439,0.639,0.779,0.734c0.707,0.195,1.93,0,2.955,0h3.01c0.918-0.463,0.725-1.352,0.725-2.822V36.21\r\n                                            c-0.002-3.902-0.242-9.117,0-12.473c0.297-4.142,3.836-4.877,8.527-4.686C135.312,18.816,135.757,18.606,135.851,18.262z\r\n                                            M14.796,11.376c-5.472,0.262-9.443,3.178-11.76,7.056c-2.435,4.075-2.789,10.62-0.501,15.126c2.043,4.023,5.91,7.115,10.701,7.9\r\n                                            c6.051,0.992,10.992-1.219,14.324-3.838c-0.687-1.1-1.419-2.664-2.118-3.951c-0.398-0.734-0.652-1.486-1.616-1.467\r\n                                            c-1.942,0.787-4.272,2.262-7.134,2.145c-3.791-0.154-6.659-1.842-7.524-4.91h19.452c0.146-2.793,0.22-5.338-0.279-7.563\r\n                                            C26.961,15.728,22.503,11.008,14.796,11.376z M9,23.284c0.921-2.508,3.033-4.514,6.298-4.627c3.083-0.107,4.994,1.976,5.685,4.627\r\n                                            C17.119,23.38,12.865,23.38,9,23.284z M52.418,11.376c-5.551,0.266-9.395,3.142-11.76,7.056\r\n                                            c-2.476,4.097-2.829,10.493-0.557,15.069c1.997,4.021,5.895,7.156,10.646,7.957c6.068,1.023,11-1.227,14.379-3.781\r\n                                            c-0.479-0.896-0.875-1.742-1.393-2.709c-0.312-0.582-1.024-2.234-1.561-2.539c-0.912-0.52-1.428,0.135-2.23,0.508\r\n                                            c-0.564,0.262-1.223,0.523-1.672,0.676c-4.768,1.621-10.372,0.268-11.537-4.176h19.451c0.668-5.443-0.419-9.953-2.73-13.037\r\n                                            C61.197,13.388,57.774,11.12,52.418,11.376z M46.622,23.343c0.708-2.553,3.161-4.578,6.242-4.686\r\n                                            c3.08-0.107,5.08,1.953,5.686,4.686H46.622z M160.371,15.497c-2.455-2.453-6.143-4.291-10.869-4.064\r\n                                            c-2.268,0.109-4.297,0.65-6.02,1.524c-1.719,0.873-3.092,1.957-4.234,3.217c-2.287,2.519-4.164,6.004-3.902,11.007\r\n                                            c0.248,4.736,1.979,7.813,4.627,10.326c2.568,2.439,6.148,4.254,10.867,4.064c4.457-0.18,7.889-2.115,10.199-4.684\r\n                                            c2.469-2.746,4.012-5.971,3.959-11.063C164.949,21.134,162.732,17.854,160.371,15.497z M149.558,33.952\r\n                                            c-3.246-0.221-5.701-2.615-6.41-5.418c-0.174-0.689-0.26-1.25-0.4-2.166c-0.035-0.234,0.072-0.523-0.045-0.77\r\n                                            c0.682-3.698,2.912-6.257,6.799-6.547c2.543-0.189,4.258,0.735,5.52,1.863c1.322,1.182,2.303,2.715,2.451,4.967\r\n                                            C157.789,30.669,154.185,34.267,149.558,33.952z M88.812,29.55c-1.232,2.363-2.9,4.307-6.13,4.402\r\n                                            c-4.729,0.141-8.038-3.16-8.025-7.563c0.004-1.412,0.324-2.65,0.947-3.726c1.197-2.061,3.507-3.688,6.633-3.612\r\n                                            c3.222,0.079,4.966,1.708,6.632,3.668c1.328-1.059,2.529-1.948,3.9-2.99c0.416-0.315,1.076-0.688,1.227-1.072\r\n                                            c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846\r\n                                            c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377\r\n                                            c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z"}})])]),_vm._ssrNode(" "),_vm._ssrNode("<ul id=\"headerSidebarList\" class=\"u-header-collapse__nav\" data-v-42178b5c>","</ul>",[_vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__nav-link font-weight-bold",attrs:{"to":"/"}},[_vm._v("Home")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__nav-link font-weight-bold",attrs:{"to":"/cart"}},[_vm._v("Cart")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__nav-link font-weight-bold",attrs:{"to":"/about"}},[_vm._v("Adout Us")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__nav-link font-weight-bold",attrs:{"to":"/terms"}},[_vm._v("Terms")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__nav-link font-weight-bold",attrs:{"to":"/faq"}},[_vm._v("FAQ")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-42178b5c>","</li>",[_c('NuxtLink',{staticClass:"u-header-collapse__nav-link font-weight-bold",attrs:{"to":"/contact"}},[_vm._v("Contact Us")])],1),_vm._ssrNode(" "),_vm._l((_vm.Categories),function(el,i){return _vm._ssrNode("<li class=\"u-has-submenu u-header-collapse__submenu\" data-v-42178b5c>","</li>",[_vm._ssrNode("<a href=\"javascript:;\""+(_vm._ssrAttr("data-target",'#headerSidebarMoviesCollapse'+i))+" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\""+(_vm._ssrAttr("aria-controls",'#headerSidebarMoviesCollapse'+i))+" class=\"u-header-collapse__nav-link u-header-collapse__nav-pointer\" data-v-42178b5c>"+_vm._ssrEscape("\r\n                                            "+_vm._s(Object.keys(el)[0])+"\r\n                                        ")+"</a> "),_vm._ssrNode("<div"+(_vm._ssrAttr("id",'headerSidebarMoviesCollapse'+i))+" data-parent=\"#headerSidebarContent\" class=\"collapse\" data-v-42178b5c>","</div>",[_vm._ssrNode("<ul class=\"u-header-collapse__nav-list\" data-v-42178b5c>","</ul>",_vm._l((el),function(cat,o){return _vm._ssrNode("<li data-v-42178b5c>","</li>",[_vm._ssrNode("<div class=\"u-header-collapse__submenu-nav-link\" style=\"display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start\" data-v-42178b5c>","</div>",_vm._l((cat),function(fil,y){return _vm._ssrNode("<div data-v-42178b5c>","</div>",[_c('NuxtLink',{staticStyle:{"color":"#2f2f2f","font-size":"1.1em"},attrs:{"to":'/shop?SCat?' + y}},[_vm._v(_vm._s(y))]),_vm._ssrNode(" "),_vm._l((fil),function(fil2,l){return _vm._ssrNode("<div data-v-42178b5c>","</div>",[(!fil2.includes("not show"))?_c('NuxtLink',{staticStyle:{"color":"#b7b7b7"},attrs:{"to":'/shop?' + fil2}},[_vm._v(_vm._s(fil2))]):_vm._e()],1)})],2)}),0)])}),0)])],2)})],2)],2)])],2)])])])],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Header.vue?vue&type=template&id=4aa3d754&
+// CONCATENATED MODULE: ./src/components/Header.vue?vue&type=template&id=42178b5c&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(3);
+var external_vuex_ = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Header.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1195,12 +810,9 @@ var external_vuex_ = __webpack_require__(3);
 /* harmony default export */ var Headervue_type_script_lang_js_ = ({
   name: 'Header',
   data: () => ({
-    Component: 'Header'
+    Component: 'Header',
+    InputValue: ''
   }),
-
-  updated() {
-    console.log(1);
-  },
 
   mounted() {
     $(window).on('load', function () {
@@ -1273,11 +885,18 @@ var external_vuex_ = __webpack_require__(3);
 
     changeLang(lang) {
       this.$store.commit('lang/changeLang', lang);
+    },
+
+    InputSearch() {
+      this.$store.commit('SearchByQuery', this.InputValue);
+      this.InputValue = '';
+      this.$router.push('/shop');
     }
 
   },
   computed: { ...Object(external_vuex_["mapGetters"])({
-      Cart: 'cart/cart'
+      Cart: 'cart/cart',
+      BestCategories: 'BestCategories'
     }),
 
     Cost() {
@@ -1290,6 +909,10 @@ var external_vuex_ = __webpack_require__(3);
       if (false) { var stateCart; }
 
       return 0;
+    },
+
+    Categories() {
+      return this.$store.state.categories;
     }
 
   }
@@ -1303,7 +926,12 @@ var componentNormalizer = __webpack_require__(2);
 
 
 
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(29)
+if (style0.__inject__) style0.__inject__(context)
 
+}
 
 /* normalize component */
 
@@ -1312,9 +940,9 @@ var component = Object(componentNormalizer["a" /* default */])(
   render,
   staticRenderFns,
   false,
-  null,
-  null,
-  "3518de3d"
+  injectStyles,
+  "42178b5c",
+  "c0a97984"
   
 )
 
@@ -1332,12 +960,16 @@ installComponents(component, {Header: __webpack_require__(6).default})
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Footer.vue?vue&type=template&id=fc94449c&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('footer',[_vm._ssrNode("<div class=\"container d-none d-lg-block mb-3\">","</div>",[_vm._ssrNode("<div class=\"row\">","</div>",[_vm._ssrNode("<div class=\"col-wd-3 col-lg-4\">","</div>",[_vm._ssrNode("<div class=\"widget-column\">","</div>",[_vm._ssrNode("<div class=\"border-bottom border-color-1 mb-5\"><h3 class=\"section-title section-title__sm mb-0 pb-2 font-size-18\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('FirstCategory')))+"</h3></div> "),_vm._ssrNode("<ul class=\"list-unstyled products-group\">","</ul>",[_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img1.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Purple Wireless Headphones Solo 2 HD")])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto\"><div class=\"font-size-15\">$1149.00</div></div>")],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img2.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Powerbank 1130 mAh Blue")])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto\"><div class=\"font-size-15\">$210.00</div></div>")],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img3.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Nerocool EN52377 Dead Silence Gaming Cube Case")])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto\"><div class=\"font-size-15\">$180.00</div></div>")],2)],2)],2)],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-wd-3 col-lg-4\">","</div>",[_vm._ssrNode("<div class=\"border-bottom border-color-1 mb-5\"><h3 class=\"section-title section-title__sm mb-0 pb-2 font-size-18\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SecondCategory')))+"</h3></div> "),_vm._ssrNode("<ul class=\"list-unstyled products-group\">","</ul>",[_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img4.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Yellow Earphones Waterproof with Bluetooth")])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto flex-horizontal-center\"><ins class=\"font-size-15 text-decoration-none\">$110.00</ins> <del class=\"font-size-12 text-gray-9 ml-2\">$250.00</del></div>")],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img5.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Camera C430W 4k Waterproof")])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto flex-horizontal-center\"><ins class=\"font-size-15 text-decoration-none\">$899.00</ins> <del class=\"font-size-12 text-gray-9 ml-2\">$1200.00</del></div>")],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img6.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Smartphone 6S 32GB LTE")])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto flex-horizontal-center\"><ins class=\"font-size-15 text-decoration-none\">$2100.00</ins> <del class=\"font-size-12 text-gray-9 ml-2\">$3299.00</del></div>")],2)],2)],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-wd-3 col-lg-4\">","</div>",[_vm._ssrNode("<div class=\"border-bottom border-color-1 mb-5\"><h3 class=\"section-title section-title__sm mb-0 pb-2 font-size-18\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ThirdCategory')))+"</h3></div> "),_vm._ssrNode("<ul class=\"list-unstyled products-group\">","</ul>",[_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img7.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Smartwatch 2.0 LTE Wifi Waterproof")])],1),_vm._ssrNode(" <div class=\"text-warning mb-2\"><small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small></div> <div class=\"prodcut-price mt-auto\"><div class=\"font-size-15\">$725.00</div></div>")],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img8.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("22Mps Camera 6200U with 500GB SDcard")])],1),_vm._ssrNode(" <div class=\"text-warning mb-2\"><small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"far fa-star text-muted\"></small></div> <div class=\"prodcut-price mt-auto\"><div class=\"font-size-15\">$2999.00</div></div>")],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\">","</li>",[_vm._ssrNode("<div class=\"col-auto\">","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":"/product"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/75X75/img9.jpg","alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\">","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\">","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":"/product"}},[_vm._v("Full Color LaserJet Pro M452dn")])],1),_vm._ssrNode(" <div class=\"text-warning mb-2\"><small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"fas fa-star\"></small> <small class=\"far fa-star text-muted\"></small></div> <div class=\"prodcut-price mt-auto\"><div class=\"font-size-15\">$439.00</div></div>")],2)],2)],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-wd-3 d-none d-wd-block\">","</div>",[_c('NuxtLink',{staticClass:"d-block",attrs:{"to":"/shop"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/img/330X360/img1.jpg","alt":"Image Description"}})])],1)],2)]),_vm._ssrNode(" <div class=\"bg-primary py-3\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-7 mb-md-3 mb-lg-0\"><div class=\"row align-items-center\"><div class=\"col-auto flex-horizontal-center\"><i class=\"ec ec-newsletter font-size-40\"></i> <h2 class=\"font-size-20 mb-0 ml-3\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SignOnLetterTitle')))+"</h2></div> <div class=\"col my-4 my-md-0\"><h5 class=\"font-size-15 ml-4 mb-0\"><strong>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SignOnLetterEnding')))+"</strong></h5></div></div></div> <div class=\"col-lg-5\"><form class=\"js-validate js-form-message\"><label for=\"subscribeSrEmail\" class=\"sr-only\">Email address</label> <div class=\"input-group input-group-pill\"><input type=\"email\" name=\"email\" id=\"subscribeSrEmail\" placeholder=\"Email address\" aria-label=\"Email address\" aria-describedby=\"subscribeButton\" required=\"required\" data-msg=\"Please enter a valid email address.\" class=\"form-control border-0 height-40\"> <div class=\"input-group-append\"><button type=\"submit\" id=\"subscribeButton\" class=\"btn btn-dark btn-sm-wide height-40 py-2\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SubmitButton')))+"</button></div></div></form></div></div></div></div> "),_vm._ssrNode("<div class=\"pt-8 pb-4 bg-gray-13\">","</div>",[_vm._ssrNode("<div class=\"container mt-1\">","</div>",[_vm._ssrNode("<div class=\"row\">","</div>",[_vm._ssrNode("<div class=\"col-lg-5\">","</div>",[_vm._ssrNode("<div class=\"mb-6\">","</div>",[_c('NuxtLink',{staticClass:"d-inline-block",attrs:{"to":"#"}},[_c('svg',{attrs:{"version":"1.1","x":"0px","y":"0px","width":"156px","height":"37px","viewBox":"0 0 175.748 42.52","enable-background":"new 0 0 175.748 42.52"}},[_c('ellipse',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#FDD700","cx":"170.05","cy":"36.341","rx":"5.32","ry":"5.367"}}),_vm._v(" "),_c('path',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#333E48","d":"M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056\n                                    C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187\n                                    c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731\n                                    c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733\n                                    c-0.719-0.2-1.969,0-3.01,0h-3.01c-0.238,0.273-0.625,0.431-0.725,0.847c-0.203,0.852,0,2.399,0,3.725\n                                    c0,1.393,0.045,2.748-0.055,3.725h-6.41c-0.184,0.237-0.629,0.434-0.725,0.791c-0.178,0.654,0,1.813,0,2.765v2.766\n                                    c0.232,0.188,0.439,0.64,0.779,0.733c0.777,0.216,2.109,0,3.234,0c1.154,0,2.291-0.045,3.176,0.057v21.277\n                                    c0.232,0.189,0.439,0.639,0.781,0.734c0.719,0.199,1.969,0,3.01,0h3.01c1.008-0.451,0.725-1.889,0.725-3.443\n                                    c-0.002-6.164-0.047-12.867,0.055-18.625h6.299c0.182-0.236,0.627-0.434,0.725-0.79c0.176-0.653,0-1.813,0-2.765V12.731z\n                                    M135.851,18.262c0.201-0.746,0-2.029,0-3.104v-3.104c-0.287-0.245-0.434-0.637-0.781-0.733c-0.824-0.229-1.992-0.044-2.898,0\n                                    c-2.158,0.104-4.506,0.675-5.74,1.411c-0.146-0.362-0.451-0.853-0.893-0.96c-0.693-0.169-1.859,0-2.842,0h-2.842\n                                    c-0.258,0.319-0.625,0.42-0.725,0.79c-0.223,0.82,0,2.338,0,3.443c0,8.109-0.002,16.635,0,24.381\n                                    c0.232,0.189,0.439,0.639,0.779,0.734c0.707,0.195,1.93,0,2.955,0h3.01c0.918-0.463,0.725-1.352,0.725-2.822V36.21\n                                    c-0.002-3.902-0.242-9.117,0-12.473c0.297-4.142,3.836-4.877,8.527-4.686C135.312,18.816,135.757,18.606,135.851,18.262z\n                                    M14.796,11.376c-5.472,0.262-9.443,3.178-11.76,7.056c-2.435,4.075-2.789,10.62-0.501,15.126c2.043,4.023,5.91,7.115,10.701,7.9\n                                    c6.051,0.992,10.992-1.219,14.324-3.838c-0.687-1.1-1.419-2.664-2.118-3.951c-0.398-0.734-0.652-1.486-1.616-1.467\n                                    c-1.942,0.787-4.272,2.262-7.134,2.145c-3.791-0.154-6.659-1.842-7.524-4.91h19.452c0.146-2.793,0.22-5.338-0.279-7.563\n                                    C26.961,15.728,22.503,11.008,14.796,11.376z M9,23.284c0.921-2.508,3.033-4.514,6.298-4.627c3.083-0.107,4.994,1.976,5.685,4.627\n                                    C17.119,23.38,12.865,23.38,9,23.284z M52.418,11.376c-5.551,0.266-9.395,3.142-11.76,7.056\n                                    c-2.476,4.097-2.829,10.493-0.557,15.069c1.997,4.021,5.895,7.156,10.646,7.957c6.068,1.023,11-1.227,14.379-3.781\n                                    c-0.479-0.896-0.875-1.742-1.393-2.709c-0.312-0.582-1.024-2.234-1.561-2.539c-0.912-0.52-1.428,0.135-2.23,0.508\n                                    c-0.564,0.262-1.223,0.523-1.672,0.676c-4.768,1.621-10.372,0.268-11.537-4.176h19.451c0.668-5.443-0.419-9.953-2.73-13.037\n                                    C61.197,13.388,57.774,11.12,52.418,11.376z M46.622,23.343c0.708-2.553,3.161-4.578,6.242-4.686\n                                    c3.08-0.107,5.08,1.953,5.686,4.686H46.622z M160.371,15.497c-2.455-2.453-6.143-4.291-10.869-4.064\n                                    c-2.268,0.109-4.297,0.65-6.02,1.524c-1.719,0.873-3.092,1.957-4.234,3.217c-2.287,2.519-4.164,6.004-3.902,11.007\n                                    c0.248,4.736,1.979,7.813,4.627,10.326c2.568,2.439,6.148,4.254,10.867,4.064c4.457-0.18,7.889-2.115,10.199-4.684\n                                    c2.469-2.746,4.012-5.971,3.959-11.063C164.949,21.134,162.732,17.854,160.371,15.497z M149.558,33.952\n                                    c-3.246-0.221-5.701-2.615-6.41-5.418c-0.174-0.689-0.26-1.25-0.4-2.166c-0.035-0.234,0.072-0.523-0.045-0.77\n                                    c0.682-3.698,2.912-6.257,6.799-6.547c2.543-0.189,4.258,0.735,5.52,1.863c1.322,1.182,2.303,2.715,2.451,4.967\n                                    C157.789,30.669,154.185,34.267,149.558,33.952z M88.812,29.55c-1.232,2.363-2.9,4.307-6.13,4.402\n                                    c-4.729,0.141-8.038-3.16-8.025-7.563c0.004-1.412,0.324-2.65,0.947-3.726c1.197-2.061,3.507-3.688,6.633-3.612\n                                    c3.222,0.079,4.966,1.708,6.632,3.668c1.328-1.059,2.529-1.948,3.9-2.99c0.416-0.315,1.076-0.688,1.227-1.072\n                                    c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846\n                                    c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377\n                                    c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z"}})])])],1),_vm._ssrNode(" <div class=\"mb-4\"><div class=\"row no-gutters\"><div class=\"col-auto\"><i class=\"ec ec-support text-primary font-size-56\"></i></div> <div class=\"col pl-3\"><div class=\"font-size-13 font-weight-light\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('FirstQuestion')))+"</div> <a"+(_vm._ssrAttr("href",_vm.localizeFilter('FNumber')))+" class=\"font-size-20 text-gray-90\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('FNumber')))+"</a>, <a"+(_vm._ssrAttr("href",_vm.localizeFilter('SNumber')))+" class=\"font-size-20 text-gray-90\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SNumber')))+"</a></div></div></div> <div class=\"mb-4\"><h6 class=\"mb-1 font-weight-bold\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ContactInfoTitle')))+"</h6> <address>"+_vm._ssrEscape("\n                            "+_vm._s(_vm.localizeFilter('ContactInfoValue'))+"\n                        ")+"</address></div> "),_vm._ssrNode("<div class=\"my-4 my-md-4\">","</div>",[_vm._ssrNode("<ul class=\"list-inline mb-0 opacity-7\">","</ul>",[_vm._ssrNode("<li class=\"list-inline-item mr-0\">","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-facebook-f btn-icon__inner"})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"list-inline-item mr-0\">","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-google btn-icon__inner"})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"list-inline-item mr-0\">","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-twitter btn-icon__inner"})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"list-inline-item mr-0\">","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-github btn-icon__inner"})])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-lg-7\">","</div>",[_vm._ssrNode("<div class=\"row\">","</div>",[_vm._ssrNode("<div class=\"col-12 col-md mb-4 mb-md-0\">","</div>",[_vm._ssrNode("<h6 class=\"mb-3 font-weight-bold\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('CategoriesTitle')))+"</h6> "),_vm._ssrNode("<ul class=\"list-group list-group-flush list-group-borderless mb-0 list-group-transparent\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Laptops & Computers")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Cameras & Photography")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Smart Phones & Tablets")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Video Games & Consoles")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("TV & Audio")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Gadgets")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Car Electronic & GPS")])],1)],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-12 col-md mb-4 mb-md-0\">","</div>",[_vm._ssrNode("<ul class=\"list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Printers & Ink")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Software")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Office Supplies")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Computer Components")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/product"}},[_vm._v("Accesories")])],1)],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-12 col-md mb-4 mb-md-0\">","</div>",[_vm._ssrNode("<h6 class=\"mb-3 font-weight-bold\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('OtherInfoTitle')))+"</h6> "),_vm._ssrNode("<ul class=\"list-group list-group-flush list-group-borderless mb-0 list-group-transparent\">","</ul>",[_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/terms"}},[_vm._v("Customer Service")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/terms"}},[_vm._v("Returns / Exchange")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/faq"}},[_vm._v("FAQs")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/terms"}},[_vm._v("Product Support")])],1)],2)],2)],2)])],2)])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"bg-gray-14 py-2\">","</div>",[_vm._ssrNode("<div class=\"container\">","</div>",[_vm._ssrNode("<div class=\"flex-center-between d-block d-md-flex\">","</div>",[_vm._ssrNode("<div class=\"mb-3 mb-md-0\">","</div>",[_vm._ssrNode("© "),_c('NuxtLink',{staticClass:"font-weight-bold text-gray-90",attrs:{"to":"#"}},[_vm._v(_vm._s(_vm.localizeFilter('BottomCompanyName')))]),_vm._ssrNode(_vm._ssrEscape(_vm._s(_vm.localizeFilter('BottomMessage'))))],2),_vm._ssrNode(" <div class=\"text-md-right\"><span class=\"d-inline-block bg-white border rounded p-1\"><img src=\"/img/100X60/img1.jpg\" alt=\"Image Description\" class=\"max-width-5\"></span> <span class=\"d-inline-block bg-white border rounded p-1\"><img src=\"/img/100X60/img2.jpg\" alt=\"Image Description\" class=\"max-width-5\"></span> <span class=\"d-inline-block bg-white border rounded p-1\"><img src=\"/img/100X60/img3.jpg\" alt=\"Image Description\" class=\"max-width-5\"></span> <span class=\"d-inline-block bg-white border rounded p-1\"><img src=\"/img/100X60/img4.jpg\" alt=\"Image Description\" class=\"max-width-5\"></span> <span class=\"d-inline-block bg-white border rounded p-1\"><img src=\"/img/100X60/img5.jpg\" alt=\"Image Description\" class=\"max-width-5\"></span></div>")],2)])])],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Footer.vue?vue&type=template&id=5fb958e8&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('footer',[_vm._ssrNode("<div class=\"container d-none d-lg-block mb-3\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"row\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"col-wd-3 col-lg-4\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"widget-column\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"border-bottom border-color-1 mb-5\" data-v-5fb958e8><h3 class=\"section-title section-title__sm mb-0 pb-2 font-size-18\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('FirstCategory')))+"</h3></div> "),_vm._ssrNode("<ul class=\"list-unstyled products-group\" data-v-5fb958e8>","</ul>",_vm._l((_vm.popularProducts.slice(0,3)),function(el,i){return _vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\" data-v-5fb958e8>","</li>",[_vm._ssrNode("<div class=\"col-auto\" data-v-5fb958e8>","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":'/product?id='+el.offerData.kaspi_id}},[_c('img',{staticClass:"img-fluid",attrs:{"src":el.offerData.images[0],"alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\" data-v-5fb958e8>","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":'/product?id='+el.offerData.kaspi_id}},[_vm._v(_vm._s(el.offerData.kaspi_name))])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto\" data-v-5fb958e8><div class=\"font-size-15\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(el.offerData.price)+" тг.")+"</div></div>")],2)],2)}),0)],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-wd-3 col-lg-4\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"border-bottom border-color-1 mb-5\" data-v-5fb958e8><h3 class=\"section-title section-title__sm mb-0 pb-2 font-size-18\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SecondCategory')))+"</h3></div> "),_vm._ssrNode("<ul class=\"list-unstyled products-group\" data-v-5fb958e8>","</ul>",_vm._l((_vm.popularProducts.slice(4,7)),function(el,i){return _vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\" data-v-5fb958e8>","</li>",[_vm._ssrNode("<div class=\"col-auto\" data-v-5fb958e8>","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":'/product?id='+el.offerData.kaspi_id}},[_c('img',{staticClass:"img-fluid",attrs:{"src":el.offerData.images[0],"alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\" data-v-5fb958e8>","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":'/product?id='+el.offerData.kaspi_id}},[_vm._v(_vm._s(el.offerData.kaspi_name))])],1),_vm._ssrNode(" <div class=\"prodcut-price mt-auto\" data-v-5fb958e8><div class=\"font-size-15\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(el.offerData.price)+" тг.")+"</div></div>")],2)],2)}),0)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-wd-3 col-lg-4\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"border-bottom border-color-1 mb-5\" data-v-5fb958e8><h3 class=\"section-title section-title__sm mb-0 pb-2 font-size-18\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ThirdCategory')))+"</h3></div> "),_vm._ssrNode("<ul class=\"list-unstyled products-group\" data-v-5fb958e8>","</ul>",_vm._l((_vm.popularProducts.slice(7,10)),function(el,i){return _vm._ssrNode("<li class=\"product-item product-item__list row no-gutters mb-6 remove-divider\" data-v-5fb958e8>","</li>",[_vm._ssrNode("<div class=\"col-auto\" data-v-5fb958e8>","</div>",[_c('NuxtLink',{staticClass:"d-block width-75 text-center",attrs:{"to":'/product?id='+el.offerData.kaspi_id}},[_c('img',{staticClass:"img-fluid",attrs:{"src":el.offerData.images[0],"alt":"Image Description"}})])],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col pl-4 d-flex flex-column\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<h5 class=\"product-item__title mb-0\" data-v-5fb958e8>","</h5>",[_c('NuxtLink',{staticClass:"text-blue font-weight-bold",attrs:{"to":'/product?id='+el.offerData.kaspi_id}},[_vm._v(_vm._s(el.offerData.kaspi_name))])],1),_vm._ssrNode(" <div class=\"text-warning mb-2\" data-v-5fb958e8>"+(_vm._ssrList((Math.floor(el.offerData.kaspi_rating)),function(fil,o){return ("<small class=\"fas fa-star\" data-v-5fb958e8></small>")}))+" "+(_vm._ssrList((5 - Math.floor(el.offerData.kaspi_rating)),function(fil,o){return ("<small class=\"fas fa-star text-muted\" data-v-5fb958e8></small>")}))+"</div> <div class=\"prodcut-price mt-auto\" data-v-5fb958e8><div class=\"font-size-15\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(el.offerData.price)+" тг.")+"</div></div>")],2)],2)}),0)],2),_vm._ssrNode(" <div class=\"col-wd-3 d-none d-wd-block\" data-v-5fb958e8><img src=\"/img/330X360/img1.jpg\" alt=\"Image Description\" class=\"img-fluid d-block img360x330\" data-v-5fb958e8></div>")],2)]),_vm._ssrNode(" <div class=\"bg-primary py-3\" data-v-5fb958e8><div class=\"container\" data-v-5fb958e8><div class=\"row align-items-center\" data-v-5fb958e8><div class=\"col-lg-7 mb-md-3 mb-lg-0\" data-v-5fb958e8><div class=\"row align-items-center\" data-v-5fb958e8><div class=\"col-auto flex-horizontal-center\" data-v-5fb958e8><i class=\"ec ec-newsletter font-size-40\" data-v-5fb958e8></i> <h2 class=\"font-size-20 mb-0 ml-3\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SignOnLetterTitle')))+"</h2></div> <div class=\"col my-4 my-md-0\" data-v-5fb958e8><h5 class=\"font-size-15 ml-4 mb-0\" data-v-5fb958e8><strong data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SignOnLetterEnding')))+"</strong></h5></div></div></div> <div class=\"col-lg-5\" data-v-5fb958e8><div data-v-5fb958e8><label class=\"sr-only\" data-v-5fb958e8>Email address</label> <div class=\"input-group input-group-pill\" data-v-5fb958e8><input type=\"email\" name=\"email\" placeholder=\"Email address\" aria-label=\"Email address\" required=\"required\" data-msg=\"Please enter a valid email address.\" class=\"form-control border-0 height-40\" data-v-5fb958e8> <div class=\"input-group-append\" data-v-5fb958e8><button class=\"btn btn-dark btn-sm-wide height-40 py-2\" style=\"cursor: pointer\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SubmitButton')))+"</button></div></div></div></div></div></div></div> "),_vm._ssrNode("<div class=\"pt-8 pb-4 bg-gray-13\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"container mt-1\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"row\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"col-lg-5\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"mb-6\" data-v-5fb958e8>","</div>",[_c('NuxtLink',{staticClass:"d-inline-block",attrs:{"to":"#"}},[_c('svg',{attrs:{"version":"1.1","x":"0px","y":"0px","width":"156px","height":"37px","viewBox":"0 0 175.748 42.52","enable-background":"new 0 0 175.748 42.52"}},[_c('ellipse',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#FDD700","cx":"170.05","cy":"36.341","rx":"5.32","ry":"5.367"}}),_vm._v(" "),_c('path',{attrs:{"fill-rule":"evenodd","clip-rule":"evenodd","fill":"#333E48","d":"M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056\n                                    C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187\n                                    c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731\n                                    c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733\n                                    c-0.719-0.2-1.969,0-3.01,0h-3.01c-0.238,0.273-0.625,0.431-0.725,0.847c-0.203,0.852,0,2.399,0,3.725\n                                    c0,1.393,0.045,2.748-0.055,3.725h-6.41c-0.184,0.237-0.629,0.434-0.725,0.791c-0.178,0.654,0,1.813,0,2.765v2.766\n                                    c0.232,0.188,0.439,0.64,0.779,0.733c0.777,0.216,2.109,0,3.234,0c1.154,0,2.291-0.045,3.176,0.057v21.277\n                                    c0.232,0.189,0.439,0.639,0.781,0.734c0.719,0.199,1.969,0,3.01,0h3.01c1.008-0.451,0.725-1.889,0.725-3.443\n                                    c-0.002-6.164-0.047-12.867,0.055-18.625h6.299c0.182-0.236,0.627-0.434,0.725-0.79c0.176-0.653,0-1.813,0-2.765V12.731z\n                                    M135.851,18.262c0.201-0.746,0-2.029,0-3.104v-3.104c-0.287-0.245-0.434-0.637-0.781-0.733c-0.824-0.229-1.992-0.044-2.898,0\n                                    c-2.158,0.104-4.506,0.675-5.74,1.411c-0.146-0.362-0.451-0.853-0.893-0.96c-0.693-0.169-1.859,0-2.842,0h-2.842\n                                    c-0.258,0.319-0.625,0.42-0.725,0.79c-0.223,0.82,0,2.338,0,3.443c0,8.109-0.002,16.635,0,24.381\n                                    c0.232,0.189,0.439,0.639,0.779,0.734c0.707,0.195,1.93,0,2.955,0h3.01c0.918-0.463,0.725-1.352,0.725-2.822V36.21\n                                    c-0.002-3.902-0.242-9.117,0-12.473c0.297-4.142,3.836-4.877,8.527-4.686C135.312,18.816,135.757,18.606,135.851,18.262z\n                                    M14.796,11.376c-5.472,0.262-9.443,3.178-11.76,7.056c-2.435,4.075-2.789,10.62-0.501,15.126c2.043,4.023,5.91,7.115,10.701,7.9\n                                    c6.051,0.992,10.992-1.219,14.324-3.838c-0.687-1.1-1.419-2.664-2.118-3.951c-0.398-0.734-0.652-1.486-1.616-1.467\n                                    c-1.942,0.787-4.272,2.262-7.134,2.145c-3.791-0.154-6.659-1.842-7.524-4.91h19.452c0.146-2.793,0.22-5.338-0.279-7.563\n                                    C26.961,15.728,22.503,11.008,14.796,11.376z M9,23.284c0.921-2.508,3.033-4.514,6.298-4.627c3.083-0.107,4.994,1.976,5.685,4.627\n                                    C17.119,23.38,12.865,23.38,9,23.284z M52.418,11.376c-5.551,0.266-9.395,3.142-11.76,7.056\n                                    c-2.476,4.097-2.829,10.493-0.557,15.069c1.997,4.021,5.895,7.156,10.646,7.957c6.068,1.023,11-1.227,14.379-3.781\n                                    c-0.479-0.896-0.875-1.742-1.393-2.709c-0.312-0.582-1.024-2.234-1.561-2.539c-0.912-0.52-1.428,0.135-2.23,0.508\n                                    c-0.564,0.262-1.223,0.523-1.672,0.676c-4.768,1.621-10.372,0.268-11.537-4.176h19.451c0.668-5.443-0.419-9.953-2.73-13.037\n                                    C61.197,13.388,57.774,11.12,52.418,11.376z M46.622,23.343c0.708-2.553,3.161-4.578,6.242-4.686\n                                    c3.08-0.107,5.08,1.953,5.686,4.686H46.622z M160.371,15.497c-2.455-2.453-6.143-4.291-10.869-4.064\n                                    c-2.268,0.109-4.297,0.65-6.02,1.524c-1.719,0.873-3.092,1.957-4.234,3.217c-2.287,2.519-4.164,6.004-3.902,11.007\n                                    c0.248,4.736,1.979,7.813,4.627,10.326c2.568,2.439,6.148,4.254,10.867,4.064c4.457-0.18,7.889-2.115,10.199-4.684\n                                    c2.469-2.746,4.012-5.971,3.959-11.063C164.949,21.134,162.732,17.854,160.371,15.497z M149.558,33.952\n                                    c-3.246-0.221-5.701-2.615-6.41-5.418c-0.174-0.689-0.26-1.25-0.4-2.166c-0.035-0.234,0.072-0.523-0.045-0.77\n                                    c0.682-3.698,2.912-6.257,6.799-6.547c2.543-0.189,4.258,0.735,5.52,1.863c1.322,1.182,2.303,2.715,2.451,4.967\n                                    C157.789,30.669,154.185,34.267,149.558,33.952z M88.812,29.55c-1.232,2.363-2.9,4.307-6.13,4.402\n                                    c-4.729,0.141-8.038-3.16-8.025-7.563c0.004-1.412,0.324-2.65,0.947-3.726c1.197-2.061,3.507-3.688,6.633-3.612\n                                    c3.222,0.079,4.966,1.708,6.632,3.668c1.328-1.059,2.529-1.948,3.9-2.99c0.416-0.315,1.076-0.688,1.227-1.072\n                                    c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846\n                                    c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377\n                                    c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z"}})])])],1),_vm._ssrNode(" <div class=\"mb-4\" data-v-5fb958e8><div class=\"row no-gutters\" data-v-5fb958e8><div class=\"col-auto\" data-v-5fb958e8><i class=\"ec ec-support text-primary font-size-56\" data-v-5fb958e8></i></div> <div class=\"col pl-3\" data-v-5fb958e8><div class=\"font-size-13 font-weight-light\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('FirstQuestion')))+"</div> <a"+(_vm._ssrAttr("href",_vm.localizeFilter('FNumber')))+" class=\"font-size-20 text-gray-90\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('FNumber')))+"</a>, <a"+(_vm._ssrAttr("href",_vm.localizeFilter('SNumber')))+" class=\"font-size-20 text-gray-90\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('SNumber')))+"</a></div></div></div> <div class=\"mb-4\" data-v-5fb958e8><h6 class=\"mb-1 font-weight-bold\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ContactInfoTitle')))+"</h6> <address data-v-5fb958e8>"+_vm._ssrEscape("\n                            "+_vm._s(_vm.localizeFilter('ContactInfoValue'))+"\n                        ")+"</address></div> "),_vm._ssrNode("<div class=\"my-4 my-md-4\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<ul class=\"list-inline mb-0 opacity-7\" data-v-5fb958e8>","</ul>",[_vm._ssrNode("<li class=\"list-inline-item mr-0\" data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-facebook-f btn-icon__inner"})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"list-inline-item mr-0\" data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-google btn-icon__inner"})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"list-inline-item mr-0\" data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-twitter btn-icon__inner"})])],1),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"list-inline-item mr-0\" data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle",attrs:{"to":"#"}},[_c('span',{staticClass:"fab fa-github btn-icon__inner"})])],1)],2)])],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-lg-7\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"row\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"col-12 col-md mb-4 mb-md-0\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<h6 class=\"mb-3 font-weight-bold\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('CategoriesTitle')))+"</h6> "),_vm._ssrNode("<ul class=\"list-group list-group-flush list-group-borderless mb-0 list-group-transparent\" data-v-5fb958e8>","</ul>",_vm._l((this.$store.state.categories),function(el,i){return _vm._ssrNode("<li data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":'/shop?FCat?'+Object.keys(el)[0]}},[_vm._v(_vm._s(Object.keys(el)[0]))])],1)}),0)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"col-12 col-md mb-4 mb-md-0\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<h6 class=\"mb-3 font-weight-bold\" data-v-5fb958e8>"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('OtherInfoTitle')))+"</h6> "),_vm._ssrNode("<ul class=\"list-group list-group-flush list-group-borderless mb-0 list-group-transparent\" data-v-5fb958e8>","</ul>",[_vm._ssrNode("<li data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/terms"}},[_vm._v("Customer Service")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/terms"}},[_vm._v("Returns / Exchange")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/faq"}},[_vm._v("FAQs")])],1),_vm._ssrNode(" "),_vm._ssrNode("<li data-v-5fb958e8>","</li>",[_c('NuxtLink',{staticClass:"list-group-item list-group-item-action",attrs:{"to":"/terms"}},[_vm._v("Product Support")])],1)],2)],2),_vm._ssrNode(" <div class=\"col-12 col-md mb-4 mb-md-0\" data-v-5fb958e8><h6 class=\"mb-3 font-weight-bold\" data-v-5fb958e8>Language</h6> <li class=\"list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single\" data-v-5fb958e8><div class=\"d-flex align-items-center\" data-v-5fb958e8><div class=\"position-relative\" data-v-5fb958e8><a id=\"languageDropdownInvoker2\" href=\"javascript:;\" role=\"button\" aria-controls=\"languageDropdown2\" aria-haspopup=\"true\" aria-expanded=\"false\" data-unfold-event=\"hover\" data-unfold-target=\"#languageDropdown2\" data-unfold-type=\"css-animation\" data-unfold-duration=\"300\" data-unfold-delay=\"300\" data-unfold-hide-on-scroll=\"true\" data-unfold-animation-in=\"slideInUp\" data-unfold-animation-out=\"fadeOut\" class=\"dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal\" data-v-5fb958e8><span class=\"d-sm-inline-flex align-items-center\" data-v-5fb958e8><i class=\"ec ec-dollar mr-1\" data-v-5fb958e8></i>"+_vm._ssrEscape(_vm._s(this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'))+"</span></a> <div id=\"languageDropdown2\" aria-labelledby=\"languageDropdownInvoker2\" class=\"dropdown-menu dropdown-unfold\" data-v-5fb958e8><div class=\"dropdown-item\" style=\"cursor: pointer\" data-v-5fb958e8>English</div> <div class=\"dropdown-item\" style=\"cursor: pointer\" data-v-5fb958e8>Russian</div> <div class=\"dropdown-item\" style=\"cursor: pointer\" data-v-5fb958e8>Kazakh‎</div></div></div></div></li></div>")],2)])],2)])]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"bg-gray-14 py-2\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"container\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"flex-center-between d-block d-md-flex\" data-v-5fb958e8>","</div>",[_vm._ssrNode("<div class=\"mb-3 mb-md-0\" data-v-5fb958e8>","</div>",[_vm._ssrNode("© "),_c('NuxtLink',{staticClass:"font-weight-bold text-gray-90",attrs:{"to":"#"}},[_vm._v(_vm._s(_vm.localizeFilter('BottomCompanyName')))]),_vm._ssrNode(_vm._ssrEscape(_vm._s(_vm.localizeFilter('BottomMessage'))))],2),_vm._ssrNode(" <div class=\"text-md-right\" data-v-5fb958e8><span class=\"d-inline-block bg-white border rounded p-1\" data-v-5fb958e8><img src=\"/img/100X60/img1.jpg\" alt=\"Image Description\" class=\"max-width-5\" data-v-5fb958e8></span> <span class=\"d-inline-block bg-white border rounded p-1\" data-v-5fb958e8><img src=\"/img/100X60/img2.jpg\" alt=\"Image Description\" class=\"max-width-5\" data-v-5fb958e8></span> <span class=\"d-inline-block bg-white border rounded p-1\" data-v-5fb958e8><img src=\"/img/100X60/img3.jpg\" alt=\"Image Description\" class=\"max-width-5\" data-v-5fb958e8></span> <span class=\"d-inline-block bg-white border rounded p-1\" data-v-5fb958e8><img src=\"/img/100X60/img4.jpg\" alt=\"Image Description\" class=\"max-width-5\" data-v-5fb958e8></span> <span class=\"d-inline-block bg-white border rounded p-1\" data-v-5fb958e8><img src=\"/img/100X60/img5.jpg\" alt=\"Image Description\" class=\"max-width-5\" data-v-5fb958e8></span></div>")],2)])])],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Footer.vue?vue&type=template&id=fc94449c&
+// CONCATENATED MODULE: ./src/components/Footer.vue?vue&type=template&id=5fb958e8&scoped=true&
+
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__(3);
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Footer.vue?vue&type=script&lang=js&
 //
@@ -1622,83 +1254,12 @@ var staticRenderFns = []
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ var Footervue_type_script_lang_js_ = ({
   data() {
     return {
-      Component: 'Footer'
+      Component: 'Footer',
+      popularProducts: []
     };
   },
 
@@ -1707,9 +1268,85 @@ var staticRenderFns = []
       var _this$$store$state$la, _this$$store$state$la2, _this$$store$state$la3, _this$$store$state$la4, _this$$store$state$la5, _this$$store$state$la6, _this$$store$state$la7, _this$$store$state$la8, _this$$store$state$la9, _this$$store$state$la10, _this$$store$state$la11, _this$$store$state$la12;
 
       if (key3) return ((_this$$store$state$la = this.$store.state.lang.locales) === null || _this$$store$state$la === void 0 ? void 0 : (_this$$store$state$la2 = _this$$store$state$la[this.$store.state.lang.lang]) === null || _this$$store$state$la2 === void 0 ? void 0 : (_this$$store$state$la3 = _this$$store$state$la2[this.Component]) === null || _this$$store$state$la3 === void 0 ? void 0 : (_this$$store$state$la4 = _this$$store$state$la3[key]) === null || _this$$store$state$la4 === void 0 ? void 0 : (_this$$store$state$la5 = _this$$store$state$la4[key2]) === null || _this$$store$state$la5 === void 0 ? void 0 : _this$$store$state$la5[key3]) || ``;else if (key2) return ((_this$$store$state$la6 = this.$store.state.lang.locales) === null || _this$$store$state$la6 === void 0 ? void 0 : (_this$$store$state$la7 = _this$$store$state$la6[this.$store.state.lang.lang]) === null || _this$$store$state$la7 === void 0 ? void 0 : (_this$$store$state$la8 = _this$$store$state$la7[this.Component]) === null || _this$$store$state$la8 === void 0 ? void 0 : (_this$$store$state$la9 = _this$$store$state$la8[key]) === null || _this$$store$state$la9 === void 0 ? void 0 : _this$$store$state$la9[key2]) || ``;else return ((_this$$store$state$la10 = this.$store.state.lang.locales) === null || _this$$store$state$la10 === void 0 ? void 0 : (_this$$store$state$la11 = _this$$store$state$la10[this.$store.state.lang.lang]) === null || _this$$store$state$la11 === void 0 ? void 0 : (_this$$store$state$la12 = _this$$store$state$la11[this.Component]) === null || _this$$store$state$la12 === void 0 ? void 0 : _this$$store$state$la12[key]) || ``;
+    },
+
+    changeLang(lang) {
+      this.$store.commit('lang/changeLang', lang);
     }
 
+  },
+
+  created() {
+    external_axios_default.a.get('https://textforeva.ru/storage/mostPopular/products/25').then(response => {
+      console.log(response);
+      this.popularProducts = response.data.reverse();
+    }).catch(function (error) {
+      console.log(error);
+    });
+  },
+
+  mounted() {
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        direction: 'horizontal',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+    });
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header')); // initialization of animation
+
+      $.HSCore.components.HSOnScrollAnimation.init('[data-animation]'); // initialization of unfold component
+
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      }); // initialization of forms
+
+      $.HSCore.components.HSFocusState.init(); // initialization of form validation
+
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      }); // initialization of show animations
+
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link'); // initialization of hamburgers
+
+      $.HSCore.components.HSHamburgers.init('#hamburgerTrigger'); // initialization of unfold component
+
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        beforeClose: function () {
+          $('#hamburgerTrigger').removeClass('is-active');
+        },
+        afterClose: function () {
+          $('#headerSidebarList .collapse.show').collapse('hide');
+        }
+      });
+      $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
+        e.preventDefault();
+        var target = $(this).data('target');
+
+        if ($(this).attr('aria-expanded') === "true") {
+          $(target).collapse('hide');
+        } else {
+          $(target).collapse('show');
+        }
+      }); // initialization of unfold component
+
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]')); // initialization of select picker
+
+      $.HSCore.components.HSSelectPicker.init('.js-select');
+    });
   }
+
 });
 // CONCATENATED MODULE: ./src/components/Footer.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_Footervue_type_script_lang_js_ = (Footervue_type_script_lang_js_); 
@@ -1720,7 +1357,12 @@ var componentNormalizer = __webpack_require__(2);
 
 
 
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(30)
+if (style0.__inject__) style0.__inject__(context)
 
+}
 
 /* normalize component */
 
@@ -1729,9 +1371,9 @@ var component = Object(componentNormalizer["a" /* default */])(
   render,
   staticRenderFns,
   false,
-  null,
-  null,
-  "13e67a4b"
+  injectStyles,
+  "5fb958e8",
+  "7e78df4c"
   
 )
 
@@ -1767,48 +1409,68 @@ module.exports = {
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = require("node-fetch");
+// Exports
+module.exports = {
+
+};
+
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = require("vue-meta");
+// Exports
+module.exports = {
+
+};
+
 
 /***/ }),
 /* 13 */
-/***/ (function(module) {
+/***/ (function(module, exports) {
 
-module.exports = JSON.parse("{\"Header\":{\"Greeting\":\"Привет Мир\",\"AboutUs\":\"About Us\",\"FAQs\":\"FAQs\",\"ContactUs\":\"Contact Us\",\"Support\":\"Support\",\"PhoneNumber\":\"(+800) 856 800 604\",\"E-mailTitle\":\"E-mail: \",\"E-mailValue\":\"info@electro.com\",\"AccordionTitle\":\"Shop By Department\",\"SearchInputPlaceholder\":\"Search for Products\",\"SearchSuggestion\":\"Search\",\"CartSuggestion\":\"Cart\"}}");
+module.exports = require("node-fetch");
 
 /***/ }),
 /* 14 */
-/***/ (function(module) {
+/***/ (function(module, exports) {
 
-module.exports = JSON.parse("{\"Header\":{\"Greeting\":\"Welcome to Worldwide Electronics Store\",\"AboutUs\":\"About Us\",\"FAQs\":\"FAQs\",\"ContactUs\":\"Contact Us\",\"Support\":\"Support\",\"PhoneNumber\":\"(+800) 856 800 604\",\"E-mailTitle\":\"E-mail: \",\"E-mailValue\":\"info@electro.com\",\"AccordionTitle\":\"Shop By Department\",\"SearchInputPlaceholder\":\"Search for Products\",\"SearchSuggestion\":\"Search\",\"CartSuggestion\":\"Cart\"},\"Footer\":{\"FirstCategory\":\"Featured Products\",\"SecondCategory\":\"Onsale Products\",\"ThirdCategory\":\"Top Rated Products\",\"SignOnLetterTitle\":\"Sign up to Newsletter\",\"SignOnLetterEnding\":\"...and receive $20 coupon for first shopping.\",\"SubmitButton\":\"Sign Up\",\"FirstQuestion\":\"Got questions? Call us 24/7!\",\"FNumber\":\"(800)8001-8588\",\"SNumber\":\"(0600)874-548\",\"ContactInfoTitle\":\"Contact info\",\"ContactInfoValue\":\"17 Princess Road, London, Greater London NW1 8JR, UK\",\"CategoriesTitle\":\"Find it Fast\",\"OtherInfoTitle\":\"Customer Care\",\"BottomCompanyName\":\"Electro\",\"BottomMessage\":\" - All rights Reserved\"},\"ErrorPage\":{\"ErrorTitle\":\"404!\",\"ErrorText\":\"Nothing was found at this location. Try searching, or check out the links below.\"},\"MainPage\":{\"FirstPartTitle\":\"Save Big on Warehouse Cleaning\",\"FirstPartSuggestionLink\":\"Go to Daily Deals Section \",\"SecondPartTitle\":\"Trending products\",\"SecondPartSuggestionLink\":\"Go to Trending products\",\"ThirdPartTitle\":\"Popular Products\",\"FourthPartTitle\":\"Laptops & Computers\",\"FifthPartTitle\":\"Television Entertainment\"},\"CartPage\":{\"Title\":\"Cart\",\"FirstOptionTitle\":\"Product\",\"SecondOptionTitle\":\"Price\",\"ThirdOptionTitle\":\"Quantity\",\"FourthOptionTitle\":\"Total\",\"CouponTitle\":\"Coupon code\",\"CouponButtonTitle\":\"Apply coupon\",\"UpdateCartButton\":\"Update cart\",\"CheckoutButton\":\"Proceed to checkout\",\"CartConcludedTitle\":\"Cart totals\",\"CartConcludedFirstSubTitle\":\"Subtotal\",\"CartConcludedSecondSubTitle\":\"Shipping\",\"CartConcludedSecondSubTitleFText\":\"Flat Rate\",\"CartConcludedSecondSubTitleSText\":\"Calculate Shipping\",\"CartConcludedThirdSubTitle\":\"Total\"},\"CheckoutPage\":{\"MainTitle\":\"Checkout\",\"CouponPart\":{\"Fquestion\":\"Have a coupon? \",\"FLink\":\"Click here to enter your code\",\"CouponDescription\":\"If you have a coupon code, please apply it below.\",\"InputPlaceholder\":\"Coupon code\",\"ButtonTitle\":\"Apply coupon\"},\"Bill\":{\"Title\":\"Billing details\",\"FirstInputLabel\":\"First Name\",\"FirstInputPlaceholder\":\"Jack\",\"SecondInputLabel\":\"Last Name\",\"SecondInputPlaceholder\":\"Wayley\",\"ThirdInputLabel\":\"Company Name (Optional)\",\"ThirdInputPlaceholder\":\"Company Name\",\"FourthInputLabel\":\"Country\",\"FourthInputPlaceholder\":\"Select country\",\"FifthInputLabel\":\"Street Address\",\"FifthInputPlaceholder\":\"470 Lucy Forks\",\"SixthInputLabel\":\"Apt, Suite, Etc.\",\"SixthInputPlaceholder\":\"YC7B 3UT\",\"SeventhInputLabel\":\"City\",\"SeventhInputPlaceholder\":\"London\",\"EighthInputLabel\":\"Postcode/Zip\",\"EighthInputPlaceholder\":\"99999\",\"NinthInputLabel\":\"State\",\"NinthInputPlaceholder\":\"Select State\",\"TenthInputLabel\":\"Email Address\",\"TenthInputPlaceholder\":\"jackwayley@gmail.com\",\"EleventhInputLabel\":\"Phone\",\"EleventhInputPlaceholder\":\"+1 (062) 109-9222\",\"DetailsTitle\":\"Shipping Details details\",\"TwelfthInputLabel\":\"Order Notes (Optional)\",\"TwelfthInputPlaceholder\":\"Notes about your order, e.g. special notes for delivery.\"},\"Order\":{\"Title\":\"Your order\",\"FirstProductsTitle\":\"Product\",\"ProductsTotalTitle\":\"Total\",\"SecondProductsTitle\":\"Subtotal\",\"ThirdProductsTitle\":\"Shipping\",\"FourthProductsTitle\":\"Total\",\"TransferVariations\":{\"FirstVariationTitle\":\"Direct Bank Transfer\",\"FirstVariationText\":\"Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.\",\"SecondVariationTitle\":\"Check Payments\",\"SecondVariationText\":\"Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.\",\"ThirdVariationTitle\":\"Cash On Delivery\",\"ThirdVariationText\":\"Pay with cash upon delivery.\",\"FourthVariationTitle\":\"PayPal \",\"FourthVariationQuestion\":\"What Is PayPal?\",\"FourthVariationText\":\"Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.\",\"AgreedTermsTitle\":\"I have read and agree to the website\",\"AgreedTermsLinkToTermsPage\":\"terms and conditions \",\"SuccessButtonText\":\"Place order\"}}},\"AboutUsPage\":{\"Title\":\"About Us\",\"TitleText\":\"Passion may be a friendly or eager interest in or admiration for a proposal, cause, discovery, or activity or love to a feeling of unusual excitement.\",\"FirstPart\":{\"FirstCardTitle\":\"What we really do?\",\"FirstCardText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.\",\"SecondCardTitle\":\"Our Vision\",\"SecondCardText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.\",\"ThirdCardTitle\":\"History of Beginning\",\"ThirdCardText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.\",\"FirstWorkerName\":\"Thomas Snow\",\"FirstWorkerProfession\":\"CEO/Founder\",\"SecondWorkerName\":\"Anna Baranov\",\"SecondWorkerProfession\":\"Client Care\",\"ThirdWorkerName\":\"Andre Kowalsy\",\"ThirdWorkerProfession\":\"Support Boss\",\"FourthWorkerName\":\"Pamela Doe\",\"FourthWorkerProfession\":\"Delivery Driver\",\"FifthWorkerName\":\"Susan McCain\",\"FifthWorkerProfession\":\"Packaging Girl\",\"LastCircleTitle\":\"See Details\"},\"SecondPart\":{\"FirstTitle\":\"What we really do?\",\"FirstText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec odio facilisis, ultricies nunc eget, fringilla orci.\",\"SecondTitle\":\"Our Vision\",\"SecondText\":\"Vestibulum velit nibh, egestas vel faucibus vitae, feugiat sollicitudin urna. Praesent iaculis id ipsum sit amet pretium. Aliquam tristique sapien nec enim euismod, scelerisque facilisis arcu consectetur. Vestibulum velit nibh, egestas vel faucibus vitae.\",\"ThirdTitle\":\"History of the Company\",\"ThirdText\":\"Mauris rhoncus aliquet purus, a ornare nisi euismod in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam imperdiet eu metus vel ornare. Nullam in risus vel orci feugiat vestibulum. In sed aliquam mi. Nullam condimentum sollicitudin dui.\",\"FourthTitle\":\"Cooperate with Us!\",\"FourthText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec odio facilisis, ultricies nunc eget, fringilla orci.\"},\"ThirdPart\":{\"MainTitle\":\"What can we do for you ?\",\"FirstTitle\":\"Support 24/7\",\"FirstText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"SecondTitle\":\"Best Quality\",\"SecondText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"ThirdTitle\":\"Fastest Delivery\",\"ThirdText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"FourthTitle\":\"Customer Care\",\"FourthText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"FifthTitle\":\"Over 200 Satisfied Customers\",\"FifthText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\"}},\"ContactUsPage\":{\"FirstPart\":{\"Title\":\"Leave us a Message\",\"FText\":\"Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.\",\"FirstInputLabel\":\"First Name\",\"SecondInputLabel\":\"Last Name\",\"ThirdInputLabel\":\"Subject\",\"FourthInputLabel\":\"Your Message\",\"SendButtonText\":\"Send Message\"},\"SecondPart\":{\"Title\":\"Our Store\",\"Address1Line\":\"121 King Street, \",\"Address2Line\":\"Melbourne VIC 3000, \",\"Address3Line\":\"Australia\",\"WorkingHoursTitle\":\"Hours of Operation\",\"dayTitle\":\"Monday:\",\"1dayTime\":\"12-6 PM\",\"2dayTitle\":\"Tuesday:\",\"2dayTime\":\"12-6 PM\",\"3dayTitle\":\"Wednesday:\",\"3dayTime\":\"12-6 PM\",\"4dayTitle\":\"Thursday:\",\"4dayTime\":\"12-6 PM\",\"5dayTitle\":\"Friday:\",\"5dayTime\":\"12-6 PM\",\"6dayTitle\":\"Saturday:\",\"6dayTime\":\"12-6 PM\",\"7dayTitle\":\"Sunday:\",\"7dayTime\":\"Closed\"}},\"TermsPage\":{\"Title\":\"Terms and Conditions\",\"SubTitle\":\"This Agreement was last modified on 18th february 2019\",\"FirstPart\":{\"MainTitle\":\"Intellectual Propertly\",\"1Term\":\" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum.\",\"2Term\":\" Leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.\",\"3Term\":\" Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.\",\"4Term\":\" Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at faucibus.\",\"5Term\":\" Aenean dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet condimentum mi ligula sit amet augue.\",\"6Term\":\" Pellentesque vitae eros eget enim mollis placerat.\"},\"SecondPart\":{\"MainTitle\":\"Termination\",\"1Term\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum.\",\"2Term\":\"Leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.\",\"3Term\":\"Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.\",\"4Term\":\"Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at faucibus.\",\"5Term\":\"Aenean dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet condimentum mi ligula sit amet augue.\",\"6Term\":\"Pellentesque vitae eros eget enim mollis placerat.\"},\"ThirdPart\":{\"MainTitle\":\"Changes To This Agreement\",\"1Term\":\"We reserve the right, at our sole discretion, to modify or replace these Terms and Conditions by posting the updated terms on the Site. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms and Conditions.\"},\"FourthPart\":{\"MainTitle\":\"Contact Us\",\"1Part\":\"If you have any questions about this Agreement, please contact us filling this \",\"2Part\":\"contact form\"}},\"FAQPage\":{\"Title\":\"Frequently Asked Questions\",\"SubTitle\":\"This Agreement was last modified on 18th february 2019\",\"FirstTitle\":\"What Shipping Methods Are Available?\",\"FirstText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"SecondTitle\":\"How Long Will it Take To Get My Package?\",\"SecondText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"ThirdTitle\":\"How Do I Track My Order?\",\"ThirdText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"FourthTitle\":\"How Do I Place an Order?\",\"FourthText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"FifthTitle\":\"How Should I to Contact if I Have Any Queries?\",\"FifthText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"SixthTitle\":\"Do I Need an Account to Place an Order?\",\"SixthText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\"},\"ProductPage\":{\"CardAvailabilityText\":\"Availability:\",\"CardQuantityText\":\"Quantity\",\"CardColorText\":\"Color\",\"AddToCartText\":\"Add to Cart\",\"BuyNowText\":\"Buy Now\",\"FirstDescriptionPartTitle\":\"Description\",\"SecondDescriptionPartTitle\":\"Specification\",\"RelatedProductsPartTitle\":\"Related products\"},\"ShopPage\":{\"FirstOptionalTitle\":\"Recommended Products\",\"FilterPart\":{\"FirstPartTitle\":\"Browse Categories\",\"SecondPartTitle\":\"Filters\",\"SecondPartFirstSubTitle\":\"Brands\",\"SecondPartSecondSubTitle\":\"Color\",\"SecondPartThirdSubTitle\":\"Price\",\"PriceInputSubTitle\":\"Price: $—$\",\"ButtonText\":\"Filter\",\"ThirdPartTitle\":\"Latest Products\"},\"SecondTitle\":\"Shop\"}}");
+module.exports = require("vue-meta");
 
 /***/ }),
 /* 15 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{}");
+module.exports = JSON.parse("{\"Header\":{\"Greeting\":\"Привет Мир\",\"AboutUs\":\"About Us\",\"FAQs\":\"FAQs\",\"ContactUs\":\"Contact Us\",\"Support\":\"Support\",\"PhoneNumber\":\"(+800) 856 800 604\",\"E-mailTitle\":\"E-mail: \",\"E-mailValue\":\"info@electro.com\",\"AccordionTitle\":\"Shop By Department\",\"SearchInputPlaceholder\":\"Search for Products\",\"SearchSuggestion\":\"Search\",\"CartSuggestion\":\"Cart\"}}");
 
 /***/ }),
 /* 16 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"Header\":{\"Greeting\":\"Welcome to Worldwide Electronics Store\",\"Categories\":\"Categories\"},\"Footer\":{\"FirstCategory\":\"Featured Products\",\"SecondCategory\":\"Onsale Products\",\"ThirdCategory\":\"Top Rated Products\",\"SignOnLetterTitle\":\"Sign up to Newsletter\",\"SignOnLetterEnding\":\"...and receive $20 coupon for first shopping.\",\"SubmitButton\":\"Sign Up\",\"FirstQuestion\":\"Got questions? Call us 24/7!\",\"FNumber\":\"(800)8001-8588\",\"SNumber\":\"(0600)874-548\",\"ContactInfoTitle\":\"Contact info\",\"ContactInfoValue\":\"17 Princess Road, London, Greater London NW1 8JR, UK\",\"CategoriesTitle\":\"Find it Fast\",\"OtherInfoTitle\":\"Customer Care\",\"BottomCompanyName\":\"Electro\",\"BottomMessage\":\" - All rights Reserved\"},\"ErrorPage\":{\"ErrorTitle\":\"404!\",\"ErrorText\":\"Nothing was found at this location. Try searching, or check out the links below.\"},\"MainPage\":{\"FirstPartTitle\":\"Newest Products\",\"FirstPartSuggestionLink\":\"Go to Daily Deals Section \",\"SecondPartTitle\":\"Trending products\",\"SecondPartSuggestionLink\":\"Go to Trending products\",\"ThirdPartTitle\":\"Popular Products\",\"FourthPartTitle\":\"Laptops & Computers\",\"FifthPartTitle\":\"Television Entertainment\"},\"CartPage\":{\"Title\":\"Cart\",\"FirstOptionTitle\":\"Product\",\"SecondOptionTitle\":\"Price\",\"ThirdOptionTitle\":\"Quantity\",\"FourthOptionTitle\":\"Total\",\"CouponTitle\":\"Coupon code\",\"CouponButtonTitle\":\"Apply coupon\",\"UpdateCartButton\":\"Update cart\",\"CheckoutButton\":\"Proceed to checkout\",\"CartConcludedTitle\":\"Cart totals\",\"CartConcludedFirstSubTitle\":\"Subtotal\",\"CartConcludedSecondSubTitle\":\"Shipping\",\"CartConcludedSecondSubTitleFText\":\"Flat Rate\",\"CartConcludedSecondSubTitleSText\":\"Calculate Shipping\",\"CartConcludedThirdSubTitle\":\"Total\"},\"CheckoutPage\":{\"MainTitle\":\"Checkout\",\"CouponPart\":{\"Fquestion\":\"Have a coupon? \",\"FLink\":\"Click here to enter your code\",\"CouponDescription\":\"If you have a coupon code, please apply it below.\",\"InputPlaceholder\":\"Coupon code\",\"ButtonTitle\":\"Apply coupon\"},\"Bill\":{\"Title\":\"Billing details\",\"FirstInputLabel\":\"First Name\",\"FirstInputPlaceholder\":\"Jack\",\"SecondInputLabel\":\"Last Name\",\"SecondInputPlaceholder\":\"Wayley\",\"ThirdInputLabel\":\"Company Name (Optional)\",\"ThirdInputPlaceholder\":\"Company Name\",\"FourthInputLabel\":\"Country\",\"FourthInputPlaceholder\":\"Select country\",\"FifthInputLabel\":\"Street Address\",\"FifthInputPlaceholder\":\"470 Lucy Forks\",\"SixthInputLabel\":\"Apt, Suite, Etc.\",\"SixthInputPlaceholder\":\"YC7B 3UT\",\"SeventhInputLabel\":\"City\",\"SeventhInputPlaceholder\":\"London\",\"EighthInputLabel\":\"Postcode/Zip\",\"EighthInputPlaceholder\":\"99999\",\"TenthInputLabel\":\"Email Address\",\"TenthInputPlaceholder\":\"jackwayley@gmail.com\",\"EleventhInputLabel\":\"Phone\",\"EleventhInputPlaceholder\":\"+1 (062) 109-9222\",\"DetailsTitle\":\"Shipping Details details\",\"TwelfthInputLabel\":\"Order Notes (Optional)\",\"TwelfthInputPlaceholder\":\"Notes about your order, e.g. special notes for delivery.\"},\"Order\":{\"Title\":\"Your order\",\"FirstProductsTitle\":\"Product\",\"ProductsTotalTitle\":\"Total\",\"SecondProductsTitle\":\"Subtotal\",\"ThirdProductsTitle\":\"Shipping\",\"FourthProductsTitle\":\"Total\",\"TransferVariations\":{\"FirstVariationTitle\":\"Direct Bank Transfer\",\"FirstVariationText\":\"Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.\",\"SecondVariationTitle\":\"Check Payments\",\"SecondVariationText\":\"Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.\",\"ThirdVariationTitle\":\"Cash On Delivery\",\"ThirdVariationText\":\"Pay with cash upon delivery.\",\"FourthVariationTitle\":\"PayBox\",\"FourthVariationQuestion\":\"What Is PayBox?\",\"FourthVariationText\":\"Pay via PayBox; you can pay with your credit card if you don’t have a PayBox account.\",\"AgreedTermsTitle\":\"I have read and agree to the website\",\"AgreedTermsLinkToTermsPage\":\"terms and conditions \",\"SuccessButtonText\":\"Place order\"}}},\"AboutUsPage\":{\"Title\":\"About Us\",\"TitleText\":\"Passion may be a friendly or eager interest in or admiration for a proposal, cause, discovery, or activity or love to a feeling of unusual excitement.\",\"FirstPart\":{\"FirstCardTitle\":\"What we really do?\",\"FirstCardText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.\",\"SecondCardTitle\":\"Our Vision\",\"SecondCardText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.\",\"ThirdCardTitle\":\"History of Beginning\",\"ThirdCardText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.\",\"FirstWorkerName\":\"Thomas Snow\",\"FirstWorkerProfession\":\"CEO/Founder\",\"SecondWorkerName\":\"Anna Baranov\",\"SecondWorkerProfession\":\"Client Care\",\"ThirdWorkerName\":\"Andre Kowalsy\",\"ThirdWorkerProfession\":\"Support Boss\",\"FourthWorkerName\":\"Pamela Doe\",\"FourthWorkerProfession\":\"Delivery Driver\",\"FifthWorkerName\":\"Susan McCain\",\"FifthWorkerProfession\":\"Packaging Girl\",\"LastCircleTitle\":\"See Details\"},\"SecondPart\":{\"FirstTitle\":\"What we really do?\",\"FirstText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec odio facilisis, ultricies nunc eget, fringilla orci.\",\"SecondTitle\":\"Our Vision\",\"SecondText\":\"Vestibulum velit nibh, egestas vel faucibus vitae, feugiat sollicitudin urna. Praesent iaculis id ipsum sit amet pretium. Aliquam tristique sapien nec enim euismod, scelerisque facilisis arcu consectetur. Vestibulum velit nibh, egestas vel faucibus vitae.\",\"ThirdTitle\":\"History of the Company\",\"ThirdText\":\"Mauris rhoncus aliquet purus, a ornare nisi euismod in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam imperdiet eu metus vel ornare. Nullam in risus vel orci feugiat vestibulum. In sed aliquam mi. Nullam condimentum sollicitudin dui.\",\"FourthTitle\":\"Cooperate with Us!\",\"FourthText\":\"Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec odio facilisis, ultricies nunc eget, fringilla orci.\"},\"ThirdPart\":{\"MainTitle\":\"What can we do for you ?\",\"FirstTitle\":\"Support 24/7\",\"FirstText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"SecondTitle\":\"Best Quality\",\"SecondText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"ThirdTitle\":\"Fastest Delivery\",\"ThirdText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"FourthTitle\":\"Customer Care\",\"FourthText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\",\"FifthTitle\":\"Over 200 Satisfied Customers\",\"FifthText\":\"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\"}},\"ContactUsPage\":{\"FirstPart\":{\"Title\":\"Leave us a Message\",\"FText\":\"Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.\",\"FirstInputLabel\":\"First Name\",\"SecondInputLabel\":\"Last Name\",\"ThirdInputLabel\":\"Subject\",\"FourthInputLabel\":\"Your Message\",\"SendButtonText\":\"Send Message\"},\"SecondPart\":{\"Title\":\"Our Store\",\"Address1Line\":\"121 King Street, \",\"Address2Line\":\"Melbourne VIC 3000, \",\"Address3Line\":\"Australia\",\"WorkingHoursTitle\":\"Hours of Operation\",\"1dayTitle\":\"Monday:\",\"1dayTime\":\"12-6 PM\",\"2dayTitle\":\"Tuesday:\",\"2dayTime\":\"12-6 PM\",\"3dayTitle\":\"Wednesday:\",\"3dayTime\":\"12-6 PM\",\"4dayTitle\":\"Thursday:\",\"4dayTime\":\"12-6 PM\",\"5dayTitle\":\"Friday:\",\"5dayTime\":\"12-6 PM\",\"6dayTitle\":\"Saturday:\",\"6dayTime\":\"12-6 PM\",\"7dayTitle\":\"Sunday:\",\"7dayTime\":\"Closed\"}},\"TermsPage\":{\"Title\":\"Terms and Conditions\",\"SubTitle\":\"This Agreement was last modified on 18th february 2019\",\"FirstPart\":{\"MainTitle\":\"Intellectual Propertly\",\"1Term\":\" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum.\",\"2Term\":\" Leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.\",\"3Term\":\" Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.\",\"4Term\":\" Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at faucibus.\",\"5Term\":\" Aenean dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet condimentum mi ligula sit amet augue.\",\"6Term\":\" Pellentesque vitae eros eget enim mollis placerat.\"},\"SecondPart\":{\"MainTitle\":\"Termination\",\"1Term\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum.\",\"2Term\":\"Leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.\",\"3Term\":\"Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.\",\"4Term\":\"Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at faucibus.\",\"5Term\":\"Aenean dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet condimentum mi ligula sit amet augue.\",\"6Term\":\"Pellentesque vitae eros eget enim mollis placerat.\"},\"ThirdPart\":{\"MainTitle\":\"Changes To This Agreement\",\"1Term\":\"We reserve the right, at our sole discretion, to modify or replace these Terms and Conditions by posting the updated terms on the Site. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms and Conditions.\"},\"FourthPart\":{\"MainTitle\":\"Contact Us\",\"1Part\":\"If you have any questions about this Agreement, please contact us filling this \",\"2Part\":\"contact form\"}},\"FAQPage\":{\"Title\":\"Frequently Asked Questions\",\"SubTitle\":\"This Agreement was last modified on 18th february 2019\",\"FirstTitle\":\"What Shipping Methods Are Available?\",\"FirstText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"SecondTitle\":\"How Long Will it Take To Get My Package?\",\"SecondText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"ThirdTitle\":\"How Do I Track My Order?\",\"ThirdText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"FourthTitle\":\"How Do I Place an Order?\",\"FourthText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"FifthTitle\":\"How Should I to Contact if I Have Any Queries?\",\"FifthText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\",\"SixthTitle\":\"Do I Need an Account to Place an Order?\",\"SixthText\":\"In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.\"},\"ProductPage\":{\"CardAvailabilityText\":\"Availability:\",\"CardQuantityText\":\"Quantity\",\"CardColorText\":\"Color\",\"AddToCartText\":\"Add to Cart\",\"BuyNowText\":\"Buy Now\",\"BuyKaspiText\":\"Buy On Kaspi\",\"SecondDescriptionPartTitle\":\"Specification\",\"RelatedProductsPartTitle\":\"Related products\"},\"ShopPage\":{\"FirstOptionalTitle\":\"Recommended Products\",\"FilterPart\":{\"FirstPartTitle\":\"Browse Categories\",\"SecondPartTitle\":\"Filters\",\"SecondPartFirstSubTitle\":\"Brands\",\"SecondPartSecondSubTitle\":\"Color\",\"SecondPartThirdSubTitle\":\"Price\",\"ButtonText\":\"Filter\",\"ThirdPartTitle\":\"Latest Products\"},\"SecondTitle\":\"Shop\"}}");
+
+/***/ }),
+/* 17 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{}");
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("defu");
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(18);
-module.exports = __webpack_require__(31);
+__webpack_require__(20);
+module.exports = __webpack_require__(35);
 
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports) {
 
 global.installComponents = function (component, components) {
@@ -1852,7 +1514,7 @@ function provideFunctionalComponents(component, components) {
 
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1860,26 +1522,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-
-};
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-
-};
 
 
 /***/ }),
@@ -1944,6 +1586,48 @@ module.exports = {
 
 /***/ }),
 /* 28 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+
+};
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_id_42178b5c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_id_42178b5c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_id_42178b5c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_id_42178b5c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_id_42178b5c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_style_index_0_id_5fb958e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_style_index_0_id_5fb958e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_style_index_0_id_5fb958e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_style_index_0_id_5fb958e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_style_index_0_id_5fb958e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+
+};
+
+
+/***/ }),
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1952,33 +1636,245 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getters", function() { return getters; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 const state = () => ({
-  token: null
+  categories: null,
+  products: null,
+  productsFilteredCopy: null,
+  productsFilteredCopyCopy: null,
+  BackUrl: 'https://textforeva.ru',
+  ws: null,
+  filters: []
 });
 const mutations = {
-  setToken(state, token) {
-    state.token = token;
+  SetProducts(state, response) {
+    state.products = response;
+    state.productsFilteredCopy = response;
+    state.productsFilteredCopyCopy = response;
   },
 
-  clearToken(state) {
-    state.token = null;
+  SetCategories(state, response) {
+    state.categories = response;
+  },
+
+  SetWs(state, ws) {
+    state.ws = ws;
+  },
+
+  ChFilters(state, filters) {
+    state.filters = filters;
+  },
+
+  ChProductsCopy(state, products) {
+    state.productsFilteredCopy = products;
+    state.productsFilteredCopyCopy = products;
+  },
+
+  FilterProducts(state, MyArray) {
+    var ExceptionsArray = [];
+    MyArray[0].forEach(element => {
+      ExceptionsArray.push({
+        name: element[0],
+        value: element[1]
+      });
+    });
+
+    if (MyArray[2][0] == 'FCat') {
+      var JSON_Obj = {
+        "action": "search",
+        "agent": "client",
+        "data": {
+          "query": "",
+          "filters": {
+            "firstLevelCategory": MyArray[2][1],
+            "priceRange": MyArray[1],
+            "exceptions": ExceptionsArray
+          }
+        }
+      };
+    } else if (MyArray[2][0] == 'SCat') {
+      var JSON_Obj = {
+        "action": "search",
+        "agent": "client",
+        "data": {
+          "query": "",
+          "filters": {
+            "secondLevelCategory": MyArray[2][1],
+            "priceRange": MyArray[1],
+            "exceptions": ExceptionsArray
+          }
+        }
+      };
+    } else if (MyArray[2][0] == 'TCat') {
+      var JSON_Obj = {
+        "action": "search",
+        "agent": "client",
+        "data": {
+          "query": "",
+          "filters": {
+            "thirdLevelCategory": MyArray[2][1],
+            "priceRange": MyArray[1],
+            "exceptions": ExceptionsArray
+          }
+        }
+      };
+    } else {
+      var JSON_Obj = {
+        "action": "search",
+        "agent": "client",
+        "data": {
+          "query": "",
+          "filters": {
+            "priceRange": MyArray[1],
+            "exceptions": ExceptionsArray
+          }
+        }
+      };
+    }
+
+    state.ws.send(JSON.stringify(JSON_Obj));
+  },
+
+  DefaultSorting(state) {
+    state.productsFilteredCopyCopy = state.productsFilteredCopy;
+  },
+
+  SortByPopularity(state, arr) {
+    state.productsFilteredCopyCopy = arr;
+  },
+
+  ThirdCategoryFilter(state, string) {
+    var JSON_Obj = {
+      "action": "search",
+      "agent": "client",
+      "data": {
+        "query": "",
+        "filters": {
+          "thirdLevelCategory": string
+        }
+      }
+    };
+
+    if (state !== null && state !== void 0 && state.ws) {
+      state.ws.send(JSON.stringify(JSON_Obj));
+    } else {
+      setTimeout(() => {
+        state.ws.send(JSON.stringify(JSON_Obj));
+      }, 1000);
+    }
+  },
+
+  FirstCategoryFilter(state, string) {
+    var JSON_Obj = {
+      "action": "search",
+      "agent": "client",
+      "data": {
+        "query": "",
+        "filters": {
+          "firstLevelCategory": string
+        }
+      }
+    };
+    console.log(JSON_Obj);
+
+    if (state !== null && state !== void 0 && state.ws) {
+      state.ws.send(JSON.stringify(JSON_Obj));
+    } else {
+      setTimeout(() => {
+        state.ws.send(JSON.stringify(JSON_Obj));
+      }, 1000);
+    }
+  },
+
+  SecondCategoryFilter(state, string) {
+    var JSON_Obj = {
+      "action": "search",
+      "agent": "client",
+      "data": {
+        "query": "",
+        "filters": {
+          "secondLevelCategory": string
+        }
+      }
+    };
+
+    if (state !== null && state !== void 0 && state.ws) {
+      state.ws.send(JSON.stringify(JSON_Obj));
+    } else {
+      setTimeout(() => {
+        state.ws.send(JSON.stringify(JSON_Obj));
+      }, 1000);
+    }
+  },
+
+  SearchByQuery(state, query) {
+    var obj = {
+      "action": "search",
+      "agent": "client",
+      "data": {
+        "query": query
+      }
+    };
+    state.ws.send(JSON.stringify(obj));
   }
 
 };
 const actions = {
-  nuxtServerInit({
+  FrontInit({
+    commit,
     dispatch
   }) {
-    console.log('nuxtServerInit');
+    console.log('FrontInit');
+    dispatch('connect');
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`https://textforeva.ru/storage`).then(response => {
+      commit('SetProducts', response.data);
+    }).catch(function (error) {
+      console.log(error);
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`https://textforeva.ru/storage/getAllCategories`).then(response => {
+      commit('SetCategories', response.data);
+    }).catch(function (error) {
+      console.log(error);
+    });
+  },
+
+  async connect({
+    commit,
+    dispatch
+  }) {
+    var connection = new WebSocket(`ws://157.230.225.244:2000`);
+
+    connection.onmessage = async msg => {
+      let data = JSON.parse(msg.data);
+      console.log(data);
+      commit('ChFilters', data.filterKeys);
+      commit('ChProductsCopy', data.products);
+    };
+
+    connection.onopen = function () {
+      console.log('START WEBSOCKET CONNECTION');
+      commit('SetWs', connection);
+    };
+
+    connection.onclose = async e => {
+      console.log('CLOSE WEBSOCKET CONNECTION');
+      setTimeout(() => dispatch('connect'), 1);
+    };
+
+    connection.onerror = err => {
+      console.log(err);
+    };
   }
 
 };
 const getters = {
-  hasToken: s => !!s.token
+  BestCategories: s => s.categories
 };
 
 /***/ }),
-/* 29 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1992,24 +1888,41 @@ __webpack_require__.r(__webpack_exports__);
     cart: s => s.cart
   },
   mutations: {
+    AmountCh(state, ValueId) {
+      if (state.cart[ValueId[1]].offerData.count + ValueId[0] > 0) {
+        state.cart[ValueId[1]].offerData.count += ValueId[0];
+        localStorage.setItem('cart', JSON.stringify(state.cart));
+      }
+    },
+
     cartChange(state, product) {
+      var Updated = false;
+      if (!product.offerData.count) product.offerData.count = 1;
+
       if (localStorage.getItem('cart')) {
-        var currentCart = JSON.parse(localStorage.getItem('cart'));
-        currentCart.push(product);
+        var currentCart = state.cart;
+        currentCart.forEach(function (item) {
+          if (item.offerData.name == product.offerData.name) {
+            item.offerData.count += 1;
+            Updated = true;
+          }
+        });
+        if (!Updated) currentCart.push(product);
         localStorage.setItem('cart', JSON.stringify(currentCart));
       } else {
         localStorage.setItem('cart', JSON.stringify([product]));
       }
 
-      state.cart = localStorage.getItem('cart');
+      state.cart = JSON.parse(localStorage.getItem('cart'));
     },
 
     getCart(state) {
-      state.cart = localStorage.getItem('cart');
+      state.cart = JSON.parse(localStorage.getItem('cart'));
     },
 
-    DeleteItemById(state, id) {
-      filteredData = state.cart.filter(cartItem => cartItem.id != id);
+    DeleteItemFromCart(state, el) {
+      var filteredData = state.cart.filter(cartItem => cartItem.offerData.name != el.offerData.name);
+      console.log(filteredData);
       state.cart = filteredData;
       localStorage.setItem('cart', JSON.stringify(filteredData));
     }
@@ -2018,17 +1931,17 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 /***/ }),
-/* 30 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _locales_ru_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
-var _locales_ru_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(13, 1);
-/* harmony import */ var _locales_en_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
-var _locales_en_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(14, 1);
-/* harmony import */ var _locales_kz_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
-var _locales_kz_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(15, 1);
+/* harmony import */ var _locales_ru_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+var _locales_ru_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(15, 1);
+/* harmony import */ var _locales_en_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
+var _locales_en_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(16, 1);
+/* harmony import */ var _locales_kz_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
+var _locales_kz_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(17, 1);
 
 
 
@@ -2060,7 +1973,7 @@ var _locales_kz_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__web
 });
 
 /***/ }),
-/* 31 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2075,7 +1988,7 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_ufo_ = __webpack_require__(1);
 
 // EXTERNAL MODULE: external "node-fetch"
-var external_node_fetch_ = __webpack_require__(11);
+var external_node_fetch_ = __webpack_require__(13);
 var external_node_fetch_default = /*#__PURE__*/__webpack_require__.n(external_node_fetch_);
 
 // CONCATENATED MODULE: ./functions/.nuxt/middleware.js
@@ -2722,6 +2635,10 @@ async function serverPrefetch() {
   const attrs = this.$vnode.data.attrs = this.$vnode.data.attrs || {};
   attrs['data-fetch-key'] = this._fetchKey; // Add to ssrContext for window.__NUXT__.fetch
 
+  if (this.$ssrContext.nuxt.fetch[this._fetchKey] !== undefined) {
+    console.warn(`Duplicate fetch key detected (${this._fetchKey}). This may lead to unexpected results.`);
+  }
+
   this.$ssrContext.nuxt.fetch[this._fetchKey] = this.$fetchState.error ? {
     _error: this.$fetchState.error
   } : purifyData(this._data);
@@ -2763,11 +2680,11 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(3);
+var external_vuex_ = __webpack_require__(4);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
-var external_vue_meta_ = __webpack_require__(12);
+var external_vue_meta_ = __webpack_require__(14);
 var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
 
 // EXTERNAL MODULE: external "vue-client-only"
@@ -2859,23 +2776,23 @@ function shouldScrollToTop(route) {
 
 
 
-const _2183875f = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 1).then(__webpack_require__.bind(null, 34)));
+const _ded94b7c = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 1).then(__webpack_require__.bind(null, 47)));
 
-const _cebf0284 = () => interopDefault(__webpack_require__.e(/* import() | pages/cart */ 2).then(__webpack_require__.bind(null, 35)));
+const _6aa9437b = () => interopDefault(__webpack_require__.e(/* import() | pages/cart */ 2).then(__webpack_require__.bind(null, 48)));
 
-const _63e7dae4 = () => interopDefault(__webpack_require__.e(/* import() | pages/checkout */ 3).then(__webpack_require__.bind(null, 36)));
+const _73540dbe = () => interopDefault(__webpack_require__.e(/* import() | pages/checkout */ 3).then(__webpack_require__.bind(null, 49)));
 
-const _5d88001c = () => interopDefault(__webpack_require__.e(/* import() | pages/contact */ 4).then(__webpack_require__.bind(null, 37)));
+const _88bab3d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/contact */ 4).then(__webpack_require__.bind(null, 50)));
 
-const _591fa8e8 = () => interopDefault(__webpack_require__.e(/* import() | pages/faq */ 5).then(__webpack_require__.bind(null, 38)));
+const _8a864eea = () => interopDefault(__webpack_require__.e(/* import() | pages/faq */ 5).then(__webpack_require__.bind(null, 51)));
 
-const _75e3a941 = () => interopDefault(__webpack_require__.e(/* import() | pages/product */ 7).then(__webpack_require__.bind(null, 39)));
+const _604a4f64 = () => interopDefault(__webpack_require__.e(/* import() | pages/product */ 7).then(__webpack_require__.bind(null, 52)));
 
-const _f8aff8d8 = () => interopDefault(__webpack_require__.e(/* import() | pages/shop */ 8).then(__webpack_require__.bind(null, 40)));
+const _55b0c851 = () => interopDefault(__webpack_require__.e(/* import() | pages/shop */ 8).then(__webpack_require__.bind(null, 53)));
 
-const _298dbf4e = () => interopDefault(__webpack_require__.e(/* import() | pages/terms */ 9).then(__webpack_require__.bind(null, 41)));
+const _5a48f33c = () => interopDefault(__webpack_require__.e(/* import() | pages/terms */ 9).then(__webpack_require__.bind(null, 54)));
 
-const _413b6224 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 6).then(__webpack_require__.bind(null, 42)));
+const _9f6995f2 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 6).then(__webpack_require__.bind(null, 55)));
 
 const emptyFn = () => {};
 
@@ -2888,39 +2805,39 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/about",
-    component: _2183875f,
+    component: _ded94b7c,
     name: "about"
   }, {
     path: "/cart",
-    component: _cebf0284,
+    component: _6aa9437b,
     name: "cart"
   }, {
     path: "/checkout",
-    component: _63e7dae4,
+    component: _73540dbe,
     name: "checkout"
   }, {
     path: "/contact",
-    component: _5d88001c,
+    component: _88bab3d6,
     name: "contact"
   }, {
     path: "/faq",
-    component: _591fa8e8,
+    component: _8a864eea,
     name: "faq"
   }, {
     path: "/product",
-    component: _75e3a941,
+    component: _604a4f64,
     name: "product"
   }, {
     path: "/shop",
-    component: _f8aff8d8,
+    component: _55b0c851,
     name: "shop"
   }, {
     path: "/terms",
-    component: _298dbf4e,
+    component: _5a48f33c,
     name: "terms"
   }, {
     path: "/",
-    component: _413b6224,
+    component: _9f6995f2,
     name: "index"
   }],
   fallback: false
@@ -3035,26 +2952,14 @@ function createRouter(ssrContext, config) {
 });
 const transitionsKeys = ['name', 'mode', 'appear', 'css', 'type', 'duration', 'enterClass', 'leaveClass', 'appearClass', 'enterActiveClass', 'enterActiveClass', 'leaveActiveClass', 'appearActiveClass', 'enterToClass', 'leaveToClass', 'appearToClass'];
 const listenersKeys = ['beforeEnter', 'enter', 'afterEnter', 'enterCancelled', 'beforeLeave', 'leave', 'afterLeave', 'leaveCancelled', 'beforeAppear', 'appear', 'afterAppear', 'appearCancelled'];
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/layouts/error.vue?vue&type=template&id=3e74554c&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"MAINERROR"},[_vm._ssrNode("<main id=\"content\" role=\"main\"><div class=\"container mt-6\"><div class=\"mb-5 text-center pb-3 border-bottom border-color-1\"><h1 class=\"font-size-sl-72 font-weight-light mb-3\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ErrorTitle')))+"</h1> <p class=\"text-gray-90 font-size-20 mb-0 font-weight-light\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ErrorText')))+"</p></div></div></main> "),_c('NuxtLink',{staticClass:"js-go-to u-go-to",attrs:{"to":"#","data-position":"{\"bottom\": 15, \"right\": 15 }","data-type":"fixed","data-offset-top":"400","data-compensation":"#header","data-show-effect":"slideInUp","data-hide-effect":"slideOutDown"}},[_c('span',{staticClass:"fas fa-arrow-up u-go-to__inner"})])],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/layouts/error.vue?vue&type=template&id=63a64276&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"MAINERROR"},[_vm._ssrNode("<main id=\"content\" role=\"main\"><div class=\"container mt-6\"><div class=\"mb-5 text-center pb-3 border-bottom border-color-1\"><h1 class=\"font-size-sl-72 font-weight-light mb-3\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ErrorTitle')))+"</h1> <p class=\"text-gray-90 font-size-20 mb-0 font-weight-light\">"+_vm._ssrEscape(_vm._s(_vm.localizeFilter('ErrorText')))+"</p></div></div></main>")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/layouts/error.vue?vue&type=template&id=3e74554c&
+// CONCATENATED MODULE: ./src/layouts/error.vue?vue&type=template&id=63a64276&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/layouts/error.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3138,9 +3043,7 @@ var staticRenderFns = []
 
       $.HSCore.components.HSFancyBox.init('.js-fancybox'); // initialization of slick carousel
 
-      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); // initialization of go to
-
-      $.HSCore.components.HSGoTo.init('.js-go-to'); // initialization of hamburgers
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); // initialization of hamburgers
 
       $.HSCore.components.HSHamburgers.init('#hamburgerTrigger'); // initialization of unfold component
 
@@ -3198,7 +3101,7 @@ var error_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "9b47a202"
+  "cbb98700"
   
 )
 
@@ -3488,7 +3391,7 @@ var nuxt_loading_render, nuxt_loading_staticRenderFns
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(19)
+  var style0 = __webpack_require__(21)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -3502,47 +3405,47 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "6b5b0d4e"
+  "1ba8940f"
   
 )
 
 /* harmony default export */ var nuxt_loading = (nuxt_loading_component.exports);
-// EXTERNAL MODULE: ./src/static/css/theme.css
-var theme = __webpack_require__(20);
-
 // EXTERNAL MODULE: ./src/static/css/font-electro.css
-var font_electro = __webpack_require__(21);
+var font_electro = __webpack_require__(22);
 
 // EXTERNAL MODULE: ./src/static/vendor/font-awesome/css/fontawesome-all.min.css
-var fontawesome_all_min = __webpack_require__(22);
+var fontawesome_all_min = __webpack_require__(23);
 
 // EXTERNAL MODULE: ./src/static/vendor/animate.css/animate.min.css
-var animate_min = __webpack_require__(23);
+var animate_min = __webpack_require__(24);
 
 // EXTERNAL MODULE: ./src/static/vendor/hs-megamenu/src/hs.megamenu.css
-var hs_megamenu = __webpack_require__(24);
+var hs_megamenu = __webpack_require__(25);
 
 // EXTERNAL MODULE: ./src/static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css
-var jquery_mCustomScrollbar = __webpack_require__(25);
+var jquery_mCustomScrollbar = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./src/static/vendor/fancybox/jquery.fancybox.css
-var jquery_fancybox = __webpack_require__(26);
+var jquery_fancybox = __webpack_require__(27);
 
 // EXTERNAL MODULE: ./src/static/vendor/slick-carousel/slick/slick.css
-var slick = __webpack_require__(27);
+var slick = __webpack_require__(28);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/layouts/default.vue?vue&type=template&id=62aa8355&
-var defaultvue_type_template_id_62aa8355_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('MyHeader'),_vm._ssrNode(" "),_c('Nuxt'),_vm._ssrNode(" "),_c('MyFooter')],2)}
-var defaultvue_type_template_id_62aa8355_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/layouts/default.vue?vue&type=template&id=658def8f&
+var defaultvue_type_template_id_658def8f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('MyHeader'),_vm._ssrNode(" "),_c('Nuxt'),_vm._ssrNode(" "),_c('NuxtLink',{staticClass:"js-go-to u-go-to",attrs:{"to":"#","data-position":"{\"bottom\": 15, \"right\": 15 }","data-type":"fixed","data-offset-top":"400","data-compensation":"#header","data-show-effect":"slideInUp","data-hide-effect":"slideOutDown"}},[_c('span',{staticClass:"fas fa-arrow-up u-go-to__inner"})]),_vm._ssrNode(" "),_c('MyFooter')],2)}
+var defaultvue_type_template_id_658def8f_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/layouts/default.vue?vue&type=template&id=62aa8355&
+// CONCATENATED MODULE: ./src/layouts/default.vue?vue&type=template&id=658def8f&
 
 // EXTERNAL MODULE: ./src/components/Header.vue + 4 modules
 var Header = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./src/components/Footer.vue + 4 modules
 var Footer = __webpack_require__(7);
+
+// EXTERNAL MODULE: ./src/static/css/theme.css
+var theme = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/layouts/default.vue?vue&type=script&lang=js&
 //
@@ -3557,6 +3460,17 @@ var Footer = __webpack_require__(7);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ var defaultvue_type_script_lang_js_ = ({
@@ -3568,12 +3482,14 @@ var Footer = __webpack_require__(7);
   beforeMount() {
     this.$store.commit('cart/getCart');
     this.$store.commit('lang/getLang');
-    this.$store.commit('cart/cartChange', {
-      name: "Andrey",
-      price: Math.floor(Math.random() * 100)
-    });
-  }
+  },
 
+  mounted() {
+    $.HSCore.components.HSGoTo.init('.js-go-to');
+    this.FrontInit();
+  },
+
+  methods: Object(external_vuex_["mapActions"])(["FrontInit"])
 });
 // CONCATENATED MODULE: ./src/layouts/default.vue?vue&type=script&lang=js&
  /* harmony default export */ var layouts_defaultvue_type_script_lang_js_ = (defaultvue_type_script_lang_js_); 
@@ -3590,18 +3506,17 @@ function default_injectStyles (context) {
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   layouts_defaultvue_type_script_lang_js_,
-  defaultvue_type_template_id_62aa8355_render,
-  defaultvue_type_template_id_62aa8355_staticRenderFns,
+  defaultvue_type_template_id_658def8f_render,
+  defaultvue_type_template_id_658def8f_staticRenderFns,
   false,
   default_injectStyles,
   null,
-  "13ab5a10"
+  "08640439"
   
 )
 
 /* harmony default export */ var layouts_default = (default_component.exports);
 // CONCATENATED MODULE: ./functions/.nuxt/App.js
-
 
 
 
@@ -3766,6 +3681,10 @@ const layouts = {
     },
 
     setLayout(layout) {
+      if (layout && typeof layout !== 'string') {
+        throw new Error('[nuxt] Avoid using non-string value as layout property.');
+      }
+
       if (!layout || !layouts['_' + layout]) {
         layout = 'default';
       }
@@ -3796,12 +3715,12 @@ const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations'];
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(28), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(32), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {};
-  resolveStoreModules(__webpack_require__(29), 'cart.js');
-  resolveStoreModules(__webpack_require__(30), 'lang.js'); // If the environment supports hot reloading...
+  resolveStoreModules(__webpack_require__(33), 'cart.js');
+  resolveStoreModules(__webpack_require__(34), 'lang.js'); // If the environment supports hot reloading...
 })(); // createStore
 
 
@@ -3959,11 +3878,11 @@ for (const name in components) {
   external_vue_default.a.component('Lazy' + name, components[name]);
 }
 // EXTERNAL MODULE: external "axios"
-var external_axios_ = __webpack_require__(4);
+var external_axios_ = __webpack_require__(3);
 var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
 
 // EXTERNAL MODULE: external "defu"
-var external_defu_ = __webpack_require__(16);
+var external_defu_ = __webpack_require__(18);
 var external_defu_default = /*#__PURE__*/__webpack_require__.n(external_defu_);
 
 // CONCATENATED MODULE: ./functions/.nuxt/axios.js
@@ -4742,8 +4661,9 @@ const createNext = ssrContext => opts => {
       message: 'This page could not be found'
     });
     return renderErrorPage();
-  }; // Components are already resolved by setContext -> getRouteData (app/utils.js)
+  };
 
+  const s = Date.now(); // Components are already resolved by setContext -> getRouteData (app/utils.js)
 
   const Components = getMatchedComponents(app.context.route);
   /*
@@ -4917,7 +4837,8 @@ const createNext = ssrContext => opts => {
     }
 
     return Promise.all(promises);
-  })); // datas are the first row of each
+  }));
+  if (process.env.DEBUG && asyncDatas.length) console.debug('Data fetching ' + ssrContext.url + ': ' + (Date.now() - s) + 'ms'); // datas are the first row of each
 
   ssrContext.nuxt.data = asyncDatas.map(r => r[0] || {}); // ...If there is a redirect or an error, stop the process
 
@@ -4933,6 +4854,12 @@ const createNext = ssrContext => opts => {
   await beforeRender();
   return _app;
 });
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+module.exports = require("crypto-js");
 
 /***/ })
 /******/ ]);

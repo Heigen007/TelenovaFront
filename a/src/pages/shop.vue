@@ -145,7 +145,7 @@
                             <div class="px-3 d-none d-xl-block">
                                 <ul class="nav nav-tab-shop" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="false">
+                                        <a class="nav-link active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true">
                                             <div class="d-md-flex justify-content-md-center align-items-md-center">
                                                 <i class="fa fa-th"></i>
                                             </div>
@@ -197,7 +197,7 @@
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body -->
                         <!-- Tab Content -->
-                        <div class="tab-content" id="pills-tabContent">
+                        <div style='min-height: 330px' class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <ul class="row list-unstyled products-group no-gutters">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class=" col-lg-4 col-md-6 MyCol col-sm-6 col-wd-2gdot4 product-item">
@@ -2112,7 +2112,7 @@ export default {
         SliderProducts(){
             if(process.browser && this.$store.state.products) {
                 var a = JSON.parse(JSON.stringify(this.$store.state.products))
-                a = a.splice(7,20)
+                a = a.splice(7,17)
                 return a.reverse()
             }
         },

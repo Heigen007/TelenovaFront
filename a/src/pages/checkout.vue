@@ -683,7 +683,7 @@ export default {
                     name: this.info.FName + ' ' + this.info.SName, // имя
                     paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
                 }
-                axios.post('http://157.230.225.244/order', checkout)
+                axios.post('https://textforeva.ru/order', checkout)
                 .then(response => {
                     console.log(response)
                 })
@@ -699,13 +699,13 @@ export default {
         },
         TotalPrice(){
             if(process.browser){
-                var total = this.$store.state.cart.cart.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
-                return total
+                var total = this.$store?.state?.cart?.cart?.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
+                return total || 0
             }
         },
         PayLink(){
             var sign = this.makeSignature()
-            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_result_url=http://157.230.225.244/order&pg_salt=${this.pg_salt}&MyObject=${JSON.stringify(this.obj)}&pg_testing_mode=1&pg_sig=${sign}`
+            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_result_url=https://textforeva.ru/order&pg_salt=${this.pg_salt}&MyObject=${JSON.stringify(this.obj)}&pg_testing_mode=1&pg_sig=${sign}`
         },
         makeSignature() {
             var methodName = 'payment.php'
@@ -719,7 +719,7 @@ export default {
             "pg_description": this.pg_description,
             "pg_language": this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru',
             "pg_salt": this.pg_salt,
-            "pg_result_url": "http://157.230.225.244/order",
+            "pg_result_url": "https://textforeva.ru/order",
             "MyObject": JSON.stringify(this.obj),
             "pg_testing_mode": "1"};
             //Секретный ключ

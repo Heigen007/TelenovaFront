@@ -3299,31 +3299,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-danger:hover {
+  background-color: #333e48;
+  border-color: #333e48;
   color: #fff;
-  background-color: #cd2f22;
-  border-color: #c22d20;
-}
-
-.btn-danger:focus, .btn-danger.focus {
-  box-shadow: 0 0 0 0.2rem rgba(227, 96, 85, 0.5);
-}
-
-.btn-danger.disabled, .btn-danger:disabled {
-  color: #fff;
-  background-color: #de4437;
-  border-color: #de4437;
-}
-
-.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
-.show > .btn-danger.dropdown-toggle {
-  color: #fff;
-  background-color: #c22d20;
-  border-color: #b72a1e;
-}
-
-.btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
-.show > .btn-danger.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(227, 96, 85, 0.5);
 }
 
 .btn-light {
@@ -25332,17 +25310,6 @@ button:focus {
 .btn-danger[href]:hover, .btn-danger[href]:focus, .btn-danger[href]:active, .btn-danger[type]:hover, .btn-danger[type]:focus, .btn-danger[type]:active {
   box-shadow: 0 4px 11px rgba(222, 68, 55, 0.35);
 }
-
-.btn-danger:not(label.btn), .btn-danger:not(label.btn):not([href]):not(:disabled):not(.disabled), .btn-danger:not([href]), .btn-danger:not([href]):not([href]):not(:disabled):not(.disabled) {
-  background-color: #de4437;
-  border-color: #de4437;
-}
-
-.btn-danger:hover {
-  background-color: #de4437;
-  border-color: #de4437;
-}
-
 /* light button :hover, :focus, :active effects */
 .btn-light[href]:hover, .btn-light[href]:focus, .btn-light[href]:active, .btn-light[type]:hover, .btn-light[type]:focus, .btn-light[type]:active {
   box-shadow: 0 4px 11px rgba(248, 249, 250, 0.35);

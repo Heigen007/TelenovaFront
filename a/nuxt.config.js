@@ -1,6 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   srcDir: 'src',
+  debug: true,
   buildDir: 'functions/.nuxt',
   head: {
     title: 'intshop',
