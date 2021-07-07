@@ -259,6 +259,9 @@ export default {
         }
     },
     mounted(){
+                setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
         $(window).on('load', function () {
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({

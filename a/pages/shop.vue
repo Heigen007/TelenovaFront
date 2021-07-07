@@ -14,8 +14,8 @@
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider">
-                                    <input type="range" id="input-left" min="0" step="1" max="1500" value="0">
-                                    <input type="range" id="input-right" min="0" step="1" max="1500" value="1500">
+                                    <input @click.capture='Label("input-left")' type="range" id="input-left" min="0" step="1" max="1500" value="0">
+                                    <input @click.capture='Label("input-right")' type="range" id="input-right" min="0" step="1" max="1500" value="1500">
 
                                     <div class="slider">
                                     <div class="track"></div>
@@ -33,8 +33,8 @@
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
-                                        <label class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+2">
+                                        <label @click.capture='Label("Fil"+fil+2)' class="custom-control-label" :for="'Fil'+fil+2">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -49,7 +49,8 @@
                             <div class="position-relative">
                                 <div class="border-bottom border-color-1 mb-2">
                                     <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalTitle')}} {{$route.query.query}}</h3>
-                                     <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
+                                    <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
+                                    <h3 v-else-if='Object.keys($route.query)[0]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0]}}</h3>
                                 </div>
                             </div>
                         </div>
@@ -1581,8 +1582,8 @@
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider2">
-                                    <input type="range" id="input-left2" min="0" step="1" max="1500" value="0">
-                                    <input type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
+                                    <input @click.capture='Label("input-left2")' type="range" id="input-left2" min="0" step="1" max="1500" value="0">
+                                    <input @click.capture='Label("input-right2")' type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
 
                                     <div class="slider2">
                                     <div class="track"></div>
@@ -1601,7 +1602,7 @@
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div id='Tipy' class="custom-control custom-checkbox">
                                         <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+1">
-                                        <label class="custom-control-label" :for="'Fil'+fil+1">{{fil}}</label>
+                                        <label @click.capture='Label("Fil"+fil+1)' class="custom-control-label" :for="'Fil'+fil+1">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -1614,7 +1615,7 @@
                 </div>
             </div>
         </aside>
-       <div style='position: absolute; top: -100%' id="tooltip" role="tooltip">
+       <div v-if='IsPopper' style='position: absolute; right: 100%; buttom: -100%' id="tooltip" role="tooltip">
            <button style='color: white' type="submit" class="btn px-4 mt-1 btn-primary-dark-w py-2 rounded-lg" @click='Sort'>Применить</button>
        </div>
 
@@ -1631,7 +1632,9 @@ export default {
             MainInfo: null,
             ProductCounter: 0,
             carouselCounter: true,
-            IdResult: []
+            IdResult: [],
+            currentInput: '',
+            IsPopper: false
         }
     },
     watch: {
@@ -1678,26 +1681,26 @@ export default {
 //     })
 // },
     updated(){
-        var inpF = function(){
-            if(document.querySelectorAll('.custom-control').length != 0){
-                var inputs = document.querySelectorAll('.custom-control')
-                console.log(inputs,'Inputs');
-                inputs.forEach(input => {
-                    input.addEventListener('click', () => {
-                        console.log(1, '#'+input.id);
-                        const tooltip = document.querySelector('#tooltip');
-                        createPopper(input, tooltip, {
-                            placement: 'left',
-                        });
-                    })
-                })
-            } else{
-                setTimeout(() => {
-                    inpF()
-                }, 500);
-            }
-        }
-        inpF()
+        // var inpF = function(){
+        //     if(document.querySelectorAll('.custom-control').length != 0){
+        //         var inputs = document.querySelectorAll('.custom-control')
+        //         console.log(inputs,'Inputs');
+        //         inputs.forEach(input => {
+        //             input.addEventListener('click', () => {
+        //                 console.log(1, '#'+input.id);
+        //                 const tooltip = document.querySelector('#tooltip');
+        //                 createPopper(input, tooltip, {
+        //                     placement: 'right',
+        //                 });
+        //             })
+        //         })
+        //     } else{
+        //         setTimeout(() => {
+        //             inpF()
+        //         }, 500);
+        //     }
+        // }
+        // inpF()
         $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
             beforeClose: function () {
                 $('#hamburgerTrigger').removeClass('is-active');
@@ -1724,26 +1727,12 @@ export default {
         }, 1000);
     },
     mounted() {
-        var inpF = function(){
-            if(document.querySelectorAll('.custom-control').length != 0){
-                var inputs = document.querySelectorAll('.custom-control')
-                console.log(inputs,'Inputs');
-                inputs.forEach(input => {
-                    input.addEventListener('click', () => {
-                        console.log(1, '#'+input.id);
-                        const tooltip = document.querySelector('#tooltip');
-                        createPopper(input, tooltip, {
-                            placement: 'left',
-                        });
-                    })
-                })
-            } else{
-                setTimeout(() => {
-                    inpF()
-                }, 500);
-            }
-        }
-        inpF()
+        // document.addEventListener('click', e => {
+        //     console.log(e.target)
+        // })
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
 
         if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
             this.$store.commit('FirstCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
@@ -1780,6 +1769,21 @@ export default {
         });
     },
     methods: {
+        Label(e){
+            if(this.currentInput != e && !document.getElementById(e).checked) {
+                this.IsPopper = true
+                console.log(e)
+                this.$nextTick(() => {
+                    const input = document.getElementById(e)
+                    const tooltip = document.getElementById('tooltip');
+                    createPopper(input, tooltip, {
+                        placement: 'right',
+                    });
+                })
+            } else {
+                this.IsPopper = false
+            }
+        },
         NextProductsPage(){
             if(this.ProductCounter+2 <= Math.ceil(this.Products.length / 60)) this.ProductCounter += 1
         },
@@ -2287,5 +2291,6 @@ color: white;
 padding: 5px 10px;
 border-radius: 4px;
 font-size: 13px;
+z-index: 10;
 }
 </style>

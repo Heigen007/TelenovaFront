@@ -1014,11 +1014,14 @@ export default {
         })
     },
     mounted(){
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+            console.log();
+        }, 1000);
         this.IsC = true
         setTimeout(() => {
             this.Slick()            
         }, 1500);
-
     },
     beforeDestroy(){
         this.IsC = false

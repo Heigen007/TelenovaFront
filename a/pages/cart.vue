@@ -140,7 +140,9 @@ export default {
         this.items = this.$store.state.cart.cart
     },
     mounted(){
-
+                setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
         $.HSCore.components.HSQantityCounter.init('.js-quantity');
 
         // initialization of malihu scrollbar

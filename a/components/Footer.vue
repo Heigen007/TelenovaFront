@@ -194,7 +194,7 @@
                                                 data-unfold-hide-on-scroll="true"
                                                 data-unfold-animation-in="slideInUp"
                                                 data-unfold-animation-out="fadeOut">
-                                                <span class="d-sm-inline-flex align-items-center"><i class="ec ec-dollar mr-1"></i>{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
+                                                <span class="d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
                                             </a>
 
                                             <div id="languageDropdown2" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker2">

@@ -644,6 +644,9 @@ export default {
         this.items = this.$store.state.cart
     },
     mounted(){
+                setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
         setTimeout(() => {
             this.LinkActive = true
         }, 100);

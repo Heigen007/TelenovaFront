@@ -190,6 +190,9 @@ export default {
         }
     },
     mounted(){
+                setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
         $(document).on('ready', function () {
 
             $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {

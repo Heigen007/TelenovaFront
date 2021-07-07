@@ -1,5 +1,5 @@
 <template>
-<div style='position: sticky; width: 100%; top: 0; z-index: 1000; overflow: hidden'>
+<div style='position: sticky; width: 100%; top: 0; z-index: 1000;'>
         <!-- ========== HEADER ========== -->
         <header id="header" class="u-header u-header-left-aligned-nav mb-3">
             <div class="u-header__section shadow-none">
@@ -59,7 +59,7 @@
                                                 data-unfold-animation-in="slideInUp"
                                                 data-unfold-animation-out="fadeOut">
                                                 <span class="d-inline-block d-sm-none">US</span>
-                                                <span class="d-none d-sm-inline-flex align-items-center"><i class="ec ec-dollar mr-1"></i>{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
+                                                <span class="d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
                                             </a>
 
                                             <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
@@ -280,30 +280,6 @@
                 <!-- End Logo-Vertical-menu-Search-header-icons -->
 
                 <!-- Secondary-menu -->
-                <div class="container d-none d-xl-block">
-                    <div class="secondary-menu flex-horizontal-center position-relative pt-2">
-                        <div class="ml-wd-4 flex-shrink-0">
-                            <h6 class="font-weight-bold font-size-13 mb-0 mr-2">Telenova Best Selling: </h6>
-                        </div>
-                        <!-- Nav -->
-                        <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space position-static">
-                            <!-- Navigation -->
-                            <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                <ul v-if="bestC" class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
-                                    <!-- Pages -->
-                                    <!-- End Pages -->
-                                    <li v-for="(el, i) in bestC.slice(0,10)" :key="i">
-                                        <NuxtLink class="nav-link u-header__nav-link" :to="'/shop?SCat?'+el.name">{{el.name}}</NuxtLink>
-                                    </li>
-                                    <!-- End Samsung Smart TVs -->
-                                    <!-- End Button -->
-                                </ul>
-                            </div>
-                            <!-- End Navigation -->
-                        </nav>
-                        <!-- End Nav -->
-                    </div>
-                </div>
                 <!-- End Secondary-menu -->
             </div>
             <div style="display: none !important" class="d-none d-xl-block bg-primary">
@@ -619,8 +595,9 @@ export default {
 .MPopUp{
     position: absolute;
     z-index: 1001;
-    bottom: 22%;
-    right: -20%;
+    bottom: -10%;
+    opacity: 0;
+    right: 3%;
     animation: slideLeft 3s;
     background-color: rgba(90, 120, 251, 0.6);
     color: rgba(255, 255, 255, 0);
@@ -630,9 +607,9 @@ export default {
     backdrop-filter: blur(2px);
 }
 @keyframes slideLeft {
-  0%   {right: -20%}
-  40%  {color: rgba(255, 255, 255, 1); right: 3%}
-  60%  {color: rgba(255, 255, 255, 1); right: 3%}
-  100% {right: -20%}
+  0%   {opacity: 0;}
+  40%  {color: rgba(255, 255, 255, 1); opacity: 1;}
+  60%  {color: rgba(255, 255, 255, 1); opacity: 1;}
+  100% {opacity: 0}
 }
 </style>

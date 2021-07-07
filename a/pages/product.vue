@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-6 col-xl-4 mb-md-6 mb-lg-0">
                             <div class="mb-2">
-                                <NuxtLink :to="'/shop?'+Product.offerData.category_list[0]" class="font-size-12 text-gray-5 mb-2 d-inline-block">{{Product.offerData.category_list[0]}}</NuxtLink>
+                                <NuxtLink :to="'/shop?SCat?'+Product.offerData.category_list[1]" class="font-size-12 text-gray-5 mb-2 d-inline-block">{{Product.offerData.category_list[0]}}</NuxtLink>
                                 <h2 class="font-size-25 text-lh-1dot2">{{Product.offerData.name}}</h2>
                                 <div class="mb-2">
                                     <NuxtLink class="d-inline-flex align-items-center small font-size-15 text-lh-1" to="#">
@@ -419,6 +419,11 @@ export default {
         .catch( error => {
             console.log(error);
         })
+    },
+    mounted(){
+                setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
     },
     methods: {
         SmallT(){
