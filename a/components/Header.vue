@@ -1,5 +1,5 @@
 <template>
-<div style='position: sticky; width: 100%; top: 0; z-index: 1000;'>
+<div style='position: sticky; width: 100%; top: 0; z-index: 1000; overflow: hidden'>
         <!-- ========== HEADER ========== -->
         <header id="header" class="u-header u-header-left-aligned-nav mb-3">
             <div class="u-header__section shadow-none">
@@ -269,6 +269,7 @@
                                             <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost}}{{'\xa0'}}тг.</span>
                                         </NuxtLink>
                                         </li>
+                                        <div v-if='PopUp' class = 'MPopUp'>Product Added!</div>
                                     </ul>
                                 </div>
                             </div>
@@ -463,11 +464,17 @@ export default {
     data: () => ({
         Component: 'Header',
         InputValue: '',
-        bestC: []
+        bestC: [],
+        PopUp: false
     }),
     watch: {
         CartCount: function (val){
-            console.log('change');
+            if(!this.PopUp){
+                this.PopUp = true
+                setTimeout(() => {
+                    this.PopUp = false
+                }, 2600);
+            }
         }
     },
     created(){
@@ -608,5 +615,24 @@ export default {
     .Cost{
         display: none
     }
+}
+.MPopUp{
+    position: absolute;
+    z-index: 1001;
+    bottom: 22%;
+    right: -20%;
+    animation: slideLeft 3s;
+    background-color: rgba(90, 120, 251, 0.6);
+    color: rgba(255, 255, 255, 0);
+    padding: 7px 14px 7px 14px;
+    border-radius: 4px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+@keyframes slideLeft {
+  0%   {right: -20%}
+  40%  {color: rgba(255, 255, 255, 1); right: 3%}
+  60%  {color: rgba(255, 255, 255, 1); right: 3%}
+  100% {right: -20%}
 }
 </style>
