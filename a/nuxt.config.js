@@ -1,8 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  srcDir: 'src',
   debug: true,
-  buildDir: 'functions/.nuxt',
   head: {
     title: 'intshop',
     meta: [
@@ -175,13 +173,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    './src/static/css/font-electro.css',
-    './src/static/vendor/font-awesome/css/fontawesome-all.min.css',
-    './src/static/vendor/animate.css/animate.min.css',
-    './src/static/vendor/hs-megamenu/src/hs.megamenu.css',
-    './src/static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
-    './src/static/vendor/fancybox/jquery.fancybox.css',
-    './src/static/vendor/slick-carousel/slick/slick.css'
+    './static/css/font-electro.css',
+    './static/vendor/font-awesome/css/fontawesome-all.min.css',
+    './static/vendor/animate.css/animate.min.css',
+    './static/vendor/hs-megamenu/src/hs.megamenu.css',
+    './static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+    './static/vendor/fancybox/jquery.fancybox.css',
+    './static/vendor/slick-carousel/slick/slick.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
