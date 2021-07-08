@@ -15,8 +15,8 @@
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider">
-                                    <input @click.capture='Label("input-left")' type="range" id="input-left" min="0" step="1" max="1500" value="0">
-                                    <input @click.capture='Label("input-right")' type="range" id="input-right" min="0" step="1" max="1500" value="1500">
+                                    <input @input="Label('input-left')" @click.capture='Label("input-left")' type="range" id="input-left" min="0" step="1" max="1500" value="0">
+                                    <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" min="0" step="1" max="1500" value="1500">
 
                                     <div class="slider">
                                     <div class="track"></div>
@@ -1571,7 +1571,7 @@
                                 data-unfold-animation-in="fadeInLeft"
                                 data-unfold-animation-out="fadeOutLeft"
                                 data-unfold-duration="500">
-                                <span aria-hidden="true"><i class="ec ec-close-remove"></i></span>
+                                <span id='AsideSpanControl' aria-hidden="true"><i class="ec ec-close-remove"></i></span>
                             </button>
                         </div>
                         <!-- End Toggle Button -->
@@ -1586,8 +1586,8 @@
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider2">
-                                    <input @click.capture='Label("input-left2")' type="range" id="input-left2" min="0" step="1" max="1500" value="0">
-                                    <input @click.capture='Label("input-right2")' type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-left2")' type="range" id="input-left2" min="0" step="1" max="1500" value="0">
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
 
                                     <div class="slider2">
                                     <div class="track"></div>
@@ -1606,7 +1606,7 @@
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div id='Tipy' class="custom-control custom-checkbox">
                                         <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+1">
-                                        <label @click.capture='Label("Fil"+fil+1)' class="custom-control-label" :for="'Fil'+fil+1">{{fil}}</label>
+                                        <label @click.capture="Label('Fil'+fil+1)" class="custom-control-label" :for="'Fil'+fil+1">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -1650,14 +1650,12 @@ export default {
         $route() {
             this.IsProducts = false
             if(process.browser){
-                console.log(Object.keys(this.$route.query)[0]?.split('+').join(' '));
             if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
                 this.$store.commit('FirstCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
             } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat') {
                 this.$store.commit('SecondCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
             } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
                 this.$store.commit('SearchByQuery', this.$route.query.query)
-                console.log('query',this.$route.query.query);
             } else if(Object.keys(this.$route.query).length > 0){
                 this.$store.commit('ThirdCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' '))
             }
@@ -1685,34 +1683,7 @@ export default {
             this.IsProducts = true
         }
     },
-// async created(){
-//     var self = this
-//     await axios.get('url')
-//     .then( response => {
-//         self.MainInfo = response.data.info
-//     })
-// },
     updated(){
-        // var inpF = function(){
-        //     if(document.querySelectorAll('.custom-control').length != 0){
-        //         var inputs = document.querySelectorAll('.custom-control')
-        //         console.log(inputs,'Inputs');
-        //         inputs.forEach(input => {
-        //             input.addEventListener('click', () => {
-        //                 console.log(1, '#'+input.id);
-        //                 const tooltip = document.querySelector('#tooltip');
-        //                 createPopper(input, tooltip, {
-        //                     placement: 'right',
-        //                 });
-        //             })
-        //         })
-        //     } else{
-        //         setTimeout(() => {
-        //             inpF()
-        //         }, 500);
-        //     }
-        // }
-        // inpF()
         $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
             beforeClose: function () {
                 $('#hamburgerTrigger').removeClass('is-active');
@@ -1739,9 +1710,15 @@ export default {
         }, 1000);
     },
     mounted() {
-        // document.addEventListener('click', e => {
-        //     console.log(e.target)
-        // })
+        document.addEventListener('click', e => {
+            var control = document.getElementById('AsideSpanControl')
+            control.addEventListener('click', () => {
+                this.IsPopper = false
+            })
+            var el = document.getElementById('sidebarContent1')
+            var CI = document.getElementById(this.currentInput)
+            if(CI && !el.contains(e.target) && el.contains(CI)) this.IsPopper = false;
+        })
         setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
@@ -1752,7 +1729,6 @@ export default {
             this.$store.commit('SecondCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
         } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
             this.$store.commit('SearchByQuery', this.$route.query.query)
-            console.log('query',this.$route.query.query);
         } else if(Object.keys(this.$route.query).length > 0){
             this.$store.commit('ThirdCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' '))
         }
@@ -1782,9 +1758,9 @@ export default {
     },
     methods: {
         Label(e){
-            if(!document.getElementById(e).checked) {
+            this.currentInput = e.id
+            if(!document.getElementById(e).checked || e.id == 'input-left2' || 'input-left' || 'input-right2' || 'input-right') {
                 this.IsPopper = true
-                console.log(e)
                 this.$nextTick(() => {
                     const input = document.getElementById(e)
                     const tooltip = document.getElementById('tooltip');
@@ -1810,10 +1786,8 @@ export default {
             if(this.currentInput == 'input-left2' || 'input-left' || 'input-right2' || 'input-right'){
                 this.IsPopper = false
             }
-            console.log(2);
             if(process.browser){
                 var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
-                console.log(Checkboxes);
                 var result = []
                 this.IdResult = []
 
@@ -1843,14 +1817,12 @@ export default {
                 console.log(MinPrice, MaxPrice);
                 // PriceFilter = this.ProductsCopy.filter(Product => Product.price >= MinPrice && Product.price <= MaxPrice})
                 // this.ProductsCopy = PriceFilter
-                console.log(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?'));
                 if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
                     this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['FCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
                 } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat'){
                     this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['SCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
                 } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
                     this.$store.commit('FilterProductsQuery', [result, [MinPrice, MaxPrice], this.$route.query.query])
-                    console.log('query');
                 } else {
                     this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['TCat', Object.keys(this.$route.query)[0]?.split('+').join(' ')]])
                 }
@@ -1900,7 +1872,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from :${_this.value * 1000} тг.`;
+            priceFrom.textContent = `from: ${_this.value * 1000} тг.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -1979,7 +1951,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from :${_this.value * 1000} тг.`;
+            priceFrom.textContent = `from: ${_this.value * 1000} тг.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -2303,7 +2275,7 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 13px;
-    z-index: 10;
+    z-index: 1002;
     clip-path: polygon(0% 50%, 15% 60%, 15% 85%, 85% 85%, 85% 15%, 15% 15%, 15% 40%);
 }
 </style>
