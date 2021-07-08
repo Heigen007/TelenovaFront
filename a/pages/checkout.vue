@@ -1,7 +1,7 @@
 <template>
     <div class="CHECKOUTMAIN">
         
-
+        <loader v-if='loaderM' object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="1.7" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content" role="main" class="checkout-page">
             <div class="container mt-6">
@@ -490,7 +490,7 @@
                                             <div id="basicsAccordion1">
                                                 <!-- Card -->
                                                 <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div class="p-3" id="basicsHeadingOne">
+                                                    <!-- <div class="p-3" id="basicsHeadingOne">
                                                         <div class="custom-control custom-radio">
                                                             <input type="radio" class="custom-control-input" id="stylishRadio1" name="stylishRadio" checked>
                                                             <label class="custom-control-label form-label" for="stylishRadio1"
@@ -501,7 +501,7 @@
                                                                 {{localizeFilter('Order', 'TransferVariations', 'FirstVariationTitle')}}
                                                             </label>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div id="basicsCollapseOnee" class="collapse show border-top border-color-1 border-dotted-top bg-dark-lighter"
                                                         aria-labelledby="basicsHeadingOne"
                                                         data-parent="#basicsAccordion1">
@@ -609,6 +609,7 @@
 </template>
 
 <script>
+import loader from "../js/vue-ui-preloader/src/components/loaders/dots.vue";
 import axios from 'axios'
 import CryptoJS from 'crypto-js'
 import Swal from 'sweetalert2'
@@ -637,14 +638,18 @@ export default {
                 Postcode: '',
                 Email: '',
                 Phone: ''
-            }
+            },
+            loaderM: false
         }
+    },
+    components: {
+        loader
     },
     beforeMount(){
         this.items = this.$store.state.cart
     },
     mounted(){
-                setTimeout(() => {
+        setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
         setTimeout(() => {
@@ -669,38 +674,85 @@ export default {
     },
     methods: {
         Ship(e){
-            if(document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id != 'FourstylishRadio1'){
+            if(this.items.cart.length > 0){
                 var self = this
-                e.preventDefault()
-                var filteredCart = JSON.parse(JSON.stringify(this.items.cart))
-                for(var el = 0; el < filteredCart.length ; el++) {
-                    filteredCart[el] = {
-                        kaspi_id: filteredCart[el].offerData.kaspi_id,
-                        count: filteredCart[el].offerData.count
+                var but = document.querySelector('.form-check-input').checked
+                if(document.querySelectorAll('input[name="stylishRadio"]:checked').length > 0){
+                    if(document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id != 'FourstylishRadio1'){
+                        e.preventDefault()
+                        if(this.info.Adress &&this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                            if(but) {
+                                var filteredCart = JSON.parse(JSON.stringify(self.items.cart))
+                                for(var el = 0; el < filteredCart.length ; el++) {
+                                    filteredCart[el] = {
+                                        kaspi_id: filteredCart[el].offerData.kaspi_id,
+                                        count: filteredCart[el].offerData.count
+                                    }
+                                }
+                                console.log(filteredCart)
+                                var checkout = {
+                                    address: this.info.Adress, // адрес доставки
+                                    phoneNumber: this.info.Phone, // номер телефона
+                                    email: this.info.Email, // почта
+                                    goods: filteredCart,
+                                    name: this.info.FName + ' ' + this.info.SName, // имя
+                                    paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                                }
+                                this.loaderM = true
+                                axios.post('https://textforeva.ru/order', checkout)
+                                .then(response => {
+                                    console.log(response)
+                                    self.loaderM = true
+                                    Swal.fire(
+                                        'Success!',
+                                        'Your order has been created!',
+                                        'success'
+                                    )
+                                    self.$store.commit('cart/clear')
+                                    self.$router.push('/')
+                                })
+                                .catch(error => {
+                                    console.log(error);
+                                })
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Please, agree with Terms And Conditions',
+                                    'error'
+                                )
+                            }
+                        } else {
+                            Swal.fire(
+                                'Error!',
+                                'Please, write down all the information!',
+                                'error'
+                            )
+                        }
+                    } else {
+                        if(!but) {
+                            e.preventDefault()
+                            Swal.fire(
+                                'Error!',
+                                'Please, agree with Terms And Conditions',
+                                'error'
+                            )
+                        }
                     }
-                }
-                console.log(filteredCart)
-                var checkout = {
-                    address: this.info.Adress, // адрес доставки
-                    phoneNumber: this.info.Phone, // номер телефона
-                    email: this.info.Email, // почта
-                    goods: filteredCart,
-                    name: this.info.FName + ' ' + this.info.SName, // имя
-                    paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                }
-                axios.post('https://textforeva.ru/order', checkout)
-                .then(response => {
-                    console.log(response)
+                } else {
+                    e.preventDefault()
                     Swal.fire(
-                    'Success!',
-                    'Your order has been created!',
-                    'success'
+                        'Error!',
+                        'Please, choose the paying variant!',
+                        'error'
                     )
-                    self.$router.push('/')
-                })
-                .catch(error => {
-                    console.log(error);
-                })
+                }
+            } else {
+                e.preventDefault()
+                Swal.fire(
+                    'Error!',
+                    'You forgot to add products to your cart!',
+                    'error'
+                )
             }
         },
         localizeFilter(key, key2, key3) {

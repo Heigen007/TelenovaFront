@@ -14,6 +14,10 @@ export default {
           localStorage.setItem('cart', JSON.stringify(state.cart))
         }
       },
+      clear(state){
+        state.cart = []
+        localStorage.setItem('cart', JSON.stringify([]))
+      },
       cartChange(state, product){
         var Updated = false
         if(!product.offerData.count) product.offerData.count = 1

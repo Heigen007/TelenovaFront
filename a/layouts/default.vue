@@ -3,8 +3,8 @@
       <div class="u-header-topbar py-2 d-none d-xl-block">
         <div class="container">
             <div class="d-flex align-items-center">
-                <div class="topbar-left">
-                    <NuxtLink to="#" class="text-gray-110 font-size-13 u-header-topbar__nav-link">{{localizeFilter( 'Greeting')}}</NuxtLink>
+                <div class="topbar-left ml-5">
+                    <a href="tel:+77073373318" style='font-size: 1.2em; font-weight: 600; color: #0144a3' class="font-size-13 u-header-topbar__nav-link">+77073373318</a>
                 </div>
                 <div class="topbar-right ml-auto" style = "margin-right: 100px !important">
                     <ul class="list-inline mb-0" style = "display: flex; align-items: center; justify-content: center">

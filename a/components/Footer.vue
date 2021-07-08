@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="col pl-3">
                                     <div class="font-size-13 font-weight-light">{{localizeFilter('FirstQuestion')}}</div>
-                                    <a :href="localizeFilter('FNumber')" class="font-size-20 text-gray-90">{{localizeFilter('FNumber')}}</a>, <a :href="localizeFilter('SNumber')" class="font-size-20 text-gray-90">{{localizeFilter('SNumber')}}</a>
+                                    <a href="tel:+77073373318" class="font-size-20 text-gray-90">+77073373318</a>
                                 </div>
                             </div>
                         </div>
@@ -214,30 +214,6 @@
         </div>
         <!-- End Footer-bottom-widgets -->
         <!-- Footer-copy-right -->
-        <div class="bg-gray-14 py-2">
-            <div class="container">
-                <div class="flex-center-between d-block d-md-flex">
-                    <div class="mb-3 mb-md-0">© <NuxtLink to="#" class="font-weight-bold text-gray-90">{{localizeFilter('BottomCompanyName')}}</NuxtLink>{{localizeFilter('BottomMessage')}}</div>
-                    <div class="text-md-right">
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="/img/100X60/img1.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="/img/100X60/img2.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="/img/100X60/img3.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="/img/100X60/img4.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="/img/100X60/img5.jpg" alt="Image Description">
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Footer-copy-right -->
     </footer>
 </template>
