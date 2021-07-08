@@ -244,7 +244,7 @@ export const actions = {
   FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
     dispatch('connect')
-    axios.get(`http://157.230.225.244/storage/mostPopular/freshProducts/40`)
+    axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/40`)
     .then(response => {
       commit('SetProducts', response.data)
     })
