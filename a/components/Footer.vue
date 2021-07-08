@@ -181,7 +181,7 @@
                                 <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                                     <div class="d-flex align-items-center">
                                         <!-- Language -->
-                                        <div class="position-relative">
+                                        <div v-if='lang' class="position-relative">
                                             <a id="languageDropdownInvoker2" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button"
                                                 aria-controls="languageDropdown2"
                                                 aria-haspopup="true"
@@ -202,6 +202,9 @@
                                                 <div style="cursor: pointer" class="dropdown-item" @click='changeLang("ru-RU")'>Russian</div>
                                                 <div style="cursor: pointer" class="dropdown-item" @click='changeLang("kz-KZ")'>Kazakh‎</div>
                                             </div>
+                                        </div>
+                                        <div v-else class="position-relative">
+                                            <span class="dropdown-toggle d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
                                         </div>
                                         <!-- End Language -->
                                     </div>
@@ -225,7 +228,8 @@ export default {
         return{
             Component: 'Footer',
             popularProducts: [],
-            bestC: []
+            bestC: [],
+            lang: true
         }
     },
     methods: {
@@ -235,8 +239,34 @@ export default {
             else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
         },
         changeLang(lang){
-            this.$store.commit('lang/changeLang', lang)
-        }
+            this.lang = false
+            if(lang) this.$store.commit('lang/changeLang', lang)
+            setTimeout(() => {
+            this.lang = true
+            });
+            setTimeout(() => {
+                $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                    afterOpen: function () {
+                        $(this).find('input[type="search"]').focus();
+                    }
+                });
+                // initialization of forms
+                $.HSCore.components.HSFocusState.init();
+
+                // initialization of unfold component
+                $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                    beforeClose: function () {
+                        $('#hamburgerTrigger').removeClass('is-active');
+                    },
+                    afterClose: function() {
+                        $('#headerSidebarList .collapse.show').collapse('hide');
+                    }
+                });
+
+                // initialization of unfold component
+                $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+            },0);
+        },
     },
     created() {
         axios.get('https://textforeva.ru/storage/mostPopular/products/25')
@@ -258,6 +288,7 @@ export default {
         })
     },
     mounted(){
+        this.changeLang()
         $(window).on('load', function () {
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
@@ -270,8 +301,6 @@ export default {
         });
 
         $(document).on('ready', function () {
-            // initialization of header
-            $.HSCore.components.HSHeader.init($('#header'));
 
             // initialization of animation
             $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');

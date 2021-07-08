@@ -54,7 +54,6 @@
                                         data-unfold-hide-on-scroll="true"
                                         data-unfold-animation-in="slideInUp"
                                         data-unfold-animation-out="fadeOut">
-                                        <span class="d-inline-block d-sm-none">US</span>
                                         <span class="d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
                                     </a>
 
@@ -122,12 +121,11 @@ export default {
     methods:{
       changeLang(lang){
         this.lang = false
-        this.$store.commit('lang/changeLang', lang)
+        if(lang) this.$store.commit('lang/changeLang', lang)
         setTimeout(() => {
            this.lang = true
         });
         setTimeout(() => {
- // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
                 afterOpen: function () {
                     $(this).find('input[type="search"]').focus();

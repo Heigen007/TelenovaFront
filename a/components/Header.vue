@@ -411,41 +411,6 @@ export default {
         $(document).on('ready', function () {
             // initialization of header
             $.HSCore.components.HSHeader.init($('#header'));
-
-            // initialization of animation
-            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                afterOpen: function () {
-                    $(this).find('input[type="search"]').focus();
-                }
-            });
-            // initialization of forms
-            $.HSCore.components.HSFocusState.init();
-            // initialization of show animations
-
-            // initialization of hamburgers
-            $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
-
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                beforeClose: function () {
-                    $('#hamburgerTrigger').removeClass('is-active');
-                },
-                afterClose: function() {
-                    $('#headerSidebarList .collapse.show').collapse('hide');
-                }
-            });
-
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-                e.preventDefault();
-                if($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
             document.addEventListener('click',e => {
                 var target = document.getElementById('basicsCollapseOne')
                 var accordion = document.getElementById('basicsAccordion')
@@ -453,12 +418,6 @@ export default {
                     $(target).collapse('hide');
                 }
             })
-
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-            // initialization of select picker
-            $.HSCore.components.HSSelectPicker.init('.js-select');
         });
     },
     methods: {
@@ -510,7 +469,7 @@ export default {
 </script>
 
 <style scoped>
-@media (max-width: 360px) {
+@media (max-width: 400px) {
     .Cost{
         display: none
     }
