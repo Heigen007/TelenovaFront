@@ -4,8 +4,9 @@
 
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content" role="main">
-            <div v-if='Products' class="container mt-6">
-                <div class="row mb-8">
+            <div class="container mt-6">
+                <preloader v-if='!IsProducts' />
+                <div v-else class="row mb-8">
                     <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
                         <div class="mb-6">
                             <div class="border-bottom border-color-1 mb-5">
@@ -48,21 +49,22 @@
                         <div class="mb-6 d-none d-xl-block">
                             <div class="position-relative">
                                 <div class="border-bottom border-color-1 mb-2">
-                                    <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalTitle')}} {{$route.query.query}}</h3>
-                                    <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
-                                    <h3 v-else-if='Object.keys($route.query)[0]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0]}}</h3>
+                                    <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalTitle')}}{{'\xa0'}}{{$route.query.query}}</h3>
+                                    <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{'\xa0'}}{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
+                                    <h3 v-else-if='Object.keys($route.query)[0]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}}{{'\xa0'}}{{Object.keys($route.query)[0].split('+').join(' ')}}</h3>
                                 </div>
                             </div>
                         </div>
                         <!-- End Recommended Products -->
                         <!-- Shop-control-bar Title -->
                         <div class="flex-center-between mb-3">
-                            <h3 id='Popper' class="font-size-25 mb-0">{{localizeFilter('SecondTitle')}}</h3>
-                            <p class="font-size-14 text-gray-90 mb-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</p>
+                            <!-- <h3 class="font-size-25 mb-0">{{localizeFilter('SecondTitle')}}</h3> -->
+                            <p v-if='Products.length != 0' class="font-size-14 text-gray-90 mb-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</p>
+                            <p v-else class="font-size-14 text-gray-90 mb-0">Showing 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</p>
                         </div>
                         <!-- End shop-control-bar Title -->
                         <!-- Shop-control-bar -->
-                        <div class="bg-gray-1 flex-center-between borders-radius-9 py-1">
+                        <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1">
                             <div class="d-xl-none">
                                 <!-- Account Sidebar Toggle Button -->
                                 <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;" role="button"
@@ -124,10 +126,11 @@
                                     <!-- End Select -->
                                 </form>
                             </div>
-                            <nav class="px-3 flex-horizontal-center text-gray-20 d-none d-xl-flex">
+                            <nav style='margin-left: auto; margin-right: 10px' class="px-3 flex-horizontal-center text-gray-20 d-none d-sm-flex">
                                 <div style='transform: rotate(180deg); cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">→</div>
                                 <form method="post" class="min-width-50 mr-1">
-                                    <input @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
+                                    <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
+                                    <input v-else @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="0">
                                 </form> of {{Math.ceil(Products.length / 60)}}
                                 <div style="cursor: pointer" class="text-gray-30 font-size-20 ml-2" @click="NextProductsPage">→</div>
                             </nav>
@@ -135,7 +138,7 @@
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body -->
                         <!-- Tab Content -->
-                        <div style='min-height: 330px' class="tab-content" id="pills-tabContent">
+                        <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <ul class="row list-unstyled products-group no-gutters">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class=" col-lg-4 col-md-6 MyCol col-sm-6 col-wd-2gdot4 product-item">
@@ -1537,7 +1540,8 @@
                         <!-- End Shop Body -->
                         <!-- Shop Pagination -->
                         <nav class="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
-                            <div class="text-center text-md-left mb-3 mb-md-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
+                            <div v-if='Products.length != 0' class="text-center text-md-left mb-3 mb-md-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
+                            <div v-else class="text-center text-md-left mb-3 mb-md-0">Showing 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
                             <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
                                 <div @click="PrevProductsPage" class="text-gray-30 font-size-20 mx-2" style="transform: rotate(180deg); cursor: pointer;">→</div>
                                 <li class="page-item"><div class="page-link current">{{ProductCounter + 1}}</div></li>
@@ -1625,6 +1629,7 @@
 <script>
 // import axios from 'axios'
 import { createPopper } from '@popperjs/core';
+import preloader from '../components/CssPreloader.vue'
 export default {
     data(){
         return{
@@ -1634,11 +1639,16 @@ export default {
             carouselCounter: true,
             IdResult: [],
             currentInput: '',
-            IsPopper: false
+            IsPopper: false,
+            IsProducts: false
         }
+    },
+    components: {
+        preloader
     },
     watch: {
         $route() {
+            this.IsProducts = false
             if(process.browser){
                 console.log(Object.keys(this.$route.query)[0]?.split('+').join(' '));
             if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
@@ -1665,12 +1675,14 @@ export default {
             }
         },
         Products(newV){
+            window.scrollTo(0,0)
             if(this.carouselCounter){
                 setTimeout(() => {
                     this.carouselCounter = false
                     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
                 }, 1000);
             }
+            this.IsProducts = true
         }
     },
 // async created(){
@@ -1770,7 +1782,7 @@ export default {
     },
     methods: {
         Label(e){
-            if(this.currentInput != e && !document.getElementById(e).checked) {
+            if(!document.getElementById(e).checked) {
                 this.IsPopper = true
                 console.log(e)
                 this.$nextTick(() => {
@@ -1783,6 +1795,7 @@ export default {
             } else {
                 this.IsPopper = false
             }
+            this.currentInput = e
         },
         NextProductsPage(){
             if(this.ProductCounter+2 <= Math.ceil(this.Products.length / 60)) this.ProductCounter += 1
@@ -1794,49 +1807,54 @@ export default {
             if(e.data != null) this.ProductCounter = e.data + 1
         },
         Sort() {
+            if(this.currentInput == 'input-left2' || 'input-left' || 'input-right2' || 'input-right'){
+                this.IsPopper = false
+            }
             console.log(2);
             if(process.browser){
-            var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
-            console.log(Checkboxes);
-            var result = []
+                var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
+                console.log(Checkboxes);
+                var result = []
+                this.IdResult = []
 
-            Checkboxes.forEach(element => {
-                if(element?.checked == true) {
-                    this.IdResult.push(element.id)
-                    result.push([element.name.split('/')[0],element.name.split('/')[1]])
+                Checkboxes.forEach(element => {
+                    if(element?.checked == true) {
+                        this.IdResult.push(element.id)
+                        result.push([element.name.split('/')[0],element.name.split('/')[1]])
+                    }
+                });
+
+                // CategoryFilter = this.Products.filter(Product => {
+                //     for (let index = 0; index < result.length; index++) {
+                //     if(Product.CategoryPoints.indexOf(result[index]) == -1) {
+                //         return null
+                //     }
+                //     }
+                //     return Product
+                // })
+                if(window.screen.width >= 1200) {
+                    var MinPrice = document.getElementById("input-left").value * 1000;
+                    var MaxPrice = document.getElementById("input-right").value * 1000;
+                } else {
+                    var MinPrice = document.getElementById("input-left2").value * 1000;
+                    var MaxPrice = document.getElementById("input-right2").value * 1000;
                 }
-            });
-
-            // CategoryFilter = this.Products.filter(Product => {
-            //     for (let index = 0; index < result.length; index++) {
-            //     if(Product.CategoryPoints.indexOf(result[index]) == -1) {
-            //         return null
-            //     }
-            //     }
-            //     return Product
-            // })
-            if(window.screen.width >= 1200) {
-                var MinPrice = document.getElementById("input-left").value * 1000;
-                var MaxPrice = document.getElementById("input-right").value * 1000;
-            } else {
-                var MinPrice = document.getElementById("input-left2").value * 1000;
-                var MaxPrice = document.getElementById("input-right2").value * 1000;
-            }
-            console.log(result);
-            console.log(MinPrice, MaxPrice);
-            // PriceFilter = this.ProductsCopy.filter(Product => Product.price >= MinPrice && Product.price <= MaxPrice})
-            // this.ProductsCopy = PriceFilter
-            console.log(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?'));
-            if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
-                this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['FCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
-            } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat'){
-                this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['SCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
-            } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
-                this.$store.commit('FilterProductsQuery', [result, [MinPrice, MaxPrice], this.$route.query.query])
-                console.log('query');
-            } else {
-                this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['TCat', Object.keys(this.$route.query)[0]?.split('+').join(' ')]])
-            }
+                console.log(result);
+                console.log(MinPrice, MaxPrice);
+                // PriceFilter = this.ProductsCopy.filter(Product => Product.price >= MinPrice && Product.price <= MaxPrice})
+                // this.ProductsCopy = PriceFilter
+                console.log(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?'));
+                if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
+                    this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['FCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
+                } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat'){
+                    this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['SCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
+                } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
+                    this.$store.commit('FilterProductsQuery', [result, [MinPrice, MaxPrice], this.$route.query.query])
+                    console.log('query');
+                } else {
+                    this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['TCat', Object.keys(this.$route.query)[0]?.split('+').join(' ')]])
+                }
+            this.IsProducts = false
             }
         },
         SelectSorting(select){
@@ -2055,11 +2073,6 @@ export default {
                 var a = JSON.parse(JSON.stringify(this.$store.state.products))
                 a = a.splice(7,17)
                 return a.reverse()
-            }
-        },
-        AllProducts(){
-            if(process.browser) {
-                return this.$store.state.products
             }
         },
         Products(){
@@ -2286,11 +2299,11 @@ input[type=range]:focus::-ms-fill-upper {
     text-transform: uppercase;
 }
 #tooltip {
-/* background-color: #333; */
-color: white;
-padding: 5px 10px;
-border-radius: 4px;
-font-size: 13px;
-z-index: 10;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    z-index: 10;
+    clip-path: polygon(0% 50%, 15% 60%, 15% 85%, 85% 85%, 85% 15%, 15% 15%, 15% 40%);
 }
 </style>

@@ -355,6 +355,7 @@
             </div>
 
         </main>
+        <Preloader v-else />
         <!-- ========== END MAIN CONTENT ========== -->
 
 
@@ -363,6 +364,7 @@
 
 <script>
 import axios from 'axios'
+import preloader from '../components/CssPreloader.vue'
 export default {
     data(){
         return{
@@ -370,6 +372,9 @@ export default {
             Product: null,
             id: null
         }
+    },
+    components: {  
+        Preloader: preloader
     },
     watch: {
         async $route() {

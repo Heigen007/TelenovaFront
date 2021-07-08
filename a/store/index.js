@@ -25,9 +25,10 @@ export const mutations = {
   },
   ChProductsCopy(state, products){
     var arr = products
-    while(arr.length%3 != 0 && arr.length>3){
+    while(arr.length%3 != 0 && arr.length>3 ){
       arr.pop()
     }
+    if(arr.length == 6 || arr.length%30 == 6) arr.pop()
     state.productsFilteredCopy = arr
     state.productsFilteredCopyCopy = arr
   },

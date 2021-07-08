@@ -4,82 +4,10 @@
         <header id="header" class="u-header u-header-left-aligned-nav mb-3">
             <div class="u-header__section shadow-none">
                 <!-- Topbar -->
-               <div class="u-header-topbar py-2 d-none d-xl-block">
-                <div class="container">
-                    <div class="d-flex align-items-center">
-                        <div class="topbar-left">
-                            <NuxtLink to="#" class="text-gray-110 font-size-13 u-header-topbar__nav-link">{{localizeFilter( 'Greeting')}}</NuxtLink>
-                        </div>
-                        <div class="topbar-right ml-auto" style = "margin-right: 100px !important">
-                            <ul class="list-inline mb-0" style = "display: flex; align-items: center; justify-content: center">
-                                <li class="nav-item u-header__nav-item"
-                                    data-event="hover"
-                                    data-position="left">
-                                    <NuxtLink to="/" class="nav-link u-header__nav-link font-weight-bold">Home</NuxtLink>
-                                </li>
-                                <li class="nav-item u-header__nav-item"
-                                    data-event="hover"
-                                    data-position="left">
-                                    <NuxtLink to="/cart" class="nav-link u-header__nav-link font-weight-bold">Cart</NuxtLink>
-                                </li>
-                                <li class="nav-item u-header__nav-item"
-                                    data-event="hover"
-                                    data-position="left">
-                                    <NuxtLink to="/about" class="nav-link u-header__nav-link font-weight-bold">Adout Us</NuxtLink>
-                                </li>
-                                <li class="nav-item u-header__nav-item"
-                                    data-event="hover"
-                                    data-position="left">
-                                    <NuxtLink to="/terms" class="nav-link u-header__nav-link font-weight-bold">Terms</NuxtLink>
-                                </li>
-                                <li class="nav-item u-header__nav-item"
-                                    data-event="hover"
-                                    data-position="left">
-                                    <NuxtLink to="/faq" class="nav-link u-header__nav-link font-weight-bold">FAQ</NuxtLink>
-                                </li>
-                                <li class="nav-item u-header__nav-item mr-5"
-                                    data-event="hover"
-                                    data-position="left">
-                                    <NuxtLink to="/contact" class="nav-link u-header__nav-link font-weight-bold">Contact Us</NuxtLink>
-                                </li>
-                                <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
-                                    <div class="d-flex align-items-center">
-                                        <!-- Language -->
-                                        <div class="position-relative">
-                                            <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button"
-                                                aria-controls="languageDropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                                data-unfold-event="hover"
-                                                data-unfold-target="#languageDropdown"
-                                                data-unfold-type="css-animation"
-                                                data-unfold-duration="300"
-                                                data-unfold-delay="300"
-                                                data-unfold-hide-on-scroll="true"
-                                                data-unfold-animation-in="slideInUp"
-                                                data-unfold-animation-out="fadeOut">
-                                                <span class="d-inline-block d-sm-none">US</span>
-                                                <span class="d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
-                                            </a>
-
-                                            <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
-                                                <div style="cursor: pointer" class="dropdown-item" @click='changeLang("en-US")'>English</div>
-                                                <div style="cursor: pointer" class="dropdown-item" @click='changeLang("ru-RU")'>Russian</div>
-                                                <div style="cursor: pointer" class="dropdown-item" @click='changeLang("kz-KZ")'>Kazakh‎</div>
-                                            </div>
-                                        </div>
-                                        <!-- End Language -->
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
                 <!-- End Topbar -->
 
                 <!-- Logo-Vertical-menu-Search-header-icons -->
-                <div class="border-bottom border-lg-down-0 bg-primary bg-xl-transparent min-height-64 flex-horizontal-center">
+                <div style='position: sticky; width: 100%; top: 0; z-index: 1000;' class="border-bottom border-lg-down-0 bg-primary bg-xl-transparent min-height-64 flex-horizontal-center">
                     <div class="container">
                         <div class="row align-items-center justify-content-between justify-content-xl-start">
                             <!-- Logo -->
@@ -122,7 +50,7 @@
                                         <!-- Card -->
                                         <div class="card border-0 py-3 position-static">
                                             <div class="card-header bg-transparent card-collapse border-0 my-1 d-none d-xl-block" id="basicsHeadingOne">
-                                                <button type="button" class="btn-link btn-block d-flex card-btn py-3 text-lh-1 px-0 shadow-none rounded-0 bg-transparent border-0 font-weight-bold text-gray-90"
+                                                <button id ='BubbleBut' type="button" class="btn-link btn-block d-flex card-btn py-3 text-lh-1 px-0 shadow-none rounded-0 bg-transparent border-0 font-weight-bold text-gray-90"
                                                     data-toggle="collapse"
                                                     data-target="#basicsCollapseOne"
                                                     aria-expanded="true"
@@ -135,7 +63,7 @@
                                                 data-parent="#basicsAccordion">
                                                 <div class="card-body p-0">
                                                     <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
-                                                        <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                                                        <div style='max-height: 31rem; overflow-y: scroll' id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                                                             <ul class="navbar-nav u-header__navbar-nav">
                                                                 <!-- <li class="nav-item u-header__nav-item"
                                                                     data-event="hover"
@@ -181,16 +109,16 @@
                                                                     <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{Object.keys(el)[0]}}</a>
 
                                                                     <!-- Nav Item - Mega Menu -->
-                                                                    <div style="overflow-y: scroll; min-height: 500px" class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu" >
+                                                                    <div style="overflow-y: scroll; min-height: 500px; margin-left: -6px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu" >
                                                                         <div class="vmm-bg" style="bottom: auto">
                                                                             <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 0.5' alt="Image Description">
                                                                         </div>
                                                                         <div class="row u-header__mega-menu-wrapper">
                                                                             <div v-for="(cat,o) in el" :key="o">
                                                                                 <div v-for="(fil,y) in cat" :key='y' class="col mb-3 mb-sm-0">
-                                                                                    <NuxtLink :to="'/shop?SCat?'+y" class="u-header__sub-menu-title">{{y}}</NuxtLink>
+                                                                                    <div @click='HideA("/shop?SCat?"+y)' class="u-header__sub-menu-title pointer">{{y}}</div>
                                                                                     <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                                        <li v-for="(fil2,l) in fil" :key="l"><NuxtLink class="nav-link u-header__sub-menu-nav-link" :to="'/shop?'+fil2"><div v-if='!fil2.includes("not show")'>{{fil2}}</div></NuxtLink></li>
+                                                                                        <li v-for="(fil2,l) in fil" :key="l"><div @click='HideA("/shop?"+fil2)' class="nav-link u-header__sub-menu-nav-link pointer"><div v-if='!fil2.includes("not show")'>{{fil2}}</div></div></li>
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
@@ -289,7 +217,7 @@
                         <div class="col-md-auto d-none d-xl-flex align-items-end">
                             <div class="max-width-270 min-width-270">
                                 <!-- Basics Accordion -->
-                                <div id="basicsAccordion">
+                                <div >
                                     <!-- Card -->
                                     <div class="card border-0 rounded-0">
                                         <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOne">
@@ -411,8 +339,8 @@
                                                 <li v-for="(cat,o) in el" :key="o">
                                                     <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start' class="u-header-collapse__submenu-nav-link">
                                                         <div v-for="(fil,y) in cat" :key="y">
-                                                            <NuxtLink :to="'/shop?SCat?' + y" style='color: #2f2f2f; font-size: 1.1em'>{{y}}</NuxtLink>
-                                                            <div v-for="(fil2,l) in fil" :key='l'><NuxtLink style='color: #b7b7b7' :to="'/shop?' + fil2" v-if='!fil2.includes("not show")'>{{fil2}}</NuxtLink></div>
+                                                            <div @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
+                                                            <div v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -476,7 +404,7 @@ export default {
                 direction: 'horizontal',
                 pageContainer: $('.container'),
                 breakpoint: 767.98,
-                hideTimeOut: 0
+                hideTimeOut: 0,
             });
         });
 
@@ -495,17 +423,7 @@ export default {
             });
             // initialization of forms
             $.HSCore.components.HSFocusState.init();
-
-            // initialization of form validation
-            $.HSCore.components.HSValidation.init('.js-validate', {
-                rules: {
-                    confirmPassword: {
-                        equalTo: '#signupPassword'
-                    }
-                }
-            });
             // initialization of show animations
-            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
             // initialization of hamburgers
             $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
@@ -522,15 +440,19 @@ export default {
 
             $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
                 e.preventDefault();
-
-                var target = $(this).data('target');
-
                 if($(this).attr('aria-expanded') === "true") {
                     $(target).collapse('hide');
                 } else {
                     $(target).collapse('show');
                 }
             });
+            document.addEventListener('click',e => {
+                var target = document.getElementById('basicsCollapseOne')
+                var accordion = document.getElementById('basicsAccordion')
+                if(!accordion.contains(e.target)){
+                    $(target).collapse('hide');
+                }
+            })
 
             // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
@@ -540,13 +462,14 @@ export default {
         });
     },
     methods: {
+        HideA(e){
+            $(document.getElementById('basicsCollapseOne')).collapse('hide');
+            this.$router.push(e)
+        },
         localizeFilter(key, key2, key3) {
             if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
             else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
             else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
-        },
-        changeLang(lang){
-            this.$store.commit('lang/changeLang', lang)
         },
         InputSearch(){
             var copy = this.InputValue
@@ -611,5 +534,8 @@ export default {
   40%  {color: rgba(255, 255, 255, 1); opacity: 1;}
   60%  {color: rgba(255, 255, 255, 1); opacity: 1;}
   100% {opacity: 0}
+}
+.pointer{
+    cursor: pointer;
 }
 </style>
