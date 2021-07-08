@@ -469,7 +469,7 @@ export default {
 </script>
 
 <style scoped>
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .Cost{
         display: none
     }
