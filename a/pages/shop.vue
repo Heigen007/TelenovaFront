@@ -35,8 +35,8 @@
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+2">
-                                        <label @click.capture='Label("Fil"+fil+2)' class="custom-control-label" :for="'Fil'+fil+2">{{fil}}</label>
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
+                                        <label @click.capture='Label("Fil"+fil+i)' class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -1607,8 +1607,8 @@
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div id='Tipy' class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+1">
-                                        <label @click.capture="Label('Fil'+fil+1)" class="custom-control-label" :for="'Fil'+fil+1">{{fil}}</label>
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
+                                        <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -1621,7 +1621,7 @@
                 </div>
             </div>
         </aside>
-       <div v-if='IsPopper' style='position: absolute; right: 100%; buttom: -100%' id="tooltip" role="tooltip">
+       <div v-if='IsPopper' id="tooltip" class = 'tool' role="tooltip">
            <button style='color: white' type="submit" class="btn px-4 mt-1 btn-primary-dark-w py-2 rounded-lg" @click='Sort'>Применить</button>
        </div>
 
@@ -2277,7 +2277,10 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 13px;
-    z-index: 1002;
+    z-index: 1000;
     clip-path: polygon(0% 50%, 15% 60%, 15% 85%, 85% 85%, 85% 15%, 15% 15%, 15% 40%);
+}
+.tool{
+    z-index: 10 !important
 }
 </style>
