@@ -117,13 +117,13 @@ export const mutations = {
     var filters = {}
     switch (arr[1]) {
       case 'first':
-        filters.firstLevelCategory = string[0]
+        filters.firstLevelCategory = arr[0]
         break;
       case 'second':
-        filters.secondLevelCategory = string[0]
+        filters.secondLevelCategory = arr[0]
         break;
       case 'third':
-        filters.thirdLevelCategory = string[0]
+        filters.thirdLevelCategory = arr[0]
         break;
     }
     var JSON_Obj = 
