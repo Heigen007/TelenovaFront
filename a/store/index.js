@@ -66,7 +66,6 @@ export const mutations = {
         "action": "search",
         "agent": "client",
         "data": {
-          "query": "",
           "filters": {
             "secondLevelCategory": MyArray[2][1],
             "priceRange": MyArray[1],
@@ -80,7 +79,6 @@ export const mutations = {
         "action": "search",
         "agent": "client",
         "data": {
-          "query": "",
           "filters": {
             "thirdLevelCategory": MyArray[2][1],
             "priceRange": MyArray[1],
@@ -94,7 +92,6 @@ export const mutations = {
         "action": "search",
         "agent": "client",
         "data": {
-          "query": "",
           "filters": {
             "priceRange": MyArray[1],
             "exceptions": ExceptionsArray
@@ -160,7 +157,6 @@ export const mutations = {
       "action": "search",
       "agent": "client",
       "data": {
-        "query": "",
         "filters": {
           "thirdLevelCategory": string,
         }
@@ -183,7 +179,6 @@ export const mutations = {
       "action": "search",
       "agent": "client",
       "data": {
-        "query": "",
         "filters": {
           "firstLevelCategory": string,
         }
@@ -207,7 +202,6 @@ export const mutations = {
       "action": "search",
       "agent": "client",
       "data": {
-        "query": "",
         "filters": {
           "secondLevelCategory": string,
         }
