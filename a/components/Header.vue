@@ -210,6 +210,13 @@
                 <!-- Secondary-menu -->
                 <!-- End Secondary-menu -->
             </div>
+            <div class = 'bestCat'>
+                <div style='display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: white'>
+                    <NuxtLink style='color: white; text-decoration: none' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
+                        {{el.name}}
+                    </NuxtLink>
+                </div>
+            </div>
             <div style="display: none !important" class="d-none d-xl-block bg-primary">
                 <div class="container">
                     <div class="row align-items-stretch min-height-50">
@@ -383,7 +390,7 @@ export default {
     },
     created(){
         var self = this
-        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/10')
+        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/5')
         .then(res => {
             console.log(res);
             self.bestC = res.data
@@ -469,6 +476,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @media (max-width: 500px) {
     .Cost{
         display: none
@@ -496,5 +504,20 @@ export default {
 }
 .pointer{
     cursor: pointer;
+}
+.bestCat{
+    width: 100%;
+    padding: 1vh 10vw 1vh 10vw;
+    font-size: 0.9em;
+    background:#3d84ec;
+    font-family: 'Open Sans', sans-serif;
+}
+@media (max-width: 1200px) {
+    .bestCat{
+        display: none;
+    }
+    .MPopUp{
+        box-shadow: 0 0 7px white;
+    }
 }
 </style>

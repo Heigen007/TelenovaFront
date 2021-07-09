@@ -16,8 +16,8 @@
                             <client-only v-if='$store.state.priceRange'>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider">
-                                    <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[0]">
-                                    <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[1]" >
+                                    <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="minV">
+                                    <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
                                     <div class="slider">
                                     <div class="track"></div>
                                     <div class="range"></div>
@@ -1588,8 +1588,8 @@
                             <client-only v-if='$store.state.priceRange'>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider2">
-                                    <input @input="Label('input-right2')" @click.capture='Label("input-left2")' type="range" id="input-left2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[0]">
-                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' type="range" id="input-right2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[1]" >
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-left2")' type="range" id="input-left2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="minV">
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' type="range" id="input-right2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
                                     <div class="slider2">
                                     <div class="track"></div>
                                     <div class="range"></div>
@@ -1642,7 +1642,9 @@ export default {
             IdResult: [],
             currentInput: '',
             IsPopper: false,
-            IsProducts: false
+            IsProducts: false,
+            minV: 0,
+            maxV: 0
         }
     },
     components: {
@@ -1828,6 +1830,8 @@ export default {
                 } else {
                     this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['TCat', Object.keys(this.$route.query)[0]?.split('+').join(' ')]])
                 }
+                this.minV = MinPrice
+                this.maxV = MaxPrice
             this.IsProducts = false
             }
         },
