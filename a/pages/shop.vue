@@ -34,9 +34,9 @@
 
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
-                                        <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
+                                    <div class=" custom-radio">
+                                        <input @click.capture='Label("Fil"+fil+i+1)' :data-route="i +'/'+ fil" :name="i" type="radio" class=" chCat" :id="'Fil'+fil+i+1">
+                                        <label @click.capture='Label("Fil"+fil+i+1)' class="" :for="'Fil'+fil+i+1">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -1606,8 +1606,8 @@
 
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div id='Tipy' class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
+                                    <div id='Tipy' class="custom-control custom-radio">
+                                        <input @click.capture='Label("Fil"+fil+i+1)' :data-route="i +'/'+ fil" :name="i + 1" type="radio" class="custom-control-input chCat" :id="'Fil'+fil+i">
                                         <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
                                     </div>
                                 </div>
@@ -1673,6 +1673,25 @@ export default {
                     })
                 });
             }
+            setTimeout(() => {
+$(':radio').mousedown(function(e){
+  var $self = $(this);
+  if( $self.is(':checked') ){
+    var uncheck = function(){
+      setTimeout(function(){$self.removeAttr('checked');},0);
+    };
+    var unbind = function(){
+      $self.unbind('mouseup',up);
+    };
+    var up = function(){
+      uncheck();
+      unbind();
+    };
+    $self.bind('mouseup',up);
+    $self.one('mouseout', unbind);
+  }
+});
+            }, 1000);
         },
         Products(newV){
             window.scrollTo(0,0)
@@ -1796,7 +1815,7 @@ export default {
                 Checkboxes.forEach(element => {
                     if(element?.checked == true) {
                         this.IdResult.push(element.id)
-                        result.push([element.name.split('/')[0],element.name.split('/')[1]])
+                        result.push([element.dataset.route.split('/')[0],element.dataset.route.split('/')[1]])
                     }
                 });
 

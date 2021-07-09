@@ -487,6 +487,7 @@ export default {
     border-radius: 4px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1)
 }
 @keyframes slideLeft {
   0%   {opacity: 0;}
