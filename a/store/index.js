@@ -6,7 +6,8 @@ export const state = () => ({
   productsFilteredCopyCopy: null,
   BackUrl: 'https://textforeva.ru',
   ws: null,
-  filters: []
+  filters: [],
+  priceRange: [0,1500000]
 })
 export const mutations = {
   SetProducts(state, response){
@@ -16,6 +17,9 @@ export const mutations = {
   },
   SetCategories(state, response){
     state.categories = response
+  },
+  SetPriceRange(state, range){
+    state.priceRange = range
   },
   SetWs(state, ws){
     state.ws = ws
@@ -269,6 +273,8 @@ export const actions = {
       let data = JSON.parse(msg.data)
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
+      console.log(data,data.priceRange);
+      commit('SetPriceRange', data.priceRange)
     }
     connection.onopen = function () {
       console.log('START WEBSOCKET CONNECTION');

@@ -13,11 +13,11 @@
                                 <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('FilterPart', 'SecondPartTitle')}}</h3>
                             </div>
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
+                            <client-only v-if='$store.state.priceRange'>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider">
-                                    <input @input="Label('input-left')" @click.capture='Label("input-left")' type="range" id="input-left" min="0" step="1" max="1500" value="0">
-                                    <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" min="0" step="1" max="1500" value="1500">
-
+                                    <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[0]">
+                                    <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[1]" >
                                     <div class="slider">
                                     <div class="track"></div>
                                     <div class="range"></div>
@@ -28,6 +28,7 @@
                                     <span class="price-to"></span>
                                 </div>
                             </div>
+                            </client-only>
                             <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
                                 <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
 
@@ -1584,11 +1585,11 @@
                                 <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('FilterPart', 'SecondPartTitle')}}</h3>
                             </div>
                             <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
+                            <client-only v-if='$store.state.priceRange'>
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider2">
-                                    <input @input="Label('input-right2')" @click.capture='Label("input-left2")' type="range" id="input-left2" min="0" step="1" max="1500" value="0">
-                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' type="range" id="input-right2" min="0" step="1" max="1500" value="1500">
-
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-left2")' type="range" id="input-left2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[0]">
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' type="range" id="input-right2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="$store.state.priceRange[1]" >
                                     <div class="slider2">
                                     <div class="track"></div>
                                     <div class="range"></div>
@@ -1599,6 +1600,7 @@
                                     <span class="price-to2"></span>
                                 </div>
                             </div>
+                            </client-only>
                             <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
                                 <h4 class="font-size-14 mb-3 font-weight-bold">{{i}}</h4>
 
@@ -1807,11 +1809,11 @@ export default {
                 //     return Product
                 // })
                 if(window.screen.width >= 1200) {
-                    var MinPrice = document.getElementById("input-left").value * 1000;
-                    var MaxPrice = document.getElementById("input-right").value * 1000;
+                    var MinPrice = document.getElementById("input-left").value;
+                    var MaxPrice = document.getElementById("input-right").value;
                 } else {
-                    var MinPrice = document.getElementById("input-left2").value * 1000;
-                    var MaxPrice = document.getElementById("input-right2").value * 1000;
+                    var MinPrice = document.getElementById("input-left2").value;
+                    var MaxPrice = document.getElementById("input-right2").value;
                 }
                 console.log(result);
                 console.log(MinPrice, MaxPrice);
@@ -1872,7 +1874,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from: ${_this.value * 1000} тг.`;
+            priceFrom.textContent = `from: ${_this.value} тг.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -1887,7 +1889,7 @@ export default {
                 max = parseInt(_this.max);
 
             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
-            priceTo.textContent = `to: ${_this.value * 1000} тг.`;
+            priceTo.textContent = `to: ${_this.value} тг.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -1951,7 +1953,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from: ${_this.value * 1000} тг.`;
+            priceFrom.textContent = `from: ${_this.value} тг.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -1966,7 +1968,7 @@ export default {
                 max = parseInt(_this.max);
 
             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
-            priceTo.textContent = `to: ${_this.value * 1000} тг.`;
+            priceTo.textContent = `to: ${_this.value} тг.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
