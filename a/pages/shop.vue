@@ -35,8 +35,8 @@
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
-                                        <label @click.capture='Label("Fil"+fil+i)' class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
+                                        <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -2277,10 +2277,16 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 13px;
-    z-index: 1000;
     clip-path: polygon(0% 50%, 15% 60%, 15% 85%, 85% 85%, 85% 15%, 15% 15%, 15% 40%);
 }
-.tool{
-    z-index: 10 !important
+@media (min-width: 1200px) {
+   .tool{
+        z-index: 10 !important
+    } 
+}
+@media (max-width: 1200px) {
+   .tool{
+        z-index: 1002 !important;
+    } 
 }
 </style>

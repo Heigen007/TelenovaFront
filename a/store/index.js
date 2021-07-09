@@ -19,7 +19,11 @@ export const mutations = {
     state.categories = response
   },
   SetPriceRange(state, range){
-    state.priceRange = range
+    if(range[0] != range[1]){
+      state.priceRange = range
+    } else {
+      state.priceRange = [0,1500000]
+    }
   },
   SetWs(state, ws){
     state.ws = ws
