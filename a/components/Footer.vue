@@ -269,7 +269,7 @@ export default {
         },
     },
     created() {
-        axios.get('https://textforeva.ru/storage/mostPopular/products/25')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/40')
         .then(response => {
             console.log(response);
             this.popularProducts = response.data.reverse()

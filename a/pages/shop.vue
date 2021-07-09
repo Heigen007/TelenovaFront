@@ -1544,7 +1544,7 @@
                             <div v-else class="text-center text-md-left mb-3 mb-md-0">Showing 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
                             <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
                                 <div @click="PrevProductsPage" class="text-gray-30 font-size-20 mx-2" style="transform: rotate(180deg); cursor: pointer;">→</div>
-                                <li class="page-item"><div class="page-link current">{{ProductCounter + 1}}</div></li>
+                                <li class="page-item"><div style='color: white' class="page-link current">{{ProductCounter + 1}}</div></li>
                                 <div @click="NextProductsPage" class="text-gray-30 font-size-20 mx-2" style="cursor: pointer;">→</div>
                             </ul>
                         </nav>

@@ -42,13 +42,13 @@ export const mutations = {
         }
       )
     });
+    console.log(ExceptionsArray);
     if(MyArray[2][0] == 'FCat'){
       var JSON_Obj = 
       {
         "action": "search",
         "agent": "client",
         "data": {
-          "query": "",
           "filters": {
             "firstLevelCategory": MyArray[2][1],
             "priceRange": MyArray[1],
@@ -98,9 +98,11 @@ export const mutations = {
         }
       }
     }
+    console.log(JSON_Obj);
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
+        console.log('SENDED');
       } else {
         setTimeout(() => {
           send()
@@ -130,7 +132,7 @@ export const mutations = {
             "exceptions": ExceptionsArray
           }
         }
-    }
+      }
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
