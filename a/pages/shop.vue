@@ -1606,9 +1606,9 @@
 
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div id='Tipy' class="custom-control custom-radio">
-                                        <input @click.capture='Label("Fil"+fil+i+1)' :data-route="i +'/'+ fil" :name="i + 1" type="radio" class="custom-control-input chCat" :id="'Fil'+fil+i">
-                                        <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
+                                    <div id='Tipy' class="custom-radio">
+                                        <input @click.capture='Label("Fil"+fil+i)' :data-route="i +'/'+ fil" :name="i + 1" type="radio" class="chCat" :id="'Fil'+fil+i">
+                                        <label @click.capture="Label('Fil'+fil+i)" :for="'Fil'+fil+i">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
