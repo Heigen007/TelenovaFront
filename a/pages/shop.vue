@@ -1655,13 +1655,13 @@ export default {
             this.IsProducts = false
             if(process.browser){
             if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
-                this.$store.commit('FirstCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
+                this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'first'])
             } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat') {
-                this.$store.commit('SecondCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1])
+                this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'second'])
             } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
                 this.$store.commit('SearchByQuery', this.$route.query.query)
             } else if(Object.keys(this.$route.query).length > 0){
-                this.$store.commit('ThirdCategoryFilter', Object.keys(this.$route.query)[0]?.split('+').join(' '))
+                this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
             }
             }
         },

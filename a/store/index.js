@@ -36,7 +36,6 @@ export const mutations = {
       priceRange: MyArray[1],
       exceptions: ExceptionsArray,
     }
-
     MyArray[0].forEach(element => {
       ExceptionsArray.push(
         {
@@ -45,7 +44,6 @@ export const mutations = {
         }
       )
     });
-
     switch (MyArray[2][0]) {
       case 'FCat':
         filters.firstLevelCategory = MyArray[2][1];
@@ -57,7 +55,6 @@ export const mutations = {
         filters.thirdLevelCategory = MyArray[2][1];
         break;
     }
-
     var JSON_Obj = 
       {
         "action": "search",
@@ -66,7 +63,6 @@ export const mutations = {
           "filters": filters
         }
       }
-
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
@@ -76,7 +72,6 @@ export const mutations = {
         }, 200);
       }
     }
-
     send()
   },
   FilterProductsQuery(state, MyArray){
@@ -89,8 +84,7 @@ export const mutations = {
         }
       )
     });
-
-      var JSON_Obj = 
+    var JSON_Obj = 
       {
         "action": "search",
         "agent": "client",
@@ -102,7 +96,6 @@ export const mutations = {
           }
         }
       }
-
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
@@ -112,7 +105,6 @@ export const mutations = {
         }, 200);
       }
     }
-
     send()
   },
   DefaultSorting(state){
@@ -121,60 +113,25 @@ export const mutations = {
   SortByPopularity(state, arr){
     state.productsFilteredCopyCopy = arr
   },
-  ThirdCategoryFilter(state,string){
+  CategoryFilter(state,arr){
+    var filters = {}
+    switch (arr[1]) {
+      case 'first':
+        filters.firstLevelCategory = string[0]
+        break;
+      case 'second':
+        filters.secondLevelCategory = string[0]
+        break;
+      case 'third':
+        filters.thirdLevelCategory = string[0]
+        break;
+    }
     var JSON_Obj = 
     {
       "action": "search",
       "agent": "client",
       "data": {
-        "filters": {
-          "thirdLevelCategory": string,
-        }
-      }
-    }
-    var send = function(){
-      if(state?.ws){
-        state.ws.send(JSON.stringify(JSON_Obj))
-      } else {
-        setTimeout(() => {
-          send()
-        }, 200);
-      }
-    }
-    send()
-  },
-  FirstCategoryFilter(state,string){
-    var JSON_Obj = 
-    {
-      "action": "search",
-      "agent": "client",
-      "data": {
-        "filters": {
-          "firstLevelCategory": string,
-        }
-      }
-    }
-    console.log(JSON_Obj);
-    var send = function(){
-      if(state?.ws){
-        state.ws.send(JSON.stringify(JSON_Obj))
-      } else {
-        setTimeout(() => {
-          send()
-        }, 200);
-      }
-    }
-    send()
-  },
-  SecondCategoryFilter(state,string){
-    var JSON_Obj = 
-    {
-      "action": "search",
-      "agent": "client",
-      "data": {
-        "filters": {
-          "secondLevelCategory": string,
-        }
+        "filters": filters
       }
     }
     var send = function(){
@@ -213,7 +170,9 @@ export const mutations = {
 export const actions = {
   FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
+
     dispatch('connect')
+
     axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
       commit('SetProducts', response.data)
@@ -233,11 +192,9 @@ export const actions = {
   async connect ({ commit, dispatch }) {
     var connection = new WebSocket(`wss://textforeva.ru/ws/`)
     connection.onmessage = async (msg) => {
-      console.log(msg)
       let data = JSON.parse(msg.data)
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
-      console.log(data,data.priceRange);
       commit('SetPriceRange', data.priceRange)
     }
     connection.onopen = function () {
