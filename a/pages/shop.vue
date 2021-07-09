@@ -139,12 +139,12 @@
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body -->
                         <!-- Tab Content -->
-                        <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
-                                <ul class="row list-unstyled products-group no-gutters">
+                        <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
+                            <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
+                                <ul class="row products-group ">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class=" col-lg-4 col-md-6 MyCol col-sm-6 col-wd-2gdot4 product-item">
-                                        <div class="product-item__outer h-100 w-100">
-                                            <div class="product-item__inner  p-3">
+                                        <div class=" h-100 w-100">
+                                            <div class="inner p-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
@@ -2292,5 +2292,9 @@ input[type=range]:focus::-ms-fill-upper {
    .tool{
         z-index: 1002 !important;
     } 
+}
+.inner:hover{
+    box-shadow: 0px 0px 6px 0px rgb(1 1 1 / 30%);
+    transform: scale(1.03);
 }
 </style>

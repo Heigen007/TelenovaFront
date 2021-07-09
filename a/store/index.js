@@ -11,19 +11,15 @@ export const state = () => ({
 })
 export const mutations = {
   SetProducts(state, response){
-    state.products = response
-    state.productsFilteredCopy = response
-    state.productsFilteredCopyCopy = response
+    state.products = state.productsFilteredCopy = state.productsFilteredCopyCopy = response
   },
   SetCategories(state, response){
     state.categories = response
   },
   SetPriceRange(state, range){
-    if(range[0] != range[1]){
-      state.priceRange = range
-    } else {
-      state.priceRange = [0,1500000]
-    }
+    if(range[0] != range[1]) return state.priceRange = range
+
+    state.priceRange = [0,1500000]
   },
   SetWs(state, ws){
     state.ws = ws
@@ -32,16 +28,15 @@ export const mutations = {
     state.filters = filters
   },
   ChProductsCopy(state, products){
-    var arr = products
-    while(arr.length%3 != 0 && arr.length>3 ){
-      arr.pop()
-    }
-    if(arr.length == 6 || arr.length%30 == 6) arr.pop()
-    state.productsFilteredCopy = arr
-    state.productsFilteredCopyCopy = arr
+    state.productsFilteredCopy = state.productsFilteredCopyCopy = products
   },
   FilterProducts(state, MyArray){
     var ExceptionsArray = []
+    var filters = {
+      priceRange: MyArray[1],
+      exceptions: ExceptionsArray,
+    }
+
     MyArray[0].forEach(element => {
       ExceptionsArray.push(
         {
@@ -50,70 +45,38 @@ export const mutations = {
         }
       )
     });
-    console.log(ExceptionsArray);
-    if(MyArray[2][0] == 'FCat'){
-      var JSON_Obj = 
-      {
-        "action": "search",
-        "agent": "client",
-        "data": {
-          "filters": {
-            "firstLevelCategory": MyArray[2][1],
-            "priceRange": MyArray[1],
-            "exceptions": ExceptionsArray
-          }
-        }
-      }
-    } else if(MyArray[2][0] == 'SCat') {
-      var JSON_Obj = 
-      {
-        "action": "search",
-        "agent": "client",
-        "data": {
-          "filters": {
-            "secondLevelCategory": MyArray[2][1],
-            "priceRange": MyArray[1],
-            "exceptions": ExceptionsArray
-          }
-        }
-      }
-    } else if(MyArray[2][0] == 'TCat') {
-      var JSON_Obj = 
-      {
-        "action": "search",
-        "agent": "client",
-        "data": {
-          "filters": {
-            "thirdLevelCategory": MyArray[2][1],
-            "priceRange": MyArray[1],
-            "exceptions": ExceptionsArray
-          }
-        }
-      }
-    } else {
-      var JSON_Obj = 
-      {
-        "action": "search",
-        "agent": "client",
-        "data": {
-          "filters": {
-            "priceRange": MyArray[1],
-            "exceptions": ExceptionsArray
-          }
-        }
-      }
+
+    switch (MyArray[2][0]) {
+      case 'FCat':
+        filters.firstLevelCategory = MyArray[2][1];
+        break;
+      case 'SCat':
+        filters.secondLevelCategory = MyArray[2][1];
+        break;
+      case 'TCat':
+        filters.thirdLevelCategory = MyArray[2][1];
+        break;
     }
-    console.log(JSON_Obj);
+
+    var JSON_Obj = 
+      {
+        "action": "search",
+        "agent": "client",
+        "data": {
+          "filters": filters
+        }
+      }
+
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
-        console.log('SENDED');
       } else {
         setTimeout(() => {
           send()
         }, 200);
       }
     }
+
     send()
   },
   FilterProductsQuery(state, MyArray){
@@ -126,6 +89,7 @@ export const mutations = {
         }
       )
     });
+
       var JSON_Obj = 
       {
         "action": "search",
@@ -138,6 +102,7 @@ export const mutations = {
           }
         }
       }
+
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
@@ -147,6 +112,7 @@ export const mutations = {
         }, 200);
       }
     }
+
     send()
   },
   DefaultSorting(state){
@@ -248,7 +214,7 @@ export const actions = {
   FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
     dispatch('connect')
-    axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/40`)
+    axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
       commit('SetProducts', response.data)
     })

@@ -476,7 +476,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @media (max-width: 500px) {
     .Cost{
         display: none
@@ -508,7 +508,6 @@ export default {
 .bestCat{
     width: 100%;
     padding: 1vh 10vw 1vh 10vw;
-    font-size: 0.9em;
     background:#3d84ec;
     font-family: 'Open Sans', sans-serif;
 }

@@ -984,21 +984,16 @@ export default {
             Component: 'MainPage',
             popularProducts: null,
             newestProducts: null,
-            IsC: false
+            IsC: false,
+            televisionProducts: null,
+            mobileProducts: null
         }
     },
-    watch: {
-        // Products(newV){
-        //     if(newV != null){
-        //         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-        //     }
-        // }
-    },
     created(){
-        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/30')
         .then(response => {
             console.log(response);
-            this.popularProducts = response.data
+            this.popularProducts = response.data.slice(10,30)
         })
         .catch(function(error) {
             console.log(error);
@@ -1017,11 +1012,9 @@ export default {
         setTimeout(() => {
             window.scrollTo(0, 0)
             console.log();
+            this.Slick()  
         }, 1000);
         this.IsC = true
-        setTimeout(() => {
-            this.Slick()            
-        }, 1500);
     },
     beforeDestroy(){
         this.IsC = false

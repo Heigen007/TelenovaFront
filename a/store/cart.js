@@ -45,7 +45,6 @@ export default {
       },
       DeleteItemFromCart(state, el){
         var filteredData = state.cart.filter(cartItem => cartItem.offerData.name != el.offerData.name)
-        console.log(filteredData);
         state.cart = filteredData
         localStorage.setItem('cart', JSON.stringify(filteredData))
       }
