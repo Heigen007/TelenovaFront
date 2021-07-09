@@ -128,7 +128,7 @@
                                 </form>
                             </div>
                             <nav style='margin-left: auto; margin-right: 10px' class="px-3 flex-horizontal-center text-gray-20 d-none d-sm-flex">
-                                <div style='transform: rotate(180deg); cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">→</div>
+                                <div style='cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">←</div>
                                 <form method="post" class="min-width-50 mr-1">
                                     <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
                                     <input v-else @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="0">
@@ -1544,7 +1544,7 @@
                             <div v-if='Products.length != 0' class="text-center text-md-left mb-3 mb-md-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
                             <div v-else class="text-center text-md-left mb-3 mb-md-0">Showing 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</div>
                             <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-                                <div @click="PrevProductsPage" class="text-gray-30 font-size-20 mx-2" style="transform: rotate(180deg); cursor: pointer;">→</div>
+                                <div @click="PrevProductsPage" class="text-gray-30 font-size-20 mx-2" style="cursor: pointer;">←</div>
                                 <li class="page-item"><div style='color: white' class="page-link current">{{ProductCounter + 1}}</div></li>
                                 <div @click="NextProductsPage" class="text-gray-30 font-size-20 mx-2" style="cursor: pointer;">→</div>
                             </ul>
