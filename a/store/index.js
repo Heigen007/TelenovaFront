@@ -191,23 +191,28 @@ export const actions = {
   },
   async connect ({ commit, dispatch }) {
     var connection = new WebSocket(`wss://textforeva.ru/ws/`)
+
     connection.onmessage = async (msg) => {
       let data = JSON.parse(msg.data)
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
       commit('SetPriceRange', data.priceRange)
     }
+
     connection.onopen = function () {
       console.log('START WEBSOCKET CONNECTION');
       commit('SetWs',connection)
     };
+
     connection.onclose = async e => {
       console.log('CLOSE WEBSOCKET CONNECTION')
       setTimeout(() => dispatch('connect'), 1)
     }
+
     connection.onerror = (err) => {
       console.log(err)
     }
+
   }
 }
 
