@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import ui from './ui';
+import ui from '../bs4/ui';
 import dom from '../base/core/dom';
 import '../base/summernote-en-US';
 import Editor from '../base/module/Editor';

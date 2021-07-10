@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import dom from '../core/dom';
 import range from '../core/range';
-import Bullet from './Bullet';
+import Bullet from '../editing/Bullet';
 
 /**
  * @class editing.Typing
