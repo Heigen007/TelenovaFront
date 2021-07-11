@@ -2065,7 +2065,7 @@ export default {
         },
         ProductsPage(){
             if(process.browser) {
-                return this.$store.state.productsFilteredCopyCopy.slice(this.ProductCounter * 50, (this.ProductCounter + 1) * 60)
+                return this.$store.state.productsFilteredCopyCopy.slice(this.ProductCounter * 60, (this.ProductCounter + 1) * 60)
             }
         }
     }
