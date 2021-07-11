@@ -1007,19 +1007,19 @@ export default {
         .catch(function(error) {
             console.log(error);
         })
-        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты" })
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты", "count": 10 })
         .then(response => {
             console.log(response);
-            this.TVProducts = response.data.products.slice(0,10)
+            this.TVProducts = response.data.products
         })
         .catch(function(error) {
             console.log(error);
         })
 
-        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Бытовая техника" })
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Бытовая техника", "count": 10 })
         .then(response => {
             console.log(response);
-            this.LapProducts = response.data.products.slice(0,10)
+            this.LapProducts = response.data.products
         })
         .catch(function(error) {
             console.log(error);
