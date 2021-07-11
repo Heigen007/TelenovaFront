@@ -316,6 +316,23 @@
 
                                 <!-- List -->
                                 <ul id="headerSidebarList" class="u-header-collapse__nav">
+                                    <li v-for="(el, i) in Categories" :key='i' class="u-has-submenu u-header-collapse__submenu">
+                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" :data-target="'#headerSidebarMoviesCollapse'+i" role="button" data-toggle="collapse" aria-expanded="false" :aria-controls="'#headerSidebarMoviesCollapse'+i">
+                                            {{Object.keys(el)[0]}}
+                                        </a>
+                                        <div :id="'headerSidebarMoviesCollapse'+i" class="collapse" data-parent="#headerSidebarContent">
+                                            <ul class="u-header-collapse__nav-list">
+                                                <li v-for="(cat,o) in el" :key="o">
+                                                    <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start' class="u-header-collapse__submenu-nav-link">
+                                                        <div v-for="(fil,y) in cat" :key="y">
+                                                            <div @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
+                                                            <div v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <li>
                                         <NuxtLink to="/" class="u-header-collapse__nav-link font-weight-bold">Home</NuxtLink>
                                     </li>
@@ -333,24 +350,6 @@
                                     </li>
                                     <li>
                                         <NuxtLink to="/contact" class="u-header-collapse__nav-link font-weight-bold">Contact Us</NuxtLink>
-                                    </li>
-
-                                    <li v-for="(el, i) in Categories" :key='i' class="u-has-submenu u-header-collapse__submenu">
-                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" :data-target="'#headerSidebarMoviesCollapse'+i" role="button" data-toggle="collapse" aria-expanded="false" :aria-controls="'#headerSidebarMoviesCollapse'+i">
-                                            {{Object.keys(el)[0]}}
-                                        </a>
-                                        <div :id="'headerSidebarMoviesCollapse'+i" class="collapse" data-parent="#headerSidebarContent">
-                                            <ul class="u-header-collapse__nav-list">
-                                                <li v-for="(cat,o) in el" :key="o">
-                                                    <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start' class="u-header-collapse__submenu-nav-link">
-                                                        <div v-for="(fil,y) in cat" :key="y">
-                                                            <div @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
-                                                            <div v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </li>
 
                                 </ul>
@@ -493,6 +492,7 @@ export default {
     border-radius: 4px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px white;
 }
 @keyframes slideLeft {
   0%   {opacity: 0;}
@@ -512,9 +512,6 @@ export default {
 @media (max-width: 1200px) {
     .bestCat{
         display: none;
-    }
-    .MPopUp{
-        box-shadow: 0 0 7px white;
     }
 }
 </style>

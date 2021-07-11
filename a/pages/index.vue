@@ -743,7 +743,7 @@
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Rpills-tabContent">
                         <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel" aria-labelledby="Rpills-one-example1-tab">
-                            <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                            <div v-if='IsC && LapProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
@@ -769,7 +769,7 @@
                                     "slidesToScroll": 1
                                     }
                                 }]'>
-                                <div  class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
+                                <div  class="js-slide products-group" v-for="(el,i) in LapProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -823,7 +823,7 @@
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Ypills-tabContent">
                         <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel" aria-labelledby="Rpills-one-example1-tab">
-                            <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                            <div v-if='IsC && TVProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
@@ -849,7 +849,7 @@
                                     "slidesToScroll": 1
                                     }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in Products" :key='i'>
+                                <div class="js-slide products-group" v-for="(el,i) in TVProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -985,8 +985,8 @@ export default {
             popularProducts: null,
             newestProducts: null,
             IsC: false,
-            televisionProducts: null,
-            mobileProducts: null
+            TVProducts: null,
+            LapProducts: null
         }
     },
     created(){
@@ -1007,13 +1007,32 @@ export default {
         .catch(function(error) {
             console.log(error);
         })
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты" })
+        .then(response => {
+            console.log(response);
+            this.TVProducts = response.data.products.slice(0,10)
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Бытовая техника" })
+        .then(response => {
+            console.log(response);
+            this.LapProducts = response.data.products.slice(0,10)
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
     },
     mounted(){
         setTimeout(() => {
             window.scrollTo(0, 0)
             console.log();
-            this.Slick()  
         }, 1000);
+        this.$nextTick(() => {
+            this.Slick()
+        })
         this.IsC = true
     },
     beforeDestroy(){
@@ -1094,12 +1113,14 @@ export default {
     },
     methods: {
         Slick(){
-            if(this.Products && this.newestProducts && this.popularProducts && this.Categories) {
-                $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+            if(this.Products && this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
+                setTimeout(() => {
+                    $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+                }, 200);
             } else {
                 setTimeout(() => {
                     this.Slick()
-                }, 200);
+                }, 100);
             }
         },
         localizeFilter(key, key2, key3) {

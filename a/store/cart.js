@@ -20,19 +20,18 @@ export default {
       },
       cartChange(state, product){
         var Updated = false
+        state.cartCount += 1
         if(!product.offerData.count) product.offerData.count = 1
         if(localStorage.getItem('cart')){
           var currentCart = state.cart
           currentCart.forEach(function(item) {
             if (item.offerData.name == product.offerData.name) {
               item.offerData.count += 1
-              state.cartCount += 1
               Updated = true
             }
           });
           if(!Updated) {
             currentCart.push(product)
-            state.cartCount += 1
           }
           localStorage.setItem('cart', JSON.stringify(currentCart))
         } else {

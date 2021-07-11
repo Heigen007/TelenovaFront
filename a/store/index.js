@@ -194,6 +194,7 @@ export const actions = {
 
     connection.onmessage = async (msg) => {
       let data = JSON.parse(msg.data)
+      console.log(data);
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
       commit('SetPriceRange', data.priceRange)
