@@ -836,7 +836,6 @@ export default {
                 name: this.info.FName + ' ' + this.info.SName, // имя
                 paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
             }
-            console.log(MyObj);
             return JSON.stringify(MyObj)
         }
     },
