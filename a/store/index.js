@@ -10,6 +10,9 @@ export const state = () => ({
   priceRange: [0,1500000]
 })
 export const mutations = {
+  SetProductsOnly(state, response){
+    state.products = response
+  },
   SetProducts(state, response){
     state.products = state.productsFilteredCopy = state.productsFilteredCopyCopy = response
   },
@@ -175,7 +178,7 @@ export const actions = {
 
     axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
-      commit('SetProducts', response.data)
+      commit('SetProductsOnly', response.data)
     })
     .catch(function (error) {
       console.log(error);

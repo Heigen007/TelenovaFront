@@ -190,7 +190,8 @@ export default {
         }
     },
     mounted(){
-                setTimeout(() => {
+
+        setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
         $(document).on('ready', function () {
