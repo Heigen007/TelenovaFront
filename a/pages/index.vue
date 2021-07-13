@@ -1113,7 +1113,7 @@ export default {
     },
     methods: {
         Slick(){
-            if(this.Products && this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
+            if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
                 setTimeout(() => {
                     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
                 }, 200);
@@ -1133,13 +1133,6 @@ export default {
         }
     },
     computed:{
-        Products(){
-            if(process.browser && this.$store.state.products) {
-                var a = JSON.parse(JSON.stringify(this.$store.state.products))
-                a = a.splice(0,10)
-                return a
-            }
-        },
         Categories(){
             return this.$store.state.categories
         }
