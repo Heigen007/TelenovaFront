@@ -625,9 +625,6 @@ export default {
             pg_description: "Product",
             pg_language: "en",
             pg_salt: "SALT PAPER",
-            obj: {
-                address: "abay 150/230"
-            },
             info: {
                 FName: '',
                 SName: '',
@@ -680,7 +677,7 @@ export default {
                 if(document.querySelectorAll('input[name="stylishRadio"]:checked').length > 0){
                     if(document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id != 'FourstylishRadio1'){
                         e.preventDefault()
-                        if(this.info.Adress &&this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
                             if(but) {
                                 var filteredCart = JSON.parse(JSON.stringify(self.items.cart))
                                 for(var el = 0; el < filteredCart.length ; el++) {
@@ -736,6 +733,16 @@ export default {
                                 'Please, agree with Terms And Conditions',
                                 'error'
                             )
+                            return
+                        }
+                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                        } else {
+                            e.preventDefault()
+                            Swal.fire(
+                                'Error!',
+                                'Please, write down all the information!',
+                                'error'
+                            )
                         }
                     }
                 } else {
@@ -768,7 +775,7 @@ export default {
         },
         PayLink(){
             var sign = this.makeSignature()
-            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_result_url=https://textforeva.ru/order&pg_salt=${this.pg_salt}&MyObject=${JSON.stringify(this.obj)}&pg_testing_mode=1&pg_sig=${sign}`
+            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyObject=${this.objMake()}&pg_testing_mode=1&pg_sig=${sign}`
         },
         makeSignature() {
             var methodName = 'payment.php'
@@ -776,15 +783,15 @@ export default {
                 address: "abay 150/230"
             }
             var requestFields = {
-            "pg_order_id": this.pg_order_id,
-            "pg_merchant_id": this.pg_merchant_id,
-            "pg_amount": this.TotalPrice(),
-            "pg_description": this.pg_description,
-            "pg_language": this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru',
-            "pg_salt": this.pg_salt,
-            "pg_result_url": "https://textforeva.ru/order",
-            "MyObject": JSON.stringify(this.obj),
-            "pg_testing_mode": "1"};
+                "pg_order_id": this.pg_order_id,
+                "pg_merchant_id": this.pg_merchant_id,
+                "pg_amount": this.TotalPrice(),
+                "pg_description": this.pg_description,
+                "pg_language": this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru',
+                "pg_salt": this.pg_salt,
+                "MyDataObj": this.objMake(),
+                "pg_testing_mode": "1"
+            };
             //Секретный ключ
             var secretKey = this.getSecretKey(methodName);
 
@@ -812,6 +819,25 @@ export default {
                 secretKey = payoutSecretKey;
             }
             return secretKey;
+        },
+        objMake(){
+            var filteredCart = JSON.parse(JSON.stringify(this.items.cart))
+            for(var el = 0; el < filteredCart.length ; el++) {
+                filteredCart[el] = {
+                    kaspi_id: filteredCart[el].offerData.kaspi_id,
+                    count: filteredCart[el].offerData.count
+                }
+            }
+            var MyObj = {
+                address: this.info.Adress, // адрес доставки
+                phoneNumber: this.info.Phone, // номер телефона
+                email: this.info.Email, // почта
+                goods: filteredCart,
+                name: this.info.FName + ' ' + this.info.SName, // имя
+                paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+            }
+            console.log(MyObj);
+            return JSON.stringify(MyObj)
         }
     },
 }
