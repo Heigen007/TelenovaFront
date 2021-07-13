@@ -151,6 +151,9 @@
                                         <span class="fab fa-github btn-icon__inner"></span>
                                     </NuxtLink>
                                 </li>
+                                <li class="list-inline-item mr-0">
+                                    <button type="button" class="btn hoverBtn btn-outline-info" @click='Share'>Share</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -233,6 +236,18 @@ export default {
         }
     },
     methods: {
+        async Share(){
+            const shareData = {
+                title: 'Telenova',
+                text: 'Check Our Site!',
+                url: 'http://37.46.129.41/',
+            }
+            try {
+                await navigator.share(shareData)
+            } catch(err) {
+                console.log(err);
+            }
+        },
         localizeFilter(key, key2, key3) {
             if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
             else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
@@ -364,5 +379,8 @@ export default {
 .img360x330{
     height: 360px;
     width: 330px;
+}
+.hoverBtn:hover{
+    color: white
 }
 </style>
