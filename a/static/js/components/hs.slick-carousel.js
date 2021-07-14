@@ -17,7 +17,7 @@
 		 * @var Object _baseConfig
 		 */
 		_baseConfig: {
-			autoplay: false,
+			autoplay: true,
 			infinite: true
 		},
 		
@@ -70,7 +70,7 @@
 					thumbProgressOptions = JSON.parse(el.getAttribute('data-thumbs-progress-options')),
 					thumbProgressElLength = 0,
 					thumbProgressContainer = $this.data('thumbs-progress-container'),
-					initialDelay = 600,
+					initialDelay = 60,
 					
 					arrowsClasses = $this.data('arrows-classes'),
 					arrowLeftClasses = $this.data('arrow-left-classes'),
@@ -84,7 +84,7 @@
 					//Setters
 					setSlidesToShow = $this.data('slides-show'),
 					setSlidesToScroll = $this.data('slides-scroll'),
-					setAutoplay = $this.data('autoplay'),
+					setAutoplay = true,
 					setAnimation = $this.data('animation'),
 					setEasing = $this.data('easing'),
 					setFade = $this.data('fade'),
@@ -99,7 +99,7 @@
 					setRtl = $this.data('rtl'),
 					setInEffect = $this.data('in-effect'),
 					setOutEffect = $this.data('out-effect'),
-					setInfinite = $this.data('infinite'),
+					setInfinite = true,
 					setDataTitlePosition = $this.data('title-pos-inside'),
 					setFocusOnSelect = $this.data('focus-on-select'),
 					setLazyLoad = $this.data('lazy-load'),
@@ -236,14 +236,14 @@
 				}
 				
 				$this.slick({
-					autoplay: (setAutoplay || ($(target)[0] && $(target)[0].dataset.isThumbsProgress)) ? true : false,
+					autoplay: true,
 					autoplaySpeed: setSpeed ? setSpeed : 3000,
 					
 					cssEase: setAnimation ? setAnimation : 'ease',
 					easing: setEasing ? setEasing : 'linear',
 					fade: setFade ? true : false,
 					
-					infinite: setInfinite ? true : false,
+					infinite: true,
 					initialSlide: setInitialSlide ? setInitialSlide - 1 : 0,
 					slidesToShow: setSlidesToShow ? setSlidesToShow : 1,
 					slidesToScroll: setSlidesToScroll ? setSlidesToScroll : 1,
