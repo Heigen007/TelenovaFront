@@ -140,18 +140,18 @@
                             <!-- End Logo -->
                             <!-- Search Bar -->
                             <div class="col d-none d-xl-block">
-                                <div class="js-focus-state">
+                                <form @submit='InputSearch' class="js-focus-state">
                                     <label class="sr-only" for="searchproduct">Search</label>
                                     <div class="input-group">
                                         <input v-model='InputValue' class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1">
                                         <div class="input-group-append">
                                             <!-- End Select -->
-                                            <button @click='InputSearch' class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
                                                 <span class="ec ec-search font-size-24"></span>
                                             </button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <!-- End Search Bar -->
                             <!-- Header Icons -->
@@ -177,12 +177,12 @@
 
                                             <!-- Input -->
                                             <div id="searchClassic" class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2" aria-labelledby="searchClassicInvoker">
-                                                <div class="js-focus-state input-group px-3">
+                                                <form @submit='InputSearch' class="js-focus-state input-group px-3">
                                                     <input v-model="InputValue" class="form-control ChIn" type="search" placeholder="Search Product">
                                                     <div class="input-group-append">
-                                                        <button @click='InputSearch' class="btn btn-primary px-3" type="button"><i class="font-size-18 ec ec-search"></i></button>
+                                                        <button class="btn btn-primary px-3" type="submit"><i class="font-size-18 ec ec-search"></i></button>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                             <!-- End Input -->
                                         </li>
@@ -250,17 +250,17 @@
                         <!-- Search bar -->
                         <div class="col align-self-center">
                             <!-- Search-Form -->
-                            <div class="js-focus-state">
+                            <form @submit="InputSearch" class="js-focus-state">
                                 <label class="sr-only" for="searchProduct">{{localizeFilter('SearchSuggestion')}}</label>
                                 <div class="input-group">
                                         <input v-model="InputValue" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill ChIn"  id="searchProduct" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
                                     <div class="input-group-append">
-                                        <button @click='InputSearch' @keypress="alert(1)" @keydown="alert(1)" class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                                        <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
                                             <span class="ec ec-search font-size-24"></span>
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                             <!-- End Search-Form -->
                         </div>
                         <!-- End Search bar -->
@@ -394,12 +394,12 @@ export default {
         })
     },
     mounted(){
-        var self = this
-        document.querySelector('.ChIn').addEventListener('keydown', function(e) {
-            if (e.code === 'Enter') {
-                self.InputSearch()
-            }
-        })
+        // var self = this
+        // document.querySelector('.ChIn').addEventListener('keydown', function(e) {
+        //     if (e.code === 'Enter') {
+        //         self.InputSearch()
+        //     }
+        // })
 
         $(window).on('load', function () {
             // initialization of HSMegaMenu component
@@ -434,7 +434,8 @@ export default {
             else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
             else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
         },
-        InputSearch(){
+        InputSearch(e){
+            e.preventDefault()
             var copy = this.InputValue
             this.InputValue = ''
             this.$router.push(`/shop?query=${copy}`)
