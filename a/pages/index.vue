@@ -990,10 +990,10 @@ export default {
         }
     },
     created(){
-        axios.get('https://textforeva.ru/storage/mostPopular/products/30')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
             console.log(response);
-            this.popularProducts = response.data.slice(10,30)
+            this.popularProducts = response.data.reverse()
         })
         .catch(function(error) {
             console.log(error);

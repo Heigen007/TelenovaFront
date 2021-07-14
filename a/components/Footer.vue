@@ -14,7 +14,7 @@
                                     <a :href="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></a>
                                 </div>
                                 <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</a></h5>
+                                    <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                     <div class="prodcut-price mt-auto">
                                         <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                     </div>
@@ -33,7 +33,7 @@
                                 <a :href="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></a>
                             </div>
                             <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</a></h5>
+                                <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                 <div class="prodcut-price mt-auto">
                                     <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                 </div>
@@ -51,7 +51,7 @@
                                 <a :href="'/product?id='+el.offerData.kaspi_id" class="d-block width-75 text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></a>
                             </div>
                             <div class="col pl-4 d-flex flex-column">
-                                <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.kaspi_name}}</a></h5>
+                                <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                 <div class="text-warning mb-2">
                                     <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating)" :key='o' class="fas fa-star"></small>
                                     <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating)" :key='o2+"d"' class="fas fa-star text-muted"></small>

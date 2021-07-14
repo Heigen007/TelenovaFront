@@ -2295,6 +2295,5 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .inner:hover{
     box-shadow: 0px 0px 6px 0px rgb(1 1 1 / 30%);
-    transform: scale(1.015);
 }
 </style>
