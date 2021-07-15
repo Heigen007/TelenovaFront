@@ -38,7 +38,7 @@
                             data-position="left">
                             <NuxtLink to="/contact" class="nav-link u-header__nav-link font-weight-bold">Contact Us</NuxtLink>
                         </li>
-                        <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
+                        <div class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                             <div class="d-flex align-items-center">
                                 <!-- Language -->
                                 <div v-if='lang' class="position-relative">
@@ -68,7 +68,7 @@
                                 </div>
                                 <!-- End Language -->
                             </div>
-                        </li>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -77,6 +77,7 @@
     <MyHeader />
     <Nuxt />
     <NuxtLink class="js-go-to u-go-to" to="#"
+      aria-label='go to top'
       data-position='{"bottom": 15, "right": 15 }'
       data-type="fixed"
       data-offset-top="400"

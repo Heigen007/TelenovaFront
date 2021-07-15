@@ -23,10 +23,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
+                                                <div class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -38,7 +38,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</NuxtLink></h5>
+                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</NuxtLink></div>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -99,10 +99,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
+                                                <div class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -114,7 +114,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</NuxtLink></h5>
+                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</NuxtLink></div>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -175,10 +175,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
+                                                <div class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -190,7 +190,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</NuxtLink></h5>
+                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</NuxtLink></div>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -251,10 +251,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
+                                                <div class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -266,7 +266,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360</NuxtLink></h5>
+                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360</NuxtLink></div>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -327,10 +327,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
+                                                <div class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -342,7 +342,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Tablet Red EliteBook  Revolve 810 G2</NuxtLink></h5>
+                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Tablet Red EliteBook  Revolve 810 G2</NuxtLink></div>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -412,7 +412,7 @@
                     <!-- Nav nav-pills -->
                     <div class="position-relative z-index-2 u-slick__tab">
                         <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
-                            <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstPartTitle')}}</h3>
+                            <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstPartTitle')}}</div>
 
                             <!-- <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
@@ -434,7 +434,7 @@
                         <!-- Tab Content -->
                         <client-only>
                         <div class="tab-content" id="Bpills-tabContent">
-                            <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1" role="tabpanel" aria-labelledby="Bpills-one-example1-tab">
+                            <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1" role="tabpanel">
                                 <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                     data-slides-show="5"
@@ -467,7 +467,7 @@
                                                 <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                     <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                         <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                        <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                        <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
                                                             <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
@@ -482,7 +482,7 @@
                                                     </div>
                                                     <div v-else class="product-item__body pb-xl-2">
                                                         <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                        <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                        <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
                                                             <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
@@ -561,7 +561,7 @@
                 <!-- Trending products -->
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
-                        <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</h3>
+                        <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</div>
                         <!-- <NuxtLink class="d-block text-gray-16" to="/shop">{{localizeFilter('SecondPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink> -->
                     </div>
                     <client-only>
@@ -597,7 +597,7 @@
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                             <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                 <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                 <div class="mb-2">
                                                     <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                 </div>
@@ -612,7 +612,7 @@
                                             </div>
                                             <div v-else class="product-item__body pb-xl-2">
                                                 <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                 <div class="mb-2">
                                                     <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                 </div>
@@ -636,12 +636,12 @@
                 <!-- Popular Products -->
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
-                        <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</h3>
+                        <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</div>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Apills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Apills-one-example1" role="tabpanel" aria-labelledby="Apills-one-example1-tab">
+                        <div class="tab-pane fade pt-2 show active" id="Apills-one-example1" role="tabpanel">
                             <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
@@ -674,7 +674,7 @@
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
@@ -689,7 +689,7 @@
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
@@ -722,9 +722,9 @@
                                     <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">SHOP AND <strong>SAVE BIG</strong> ON HOTTEST TABLETS</h1>
                                     <div class="flex-content-center ml-4 flex-shrink-0">
                                         <div class="bg-primary rounded-lg px-6 py-2">
-                                            <em class="font-size-14 font-weight-light">STARTING AT</em>
-                                            <div class="font-size-30 font-weight-bold text-lh-1">
-                                                <sup class="">$</sup>79<sup class="">99</sup>
+                                            <em class="font-size-14 font-weight-light text-white">STARTING AT</em>
+                                            <div class="font-size-30 font-weight-bold text-lh-1 text-white">
+                                                <sup class="text-white">$</sup>79<sup class="">99</sup>
                                             </div>
                                         </div>
                                     </div>
@@ -737,12 +737,12 @@
                 <!-- Laptops & Computers -->
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
-                        <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</h3>
+                        <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Rpills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel" aria-labelledby="Rpills-one-example1-tab">
+                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel">
                             <div v-if='IsC && LapProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
@@ -775,7 +775,7 @@
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
@@ -790,7 +790,7 @@
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
@@ -817,12 +817,12 @@
                 <!-- Television Entertainment -->
                 <div class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
-                        <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</h3>
+                        <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Ypills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel" aria-labelledby="Rpills-one-example1-tab">
+                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel">
                             <div v-if='IsC && TVProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
@@ -855,7 +855,7 @@
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
@@ -870,7 +870,7 @@
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>

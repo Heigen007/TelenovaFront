@@ -70,7 +70,7 @@
         </div>
         <!-- End Footer-top-widget -->
         <!-- Footer-newsletter -->
-        <div class="bg-primary py-3">
+        <div class="bg-primary py-3 text-white">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7 mb-md-3 mb-lg-0">
@@ -80,7 +80,7 @@
                                 <h2 class="font-size-20 mb-0 ml-3">{{localizeFilter('SignOnLetterTitle')}}</h2>
                             </div>
                             <div class="col my-4 my-md-0">
-                                <h5 class="font-size-15 ml-4 mb-0"><strong>{{localizeFilter('SignOnLetterEnding')}}</strong></h5>
+                                <div class="font-size-15 ml-4 mb-0"><strong>{{localizeFilter('SignOnLetterEnding')}}</strong></div>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     <div class="col-lg-5">
                         <div class="mb-6">
                             <NuxtLink style='width: 9rem;' to="#" class="d-inline-block">
-                                <img style='width: 9rem; margin-top: 5px' src='logo.svg'>
+                                <img style='width: 9rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                             </NuxtLink>
                         </div>
                         <div class="mb-4">
@@ -118,13 +118,13 @@
                                     <i class="ec ec-support text-primary font-size-56"></i>
                                 </div>
                                 <div class="col pl-3">
-                                    <div class="font-size-13 font-weight-light">{{localizeFilter('FirstQuestion')}}</div>
+                                    <div class="font-size-15 font-weight-light">{{localizeFilter('FirstQuestion')}}</div>
                                     <a href="tel:+77073373318" class="font-size-20 text-gray-90">+77073373318</a>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-4">
-                            <h6 class="mb-1 font-weight-bold">{{localizeFilter('ContactInfoTitle')}}</h6>
+                            <div class="mb-1 font-weight-bold">{{localizeFilter('ContactInfoTitle')}}</div>
                             <address class="">
                                 {{localizeFilter('ContactInfoValue')}}
                             </address>
@@ -132,22 +132,22 @@
                         <div class="my-4 my-md-4">
                             <ul class="list-inline mb-0 opacity-7">
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" to="#">
+                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our facebook account" to="#">
                                         <span class="fab fa-facebook-f btn-icon__inner"></span>
                                     </NuxtLink>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" to="#">
+                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our google account" to="#">
                                         <span class="fab fa-google btn-icon__inner"></span>
                                     </NuxtLink>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" to="#">
+                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our twitter account" to="#">
                                         <span class="fab fa-twitter btn-icon__inner"></span>
                                     </NuxtLink>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" to="#">
+                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our github account" to="#">
                                         <span class="fab fa-github btn-icon__inner"></span>
                                     </NuxtLink>
                                 </li>
@@ -181,7 +181,7 @@
                             </div>
                             <div class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">Language</h6>
-                                <li style='margin-bottom: 80px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
+                                <div style='margin-bottom: 80px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                                     <div class="d-flex align-items-center">
                                         <!-- Language -->
                                         <div v-if='lang' class="position-relative">
@@ -211,7 +211,7 @@
                                         </div>
                                         <!-- End Language -->
                                     </div>
-                                </li>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -310,7 +310,7 @@
                             "slidesToScroll": 1
                             }
                         }]'>
-                        <div class="js-slide products-group"v-if='el' v-for="(el,i) in Product.similarProducts" :key='i'>
+                        <div class="js-slide products-group" v-if='el' v-for="(el,i) in Product.similarProducts" :key='i'>
                             <div class="product-item">
                                 <div class="product-item__outer h-100">
                                     <div class="product-item__inner px-wd-4 p-2 p-md-3">

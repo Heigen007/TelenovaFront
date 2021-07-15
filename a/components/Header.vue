@@ -22,6 +22,7 @@
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
+                                                aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
                                                 data-unfold-hide-on-scroll="false"
                                                 data-unfold-target="#sidebarHeader"
@@ -37,7 +38,7 @@
 
                                             <!-- Logo -->
                                             <router-link style='width: 9rem' class="hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-1 ml-xl-0" to="/" aria-label="Electro">
-                                                <img style='width: 9rem; margin-top: 5px' src='logo.svg'>
+                                                <img style='width: 9rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                                             </router-link>
                                             <!-- End Logo -->
                                         </nav>
@@ -106,10 +107,10 @@
                                                                     data-animation-in="slideInUp"
                                                                     data-animation-out="fadeOut"
                                                                     data-position="left">
-                                                                    <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{Object.keys(el)[0]}}</a>
+                                                                    <a :id="'basicMegaMenu'+i" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{Object.keys(el)[0]}}</a>
 
                                                                     <!-- Nav Item - Mega Menu -->
-                                                                    <div style="overflow-y: scroll; min-height: 500px; margin-left: -6px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu" >
+                                                                    <div style="overflow-y: scroll; min-height: 500px; margin-left: -6px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
                                                                         <div class="vmm-bg" style="bottom: auto">
                                                                             <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 0.5' alt="Image Description">
                                                                         </div>
@@ -143,10 +144,10 @@
                                 <form @submit='InputSearch' class="js-focus-state">
                                     <label class="sr-only" for="searchproduct">Search</label>
                                     <div class="input-group">
-                                        <input v-model='InputValue' class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1">
+                                        <input v-model='InputValue' class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct2">
                                         <div class="input-group-append">
                                             <!-- End Select -->
-                                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
+                                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct2">
                                                 <span class="ec ec-search font-size-24"></span>
                                             </button>
                                         </div>
@@ -225,7 +226,7 @@
                                 <div >
                                     <!-- Card -->
                                     <div class="card border-0 rounded-0">
-                                        <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOne">
+                                        <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOneCopy">
                                             <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
                                                 data-toggle="collapse"
                                                 data-target="#basicsCollapseOne"
@@ -310,7 +311,7 @@
                             <div id="headerSidebarContent" class="u-sidebar__content u-header-sidebar__content">
                                 <!-- Logo -->
                                 <NuxtLink style='width: 9rem' class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3" to="/" aria-label="Electro">
-                                    <img style='width: 9rem' src='logo.svg'>
+                                    <img style='width: 9rem' src='logo.svg' alt="Image Description">
                                 </NuxtLink>
                                 <!-- End Logo -->
 
@@ -513,6 +514,19 @@ export default {
 @media (max-width: 1200px) {
     .bestCat{
         display: none;
+    }
+    .u-hamburger__inner,
+    .u-hamburger__inner::before,
+    .u-hamburger__inner::after{
+        background-color: white;
+    }
+    #searchClassicInvoker .ec-search,
+    .ec-shopping-bag,
+    .Cost {
+        color: white
+    }
+    .rounded-circle{
+        background-color: rgb(26, 112, 224) !important;
     }
 }
 @media (max-width: 350px) {

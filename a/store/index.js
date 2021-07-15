@@ -70,9 +70,7 @@ export const mutations = {
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
-        setTimeout(() => {
-          send()
-        }, 200);
+        setTimeout(() => send(), 200);
       }
     }
     send()
@@ -103,9 +101,7 @@ export const mutations = {
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
-        setTimeout(() => {
-          send()
-        }, 200);
+        setTimeout(() => send(), 200);
       }
     }
     send()
@@ -141,9 +137,7 @@ export const mutations = {
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
-        setTimeout(() => {
-          send()
-        }, 200);
+        setTimeout(() => send(), 200);
       }
     }
     send()
@@ -161,9 +155,7 @@ export const mutations = {
       if(state?.ws){
         state.ws.send(JSON.stringify(obj))
       } else {
-        setTimeout(() => {
-          send()
-        }, 200);
+        setTimeout(() => send(), 200);
       }
     }
     send()
