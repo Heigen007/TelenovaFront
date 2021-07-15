@@ -83,7 +83,7 @@
                                                 </div>
                                                 <div class="d-md-flex">
                                                     <button @click='forceUpdate' type="button" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">{{localizeFilter('UpdateCartButton')}}</button>
-                                                    <NuxtLink to="/checkout" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-none d-md-inline-block">{{localizeFilter('CheckoutButton')}}</NuxtLink>
+                                                    <NuxtLink to="/checkout" class="btn btn-primary-dark-w text-white ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-none d-md-inline-block">{{localizeFilter('CheckoutButton')}}</NuxtLink>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +111,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <NuxtLink to="/checkout" class="btn btn-primary-dark-w ml-md-2 mt-3 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-inline-block">{{localizeFilter('CheckoutButton')}}</NuxtLink>
+                            <NuxtLink to="/checkout" class="btn btn-primary-dark-w ml-md-2 mt-3 px-5 px-md-4 px-lg-5 w-100 text-white w-md-auto d-md-inline-block">{{localizeFilter('CheckoutButton')}}</NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -128,6 +128,11 @@
 
 <script>
 export default {
+    head () {
+        return {
+            title: 'Cart'
+        }
+    },
     data(){ 
         return{
             Component: "CartPage",
@@ -183,9 +188,7 @@ export default {
             }
         },
         localizeFilter(key, key2, key3) {
-            if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
-            else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
-            else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
+            return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
         deleteItemFromCart(el){
             this.$store.commit('cart/DeleteItemFromCart',el)

@@ -431,9 +431,7 @@ export default {
             this.$router.push(e)
         },
         localizeFilter(key, key2, key3) {
-            if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
-            else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
-            else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
+            return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
         InputSearch(e){
             e.preventDefault()

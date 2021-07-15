@@ -1633,6 +1633,11 @@
 import { createPopper } from '@popperjs/core';
 import preloader from '../components/CssPreloader.vue'
 export default {
+    head () {
+        return {
+            title: 'Shop'
+        }
+    },
     data(){
         return{
             Component: 'ShopPage',
@@ -1778,10 +1783,16 @@ export default {
             this.currentInput = e
         },
         NextProductsPage(){
-            if(this.ProductCounter+2 <= Math.ceil(this.Products.length / 60)) this.ProductCounter += 1
+            if(this.ProductCounter+2 <= Math.ceil(this.Products.length / 60)){
+                this.ProductCounter += 1
+                window.scrollTo(0, 0)
+            }
         },
         PrevProductsPage(){
-            if(this.ProductCounter >= 1) this.ProductCounter -= 1
+            if(this.ProductCounter >= 1){
+                this.ProductCounter -= 1
+                window.scrollTo(0, 0)
+            }
         },
         ChProductsCounter(e){
             if(e.data != null) this.ProductCounter = e.data + 1
@@ -1830,6 +1841,7 @@ export default {
                 } else {
                     this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['TCat', Object.keys(this.$route.query)[0]?.split('+').join(' ')]])
                 }
+                this.ProductCounter = 0
                 this.minV = MinPrice
                 this.maxV = MaxPrice
             this.IsProducts = false
@@ -1859,9 +1871,7 @@ export default {
             this.$store.commit('cart/cartChange', el)
         },
         localizeFilter(key, key2, key3) {
-            if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
-            else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
-            else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
+            return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
         RangeInit(){
             let inputLeft = document.getElementById("input-left");

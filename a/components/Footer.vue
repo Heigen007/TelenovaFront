@@ -236,22 +236,20 @@ export default {
         }
     },
     methods: {
+        localizeFilter(key, key2, key3) {
+            return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
+        },
         async Share(){
             const shareData = {
                 title: 'Telenova',
                 text: 'Check Our Site!',
-                url: 'http://37.46.129.41/',
+                url: 'http://82.146.62.154/',
             }
             try {
                 await navigator.share(shareData)
             } catch(err) {
                 console.log(err);
             }
-        },
-        localizeFilter(key, key2, key3) {
-            if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
-            else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
-            else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
         },
         changeLang(lang){
             this.lang = false

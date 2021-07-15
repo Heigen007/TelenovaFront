@@ -12,8 +12,8 @@
                 <div id="shopCartAccordion1" class="accordion rounded mb-6">
                     <!-- Card -->
                     <div class="card border-0">
-                        <div id="shopCartHeadingTwo" class="alert alert-primary mb-0" role="alert">
-                            {{localizeFilter('CouponPart', 'Fquestion')}}<NuxtLink to="#" class="alert-link" data-toggle="collapse" data-target="#shopCartTwo" aria-expanded="false" aria-controls="shopCartTwo">{{localizeFilter('CouponPart', 'FLink')}}</NuxtLink>
+                        <div id="shopCartHeadingTwo" class="alert alert-primary mb-0 text-white" role="alert">
+                            {{localizeFilter('CouponPart', 'Fquestion')}}<a href="#" class="alert-link text-white" data-toggle="collapse" data-target="#shopCartTwo" aria-expanded="false" aria-controls="shopCartTwo">{{localizeFilter('CouponPart', 'FLink')}}</a>
                         </div>
                         <div id="shopCartTwo" class="collapse border border-top-0" aria-labelledby="shopCartHeadingTwo" data-parent="#shopCartAccordion1" style="">
                             <form class="p-5" novalidate="novalidate">
@@ -594,7 +594,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <a v-if="LinkActive" @click='Ship' target="_blank" rel="nofollow noopener noreferrer" :href="PayLink()"><button class="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">{{localizeFilter('Order', 'TransferVariations', 'SuccessButtonText')}}</button></a>
+                                        <a v-if="LinkActive" @click='Ship' target="_blank" rel="nofollow noopener noreferrer" :href="PayLink()"><button class="text-white btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">{{localizeFilter('Order', 'TransferVariations', 'SuccessButtonText')}}</button></a>
                                     </div>
                                     <!-- End Order Summary -->
                                 </div>
@@ -614,6 +614,11 @@ import axios from 'axios'
 import CryptoJS from 'crypto-js'
 import Swal from 'sweetalert2'
 export default {
+    head () {
+        return {
+            title: 'Checkout'
+        }
+    },
     data(){
         return{
             Component: "CheckoutPage",
@@ -763,9 +768,7 @@ export default {
             }
         },
         localizeFilter(key, key2, key3) {
-            if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]?.[key3] || ``
-            else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key]?.[key2]|| ``
-            else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.[this.Component]?.[key] || ``
+            return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
         TotalPrice(){
             if(process.browser){

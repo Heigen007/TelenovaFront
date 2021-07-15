@@ -150,9 +150,7 @@ export default {
         },0);
       },
       localizeFilter(key, key2, key3) {
-          if(key3) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.['Header']?.[key]?.[key2]?.[key3] || ``
-          else if(key2) return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.['Header']?.[key]?.[key2]|| ``
-          else return this.$store.state.lang.locales?.[this.$store.state.lang.lang]?.['Header']?.[key] || ``
+          return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
       },
     }
 }
