@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <button type="submit" class="btn btn-primary-dark-w px-5">{{localizeFilter('FirstPart','SendButtonText')}}</button>
+                                    <button type="submit" class="btn btn-primary-dark-w px-5 text-white">{{localizeFilter('FirstPart','SendButtonText')}}</button>
                                 </div>
                             </form>
                         </div>
