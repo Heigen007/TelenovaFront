@@ -16,8 +16,8 @@ export default {
     lang: s => s.lang,
     getWord: (state) => ([Component,key,key2,key3]) => {
       if(key3) return state.locales?.[state.lang]?.[Component]?.[key]?.[key2]?.[key3] || ``
-      else if(key2) return state.locales?.[state.lang]?.[Component]?.[key]?.[key2]|| ``
-      else return state.locales?.[state.lang]?.[Component]?.[key] || ``
+      if(key2) return state.locales?.[state.lang]?.[Component]?.[key]?.[key2]|| ``
+      return state.locales?.[state.lang]?.[Component]?.[key] || ``
     }
   },
   mutations: {
