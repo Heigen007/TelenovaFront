@@ -145,40 +145,13 @@ export default {
         this.items = this.$store.state.cart.cart
     },
     mounted(){
-                setTimeout(() => {
+        setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
         $.HSCore.components.HSQantityCounter.init('.js-quantity');
 
-        // initialization of malihu scrollbar
-        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
-
         // initialization of forms
         $.HSCore.components.HSFocusState.init();
-
-        // initialization of form validation
-        $.HSCore.components.HSValidation.init('.js-validate', {
-            rules: {
-                confirmPassword: {
-                    equalTo: '#signupPassword'
-                }
-            }
-        });
-
-        // $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-        //     e.preventDefault();
-
-        //     var target = $(this).data('target');
-
-        //     if($(this).attr('aria-expanded') === "true") {
-        //         $(target).collapse('hide');
-        //     } else {
-        //         $(target).collapse('show');
-        //     }
-        // });
-
-        // // initialization of select picker
-        // $.HSCore.components.HSSelectPicker.init('.js-select');
     },
     methods: {
         TotalPrice(){

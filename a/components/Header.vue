@@ -390,18 +390,10 @@ export default {
         var self = this
         axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/5')
         .then(res => {
-            console.log(res);
             self.bestC = res.data
         })
     },
     mounted(){
-        // var self = this
-        // document.querySelector('.ChIn').addEventListener('keydown', function(e) {
-        //     if (e.code === 'Enter') {
-        //         self.InputSearch()
-        //     }
-        // })
-
         $(window).on('load', function () {
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
@@ -457,8 +449,7 @@ export default {
         },
         AmountOfCartProducts(){
             if(process.browser && this.Cart!=null){
-                var stateCart = this.Cart
-                return stateCart.length
+                return this.Cart.length
             }
             return 0 
         },

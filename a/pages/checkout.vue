@@ -658,20 +658,20 @@ export default {
             this.LinkActive = true
         }, 100);
         $(document).on('ready', function () {
-        // initialization of forms
-        $.HSCore.components.HSFocusState.init();
+            // initialization of forms
+            $.HSCore.components.HSFocusState.init();
 
-        $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-            e.preventDefault();
+            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
+                e.preventDefault();
 
-            var target = $(this).data('target');
+                var target = $(this).data('target');
 
-            if($(this).attr('aria-expanded') === "true") {
-                $(target).collapse('hide');
-            } else {
-                $(target).collapse('show');
-            }
-        });
+                if($(this).attr('aria-expanded') === "true") {
+                    $(target).collapse('hide');
+                } else {
+                    $(target).collapse('show');
+                }
+            });
         })
     },
     methods: {

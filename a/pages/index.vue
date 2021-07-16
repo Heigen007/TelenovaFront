@@ -1003,66 +1003,30 @@ export default {
     },
     created(){
         axios.get('https://textforeva.ru/storage/mostPopular/products/20')
-        .then(response => {
-            console.log(response);
-            this.popularProducts = response.data.reverse()
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+        .then(response => this.popularProducts = response.data.reverse())
+        .catch(error => console.log(error))
 
         axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
-        .then(response => {
-            console.log(response);
-            this.newestProducts = response.data
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+        .then(response => this.newestProducts = response.data)
+        .catch(error => console.log(error))
+
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты", "count": 10 })
-        .then(response => {
-            console.log(response);
-            this.TVProducts = response.data.products
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+        .then(response => this.TVProducts = response.data.products)
+        .catch(error => console.log(error))
 
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Бытовая техника", "count": 10 })
-        .then(response => {
-            console.log(response);
-            this.LapProducts = response.data.products
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+        .then(response => this.LapProducts = response.data.products)
+        .catch(error => console.log(error))
     },
     mounted(){
-        setTimeout(() => {
-            window.scrollTo(0, 0)
-            console.log();
-        }, 1000);
-        this.$nextTick(() => {
-            this.Slick()
-        })
+        setTimeout(() => window.scrollTo(0, 0), 1000);
+        this.$nextTick(() => this.Slick())
         this.IsC = true
     },
     beforeDestroy(){
         this.IsC = false
     },
     updated(){
-        console.log(1);
-        // initialization of animation
-        $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-        // initialization of unfold component
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-            afterOpen: function () {
-                $(this).find('input[type="search"]').focus();
-            }
-        });
-
-
         // initialization of countdowns
         var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
             yearsElSelector: '.js-cd-years',
@@ -1072,27 +1036,8 @@ export default {
             minutesElSelector: '.js-cd-minutes',
             secondsElSelector: '.js-cd-seconds'
         });
-
-        // initialization of malihu scrollbar
-        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
-
         // initialization of forms
         $.HSCore.components.HSFocusState.init();
-
-        // initialization of form validation
-        $.HSCore.components.HSValidation.init('.js-validate', {
-            rules: {
-                confirmPassword: {
-                    equalTo: '#signupPassword'
-                }
-            }
-        });
-
-        // initialization of show animations
-        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-        // initialization of hamburgers
-        $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
 
         // initialization of unfold component
         $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
@@ -1103,25 +1048,6 @@ export default {
                 $('#headerSidebarList .collapse.show').collapse('hide');
             }
         });
-
-        $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-            e.preventDefault();
-
-            var target = $(this).data('target');
-
-            if($(this).attr('aria-expanded') === "true") {
-                $(target).collapse('hide');
-            } else {
-                $(target).collapse('show');
-            }
-        });
-        
-
-        // initialization of unfold component
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-        // initialization of select picker
-        $.HSCore.components.HSSelectPicker.init('.js-select');
     },
     methods: {
         Slick(){

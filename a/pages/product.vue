@@ -401,7 +401,6 @@ export default {
                         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
                     }, 2000);
                     $.HSCore.components.HSQantityCounter.init('.js-quantity');
-                    $.HSCore.components.HSSelectPicker.init('.js-select');
                     $.HSCore.components.HSFocusState.init();
                 })
             }
@@ -412,7 +411,6 @@ export default {
                     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
                 }, 2000);
                 $.HSCore.components.HSQantityCounter.init('.js-quantity');
-                $.HSCore.components.HSSelectPicker.init('.js-select');
                 $.HSCore.components.HSFocusState.init();
             })
         }
@@ -431,7 +429,7 @@ export default {
         })
     },
     mounted(){
-                setTimeout(() => {
+        setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
     },
@@ -448,7 +446,6 @@ export default {
                 var count = document.getElementById('ProductQuantity').value
                 for (let index = 0; index < count; index++) {
                     this.$store.commit('cart/cartChange', this.Product)
-                    console.log(5);
                 }                
             }
         },
@@ -459,7 +456,6 @@ export default {
             var count = document.getElementById('ProductQuantity').value
             for (let index = 0; index < count; index++) {
                 this.$store.commit('cart/cartChange', this.Product)
-                console.log(5);
             };
             setTimeout(() => {
                 this.$router.push('/cart')
@@ -470,8 +466,7 @@ export default {
         SliderProducts(){
             if(process.browser && this.$store.state.products) {
                 var a = JSON.parse(JSON.stringify(this.$store.state.products))
-                a = a.splice(0,10)
-                return a
+                return a.splice(0,10)
             }
         },
     }

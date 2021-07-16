@@ -263,8 +263,6 @@ export default {
                         $(this).find('input[type="search"]').focus();
                     }
                 });
-                // initialization of forms
-                $.HSCore.components.HSFocusState.init();
 
                 // initialization of unfold component
                 $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
@@ -278,13 +276,12 @@ export default {
 
                 // initialization of unfold component
                 $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-            },0);
+            });
         },
     },
     created() {
         axios.get('https://textforeva.ru/storage/mostPopular/products/40')
         .then(response => {
-            console.log(response);
             this.popularProducts = response.data.reverse()
         })
         .catch(function(error) {
@@ -293,7 +290,6 @@ export default {
 
         axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/10')
         .then(res => {
-            console.log(res,'Footer');
             this.bestC = res.data
         })
         .catch(function(error) {
@@ -302,44 +298,14 @@ export default {
     },
     mounted(){
         this.changeLang()
-        $(window).on('load', function () {
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                direction: 'horizontal',
-                pageContainer: $('.container'),
-                breakpoint: 767.98,
-                hideTimeOut: 0
-            });
-        });
 
         $(document).on('ready', function () {
 
-            // initialization of animation
-            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-            // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
                 afterOpen: function () {
                     $(this).find('input[type="search"]').focus();
                 }
             });
-            // initialization of forms
-            $.HSCore.components.HSFocusState.init();
-
-            // initialization of form validation
-            $.HSCore.components.HSValidation.init('.js-validate', {
-                rules: {
-                    confirmPassword: {
-                        equalTo: '#signupPassword'
-                    }
-                }
-            });
-            // initialization of show animations
-            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-            // initialization of hamburgers
-            $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
 
             // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
@@ -351,23 +317,8 @@ export default {
                 }
             });
 
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-                e.preventDefault();
-
-                var target = $(this).data('target');
-
-                if($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
-
             // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-            // initialization of select picker
-            $.HSCore.components.HSSelectPicker.init('.js-select');
         });
     }
 }
