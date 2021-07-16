@@ -1643,7 +1643,6 @@ export default {
             Component: 'ShopPage',
             MainInfo: null,
             ProductCounter: 0,
-            carouselCounter: true,
             IdResult: [],
             currentInput: '',
             IsPopper: false,
@@ -1683,12 +1682,6 @@ export default {
         },
         Products(newV){
             window.scrollTo(0,0)
-            if(this.carouselCounter){
-                setTimeout(() => {
-                    this.carouselCounter = false
-                    $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-                }, 1000);
-            }
             this.IsProducts = true
         }
     },
