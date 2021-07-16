@@ -184,9 +184,9 @@
 
 <script>
 export default {
-    head () {
+    head() {
         return {
-            title: 'FAQ'
+            title: 'Telenova | FAQ'
         }
     },
     data: () => {

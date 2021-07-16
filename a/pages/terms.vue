@@ -48,9 +48,9 @@
 
 <script>
 export default {
-    head () {
+    head() {
         return {
-            title: 'Terms and conditions'
+            title: 'Telenova | Terms and conditions'
         }
     },
     data(){

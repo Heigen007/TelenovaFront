@@ -102,9 +102,9 @@
 
 <script>
 export default {
-    head () {
+    head() {
         return {
-            title: 'Contact us'
+            title: 'Telenova | Contact us'
         }
     },
     data() {

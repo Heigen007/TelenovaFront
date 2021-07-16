@@ -128,9 +128,9 @@
 
 <script>
 export default {
-    head () {
+    head() {
         return {
-            title: 'Cart'
+            title: 'Telenova | Cart'
         }
     },
     data(){ 

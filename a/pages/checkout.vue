@@ -614,9 +614,9 @@ import axios from 'axios'
 import CryptoJS from 'crypto-js'
 import Swal from 'sweetalert2'
 export default {
-    head () {
+    head() {
         return {
-            title: 'Checkout'
+            title: 'Telenova | Checkout'
         }
     },
     data(){

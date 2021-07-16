@@ -253,9 +253,16 @@
 
 <script>
 export default {
-    head () {
+    head() {
         return {
-            title: 'About us'
+            title: 'Telenova | About us',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Telenova online shop. Here you can find information about our company and production'
+                }
+            ]
         }
     },
     data(){ 
@@ -264,7 +271,7 @@ export default {
         }
     },
     mounted(){
-                setTimeout(() => {
+        setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
         $(window).on('load', function () {

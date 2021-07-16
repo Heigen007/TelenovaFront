@@ -979,9 +979,16 @@
 <script>
 import axios from 'axios'
 export default {
-    head () {
+    head() {
         return {
-            title: 'Telenova'
+            title: 'Telenova | Home',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Welcome to our home page! Here you can find all popular categories and discounts.'
+                }
+            ]
         }
     },
     data(){

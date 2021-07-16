@@ -366,9 +366,9 @@
 import axios from 'axios'
 import preloader from '../components/CssPreloader.vue'
 export default {
-    head () {
+    head() {
         return {
-            title: 'Product page'
+            title: 'Telenova | Product page'
         }
     },
     data(){
