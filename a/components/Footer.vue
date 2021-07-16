@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="mb-6">
-                            <NuxtLink style='width: 9rem;' to="#" class="d-inline-block">
+                            <NuxtLink style='width: 9rem;' to="/" class="d-inline-block">
                                 <img style='width: 9rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                             </NuxtLink>
                         </div>
