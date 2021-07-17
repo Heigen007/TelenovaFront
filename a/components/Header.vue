@@ -499,6 +499,7 @@ export default {
     padding: 0.8vh 1vw 0.8vh 1vw;
     background:#0144a3;
     font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 1px 15px rgba(56, 93, 255,0.7) ;
 }
 @media (max-width: 1200px) {
     .bestCat{
