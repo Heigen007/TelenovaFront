@@ -496,8 +496,6 @@ export default {
 }
 .bestCat{
     width: 100%;
-    font-size: 0.9em;
-    text-transform: uppercase;
     padding: 0.8vh 1vw 0.8vh 1vw;
     background:#0144a3;
     font-family: 'Open Sans', sans-serif;
