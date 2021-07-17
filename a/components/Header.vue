@@ -7,7 +7,7 @@
                 <!-- End Topbar -->
 
                 <!-- Logo-Vertical-menu-Search-header-icons -->
-                <div style='position: sticky; width: 100%; top: 0; z-index: 1000;' class="border-bottom border-lg-down-0 bg-primary bg-xl-transparent min-height-64 flex-horizontal-center">
+                <div style='position: sticky; width: 100%; top: 0; z-index: 1000; background-color: #1869de' class="border-bottom border-lg-down-0 bg-xl-transparent min-height-64 flex-horizontal-center">
                     <div class="container">
                         <div class="row align-items-center justify-content-between justify-content-xl-start">
                             <!-- Logo -->
@@ -148,7 +148,7 @@
                                         <div class="input-group-append">
                                             <!-- End Select -->
                                             <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct2">
-                                                <span class="ec ec-search font-size-24"></span>
+                                                <span class="ec ec-search font-size-24 text-white"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                                 <form @submit='InputSearch' class="js-focus-state input-group px-3">
                                                     <input v-model="InputValue" class="form-control ChIn" type="search" placeholder="Search Product">
                                                     <div class="input-group-append">
-                                                        <button class="btn btn-primary px-3" type="submit"><i class="font-size-18 ec ec-search"></i></button>
+                                                        <button class="btn btn-primary px-3" style='background-color: #1869de; border-color: #1869de' type="submit"><i class="font-size-20 ec ec-search text-white"></i></button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -210,8 +210,8 @@
                 <!-- End Secondary-menu -->
             </div>
             <div class = 'bestCat'>
-                <div style='display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: white'>
-                    <NuxtLink style='color: white; text-decoration: none' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
+                <div style='display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: white'>
+                    <NuxtLink  style='color: white; text-decoration: none; white-space: nowrap' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
                         {{el.name}}
                     </NuxtLink>
                 </div>
@@ -257,7 +257,7 @@
                                         <input v-model="InputValue" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill ChIn"  id="searchProduct" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
                                     <div class="input-group-append">
                                         <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
-                                            <span class="ec ec-search font-size-24"></span>
+                                            <span class="ec ec-search font-size-24 text-white"></span>
                                         </button>
                                     </div>
                                 </div>
@@ -285,7 +285,7 @@
             </div>
         </header>
         <aside id="sidebarHeader" class="u-sidebar u-sidebar--left" aria-labelledby="sidebarHeaderInvoker">
-            <div class="u-sidebar__scroller">
+            <div class="u-sidebar__scroller" style='overflow-y: hidden'>
                 <div class="u-sidebar__container">
                     <div class="u-header-sidebar__footer-offset" style='padding-bottom: 0'>
                         <!-- Toggle Button -->
@@ -388,7 +388,7 @@ export default {
     },
     created(){
         var self = this
-        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/5')
+        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/7')
         .then(res => {
             self.bestC = res.data
         })
@@ -496,8 +496,9 @@ export default {
 }
 .bestCat{
     width: 100%;
-    padding: 1vh 10vw 1vh 10vw;
-    background:#3d84ec;
+    font-size: 1em;
+    padding: 1vh 1vw 1vh 1vw;
+    background:#0144a3;
     font-family: 'Open Sans', sans-serif;
 }
 @media (max-width: 1200px) {
@@ -515,12 +516,27 @@ export default {
         color: white
     }
     .rounded-circle{
-        background-color: rgb(26, 112, 224) !important;
+        background-color: #00449c !important;
     }
 }
 @media (max-width: 350px) {
     .hiddenSvg{
         display: none;
     }
+}
+.outer-wrapper {
+  overflow: hidden;
+  height: 1.2em;
+  line-height: 1.2em;
+  border: 1px dotted black;
+  margin: 1em;
+}
+.outer-wrapper::before {
+  content: '';
+  display: inline-block;
+}
+.inner-wrapper {
+  display: inline-block;
+  white-space: nowrap;
 }
 </style>
