@@ -75,10 +75,10 @@
         </div>
     </div>
     <MyHeader />
-    <Nuxt />
+    <Nuxt id='nuxtMain' />
     <NuxtLink class="js-go-to u-go-to" to="#"
       aria-label='go to top'
-      data-position='{"bottom": 15, "right": 15 }'
+      data-position='{"bottom": 15, "left": 15 }'
       data-type="fixed"
       data-offset-top="400"
       data-compensation="#header"

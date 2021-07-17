@@ -17,6 +17,11 @@ export default {
     script: [
       {
         type: 'text/javascript',
+        src: 'vendor/chat.js',
+        body: true
+      },
+      {
+        type: 'text/javascript',
         src: 'vendor/jquery/dist/jquery.min.js',
         body: true
       },
