@@ -1001,10 +1001,9 @@ export default {
             LapProducts: null
         }
     },
-    created(){
+    fetch(){
         axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
-            console.log(response);
             this.popularProducts = response.data.reverse()
         })
         .catch(function(error) {
@@ -1013,7 +1012,6 @@ export default {
 
         axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
         .then(response => {
-            console.log(response);
             this.newestProducts = response.data
         })
         .catch(function(error) {
@@ -1021,7 +1019,6 @@ export default {
         })
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты", "count": 10 })
         .then(response => {
-            console.log(response);
             this.TVProducts = response.data.products
         })
         .catch(function(error) {
@@ -1030,7 +1027,6 @@ export default {
 
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Бытовая техника", "count": 10 })
         .then(response => {
-            console.log(response);
             this.LapProducts = response.data.products
         })
         .catch(function(error) {
@@ -1040,7 +1036,6 @@ export default {
     mounted(){
         setTimeout(() => {
             window.scrollTo(0, 0)
-            console.log();
         }, 1000);
         this.$nextTick(() => {
             this.Slick()
@@ -1051,7 +1046,6 @@ export default {
         this.IsC = false
     },
     updated(){
-        console.log(1);
         // initialization of animation
         $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
 
@@ -1126,9 +1120,9 @@ export default {
     methods: {
         Slick(){
             if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
-                setTimeout(() => {
-                    $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-                }, 200);
+                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 200);
+                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 1000);
+                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 3000);
             } else {
                 setTimeout(() => {
                     this.Slick()

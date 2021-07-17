@@ -691,7 +691,6 @@ export default {
                                         count: filteredCart[el].offerData.count
                                     }
                                 }
-                                console.log(filteredCart)
                                 var checkout = {
                                     address: this.info.Adress, // адрес доставки
                                     phoneNumber: this.info.Phone, // номер телефона
@@ -703,7 +702,6 @@ export default {
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)
                                 .then(response => {
-                                    console.log(response)
                                     self.loaderM = true
                                     Swal.fire(
                                         'Success!',

@@ -1821,8 +1821,6 @@ export default {
                     var MinPrice = document.getElementById("input-left2").value;
                     var MaxPrice = document.getElementById("input-right2").value;
                 }
-                console.log(result);
-                console.log(MinPrice, MaxPrice);
                 // PriceFilter = this.ProductsCopy.filter(Product => Product.price >= MinPrice && Product.price <= MaxPrice})
                 // this.ProductsCopy = PriceFilter
                 if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){

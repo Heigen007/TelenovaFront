@@ -389,7 +389,6 @@ export default {
                 this.id = id
                 await axios.get(`${this.$store.state.BackUrl}/storage/kaspi_id/${id}`)
                 .then( response => {
-                    console.log(response);
                     self.Product = response.data
                 })
                 .catch( error => {
@@ -421,7 +420,6 @@ export default {
         this.id = id
         await axios.get(`${this.$store.state.BackUrl}/storage/kaspi_id/${id}`)
         .then( response => {
-            console.log(response);
             self.Product = response.data
         })
         .catch( error => {

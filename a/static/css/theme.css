@@ -28923,12 +28923,13 @@ label.btn {
   z-index: 100;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #0144a3;
+  background-color: rgba(1, 68, 163, 0.5);
   color: #fff;
   font-size: 0.75rem;
   border-radius: 0.3125rem;
-  opacity: 0.5;
   transition: 0.3s ease-out;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .u-go-to__inner {
