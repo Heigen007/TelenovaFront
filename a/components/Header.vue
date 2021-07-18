@@ -317,6 +317,9 @@
 
                                 <!-- List -->
                                 <ul id="headerSidebarList" class="u-header-collapse__nav">
+                                    <li>
+                                        <a href="tel:+77073373318" class="font-size-20 text-gray-90">+77073373318</a>
+                                    </li>
                                     <li v-for="(el, i) in Categories" :key='i' class="u-has-submenu u-header-collapse__submenu">
                                         <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" :data-target="'#headerSidebarMoviesCollapse'+i" role="button" data-toggle="collapse" aria-expanded="false" :aria-controls="'#headerSidebarMoviesCollapse'+i">
                                             {{Object.keys(el)[0]}}
