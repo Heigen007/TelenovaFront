@@ -288,7 +288,7 @@ export default {
             console.log(error);
         })
 
-        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/10')
+        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
         .then(res => {
             this.bestC = res.data
         })

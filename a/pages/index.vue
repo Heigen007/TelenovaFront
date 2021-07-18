@@ -1046,16 +1046,6 @@ export default {
         this.IsC = false
     },
     updated(){
-        // initialization of animation
-        $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-        // initialization of unfold component
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-            afterOpen: function () {
-                $(this).find('input[type="search"]').focus();
-            }
-        });
-
 
         // initialization of countdowns
         var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
@@ -1066,61 +1056,13 @@ export default {
             minutesElSelector: '.js-cd-minutes',
             secondsElSelector: '.js-cd-seconds'
         });
-
-        // initialization of malihu scrollbar
-        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
-
         // initialization of forms
         $.HSCore.components.HSFocusState.init();
-
-        // initialization of form validation
-        $.HSCore.components.HSValidation.init('.js-validate', {
-            rules: {
-                confirmPassword: {
-                    equalTo: '#signupPassword'
-                }
-            }
-        });
-
-        // initialization of show animations
-        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-        // initialization of hamburgers
-        $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
-
-        // initialization of unfold component
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-            beforeClose: function () {
-                $('#hamburgerTrigger').removeClass('is-active');
-            },
-            afterClose: function() {
-                $('#headerSidebarList .collapse.show').collapse('hide');
-            }
-        });
-
-        $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-            e.preventDefault();
-
-            var target = $(this).data('target');
-
-            if($(this).attr('aria-expanded') === "true") {
-                $(target).collapse('hide');
-            } else {
-                $(target).collapse('show');
-            }
-        });
-        
-
-        // initialization of unfold component
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-        // initialization of select picker
-        $.HSCore.components.HSSelectPicker.init('.js-select');
     },
     methods: {
         Slick(){
             if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 200);
+                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 300);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 1000);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 3000);
             } else {
