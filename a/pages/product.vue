@@ -117,6 +117,82 @@
                 </div>
                 <!-- End Single Product Body -->
             </div>
+            <div v-if='Product.similarProducts.length!=0' class="container">
+                <!-- Related products -->
+                <div class="mb-6">
+                    <div class="border-bottom border-color-1  mb-4">
+                        <h3 class="section-title mb-0 pb-2 font-size-22">{{localizeFilter('RelatedProductsPartTitle')}}</h3>
+                    </div>
+                    <client-only>
+                    <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-1 pb-1 px-1"
+                        data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
+                        data-slides-show="4"
+                        data-slides-scroll="2"
+                        data-responsive='[{
+                            "breakpoint": 1200,
+                            "settings": {
+                              "slidesToShow": 4
+                            }
+                        }, {
+                          "breakpoint": 992,
+                          "settings": {
+                            "slidesToShow": 3
+                          }
+                        }, {
+                          "breakpoint": 768,
+                          "settings": {
+                            "slidesToShow": 2
+                          }
+                        }, {
+                            "breakpoint": 500,
+                            "settings": {
+                            "slidesToShow": 1,
+                            "slidesToScroll": 1
+                            }
+                        }]'>
+                        <div class="js-slide " v-if='el' v-for="(el,i) in Product.similarProducts" :key='i'>
+                            <div>
+                                <div class="h-100">
+                                    <div class="inner px-wd-4 p-2 p-md-3">
+                                        <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
+                                            <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                            <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
+                                            <div class="mb-2">
+                                                <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
+                                            </div>
+                                            <div class="flex-center-between mb-1">
+                                                <div class="prodcut-price">
+                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</a>
+                                                </div>
+                                                <div class="d-xl-block prodcut-add-cart">
+                                                    <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-else class="product-item__body pb-xl-2">
+                                            <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                            <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
+                                            <div class="mb-2">
+                                                <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
+                                            </div>
+                                            <div class="flex-center-between mb-1">
+                                                <div class="prodcut-price">
+                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</a>
+                                                </div>
+                                                <div class="d-xl-block prodcut-add-cart">
+                                                    <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </client-only>
+                </div>
+                <!-- End Related products -->
+            </div>
             <div class="bg-gray-7 pt-6 pb-3 mb-6">
                 <div class="container">
                     <div class="js-scroll-nav">
@@ -276,82 +352,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div v-if='Product.similarProducts.length!=0' class="container">
-                <!-- Related products -->
-                <div class="mb-6">
-                    <div class="d-flex justify-content-between align-items-center border-bottom border-color-1 flex-lg-nowrap flex-wrap mb-4">
-                        <h3 class="section-title mb-0 pb-2 font-size-22">{{localizeFilter('RelatedProductsPartTitle')}}</h3>
-                    </div>
-                    <client-only>
-                    <div style='min-height: 400px' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-2 px-1"
-                        data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                        data-slides-show="4"
-                        data-slides-scroll="2"
-                        data-responsive='[{
-                            "breakpoint": 1200,
-                            "settings": {
-                              "slidesToShow": 4
-                            }
-                        }, {
-                          "breakpoint": 992,
-                          "settings": {
-                            "slidesToShow": 3
-                          }
-                        }, {
-                          "breakpoint": 768,
-                          "settings": {
-                            "slidesToShow": 2
-                          }
-                        }, {
-                            "breakpoint": 500,
-                            "settings": {
-                            "slidesToShow": 1,
-                            "slidesToScroll": 1
-                            }
-                        }]'>
-                        <div class="js-slide products-group" v-if='el' v-for="(el,i) in Product.similarProducts" :key='i'>
-                            <div class="product-item">
-                                <div class="product-item__outer h-100">
-                                    <div class="product-item__inner px-wd-4 p-2 p-md-3">
-                                        <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                            <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                            <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
-                                            <div class="mb-2">
-                                                <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
-                                            </div>
-                                            <div class="flex-center-between mb-1">
-                                                <div class="prodcut-price">
-                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</a>
-                                                </div>
-                                                <div class="d-xl-block prodcut-add-cart">
-                                                    <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div v-else class="product-item__body pb-xl-2">
-                                            <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                            <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
-                                            <div class="mb-2">
-                                                <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
-                                            </div>
-                                            <div class="flex-center-between mb-1">
-                                                <div class="prodcut-price">
-                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</a>
-                                                </div>
-                                                <div class="d-xl-block prodcut-add-cart">
-                                                    <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </client-only>
-                </div>
-                <!-- End Related products -->
             </div>
 
         </main>
@@ -517,5 +517,8 @@ export default {
     width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+.inner:hover{
+    box-shadow: 0px 0px 6px 0px rgb(1 1 1 / 30%);
 }
 </style>
