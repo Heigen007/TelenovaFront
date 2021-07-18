@@ -1048,7 +1048,7 @@ export default {
     updated(){
 
         // initialization of countdowns
-        var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+        $.HSCore.components.HSCountdown.init('.js-countdown', {
             yearsElSelector: '.js-cd-years',
             monthsElSelector: '.js-cd-months',
             daysElSelector: '.js-cd-days',
@@ -1065,6 +1065,7 @@ export default {
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 300);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 1000);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 3000);
+                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 5000);
             } else {
                 setTimeout(() => {
                     this.Slick()
