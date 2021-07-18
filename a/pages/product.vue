@@ -398,7 +398,13 @@ export default {
                 this.$nextTick(() => {
                     setTimeout(() => {
                         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
+                    }, 1000);
+                    setTimeout(() => {
+                        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
                     }, 2000);
+                    setTimeout(() => {
+                        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
+                    }, 3000);
                     $.HSCore.components.HSQantityCounter.init('.js-quantity');
                     $.HSCore.components.HSFocusState.init();
                 })
@@ -408,7 +414,13 @@ export default {
             this.$nextTick(() => {
                 setTimeout(() => {
                     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
+                }, 1000);
+                setTimeout(() => {
+                    $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
                 }, 2000);
+                setTimeout(() => {
+                    $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
+                }, 3000);
                 $.HSCore.components.HSQantityCounter.init('.js-quantity');
                 $.HSCore.components.HSFocusState.init();
             })
