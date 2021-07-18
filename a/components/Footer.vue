@@ -125,7 +125,7 @@
                         </div>
                         <div class="mb-4">
                             <div class="mb-1 font-weight-bold">{{localizeFilter('ContactInfoTitle')}}</div>
-                            <address class="">
+                            <address style='font-size: 1.1em'>
                                 {{localizeFilter('ContactInfoValue')}}
                             </address>
                         </div>
