@@ -1067,6 +1067,7 @@ export default {
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 3000);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 5000);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 7000);
+                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 10000);
 
             } else {
                 setTimeout(() => {
