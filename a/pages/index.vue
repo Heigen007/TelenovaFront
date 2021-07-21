@@ -438,6 +438,8 @@
                                 <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                     data-slides-show="5"
+                                    data-autoplay="true"
+                                    data-infinite="true"
                                     data-slides-scroll="2"
                                     data-responsive='[{
                                         "breakpoint": 1200,
@@ -568,6 +570,8 @@
                     <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                         data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                         data-slides-show="5"
+                        data-autoplay="true"
+                        data-infinite="true"
                         data-slides-scroll="2"
                         data-responsive='[{
                             "breakpoint": 1200,
@@ -645,6 +649,8 @@
                             <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
+                                data-autoplay="true"
+                                data-infinite="true"
                                 data-slides-scroll="2"
                                 data-responsive='[{
                                     "breakpoint": 1200,
@@ -747,6 +753,8 @@
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
+                                data-autoplay="true"
+                                data-infinite="true"
                                 data-responsive='[{
                                     "breakpoint": 1200,
                                     "settings": {
@@ -827,6 +835,8 @@
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="5"
                                 data-slides-scroll="2"
+                                data-autoplay="true"
+                                data-infinite="true"
                                 data-responsive='[{
                                     "breakpoint": 1200,
                                     "settings": {
