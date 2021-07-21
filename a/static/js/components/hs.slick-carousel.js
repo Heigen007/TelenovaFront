@@ -236,7 +236,7 @@
 				}
 				
 				$this.slick({
-					autoplay: (setAutoplay || ($(target)[0] && &(target)[0].dataset.isThumbsProgress)) ? true : false,
+					autoplay: (setAutoplay || ($(target)[0] && $(target)[0].dataset.isThumbsProgress)) ? true : false,
 					autoplaySpeed: setSpeed ? setSpeed : 3000,
 					
 					cssEase: setAnimation ? setAnimation : 'ease',
