@@ -64,8 +64,8 @@
                                                 data-parent="#basicsAccordion">
                                                 <div class="card-body p-0">
                                                     <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
-                                                        <div style='max-height: 31rem; overflow-y: scroll' id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                                            <ul class="navbar-nav u-header__navbar-nav">
+                                                        <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                                                            <ul style='max-height: 31rem; overflow-y: scroll' class="navbar-nav u-header__navbar-nav">
                                                                 <!-- <li class="nav-item u-header__nav-item"
                                                                     data-event="hover"
                                                                     data-position="left">
