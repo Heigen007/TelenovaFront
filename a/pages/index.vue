@@ -435,7 +435,7 @@
                         <client-only>
                         <div class="tab-content" id="Bpills-tabContent">
                             <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1" role="tabpanel">
-                                <div v-if='IsC' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                                <div v-if='IsC && newestProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                     data-slides-show="5"
                                     data-autoplay="true"
