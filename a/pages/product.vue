@@ -44,8 +44,8 @@
                                 <div class="mb-2">
                                     <NuxtLink class="d-inline-flex align-items-center small font-size-15 text-lh-1" to="#">
                                         <div class="text-warning mr-2">
-                                            <small v-for="(el,i) in Math.floor(Product.offerData.kaspi_rating)/2" :key='i' class="fas fa-star mx-1"></small>
-                                            <small v-for="(el2,o) in 5-Math.floor(Product.offerData.kaspi_rating)/2" :key='o' class="far fa-star text-muted mx-1"></small>
+                                            <small v-for="(el,i) in Math.floor(Product.offerData.kaspi_rating/2)" :key='i+"a"' class="fas fa-star mx-1"></small>
+                                            <small v-for="(el2,o) in 5-Math.floor(Product.offerData.kaspi_rating/2)" :key='o' class="far fa-star text-muted mx-1"></small>
                                         </div>
                                         <span class="text-secondary font-size-13"></span>
                                     </NuxtLink>
