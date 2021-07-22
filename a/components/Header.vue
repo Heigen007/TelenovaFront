@@ -393,7 +393,11 @@ export default {
         var self = this
         axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/7')
         .then(res => {
+            console.log(res,'Header Categories');
             self.bestC = res.data
+        })
+        .catch(err => {
+            console.log(err);
         })
     },
     mounted(){

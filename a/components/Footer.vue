@@ -52,10 +52,10 @@
                             </div>
                             <div class="col pl-4 d-flex flex-column">
                                 <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
-                                <div class="text-warning mb-2">
+                                <!-- <div class="text-warning mb-2">
                                     <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating)" :key='o' class="fas fa-star"></small>
-                                    <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating)" :key='o2+"d"' class="fas fa-star text-muted"></small>
-                                </div>
+                                    <small v-for="(fil,o2) in 5" :key='o2+"d"' class="fas fa-star text-muted"></small>
+                                </div> -->
                                 <div class="prodcut-price mt-auto">
                                     <div class="font-size-15">{{el.offerData.price}} тг.</div>
                                 </div>
@@ -290,6 +290,7 @@ export default {
 
         axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
         .then(res => {
+            console.log(res, 'Footer Categories');
             this.bestC = res.data
         })
         .catch(function(error) {

@@ -44,8 +44,8 @@
                                 <div class="mb-2">
                                     <NuxtLink class="d-inline-flex align-items-center small font-size-15 text-lh-1" to="#">
                                         <div class="text-warning mr-2">
-                                            <small v-for="(el,i) in Math.floor(Product.offerData.kaspi_rating)" :key='i' class="fas fa-star mx-1"></small>
-                                            <small v-for="(el2,o) in 5-Math.floor(Product.offerData.kaspi_rating)" :key='o' class="far fa-star text-muted mx-1"></small>
+                                            <small v-for="(el,i) in Math.floor(Product.offerData.kaspi_rating)/2" :key='i' class="fas fa-star mx-1"></small>
+                                            <small v-for="(el2,o) in 5-Math.floor(Product.offerData.kaspi_rating)/2" :key='o' class="far fa-star text-muted mx-1"></small>
                                         </div>
                                         <span class="text-secondary font-size-13"></span>
                                     </NuxtLink>
@@ -64,7 +64,7 @@
                             <div class="mb-2">
                                 <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
                                     <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">{{localizeFilter('CardAvailabilityText')}}
-                                        <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.review_count}} in stock</span>
+                                        <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.product_count}} in stock</span>
                                         <span v-else class="text-red font-weight-bold">Not in stock</span>
                                     </div>
                                     <div class="mb-3">
@@ -420,6 +420,7 @@ export default {
         this.id = id
         await axios.get(`${this.$store.state.BackUrl}/storage/kaspi_id/${id}`)
         .then( response => {
+            console.log(response)
             self.Product = response.data
         })
         .catch( error => {

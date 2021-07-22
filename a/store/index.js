@@ -112,7 +112,7 @@ export const mutations = {
   SortByPopularity(state, arr){
     state.productsFilteredCopyCopy = arr
   },
-  CategoryFilter(state,arr){
+  CategoryFilter(state, arr){
     var filters = {}
     switch (arr[1]) {
       case 'first':
@@ -135,6 +135,7 @@ export const mutations = {
     }
     var send = function(){
       if(state?.ws){
+        console.log(JSON_Obj);
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
         setTimeout(() => send(), 200);
@@ -170,6 +171,7 @@ export const actions = {
 
     axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
+      console.log(response, 'mostPopular/freshProducts/30');
       commit('SetProductsOnly', response.data)
     })
     .catch(function (error) {
@@ -178,6 +180,7 @@ export const actions = {
 
     axios.get(`https://textforeva.ru/storage/getAllCategories`)
     .then(response => {
+      console.log(response,'Categories');
       commit('SetCategories', response.data)
     })
     .catch(function (error) {
@@ -189,7 +192,7 @@ export const actions = {
 
     connection.onmessage = async (msg) => {
       let data = JSON.parse(msg.data)
-      console.log(data);
+      console.log(data,'WS Message');
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
       commit('SetPriceRange', data.priceRange)

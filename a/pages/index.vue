@@ -516,7 +516,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop?SCat?Смартфоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10">
                                         <img class="img-fluid" src="/img/246X176/img1.jpg" alt="Image Description">
                                     </div>
@@ -536,7 +536,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop?SCat?Смартфоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10">
                                         <img class="img-fluid" src="/img/246X176/img3.jpg" alt="Image Description">
                                     </div>
@@ -721,7 +721,7 @@
                 <!-- End Popular Products -->
                 <!-- Full banner -->
                 <div class="mb-6">
-                    <NuxtLink to="/shop?SCat?Смартфоны" class="d-block text-gray-90">
+                    <NuxtLink to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
                         <div class="" style="background-image: url(/img/1400X206/img1.jpg);">
                             <div class="space-top-2-md p-4 pt-8 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
                                 <div class="flex-horizontal-center overflow-auto overflow-md-visble">
@@ -929,7 +929,7 @@
                     <div class="row">
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-17">
-                                <NuxtLink to="/shop?SCat%3FСмартфоны" class="row align-items-center">
+                                <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6">
                                         <div class="ml-md-7 mt-6 mt-md-0 ml-4 text-gray-90">
                                             <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">G9 Laptops with Ultra 4K HD Display</h2>
@@ -948,15 +948,15 @@
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink to="/shop?SCat%3FСмартфоны" class="d-block"><img class="img-fluid MFluid" src="/img/446X262/img3.jpg" alt="Image Description"></NuxtLink>
+                                <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="d-block"><img class="img-fluid MFluid" src="/img/446X262/img3.jpg" alt="Image Description"></NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink to="/shop?SCat%3FСмартфоны" class=""><img class="img-fluid MFluid" src="/img/446X262/img4.jpg" alt="Image Description"></NuxtLink>
+                            <NuxtLink to="/shop?SCat%3FМобильные телефоны" class=""><img class="img-fluid MFluid" src="/img/446X262/img4.jpg" alt="Image Description"></NuxtLink>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
-                                <NuxtLink to="/shop?SCat%3FСмартфоны" class="row align-items-center">
+                                <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <img class="img-fluid MFluid" src="/img/446X262/img2.jpg" alt="Image Description">
                                     </div>
@@ -1027,7 +1027,7 @@ export default {
         .catch(function(error) {
             console.log(error);
         })
-        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты", "count": 10 })
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
         .then(response => {
             this.TVProducts = response.data.products
         })
@@ -1035,7 +1035,7 @@ export default {
             console.log(error);
         })
 
-        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Бытовая техника", "count": 10 })
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Ноутбуки и аксессуары", "count": 10 })
         .then(response => {
             this.LapProducts = response.data.products
         })
