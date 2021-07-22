@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="mb-2">
                                     <ul class="font-size-14 pl-3 ml-1 text-gray-110">
-                                        <li class = 'BLi'><div class = 'FLB'>Бренд:</div>{{Product.offerData.brand}}</li>
+                                        <!-- <li class = 'BLi'><div class = 'FLB'>Бренд:</div>{{Product.offerData.brand}}</li> -->
                                         <li class = 'BLi' v-for="(el,i) in Product.offerData.properties" :key='i'><div class = 'FLB'>{{i}}:</div>{{el}}</li>
                                     </ul>
                                 </div>
