@@ -1015,23 +1015,9 @@ export default {
         }
     },
     fetch(){
-        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
-        .then(response => {
-            this.popularProducts = response.data.reverse()
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
-
-        axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
-        .then(response => {
-            this.newestProducts = response.data
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
         .then(response => {
+            console.log(response, 'firstLevelCategory": "Мобильные телефоны и аксессуары"');
             this.TVProducts = response.data.products
         })
         .catch(function(error) {
@@ -1040,7 +1026,26 @@ export default {
 
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Ноутбуки и аксессуары", "count": 10 })
         .then(response => {
+            console.log(response, '"firstLevelCategory": "Ноутбуки и аксессуары"');
             this.LapProducts = response.data.products
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
+        .then(response => {
+            console.log(response,'mostPopular/products/20');
+            this.popularProducts = response.data.reverse()
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
+        .then(response => {
+            console.log(response,'MostPopular/freshProducts/10');
+            this.newestProducts = response.data
         })
         .catch(function(error) {
             console.log(error);

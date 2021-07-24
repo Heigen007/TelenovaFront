@@ -325,12 +325,12 @@
                                             {{Object.keys(el)[0]}}
                                         </a>
                                         <div :id="'headerSidebarMoviesCollapse'+i" class="collapse" data-parent="#headerSidebarContent">
-                                            <ul class="u-header-collapse__nav-list">
+                                            <ul style='list-style: none'>
                                                 <li v-for="(cat,o) in el" :key="o">
-                                                    <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start' class="u-header-collapse__submenu-nav-link">
-                                                        <div v-for="(fil,y) in cat" :key="y">
+                                                    <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;' class="u-header-collapse__submenu-nav-link">
+                                                        <div v-for="(fil,y) in cat" :key="y" style='margin: 0.3rem 0 0.3rem 0' class='u-header-collapse__nav-list'>
                                                             <div @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
-                                                            <div v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
+                                                            <div v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -393,7 +393,6 @@ export default {
         var self = this
         axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/7')
         .then(res => {
-            console.log(res,'Header Categories');
             self.bestC = res.data
         })
         .catch(err => {

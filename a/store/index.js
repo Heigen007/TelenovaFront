@@ -171,7 +171,6 @@ export const actions = {
 
     axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
-      console.log(response, 'mostPopular/freshProducts/30');
       commit('SetProductsOnly', response.data)
     })
     .catch(function (error) {
