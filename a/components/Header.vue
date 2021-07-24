@@ -285,7 +285,7 @@
             </div>
         </header>
         <aside id="sidebarHeader" class="u-sidebar u-sidebar--left" aria-labelledby="sidebarHeaderInvoker">
-            <div class="u-sidebar__scroller" style='overflow-y: hidden'>
+            <div class="u-sidebar__scroller">
                 <div class="u-sidebar__container">
                     <div class="u-header-sidebar__footer-offset" style='padding-bottom: 0'>
                         <!-- Toggle Button -->

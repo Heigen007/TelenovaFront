@@ -1,7 +1,7 @@
 <template>
   <div class="NUXT_CONTAINER">
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main">
+        <main v-if='IsC && newestProducts && popularProducts && Categories && TVProducts && LapProducts' id="content" role="main">
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
@@ -982,12 +982,15 @@
                 <!-- End Banners -->
             </div>
         </main>
+        <preloader v-else />
+        
         <!-- ========== END MAIN CONTENT ========== -->
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import preloader from '../components/CssPreloader.vue'
 export default {
     head() {
         return {
@@ -1046,10 +1049,8 @@ export default {
     mounted(){
         setTimeout(() => {
             window.scrollTo(0, 0)
-        }, 1000);
-        this.$nextTick(() => {
             this.Slick()
-        })
+        }, 1000);
         this.IsC = true
     },
     beforeDestroy(){
@@ -1072,13 +1073,7 @@ export default {
     methods: {
         Slick(){
             if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 300);
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 1000);
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 3000);
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 5000);
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 7000);
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 10000);
-
             } else {
                 setTimeout(() => {
                     this.Slick()
@@ -1096,6 +1091,9 @@ export default {
         Categories(){
             return this.$store.state.categories
         }
+    },
+    components: {
+        preloader
     }
 }
 </script>
