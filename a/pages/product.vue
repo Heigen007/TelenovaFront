@@ -102,13 +102,13 @@
                                         <!-- End Select -->
                                     </div>
                                     <div class="mb-2 pb-0dot5">
-                                        <div @click="AddToCartButton" class="btn btn-block btn-primary-dark"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('AddToCartText')}}</div>
+                                        <div style='background-color: black; color: white; cursor: pointer' @click="AddToCartButton" class="btn btn-block"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('AddToCartText')}}</div>
                                     </div>
                                     <div class="mb-2">
-                                        <div @click="BuyNow" class="btn btn-block btn-dark">{{localizeFilter('BuyNowText')}}</div>
+                                        <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer' @click="BuyNow" class="btn btn-block">{{localizeFilter('BuyNowText')}}</div>
                                     </div>
                                     <div class="mb-3">
-                                        <a :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div class="btn btn-block btn-danger">{{localizeFilter('BuyKaspiText')}}</div></a>
+                                        <a :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: black; color: white; cursor: pointer' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
                                     </div>
                                 </div>
                             </div>

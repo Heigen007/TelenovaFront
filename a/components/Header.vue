@@ -210,8 +210,8 @@
                 <!-- End Secondary-menu -->
             </div>
             <div class = 'bestCat'>
-                <div style='display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: white'>
-                    <NuxtLink  style='color: white; text-decoration: none; white-space: nowrap' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
+                <div style='display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: black'>
+                    <NuxtLink  style=' text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
                         {{el.name}}
                     </NuxtLink>
                 </div>
@@ -501,11 +501,12 @@ export default {
     cursor: pointer;
 }
 .bestCat{
+    color: black !important;
     width: 100%;
     padding: 0.8vh 1vw 0.8vh 1vw;
-    background:#0144a3;
+    background:#fff;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 0 15px rgba(56, 93, 255,0.7) ;
+    box-shadow: 0 0 15px rgba(107, 107, 107, 0.7) ;
 }
 @media (max-width: 1200px) {
     .bestCat{

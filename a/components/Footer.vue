@@ -172,16 +172,30 @@
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('OtherInfoTitle')}}</h6>
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                    <li><NuxtLink class="list-group-item list-group-item-action" to="/terms">Customer Service</NuxtLink></li>
-                                    <li><NuxtLink class="list-group-item list-group-item-action" to="/terms">Returns / Exchange</NuxtLink></li>
-                                    <li><NuxtLink class="list-group-item list-group-item-action" to="/faq">FAQs</NuxtLink></li>
-                                    <li><NuxtLink class="list-group-item list-group-item-action" to="/terms">Product Support</NuxtLink></li>
+                                    <li>
+                                        <NuxtLink to="/" class="list-group-item list-group-item-action">Home</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="/cart" class="list-group-item list-group-item-action">Cart</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="/about" class="list-group-item list-group-item-action">Adout Us</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="/terms" class="list-group-item list-group-item-action">Terms</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="/faq" class="list-group-item list-group-item-action">FAQ</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="/contact" class="list-group-item list-group-item-action">Contact Us</NuxtLink>
+                                    </li>
                                 </ul>
                                 <!-- End List Group -->
                             </div>
                             <div class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">Language</h6>
-                                <div style='margin-bottom: 80px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
+                                <div style='margin-bottom: 90px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                                     <div class="d-flex align-items-center">
                                         <!-- Language -->
                                         <div v-if='lang' class="position-relative">
