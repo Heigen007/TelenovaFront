@@ -59,48 +59,11 @@
                                                     <span class="text-gray-90 font-size-15">Categories <i class="ml-2 ec ec-arrow-down-search"></i></span>
                                                 </button>
                                             </div>
-                                            <div id="basicsCollapseOne" class="collapse vertical-menu v3 border-top-primary border-top border-width-2" style='min-height: 500px'
-                                                aria-labelledby="basicsHeadingOne"
-                                                data-parent="#basicsAccordion">
+                                            <div id="basicsCollapseOne" class="collapse vertical-menu v3 border-top-primary border-top border-width-2">
                                                 <div class="card-body p-0">
                                                     <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                                            <ul style='max-height: 31rem; overflow-y: scroll' class="navbar-nav u-header__navbar-nav">
-                                                                <!-- <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/" class="nav-link u-header__nav-link font-weight-bold">Home</NuxtLink>
-                                                                </li>
-                                                                <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/shop" class="nav-link u-header__nav-link font-weight-bold">Shop</NuxtLink>
-                                                                </li>
-                                                                <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/cart" class="nav-link u-header__nav-link font-weight-bold">Cart</NuxtLink>
-                                                                </li>
-                                                                <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/about" class="nav-link u-header__nav-link font-weight-bold">Adout Us</NuxtLink>
-                                                                </li>
-                                                                <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/terms" class="nav-link u-header__nav-link font-weight-bold">Terms</NuxtLink>
-                                                                </li>
-                                                                <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/faq" class="nav-link u-header__nav-link font-weight-bold">FAQ</NuxtLink>
-                                                                </li>
-                                                                <li class="nav-item u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-position="left">
-                                                                    <NuxtLink to="/contact" class="nav-link u-header__nav-link font-weight-bold">Contact Us</NuxtLink>
-                                                                </li> -->
+                                                            <ul style='max-height: 550px; overflow-y: scroll' class="navbar-nav u-header__navbar-nav">
                                                                 <!-- Nav Item MegaMenu -->
                                                                 <li v-for="(el, i) in Categories" :key='i' class="nav-item hs-has-mega-menu u-header__nav-item"
                                                                     data-event="hover"
@@ -110,7 +73,7 @@
                                                                     <a :id="'basicMegaMenu'+i" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{Object.keys(el)[0]}}</a>
 
                                                                     <!-- Nav Item - Mega Menu -->
-                                                                    <div style="overflow-y: scroll; min-height: 500px; margin-left: -6px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
+                                                                    <div style="overflow-y: scroll; min-height: 550px; margin-left: -6px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
                                                                         <div class="vmm-bg" style="bottom: auto">
                                                                             <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 0.5' alt="Image Description">
                                                                         </div>
@@ -211,76 +174,9 @@
             </div>
             <div class = 'bestCat'>
                 <div style='display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: black'>
-                    <NuxtLink  style=' text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
+                    <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
                         {{el.name}}
                     </NuxtLink>
-                </div>
-            </div>
-            <div style="display: none !important" class="d-none d-xl-block bg-primary">
-                <div class="container">
-                    <div class="row align-items-stretch min-height-50">
-                        <!-- Vertical Menu -->
-                        <div class="col-md-auto d-none d-xl-flex align-items-end">
-                            <div class="max-width-270 min-width-270">
-                                <!-- Basics Accordion -->
-                                <div >
-                                    <!-- Card -->
-                                    <div class="card border-0 rounded-0">
-                                        <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOneCopy">
-                                            <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
-                                                data-toggle="collapse"
-                                                data-target="#basicsCollapseOne"
-                                                aria-expanded="true"
-                                                aria-controls="basicsCollapseOne">
-                                                <span class="pl-1 text-gray-90">{{localizeFilter('AccordionTitle')}}</span>
-                                                <span class="text-gray-90 ml-3">
-                                                    <span class="ec ec-arrow-down-search"></span>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <client-only>
-
-                                        </client-only>
-                                    </div>
-                                    <!-- End Card -->
-                                </div>
-                                <!-- End Basics Accordion -->
-                            </div>
-                        </div>
-                        <!-- End Vertical Menu -->
-                        <!-- Search bar -->
-                        <div class="col align-self-center">
-                            <!-- Search-Form -->
-                            <form @submit="InputSearch" class="js-focus-state">
-                                <label class="sr-only" for="searchProduct">{{localizeFilter('SearchSuggestion')}}</label>
-                                <div class="input-group">
-                                        <input v-model="InputValue" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill ChIn"  id="searchProduct" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
-                                            <span class="ec ec-search font-size-24 text-white"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- End Search-Form -->
-                        </div>
-                        <!-- End Search bar -->
-                        <!-- Header Icons -->
-                        <div class="col-md-auto align-self-center">
-                            <div class="d-flex">
-                                <ul class="d-flex list-unstyled mb-0">
-                                    <li class="col pr-0">
-                                        <NuxtLink to="/cart" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" :title="localizeFilter('CartSuggestion')">
-                                            <i class="font-size-22 ec ec-shopping-bag"></i>
-                                            <span class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{AmountOfCartProducts}}</span>
-                                            <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost}}{{'\xa0'}}тг.</span>
-                                        </NuxtLink>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End Header Icons -->
-                    </div>
                 </div>
             </div>
         </header>
@@ -414,11 +310,13 @@ export default {
         $(document).on('ready', function () {
             // initialization of header
             $.HSCore.components.HSHeader.init($('#header'));
-            document.addEventListener('click',e => {
+            document.addEventListener('mouseover',e => {
                 var target = document.getElementById('basicsCollapseOne')
                 var accordion = document.getElementById('basicsAccordion')
                 if(!accordion.contains(e.target)){
                     $(target).collapse('hide');
+                } else {
+                    $(target).collapse('show');
                 }
             })
         });
@@ -545,5 +443,18 @@ export default {
 .inner-wrapper {
   display: inline-block;
   white-space: nowrap;
+}
+.CatLink{
+    opacity: 0.8;
+}
+.CatLink:hover{
+    opacity: 1;
+}
+.vertical-menu{
+    height: 0;
+    transition: ease-out 0.5s;
+}
+.vertical-menu.show{
+    height: 550px;
 }
 </style>
