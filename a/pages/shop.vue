@@ -127,22 +127,14 @@
                                     <!-- End Select -->
                                 </form>
                             </div>
-                            <nav style='margin-left: auto; margin-right: 10px' class="px-3 flex-horizontal-center text-gray-20 d-none d-sm-flex">
-                                <div style='cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">←</div>
-                                <form method="post" class="min-width-50 mr-1">
-                                    <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
-                                    <input v-else @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="0">
-                                </form> of {{Math.ceil(Products.length / 60)}}
-                                <div style="cursor: pointer" class="text-gray-30 font-size-20 ml-2" @click="NextProductsPage">→</div>
-                            </nav>
                         </div>
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body -->
                         <!-- Tab Content -->
                         <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
                             <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
-                                <ul class="row products-group ">
-                                    <li v-for="(el, i) in ProductsPage" :key="i" class=" col-lg-4 col-md-6 MyCol col-sm-6 col-wd-2gdot4 product-item">
+                                <div class="row products-group ">
+                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-6 col-lg-4 col-md-6 MyCol col-sm-6 product-item">
                                         <div class=" h-100 w-100">
                                             <div class="inner p-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
@@ -178,7 +170,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                </ul>
+                                </div>
                             </div>
                             <!-- <div class="tab-pane fade pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
                                 <ul class="row list-unstyled products-group no-gutters">
@@ -1540,7 +1532,7 @@
                         <!-- End Tab Content -->
                         <!-- End Shop Body -->
                         <!-- Shop Pagination -->
-                        <nav v-if='Products.length != 0' style='justify-content: flex-end' class="px-3 flex-horizontal-center text-gray-20 d-none d-sm-flex">
+                        <nav v-if='Products.length != 0' style='justify-content: flex-end' class="px-3 flex-horizontal-center text-gray-20 ">
                             <div style='cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">←</div>
                             <form method="post" class="min-width-50 mr-1">
                                 <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
@@ -2265,7 +2257,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .product-item__title .catName a{
     font-size: 0.875rem !important;
-    line-height: 1.125rem !important;
 }
 .img-fluid {
     height: 139px;

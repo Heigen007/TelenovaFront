@@ -414,20 +414,17 @@
                         <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                             <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstPartTitle')}}</div>
 
-                            <!-- <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
-                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                    <NuxtLink class="nav-link rounded-pill active" id="Bpills-one-example1-tab" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Bestsellers</NuxtLink>
+                            <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("NewestProducts")'>
+                                    <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
                                 </li>
-                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                    <NuxtLink class="nav-link rounded-pill" id="Bpills-two-example1-tab" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">17 inch</NuxtLink>
+                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("NewestProducts")'>
+                                    <div class="nav-link rounded-pill" id="Bpills-two-example1-tab" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
                                 </li>
-                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                    <NuxtLink class="nav-link rounded-pill" id="Bpills-three-example1-tab" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">15 inch</NuxtLink>
+                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("NewestProducts")'>
+                                    <div class="nav-link rounded-pill" id="Bpills-three-example1-tab" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
                                 </li>
-                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                    <NuxtLink class="nav-link rounded-pill" id="Bpills-four-example1-tab" data-toggle="pill" to="#Bpills-four-example1" role="tab" aria-controls="Bpills-four-example1" aria-selected="false">12.3 inch</NuxtLink>
-                                </li>
-                            </ul> -->
+                            </ul>
 
                             <!-- <NuxtLink class="d-block text-gray-16" to="#">{{localizeFilter('FirstPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink> -->
                         </div>
@@ -456,14 +453,8 @@
                                       "settings": {
                                         "slidesToShow": 2
                                       }
-                                    }, {
-                                      "breakpoint": 500,
-                                      "settings": {
-                                        "slidesToShow": 1,
-                                        "slidesToScroll": 1
-                                      }
                                     }]'>
-                                    <div class="js-slide products-group" v-for="(el,i) in newestProducts" :key='i'>
+                                    <div class="js-slide products-group" v-for="(el,i) in FilteredNewestProducts" :key='i'>
                                         <div class="product-item">
                                             <div class="product-item__outer h-100">
                                                 <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -564,7 +555,18 @@
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</div>
-                        <!-- <NuxtLink class="d-block text-gray-16" to="/shop">{{localizeFilter('SecondPartSuggestionLink')}}<i class="ec ec-arrow-right-categproes"></i></NuxtLink> -->
+
+                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("TrendingProducts")'>
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("TrendingProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("TrendingProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                            </li>
+                        </ul>
                     </div>
                     <client-only>
                     <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
@@ -588,14 +590,8 @@
                           "settings": {
                             "slidesToShow": 2
                           }
-                        }, {
-                            "breakpoint": 500,
-                            "settings": {
-                            "slidesToShow": 1,
-                            "slidesToScroll": 1
-                            }
                         }]'>
-                            <div  class="js-slide products-group" v-for="(el,i) in popularProducts.slice(0,9)" :key='i'>
+                            <div  class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,9)" :key='i'>
                                 <div class="product-item">
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -639,8 +635,19 @@
                 <!-- End Trending products -->
                 <!-- Popular Products -->
                 <div class="mb-6">
-                    <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
+                    <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</div>
+                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("PopularProducts")'>
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab3" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("PopularProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab3" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("PopularProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab3" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                            </li>
+                        </ul>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
@@ -667,14 +674,8 @@
                                   "settings": {
                                     "slidesToShow": 2
                                   }
-                                }, {
-                                    "breakpoint": 500,
-                                    "settings": {
-                                    "slidesToShow": 1,
-                                    "slidesToScroll": 1
-                                    }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in popularProducts.slice(10,19)" :key='i'>
+                                <div class="js-slide products-group" v-for="(el,i) in FilteredPopularProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -744,6 +745,17 @@
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
+                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("NotebooksProducts")'>
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("NotebooksProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("NotebooksProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                            </li>
+                        </ul>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
@@ -770,14 +782,8 @@
                                   "settings": {
                                     "slidesToShow": 2
                                   }
-                                }, {
-                                    "breakpoint": 500,
-                                    "settings": {
-                                    "slidesToShow": 1,
-                                    "slidesToScroll": 1
-                                    }
                                 }]'>
-                                <div  class="js-slide products-group" v-for="(el,i) in LapProducts" :key='i'>
+                                <div  class="js-slide products-group" v-for="(el,i) in FilteredLapProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -826,6 +832,17 @@
                 <div class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
+                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("MobileProducts")'>
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab5" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("MobileProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab5" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                            </li>
+                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("MobileProducts")'>
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab5" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                            </li>
+                        </ul>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
@@ -852,14 +869,8 @@
                                   "settings": {
                                     "slidesToShow": 2
                                   }
-                                }, {
-                                    "breakpoint": 500,
-                                    "settings": {
-                                    "slidesToShow": 1,
-                                    "slidesToScroll": 1
-                                    }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in TVProducts" :key='i'>
+                                <div class="js-slide products-group" v-for="(el,i) in FilteredTVProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -1008,7 +1019,13 @@ export default {
         return{
             Component: 'MainPage',
             popularProducts: null,
+            trendingProducts: null,
             newestProducts: null,
+            FilteredNewestProducts: null,
+            FilteredTrendingProducts: null,
+            FilteredPopularProducts: null,
+            FilteredLapProducts: null,
+            FilteredTVProducts: null,
             IsC: false,
             TVProducts: null,
             LapProducts: null
@@ -1019,6 +1036,7 @@ export default {
         .then(response => {
             console.log(response, 'firstLevelCategory": "Мобильные телефоны и аксессуары"');
             this.TVProducts = response.data.products
+            this.PopularFilter('MobileProducts')
         })
         .catch(function(error) {
             console.log(error);
@@ -1028,6 +1046,7 @@ export default {
         .then(response => {
             console.log(response, '"firstLevelCategory": "Ноутбуки и аксессуары"');
             this.LapProducts = response.data.products
+            this.PopularFilter('NotebooksProducts')
         })
         .catch(function(error) {
             console.log(error);
@@ -1036,7 +1055,10 @@ export default {
         axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
             console.log(response,'mostPopular/products/20');
-            this.popularProducts = response.data.reverse()
+            this.trendingProducts = response.data.reverse().slice(0,10)
+            this.popularProducts = response.data.reverse().slice(10,20)
+            this.PopularFilter('TrendingProducts')
+            this.PopularFilter('PopularProducts')
         })
         .catch(function(error) {
             console.log(error);
@@ -1046,6 +1068,7 @@ export default {
         .then(response => {
             console.log(response,'MostPopular/freshProducts/10');
             this.newestProducts = response.data
+            this.PopularFilter('NewestProducts')
         })
         .catch(function(error) {
             console.log(error);
@@ -1062,7 +1085,6 @@ export default {
         this.IsC = false
     },
     updated(){
-
         // initialization of countdowns
         $.HSCore.components.HSCountdown.init('.js-countdown', {
             yearsElSelector: '.js-cd-years',
@@ -1090,6 +1112,72 @@ export default {
         },
         AddToCart(product){
             this.$store.commit('cart/cartChange', product)
+        },
+        PopularFilter(filter) {
+            if(filter == 'NewestProducts') {
+                var arr = JSON.parse(JSON.stringify(this.newestProducts))
+                return this.FilteredNewestProducts = arr.sort((a,b) => a.offerData.kaspi_rating - b.offerData.kaspi_rating)
+            }
+            if(filter == 'TrendingProducts') {
+                var arr = JSON.parse(JSON.stringify(this.trendingProducts))
+                return this.FilteredTrendingProducts = arr.sort((a,b) => a.offerData.kaspi_rating - b.offerData.kaspi_rating)
+            }
+            if(filter == 'PopularProducts'){
+                var arr = JSON.parse(JSON.stringify(this.popularProducts))
+                return this.FilteredPopularProducts = arr.sort((a,b) => a.offerData.kaspi_rating - b.offerData.kaspi_rating)
+            }
+            if(filter == 'NotebooksProducts'){
+                var arr = JSON.parse(JSON.stringify(this.LapProducts))
+                return this.FilteredLapProducts = arr.sort((a,b) => a.offerData.kaspi_rating - b.offerData.kaspi_rating)
+            }
+            if(filter == 'MobileProducts'){
+                var arr = JSON.parse(JSON.stringify(this.TVProducts))
+                return this.FilteredTVProducts = arr.sort((a,b) => a.offerData.kaspi_rating - b.offerData.kaspi_rating)
+            }
+        },
+        CheapestFilter(filter) {
+            if(filter == 'NewestProducts') {
+                var arr = JSON.parse(JSON.stringify(this.newestProducts))
+                return this.FilteredNewestProducts = arr.sort((a,b) => a.salePrice - b.salePrice)
+            }
+            if(filter == 'TrendingProducts') {
+                var arr = JSON.parse(JSON.stringify(this.trendingProducts))
+                return this.FilteredTrendingProducts = arr.sort((a,b) => a.salePrice - b.salePrice)
+            }
+            if(filter == 'PopularProducts'){
+                var arr = JSON.parse(JSON.stringify(this.popularProducts))
+                return this.FilteredPopularProducts = arr.sort((a,b) => a.salePrice - b.salePrice)
+            }
+            if(filter == 'NotebooksProducts'){
+                var arr = JSON.parse(JSON.stringify(this.LapProducts))
+                return this.FilteredLapProducts = arr.sort((a,b) => a.salePrice - b.salePrice)
+            }
+            if(filter == 'MobileProducts'){
+                var arr = JSON.parse(JSON.stringify(this.TVProducts))
+                return this.FilteredTVProducts = arr.sort((a,b) => a.salePrice - b.salePrice)
+            }
+        },
+        ExpensiveFilter(filter) {
+            if(filter == 'NewestProducts') {
+                var arr = JSON.parse(JSON.stringify(this.newestProducts))
+                return this.FilteredNewestProducts = arr.sort((a,b) => b.salePrice - a.salePrice)
+            }
+            if(filter == 'TrendingProducts') {
+                var arr = JSON.parse(JSON.stringify(this.trendingProducts))
+                return this.FilteredTrendingProducts = arr.sort((a,b) => b.salePrice - a.salePrice)
+            }
+            if(filter == 'PopularProducts'){
+                var arr = JSON.parse(JSON.stringify(this.popularProducts))
+                return this.FilteredPopularProducts = arr.sort((a,b) => b.salePrice - a.salePrice)
+            }
+            if(filter == 'NotebooksProducts'){
+                var arr = JSON.parse(JSON.stringify(this.LapProducts))
+                return this.FilteredLapProducts = arr.sort((a,b) => b.salePrice - a.salePrice)
+            }
+            if(filter == 'MobileProducts'){
+                var arr = JSON.parse(JSON.stringify(this.TVProducts))
+                return this.FilteredTVProducts = arr.sort((a,b) => b.salePrice - a.salePrice)
+            }
         }
     },
     computed:{
@@ -1135,5 +1223,9 @@ export default {
 .MFluid{
     max-width: 100%;
     height: auto;
+}
+.MyCatSlider{
+    cursor: pointer;
+    user-select: none;
 }
 </style>

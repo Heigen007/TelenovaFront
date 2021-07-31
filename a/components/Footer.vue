@@ -159,7 +159,7 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="row">
-                            <div v-if='bestC' class="col-12 col-md mb-4 mb-md-0">
+                            <div style='margin-left: 10px' v-if='bestC' class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('CategoriesTitle')}}</h6>
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
@@ -168,7 +168,7 @@
                                 <!-- End List Group -->
                             </div>
 
-                            <div class="col-12 col-md mb-4 mb-md-0">
+                            <div style='margin-left: 10px' class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('OtherInfoTitle')}}</h6>
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
@@ -193,7 +193,7 @@
                                 </ul>
                                 <!-- End List Group -->
                             </div>
-                            <div class="col-12 col-md mb-4 mb-md-0">
+                            <div style='margin-left: 10px' class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">Language</h6>
                                 <div style='margin-bottom: 90px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                                     <div class="d-flex align-items-center">

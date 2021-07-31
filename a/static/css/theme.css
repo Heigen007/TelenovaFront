@@ -648,8 +648,8 @@ pre code {
 .col-wd-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .col {
@@ -29882,7 +29882,7 @@ label.btn {
 
 .nav-white .nav-link.active {
   color: #377dff;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .nav-white .nav-link:not(.active):hover {
@@ -29898,7 +29898,7 @@ label.btn {
 
 .nav-box .nav-link.active {
   color: #377dff;
-  background-color: #fff;
+  background-color: transparent;
   border-color: #e7eaf3;
   box-shadow: 0 0 35px rgba(140, 152, 164, 0.125);
 }
@@ -33914,7 +33914,6 @@ blockquote:not(.blockquote) p {
 
 .product-item__title {
   font-size: 0.74987rem;
-  line-height: 0.875rem;
 }
 
 @media (min-width: 992px) {
@@ -34661,8 +34660,8 @@ blockquote:not(.blockquote) p {
 }
 
 .nav-tab-pill-fill .nav-link.active {
-  background-color: #0144a3;
-  font-weight: 700;
+  background-color: transparent;
+  font-weight: 500;
 }
 
 /* Box */
