@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index:1001">
+  <div style="z-index:1001; overflow-x: hidden">
     <MyHeader />
     <Nuxt id='nuxtMain' />
     <div class="js-go-to u-go-to"
