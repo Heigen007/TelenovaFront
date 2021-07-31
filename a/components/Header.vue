@@ -38,7 +38,8 @@
 
                                             <!-- Logo -->
                                             <router-link style='width: 13rem' class="hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-1 ml-xl-0" to="/" aria-label="Electro">
-                                                <img style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                                <img class = 'LogoMob' style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                                <img class = 'LogoComp' style='width: 13rem; margin-top: 5px' src='PngLogo.png' alt="Image Description">
                                             </router-link>
                                             <!-- End Logo -->
                                         </nav>
@@ -456,5 +457,15 @@ export default {
 }
 .vertical-menu.show{
     height: 550px;
+}
+@media (min-width: 1199px) {
+    .LogoComp{
+        display: none
+    }
+}
+@media (max-width: 1200px) {
+    .LogoMob{
+        display: none
+    }
 }
 </style>
