@@ -17,7 +17,7 @@
 </template>
 
 <style>
-::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar {width: 5px;}
 ::-webkit-scrollbar-thumb {background: #0144a3;}
 </style>
 

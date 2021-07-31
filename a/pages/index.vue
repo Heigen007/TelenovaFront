@@ -1228,4 +1228,5 @@ export default {
     cursor: pointer;
     user-select: none;
 }
+.nav-tab-pill-fill::-webkit-scrollbar{height: 4px;}
 </style>
