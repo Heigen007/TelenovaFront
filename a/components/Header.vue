@@ -425,7 +425,7 @@ export default {
         background-color: #00449c !important;
     }
 }
-@media (max-width: 350px) {
+@media (max-width: 400px) {
     .hiddenSvg{
         display: none;
     }
