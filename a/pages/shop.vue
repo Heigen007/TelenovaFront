@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <!-- End Shop-control-bar -->
-                        <!-- Shop Body -->
+                        <!-- Shop Body --> 
                         <!-- Tab Content -->
                         <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
                             <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
