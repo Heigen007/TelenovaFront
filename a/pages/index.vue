@@ -591,7 +591,7 @@
                             "slidesToShow": 2
                           }
                         }]'>
-                            <div  class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,9)" :key='i'>
+                            <div  class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,10)" :key='i'>
                                 <div class="product-item">
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -918,7 +918,7 @@
                 <!-- Categories Card -->
                 <div class="mb-6">
                     <div v-if="Categories && IsC" class="row flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
-                        <div v-for="(el,i) in Categories.slice(0,9)" :key="i" class="col-md-6 col-xl-4 mb-5 flex-shrink-0 flex-md-shrink-1">
+                        <div v-for="(el,i) in Categories.slice(0,8)" :key="i" class="col-md-6 col-xl-4 mb-5 flex-shrink-0 flex-md-shrink-1">
                             <div class="bg-gray-1 overflow-hidden shadow-on-hover h-100 d-flex align-items-center">
                                 <NuxtLink :to="'/shop?FCat?'+Object.keys(el)[0]" class="d-block  pr-2 pr-wd-6">
                                     <div class="media align-items-center">
