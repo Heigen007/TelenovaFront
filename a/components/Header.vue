@@ -37,9 +37,11 @@
                                             <!-- End Fullscreen Toggle Button -->
 
                                             <!-- Logo -->
-                                            <router-link style='width: 13rem' class="hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-3 ml-xl-0" to="/" aria-label="Electro">
-                                                <img class = 'LogoMob' style='width: 12rem; margin-top: 5px' src='logo.svg' alt="Image Description">
-                                                <img class = 'LogoComp' style='width: 12rem; margin-top: 5px' src='png.png' alt="Image Description">
+                                            <router-link style='width: 13rem' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-3 ml-xl-0" to="/" aria-label="Electro">
+                                                <img  style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                            </router-link>
+                                            <router-link style='width: 9rem' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-3 ml-xl-0" to="/" aria-label="Electro">
+                                                <img class = 'LogoComp' style='width: 9rem; margin-top: 5px' src='png.png' alt="Image Description">
                                             </router-link>
                                             <!-- End Logo -->
                                         </nav>
@@ -425,7 +427,7 @@ export default {
         background-color: #00449c !important;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 330px) {
     .hiddenSvg{
         display: none;
     }
