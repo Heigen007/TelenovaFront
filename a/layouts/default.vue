@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index:1001;">
+  <div style="z-index:1001; overflow-x: hidden">
     <MyHeader />
     <Nuxt id='nuxtMain' />
     <div class="js-go-to u-go-to"
@@ -17,7 +17,7 @@
 </template>
 
 <style>
-::-webkit-scrollbar {width: 6px;}
+::-webkit-scrollbar {width: 5px;}
 ::-webkit-scrollbar-thumb {background: #0144a3;}
 </style>
 
@@ -25,7 +25,6 @@
 import MyHeader from '../components/Header.vue'
 import MyFooter from '../components/Footer.vue'
 import '../static/css/theme.css'
-import { mapActions } from "vuex";
 
 export default {
     components: {
@@ -53,11 +52,6 @@ export default {
            this.lang = true
         });
         setTimeout(() => {
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                afterOpen: function () {
-                    $(this).find('input[type="search"]').focus();
-                }
-            });
             // initialization of forms
             $.HSCore.components.HSFocusState.init();
 

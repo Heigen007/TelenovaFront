@@ -83,42 +83,10 @@
                                 </a>
                                 <!-- End Account Sidebar Toggle Button -->
                             </div>
-                            <div class="px-3 d-none d-xl-block">
-                                <ul class="nav nav-tab-shop" id="pills-tab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true">
-                                            <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                <i class="fa fa-th"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link" id="pills-two-example1-tab" data-toggle="pill" href="#pills-two-example1" role="tab" aria-controls="pills-two-example1" aria-selected="false">
-                                            <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                <i class="fa fa-align-justify"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-three-example1-tab" data-toggle="pill" href="#pills-three-example1" role="tab" aria-controls="pills-three-example1" aria-selected="true">
-                                            <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                <i class="fa fa-list"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-four-example1-tab" data-toggle="pill" href="#pills-four-example1" role="tab" aria-controls="pills-four-example1" aria-selected="true">
-                                            <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                <i class="fa fa-th-list"></i>
-                                            </div>
-                                        </a>
-                                    </li> -->
-                                </ul>
-                            </div>
-                            <div class="d-flex">
+                            <div class="d-flex ml-2">
                                 <form method="get">
                                     <!-- Select -->
-                                    <select @change="SelectSorting" class="border rounded-pill py-1  height-35 px-3 border-color-1">
+                                    <select @change="SelectSorting" class="border rounded-pill py-1  height-35 pl-3 border-color-1 border-lg-down-0 bg-lg-down-transparent">
                                         <option value="one" selected>Default sorting</option>
                                         <option value="two">Sort by popularity</option>
                                         <option value="five">Sort by price: low to high</option>

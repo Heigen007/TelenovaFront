@@ -41,7 +41,7 @@
                                                 <img  style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                                             </router-link>
                                             <router-link style='width: 11rem' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
-                                                <img  style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                                <img style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                                             </router-link>
                                             <!-- End Logo -->
                                         </nav>
@@ -326,7 +326,10 @@ export default {
     },
     methods: {
         HideA(e){
-            $(document.getElementById('basicsCollapseOne')).collapse('hide');
+            var target = document.getElementById('basicsCollapseOne')
+            console.log(target,$(target));
+            $(target).collapse('hide');
+            $('#sidebarHeader').collapse('hide');
             this.$router.push(e)
         },
         localizeFilter(key, key2, key3) {
