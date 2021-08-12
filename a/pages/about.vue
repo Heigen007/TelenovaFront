@@ -1,7 +1,5 @@
 <template>
     <div class="MAINABOUT">
-        
-
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content" role="main">
             <div class="bg-img-hero mb-14" style="background-image: url(/img/1920x600/img1.jpg);">
@@ -247,7 +245,6 @@
             </div>
         </main>
         <!-- ========== END MAIN CONTENT ========== -->
-
     </div>
 </template>
 

@@ -59,7 +59,7 @@
                                                     data-target="#basicsCollapseOne"
                                                     aria-expanded="true"
                                                     aria-controls="basicsCollapseOne">
-                                                    <span class="text-gray-90 font-size-15">Categories <i class="ml-2 ec ec-arrow-down-search"></i></span>
+                                                    <span class="text-gray-90 font-size-15">{{localizeFilter('Categories')}} <i class="ml-2 ec ec-arrow-down-search"></i></span>
                                                 </button>
                                             </div>
                                             <div id="basicsCollapseOne" class="collapse vertical-menu v3 border-top-primary border-top border-width-2">
@@ -141,16 +141,17 @@
                                                 data-unfold-animation-out="fadeOut">
                                                 <span class="ec ec-search"></span>
                                             </a>
-
+                                            <client-only>
                                             <!-- Input -->
                                             <div id="searchClassic" class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2" aria-labelledby="searchClassicInvoker">
                                                 <form @submit='InputSearch' class="js-focus-state input-group px-3">
-                                                    <input v-model="InputValue" class="form-control ChIn" type="search" placeholder="Search Product">
+                                                    <input v-model="InputValue" class="form-control ChIn" type="search" :placeholder="localizeFilter('SearchInputPlaceholder')">
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary px-3" style='background-color: #1869de; border-color: #1869de' type="submit"><i class="font-size-20 ec ec-search text-white"></i></button>
                                                     </div>
                                                 </form>
                                             </div>
+                                            </client-only>
                                             <!-- End Input -->
                                         </li>
                                         <!-- End Search -->
@@ -162,7 +163,7 @@
                                             <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost}}{{'\xa0'}}тг.</span>
                                         </NuxtLink>
                                         </li>
-                                        <div v-if='PopUp' class = 'MPopUp'>Product Added!</div>
+                                        <div v-if='PopUp' class = 'MPopUp'>{{localizeFilter('ProductAddedTitle')}}</div>
                                     </ul>
                                 </div>
                             </div>
@@ -217,7 +218,7 @@
                                 <!-- List -->
                                 <ul id="headerSidebarList" class="u-header-collapse__nav">
                                     <li>
-                                        <a href="tel:+77073373318" class="font-size-20 text-gray-90">+77073373318</a>
+                                        <a :href="'tel:'+localizeFilter('PhoneNumber')" class="font-size-20 text-gray-90">{{localizeFilter("PhoneNumber")}}</a>
                                     </li>
                                     <li v-for="(el, i) in Categories" :key='i' class="u-has-submenu u-header-collapse__submenu">
                                         <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" :data-target="'#headerSidebarMoviesCollapse'+i" role="button" data-toggle="collapse" aria-expanded="false" :aria-controls="'#headerSidebarMoviesCollapse'+i">

@@ -1,7 +1,10 @@
 {
     "Header": {
-        "Greeting": "+77073373318",
-        "Categories": "Categories"
+        "Greeting": "Welcome to Telenova",
+        "PhoneNumber": "+77073373318",
+        "Categories": "Categories",
+        "SearchInputPlaceholder": "Search Product",
+        "ProductAddedTitle": "Product Added!"
     },
     "Footer": {
         "FirstCategory": "Featured Products",
@@ -31,10 +34,14 @@
         "SecondPartSuggestionLink": "Go to Trending products",
         "ThirdPartTitle": "Popular Products",
         "FourthPartTitle": "Notebooks and accessories",
-        "FifthPartTitle": "Phones and gadgets"
+        "FifthPartTitle": "Phones and gadgets",
+        "PopularSliderSort": "Popular",
+        "CheapestSliderSort": "Cheapest",
+        "MostExpensiveSliderSort": "Most expensive"
     },
     "CartPage": {
         "Title": "Cart",
+        "RassrochkaButton": "Buy in rassrochka",
         "FirstOptionTitle": "Product",
         "SecondOptionTitle": "Price",
         "ThirdOptionTitle": "Quantity",
@@ -69,7 +76,7 @@
             "ThirdInputPlaceholder": "Company Name",
             "FourthInputLabel": "Country",
             "FourthInputPlaceholder": "Select country",
-            "FifthInputLabel": "Street Address",
+            "FifthInputLabel": "Address",
             "FifthInputPlaceholder": "470 Lucy Forks",
             "SixthInputLabel": "Apt, Suite, Etc.",
             "SixthInputPlaceholder": "YC7B 3UT",
@@ -77,7 +84,7 @@
             "SeventhInputPlaceholder": "London",
             "EighthInputLabel": "Postcode/Zip",
             "EighthInputPlaceholder": "99999",
-            "TenthInputLabel": "Email Address",
+            "TenthInputLabel": "Email",
             "TenthInputPlaceholder": "jackwayley@gmail.com",
             "EleventhInputLabel": "Phone",
             "EleventhInputPlaceholder": "+1 (062) 109-9222",
@@ -236,12 +243,14 @@
     "ProductPage": {
         "CardAvailabilityText": "Availability:",
         "CardQuantityText": "Quantity",
-        "CardColorText": "Color",
         "AddToCartText": "Add to Cart",
         "BuyNowText": "Buy Now",
+        "BuyRassrochkaText": "Buy in credit",
         "BuyKaspiText": "Buy On Kaspi",
         "SecondDescriptionPartTitle": "Specification",
-        "RelatedProductsPartTitle": "Related products"
+        "RelatedProductsPartTitle": "Related products",
+        "InStockText": "in stock",
+        "NotInStockText": "Not in stock"
     },
     "ShopPage": {
         "FirstOptionalTitle": "Searching by key:",
@@ -255,6 +264,11 @@
             "ButtonText": "Filter",
             "ThirdPartTitle": "Latest Products"
         },
-        "SecondTitle": "Shop"
+        "SecondTitle": "Shop",
+        "DefaultSorting": "Default sorting",
+        "PopularitySorting": "Sort by popularity",
+        "SortByPriceLowToHigh": "Sort by price: low to high",
+        "SortByPriceHighToLow": "Sort by price: high to low",
+        "FilterButtonText": "Filter"
     }
 }

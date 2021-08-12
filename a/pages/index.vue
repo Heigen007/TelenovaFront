@@ -23,10 +23,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <div class="font-size-xl-15 font-weight-bold mb-0"
+                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </div>
+                                                </h6>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -38,7 +38,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</NuxtLink></div>
+                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</a></h5>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -99,10 +99,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <div class="font-size-xl-15 font-weight-bold mb-0"
+                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </div>
+                                                </h6>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -114,7 +114,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</NuxtLink></div>
+                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -175,10 +175,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <div class="font-size-xl-15 font-weight-bold mb-0"
+                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </div>
+                                                </h6>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -190,7 +190,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</NuxtLink></div>
+                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</a></h5>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -251,10 +251,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <div class="font-size-xl-15 font-weight-bold mb-0"
+                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </div>
+                                                </h6>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -266,7 +266,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360</NuxtLink></div>
+                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360</a></h5>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -327,10 +327,10 @@
                                                     data-scs-animation-in="fadeInUp">
                                                     WEEK DEAL
                                                 </h1>
-                                                <div class="font-size-xl-15 font-weight-bold mb-0"
+                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
                                                     data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </div>
+                                                </h6>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
@@ -342,7 +342,7 @@
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <div class="mb-3 font-size-17 product-item__title text-lh-default"><NuxtLink to="#" class="text-blue font-weight-bold">Tablet Red EliteBook  Revolve 810 G2</NuxtLink></div>
+                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Tablet Red EliteBook  Revolve 810 G2</a></h5>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
@@ -401,6 +401,31 @@
                             data-is-thumbs-progress="false"
                             data-thumbs-progress-container=".js-slick-thumb-progress"
                             data-nav-for="#thumbProgress">
+                            <div class="js-slide">
+                                <a class="js-slick-thumb-progress" href="javascript:;">
+                                    SO MUCH TO WATCH IN 4K TVS
+                                </a>
+                            </div>
+                            <div class="js-slide">
+                                <a class="js-slick-thumb-progress" href="javascript:;">
+                                    GAME CONSOLES
+                                </a>
+                            </div>
+                            <div class="js-slide">
+                                <a class="js-slick-thumb-progress" href="javascript:;">
+                                    LIMITED WEEK DEAL  - GAMEPAD
+                                </a>
+                            </div>
+                            <div class="js-slide">
+                                <a class="js-slick-thumb-progress" href="javascript:;">
+                                    SECOND PRODUCT 40% CHEAPER
+                                </a>
+                            </div>
+                            <div class="js-slide">
+                                <a class="js-slick-thumb-progress" href="javascript:;">
+                                    $10 BUCKS OR LESS
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -413,16 +438,15 @@
                     <div class="position-relative z-index-2 u-slick__tab">
                         <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                             <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstPartTitle')}}</div>
-
                             <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("NewestProducts")'>
-                                    <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                                    <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
                                 </li>
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("NewestProducts")'>
-                                    <div class="nav-link rounded-pill" id="Bpills-two-example1-tab" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                                    <div class="nav-link rounded-pill" id="Bpills-two-example1-tab" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
                                 </li>
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("NewestProducts")'>
-                                    <div class="nav-link rounded-pill" id="Bpills-three-example1-tab" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                                    <div class="nav-link rounded-pill" id="Bpills-three-example1-tab" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                                 </li>
                             </ul>
 
@@ -456,13 +480,13 @@
                                     }]'>
                                     <div class="js-slide products-group" v-for="(el,i) in FilteredNewestProducts" :key='i'>
                                         <div class="product-item">
-                                            <div class="product-item__outer h-100">
+                                            <div class="product-item__outer h-100" style='width: 100%'>
                                                 <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                     <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                         <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                         <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
-                                                            <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
+                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
@@ -477,7 +501,7 @@
                                                         <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                         <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
-                                                            <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
+                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
@@ -558,13 +582,13 @@
 
                         <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("TrendingProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("TrendingProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("TrendingProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                             </li>
                         </ul>
                     </div>
@@ -593,7 +617,7 @@
                         }]'>
                             <div  class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,10)" :key='i'>
                                 <div class="product-item">
-                                    <div class="product-item__outer h-100">
+                                    <div class="product-item__outer h-100" style='width: 100%'>
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                             <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                 <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
@@ -639,13 +663,13 @@
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</div>
                         <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("PopularProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab3" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab3" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("PopularProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab3" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab3" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("PopularProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab3" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab3" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                             </li>
                         </ul>
                     </div>
@@ -677,7 +701,7 @@
                                 }]'>
                                 <div class="js-slide products-group" v-for="(el,i) in FilteredPopularProducts" :key='i'>
                                     <div class="product-item">
-                                        <div class="product-item__outer h-100">
+                                        <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
@@ -747,13 +771,13 @@
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
                         <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("NotebooksProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("NotebooksProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("NotebooksProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                             </li>
                         </ul>
                     </div>
@@ -785,7 +809,7 @@
                                 }]'>
                                 <div  class="js-slide products-group" v-for="(el,i) in FilteredLapProducts" :key='i'>
                                     <div class="product-item">
-                                        <div class="product-item__outer h-100">
+                                        <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
@@ -834,13 +858,13 @@
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
                         <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("MobileProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab5" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">Popular</div >
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab5" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("MobileProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab5" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="false">Cheapest</div >
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab5" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("MobileProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab5" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="false">Most expensive</div >
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab5" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                             </li>
                         </ul>
                     </div>
@@ -872,7 +896,7 @@
                                 }]'>
                                 <div class="js-slide products-group" v-for="(el,i) in FilteredTVProducts" :key='i'>
                                     <div class="product-item">
-                                        <div class="product-item__outer h-100">
+                                        <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
@@ -1031,7 +1055,7 @@ export default {
             LapProducts: null
         }
     },
-    fetch(){
+    created(){
         axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
         .then(response => {
             console.log(response, 'firstLevelCategory": "Мобильные телефоны и аксессуары"');

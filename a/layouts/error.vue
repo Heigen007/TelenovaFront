@@ -1,18 +1,16 @@
 <template>
 <div class="MAINERROR">
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
 
-        <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main">
-
-            <div class="container mt-6">
-                <div class="mb-5 text-center pb-3 border-bottom border-color-1">
-                    <h1 class="font-size-sl-72 font-weight-light mb-3">{{localizeFilter('ErrorTitle')}}</h1>
-                    <p class="text-gray-90 font-size-20 mb-0 font-weight-light">{{localizeFilter('ErrorText')}}</p>
-                </div>
+        <div class="container mt-6">
+            <div class="mb-5 text-center pb-3 border-bottom border-color-1">
+                <h1 class="font-size-sl-72 font-weight-light mb-3">{{localizeFilter('ErrorTitle')}}</h1>
+                <p class="text-gray-90 font-size-20 mb-0 font-weight-light">{{localizeFilter('ErrorText')}}</p>
             </div>
-        </main>
-        <!-- ========== END MAIN CONTENT ========== -->
-
+        </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
 </div>
 </template>
 

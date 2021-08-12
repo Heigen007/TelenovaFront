@@ -1,8 +1,17 @@
 <template>
-  <div style="z-index:1001; overflow-x: hidden">
+  <div style="z-index:1001;">
+    <div class="u-header-topbar py-2 d-none d-xl-block">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="topbar-left">
+                    <a href="#" class="text-gray-110 font-size-13 hover-on-dark">{{localizeFilter('Greeting')}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <MyHeader />
     <Nuxt id='nuxtMain' />
-    <div class="js-go-to u-go-to"
+    <!-- <div class="js-go-to u-go-to"
       aria-label='go to top'
       data-position='{"bottom": 15, "left": 15 }'
       data-type="fixed"
@@ -11,7 +20,7 @@
       data-show-effect="slideInUp"
       data-hide-effect="slideOutDown">
       <span class="fas fa-arrow-up u-go-to__inner"></span>
-    </div>
+    </div> -->
     <MyFooter />
   </div>
 </template>
@@ -33,7 +42,8 @@ export default {
     },
     data(){
       return{
-        lang: true
+        lang: true,
+        Component: 'Header'
       }
     },
     beforeMount(){
@@ -41,7 +51,10 @@ export default {
       this.$store.commit('lang/getLang')
     },
     mounted(){
-      $.HSCore.components.HSGoTo.init('.js-go-to');
+      // setTimeout(() => {
+      //   $.HSCore.components.HSGoTo.init('.js-go-to');
+      // }, 1000);
+      
       this.$store.dispatch("FrontInit")
     },
     methods:{

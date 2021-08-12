@@ -64,8 +64,8 @@
                             <div class="mb-2">
                                 <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
                                     <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">{{localizeFilter('CardAvailabilityText')}}
-                                        <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.product_count}} in stock</span>
-                                        <span v-else class="text-red font-weight-bold">Not in stock</span>
+                                        <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.product_count}} {{localizeFilter("InStockText")}}</span>
+                                        <span v-else class="text-red font-weight-bold">{{localizeFilter('NotInStockText')}}</span>
                                     </div>
                                     <div class="mb-3">
                                         <div class="font-size-36">{{Product.offerData.price}} тг.</div>
@@ -90,25 +90,17 @@
                                         </div>
                                         <!-- End Quantity -->
                                     </div>
-                                    <div class="mb-3">
-                                        <h6 class="font-size-14">{{localizeFilter('CardColorText')}}</h6>
-                                        <!-- Select -->
-                                        <select class="border rounded-pill py-1 w-md-60 height-35 px-3 border-color-1">
-                                            <option value="one" selected>White with Gold</option>
-                                            <option value="two">Red</option>
-                                            <option value="three">Green</option>
-                                            <option value="four">Blue</option>
-                                        </select>
-                                        <!-- End Select -->
-                                    </div>
                                     <div class="mb-2 pb-0dot5">
                                         <div style='background-color: black; color: white' @click="AddToCartButton" class="btn btn-block"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('AddToCartText')}}</div>
                                     </div>
                                     <div class="mb-2">
                                         <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer' @click="BuyNow" class="btn btn-block">{{localizeFilter('BuyNowText')}}</div>
                                     </div>
+                                    <div class="mb-2 pb-0dot5">
+                                        <div style='background-color: black; color: white' @click="AddToCartButton" class="btn btn-block"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
+                                    </div>
                                     <div class="mb-3">
-                                        <a :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
+                                        <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
                                     </div>
                                 </div>
                             </div>
@@ -196,125 +188,6 @@
             <div class="bg-gray-7 pt-6 pb-3 mb-6">
                 <div class="container">
                     <div class="js-scroll-nav">
-                        <!-- <div class="bg-white pt-4 pb-6 px-xl-11 px-md-5 px-4 mb-6">
-                            <div id="Accessories" class="mx-md-2">
-                                <div class="position-relative mb-6">
-                                    <ul class="nav nav-classic nav-tab nav-tab-lg justify-content-xl-center flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-lg-down-bottom-0 pb-1 pb-xl-0 mb-n1 mb-xl-0">
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <NuxtLink class="nav-link active" to="#Accessories">
-                                                <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                    Accessories
-                                                </div>
-                                            </NuxtLink>
-                                        </li>
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <NuxtLink class="nav-link" to="#Description">
-                                                <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                    Description
-                                                </div>
-                                            </NuxtLink>
-                                        </li>
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <NuxtLink class="nav-link" to="#Specification">
-                                                <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                                    Specification
-                                                </div>
-                                            </NuxtLink>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mx-md-2 pt-1">
-                                    <div class="row no-gutters">
-                                        <div class="col mb-6 mb-md-0">
-                                            <ul class="row list-unstyled products-group no-gutters border-bottom border-md-bottom-0">
-                                                <li class="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down border-0">
-                                                    <div class="product-item__outer h-100">
-                                                        <div class="remove-prodcut-hover product-item__inner px-xl-4 p-3">
-                                                            <div class="product-item__body pb-xl-2">
-                                                                <div class="mb-2 d-none d-md-block"><NuxtLink to="/product" class="font-size-12 text-gray-5">Speakers</NuxtLink></div>
-                                                                <h5 class="mb-1 product-item__title d-none d-md-block"><NuxtLink to="#" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</NuxtLink></h5>
-                                                                <div class="mb-2">
-                                                                    <NuxtLink to="/product" class="d-block text-center"><img class="img-fluid" src="/img/212X200/img1.jpg" alt="Image Description"></NuxtLink>
-                                                                </div>
-                                                                <div class="flex-center-between mb-1 d-none d-md-block">
-                                                                    <div class="prodcut-price">
-                                                                        <div class="text-gray-100">$685,00</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down">
-                                                    <div class="product-item__outer h-100">
-                                                        <div class="remove-prodcut-hover add-accessories product-item__inner px-xl-4 p-3">
-                                                            <div class="product-item__body pb-xl-2">
-                                                                <div class="mb-2 d-none d-md-block"><NuxtLink to="/product" class="font-size-12 text-gray-5">Speakers</NuxtLink></div>
-                                                                <h5 class="mb-1 product-item__title d-none d-md-block"><NuxtLink to="#" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</NuxtLink></h5>
-                                                                <div class="mb-2">
-                                                                    <NuxtLink to="/product" class="d-block text-center"><img class="img-fluid" src="/img/212X200/img2.jpg" alt="Image Description"></NuxtLink>
-                                                                </div>
-                                                                <div class="flex-center-between mb-1 d-none d-md-block">
-                                                                    <div class="prodcut-price d-flex align-items-center position-relative">
-                                                                        <ins class="font-size-20 text-red text-decoration-none">$1999,00</ins>
-                                                                        <del class="font-size-12 tex-gray-6 position-absolute bottom-100">$2 299,00</del>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down remove-divider">
-                                                    <div class="product-item__outer h-100">
-                                                        <div class="remove-prodcut-hover add-accessories product-item__inner px-xl-4 p-3">
-                                                            <div class="product-item__body pb-xl-2">
-                                                                <div class="mb-2 d-none d-md-block"><NuxtLink to="/product" class="font-size-12 text-gray-5">Speakers</NuxtLink></div>
-                                                                <h5 class="mb-1 product-item__title d-none d-md-block"><NuxtLink to="#" class="text-blue font-weight-bold">Purple Solo 2 Wireless</NuxtLink></h5>
-                                                                <div class="mb-2">
-                                                                    <NuxtLink to="/product" class="d-block text-center"><img class="img-fluid" src="/img/212X200/img3.jpg" alt="Image Description"></NuxtLink>
-                                                                </div>
-                                                                <div class="flex-center-between mb-1 d-none d-md-block">
-                                                                    <div class="prodcut-price">
-                                                                        <div class="text-gray-100">$685,00</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
-                                                <input class="form-check-input" type="checkbox" value="" id="inlineCheckbox1" checked disabled>
-                                                <label class="form-check-label mb-1" for="inlineCheckbox1">
-                                                    <strong>This product: </strong> Ultra Wireless S50 Headphones S50 with Bluetooth - <span class="text-red font-size-16">$35.00</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1" checked>
-                                                <label class="form-check-label mb-1 text-blue" for="inlineCheckbox2">
-                                                    <span class="text-decoration-on cursor-pointer-on">Universal Headphones Case in Black</span> - <span class="text-red font-size-16">$159.00</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2" checked>
-                                                <label class="form-check-label mb-1 text-blue" for="inlineCheckbox3">
-                                                    <span class="text-decoration-on cursor-pointer-on">Headphones USB Wires</span> - <span class="text-red font-size-16">$50.00</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-auto">
-                                            <div class="mr-xl-15">
-                                                <div class="mb-3">
-                                                    <div class="text-red font-size-26 text-lh-1dot2">$244.00</div>
-                                                    <div class="text-gray-6">for 3 item(s)</div>
-                                                </div>
-                                                <NuxtLink to="#" class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">Add all to cart</NuxtLink>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="bg-white py-4 px-xl-11 px-md-5 px-4 mb-6">
                             <div id="Specification" class="mx-md-2">
                                 <div class="position-relative mb-6">

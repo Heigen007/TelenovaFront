@@ -17,11 +17,6 @@ export default {
     script: [
       {
         type: 'text/javascript',
-        src: 'vendor/chat.js',
-        body: true
-      },
-      {
-        type: 'text/javascript',
         src: 'vendor/jquery/dist/jquery.min.js',
         body: true
       },
@@ -175,7 +170,11 @@ export default {
         type: 'text/javascript',
         src: 'vendor/ion-rangeslider/js/ion.rangeSlider.min.js',
         body: true
-      }
+      },
+      {
+        src: 'https://cdn-ru.bitrix24.ru/b18297278/crm/site_button/loader_3_gx8l89.js',
+        async: true
+      },
     ],
   },
 
