@@ -33103,7 +33103,7 @@ blockquote:not(.blockquote) p {
   content: '|';
   color: #cad5d5;
   line-height: 1;
-  margin: 4px;
+  margin: 7px;
 }
 
 /* Vertical-Menu */

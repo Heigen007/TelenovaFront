@@ -8,34 +8,8 @@
                 <div class="mb-5">
                     <h1 class="text-center">{{localizeFilter('MainTitle')}}</h1>
                 </div>
-                <!-- Accordion -->
-                <div id="shopCartAccordion1" class="accordion rounded mb-6">
-                    <!-- Card -->
-                    <div class="card border-0">
-                        <div id="shopCartHeadingTwo" class="alert alert-primary mb-0 text-white" role="alert">
-                            {{localizeFilter('CouponPart', 'Fquestion')}}<a href="#" class="alert-link text-white" data-toggle="collapse" data-target="#shopCartTwo" aria-expanded="false" aria-controls="shopCartTwo">{{localizeFilter('CouponPart', 'FLink')}}</a>
-                        </div>
-                        <div id="shopCartTwo" class="collapse border border-top-0" aria-labelledby="shopCartHeadingTwo" data-parent="#shopCartAccordion1" style="">
-                            <form class="p-5" novalidate="novalidate">
-                                <p class="w-100 text-gray-90">{{localizeFilter('CouponPart', 'CouponDescription')}}</p>
-                                <div class="input-group input-group-pill max-width-660-xl">
-                                    <input type="text" class="form-control" name="name" :placeholder="localizeFilter('CouponPart', 'InputPlaceholder')" aria-label="Promo code">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-block btn-dark font-weight-normal btn-pill px-4">
-                                            <i class="fas fa-tags d-md-none"></i>
-                                            <span class="d-none d-md-inline">{{localizeFilter('CouponPart', 'ButtonTitle')}}</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-                </div>
-                <!-- End Accordion -->
                 <div novalidate="novalidate">
                     <div class="row">
-
 
                         <div class="col-lg-7 order-lg-1">
                             <div class="pb-7 mb-7">
@@ -44,6 +18,17 @@
                                     <h3 class="section-title mb-0 pb-2 font-size-25">{{localizeFilter('Bill', 'Title')}}</h3>
                                 </div>
                                 <!-- End Title -->
+
+                                <div class="credits mb-4">
+                                    <div @click='creditCounter = 3'>3 {{localizeFilter('MonthShortTitle')}}</div>
+                                    <div @click='creditCounter = 6'>6 {{localizeFilter('MonthShortTitle')}}</div>
+                                    <div @click='creditCounter = 9'>9 {{localizeFilter('MonthShortTitle')}}</div>
+                                    <div @click='creditCounter = 12'>12 {{localizeFilter('MonthShortTitle')}}</div>
+                                    <div @click='creditCounter = 16'>16 {{localizeFilter('MonthShortTitle')}}</div>
+                                    <div @click='creditCounter = 24'>24 {{localizeFilter('MonthShortTitle')}}</div>
+                                </div>
+
+                                <div>{{localizeFilter('MonthCreditAmountTitle')}} {{(TotalPrice() / creditCounter).toFixed(0)}} тг.</div>
 
                                 <!-- Billing Form -->
                                 <client-only>
@@ -67,7 +52,31 @@
                                                     {{localizeFilter('Bill', 'SecondInputLabel')}}
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input v-model='info.SName' type="text" class="form-control" name="lastName" :placeholder="localizeFilter('Bill', 'SecondInputPlaceholder')" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                                <input v-model='info.SName' type="text" class="form-control" name="lastName"  aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            </div>
+                                            <!-- End Input -->
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <!-- Input -->
+                                            <div class="js-form-message mb-6">
+                                                <label class="form-label">
+                                                    {{localizeFilter('Bill', 'FourthInputLabel')}}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input v-model='info.TName' type="text" class="form-control" name="lastName" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            </div>
+                                            <!-- End Input -->
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <!-- Input -->
+                                            <div class="js-form-message mb-6">
+                                                <label class="form-label">
+                                                    {{localizeFilter('Bill', 'ThirdInputLabel')}}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input v-model='info.IIN' type="text" class="form-control" name="lastName" aria-label="Wayley" required="" data-msg="Please enter your IIN" data-error-class="u-has-error" data-success-class="u-has-success">
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -103,8 +112,32 @@
                                             <div class="js-form-message mb-6">
                                                 <label class="form-label">
                                                     {{localizeFilter('Bill', 'EleventhInputLabel')}}
+                                                    <span class="text-danger">*</span>
                                                 </label>
                                                 <input v-model='info.Phone' type="text" class="form-control" :placeholder="localizeFilter('Bill', 'EleventhInputPlaceholder')" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            </div>
+                                            <!-- End Input -->
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <!-- Input -->
+                                            <div class="js-form-message mb-6">
+                                                <label class="form-label">
+                                                    {{localizeFilter('Bill', 'EighthInputLabel')}}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="dropdown bootstrap-select js-select dropdown-select" style='padding: 0'>
+                                                    <select v-model='info.Bank' class="form-control js-select selectpicker dropdown-select" required="" data-msg="Please select country." data-error-class="u-has-error" data-success-class="u-has-success" data-live-search="true" data-style="form-control border-color-1 font-weight-normal" tabindex="-98">
+                                                        <option value="">Select country</option>
+                                                        <option value="AF">Afghanistan</option>
+                                                        <option value="AX">Åland Islands</option>
+                                                        <option value="AL">Albania</option>
+                                                        <option value="DZ">Algeria</option>
+                                                        <option value="AS">American Samoa</option>
+                                                        <option value="AD">Andorra</option>
+                                                        <option value="AO">Angola</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -159,122 +192,12 @@
                                                 </tr>
                                             </tbody>
                                             <tfoot>
-                                                <!-- <tr>
-                                                    <th>{{localizeFilter('Order', 'SecondProductsTitle')}}</th>
-                                                    <td>{{TotalPrice()}} тг.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>{{localizeFilter('Order', 'ThirdProductsTitle')}}</th>
-                                                    <td>Flat rate: {{ShippingCost}} тг.</td>
-                                                </tr> -->
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
                                                     <td><strong>{{TotalPrice()}} тг.</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                        <!-- End Product Content -->
-                                        <div class="border-top border-width-3 border-color-1 pt-3 mb-3">
-                                            <!-- Basics Accordion -->
-                                            <div id="basicsAccordion1">
-                                                <!-- Card -->
-                                                <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <!-- <div class="p-3" id="basicsHeadingOne">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" id="stylishRadio1" name="stylishRadio" checked>
-                                                            <label class="custom-control-label form-label" for="stylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseOnee"
-                                                                aria-expanded="true"
-                                                                aria-controls="basicsCollapseOnee">
-                                                                {{localizeFilter('Order', 'TransferVariations', 'FirstVariationTitle')}}
-                                                            </label>
-                                                        </div>
-                                                    </div> -->
-                                                    <div id="basicsCollapseOnee" class="collapse show border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingOne"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div class="p-4">
-                                                            {{localizeFilter('Order', 'TransferVariations', 'FirstVariationText')}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Card -->
-
-                                                <!-- Card -->
-                                                <!-- <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div class="p-3" id="basicsHeadingTwo">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="stylishRadio">
-                                                            <label class="custom-control-label form-label" for="secondStylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseTwo"
-                                                                aria-expanded="false"
-                                                                aria-controls="basicsCollapseTwo">
-                                                                {{localizeFilter('Order', 'TransferVariations', 'SecondVariationTitle')}}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="basicsCollapseTwo" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingTwo"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div class="p-4">
-                                                            {{localizeFilter('Order', 'TransferVariations', 'SecondVariationText')}}
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- End Card -->
-
-                                                <!-- Card -->
-                                                <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div class="p-3" id="basicsHeadingThree">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" id="thirdstylishRadio1" name="stylishRadio">
-                                                            <label class="custom-control-label form-label" for="thirdstylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseThree"
-                                                                aria-expanded="false"
-                                                                aria-controls="basicsCollapseThree">
-                                                                {{localizeFilter('Order', 'TransferVariations', 'ThirdVariationTitle')}}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="basicsCollapseThree" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingThree"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div class="p-4">
-                                                            {{localizeFilter('Order', 'TransferVariations', 'ThirdVariationText')}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Card -->
-
-                                                <!-- Card -->
-                                                <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div class="p-3" id="basicsHeadingFour">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" id="FourstylishRadio1" name="stylishRadio">
-                                                            <label class="custom-control-label form-label" for="FourstylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseFour"
-                                                                aria-expanded="false"
-                                                                aria-controls="basicsCollapseFour">
-                                                                {{localizeFilter('Order', 'TransferVariations', 'FourthVariationTitle')}} <div class="text-blue">{{localizeFilter('Order', 'TransferVariations', 'FourthVariationQuestion')}}</div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="basicsCollapseFour" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingFour"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div class="p-4">
-                                                            {{localizeFilter('Order', 'TransferVariations', 'FourthVariationText')}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Card -->
-                                            </div>
-                                            <!-- End Basics Accordion -->
-                                        </div>
                                         <div class="form-group d-flex align-items-center justify-content-between px-3 mb-5">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox">
@@ -305,12 +228,12 @@ import Swal from 'sweetalert2'
 export default {
     head() {
         return {
-            title: 'Telenova | Checkout'
+            title: 'Telenova | Credit'
         }
     },
     data(){
         return{
-            Component: "CheckoutPage",
+            Component: "CreditPage",
             items: null,
             LinkActive: false,
             ShippingCost: 3000,
@@ -322,15 +245,15 @@ export default {
             info: {
                 FName: '',
                 SName: '',
-                CompanyName: '',
-                Country: '',
+                TName: '',
                 Adress: '',
-                City: '',
-                Postcode: '',
                 Email: '',
-                Phone: ''
+                Phone: '',
+                IIN: '',
+                Bank: ''
             },
-            loaderM: false
+            loaderM: false,
+            creditCounter: 1
         }
     },
     components: {
@@ -371,7 +294,7 @@ export default {
                 if(document.querySelectorAll('input[name="stylishRadio"]:checked').length > 0){
                     if(document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id != 'FourstylishRadio1'){
                         e.preventDefault()
-                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName && this.info.TName && this.info.IIN && this.info.Bank) {
                             if(but) {
                                 var filteredCart = JSON.parse(JSON.stringify(self.items.cart))
                                 for(var el = 0; el < filteredCart.length ; el++) {
@@ -385,8 +308,11 @@ export default {
                                     phoneNumber: this.info.Phone, // номер телефона
                                     email: this.info.Email, // почта
                                     goods: filteredCart,
-                                    name: this.info.FName + ' ' + this.info.SName, // имя
+                                    name: this.info.FName + ' ' + this.info.SName + ' ' + this.info.TName, // имя
                                     paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                                    bank: this.info.bank,
+                                    iin: this.info.IIN,
+                                    credit: true
                                 }
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)
@@ -531,3 +457,24 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.credits{
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.credits div{
+    width: 70px;
+    padding: 3px 5px 3px 5px;
+    background-color: rgb(111, 111, 255);
+    color: white;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+}
+</style>

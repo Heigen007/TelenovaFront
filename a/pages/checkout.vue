@@ -387,6 +387,7 @@ export default {
                                     goods: filteredCart,
                                     name: this.info.FName + ' ' + this.info.SName, // имя
                                     paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                                    credit: false
                                 }
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)

@@ -21,7 +21,7 @@
         "ContactInfoValue": "Алматы, пр. Суюнбая 2к4",
         "CategoriesTitle": "Find it Fast",
         "OtherInfoTitle": "Pages",
-        "BottomCompanyName": "Electro",
+        "BottomCompanyName": "Telenova",
         "BottomMessage": " - All rights Reserved"
     },
     "ErrorPage": {
@@ -38,17 +38,17 @@
         "FifthPartTitle": "Phones and gadgets",
         "PopularSliderSort": "Popular",
         "CheapestSliderSort": "Cheapest",
-        "MostExpensiveSliderSort": "Most expensive"
+        "MostExpensiveSliderSort": "Most expensive",
+        "LaptopsLink": "Go to Notebooks and accessories",
+        "PhonesLink": "Go to Phones and gadgets"
     },
     "CartPage": {
         "Title": "Cart",
-        "RassrochkaButton": "Buy in rassrochka",
+        "RassrochkaButton": "Buy in credit",
         "FirstOptionTitle": "Product",
         "SecondOptionTitle": "Price",
         "ThirdOptionTitle": "Quantity",
         "FourthOptionTitle": "Total",
-        "CouponTitle": "Coupon code",
-        "CouponButtonTitle": "Apply coupon",
         "UpdateCartButton": "Update cart",
         "CheckoutButton": "Proceed to checkout",
         "CartConcludedTitle": "Cart totals",
@@ -279,5 +279,46 @@
     "PaymentResultError": {
         "title": "Error",
         "text": "Error text"
+    },
+    "CreditPage": {
+        "MainTitle": "Checkout - Credit",
+        "MonthShortTitle": "months",
+        "MonthCreditAmountTitle": "In month:",
+        "Bill": {
+            "Title": "Billing details",
+            "FirstInputLabel": "First Name",
+            "SecondInputLabel": "Last Name",
+            "ThirdInputLabel": "ИИН",
+            "FourthInputLabel": "Patronymic",
+            "FifthInputLabel": "Address",
+            "EighthInputLabel": "Bank",
+            "TenthInputLabel": "Email",
+            "EleventhInputLabel": "Phone",
+            "DetailsTitle": "Shipping Details details",
+            "TwelfthInputLabel": "Order Notes (Optional)",
+            "TwelfthInputPlaceholder": "Notes about your order, e.g. special notes for delivery."
+        },
+        "Order": {
+             "Title": "Your order",
+             "FirstProductsTitle": "Product",
+             "ProductsTotalTitle": "Total",
+             "SecondProductsTitle": "Subtotal",
+             "ThirdProductsTitle": "Shipping",
+             "FourthProductsTitle": "Total",
+             "TransferVariations": {
+                 "FirstVariationTitle": "Direct Bank Transfer",
+                 "FirstVariationText": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.",
+                 "SecondVariationTitle": "Check Payments",
+                 "SecondVariationText": "Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.",
+                 "ThirdVariationTitle": "Cash On Delivery",
+                 "ThirdVariationText": "Pay with cash upon delivery.",
+                 "FourthVariationTitle": "PayBox",
+                 "FourthVariationQuestion": "What Is PayBox?",
+                 "FourthVariationText": "Pay via PayBox; you can pay with your credit card if you don’t have a PayBox account.",
+                 "AgreedTermsTitle": "I have read and agree to the website",
+                 "AgreedTermsLinkToTermsPage": "terms and conditions ",
+                 "SuccessButtonText": "Place order"
+             }
+        }
     }
 }

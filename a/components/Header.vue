@@ -52,19 +52,20 @@
                                     <!-- Basics Accordion -->
                                     <div id="basicsAccordion" class="d-none d-xl-block">
                                         <!-- Card -->
-                                        <div class="card border-0 py-3 position-static">
+                                        <div class="card border-0 py-4 position-static">
                                             <div class="card-header bg-transparent card-collapse border-0 my-1 d-none d-xl-block" id="basicsHeadingOne">
-                                                <button id ='BubbleBut' type="button" class="btn-link btn-block d-flex card-btn py-3 text-lh-1 px-0 shadow-none rounded-0 bg-transparent border-0 font-weight-bold text-gray-90"
+                                                <button id ='BubbleBut' type="button" class="btn-link btn-block d-flex card-btn py-2 px-2 text-lh-1 px-0 shadow-none font-weight-bold text-gray-90"
                                                     data-toggle="collapse"
                                                     data-target="#basicsCollapseOne"
                                                     aria-expanded="true"
-                                                    aria-controls="basicsCollapseOne">
-                                                    <span class="text-gray-90 font-size-15">{{localizeFilter('Categories')}} <i class="ml-2 ec ec-arrow-down-search"></i></span>
+                                                    aria-controls="basicsCollapseOne"
+                                                    style='background-color: #2344a4; border-radius: 4px; border: 2px solid #2344a4;'>
+                                                    <span class="text-white font-size-15">{{localizeFilter('Categories')}} <i class="ml-2 ec ec-arrow-down-search"></i></span>
                                                 </button>
                                             </div>
                                             <div id="basicsCollapseOne" class="collapse vertical-menu v3 border-top-primary border-top border-width-2">
                                                 <div class="card-body p-0">
-                                                    <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
+                                                    <nav style='margin-left: 6px' class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                                                             <ul style='max-height: 550px; overflow-y: scroll' class="navbar-nav u-header__navbar-nav">
                                                                 <!-- Nav Item MegaMenu -->
@@ -110,10 +111,10 @@
                                 <form @submit='InputSearch' class="js-focus-state">
                                     <label class="sr-only" for="searchproduct">Search</label>
                                     <div class="input-group">
-                                        <input v-model='InputValue' class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct2">
+                                        <input v-model='InputValue' class="form-control py-2 font-size-15 border-right-0 height-40 ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct2" style='border-radius: 0; border-width: 2px'>
                                         <div class="input-group-append">
                                             <!-- End Select -->
-                                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct2">
+                                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct2" style='border-radius: 0'>
                                                 <span class="ec ec-search font-size-24 text-white"></span>
                                             </button>
                                         </div>

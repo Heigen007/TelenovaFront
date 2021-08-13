@@ -769,17 +769,7 @@
                 <div class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
-                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("NotebooksProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("NotebooksProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("NotebooksProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab4" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
-                            </li>
-                        </ul>
+                        <NuxtLink class="d-block text-gray-16" to="shop?FCat?Ноутбуки и аксессуары">{{localizeFilter('LaptopsLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
@@ -856,17 +846,7 @@
                 <div class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
-                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("MobileProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab5" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("MobileProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab5" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("MobileProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab5" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
-                            </li>
-                        </ul>
+                        <NuxtLink class="d-block text-gray-16" to="shop?FCat?Мобильные телефоны и аксессуары">{{localizeFilter('PhonesLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
