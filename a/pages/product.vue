@@ -56,20 +56,27 @@
                                         <li class = 'BLi' v-for="(el,i) in Product.offerData.properties" :key='i'><div class = 'FLB'>{{i}}:</div>{{el}}</li>
                                     </ul>
                                 </div>
-                                <p><strong>SKU</strong>: FW511948218</p>
-                                <div class="mb-4">
-                                    <div class="d-flex align-items-baseline">
-                                        <ins class="font-size-30 text-decoration-none">{{Product.offerData.price}} тг.</ins>
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                <p><strong>SKU</strong>: FW511948218</p> -->
+                            </div>
+                        </div>
+                        <div class="mx-md-auto mx-lg-0 col-md-6 col-xl-3">
+                            <div class="mb-2">
+                                <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
+                                    <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">{{localizeFilter('CardAvailabilityText')}}
+                                        <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.product_count}} {{localizeFilter("InStockText")}}</span>
+                                        <span v-else class="text-red font-weight-bold">{{localizeFilter('NotInStockText')}}</span>
                                     </div>
-                                </div>
-                                <div class="d-md-flex align-items-end mb-3" style='flex-wrap: wrap'>
-                                    <div class="max-width-150 mb-4 mb-md-0">
-                                        <h6 class="font-size-14">Quantity</h6>
+                                    <div class="mb-3">
+                                        <div class="font-size-36">{{Product.offerData.price}} тг.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h6 class="font-size-14">{{localizeFilter('CardQuantityText')}}</h6>
                                         <!-- Quantity -->
-                                        <div class="border rounded-pill py-2 px-3 border-color-1">
+                                        <div class="border rounded-pill py-1 w-md-60 height-35 px-3 border-color-1">
                                             <div class="js-quantity row align-items-center">
                                                 <div class="col">
-                                                    <input class="js-result form-control h-auto border-0 rounded p-0 shadow-none" type="text" value="1" id='ProductQuantity'>
+                                                    <input id="ProductQuantity" class="js-result form-control h-auto border-0 rounded p-0 shadow-none" type="text" value="1">
                                                 </div>
                                                 <div class="col-auto pr-1">
                                                     <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
@@ -83,16 +90,16 @@
                                         </div>
                                         <!-- End Quantity -->
                                     </div>
-                                    <div class="ml-md-3 mt-1">
+                                    <div class="mb-2 pb-0dot5">
                                         <div style='background-color: black; color: white' @click="AddToCartButton" class="btn btn-block"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('AddToCartText')}}</div>
                                     </div>
-                                    <div class="ml-md-3 mt-1">
+                                    <div class="mb-2">
                                         <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer' @click="BuyNow" class="btn btn-block">{{localizeFilter('BuyNowText')}}</div>
                                     </div>
-                                    <div class="ml-md-3 mt-1">
+                                    <div class="mb-2 pb-0dot5">
                                         <div style='background-color: black; color: white' @click="AddToCartButton" class="btn btn-block"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
                                     </div>
-                                    <div class="ml-md-3 mt-1">
+                                    <div class="mb-3">
                                         <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
                                     </div>
                                 </div>
@@ -178,7 +185,7 @@
                 </div>
                 <!-- End Related products -->
             </div>
-            <div class="bg-white pt-6 pb-3 mb-6">
+            <div class="bg-gray-7 pt-6 pb-3 mb-6">
                 <div class="container">
                     <div class="js-scroll-nav">
                         <div class="bg-white py-4 px-xl-11 px-md-5 px-4 mb-6">

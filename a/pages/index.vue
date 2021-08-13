@@ -1258,4 +1258,10 @@ export default {
     user-select: none;
 }
 .nav-tab-pill-fill::-webkit-scrollbar{height: 4px;}
+.rounded-pil,
+.nav-tab-pill .nav-link.active
+{
+    border-radius: 0px;
+    border-color: #c7c7c7;
+}
 </style>
