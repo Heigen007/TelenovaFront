@@ -20826,7 +20826,7 @@ button:focus {
 
 .u-header__section {
   position: relative;
-  z-index: 1;
+  z-index: 1000;
   background-color: #fff;
   box-shadow: 0 1px 10px rgba(151, 164, 175, 0.1);
 }
@@ -33103,6 +33103,7 @@ blockquote:not(.blockquote) p {
   content: '|';
   color: #cad5d5;
   line-height: 1;
+  margin: 4px;
 }
 
 /* Vertical-Menu */

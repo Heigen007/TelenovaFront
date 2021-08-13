@@ -486,7 +486,7 @@
                                                         <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                         <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
+                                                            <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
@@ -501,7 +501,7 @@
                                                         <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                         <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
+                                                            <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
@@ -944,13 +944,13 @@
                     <div v-if="Categories && IsC" class="row flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
                         <div v-for="(el,i) in Categories.slice(0,8)" :key="i" class="col-md-6 col-xl-4 mb-5 flex-shrink-0 flex-md-shrink-1">
                             <div class="bg-gray-1 overflow-hidden shadow-on-hover h-100 d-flex align-items-center">
-                                <NuxtLink :to="'/shop?FCat?'+Object.keys(el)[0]" class="d-block  pr-2 pr-wd-6">
+                                <NuxtLink :to="'/shop?FCat?'+el.name" class="d-block  pr-2 pr-wd-6">
                                     <div class="media align-items-center">
                                         <div class="max-width-148">
-                                            <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" alt="Image Description">
+                                            <img class="img-fluid" :src="el.image.clientPath" alt="Image Description">
                                         </div>
                                         <div class="ml-4 media-body">
-                                            <h4 class="mb-0 text-gray-90">{{Object.keys(el)[0]}}</h4>
+                                            <h4 class="mb-0 text-gray-90">{{el.name}}</h4>
                                         </div>
                                     </div>
                                 </NuxtLink>
@@ -1052,7 +1052,8 @@ export default {
             FilteredTVProducts: null,
             IsC: false,
             TVProducts: null,
-            LapProducts: null
+            LapProducts: null,
+            Categories: null
         }
     },
     created(){
@@ -1093,6 +1094,15 @@ export default {
             console.log(response,'MostPopular/freshProducts/10');
             this.newestProducts = response.data
             this.PopularFilter('NewestProducts')
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.get('https://textforeva.ru/storage/mostPopular/firstLevelCategories/6')
+        .then(response => {
+            console.log('AAAAAAAAAAAAA',response);
+            this.Categories = response.data
         })
         .catch(function(error) {
             console.log(error);
@@ -1202,11 +1212,6 @@ export default {
                 var arr = JSON.parse(JSON.stringify(this.TVProducts))
                 return this.FilteredTVProducts = arr.sort((a,b) => b.salePrice - a.salePrice)
             }
-        }
-    },
-    computed:{
-        Categories(){
-            return this.$store.state.categories
         }
     },
     components: {

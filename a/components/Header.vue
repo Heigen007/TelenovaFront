@@ -1,7 +1,7 @@
 <template>
 <div style='position: sticky; width: 100%; top: 0; z-index: 1000;'>
         <!-- ========== HEADER ========== -->
-        <header id="header" class="u-header u-header-left-aligned-nav mb-3">
+        <header id="header" class="u-header u-header-left-aligned-nav mb-3" style='background-color: white'>
             <div class="u-header__section shadow-none">
                 <!-- Topbar -->
                 <!-- End Topbar -->
@@ -176,11 +176,29 @@
                 <!-- Secondary-menu -->
                 <!-- End Secondary-menu -->
             </div>
-            <div class = 'bestCat'>
-                <div style='display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 100%; color: black'>
-                    <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name' v-for="(el,i) in bestC" :key='i'>
-                        {{el.name}}
-                    </NuxtLink>
+            <div class='container d-none d-xl-block'>
+                <div class="secondary-menu flex-horizontal-center position-relative pt-2">
+                    <div class="ml-wd-4 flex-shrink-0">
+                        <h6 class="font-weight-bold font-size-13 mb-0 mr-2">{{localizeFilter('HeaderBestCategoriesTitle')}} </h6>
+                    </div>
+                    <!-- Nav -->
+                    <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space position-static">
+                        <!-- Navigation -->
+                        <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                            <ul class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
+                                <!-- Button -->
+                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='text-decoration: none; font-weight: 700; white-space: nowrap; color: black' to='/shop?Sales'>Sales</NuxtLink></li>
+                                <li v-for="(el,i) in bestC" :key='i' class="nav-item u-header__nav-item">
+                                    <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name'>
+                                        {{el.name}}
+                                    </NuxtLink>
+                                </li>
+                                <!-- End Button -->
+                            </ul>
+                        </div>
+                        <!-- End Navigation -->
+                    </nav>
+                    <!-- End Nav -->
                 </div>
             </div>
         </header>

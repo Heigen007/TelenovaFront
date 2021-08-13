@@ -4,7 +4,7 @@
         <div class="container">
             <div class="d-flex align-items-center">
                 <div class="topbar-left">
-                    <a href="#" class="text-gray-110 font-size-13 hover-on-dark">{{localizeFilter('Greeting')}}</a>
+                    <div class="text-gray-110 font-size-13 hover-on-dark" style='user-select: none'>{{localizeFilter('Greeting')}}</div>
                 </div>
             </div>
         </div>

@@ -9,40 +9,53 @@
                 <div v-else class="row mb-8">
                     <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
                         <div class="mb-6">
-                            <div class="border-bottom border-color-1 mb-5">
-                                <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">{{localizeFilter('FilterPart', 'SecondPartTitle')}}</h3>
+                            <div class="border-bottom border-color-1 mb-5" id="basicsHeadingOne">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseOner2"
+                                    aria-expanded="true"
+                                    aria-controls="basicsCollapseOner">
+                                    {{localizeFilter('FilterPart', 'SecondPartTitle')}}
+
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
                             </div>
-                            <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
-                            <client-only v-if='$store.state.priceRange'>
-                            <div class="wrapper" style='margin-bottom: 20px'>
-                                <div class="multi-range-slider">
-                                    <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="minV">
-                                    <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
-                                    <div class="slider">
-                                    <div class="track"></div>
-                                    <div class="range"></div>
+                            <div id="basicsCollapseOner2" class="collapse show"
+                                aria-labelledby="basicsHeadingOne"
+                                data-parent="#basicsAccordion">
+                                <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
+                                <client-only v-if='$store.state.priceRange'>
+                                <div class="wrapper" style='margin-bottom: 20px'>
+                                    <div class="multi-range-slider">
+                                        <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="minV">
+                                        <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
+                                        <div class="slider">
+                                        <div class="track"></div>
+                                        <div class="range"></div>
+                                        </div>
+                                    </div>
+                                    <div class="price__wrapper">
+                                        <span class="price-from"></span>
+                                        <span class="price-to"></span>
                                     </div>
                                 </div>
-                                <div class="price__wrapper">
-                                    <span class="price-from"></span>
-                                    <span class="price-to"></span>
-                                </div>
-                            </div>
-                            </client-only>
-                            <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
-                                <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
+                                </client-only>
+                                <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
+                                    <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
 
-                                <!-- Checkboxes -->
-                                <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
-                                        <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
+                                    <!-- Checkboxes -->
+                                    <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                        <div class="custom-control custom-checkbox">
+                                            <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
+                                            <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
+                                        </div>
                                     </div>
+                                    <!-- End Checkboxes -->
+
                                 </div>
-                                <!-- End Checkboxes -->
-
                             </div>
-
                         </div>
                     </div>
                     <div class="col-xl-9 col-wd-9gdot5">

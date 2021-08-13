@@ -4,7 +4,8 @@
         "PhoneNumber": "+77073373318",
         "Categories": "Categories",
         "SearchInputPlaceholder": "Search Product",
-        "ProductAddedTitle": "Product Added!"
+        "ProductAddedTitle": "Product Added!",
+        "HeaderBestCategoriesTitle": "Telenova Best Selling:"
     },
     "Footer": {
         "FirstCategory": "Featured Products",
@@ -270,5 +271,13 @@
         "SortByPriceLowToHigh": "Sort by price: low to high",
         "SortByPriceHighToLow": "Sort by price: high to low",
         "FilterButtonText": "Filter"
+    },
+    "PaymentResultSuccess": {
+        "title": "Success",
+        "text": "Success text"
+    },
+    "PaymentResultError": {
+        "title": "Error",
+        "text": "Error text"
     }
 }
