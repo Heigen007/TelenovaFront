@@ -18,18 +18,18 @@
                                     <h3 class="section-title mb-0 pb-2 font-size-25">{{localizeFilter('Bill', 'Title')}}</h3>
                                 </div>
                                 <!-- End Title -->
+                                <div class='CreditRange'>
+                                    <div class="credits">
+                                        <div :class='{ active: creditCounter == 3 }' @click='creditCounter = 3'>3 {{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 6 }' @click='creditCounter = 6'>6 {{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 9 }' @click='creditCounter = 9'>9 {{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 12 }' @click='creditCounter = 12'>12 {{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 16 }' @click='creditCounter = 16'>16 {{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 24 }' @click='creditCounter = 24'>24 {{localizeFilter('MonthShortTitle')}}</div>
+                                    </div>
 
-                                <div class="credits mb-4">
-                                    <div @click='creditCounter = 3'>3 {{localizeFilter('MonthShortTitle')}}</div>
-                                    <div @click='creditCounter = 6'>6 {{localizeFilter('MonthShortTitle')}}</div>
-                                    <div @click='creditCounter = 9'>9 {{localizeFilter('MonthShortTitle')}}</div>
-                                    <div @click='creditCounter = 12'>12 {{localizeFilter('MonthShortTitle')}}</div>
-                                    <div @click='creditCounter = 16'>16 {{localizeFilter('MonthShortTitle')}}</div>
-                                    <div @click='creditCounter = 24'>24 {{localizeFilter('MonthShortTitle')}}</div>
+                                    <div class='creditsAmount'>{{localizeFilter('MonthCreditAmountTitle')}} <strong>{{(TotalPrice() / creditCounter).toFixed(0)}} {{localizeFilter('TengeInMonthTitle')}}</strong></div>
                                 </div>
-
-                                <div>{{localizeFilter('MonthCreditAmountTitle')}} {{(TotalPrice() / creditCounter).toFixed(0)}} тг.</div>
-
                                 <!-- Billing Form -->
                                 <client-only>
                                     <div class="row">
@@ -128,14 +128,10 @@
                                                 </label>
                                                 <div class="dropdown bootstrap-select js-select dropdown-select" style='padding: 0'>
                                                     <select v-model='info.Bank' class="form-control js-select selectpicker dropdown-select" required="" data-msg="Please select country." data-error-class="u-has-error" data-success-class="u-has-success" data-live-search="true" data-style="form-control border-color-1 font-weight-normal" tabindex="-98">
-                                                        <option value="">Select country</option>
-                                                        <option value="AF">Afghanistan</option>
-                                                        <option value="AX">Åland Islands</option>
-                                                        <option value="AL">Albania</option>
-                                                        <option value="DZ">Algeria</option>
-                                                        <option value="AS">American Samoa</option>
-                                                        <option value="AD">Andorra</option>
-                                                        <option value="AO">Angola</option>
+                                                        <option value="">{{localizeFilter('SelectBankTitle')}}</option>
+                                                        <option value="kaspi">Kaspi</option>
+                                                        <option value="center-credit">Center Credit</option>
+                                                        <option value="jusan">Jusan</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -187,14 +183,14 @@
                                             </thead>
                                             <tbody>
                                                 <tr v-for="(el, i) in $store.state.cart.cart" :key='i' class="cart_item">
-                                                    <td>{{el.offerData.name}}&nbsp;<strong class="product-quantity">× {{el.offerData.count}}</strong></td>
-                                                    <td>{{el.offerData.price * el.offerData.count}} тг.</td>
+                                                    <td class='pr-3'>{{el.offerData.name}}&nbsp;<strong class="product-quantity" style='white-space: nowrap'>× {{el.offerData.count}}</strong></td>
+                                                    <td style='white-space: nowrap'>{{el.offerData.price * el.offerData.count}} ₸.</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong>{{TotalPrice()}} тг.</strong></td>
+                                                    <td><strong>{{TotalPrice()}} ₸.</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -253,7 +249,7 @@ export default {
                 Bank: ''
             },
             loaderM: false,
-            creditCounter: 1
+            creditCounter: 3
         }
     },
     components: {
@@ -291,94 +287,77 @@ export default {
             if(this.items.cart.length > 0){
                 var self = this
                 var but = document.querySelector('.form-check-input').checked
-                if(document.querySelectorAll('input[name="stylishRadio"]:checked').length > 0){
-                    if(document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id != 'FourstylishRadio1'){
-                        e.preventDefault()
-                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName && this.info.TName && this.info.IIN && this.info.Bank) {
-                            if(but) {
-                                var filteredCart = JSON.parse(JSON.stringify(self.items.cart))
-                                for(var el = 0; el < filteredCart.length ; el++) {
-                                    filteredCart[el] = {
-                                        kaspi_id: filteredCart[el].offerData.kaspi_id,
-                                        count: filteredCart[el].offerData.count
-                                    }
-                                }
-                                var checkout = {
-                                    address: this.info.Adress, // адрес доставки
-                                    phoneNumber: this.info.Phone, // номер телефона
-                                    email: this.info.Email, // почта
-                                    goods: filteredCart,
-                                    name: this.info.FName + ' ' + this.info.SName + ' ' + this.info.TName, // имя
-                                    paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                    bank: this.info.bank,
-                                    iin: this.info.IIN,
-                                    credit: true
-                                }
-                                this.loaderM = true
-                                axios.post('https://textforeva.ru/order', checkout)
-                                .then(response => {
-                                    self.loaderM = true
-                                    Swal.fire(
-                                        'Success!',
-                                        'Your order has been created!',
-                                        'success'
-                                    )
-                                    self.$store.commit('cart/clear')
-                                    self.$router.push('/')
-                                })
-                                .catch(error => {
-                                    console.log(error);
-                                })
-                            } else {
-                                self.loaderM = true
-                                Swal.fire(
-                                    'Error!',
-                                    'Please, agree with Terms And Conditions',
-                                    'error'
-                                )
+                e.preventDefault()
+                if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName && this.info.TName && this.info.IIN && this.info.Bank) {
+                    if(but) {
+                        var filteredCart = JSON.parse(JSON.stringify(self.items.cart))
+                        for(var el = 0; el < filteredCart.length ; el++) {
+                            filteredCart[el] = {
+                                kaspi_id: filteredCart[el].offerData.kaspi_id,
+                                count: filteredCart[el].offerData.count
                             }
-                        } else {
-                            Swal.fire(
-                                'Error!',
-                                'Please, write down all the information!',
-                                'error'
-                            )
                         }
+                        var checkout = {
+                            address: this.info.Adress, // адрес доставки
+                            phoneNumber: this.info.Phone, // номер телефона
+                            email: this.info.Email, // почта
+                            goods: filteredCart,
+                            name: this.info.FName + ' ' + this.info.SName + ' ' + this.info.TName, // имя
+                            paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                            bank: this.info.bank,
+                            iin: this.info.IIN,
+                            creditNumber: this.creditCounter,
+                            credit: true
+                        }
+                        this.loaderM = true
+                        axios.post('https://textforeva.ru/order', checkout)
+                        .then(response => {
+                            self.loaderM = true
+                            Swal.fire(
+                                'Success!',
+                                'Your order has been created!',
+                                'success'
+                            )
+                            self.$store.commit('cart/clear')
+                            self.$router.push('/')
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        })
                     } else {
-                        if(!but) {
-                            e.preventDefault()
-                            Swal.fire(
-                                'Error!',
-                                'Please, agree with Terms And Conditions',
-                                'error'
-                            )
-                            return
-                        }
-                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
-                        } else {
-                            e.preventDefault()
-                            Swal.fire(
-                                'Error!',
-                                'Please, write down all the information!',
-                                'error'
-                            )
-                        }
+                        self.loaderM = true
+                        Swal.fire(
+                            'Error!',
+                            'Please, agree with Terms And Conditions',
+                            'error'
+                        )
                     }
                 } else {
-                    e.preventDefault()
                     Swal.fire(
                         'Error!',
-                        'Please, choose the paying variant!',
+                        'Please, write down all the information!',
                         'error'
                     )
                 }
             } else {
-                e.preventDefault()
-                Swal.fire(
-                    'Error!',
-                    'You forgot to add products to your cart!',
-                    'error'
-                )
+                if(!but) {
+                    e.preventDefault()
+                    Swal.fire(
+                        'Error!',
+                        'Please, agree with Terms And Conditions',
+                        'error'
+                    )
+                    return
+                }
+                if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                } else {
+                    e.preventDefault()
+                    Swal.fire(
+                        'Error!',
+                        'Please, write down all the information!',
+                        'error'
+                    )
+                }
             }
         },
         localizeFilter(key, key2, key3) {
@@ -458,11 +437,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .credits{
     width: 100%;
     padding: 5px 10px 5px 10px;
-    background-color: gray;
+    background-color: #e6e6e6;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -470,11 +449,22 @@ export default {
 }
 .credits div{
     width: 70px;
-    padding: 3px 5px 3px 5px;
-    background-color: rgb(111, 111, 255);
-    color: white;
+    padding: 5px 8px 5px 8px;
+    background-color: white;
+    color: black;
     text-align: center;
     margin: 5px;
     cursor: pointer;
+}
+.active{
+    color: white !important;
+    background-color: #0144a3 !important;
+}
+.CreditRange{
+    box-shadow: 0 0 5px rgb(146, 146, 146);
+    margin-bottom: 10px;
+}
+.creditsAmount{
+    padding: 7px 0 7px 11px;
 }
 </style>

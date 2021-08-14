@@ -16,7 +16,7 @@
                                 <div class="col pl-4 d-flex flex-column">
                                     <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                     <div class="prodcut-price mt-auto">
-                                        <div class="font-size-15">{{el.offerData.price}} тг.</div>
+                                        <div class="font-size-15">{{el.offerData.price}} ₸.</div>
                                     </div>
                                 </div>
                             </li>
@@ -35,7 +35,7 @@
                             <div class="col pl-4 d-flex flex-column">
                                 <h5 class="product-item__title mb-0"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
                                 <div class="prodcut-price mt-auto">
-                                    <div class="font-size-15">{{el.offerData.price}} тг.</div>
+                                    <div class="font-size-15">{{el.offerData.price}} ₸.</div>
                                 </div>
                             </div>
                         </li>
@@ -57,7 +57,7 @@
                                     <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating/2)" :key='o2+"d"' class="fas fa-star text-muted"></small>
                                 </div>
                                 <div class="prodcut-price mt-auto">
-                                    <div class="font-size-15">{{el.offerData.price}} тг.</div>
+                                    <div class="font-size-15">{{el.offerData.price}} ₸.</div>
                                 </div>
                             </div>
                         </li>

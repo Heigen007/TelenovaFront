@@ -154,22 +154,22 @@
                                             </thead>
                                             <tbody>
                                                 <tr v-for="(el, i) in $store.state.cart.cart" :key='i' class="cart_item">
-                                                    <td>{{el.offerData.name}}&nbsp;<strong class="product-quantity">× {{el.offerData.count}}</strong></td>
-                                                    <td>{{el.offerData.price * el.offerData.count}} тг.</td>
+                                                    <td class='pr-3'>{{el.offerData.name}}&nbsp;<strong class="product-quantity" style='white-space: nowrap'>× {{el.offerData.count}}</strong></td>
+                                                    <td style='white-space: nowrap'>{{el.offerData.price * el.offerData.count}} ₸.</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <!-- <tr>
                                                     <th>{{localizeFilter('Order', 'SecondProductsTitle')}}</th>
-                                                    <td>{{TotalPrice()}} тг.</td>
+                                                    <td>{{TotalPrice()}} ₸.</td>
                                                 </tr>
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'ThirdProductsTitle')}}</th>
-                                                    <td>Flat rate: {{ShippingCost}} тг.</td>
+                                                    <td>Flat rate: {{ShippingCost}} ₸.</td>
                                                 </tr> -->
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong>{{TotalPrice()}} тг.</strong></td>
+                                                    <td><strong>{{TotalPrice()}} ₸.</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>

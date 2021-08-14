@@ -68,7 +68,7 @@
                                         <span v-else class="text-red font-weight-bold">{{localizeFilter('NotInStockText')}}</span>
                                     </div>
                                     <div class="mb-3">
-                                        <div class="font-size-36">{{Product.offerData.price}} тг.</div>
+                                        <div class="font-size-36">{{Product.offerData.price}} ₸.</div>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="font-size-14">{{localizeFilter('CardQuantityText')}}</h6>
@@ -154,7 +154,7 @@
                                             </div>
                                             <div class="flex-center-between mb-1">
                                                 <div class="prodcut-price">
-                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</a>
+                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</a>
                                                 </div>
                                                 <div class="d-xl-block prodcut-add-cart">
                                                     <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -169,7 +169,7 @@
                                             </div>
                                             <div class="flex-center-between mb-1">
                                                 <div class="prodcut-price">
-                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</a>
+                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</a>
                                                 </div>
                                                 <div class="d-xl-block prodcut-add-cart">
                                                     <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>

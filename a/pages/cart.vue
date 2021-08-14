@@ -36,7 +36,7 @@
                                     </td>
 
                                     <td data-title="Price">
-                                        <span class="">{{el.offerData.price}} тг.</span>
+                                        <span class="">{{el.offerData.price}} ₸.</span>
                                     </td>
 
                                     <td data-title="Quantity">
@@ -61,7 +61,7 @@
                                     </td>
 
                                     <td data-title="Total">
-                                        <span class="">{{el.offerData.count * el.offerData.price}} тг.</span>
+                                        <span class="">{{el.offerData.count * el.offerData.price}} ₸.</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -89,11 +89,11 @@
                                 <tbody>
                                     <!-- <tr class="cart-subtotal">
                                         <th>{{localizeFilter('CartConcludedFirstSubTitle')}}</th>
-                                        <td data-title="Subtotal"><span class="amount">{{TotalPrice()}} тг.</span></td>
+                                        <td data-title="Subtotal"><span class="amount">{{TotalPrice()}} ₸.</span></td>
                                     </tr> -->
                                     <tr class="order-total" style="border-bottom: 1px solid #dcdcdc">
                                         <th>{{localizeFilter('CartConcludedThirdSubTitle')}}</th>
-                                        <td data-title="Total"><strong><span class="amount">{{TotalPrice()}} тг.</span></strong></td>
+                                        <td data-title="Total"><strong><span class="amount">{{TotalPrice()}} ₸.</span></strong></td>
                                     </tr>
                                 </tbody>
                             </table>

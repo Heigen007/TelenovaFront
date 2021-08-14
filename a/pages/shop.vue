@@ -126,7 +126,7 @@
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
-                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</NuxtLink>
+                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</NuxtLink>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -141,7 +141,7 @@
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
-                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} тг.</NuxtLink>
+                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</NuxtLink>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -492,7 +492,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from: ${_this.value} тг.`;
+            priceFrom.textContent = `from: ${_this.value} ₸.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -507,7 +507,7 @@ export default {
                 max = parseInt(_this.max);
 
             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
-            priceTo.textContent = `to: ${_this.value} тг.`;
+            priceTo.textContent = `to: ${_this.value} ₸.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -571,7 +571,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from: ${_this.value} тг.`;
+            priceFrom.textContent = `from: ${_this.value} ₸.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -586,7 +586,7 @@ export default {
                 max = parseInt(_this.max);
 
             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
-            priceTo.textContent = `to: ${_this.value} тг.`;
+            priceTo.textContent = `to: ${_this.value} ₸.`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 

@@ -284,6 +284,8 @@
         "MainTitle": "Checkout - Credit",
         "MonthShortTitle": "months",
         "MonthCreditAmountTitle": "In month:",
+        "TengeInMonthTitle": "₸/month",
+        "SelectBankTitle": "Select bank:",
         "Bill": {
             "Title": "Billing details",
             "FirstInputLabel": "First Name",
