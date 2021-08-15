@@ -1,6 +1,7 @@
 import axios from 'axios'
 export const state = () => ({
   categories: null,
+  promoActions: [],
   products: null,
   productsFilteredCopy: null,
   productsFilteredCopyCopy: null,
@@ -10,6 +11,9 @@ export const state = () => ({
   priceRange: [0,1500000]
 })
 export const mutations = {
+  SetPromoActions(state, promoActions){
+    state.promoActions = promoActions
+  },
   SetProductsOnly(state, response){
     state.products = response
   },
@@ -172,6 +176,14 @@ export const actions = {
     axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
       commit('SetProductsOnly', response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
+    axios.get(`https://textforeva.ru/promoAction/`)
+    .then(response => {
+      commit('SetPromoActions', response.data)
     })
     .catch(function (error) {
       console.log(error);

@@ -16,18 +16,18 @@
                             {{localizeFilter('CouponPart', 'Fquestion')}}<a href="#" class="alert-link text-white" data-toggle="collapse" data-target="#shopCartTwo" aria-expanded="false" aria-controls="shopCartTwo">{{localizeFilter('CouponPart', 'FLink')}}</a>
                         </div>
                         <div id="shopCartTwo" class="collapse border border-top-0" aria-labelledby="shopCartHeadingTwo" data-parent="#shopCartAccordion1" style="">
-                            <form class="p-5" novalidate="novalidate">
+                            <div class="p-5" novalidate="novalidate">
                                 <p class="w-100 text-gray-90">{{localizeFilter('CouponPart', 'CouponDescription')}}</p>
                                 <div class="input-group input-group-pill max-width-660-xl">
-                                    <input type="text" class="form-control" name="name" :placeholder="localizeFilter('CouponPart', 'InputPlaceholder')" aria-label="Promo code">
+                                    <input v-model='currentCoupon' type="text" class="form-control" name="name" :placeholder="localizeFilter('CouponPart', 'InputPlaceholder')" aria-label="Promo code">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-block btn-dark font-weight-normal btn-pill px-4">
+                                        <button class="btn btn-block btn-dark font-weight-normal btn-pill px-4">
                                             <i class="fas fa-tags d-md-none"></i>
-                                            <span class="d-none d-md-inline">{{localizeFilter('CouponPart', 'ButtonTitle')}}</span>
+                                            <span class="d-none d-md-inline" @click='addCoupon'>{{localizeFilter('CouponPart', 'ButtonTitle')}}</span>
                                         </button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <!-- End Card -->
@@ -168,8 +168,12 @@
                                                     <td>Flat rate: {{ShippingCost}} ₸.</td>
                                                 </tr> -->
                                                 <tr>
+                                                    <th>{{localizeFilter('Order', 'SaleProductsTitle')}}</th>
+                                                    <td><strong>{{ activeCoupon.sale || 0 }} %</strong></td>
+                                                </tr>
+                                                <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong>{{TotalPrice()}} ₸.</strong></td>
+                                                    <td><strong style='white-space: nowrap'>{{(TotalPrice() * (100 - activeCoupon.sale || 100) / 100).toFixed(0)}} ₸.</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -330,7 +334,10 @@ export default {
                 Email: '',
                 Phone: ''
             },
-            loaderM: false
+            loaderM: false,
+            coupons: [],
+            currentCoupon: '',
+            activeCoupon: {}
         }
     },
     components: {
@@ -340,6 +347,16 @@ export default {
         this.items = this.$store.state.cart
     },
     mounted(){
+        this.activeCoupon = JSON.parse(localStorage.getItem('coupon')) || ''
+        if(new Date(Date.now()) > new Date(this.activeCoupon.date)){
+            localStorage.removeItem('coupon')
+            this.activeCoupon = {}
+            Swal.fire(
+                'Ouch!',
+                'Sorry, your promocode term expired',
+                'error'
+            )
+        }
         setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
@@ -362,8 +379,34 @@ export default {
                 }
             });
         })
+        axios.get('https://textforeva.ru/promoCode/')
+        .then(res => {
+            console.log(res.data);
+            this.coupons = res.data
+        })
+        .catch(err => {
+            console.log(err);
+        })
     },
     methods: {
+        addCoupon(){
+            var arr = this.coupons.filter(el => el.code == this.currentCoupon)
+            if(arr.length > 0) {
+                localStorage.setItem('coupon',JSON.stringify(arr[0]))
+                this.activeCoupon = arr[0]
+                Swal.fire(
+                    'Success!',
+                    'Promocode has been added!',
+                    'success'
+                )
+            } else {
+                Swal.fire(
+                    'Error!',
+                    'Sorry, your promocode is incorrect',
+                    'error'
+                )
+            }
+        },
         Ship(e){
             if(this.items.cart.length > 0){
                 var self = this
@@ -387,7 +430,8 @@ export default {
                                     goods: filteredCart,
                                     name: this.info.FName + ' ' + this.info.SName, // имя
                                     paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                    credit: false
+                                    credit: false,
+                                    promoCode: this.activeCoupon.code || ''
                                 }
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)

@@ -100,6 +100,7 @@
              "SecondProductsTitle": "Subtotal",
              "ThirdProductsTitle": "Shipping",
              "FourthProductsTitle": "Total",
+             "SaleProductsTitle": "Sale",
              "TransferVariations": {
                  "FirstVariationTitle": "Direct Bank Transfer",
                  "FirstVariationText": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.",

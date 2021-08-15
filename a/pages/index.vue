@@ -532,8 +532,8 @@
                         <div class="col-md-6 mb-3 mb-md-0">
                             <div class="banner-bg">
                                 <NuxtLink to="/shop?SCat?Мобильные телефоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
-                                    <div class="col-5 col-md-6 pr-0 pl-wd-10">
-                                        <img class="img-fluid" src="/img/246X176/img1.jpg" alt="Image Description">
+                                    <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
+                                        <img class="imgPromo" src="/img/246X176/img1.jpg" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
                                         <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
@@ -552,8 +552,8 @@
                         <div class="col-md-6">
                             <div class="banner-bg">
                                 <NuxtLink to="/shop?SCat?Мобильные телефоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
-                                    <div class="col-5 col-md-6 pr-0 pl-wd-10">
-                                        <img class="img-fluid" src="/img/246X176/img3.jpg" alt="Image Description">
+                                    <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
+                                        <img class="imgPromo" src="/img/246X176/img3.jpg" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
                                         <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
@@ -1196,6 +1196,11 @@ export default {
     },
     components: {
         preloader
+    },
+    computed: {
+        promoActions(){
+            return this.$state.promoActions
+        }
     }
 }
 </script>
@@ -1243,5 +1248,9 @@ export default {
 {
     border-radius: 0px;
     border-color: #c7c7c7;
+}
+.imgPromo{
+    width: 246px;
+    height: 176px;
 }
 </style>
