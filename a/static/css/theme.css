@@ -34017,7 +34017,7 @@ blockquote:not(.blockquote) p {
 
 .about-accordion .card-btn[aria-expanded="true"] .fa-minus {
   display: block;
-  color: #333e48;
+  color: white;
 }
 
 .about-accordion .card-btn[aria-expanded="true"] span {

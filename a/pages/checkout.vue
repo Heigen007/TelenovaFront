@@ -366,18 +366,6 @@ export default {
         $(document).on('ready', function () {
             // initialization of forms
             $.HSCore.components.HSFocusState.init();
-
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-                e.preventDefault();
-
-                var target = $(this).data('target');
-
-                if($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
         })
         axios.get('https://textforeva.ru/promoCode/')
         .then(res => {
@@ -511,7 +499,7 @@ export default {
         },
         PayLink(){
             var sign = this.makeSignature()
-            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyObject=${this.objMake()}&pg_sig=${sign}`
+            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyDataObj=${this.objMake()}&pg_sig=${sign}`
         },
         makeSignature() {
             var methodName = 'payment.php'
@@ -527,6 +515,7 @@ export default {
                 "pg_salt": this.pg_salt,
                 "MyDataObj": this.objMake()
             };
+            console.log(requestFields);
             //Секретный ключ
             var secretKey = this.getSecretKey(methodName);
 

@@ -1199,7 +1199,7 @@ export default {
     },
     computed: {
         promoActions(){
-            return this.$state.promoActions
+            return this.$store.state.promoActions
         }
     }
 }

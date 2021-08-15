@@ -188,7 +188,7 @@
                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                             <ul class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
                                 <!-- Button -->
-                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='text-decoration: none; font-weight: 700; white-space: nowrap; color: black' to='/shop?Sales'>Sales</NuxtLink></li>
+                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='text-decoration: none; font-weight: 700; white-space: nowrap; color: black' to='/sales'>Sales</NuxtLink></li>
                                 <li v-for="(el,i) in bestC" :key='i' class="nav-item u-header__nav-item">
                                     <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name'>
                                         {{el.name}}

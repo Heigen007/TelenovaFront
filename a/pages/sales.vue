@@ -30,7 +30,7 @@
                                 <client-only v-if='$store.state.priceRange'>
                                 <div class="wrapper" style='margin-bottom: 20px'>
                                     <div class="multi-range-slider">
-                                        <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :max="$store.state.priceRange[1]">
+                                        <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="minV">
                                         <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
                                         <div class="slider">
                                         <div class="track"></div>
@@ -43,19 +43,6 @@
                                     </div>
                                 </div>
                                 </client-only>
-                                <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
-                                    <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
-
-                                    <!-- Checkboxes -->
-                                    <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                        <div class="custom-control custom-checkbox">
-                                            <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
-                                            <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
-                                        </div>
-                                    </div>
-                                    <!-- End Checkboxes -->
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,7 +114,12 @@
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
-                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</NuxtLink>
+                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">
+                                                                <div class="prodcut-price d-flex align-items-center position-relative">
+                                                                    <ins class="font-size-20 text-red text-decoration-none">$1999,00</ins>
+                                                                    <del class="font-size-12 tex-gray-6 position-absolute bottom-100">$2 299,00</del>
+                                                                </div>
+                                                            </NuxtLink>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -142,7 +134,12 @@
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price">
-                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</NuxtLink>
+                                                            <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">
+                                                            <div class="prodcut-price d-flex align-items-center position-relative">
+                                                                <ins class="font-size-20 text-red text-decoration-none">$1999,00</ins>
+                                                                <del class="font-size-12 tex-gray-6 position-absolute bottom-100">$2 299,00</del>
+                                                            </div>
+                                                            </NuxtLink>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -299,7 +296,7 @@ export default {
             this.IsProducts = true
         }
     },
-   updated(){
+ updated(){
         $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
             beforeClose: function () {
                 $('#hamburgerTrigger').removeClass('is-active');

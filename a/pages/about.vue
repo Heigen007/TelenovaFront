@@ -273,18 +273,6 @@ export default {
         }, 1000);
 
         $(document).on('ready', function () {
-
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-                e.preventDefault();
-
-                var target = $(this).data('target');
-
-                if($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
         });
     },
     methods: {
