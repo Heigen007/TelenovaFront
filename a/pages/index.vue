@@ -6,33 +6,29 @@
             <div class="mb-8">
                 <div class="container">
                     <div class="overflow-hidden">
-                        <div class="bg-img-hero min-height-420" style="background-image: url(/img/1400X420/img1.jpg);">
+                        <img :src="promoActions3Type[0].promoImages[0].clientPath" alt="" class='container myPhoto' style='height: 410px; padding: 0'>
+                        <div class="bg-img-hero min-height-420" >
                             <div id="thumbProgress" class="js-slick-carousel u-slick"
                                 data-autoplay="false"
                                 data-nav-for="#thumbProgressNav">
-                                <div class="js-slide">
+                                <div class="js-slide" v-for='(el, i) in promoActions3Type' :key='i'>
                                     <div class="row height-410-xl mx-0 align-items-center">
                                         <div class="col-md-4 mt-6 mt-md-0 mb-4 mb-md-0">
                                             <div class="ml-xl-8">
                                                 <h3 class="font-size-sl-48 font-weight-light mb-1 text-lh-1"
                                                     data-scs-animation-delay="50"
-                                                    data-scs-animation-in="fadeInUp">LIMITED
+                                                    data-scs-animation-in="fadeInUp">{{el.bigPromoText}}
                                                 </h3>
-                                                <h1 class="font-size-sl-72 text-lh-1 font-weight-light mb-2 mb-lg-3 mb-wd-4"
-                                                    data-scs-animation-delay="100"
-                                                    data-scs-animation-in="fadeInUp">
-                                                    WEEK DEAL
-                                                </h1>
                                                 <h6 class="font-size-xl-15 font-weight-bold mb-0"
                                                     data-scs-animation-in="fadeInUp"
-                                                    data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
+                                                    data-scs-animation-delay="200">{{el.smallPromoText}}
                                                 </h6>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
                                             data-scs-animation-in="zoomIn"
                                             data-scs-animation-delay="400">
-                                            <img class="img-fluid" src="/img/400X400/img2.png" alt="Image Description">
+                                            <img class="img-fluid" :src="el.promoImages[1].clientPath" alt="Image Description">
                                         </div>
                                         <div class="col-md-4"
                                             data-scs-animation-in="fadeInRight"
@@ -40,312 +36,8 @@
                                             <div class="mr-xl-14">
                                                 <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</a></h5>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
-                                                    <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
-                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
-                                                </div>
-                                                <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
-                                                    data-end-date="2020/11/30"
-                                                    data-hours-format="%H"
-                                                    data-minutes-format="%M"
-                                                    data-seconds-format="%S">
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-hours"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">HOURS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-minutes"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">MINS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-seconds"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">SECS</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <span class="">Availavle: <strong>6</strong></span>
-                                                        <span class="">Already Sold: <strong>28</strong></span>
-                                                    </div>
-                                                    <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-30 bg-primary"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="js-slide">
-                                    <div class="row height-410-xl mx-0 align-items-center">
-                                        <div class="col-md-4 mt-6 mt-md-0 mb-4 mb-md-0">
-                                            <div class="ml-xl-8">
-                                                <h3 class="font-size-sl-48 font-weight-light mb-1 text-lh-1"
-                                                    data-scs-animation-delay="50"
-                                                    data-scs-animation-in="fadeInUp">LIMITED
-                                                </h3>
-                                                <h1 class="font-size-sl-72 text-lh-1 font-weight-light mb-2 mb-lg-3 mb-wd-4"
-                                                    data-scs-animation-delay="100"
-                                                    data-scs-animation-in="fadeInUp">
-                                                    WEEK DEAL
-                                                </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
-                                                    data-scs-animation-in="fadeInUp"
-                                                    data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
-                                            data-scs-animation-in="zoomIn"
-                                            data-scs-animation-delay="400">
-                                            <img class="img-fluid" src="/img/400X400/img1.png" alt="Image Description">
-                                        </div>
-                                        <div class="col-md-4"
-                                            data-scs-animation-in="fadeInRight"
-                                            data-scs-animation-delay="600">
-                                            <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
-                                                    <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
-                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
-                                                </div>
-                                                <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
-                                                    data-end-date="2020/11/30"
-                                                    data-hours-format="%H"
-                                                    data-minutes-format="%M"
-                                                    data-seconds-format="%S">
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-hours"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">HOURS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-minutes"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">MINS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-seconds"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">SECS</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <span class="">Availavle: <strong>6</strong></span>
-                                                        <span class="">Already Sold: <strong>28</strong></span>
-                                                    </div>
-                                                    <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-30 bg-primary"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="js-slide">
-                                    <div class="row height-410-xl mx-0 align-items-center">
-                                        <div class="col-md-4 mt-6 mt-md-0 mb-4 mb-md-0">
-                                            <div class="ml-xl-8">
-                                                <h3 class="font-size-sl-48 font-weight-light mb-1 text-lh-1"
-                                                    data-scs-animation-delay="50"
-                                                    data-scs-animation-in="fadeInUp">LIMITED
-                                                </h3>
-                                                <h1 class="font-size-sl-72 text-lh-1 font-weight-light mb-2 mb-lg-3 mb-wd-4"
-                                                    data-scs-animation-delay="100"
-                                                    data-scs-animation-in="fadeInUp">
-                                                    WEEK DEAL
-                                                </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
-                                                    data-scs-animation-in="fadeInUp"
-                                                    data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
-                                            data-scs-animation-in="zoomIn"
-                                            data-scs-animation-delay="400">
-                                            <img class="img-fluid" src="/img/400X400/img3.png" alt="Image Description">
-                                        </div>
-                                        <div class="col-md-4"
-                                            data-scs-animation-in="fadeInRight"
-                                            data-scs-animation-delay="600">
-                                            <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</a></h5>
-                                                <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
-                                                    <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
-                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
-                                                </div>
-                                                <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
-                                                    data-end-date="2020/11/30"
-                                                    data-hours-format="%H"
-                                                    data-minutes-format="%M"
-                                                    data-seconds-format="%S">
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-hours"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">HOURS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-minutes"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">MINS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-seconds"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">SECS</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <span class="">Availavle: <strong>6</strong></span>
-                                                        <span class="">Already Sold: <strong>28</strong></span>
-                                                    </div>
-                                                    <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-30 bg-primary"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="js-slide">
-                                    <div class="row height-410-xl mx-0 align-items-center">
-                                        <div class="col-md-4 mt-6 mt-md-0 mb-4 mb-md-0">
-                                            <div class="ml-xl-8">
-                                                <h3 class="font-size-sl-48 font-weight-light mb-1 text-lh-1"
-                                                    data-scs-animation-delay="50"
-                                                    data-scs-animation-in="fadeInUp">LIMITED
-                                                </h3>
-                                                <h1 class="font-size-sl-72 text-lh-1 font-weight-light mb-2 mb-lg-3 mb-wd-4"
-                                                    data-scs-animation-delay="100"
-                                                    data-scs-animation-in="fadeInUp">
-                                                    WEEK DEAL
-                                                </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
-                                                    data-scs-animation-in="fadeInUp"
-                                                    data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
-                                            data-scs-animation-in="zoomIn"
-                                            data-scs-animation-delay="400">
-                                            <img class="img-fluid" src="/img/400X400/img4.png" alt="Image Description">
-                                        </div>
-                                        <div class="col-md-4"
-                                            data-scs-animation-in="fadeInRight"
-                                            data-scs-animation-delay="600">
-                                            <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360</a></h5>
-                                                <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
-                                                    <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
-                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
-                                                </div>
-                                                <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
-                                                    data-end-date="2020/11/30"
-                                                    data-hours-format="%H"
-                                                    data-minutes-format="%M"
-                                                    data-seconds-format="%S">
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-hours"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">HOURS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-minutes"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">MINS</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-seconds"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">SECS</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <span class="">Availavle: <strong>6</strong></span>
-                                                        <span class="">Already Sold: <strong>28</strong></span>
-                                                    </div>
-                                                    <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-30 bg-primary"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="js-slide">
-                                    <div class="row height-410-xl mx-0 align-items-center">
-                                        <div class="col-md-4 mt-6 mt-md-0 mb-4 mb-md-0">
-                                            <div class="ml-xl-8">
-                                                <h3 class="font-size-sl-48 font-weight-light mb-1 text-lh-1"
-                                                    data-scs-animation-delay="50"
-                                                    data-scs-animation-in="fadeInUp">LIMITED
-                                                </h3>
-                                                <h1 class="font-size-sl-72 text-lh-1 font-weight-light mb-2 mb-lg-3 mb-wd-4"
-                                                    data-scs-animation-delay="100"
-                                                    data-scs-animation-in="fadeInUp">
-                                                    WEEK DEAL
-                                                </h1>
-                                                <h6 class="font-size-xl-15 font-weight-bold mb-0"
-                                                    data-scs-animation-in="fadeInUp"
-                                                    data-scs-animation-delay="200">HURRY UP BEFORE OFFER WILL END
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
-                                            data-scs-animation-in="zoomIn"
-                                            data-scs-animation-delay="400">
-                                            <img class="img-fluid" src="/img/400X400/img5.png" alt="Image Description">
-                                        </div>
-                                        <div class="col-md-4"
-                                            data-scs-animation-in="fadeInRight"
-                                            data-scs-animation-delay="600">
-                                            <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Tablet Red EliteBook  Revolve 810 G2</a></h5>
-                                                <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
-                                                    <ins class="font-size-34 text-red text-decoration-none">$79.00</ins>
-                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">$99.00</del>
+                                                    <ins class="font-size-34 text-red text-decoration-none">{{el.newPrice}}₸</ins>
+                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{el.oldPrice}}₸</del>
                                                 </div>
                                                 <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
                                                     data-end-date="2020/11/30"
@@ -401,29 +93,9 @@
                             data-is-thumbs-progress="false"
                             data-thumbs-progress-container=".js-slick-thumb-progress"
                             data-nav-for="#thumbProgress">
-                            <div class="js-slide">
+                            <div v-for='(el, i) in promoActions3Type' :key='i+"p"' class="js-slide">
                                 <a class="js-slick-thumb-progress" href="javascript:;">
-                                    SO MUCH TO WATCH IN 4K TVS
-                                </a>
-                            </div>
-                            <div class="js-slide">
-                                <a class="js-slick-thumb-progress" href="javascript:;">
-                                    GAME CONSOLES
-                                </a>
-                            </div>
-                            <div class="js-slide">
-                                <a class="js-slick-thumb-progress" href="javascript:;">
-                                    LIMITED WEEK DEAL  - GAMEPAD
-                                </a>
-                            </div>
-                            <div class="js-slide">
-                                <a class="js-slick-thumb-progress" href="javascript:;">
-                                    SECOND PRODUCT 40% CHEAPER
-                                </a>
-                            </div>
-                            <div class="js-slide">
-                                <a class="js-slick-thumb-progress" href="javascript:;">
-                                    $10 BUCKS OR LESS
+                                    {{i}}
                                 </a>
                             </div>
                         </div>
@@ -528,12 +200,12 @@
 
                 <!-- Banner -->
                 <div class="mb-6">
-                    <div class="row">
-                        <div class="col-md-6 mb-3 mb-md-0">
+                    <div class="row mr">
+                        <div class="col-lg-6 mb-3 ">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
-                                        <img class="imgPromo" src="/img/246X176/img1.jpg" alt="Image Description">
+                                        <img src="/img/246X176/img1.jpg" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
                                         <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
@@ -549,11 +221,11 @@
                                 </NuxtLink>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class="min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
-                                        <img class="imgPromo" src="/img/246X176/img3.jpg" alt="Image Description">
+                                        <img src="/img/246X176/img3.jpg" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
                                         <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
@@ -747,15 +419,16 @@
                 <!-- Full banner -->
                 <div class="mb-6">
                     <NuxtLink to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
-                        <div class="" style="background-image: url(/img/1400X206/img1.jpg);">
+                        <img :src="promoActions4Type[0].promoImages[0].clientPath" alt="" class='container myPhoto'>
+                        <div>
                             <div class="space-top-2-md p-4 pt-8 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
                                 <div class="flex-horizontal-center overflow-auto overflow-md-visble">
-                                    <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">SHOP AND <strong>SAVE BIG</strong> ON HOTTEST TABLETS</h1>
+                                    <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">{{promoActions4Type[0].bigPromoText}}</h1>
                                     <div class="flex-content-center ml-4 flex-shrink-0">
                                         <div class="bg-primary rounded-lg px-6 py-2">
-                                            <em class="font-size-14 font-weight-light text-white">STARTING AT</em>
-                                            <div class="font-size-30 font-weight-bold text-lh-1 text-white">
-                                                <sup class="text-white">$</sup>79<sup class="">99</sup>
+                                            <em class="font-size-13 font-weight-light text-white">STARTING AT</em>
+                                            <div class="font-size-30  text-lh-1 text-white">
+                                                <sup class="text-white">{{promoActions4Type[0].minPrice}}₸</sup>
                                             </div>
                                         </div>
                                     </div>
@@ -944,48 +617,44 @@
                     <div class="row">
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-17">
-                                <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
+                                <NuxtLink :to='"/product?id=" + promoActions2Type[0].productKaspiId' class="row align-items-center">
                                     <div class="col-md-6">
                                         <div class="ml-md-7 mt-6 mt-md-0 ml-4 text-gray-90">
-                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">G9 Laptops with Ultra 4K HD Display</h2>
-                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">and the fastest Intel Core i7 processor ever</p>
+                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[0].bigPromoText}}</h2>
+                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[0].smallPromoText}}</p>
                                             <div class="text-lh-28">
                                                 <span class="font-size-18 font-size-14-lg font-weight-light">from</span>
-                                                <span class="font-size-46 font-size-30-lg font-weight-semi-bold"><sup class="">$</sup>399</span>
+                                                <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[0].newPrice}}₸</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img class="img-fluid MFluid" src="/img/446X262/img1.jpg " alt="Image Description">
+                                        <img class="img-fluid MFluid" :src=" promoActions2Type[0].promoImages[0].clientPath" alt="Image Description">
                                     </div>
                                 </NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="d-block"><img class="img-fluid MFluid" src="/img/446X262/img3.jpg" alt="Image Description"></NuxtLink>
+                                <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[0].clientPath" alt="Image Description"></NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink to="/shop?SCat%3FМобильные телефоны" class=""><img class="img-fluid MFluid" src="/img/446X262/img4.jpg" alt="Image Description"></NuxtLink>
+                            <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[1].clientPath || promoActions1Type[0].productImages[0].clientPath" alt="Image Description"></NuxtLink>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
                                 <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
-                                        <img class="img-fluid MFluid" src="/img/446X262/img2.jpg" alt="Image Description">
+                                        <img class="img-fluid MFluid" :src=" promoActions2Type[0].promoImages[0].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-md-6 mb-4 mb-md-0">
-                                        <div class="ml-4 ml-md-0 ml-wd-4 text-gray-90">
-                                            <h2 class="font-size-28 font-size-20-lg font-size-14-lg text-lh-1dot2"><strong class="font-size-36 font-size-24-lg font-weight-semi-bold">Fresh Honor 9</strong><br> 32GB Unlocked quadcore</h2>
-                                            <ul class="list-unstyled d-flex u-header__navbar-nav-divider">
-                                                <li class="u-header__nav-item"><span class="mr-1">4GB RAM</span></li>
-                                                <li class="u-header__nav-item"><span class="mx-1">64GB ROM</span></li>
-                                                <li class="u-header__nav-item"><span class="ml-1">20MP + 12MP Dual Camera</span></li>
-                                            </ul>
+                                        <div class="ml-md-8 pr-2 mt-6 mt-md-0 ml-4 text-gray-90">
+                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[0].bigPromoText}}</h2>
+                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[0].smallPromoText}}</p>
                                             <div class="text-lh-28">
                                                 <span class="font-size-18 font-size-14-lg font-weight-light">from</span>
-                                                <span class="font-size-46 font-size-30-lg font-weight-semi-bold"><sup class="">$</sup>279</span>
+                                                <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[0].newPrice}}₸</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1198,8 +867,26 @@ export default {
         preloader
     },
     computed: {
-        promoActions(){
-            return this.$store.state.promoActions
+        promoActions1Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 1)
+        },
+        promoActions2Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 2)
+        },
+        promoActions3Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 3)
+        },
+        promoActions4Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 4)
+        },
+        promoActions5Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 5)
+        },
+        promoActions6Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 6)
+        },
+        promoActions7Type(){
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 7)
         }
     }
 }
@@ -1237,6 +924,7 @@ export default {
 .MFluid{
     max-width: 100%;
     height: auto;
+    aspect-ratio: 17 / 10;
 }
 .MyCatSlider{
     cursor: pointer;
@@ -1251,6 +939,26 @@ export default {
 }
 .imgPromo{
     width: 246px;
-    height: 176px;
+    height: 166px;
+    aspect-ratio: 17 / 10;
 }
+.imgPromo img{
+    width: 100%;
+    height: 100%;
+    max-width: 220px;
+    max-height: 166px;
+}
+.myPhoto{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+    z-index: -100;
+}
+@media (max-width: 991px) {
+    .mr{
+        flex-direction: column;
+    }
+}
+
 </style>
