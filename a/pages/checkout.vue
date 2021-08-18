@@ -159,14 +159,6 @@
                                                 </tr>
                                             </tbody>
                                             <tfoot>
-                                                <!-- <tr>
-                                                    <th>{{localizeFilter('Order', 'SecondProductsTitle')}}</th>
-                                                    <td>{{TotalPrice()}} ₸.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>{{localizeFilter('Order', 'ThirdProductsTitle')}}</th>
-                                                    <td>Flat rate: {{ShippingCost}} ₸.</td>
-                                                </tr> -->
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'SaleProductsTitle')}}</th>
                                                     <td><strong>{{ activeCoupon.sale || 0 }} %</strong></td>

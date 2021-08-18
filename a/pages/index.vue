@@ -6,7 +6,7 @@
             <div class="mb-8">
                 <div class="container">
                     <div class="overflow-hidden">
-                        <img :src="promoActions3Type[0].promoImages[0].clientPath" alt="" class='container myPhoto' style='height: 410px; padding: 0'>
+                        <img :src="promoActions3Type[2].promoImages[0].clientPath" alt="" class='container myPhoto' style='height: 410px; padding: 0'>
                         <div class="bg-img-hero min-height-420" >
                             <div id="thumbProgress" class="js-slick-carousel u-slick"
                                 data-autoplay="false"
@@ -28,28 +28,37 @@
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
                                             data-scs-animation-in="zoomIn"
                                             data-scs-animation-delay="400">
-                                            <img class="img-fluid" :src="el.promoImages[1].clientPath" alt="Image Description">
+                                            <NuxtLink :to='"/product?id=" + el.productKaspiId'><img class="img-fluid" :src="el.promoImages[1].clientPath" alt="Image Description"></NuxtLink>
                                         </div>
                                         <div class="col-md-4"
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</a></h5>
+                                                <NuxtLink :to='"/product?id=" + el.productKaspiId'><h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</a></h5></NuxtLink>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
-                                                    <ins class="font-size-34 text-red text-decoration-none">{{el.newPrice}}₸</ins>
-                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{el.oldPrice}}₸</del>
+                                                    <ins class="font-size-34 text-red text-decoration-none">{{el.newPrice.toFixed(0)}}₸</ins>
+                                                    <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{el.oldPrice.toFixed(0)}}₸</del>
                                                 </div>
                                                 <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
-                                                    data-end-date="2020/11/30"
+                                                    :data-end-date="chDate(el.timeOfPromoEnding)"
+                                                    data-days-format="%D"
                                                     data-hours-format="%H"
                                                     data-minutes-format="%M"
                                                     data-seconds-format="%S">
                                                     <div class="text-lh-1 px-2 text-center">
                                                         <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
                                                             <div class="text-gray-2 font-size-34 mb-2">
+                                                                <span class="js-cd-days"></span>
+                                                            </div>
+                                                            <div class="text-gray-2 font-size-12 text-center">{{localizeFilter('Days')}}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-lh-1 px-2 text-center">
+                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
+                                                            <div class="text-gray-2 font-size-34 mb-2">
                                                                 <span class="js-cd-hours"></span>
                                                             </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">HOURS</div>
+                                                            <div class="text-gray-2 font-size-12 text-center">{{localizeFilter('Hours')}}</div>
                                                         </div>
                                                     </div>
                                                     <div class="text-lh-1 px-2 text-center">
@@ -57,7 +66,7 @@
                                                             <div class="text-gray-2 font-size-34 mb-2">
                                                                 <span class="js-cd-minutes"></span>
                                                             </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">MINS</div>
+                                                            <div class="text-gray-2 font-size-12 text-center">{{localizeFilter('Minutes')}}</div>
                                                         </div>
                                                     </div>
                                                     <div class="text-lh-1 px-2 text-center">
@@ -65,7 +74,7 @@
                                                             <div class="text-gray-2 font-size-34 mb-2">
                                                                 <span class="js-cd-seconds"></span>
                                                             </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">SECS</div>
+                                                            <div class="text-gray-2 font-size-12 text-center">{{localizeFilter('Seconds')}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -419,14 +428,14 @@
                 <!-- Full banner -->
                 <div class="mb-6">
                     <NuxtLink to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
-                        <img :src="promoActions4Type[0].promoImages[0].clientPath" alt="" class='container myPhoto'>
+                        <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * promoActions4Type[0].promoImages.length)].clientPath" alt="" class='container myPhoto'>
                         <div>
                             <div class="space-top-2-md p-4 pt-8 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
                                 <div class="flex-horizontal-center overflow-auto overflow-md-visble">
                                     <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">{{promoActions4Type[0].bigPromoText}}</h1>
                                     <div class="flex-content-center ml-4 flex-shrink-0">
                                         <div class="bg-primary rounded-lg px-6 py-2">
-                                            <em class="font-size-13 font-weight-light text-white">STARTING AT</em>
+                                            <em class="font-size-13 font-weight-light text-white">{{localizeFilter('StartingAtText')}}</em>
                                             <div class="font-size-30  text-lh-1 text-white">
                                                 <sup class="text-white">{{promoActions4Type[0].minPrice}}₸</sup>
                                             </div>
@@ -623,38 +632,38 @@
                                             <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[0].bigPromoText}}</h2>
                                             <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[0].smallPromoText}}</p>
                                             <div class="text-lh-28">
-                                                <span class="font-size-18 font-size-14-lg font-weight-light">from</span>
+                                                <span class="font-size-23 font-size-18-lg font-weight-light">{{localizeFilter('FromText')}}</span>
                                                 <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[0].newPrice}}₸</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img class="img-fluid MFluid" :src=" promoActions2Type[0].promoImages[0].clientPath" alt="Image Description">
+                                        <img class="img-fluid MFluid" :src="promoActions2Type[0].promoImages[Math.floor(Math.random() * promoActions2Type[0].promoImages.length)].clientPath" alt="Image Description">
                                     </div>
                                 </NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[0].clientPath" alt="Image Description"></NuxtLink>
+                                <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * promoActions1Type[0].promoImages.length)].clientPath" alt="Image Description"></NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[1].clientPath || promoActions1Type[0].productImages[0].clientPath" alt="Image Description"></NuxtLink>
+                            <NuxtLink :to='"/product?id=" + promoActions1Type[1].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * promoActions1Type[0].promoImages.length)].clientPath" alt="Image Description"></NuxtLink>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
                                 <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
-                                        <img class="img-fluid MFluid" :src=" promoActions2Type[0].promoImages[0].clientPath" alt="Image Description">
+                                        <img class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * promoActions2Type[1].promoImages.length)].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <div class="ml-md-8 pr-2 mt-6 mt-md-0 ml-4 text-gray-90">
-                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[0].bigPromoText}}</h2>
-                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[0].smallPromoText}}</p>
+                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[1].bigPromoText}}</h2>
+                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[1].smallPromoText}}</p>
                                             <div class="text-lh-28">
-                                                <span class="font-size-18 font-size-14-lg font-weight-light">from</span>
-                                                <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[0].newPrice}}₸</span>
+                                                <span class="font-size-23 font-size-18-lg font-weight-light">{{localizeFilter('FromText')}}</span>
+                                                <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[1].newPrice}}₸</span>
                                             </div>
                                         </div>
                                     </div>
@@ -781,6 +790,13 @@ export default {
         $.HSCore.components.HSFocusState.init();
     },
     methods: {
+        chDate(time){
+            var time3 = new Date(time)
+            var time2 = new Date(Date.now())
+            time2.setDate(time2.getDate() + 5)
+            if(((Date.parse(new Date(time)) - Date.now() ) / 86400000) > 5) return `${time2.getFullYear()}/${time2.getMonth() + 1}/${time2.getDate()}`
+            else return `${time3.getFullYear()}/${time3.getMonth() + 1}/${time3.getDate()}`
+        },
         Slick(){
             if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
                 setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 1000);
@@ -868,16 +884,16 @@ export default {
     },
     computed: {
         promoActions1Type(){
-            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 1)
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 1).sort(() => Math.random() - 0.5);
         },
         promoActions2Type(){
-            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 2)
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 2).sort(() => Math.random() - 0.5);
         },
         promoActions3Type(){
             return this.$store.state.promoActions.filter(el => el.typeOfPromo == 3)
         },
         promoActions4Type(){
-            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 4)
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 4).sort(() => Math.random() - 0.5);
         },
         promoActions5Type(){
             return this.$store.state.promoActions.filter(el => el.typeOfPromo == 5)

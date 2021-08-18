@@ -1,16 +1,311 @@
 {
     "Header": {
-        "Greeting": "Привет Мир",
-        "AboutUs": "About Us",
-        "FAQs": "FAQs",
-        "ContactUs": "Contact Us",
-        "Support": "Support",
-        "PhoneNumber": "(+800) 856 800 604",
-        "E-mailTitle": "E-mail: ",
-        "E-mailValue": "info@electro.com",
-        "AccordionTitle": "Shop By Department",
-        "SearchInputPlaceholder": "Search for Products",
-        "SearchSuggestion": "Search",
-        "CartSuggestion": "Cart"
+        "Greeting": "Добро пожаловать | Telenova",
+        "PhoneNumber": "+77073373318",
+        "Categories": "Категории",
+        "SearchInputPlaceholder": "Поиск продукта",
+        "ProductAddedTitle": "Продукт добавлен!",
+        "HeaderBestCategoriesTitle": "Лучшие категории:"
+    },
+    "Footer": {
+        "FirstCategory": "Избранные продукты",
+        "SecondCategory": "Часто продаваемые продукты",
+        "ThirdCategory": "Самые популярные продукты",
+        "SignOnLetterTitle": "Подписаться на рассылку",
+        "SignOnLetterEnding": "...и получить промокод на 3000тг. на следующую покупку.",
+        "SubmitButton": "Подписаться",
+        "FirstQuestion": "Есть вопросы? Звоните нам 24/7!",
+        "FNumber": "+77073373318",
+        "SNumber": "(0600)874-548",
+        "ContactInfoTitle": "Контактная информация",
+        "ContactInfoValue": "Алматы, пр. Суюнбая 2к4",
+        "CategoriesTitle": "Найти быстро",
+        "OtherInfoTitle": "Страницы",
+        "BottomCompanyName": "Telenova",
+        "BottomMessage": " - Все права защищены"
+    },
+    "ErrorPage": {
+        "ErrorTitle": "404!",
+        "ErrorText": "Страница не найдена. Попробуйте перезагрузить страницу."
+    },
+    "MainPage": {
+        "FirstPartTitle": "Новые товары",
+        "SecondPartTitle": "Трендовые товары",
+        "ThirdPartTitle": "Популярные товары",
+        "FourthPartTitle": "Ноутбуки и аксессуары",
+        "FifthPartTitle": "Телефоны и гаджеты",
+        "PopularSliderSort": "Популярные",
+        "CheapestSliderSort": "Дешевые",
+        "MostExpensiveSliderSort": "Дорогие",
+        "LaptopsLink": "Перейти к ноутбукам и аксессуарам",
+        "PhonesLink": "Перейти к телефонам и гаджетам",
+        "Hours": "ЧАСЫ",
+        "Minutes": "МИНУТЫ",
+        "Seconds": "СЕКУНДЫ",
+        "Days": "ДНИ",
+        "FromText": "от",
+        "StartingAtText": "Цена от"
+    },
+    "CartPage": {
+        "Title": "Корзина",
+        "RassrochkaButton": "Купить в кредит",
+        "FirstOptionTitle": "Продукт",
+        "SecondOptionTitle": "Цена",
+        "ThirdOptionTitle": "Количество",
+        "FourthOptionTitle": "Итого",
+        "UpdateCartButton": "Обновить корзину",
+        "CheckoutButton": "Перейти к оплате",
+        "CartConcludedTitle": "Всего в корзине",
+        "CartConcludedThirdSubTitle": "Итого"
+    },
+    "CheckoutPage": {
+        "MainTitle": "Оплата",
+        "CouponPart": {
+            "Fquestion": "У Вас есть промокод? ",
+            "FLink": "Нажмите тут, чтобы ввести промокод",
+            "CouponDescription": "Если у Вас есть промокод, введите его ниже.",
+            "InputPlaceholder": "Промокод",
+            "ButtonTitle": "Применить"
+        },
+        "Bill": {
+            "Title": "Данные пользователя",
+            "FirstInputLabel": "Имя",
+            "FirstInputPlaceholder": "Александр",
+            "SecondInputLabel": "Фамилия",
+            "SecondInputPlaceholder": "Рыбкин",
+            "FifthInputLabel": "Адрес",
+            "FifthInputPlaceholder": "Абая 78/9",
+            "TenthInputLabel": "Email",
+            "TenthInputPlaceholder": "sasharybkin@gmail.com",
+            "EleventhInputLabel": "Телефон",
+            "EleventhInputPlaceholder": "+7 701 713 4578",
+            "DetailsTitle": "Дополнителная информация",
+            "TwelfthInputLabel": "Заметки (по желанию)",
+            "TwelfthInputPlaceholder": "Заметки к Вашему заказу, например для курьера"
+        },
+        "Order": {
+             "Title": "Ваш заказ",
+             "FirstProductsTitle": "Продукт",
+             "ProductsTotalTitle": "Всего",
+             "FourthProductsTitle": "Всего",
+             "SaleProductsTitle": "Скидка",
+             "TransferVariations": {
+                 "ThirdVariationTitle": "Наличные",
+                 "ThirdVariationText": "Запатить наличными курьеру",
+                 "FourthVariationTitle": "PayBox",
+                 "FourthVariationQuestion": "Что такое PayBox?",
+                 "FourthVariationText": "Заплатите посредством PayBox, Вы также можете оплатить картой, если не имеете PayBox аккаунта.",
+                 "AgreedTermsTitle": "Я прочитал и согласился с",
+                 "AgreedTermsLinkToTermsPage": "правилами сайта",
+                 "SuccessButtonText": "Оформить заказ"
+             }
+        }
+    },
+    "AboutUsPage": {
+        "Title": "О нас",
+        "TitleText": "Passion may be a friendly or eager interest in or admiration for a proposal, cause, discovery, or activity or love to a feeling of unusual excitement.",
+        "FirstPart": {
+            "FirstCardTitle": "What we really do?",
+            "FirstCardText": "Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.",
+            "SecondCardTitle": "Our Vision",
+            "SecondCardText": "Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.",
+            "ThirdCardTitle": "History of Beginning",
+            "ThirdCardText": "Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna,vitae ultrices lacus purus vitae metus.",
+            "FirstWorkerName": "Thomas Snow",
+            "FirstWorkerProfession": "CEO/Founder",
+            "SecondWorkerName": "Anna Baranov",
+            "SecondWorkerProfession": "Client Care",
+            "ThirdWorkerName": "Andre Kowalsy",
+            "ThirdWorkerProfession": "Support Boss",
+            "FourthWorkerName": "Pamela Doe",
+            "FourthWorkerProfession": "Delivery Driver",
+            "FifthWorkerName": "Susan McCain",
+            "FifthWorkerProfession": "Packaging Girl",
+            "LastCircleTitle": "See Details"
+        },
+        "SecondPart": {
+            "FirstTitle": "What we really do?",
+            "FirstText": "Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec odio facilisis, ultricies nunc eget, fringilla orci.",
+            "SecondTitle": "Our Vision",
+            "SecondText": "Vestibulum velit nibh, egestas vel faucibus vitae, feugiat sollicitudin urna. Praesent iaculis id ipsum sit amet pretium. Aliquam tristique sapien nec enim euismod, scelerisque facilisis arcu consectetur. Vestibulum velit nibh, egestas vel faucibus vitae.",
+            "ThirdTitle": "History of the Company",
+            "ThirdText": "Mauris rhoncus aliquet purus, a ornare nisi euismod in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam imperdiet eu metus vel ornare. Nullam in risus vel orci feugiat vestibulum. In sed aliquam mi. Nullam condimentum sollicitudin dui.",
+            "FourthTitle": "Cooperate with Us!",
+            "FourthText": "Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec odio facilisis, ultricies nunc eget, fringilla orci."
+        },
+        "ThirdPart": {
+            "MainTitle": "What can we do for you ?",
+            "FirstTitle": "Support 24/7",
+            "FirstText": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+            "SecondTitle": "Best Quality",
+            "SecondText": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+            "ThirdTitle": "Fastest Delivery",
+            "ThirdText": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+            "FourthTitle": "Customer Care",
+            "FourthText": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+            "FifthTitle": "Over 200 Satisfied Customers",
+            "FifthText": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+        }
+    },
+    "ContactUsPage": {
+        "FirstPart": {
+            "Title": "Leave us a Message",
+            "FText": "Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.",
+            "FirstInputLabel": "First Name",
+            "SecondInputLabel": "Last Name",
+            "ThirdInputLabel": "Subject",
+            "FourthInputLabel": "Your Message",
+            "SendButtonText": "Send Message"
+        },
+        "SecondPart": {
+            "Title": "Our Store",
+            "Address1Line": "121 King Street, ",
+            "Address2Line": "Melbourne VIC 3000, ",
+            "Address3Line": "Australia",
+            "WorkingHoursTitle": "Hours of Operation",
+            "1dayTitle": "Monday:",
+            "1dayTime": "12-6 PM",
+            "2dayTitle": "Tuesday:",
+            "2dayTime": "12-6 PM",
+            "3dayTitle": "Wednesday:",
+            "3dayTime": "12-6 PM",
+            "4dayTitle": "Thursday:",
+            "4dayTime": "12-6 PM",
+            "5dayTitle": "Friday:",
+            "5dayTime": "12-6 PM",
+            "6dayTitle": "Saturday:",
+            "6dayTime": "12-6 PM",
+            "7dayTitle": "Sunday:",
+            "7dayTime": "Closed"
+        }
+    },
+    "TermsPage": {
+        "Title": "Terms and Conditions",
+        "SubTitle": "This Agreement was last modified on 18th february 2019",
+        "FirstPart": {
+            "MainTitle": "Intellectual Propertly",
+            "1Term": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum.",
+            "2Term": " Leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.",
+            "3Term": " Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.",
+            "4Term": " Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at faucibus.",
+            "5Term": " Aenean dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet condimentum mi ligula sit amet augue.",
+            "6Term": " Pellentesque vitae eros eget enim mollis placerat."
+        },
+        "SecondPart": {
+            "MainTitle": "Termination",
+            "1Term": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum.",
+            "2Term": "Leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.",
+            "3Term": "Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.",
+            "4Term": "Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at faucibus.",
+            "5Term": "Aenean dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet condimentum mi ligula sit amet augue.",
+            "6Term": "Pellentesque vitae eros eget enim mollis placerat."
+        },
+        "ThirdPart": {
+            "MainTitle": "Changes To This Agreement",
+            "1Term": "We reserve the right, at our sole discretion, to modify or replace these Terms and Conditions by posting the updated terms on the Site. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms and Conditions."
+        },
+        "FourthPart": {
+            "MainTitle": "Contact Us",
+            "1Part": "If you have any questions about this Agreement, please contact us filling this ",
+            "2Part": "contact form"
+        }
+    },
+    "FAQPage": {
+        "Title": "Frequently Asked Questions",
+        "SubTitle": "This Agreement was last modified on 18th february 2019",
+        "FirstTitle": "What Shipping Methods Are Available?",
+        "FirstText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.",
+        "SecondTitle": "How Long Will it Take To Get My Package?",
+        "SecondText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.",
+        "ThirdTitle": "How Do I Track My Order?",
+        "ThirdText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.",
+        "FourthTitle": "How Do I Place an Order?",
+        "FourthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.",
+        "FifthTitle": "How Should I to Contact if I Have Any Queries?",
+        "FifthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.",
+        "SixthTitle": "Do I Need an Account to Place an Order?",
+        "SixthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat."
+    },
+    "ProductPage": {
+        "CardAvailabilityText": "Availability:",
+        "CardQuantityText": "Quantity",
+        "AddToCartText": "Add to Cart",
+        "BuyNowText": "Buy Now",
+        "BuyRassrochkaText": "Buy in credit",
+        "BuyKaspiText": "Buy On Kaspi",
+        "SecondDescriptionPartTitle": "Specification",
+        "RelatedProductsPartTitle": "Related products",
+        "InStockText": "in stock",
+        "NotInStockText": "Not in stock"
+    },
+    "ShopPage": {
+        "FirstOptionalTitle": "Searching by key:",
+        "FirstOptionalSecondTitle": "Searching in category:",
+        "FilterPart": {
+            "FirstPartTitle": "Browse Categories",
+            "SecondPartTitle": "Filters",
+            "SecondPartFirstSubTitle": "Brands",
+            "SecondPartSecondSubTitle": "Color",
+            "SecondPartThirdSubTitle": "Price",
+            "ButtonText": "Filter",
+            "ThirdPartTitle": "Latest Products"
+        },
+        "SecondTitle": "Shop",
+        "DefaultSorting": "Default sorting",
+        "PopularitySorting": "Sort by popularity",
+        "SortByPriceLowToHigh": "Sort by price: low to high",
+        "SortByPriceHighToLow": "Sort by price: high to low",
+        "FilterButtonText": "Filter"
+    },
+    "PaymentResultSuccess": {
+        "title": "Success",
+        "text": "Success text"
+    },
+    "PaymentResultError": {
+        "title": "Error",
+        "text": "Error text"
+    },
+    "CreditPage": {
+        "MainTitle": "Checkout - Credit",
+        "MonthShortTitle": "months",
+        "MonthCreditAmountTitle": "In month:",
+        "TengeInMonthTitle": "₸/month",
+        "SelectBankTitle": "Select bank:",
+        "Bill": {
+            "Title": "Billing details",
+            "FirstInputLabel": "First Name",
+            "SecondInputLabel": "Last Name",
+            "ThirdInputLabel": "ИИН",
+            "FourthInputLabel": "Patronymic",
+            "FifthInputLabel": "Address",
+            "EighthInputLabel": "Bank",
+            "TenthInputLabel": "Email",
+            "EleventhInputLabel": "Phone",
+            "DetailsTitle": "Shipping Details details",
+            "TwelfthInputLabel": "Order Notes (Optional)",
+            "TwelfthInputPlaceholder": "Notes about your order, e.g. special notes for delivery."
+        },
+        "Order": {
+             "Title": "Your order",
+             "FirstProductsTitle": "Product",
+             "ProductsTotalTitle": "Total",
+             "SecondProductsTitle": "Subtotal",
+             "ThirdProductsTitle": "Shipping",
+             "FourthProductsTitle": "Total",
+             "TransferVariations": {
+                 "FirstVariationTitle": "Direct Bank Transfer",
+                 "FirstVariationText": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.",
+                 "SecondVariationTitle": "Check Payments",
+                 "SecondVariationText": "Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.",
+                 "ThirdVariationTitle": "Cash On Delivery",
+                 "ThirdVariationText": "Pay with cash upon delivery.",
+                 "FourthVariationTitle": "PayBox",
+                 "FourthVariationQuestion": "What Is PayBox?",
+                 "FourthVariationText": "Pay via PayBox; you can pay with your credit card if you don’t have a PayBox account.",
+                 "AgreedTermsTitle": "I have read and agree to the website",
+                 "AgreedTermsLinkToTermsPage": "terms and conditions ",
+                 "SuccessButtonText": "Place order"
+             }
+        }
     }
 }

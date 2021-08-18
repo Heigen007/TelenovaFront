@@ -26,7 +26,7 @@
     },
     "ErrorPage": {
         "ErrorTitle": "404!",
-        "ErrorText": "Nothing was found at this location. Try searching, or check out the links below."
+        "ErrorText": "Nothing was found at this location. Try to reload the page, please."
     },
     "MainPage": {
         "FirstPartTitle": "Newest Products",
@@ -40,7 +40,13 @@
         "CheapestSliderSort": "Cheapest",
         "MostExpensiveSliderSort": "Most expensive",
         "LaptopsLink": "Go to Notebooks and accessories",
-        "PhonesLink": "Go to Phones and gadgets"
+        "PhonesLink": "Go to Phones and gadgets",
+        "Hours": "HOURS",
+        "Minutes": "MINS",
+        "Seconds": "SECS",
+        "Days": "DAYS",
+        "FromText": "from",
+        "StartingAtText": "STARTING AT"
     },
     "CartPage": {
         "Title": "Cart",
@@ -89,7 +95,7 @@
             "TenthInputPlaceholder": "jackwayley@gmail.com",
             "EleventhInputLabel": "Phone",
             "EleventhInputPlaceholder": "+1 (062) 109-9222",
-            "DetailsTitle": "Shipping Details details",
+            "DetailsTitle": "Shipping Details",
             "TwelfthInputLabel": "Order Notes (Optional)",
             "TwelfthInputPlaceholder": "Notes about your order, e.g. special notes for delivery."
         },
