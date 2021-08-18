@@ -23,7 +23,9 @@
         "CategoriesTitle": "Найти быстро",
         "OtherInfoTitle": "Страницы",
         "BottomCompanyName": "Telenova",
-        "BottomMessage": " - Все права защищены"
+        "BottomMessage": " - Все права защищены",
+        "Language": "Язык",
+        "Share": "Поделиться"
     },
     "ErrorPage": {
         "ErrorTitle": "404!",
@@ -236,7 +238,7 @@
         "BuyKaspiText": "Купить на Kaspi",
         "SecondDescriptionPartTitle": "Спецификация",
         "RelatedProductsPartTitle": "Похожие продукты",
-        "InStockText": "В наличии",
+        "InStockText": "в наличии",
         "NotInStockText": "Нет в наличии"
     },
     "ShopPage": {

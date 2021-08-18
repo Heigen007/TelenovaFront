@@ -152,7 +152,7 @@
                                     </NuxtLink>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <button type="button" class="btn hoverBtn btn-outline-info" @click='Share'>Share</button>
+                                    <button type="button" class="btn hoverBtn btn-outline-info" @click='Share'>{{localizeFilter('Share')}}</button>
                                 </li>
                             </ul>
                         </div>
@@ -194,7 +194,7 @@
                                 <!-- End List Group -->
                             </div>
                             <div style='margin-left: 10px' class="col-12 col-md mb-4 mb-md-0">
-                                <h6 class="mb-3 font-weight-bold">Language</h6>
+                                <h6 class="mb-3 font-weight-bold">{{localizeFilter('Language')}}</h6>
                                 <div style='margin-bottom: 90px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                                     <div class="d-flex align-items-center">
                                         <!-- Language -->

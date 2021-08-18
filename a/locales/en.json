@@ -23,7 +23,9 @@
         "CategoriesTitle": "Find it Fast",
         "OtherInfoTitle": "Pages",
         "BottomCompanyName": "Telenova",
-        "BottomMessage": " - All rights Reserved"
+        "BottomMessage": " - All rights Reserved",
+        "Language": "Language",
+        "Share": "Share"
     },
     "ErrorPage": {
         "ErrorTitle": "404!",
