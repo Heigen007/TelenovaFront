@@ -1,7 +1,7 @@
 <template>
   <div class="NUXT_CONTAINER">
         <!-- ========== MAIN CONTENT ========== -->
-        <main v-if='IsC && newestProducts && popularProducts && Categories && TVProducts && LapProducts' id="content" role="main">
+        <main v-if='IsC && newestProducts && popularProducts && Categories && TVProducts && LapProducts && $store.state.promoActions' id="content" role="main">
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
@@ -428,7 +428,7 @@
                 <!-- Full banner -->
                 <div class="mb-6">
                     <NuxtLink to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
-                        <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * promoActions4Type[0].promoImages.length)].clientPath" alt="" class='container myPhoto'>
+                        <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
                             <div class="space-top-2-md p-4 pt-8 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
                                 <div class="flex-horizontal-center overflow-auto overflow-md-visble">
@@ -638,24 +638,24 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img class="img-fluid MFluid" :src="promoActions2Type[0].promoImages[Math.floor(Math.random() * promoActions2Type[0].promoImages.length)].clientPath" alt="Image Description">
+                                        <img class="img-fluid MFluid" :src="promoActions2Type[0].promoImages[Math.floor(Math.random() * (promoActions2Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                 </NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * promoActions1Type[0].promoImages.length)].clientPath" alt="Image Description"></NuxtLink>
+                                <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink :to='"/product?id=" + promoActions1Type[1].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * promoActions1Type[0].promoImages.length)].clientPath" alt="Image Description"></NuxtLink>
+                            <NuxtLink :to='"/product?id=" + promoActions1Type[1].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
                                 <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
-                                        <img class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * promoActions2Type[1].promoImages.length)].clientPath" alt="Image Description">
+                                        <img class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * (promoActions2Type[1].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <div class="ml-md-8 pr-2 mt-6 mt-md-0 ml-4 text-gray-90">

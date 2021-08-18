@@ -5,7 +5,8 @@
         "Categories": "Категории",
         "SearchInputPlaceholder": "Поиск продукта",
         "ProductAddedTitle": "Продукт добавлен!",
-        "HeaderBestCategoriesTitle": "Лучшие категории:"
+        "HeaderBestCategoriesTitle": "Лучшие категории:",
+        "Sales": "Скидки"
     },
     "Footer": {
         "FirstCategory": "Избранные продукты",
@@ -40,8 +41,8 @@
         "LaptopsLink": "Перейти к ноутбукам и аксессуарам",
         "PhonesLink": "Перейти к телефонам и гаджетам",
         "Hours": "ЧАСЫ",
-        "Minutes": "МИНУТЫ",
-        "Seconds": "СЕКУНДЫ",
+        "Minutes": "МИН",
+        "Seconds": "СЕК",
         "Days": "ДНИ",
         "FromText": "от",
         "StartingAtText": "Цена от"
@@ -91,7 +92,7 @@
              "SaleProductsTitle": "Скидка",
              "TransferVariations": {
                  "ThirdVariationTitle": "Наличные",
-                 "ThirdVariationText": "Запатить наличными курьеру",
+                 "ThirdVariationText": "Заплатить наличными курьеру",
                  "FourthVariationTitle": "PayBox",
                  "FourthVariationQuestion": "Что такое PayBox?",
                  "FourthVariationText": "Заплатите посредством PayBox, Вы также можете оплатить картой, если не имеете PayBox аккаунта.",
@@ -149,34 +150,34 @@
     },
     "ContactUsPage": {
         "FirstPart": {
-            "Title": "Leave us a Message",
-            "FText": "Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.",
-            "FirstInputLabel": "First Name",
-            "SecondInputLabel": "Last Name",
-            "ThirdInputLabel": "Subject",
-            "FourthInputLabel": "Your Message",
-            "SendButtonText": "Send Message"
+            "Title": "Оставьте нам сообщение",
+            "FText": "Оставьте нам сообщение и мы ответим Вам в течении 2 рабочих дней.",
+            "FirstInputLabel": "Имя",
+            "SecondInputLabel": "Фамиллия",
+            "ThirdInputLabel": "Предмет обсуждения",
+            "FourthInputLabel": "Ваше сообщение",
+            "SendButtonText": "Отправить"
         },
         "SecondPart": {
-            "Title": "Our Store",
-            "Address1Line": "121 King Street, ",
-            "Address2Line": "Melbourne VIC 3000, ",
-            "Address3Line": "Australia",
-            "WorkingHoursTitle": "Hours of Operation",
-            "1dayTitle": "Monday:",
+            "Title": "Наш магазин",
+            "Address1Line": "пр. Суюнбая 2к4,",
+            "Address2Line": "Алматы",
+            "Address3Line": "",
+            "WorkingHoursTitle": "Часы работы",
+            "1dayTitle": "Понедельник:",
             "1dayTime": "12-6 PM",
-            "2dayTitle": "Tuesday:",
+            "2dayTitle": "Вторник:",
             "2dayTime": "12-6 PM",
-            "3dayTitle": "Wednesday:",
+            "3dayTitle": "Среда:",
             "3dayTime": "12-6 PM",
-            "4dayTitle": "Thursday:",
+            "4dayTitle": "Четверг:",
             "4dayTime": "12-6 PM",
-            "5dayTitle": "Friday:",
+            "5dayTitle": "Пятница:",
             "5dayTime": "12-6 PM",
-            "6dayTitle": "Saturday:",
+            "6dayTitle": "Суббота:",
             "6dayTime": "12-6 PM",
-            "7dayTitle": "Sunday:",
-            "7dayTime": "Closed"
+            "7dayTitle": "Воскресенье:",
+            "7dayTime": "Выходной день"
         }
     },
     "TermsPage": {
@@ -227,84 +228,76 @@
         "SixthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat."
     },
     "ProductPage": {
-        "CardAvailabilityText": "Availability:",
-        "CardQuantityText": "Quantity",
-        "AddToCartText": "Add to Cart",
-        "BuyNowText": "Buy Now",
-        "BuyRassrochkaText": "Buy in credit",
-        "BuyKaspiText": "Buy On Kaspi",
-        "SecondDescriptionPartTitle": "Specification",
-        "RelatedProductsPartTitle": "Related products",
-        "InStockText": "in stock",
-        "NotInStockText": "Not in stock"
+        "CardAvailabilityText": "В наличии:",
+        "CardQuantityText": "Количество",
+        "AddToCartText": "Добавить в корзину",
+        "BuyNowText": "Купить сейчас",
+        "BuyRassrochkaText": "Купить в кредит",
+        "BuyKaspiText": "Купить на Kaspi",
+        "SecondDescriptionPartTitle": "Спецификация",
+        "RelatedProductsPartTitle": "Похожие продукты",
+        "InStockText": "В наличии",
+        "NotInStockText": "Нет в наличии"
     },
     "ShopPage": {
-        "FirstOptionalTitle": "Searching by key:",
-        "FirstOptionalSecondTitle": "Searching in category:",
+        "FirstOptionalTitle": "Результаты по: :",
+        "FirstOptionalSecondTitle": "Результаты по категории: ",
         "FilterPart": {
-            "FirstPartTitle": "Browse Categories",
-            "SecondPartTitle": "Filters",
-            "SecondPartFirstSubTitle": "Brands",
-            "SecondPartSecondSubTitle": "Color",
-            "SecondPartThirdSubTitle": "Price",
-            "ButtonText": "Filter",
-            "ThirdPartTitle": "Latest Products"
+            "SecondPartTitle": "Фильтры",
+            "SecondPartThirdSubTitle": "Цена",
+            "ButtonText": "Фильтровать"
         },
-        "SecondTitle": "Shop",
-        "DefaultSorting": "Default sorting",
-        "PopularitySorting": "Sort by popularity",
-        "SortByPriceLowToHigh": "Sort by price: low to high",
-        "SortByPriceHighToLow": "Sort by price: high to low",
-        "FilterButtonText": "Filter"
+        "DefaultSorting": "По умолчанию",
+        "PopularitySorting": "По популярности",
+        "SortByPriceLowToHigh": "По цене: от дешевых к дорогим",
+        "SortByPriceHighToLow": "По цене: от дорогих к дешевым",
+        "FilterButtonText": "Фильтровать"
     },
     "PaymentResultSuccess": {
-        "title": "Success",
-        "text": "Success text"
+        "title": "Успех!",
+        "text": "Ваш заказ был создан!"
     },
     "PaymentResultError": {
-        "title": "Error",
-        "text": "Error text"
+        "title": "Ошибка",
+        "text": "По каким-то обстоятельствам Ваш заказ не был создан..."
     },
     "CreditPage": {
-        "MainTitle": "Checkout - Credit",
-        "MonthShortTitle": "months",
-        "MonthCreditAmountTitle": "In month:",
-        "TengeInMonthTitle": "₸/month",
-        "SelectBankTitle": "Select bank:",
+        "MainTitle": "Оплата в кредит",
+        "MonthShortTitle": "месяцев",
+        "MonthCreditAmountTitle": "В месяц:",
+        "TengeInMonthTitle": "₸/месяц",
+        "SelectBankTitle": "Выберите банк:",
         "Bill": {
-            "Title": "Billing details",
-            "FirstInputLabel": "First Name",
-            "SecondInputLabel": "Last Name",
-            "ThirdInputLabel": "ИИН",
-            "FourthInputLabel": "Patronymic",
-            "FifthInputLabel": "Address",
-            "EighthInputLabel": "Bank",
+            "Title": "Данные пользователя",
+            "FirstInputLabel": "Имя",
+            "FirstInputPlaceholder": "Александр",
+            "SecondInputLabel": "Фамилия",
+            "SecondInputPlaceholder": "Рыбкин",
+            "FifthInputLabel": "Адрес",
+            "FifthInputPlaceholder": "Абая 78/9",
             "TenthInputLabel": "Email",
-            "EleventhInputLabel": "Phone",
-            "DetailsTitle": "Shipping Details details",
-            "TwelfthInputLabel": "Order Notes (Optional)",
-            "TwelfthInputPlaceholder": "Notes about your order, e.g. special notes for delivery."
+            "TenthInputPlaceholder": "sasharybkin@gmail.com",
+            "EleventhInputLabel": "Телефон",
+            "EleventhInputPlaceholder": "+7 701 713 4578",
+            "DetailsTitle": "Дополнителная информация",
+            "TwelfthInputLabel": "Заметки (по желанию)",
+            "TwelfthInputPlaceholder": "Заметки к Вашему заказу, например для курьера"
         },
         "Order": {
-             "Title": "Your order",
-             "FirstProductsTitle": "Product",
-             "ProductsTotalTitle": "Total",
-             "SecondProductsTitle": "Subtotal",
-             "ThirdProductsTitle": "Shipping",
-             "FourthProductsTitle": "Total",
+             "Title": "Ваш заказ",
+             "FirstProductsTitle": "Продукт",
+             "ProductsTotalTitle": "Всего",
+             "FourthProductsTitle": "Всего",
+             "SaleProductsTitle": "Скидка",
              "TransferVariations": {
-                 "FirstVariationTitle": "Direct Bank Transfer",
-                 "FirstVariationText": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.",
-                 "SecondVariationTitle": "Check Payments",
-                 "SecondVariationText": "Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.",
-                 "ThirdVariationTitle": "Cash On Delivery",
-                 "ThirdVariationText": "Pay with cash upon delivery.",
+                 "ThirdVariationTitle": "Наличные",
+                 "ThirdVariationText": "Заплатить наличными курьеру",
                  "FourthVariationTitle": "PayBox",
-                 "FourthVariationQuestion": "What Is PayBox?",
-                 "FourthVariationText": "Pay via PayBox; you can pay with your credit card if you don’t have a PayBox account.",
-                 "AgreedTermsTitle": "I have read and agree to the website",
-                 "AgreedTermsLinkToTermsPage": "terms and conditions ",
-                 "SuccessButtonText": "Place order"
+                 "FourthVariationQuestion": "Что такое PayBox?",
+                 "FourthVariationText": "Заплатите посредством PayBox, Вы также можете оплатить картой, если не имеете PayBox аккаунта.",
+                 "AgreedTermsTitle": "Я прочитал и согласился с",
+                 "AgreedTermsLinkToTermsPage": "правилами сайта",
+                 "SuccessButtonText": "Оформить заказ"
              }
         }
     }

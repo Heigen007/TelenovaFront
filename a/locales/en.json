@@ -5,7 +5,8 @@
         "Categories": "Categories",
         "SearchInputPlaceholder": "Search Product",
         "ProductAddedTitle": "Product Added!",
-        "HeaderBestCategoriesTitle": "Telenova Best Selling:"
+        "HeaderBestCategoriesTitle": "Telenova Best Selling:",
+        "Sales": "Sales"
     },
     "Footer": {
         "FirstCategory": "Featured Products",
@@ -171,8 +172,8 @@
     },
     "ContactUsPage": {
         "FirstPart": {
-            "Title": "Leave us a Message",
-            "FText": "Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.",
+            "Title": "Leave us a message",
+            "FText": "Leave us a message and we will answer you within 2 business days.",
             "FirstInputLabel": "First Name",
             "SecondInputLabel": "Last Name",
             "ThirdInputLabel": "Subject",
@@ -181,9 +182,9 @@
         },
         "SecondPart": {
             "Title": "Our Store",
-            "Address1Line": "121 King Street, ",
-            "Address2Line": "Melbourne VIC 3000, ",
-            "Address3Line": "Australia",
+            "Address1Line": "пр. Суюнбая 2к4,",
+            "Address2Line": "Алматы",
+            "Address3Line": "",
             "WorkingHoursTitle": "Hours of Operation",
             "1dayTitle": "Monday:",
             "1dayTime": "12-6 PM",
@@ -281,11 +282,11 @@
     },
     "PaymentResultSuccess": {
         "title": "Success",
-        "text": "Success text"
+        "text": "Your order has been created!"
     },
     "PaymentResultError": {
         "title": "Error",
-        "text": "Error text"
+        "text": "Your order has not been created..."
     },
     "CreditPage": {
         "MainTitle": "Checkout - Credit",
