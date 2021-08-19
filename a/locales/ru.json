@@ -47,7 +47,8 @@
         "Seconds": "СЕК",
         "Days": "ДНИ",
         "FromText": "от",
-        "StartingAtText": "Цена от"
+        "StartingAtText": "Цена от",
+        "CreditTitle": "Доступно в рассрочку"
     },
     "CartPage": {
         "Title": "Корзина",
@@ -239,7 +240,8 @@
         "SecondDescriptionPartTitle": "Спецификация",
         "RelatedProductsPartTitle": "Похожие продукты",
         "InStockText": "в наличии",
-        "NotInStockText": "Нет в наличии"
+        "NotInStockText": "Нет в наличии",
+        "CreditTitle": "Доступно в рассрочку"
     },
     "ShopPage": {
         "FirstOptionalTitle": "Результаты по: :",

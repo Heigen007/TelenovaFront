@@ -176,6 +176,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="product-item__footer">
+                                            <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                <div style>{{localizeFilter('CreditTitle')}}</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -371,7 +376,7 @@ export default {
     display: flex;
 }
 .SCode{
-    height: 139px;
+    height: 159px;
     width: 100%;
     max-height: 100%;
     object-fit: contain;

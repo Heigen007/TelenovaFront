@@ -5,8 +5,7 @@
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
-                    <div class="overflow-hidden">
-                        <img :src="promoActions3Type[2].promoImages[0].clientPath" alt="" class='container myPhoto' style='height: 410px; padding: 0'>
+                    <div class="overflow-hidden myBg">
                         <div class="bg-img-hero min-height-420" >
                             <div id="thumbProgress" class="js-slick-carousel u-slick"
                                 data-autoplay="false"
@@ -45,14 +44,6 @@
                                                     data-hours-format="%H"
                                                     data-minutes-format="%M"
                                                     data-seconds-format="%S">
-                                                    <div class="text-lh-1 px-2 text-center">
-                                                        <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
-                                                            <div class="text-gray-2 font-size-34 mb-2">
-                                                                <span class="js-cd-days"></span>
-                                                            </div>
-                                                            <div class="text-gray-2 font-size-12 text-center">{{localizeFilter('Days')}}</div>
-                                                        </div>
-                                                    </div>
                                                     <div class="text-lh-1 px-2 text-center">
                                                         <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
                                                             <div class="text-gray-2 font-size-34 mb-2">
@@ -139,19 +130,24 @@
                             <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1" role="tabpanel">
                                 <div v-if='IsC && newestProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                                    data-slides-show="5"
+                                    data-slides-show="6"
                                     data-autoplay="true"
                                     data-infinite="true"
                                     data-slides-scroll="2"
                                     data-responsive='[{
+                                        "breakpoint": 1400,
+                                        "settings": {
+                                          "slidesToShow": 5
+                                        }
+                                    },{
                                         "breakpoint": 1200,
                                         "settings": {
-                                          "slidesToShow": 4
+                                          "slidesToShow": 3
                                         }
                                     }, {
-                                      "breakpoint": 992,
+                                      "breakpoint": 460,
                                       "settings": {
-                                        "slidesToShow": 3
+                                        "slidesToShow": 1
                                       }
                                     }, {
                                       "breakpoint": 768,
@@ -164,7 +160,7 @@
                                             <div class="product-item__outer h-100" style='width: 100%'>
                                                 <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                     <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                        <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                         <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
                                                             <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
@@ -179,7 +175,7 @@
                                                         </div>
                                                     </div>
                                                     <div v-else class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                        <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                         <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                         <div class="mb-2">
                                                             <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -191,6 +187,11 @@
                                                             <div class="mr-2 d-xl-block prodcut-add-cart">
                                                                 <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                            <div style>{{localizeFilter('CreditTitle')}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -276,19 +277,24 @@
                     <client-only>
                     <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                         data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                        data-slides-show="5"
+                        data-slides-show="6"
                         data-autoplay="true"
                         data-infinite="true"
                         data-slides-scroll="2"
                         data-responsive='[{
+                            "breakpoint": 1400,
+                            "settings": {
+                                "slidesToShow": 5
+                            }
+                        },{
                             "breakpoint": 1200,
                             "settings": {
-                              "slidesToShow": 4
+                              "slidesToShow": 3
                             }
                         }, {
-                          "breakpoint": 992,
+                          "breakpoint": 460,
                           "settings": {
-                            "slidesToShow": 3
+                            "slidesToShow": 1
                           }
                         }, {
                           "breakpoint": 768,
@@ -301,7 +307,7 @@
                                     <div class="product-item__outer h-100" style='width: 100%'>
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                             <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                 <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                 <div class="mb-2">
                                                     <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
@@ -316,7 +322,7 @@
                                                 </div>
                                             </div>
                                             <div v-else class="product-item__body pb-xl-2">
-                                                <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                 <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                 <div class="mb-2">
                                                     <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -328,6 +334,11 @@
                                                     <div class="mr-2 d-xl-block prodcut-add-cart">
                                                         <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-item__footer">
+                                                <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                    <div style>{{localizeFilter('CreditTitle')}}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -360,19 +371,24 @@
                         <div class="tab-pane fade pt-2 show active" id="Apills-one-example1" role="tabpanel">
                             <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                                data-slides-show="5"
+                                data-slides-show="6"
                                 data-autoplay="true"
                                 data-infinite="true"
                                 data-slides-scroll="2"
                                 data-responsive='[{
+                                    "breakpoint": 1400,
+                                    "settings": {
+                                        "slidesToShow": 5
+                                    }
+                                },{
                                     "breakpoint": 1200,
                                     "settings": {
-                                      "slidesToShow": 4
+                                      "slidesToShow": 3
                                     }
                                 }, {
-                                  "breakpoint": 992,
+                                  "breakpoint": 460,
                                   "settings": {
-                                    "slidesToShow": 3
+                                    "slidesToShow": 1
                                   }
                                 }, {
                                   "breakpoint": 768,
@@ -385,7 +401,7 @@
                                         <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                    <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
@@ -400,7 +416,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                    <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -412,6 +428,11 @@
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-item__footer">
+                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                        <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -459,19 +480,24 @@
                         <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel">
                             <div v-if='IsC && LapProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                                data-slides-show="5"
+                                data-slides-show="6"
                                 data-slides-scroll="2"
                                 data-autoplay="true"
                                 data-infinite="true"
                                 data-responsive='[{
+                                    "breakpoint": 1400,
+                                    "settings": {
+                                        "slidesToShow": 5
+                                    }
+                                },{
                                     "breakpoint": 1200,
                                     "settings": {
-                                      "slidesToShow": 4
+                                      "slidesToShow": 3
                                     }
                                 }, {
-                                  "breakpoint": 992,
+                                  "breakpoint": 460,
                                   "settings": {
-                                    "slidesToShow": 3
+                                    "slidesToShow": 1
                                   }
                                 }, {
                                   "breakpoint": 768,
@@ -484,7 +510,7 @@
                                         <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                    <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
@@ -499,7 +525,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                    <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -511,6 +537,11 @@
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-item__footer">
+                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                        <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -536,19 +567,24 @@
                         <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel">
                             <div v-if='IsC && TVProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
-                                data-slides-show="5"
+                                data-slides-show="6"
                                 data-slides-scroll="2"
                                 data-autoplay="true"
                                 data-infinite="true"
                                 data-responsive='[{
+                                    "breakpoint": 1400,
+                                    "settings": {
+                                        "slidesToShow": 5
+                                    }
+                                },{
                                     "breakpoint": 1200,
                                     "settings": {
-                                      "slidesToShow": 4
+                                      "slidesToShow": 3
                                     }
                                 }, {
-                                  "breakpoint": 992,
+                                  "breakpoint": 460,
                                   "settings": {
-                                    "slidesToShow": 3
+                                    "slidesToShow": 1
                                   }
                                 }, {
                                   "breakpoint": 768,
@@ -561,7 +597,7 @@
                                         <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                    <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
@@ -576,7 +612,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                    <div class="mb-2 myTitleOv"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                     <div class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></div>
                                                     <div class="mb-2">
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
@@ -588,6 +624,11 @@
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-item__footer">
+                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                        <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -932,7 +973,7 @@ export default {
     height: 150px;
 }
 .img-fluid {
-    height: 139px;
+    height: 159px;
     width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -971,10 +1012,19 @@ export default {
     height: 150px;
     z-index: -100;
 }
+.myBg{
+    background-color: rgb(250, 250, 250);
+}
 @media (max-width: 991px) {
     .mr{
         flex-direction: column;
     }
 }
-
+.myTitleOv{
+    height: 1.1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 </style>

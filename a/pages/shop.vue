@@ -30,7 +30,7 @@
                                 <client-only v-if='$store.state.priceRange'>
                                 <div class="wrapper" style='margin-bottom: 20px'>
                                     <div class="multi-range-slider">
-                                        <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :max="$store.state.priceRange[1]">
+                                        <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" :max="$store.state.priceRange[1]" :value="minV">
                                         <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
                                         <div class="slider">
                                         <div class="track"></div>
@@ -872,7 +872,7 @@ input[type=range]:focus::-ms-fill-upper {
     }
 }
 .product-item__title a, .catName {
-    height: 2.35rem;
+    height: 2.40rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

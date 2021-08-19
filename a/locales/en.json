@@ -49,7 +49,8 @@
         "Seconds": "SECS",
         "Days": "DAYS",
         "FromText": "from",
-        "StartingAtText": "STARTING AT"
+        "StartingAtText": "STARTING AT",
+        "CreditTitle": "Available in credit"
     },
     "CartPage": {
         "Title": "Cart",
@@ -261,7 +262,8 @@
         "SecondDescriptionPartTitle": "Specification",
         "RelatedProductsPartTitle": "Related products",
         "InStockText": "in stock",
-        "NotInStockText": "Not in stock"
+        "NotInStockText": "Not in stock",
+        "CreditTitle": "Available in credit"
     },
     "ShopPage": {
         "FirstOptionalTitle": "Searching by key:",

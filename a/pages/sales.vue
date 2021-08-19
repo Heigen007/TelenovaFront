@@ -879,7 +879,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 0.875rem !important;
 }
 .img-fluid {
-    height: 139px;
+    height: 159px;
     width: 100%;
     max-height: 100%;
     object-fit: contain;
