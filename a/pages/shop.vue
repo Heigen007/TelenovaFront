@@ -5,7 +5,7 @@
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content" role="main">
             <div class="container mt-6">
-                <preloader v-if='!IsProducts' />
+                <preloader v-if='!IsProducts || !Filters' />
                 <div v-else class="row mb-8">
                     <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
                         <div class="mb-6">
@@ -14,7 +14,6 @@
                                     data-toggle="collapse"
                                     data-target="#basicsCollapseOner2"
                                     aria-expanded="true"
-                                    aria-controls="basicsCollapseOner"
                                     @click='IsPopper = false'>
                                     {{localizeFilter('FilterPart', 'SecondPartTitle')}}
 
@@ -23,9 +22,7 @@
                                     </span>
                                 </button>
                             </div>
-                            <div id="basicsCollapseOner2" class="collapse show"
-                                aria-labelledby="basicsHeadingOne"
-                                data-parent="#basicsAccordion">
+                            <div id="basicsCollapseOner2" class="collapse show">
                                 <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
                                 <client-only v-if='$store.state.priceRange'>
                                 <div class="wrapper" style='margin-bottom: 20px'>
@@ -44,16 +41,26 @@
                                 </div>
                                 </client-only>
                                 <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
-                                    <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
+                                    <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0 collapsed"
+                                        data-toggle="collapse"
+                                        :data-target="'#basicsCollapseOner3'+i.split(' ').join('')"
+                                        aria-expanded="true"
+                                        @click='IsPopper = false'>
+                                        <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
 
-                                    <!-- Checkboxes -->
-                                    <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                        <div class="custom-control custom-checkbox">
-                                            <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
-                                            <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
+                                        <span class="card-btn-arrow">
+                                            <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                        </span>
+                                    </button>
+
+                                    <div :id="'basicsCollapseOner3'+i.split(' ').join('')" class="collapse">
+                                        <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                            <div class="custom-control custom-checkbox">
+                                                <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
+                                                <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- End Checkboxes -->
 
                                 </div>
                             </div>
@@ -300,26 +307,6 @@ export default {
         }
     },
    updated(){
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-            beforeClose: function () {
-                $('#hamburgerTrigger').removeClass('is-active');
-            },
-            afterClose: function() {
-                $('#headerSidebarList .collapse.show').collapse('hide');
-            }
-        });
-
-        $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-            e.preventDefault();
-
-            var target = $(this).data('target');
-
-            if($(this).attr('aria-expanded') === "true") {
-                $(target).collapse('hide');
-            } else {
-                $(target).collapse('show');
-            }
-        });
         setTimeout(() => {
             this.RangeInit()
             this.RangeInit2()
@@ -348,29 +335,6 @@ export default {
         } else if(Object.keys(this.$route.query).length > 0){
             this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
         }
-        $(document).on('ready', function () {
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                beforeClose: function () {
-                    $('#hamburgerTrigger').removeClass('is-active');
-                },
-                afterClose: function() {
-                    $('#headerSidebarList .collapse.show').collapse('hide');
-                }
-            });
-
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-                e.preventDefault();
-
-                var target = $(this).data('target');
-
-                if($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
-        });
     },
     methods: {
         Label(e){

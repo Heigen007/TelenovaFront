@@ -297,26 +297,6 @@ export default {
         }
     },
  updated(){
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-            beforeClose: function () {
-                $('#hamburgerTrigger').removeClass('is-active');
-            },
-            afterClose: function() {
-                $('#headerSidebarList .collapse.show').collapse('hide');
-            }
-        });
-
-        $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-            e.preventDefault();
-
-            var target = $(this).data('target');
-
-            if($(this).attr('aria-expanded') === "true") {
-                $(target).collapse('hide');
-            } else {
-                $(target).collapse('show');
-            }
-        });
         setTimeout(() => {
             this.RangeInit()
             this.RangeInit2()
@@ -345,29 +325,6 @@ export default {
         } else if(Object.keys(this.$route.query).length > 0){
             this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
         }
-        $(document).on('ready', function () {
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                beforeClose: function () {
-                    $('#hamburgerTrigger').removeClass('is-active');
-                },
-                afterClose: function() {
-                    $('#headerSidebarList .collapse.show').collapse('hide');
-                }
-            });
-
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
-                e.preventDefault();
-
-                var target = $(this).data('target');
-
-                if($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
-        });
     },
     methods: {
         Label(e){

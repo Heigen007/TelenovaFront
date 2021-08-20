@@ -91,16 +91,16 @@
                                         <!-- End Quantity -->
                                     </div>
                                     <div class="mb-2 pb-0dot5">
-                                        <div style='background-color: black; color: white; border: 2px solid black' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('AddToCartText')}}</div>
+                                        <div style='background-color: #0144a3; color: white; border: 2px solid #0144a3; border-radius: 0;cursor: pointer;' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('AddToCartText')}}</div>
                                     </div>
                                     <div class="mb-2">
-                                        <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer' @click="BuyNow" class="btn btn-block">{{localizeFilter('BuyNowText')}}</div>
+                                        <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer; border-radius: 0' @click="BuyNow" class="btn btn-block">{{localizeFilter('BuyNowText')}}</div>
                                     </div>
                                     <div class="mb-2 pb-0dot5">
-                                        <div style='background-color: black; color: white; border: 2px solid black' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
+                                        <div style='background-color: black; color: white; border: 2px solid black;cursor: pointer;border-radius: 0' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
                                     </div>
                                     <div class="mb-3">
-                                        <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
+                                        <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer; border-radius: 0' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +190,7 @@
                 </div>
                 <!-- End Related products -->
             </div>
-            <div class="bg-gray-7 pt-6 pb-3 mb-6">
+            <div class="bg-white pt-6 pb-3 mb-6">
                 <div class="container">
                     <div class="js-scroll-nav">
                         <div class="bg-white py-4 px-xl-11 px-md-5 px-4 mb-6">
@@ -387,5 +387,8 @@ export default {
 .customBtn:hover{
     background-color: white !important;
     color: black !important;
+}
+.js-scroll-nav{
+    box-shadow: 0 0 10px rgb(214, 214, 214);
 }
 </style>
