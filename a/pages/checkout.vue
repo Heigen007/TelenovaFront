@@ -523,7 +523,7 @@ export default {
         },
         PayLink(){
             var sign = this.makeSignature()
-            window.location = `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyDataObj=${this.objMake()}&pg_sig=${sign}`
+            window.location = `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyDataObj=${this.objMake2()}&pg_sig=${sign}`
         },
         makeSignature() {
             var methodName = 'payment.php'
@@ -557,6 +557,28 @@ export default {
 
             return signature;
         },
+        makeSignature2() {
+            var methodName = 'payment.php'
+            var requestFields = {
+                "MyDataObj": this.objMake2()
+            };
+            //Секретный ключ
+            var secretKey = this.getSecretKey(methodName);
+
+            var signature = [methodName];
+            // Сортировка по алфавиту
+            Object.keys(requestFields).sort().forEach(function(key) {
+            if (key != 'pg_sig') {
+                signature.push((requestFields[key]));
+            }
+            });
+
+            var string = signature.join(';') + ';' + secretKey;
+
+            signature = CryptoJS.MD5(string).toString();
+
+            return signature;
+        },
         getSecretKey(methodName) {
             //ВСТАВИТЬ КЛЮЧИ
             var secretKey = 'aPVUBJQP7CajiqTi';
@@ -570,10 +592,28 @@ export default {
         },
         objMake(){
             var filteredCart = JSON.parse(JSON.stringify(this.items.cart))
+            for(var el = 0; el < filteredCart.length ; el++) {
+                filteredCart[el] = {
+                    kaspi_id: filteredCart[el].offerData.kaspi_id,
+                    count: filteredCart[el].offerData.count
+                }
+            }
+            var MyObj = {
+                address: this.info.Adress, // адрес доставки
+                phoneNumber: this.info.Phone, // номер телефона
+                email: this.info.Email, // почта
+                goods: filteredCart,
+                name: this.info.FName + ' ' + this.info.SName, // имя
+                paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+            }
+            console.log('OBJECT', MyObj)
+            return JSON.stringify(MyObj)
+        },
+        objMake2(){ 
             var MyObj = {
                 id: this.OrderId
             }
-            console.log('OBJECT', MyObj)
+            console.log('FINAL', MyObj)
             return JSON.stringify(MyObj)
         }
     },

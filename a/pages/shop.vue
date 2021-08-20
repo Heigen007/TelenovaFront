@@ -123,7 +123,7 @@
                         <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
                             <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <div class="row products-group ">
-                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-6 col-lg-4 col-md-6 MyCol col-sm-6 product-item">
+                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item">
                                         <div class=" h-100 w-100">
                                             <div class="inner p-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
