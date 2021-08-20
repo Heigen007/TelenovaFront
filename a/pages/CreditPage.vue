@@ -428,7 +428,7 @@ export default {
 <style scoped>
 .credits{
     width: 100%;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 8px 5px 8px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -436,7 +436,7 @@ export default {
     border-radius: 5px;
 }
 .credits div{
-    padding: 10px 16px 10px 16px;
+    padding: 10px 14px 10px 14px;
     background-color: white;
     color: black;
     text-align: center;

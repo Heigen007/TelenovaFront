@@ -103,6 +103,7 @@
                                             <div class="js-form-message mb-6">
                                                 <label class="form-label">
                                                     {{localizeFilter('Bill', 'EleventhInputLabel')}}
+                                                    <span class="text-danger">*</span>
                                                 </label>
                                                 <input v-model='info.Phone' type="text" class="form-control" :placeholder="localizeFilter('Bill', 'EleventhInputPlaceholder')" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
                                             </div>
@@ -463,7 +464,7 @@ export default {
                             }
                             var checkout = {
                                 address: this.info.Adress, // адрес доставки
-                                phoneNumber: this.info.Phone.split('+')[this.info.Phone.split('+').length], // номер телефона
+                                phoneNumber: this.info.Phone.split('+')[this.info.Phone.split('+').length - 1], // номер телефона
                                 email: this.info.Email, // почта
                                 goods: filteredCart,
                                 name: this.info.FName + ' ' + this.info.SName, // имя
@@ -606,7 +607,7 @@ export default {
             }
             var MyObj = {
                 address: this.info.Adress, // адрес доставки
-                phoneNumber: this.info.Phone, // номер телефона
+                phoneNumber: this.info.Phone.split('+')[this.info.Phone.split('+').length - 1],
                 email: this.info.Email, // почта
                 goods: filteredCart,
                 name: this.info.FName + ' ' + this.info.SName, // имя

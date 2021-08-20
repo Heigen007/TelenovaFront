@@ -59,7 +59,7 @@
                                                     data-target="#basicsCollapseOne"
                                                     aria-expanded="true"
                                                     aria-controls="basicsCollapseOne"
-                                                    style='background-color: #2344a4; border-radius: 4px; border: 2px solid #2344a4;'>
+                                                    style='background-color: #2344a4; border: 2px solid #2344a4;'>
                                                     <span class="text-white font-size-15">{{localizeFilter('Categories')}} <i class="ml-2 ec ec-arrow-down-search"></i></span>
                                                 </button>
                                             </div>

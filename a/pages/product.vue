@@ -389,6 +389,6 @@ export default {
     color: black !important;
 }
 .js-scroll-nav{
-    box-shadow: 0 0 10px rgb(214, 214, 214);
+    box-shadow: 0 0 3px rgb(214, 214, 214);
 }
 </style>

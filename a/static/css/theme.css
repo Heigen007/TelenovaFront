@@ -2569,7 +2569,6 @@ pre code {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #dddddd;
-  border-radius: 1.4rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -27230,7 +27229,7 @@ label.btn {
 
 /* Pill */
 .btn-pill {
-  border-radius: 6.1875rem;
+  border-radius: 5px;
 }
 
 /* Icon */
@@ -28488,7 +28487,7 @@ label.btn {
 
 .form-label {
   display: block;
-  text-transform: uppercase;
+  text-transform: unset;
   font-size: 80%;
   font-weight: 500;
 }
@@ -28504,38 +28503,6 @@ label.btn {
   box-shadow: none;
 }
 
-/*------------------------------------
-  Form Pill
-------------------------------------*/
-.input-group-pill {
-  border-radius: 6.1875rem;
-}
-
-.input-group-pill > .form-control:first-child {
-  border-top-left-radius: 6.1875rem;
-  border-bottom-left-radius: 6.1875rem;
-}
-
-.input-group-pill > .form-control:last-child {
-  border-top-right-radius: 6.1875rem;
-  border-bottom-right-radius: 6.1875rem;
-}
-
-.input-group-pill .input-group-prepend > .input-group-text,
-.input-group-pill .input-group-prepend > .btn {
-  border-top-left-radius: 6.1875rem;
-  border-bottom-left-radius: 6.1875rem;
-}
-
-.input-group-pill .input-group-append > .input-group-text,
-.input-group-pill .input-group-append > .btn {
-  border-top-right-radius: 6.1875rem;
-  border-bottom-right-radius: 6.1875rem;
-}
-
-/*------------------------------------
-  Form Sizes
-------------------------------------*/
 /* Default Size */
 .input-group.input-group-pill > .form-control:first-child {
   padding-left: 1.5rem;
