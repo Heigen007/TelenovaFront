@@ -9,7 +9,8 @@ export default {
       { hid: 'description', name: 'description', content: 'Telenova internet shop. Buy electronics and another products here!' }
     ],
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
+      style: 'width: 100vw; overflow-x: hidden'
     },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

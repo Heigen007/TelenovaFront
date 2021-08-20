@@ -310,7 +310,7 @@ export default {
             items: null,
             LinkActive: false,
             ShippingCost: 3000,
-            pg_order_id: Math.floor(Math.random() * 100000),
+            pg_order_id: Math.floor(Math.random() * 100000) + 1,
             pg_merchant_id: 533272,
             pg_description: "Product",
             pg_language: "en",
@@ -507,7 +507,7 @@ export default {
                 "pg_salt": this.pg_salt,
                 "MyDataObj": this.objMake()
             };
-            console.log(requestFields);
+            console.log('FIELDS',requestFields);
             //Секретный ключ
             var secretKey = this.getSecretKey(methodName);
 
@@ -552,6 +552,7 @@ export default {
                 name: this.info.FName + ' ' + this.info.SName, // имя
                 paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
             }
+            console.log('OBJECT', MyObj)
             return JSON.stringify(MyObj)
         }
     },

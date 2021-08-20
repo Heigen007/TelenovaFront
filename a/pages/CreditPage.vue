@@ -20,15 +20,15 @@
                                 <!-- End Title -->
                                 <div class='CreditRange'>
                                     <div class="credits">
-                                        <div :class='{ active: creditCounter == 3 }' @click='creditCounter = 3'>3 {{localizeFilter('MonthShortTitle')}}</div>
-                                        <div :class='{ active: creditCounter == 6 }' @click='creditCounter = 6'>6 {{localizeFilter('MonthShortTitle')}}</div>
-                                        <div :class='{ active: creditCounter == 9 }' @click='creditCounter = 9'>9 {{localizeFilter('MonthShortTitle')}}</div>
-                                        <div :class='{ active: creditCounter == 12 }' @click='creditCounter = 12'>12 {{localizeFilter('MonthShortTitle')}}</div>
-                                        <div :class='{ active: creditCounter == 16 }' @click='creditCounter = 16'>16 {{localizeFilter('MonthShortTitle')}}</div>
-                                        <div :class='{ active: creditCounter == 24 }' @click='creditCounter = 24'>24 {{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 3 }' @click='creditCounter = 3'>3{{'\xa0'}}{{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 6 }' @click='creditCounter = 6'>6{{'\xa0'}}{{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 9 }' @click='creditCounter = 9'>9{{'\xa0'}}{{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 12 }' @click='creditCounter = 12'>12{{'\xa0'}}{{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 16 }' @click='creditCounter = 16'>16{{'\xa0'}}{{localizeFilter('MonthShortTitle')}}</div>
+                                        <div :class='{ active: creditCounter == 24 }' @click='creditCounter = 24'>24{{'\xa0'}}{{localizeFilter('MonthShortTitle')}}</div>
                                     </div>
 
-                                    <div class='creditsAmount'>{{localizeFilter('MonthCreditAmountTitle')}} <strong>{{(TotalPrice() / creditCounter).toFixed(0)}} {{localizeFilter('TengeInMonthTitle')}}</strong></div>
+                                    <div class='creditsAmount'>{{localizeFilter('MonthCreditAmountTitle')}} <strong>{{Math.ceil((TotalPrice() / creditCounter))}} {{localizeFilter('TengeInMonthTitle')}}</strong></div>
                                 </div>
                                 <!-- Billing Form -->
                                 <client-only>
@@ -429,20 +429,21 @@ export default {
 .credits{
     width: 100%;
     padding: 5px 10px 5px 10px;
-    background-color: #e6e6e6;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    border-radius: 5px;
 }
 .credits div{
-    width: 70px;
-    padding: 5px 8px 5px 8px;
+    padding: 10px 16px 10px 16px;
     background-color: white;
     color: black;
     text-align: center;
     margin: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(146, 146, 146);
 }
 .active{
     color: white !important;
@@ -450,9 +451,19 @@ export default {
 }
 .CreditRange{
     box-shadow: 0 0 5px rgb(146, 146, 146);
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    margin-bottom: 20px;
 }
 .creditsAmount{
     padding: 7px 0 7px 11px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+.credits div:hover{
+    color: white !important;
+    background-color: #858585;
 }
 </style>
