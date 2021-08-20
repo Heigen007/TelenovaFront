@@ -279,7 +279,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <a v-if="LinkActive" @click='Ship' target="_blank" rel="nofollow noopener noreferrer" :href="PayLink()"><button class="text-white btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">{{localizeFilter('Order', 'TransferVariations', 'SuccessButtonText')}}</button></a>
+                                        <div v-if="LinkActive" @click='Ship'><button class="text-white btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">{{localizeFilter('Order', 'TransferVariations', 'SuccessButtonText')}}</button></div>
                                     </div>
                                     <!-- End Order Summary -->
                                 </div>
@@ -410,8 +410,8 @@ export default {
                                     goods: filteredCart,
                                     name: this.info.FName + ' ' + this.info.SName, // имя
                                     paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                    credit: false,
-                                    promoCode: this.activeCoupon.code || ''
+                                    // credit: false,
+                                    // promoCode: this.activeCoupon.code || ''
                                 }
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)
@@ -453,7 +453,39 @@ export default {
                             )
                             return
                         }
-                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                        if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName && document.querySelectorAll('input[name="stylishRadio"]:checked')[0].id == 'FourstylishRadio1') {
+                            var filteredCart = JSON.parse(JSON.stringify(self.items.cart))
+                            for(var el = 0; el < filteredCart.length ; el++) {
+                                filteredCart[el] = {
+                                    kaspi_id: filteredCart[el].offerData.kaspi_id,
+                                    count: filteredCart[el].offerData.count
+                                }
+                            }
+                            var checkout = {
+                                address: this.info.Adress, // адрес доставки
+                                phoneNumber: this.info.Phone, // номер телефона
+                                email: this.info.Email, // почта
+                                goods: filteredCart,
+                                name: this.info.FName + ' ' + this.info.SName, // имя
+                                paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                                // credit: false,
+                                // promoCode: this.activeCoupon.code || ''
+                            }
+                            this.loaderM = true
+                            axios.post('https://textforeva.ru/order', checkout)
+                            .then(response => {
+                                self.OrderId = response.data._id
+                                self.loaderM = true
+                                Swal.fire(
+                                    'Success!',
+                                    'Your order has been created!',
+                                    'success'
+                                )
+                                self.PayLink()
+                            })
+                            .catch(error => {
+                                console.log(error);
+                            })
                         } else {
                             e.preventDefault()
                             Swal.fire(
@@ -491,7 +523,7 @@ export default {
         },
         PayLink(){
             var sign = this.makeSignature()
-            return `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyDataObj=${this.objMake()}&pg_sig=${sign}`
+            window.location = `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyDataObj=${this.objMake()}&pg_sig=${sign}`
         },
         makeSignature() {
             var methodName = 'payment.php'
@@ -538,19 +570,8 @@ export default {
         },
         objMake(){
             var filteredCart = JSON.parse(JSON.stringify(this.items.cart))
-            for(var el = 0; el < filteredCart.length ; el++) {
-                filteredCart[el] = {
-                    kaspi_id: filteredCart[el].offerData.kaspi_id,
-                    count: filteredCart[el].offerData.count
-                }
-            }
             var MyObj = {
-                address: this.info.Adress, // адрес доставки
-                phoneNumber: this.info.Phone, // номер телефона
-                email: this.info.Email, // почта
-                goods: filteredCart,
-                name: this.info.FName + ' ' + this.info.SName, // имя
-                paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                id: this.OrderId
             }
             console.log('OBJECT', MyObj)
             return JSON.stringify(MyObj)

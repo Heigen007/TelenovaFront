@@ -674,7 +674,7 @@
                                             <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[0].smallPromoText}}</p>
                                             <div class="text-lh-28">
                                                 <span class="font-size-23 font-size-18-lg font-weight-light">{{localizeFilter('FromText')}}</span>
-                                                <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[0].newPrice}}₸</span>
+                                                <span class="font-size-26 font-weight-semi-bold">{{promoActions2Type[0].newPrice}}₸</span>
                                             </div>
                                         </div>
                                     </div>
@@ -704,7 +704,7 @@
                                             <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[1].smallPromoText}}</p>
                                             <div class="text-lh-28">
                                                 <span class="font-size-23 font-size-18-lg font-weight-light">{{localizeFilter('FromText')}}</span>
-                                                <span class="font-size-33 font-size-24-lg font-weight-semi-bold">{{promoActions2Type[1].newPrice}}₸</span>
+                                                <span class="font-size-26 font-weight-semi-bold">{{promoActions2Type[1].newPrice}}₸</span>
                                             </div>
                                         </div>
                                     </div>
