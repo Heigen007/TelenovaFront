@@ -5,8 +5,8 @@
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
-                    <div class="overflow-hidden myBg">
-                        <div class="bg-img-hero min-height-420" >
+                    <div class="overflow-hidden">
+                        <div class="bg-img-hero min-height-420 myBg" >
                             <div id="thumbProgress" class="js-slick-carousel u-slick"
                                 data-autoplay="false"
                                 data-nav-for="#thumbProgressNav">
@@ -458,7 +458,7 @@
                                         <div class="bg-primary rounded-lg px-6 py-2">
                                             <em class="font-size-13 font-weight-light text-white">{{localizeFilter('StartingAtText')}}</em>
                                             <div class="font-size-30  text-lh-1 text-white">
-                                                <sup class="text-white">{{promoActions4Type[0].minPrice}}₸</sup>
+                                                <sup class="text-white">{{promoActions4Type[0].minPrice.toFixed(0)}}₸</sup>
                                             </div>
                                         </div>
                                     </div>

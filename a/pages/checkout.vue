@@ -522,7 +522,7 @@ export default {
             }
         },
         PayLink(){
-            var sign = this.makeSignature()
+            var sign = this.makeSignature2()
             window.location = `https://api.paybox.money/payment.php?pg_order_id=${this.pg_order_id}&pg_merchant_id=${this.pg_merchant_id}&pg_amount=${this.TotalPrice()}&pg_description=${this.pg_description}&pg_language=${this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru'}&pg_salt=${this.pg_salt}&MyDataObj=${this.objMake2()}&pg_sig=${sign}`
         },
         makeSignature() {
@@ -560,6 +560,12 @@ export default {
         makeSignature2() {
             var methodName = 'payment.php'
             var requestFields = {
+                "pg_order_id": this.pg_order_id,
+                "pg_merchant_id": this.pg_merchant_id,
+                "pg_amount": this.TotalPrice(),
+                "pg_description": this.pg_description,
+                "pg_language": this.$store.state.lang.lang == 'en-US' ? 'en' : 'ru',
+                "pg_salt": this.pg_salt,
                 "MyDataObj": this.objMake2()
             };
             //Секретный ключ
@@ -604,7 +610,7 @@ export default {
                 email: this.info.Email, // почта
                 goods: filteredCart,
                 name: this.info.FName + ' ' + this.info.SName, // имя
-                paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
             }
             console.log('OBJECT', MyObj)
             return JSON.stringify(MyObj)
