@@ -463,7 +463,7 @@ export default {
                             }
                             var checkout = {
                                 address: this.info.Adress, // адрес доставки
-                                phoneNumber: this.info.Phone, // номер телефона
+                                phoneNumber: this.info.Phone.split('+')[this.info.Phone.split('+').length], // номер телефона
                                 email: this.info.Email, // почта
                                 goods: filteredCart,
                                 name: this.info.FName + ' ' + this.info.SName, // имя
