@@ -67,9 +67,14 @@
                                         <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.product_count}} {{localizeFilter("InStockText")}}</span>
                                         <span v-else class="text-red font-weight-bold">{{localizeFilter('NotInStockText')}}</span>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3" v-if='Product.offerData.oldPrice'>
+                                        <ins class="font-size-34 text-red text-decoration-none">{{Product.offerData.newPrice.toFixed(0)}}₸</ins>
+                                        <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{Product.offerData.oldPrice.toFixed(0)}}₸</del>
+                                    </div>
+                                    <div class="mb-3" v-else>
                                         <div class="font-size-36">{{Product.offerData.price}} ₸.</div>
                                     </div>
+                                    
                                     <div class="mb-3">
                                         <h6 class="font-size-14">{{localizeFilter('CardQuantityText')}}</h6>
                                         <!-- Quantity -->
@@ -100,7 +105,7 @@
                                         <div style='background-color: black; color: white; border: 2px solid black;cursor: pointer;border-radius: 0' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
                                     </div>
                                     <div class="mb-3">
-                                        <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+id+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer; border-radius: 0' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
+                                        <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+Product.offerData.on_kaspi+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer; border-radius: 0' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
                                     </div>
                                 </div>
                             </div>
@@ -153,9 +158,13 @@
                                                 <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
                                             </div>
                                             <div class="flex-center-between mb-1">
-                                                <div class="prodcut-price">
-                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</a>
-                                                </div>
+                                                    <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
+                                                        <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></a>
+                                                    </div>
+                                                    <div class="prodcut-price" v-else>
+                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></a></ins>
+                                                        <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></a></del>
+                                                    </div>
                                                 <div class="d-xl-block prodcut-add-cart">
                                                     <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                 </div>
@@ -168,8 +177,12 @@
                                                 <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
                                             </div>
                                             <div class="flex-center-between mb-1">
-                                                <div class="prodcut-price">
-                                                    <a :href="'/product?id='+el.offerData.kaspi_id" class="text-gray-100">{{el.offerData.price}} ₸.</a>
+                                                <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
+                                                    <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></a>
+                                                </div>
+                                                <div class="prodcut-price" v-else>
+                                                    <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></a></ins>
+                                                    <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></a></del>
                                                 </div>
                                                 <div class="d-xl-block prodcut-add-cart">
                                                     <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>

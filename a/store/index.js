@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const state = () => ({
   categories: null,
-  promoActions: null,
+  promoActions: [],
   products: null,
   productsFilteredCopy: null,
   productsFilteredCopyCopy: null,

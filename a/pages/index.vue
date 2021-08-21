@@ -27,7 +27,7 @@
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
                                             data-scs-animation-in="zoomIn"
                                             data-scs-animation-delay="400">
-                                            <NuxtLink :to='"/product?id=" + el.productKaspiId'><img class="img-fluid" :src="el.promoImages[1].clientPath" alt="Image Description"></NuxtLink>
+                                            <NuxtLink :to='"/product?id=" + el.productKaspiId'><img class="img-fluid" :src="el.promoImages[Math.floor(Math.random() * (el.promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
                                         </div>
                                         <div class="col-md-4"
                                             data-scs-animation-in="fadeInRight"
@@ -166,8 +166,12 @@
                                                             <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
                                                         <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
+                                                            <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                                 <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                            </div>
+                                                            <div class="prodcut-price" v-else>
+                                                                <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                                <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                             </div>
                                                             <div class="mr-2 d-xl-block prodcut-add-cart">
                                                                 <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -181,8 +185,12 @@
                                                             <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                         </div>
                                                         <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}}₸.</div></NuxtLink>
+                                                            <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
+                                                                <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                            </div>
+                                                            <div class="prodcut-price" v-else>
+                                                                <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                                <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                             </div>
                                                             <div class="mr-2 d-xl-block prodcut-add-cart">
                                                                 <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -213,13 +221,13 @@
                     <div class="row mr">
                         <div class="col-lg-6 mb-3 ">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink :to="'/shop?SCat?' + promoActions6Type[0].categoryName" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
-                                        <img src="/img/246X176/img1.jpg" alt="Image Description">
+                                        <img :src="promoActions6Type[0].promoImages[Math.floor(Math.random() * (promoActions6Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
                                         <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                            CATCH HOTTEST <strong>DEALS</strong> IN CAMERAS CATEGORY
+                                            {{promoActions6Type[0].bigPromoText}}
                                         </div>
                                         <div class="link text-gray-90 font-weight-bold font-size-15" to="#">
                                             Shop now
@@ -233,18 +241,18 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-bg">
-                                <NuxtLink to="/shop?SCat?Мобильные телефоны" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink :to="'/shop?SCat?' + promoActions7Type[0].categoryName" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
-                                        <img src="/img/246X176/img3.jpg" alt="Image Description">
+                                        <img :src="promoActions7Type[0].promoImages[Math.floor(Math.random() * (promoActions7Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
                                         <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                            TABLETS, SMARTPHONES <strong>AND MORE</strong>
+                                            {{promoActions7Type[0].bigPromoText}}
                                         </div>
                                         <div class="link text-gray-90" to="#">
                                             <span class="font-size-13">FROM</span>
                                             <div class="font-size-30 font-weight-bold text-lh-28">
-                                                <sup class="">$</sup>749<sup class="">99</sup>
+                                                {{promoActions7Type[0].minPrice}}₸
                                                 <span class="link__icon ml-1">
                                                     <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                                 </span>
@@ -313,8 +321,12 @@
                                                     <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                 </div>
                                                 <div class="flex-center-between mb-1">
-                                                    <div class="prodcut-price">
+                                                    <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                         <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                    </div>
+                                                    <div class="prodcut-price" v-else>
+                                                        <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                        <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                     </div>
                                                     <div class="mr-2 d-xl-block prodcut-add-cart">
                                                         <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -328,9 +340,13 @@
                                                     <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                 </div>
                                                 <div class="flex-center-between mb-1">
-                                                    <div class="prodcut-price">
-                                                        <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
-                                                    </div>
+                                                       <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
+                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
+                                                        </div>
                                                     <div class="mr-2 d-xl-block prodcut-add-cart">
                                                         <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                     </div>
@@ -407,8 +423,12 @@
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
+                                                        <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -422,8 +442,12 @@
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
+                                                       <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -516,8 +540,12 @@
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
+                                                        <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -531,8 +559,12 @@
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
+                                                       <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -603,8 +635,12 @@
                                                         <img class="img-fluid MyImg" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
+                                                        <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -618,8 +654,12 @@
                                                         <img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description">
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price">
+                                                       <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                        </div>
+                                                        <div class="prodcut-price" v-else>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="mr-2 d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCart(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -936,14 +976,11 @@ export default {
         promoActions4Type(){
             return this.$store.state.promoActions.filter(el => el.typeOfPromo == 4).sort(() => Math.random() - 0.5);
         },
-        promoActions5Type(){
-            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 5)
-        },
         promoActions6Type(){
-            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 6)
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 6).sort(() => Math.random() - 0.5);
         },
         promoActions7Type(){
-            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 7)
+            return this.$store.state.promoActions.filter(el => el.typeOfPromo == 7).sort(() => Math.random() - 0.5);
         }
     }
 }
