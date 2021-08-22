@@ -50,7 +50,8 @@
         "Days": "DAYS",
         "FromText": "from",
         "StartingAtText": "STARTING AT",
-        "CreditTitle": "Available in credit"
+        "CreditTitle": "Available in credit",
+        "fromText": "FROM"
     },
     "CartPage": {
         "Title": "Cart",

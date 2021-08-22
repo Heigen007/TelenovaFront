@@ -48,7 +48,8 @@
         "Days": "ДНИ",
         "FromText": "от",
         "StartingAtText": "Цена от",
-        "CreditTitle": "Доступно в рассрочку"
+        "CreditTitle": "Доступно в рассрочку",
+        "fromText": "ОТ"
     },
     "CartPage": {
         "Title": "Корзина",

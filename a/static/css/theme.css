@@ -35001,6 +35001,7 @@ blockquote:not(.blockquote) p {
 
 .prodcut-price {
   font-size: 1.00012rem;
+  display: flex;
 }
 
 @media (min-width: 992px) {
