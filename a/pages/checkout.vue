@@ -330,7 +330,8 @@ export default {
             loaderM: false,
             coupons: [],
             currentCoupon: '',
-            activeCoupon: {}
+            activeCoupon: {},
+            realAmount: null
         }
     },
     components: {
@@ -469,14 +470,15 @@ export default {
                                 goods: filteredCart,
                                 name: this.info.FName + ' ' + this.info.SName, // имя
                                 paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                // credit: false,
                                 // promoCode: this.activeCoupon.code || ''
                             }
                             this.loaderM = true
                             axios.post('https://textforeva.ru/order', checkout)
                             .then(response => {
+                                console.log(response);
                                 self.OrderId = response.data._id
                                 self.loaderM = true
+                                // self.realAmount = response.
                                 Swal.fire(
                                     'Success!',
                                     'Your order has been created!',
@@ -518,6 +520,7 @@ export default {
         },
         TotalPrice(){
             if(process.browser){
+                if(this.realAmount) return realAmount.toFixed(0)
                 var total = this.$store?.state?.cart?.cart?.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
                 return total || 0
             }

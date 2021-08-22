@@ -245,7 +245,7 @@
         "CreditTitle": "Доступно в рассрочку"
     },
     "ShopPage": {
-        "FirstOptionalTitle": "Результаты по: :",
+        "FirstOptionalTitle": "Результаты по: ",
         "FirstOptionalSecondTitle": "Результаты по категории: ",
         "FilterPart": {
             "SecondPartTitle": "Фильтры",
@@ -278,7 +278,7 @@
             "SecondInputLabel": "Фамилия",
             "ThirdInputLabel": "ИИН",
             "FourthInputLabel": "Отчество",
-            "FifthInputLabel": "Адресс",
+            "FifthInputLabel": "Адрес",
             "EighthInputLabel": "Банк",
             "TenthInputLabel": "Email",
             "EleventhInputLabel": "Телефон",

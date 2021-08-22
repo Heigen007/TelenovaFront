@@ -294,13 +294,13 @@ export default {
                             paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
                             bank: this.info.bank,
                             iin: this.info.IIN,
-                            creditNumber: this.creditCounter,
-                            credit: true
+                            credit: true,
+                            creditMonth: this.creditCounter
                         }
                         this.loaderM = true
                         axios.post('https://textforeva.ru/order', checkout)
                         .then(response => {
-                            self.loaderM = true
+                            self.loaderM = false
                             Swal.fire(
                                 'Success!',
                                 'Your order has been created!',

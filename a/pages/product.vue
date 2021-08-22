@@ -158,11 +158,11 @@
                                                 <img class="img-fluid SCode" :src="el.offerData.images[0]" alt="Image Description">
                                             </div>
                                             <div class="flex-center-between mb-1">
-                                                    <div class="prodcut-price" v-if='el.offerData.price == el.offerData.salePrice'>
+                                                    <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
                                                         <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></a>
                                                     </div>
                                                     <div class="prodcut-price" v-else>
-                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.salePrice}} ₸.</div></a></ins>
+                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.salePrice}} ₸.</div></a></ins>
                                                         <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></a></del>
                                                     </div>
                                                 <div class="d-xl-block prodcut-add-cart">
