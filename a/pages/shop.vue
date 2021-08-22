@@ -133,12 +133,12 @@
                                                         <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                     </div>
                                                     <div class="flex-center-between mb-1">
-                                                       <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
+                                                       <div class="prodcut-price" v-if='el.offerData.price == el.offerData.salePrice'>
                                                             <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
                                                         </div>
                                                         <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></NuxtLink></del>
+                                                            <ins class="font-size-15 text-decoration-none"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.salePrice}} ₸.</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink></del>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
