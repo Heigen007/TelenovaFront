@@ -156,7 +156,7 @@
                                             <tbody>
                                                 <tr v-for="(el, i) in $store.state.cart.cart" :key='i' class="cart_item">
                                                     <td class='pr-3'>{{el.offerData.name}}&nbsp;<strong class="product-quantity" style='white-space: nowrap'>× {{el.offerData.count}}</strong></td>
-                                                    <td style='white-space: nowrap'>{{el.offerData.price * el.offerData.count}} ₸.</td>
+                                                    <td style='white-space: nowrap'>{{el.salePrice * el.offerData.count}}{{'\xa0'}}₸.</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
@@ -341,7 +341,7 @@ export default {
         this.items = this.$store.state.cart
     },
     mounted(){
-        this.activeCoupon = JSON.parse(localStorage.getItem('coupon')) || ''
+        // this.activeCoupon = JSON.parse(localStorage.getItem('coupon')) || ''
         if(new Date(Date.now()) > new Date(this.activeCoupon.date)){
             localStorage.removeItem('coupon')
             this.activeCoupon = {}
@@ -374,7 +374,7 @@ export default {
         addCoupon(){
             var arr = this.coupons.filter(el => el.code == this.currentCoupon)
             if(arr.length > 0) {
-                localStorage.setItem('coupon',JSON.stringify(arr[0]))
+                // localStorage.setItem('coupon',JSON.stringify(arr[0]))
                 this.activeCoupon = arr[0]
                 Swal.fire(
                     'Success!',
@@ -411,13 +411,13 @@ export default {
                                     email: this.info.Email, // почта
                                     goods: filteredCart,
                                     name: this.info.FName + ' ' + this.info.SName, // имя
-                                    paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                    // credit: false,
-                                    // promoCode: this.activeCoupon.code || ''
+                                    paymentMethod: 'cash',
+                                    promoCode: this.activeCoupon.code || ''
                                 }
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)
                                 .then(response => {
+                                    console.log(response)
                                     self.loaderM = true
                                     Swal.fire(
                                         'Success!',
@@ -426,6 +426,9 @@ export default {
                                     )
                                     self.$store.commit('cart/clear')
                                     self.$router.push('/')
+                                    setTimeout(() => {
+                                        location.reload()
+                                    }, 5000);
                                 })
                                 .catch(error => {
                                     console.log(error);
@@ -470,7 +473,7 @@ export default {
                                 goods: filteredCart,
                                 name: this.info.FName + ' ' + this.info.SName, // имя
                                 paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                // promoCode: this.activeCoupon.code || ''
+                                promoCode: this.activeCoupon.code || ''
                             }
                             this.loaderM = true
                             axios.post('https://textforeva.ru/order', checkout)
@@ -478,7 +481,7 @@ export default {
                                 console.log(response);
                                 self.OrderId = response.data._id
                                 self.loaderM = true
-                                // self.realAmount = response.
+                                self.realAmount = response.data.finishPrice
                                 Swal.fire(
                                     'Success!',
                                     'Your order has been created!',
@@ -520,8 +523,8 @@ export default {
         },
         TotalPrice(){
             if(process.browser){
-                if(this.realAmount) return realAmount.toFixed(0)
-                var total = this.$store?.state?.cart?.cart?.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
+                if(this.realAmount) return this.realAmount.toFixed(0)
+                var total = this.$store?.state?.cart?.cart?.reduce((accumulator, item) => accumulator + Number(item.salePrice) * Number(item.offerData.count),0)
                 return total || 0
             }
         },

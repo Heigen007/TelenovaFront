@@ -184,13 +184,13 @@
                                             <tbody>
                                                 <tr v-for="(el, i) in $store.state.cart.cart" :key='i' class="cart_item">
                                                     <td class='pr-3'>{{el.offerData.name}}&nbsp;<strong class="product-quantity" style='white-space: nowrap'>× {{el.offerData.count}}</strong></td>
-                                                    <td style='white-space: nowrap'>{{el.offerData.price * el.offerData.count}} ₸.</td>
+                                                    <td style='white-space: nowrap'>{{el.salePrice * el.offerData.count}}{{'\xa0'}}₸.</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong>{{TotalPrice()}} ₸.</strong></td>
+                                                    <td><strong>{{TotalPrice()}}{{'\xa0'}}₸.</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -291,8 +291,8 @@ export default {
                             email: this.info.Email, // почта
                             goods: filteredCart,
                             name: this.info.FName + ' ' + this.info.SName + ' ' + this.info.TName, // имя
-                            paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                            bank: this.info.bank,
+                            paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
+                            bank: this.info.Bank,
                             iin: this.info.IIN,
                             credit: true,
                             creditMonth: this.creditCounter
@@ -300,6 +300,7 @@ export default {
                         this.loaderM = true
                         axios.post('https://textforeva.ru/order', checkout)
                         .then(response => {
+                            console.log(response);
                             self.loaderM = false
                             Swal.fire(
                                 'Success!',
@@ -313,7 +314,7 @@ export default {
                             console.log(error);
                         })
                     } else {
-                        self.loaderM = true
+                        self.loaderM = false
                         Swal.fire(
                             'Error!',
                             'Please, agree with Terms And Conditions',
@@ -353,7 +354,7 @@ export default {
         },
         TotalPrice(){
             if(process.browser){
-                var total = this.$store?.state?.cart?.cart?.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0)
+                var total = this.$store?.state?.cart?.cart?.reduce((accumulator, item) => accumulator + Number(item.salePrice) * Number(item.offerData.count),0)
                 return total || 0
             }
         },

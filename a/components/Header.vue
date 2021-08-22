@@ -372,7 +372,7 @@ export default {
         Cost(){
             if(process.browser && this.Cart!=null){
                 var stateCart = this.Cart
-                var price = stateCart.reduce((accumulator, item) => accumulator + Number(item.offerData.price) * Number(item.offerData.count),0) || 0
+                var price = stateCart.reduce((accumulator, item) => accumulator + Number(item.salePrice) * Number(item.offerData.count),0) || 0
                 return price
             }
             return 0
