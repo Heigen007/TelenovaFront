@@ -27,13 +27,13 @@
                                         <div class="col-md-4 d-flex align-items-center ml-auto ml-md-0 mb-4 mb-md-0"
                                             data-scs-animation-in="zoomIn"
                                             data-scs-animation-delay="400">
-                                            <NuxtLink :to='"/product?id=" + el.productKaspiId'><img class="img-fluid" :src="el.promoImages[Math.floor(Math.random() * (el.promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
+                                            <NuxtLink :to='"/product?id=" + el.productKaspiId'><img class="img-fluid2" :src="el.promoImages[Math.floor(Math.random() * (el.promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
                                         </div>
                                         <div class="col-md-4"
                                             data-scs-animation-in="fadeInRight"
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
-                                                <NuxtLink :to='"/product?id=" + el.productKaspiId'><h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">Widescreen 4K SUHD TV</a></h5></NuxtLink>
+                                                <NuxtLink :to='"/product?id=" + el.productKaspiId'><h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">{{el.productKaspiIdData.offerData.name}}</a></h5></NuxtLink>
                                                 <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">{{el.newPrice.toFixed(0)}}₸</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{el.oldPrice.toFixed(0)}}₸</del>
@@ -71,11 +71,11 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <span class="">Availavle: <strong>6</strong></span>
-                                                        <span class="">Already Sold: <strong>28</strong></span>
+                                                        <span class="">Availavle: <strong>{{el.productKaspiIdData.offerData.product_count}}</strong></span>
+                                                        <span class="">Already Sold: <strong>{{(el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
                                                     </div>
                                                     <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-30 bg-primary"></span>
+                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-40 bg-primary"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -480,7 +480,7 @@
                                     <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">{{promoActions4Type[0].bigPromoText}}</h1>
                                     <div class="flex-content-center ml-4 flex-shrink-0">
                                         <div class="bg-primary rounded-lg px-6 py-2">
-                                            <em class="font-size-13 font-weight-light text-white">{{localizeFilter('StartingAtText')}}</em>
+                                            <div class="font-size-13 font-weight-light text-white">{{localizeFilter('StartingAtText')}}</div>
                                             <div class="font-size-30  text-lh-1 text-white">
                                                 <sup class="text-white">{{promoActions4Type[0].minPrice.toFixed(0)}}₸</sup>
                                             </div>
@@ -1063,5 +1063,9 @@ export default {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+.img-fluid2{
+    max-width: 100%;
+    height: auto;
 }
 </style>

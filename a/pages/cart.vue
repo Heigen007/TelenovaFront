@@ -71,17 +71,9 @@
                                                 <div class="d-md-flex">
                                                     <button @click='forceUpdate' type="button" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">{{localizeFilter('UpdateCartButton')}}</button>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                </div>
-                <div class="mb-8 cart-total">
+                <div class="cart-total">
                     <div class="row">
-                        <div class="col-xl-5 col-lg-6 offset-lg-6 offset-xl-7 col-md-8 offset-md-4">
+                        <div >
                             <div class="border-bottom border-color-1 mb-3">
                                 <h3 class="d-inline-block section-title mb-0 pb-2 font-size-26">{{localizeFilter('CartConcludedTitle')}}</h3>
                             </div>
@@ -102,6 +94,15 @@
                         </div>
                     </div>
                 </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
             </div>
         </main>
         <!-- ========== END MAIN CONTENT ========== -->

@@ -120,7 +120,8 @@
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body --> 
                         <!-- Tab Content -->
-                        <div :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
+                        <preloader v-if='!IsProducts2' />
+                        <div v-else :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
                             <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <div class="row products-group ">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item">
@@ -276,6 +277,7 @@ export default {
             currentInput: '',
             IsPopper: false,
             IsProducts: false,
+            IsProducts2: false,
             minV: 0,
             maxV: 0
         }
@@ -286,6 +288,7 @@ export default {
     watch: {
         $route() {
             this.IsProducts = false
+            this.IsProducts2 = false
             if(process.browser){
             if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
                 this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'first'])
@@ -312,6 +315,7 @@ export default {
         Products(newV){
             window.scrollTo(0,0)
             this.IsProducts = true
+            this.IsProducts2 = true
         }
     },
    updated(){
@@ -464,7 +468,7 @@ export default {
                 this.ProductCounter = 0
                 this.minV = MinPrice
                 this.maxV = MaxPrice
-            this.IsProducts = false
+                this.IsProducts2 = false
             }
         },
         SelectSorting(select){
