@@ -157,10 +157,11 @@
             "Title": "Оставьте нам сообщение",
             "FText": "Оставьте нам сообщение и мы ответим Вам в течении 2 рабочих дней.",
             "FirstInputLabel": "Имя",
-            "SecondInputLabel": "Фамиллия",
+            "SecondInputLabel": "Фамилия",
             "ThirdInputLabel": "Предмет обсуждения",
             "FourthInputLabel": "Ваше сообщение",
-            "SendButtonText": "Отправить"
+            "SendButtonText": "Отправить",
+            "PhoneNumber": "Номер телефона"
         },
         "SecondPart": {
             "Title": "Наш магазин",
@@ -242,7 +243,9 @@
         "RelatedProductsPartTitle": "Похожие продукты",
         "InStockText": "в наличии",
         "NotInStockText": "Нет в наличии",
-        "CreditTitle": "Доступно в рассрочку"
+        "CreditTitle": "Доступно в рассрочку",
+        "NoProducts": "Нет похожих продуктов!",
+        "Related": "Похожие продукты"
     },
     "ShopPage": {
         "FirstOptionalTitle": "Результаты по: ",

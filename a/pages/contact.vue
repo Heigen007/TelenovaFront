@@ -16,7 +16,7 @@
                                 <h3 class="section-title mb-0 pb-2 font-size-25">{{localizeFilter('FirstPart','Title')}}</h3>
                             </div>
                             <p class="max-width-830-xl text-gray-90">{{localizeFilter('FirstPart','FText')}}</p>
-                            <form class="js-validate" novalidate="novalidate">
+                            <div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <!-- Input -->
@@ -25,7 +25,7 @@
                                                 {{localizeFilter('FirstPart','FirstInputLabel')}}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control" name="firstName" placeholder="" aria-label="" required="" data-msg="Please enter your frist name." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
+                                            <input type="text" v-model='info.name' class="form-control" name="firstName" placeholder="" aria-label="" required="" data-msg="Please enter your frist name." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
                                         </div>
                                         <!-- End Input -->
                                     </div>
@@ -37,7 +37,19 @@
                                                 {{localizeFilter('FirstPart','SecondInputLabel')}}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control" name="lastName" placeholder="" aria-label="" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" v-model='info.lastName' class="form-control" name="lastName" placeholder="" aria-label="" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                        </div>
+                                        <!-- End Input -->
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <!-- Input -->
+                                        <div class="js-form-message mb-4">
+                                            <label class="form-label">
+                                                {{localizeFilter('FirstPart','PhoneNumber')}}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" v-model='info.phone' class="form-control" name="lastName" placeholder="" aria-label="" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
                                         </div>
                                         <!-- End Input -->
                                     </div>
@@ -48,7 +60,7 @@
                                             <label class="form-label">
                                                 {{localizeFilter('FirstPart','ThirdInputLabel')}}
                                             </label>
-                                            <input type="text" class="form-control" name="Subject" placeholder="" aria-label="" data-msg="Please enter subject." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" v-model='info.subject' class="form-control" name="Subject" placeholder="" aria-label="" data-msg="Please enter subject." data-error-class="u-has-error" data-success-class="u-has-success">
                                         </div>
                                         <!-- End Input -->
                                     </div>
@@ -59,15 +71,15 @@
                                             </label>
 
                                             <div class="input-group">
-                                                <textarea class="form-control p-5" rows="4" name="text" placeholder=""></textarea>
+                                                <textarea v-model='info.info' class="form-control p-5" rows="4" name="text" placeholder=""></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <button type="submit" class="btn btn-primary-dark-w px-5 text-white">{{localizeFilter('FirstPart','SendButtonText')}}</button>
+                                    <button @click='createSub' class="btn btn-primary-dark-w px-5 text-white">{{localizeFilter('FirstPart','SendButtonText')}}</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-xl-3">
@@ -101,6 +113,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import Swal from 'sweetalert2'
 export default {
     head() {
         return {
@@ -109,7 +123,8 @@ export default {
     },
     data() {
         return{
-            Component: "ContactUsPage"
+            Component: "ContactUsPage",
+            info: {}
         }
     },
     mounted(){
@@ -135,6 +150,24 @@ export default {
         localizeFilter(key, key2, key3) {
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
+        createSub(){
+            axios.get(`https://telenova.bitrix24.kz/rest/51/hhxb82uv6mu8vtyn/crm.lead.add.json?FIELDS[TITLE]=Новый лид&FIELDS[NAME]=${this.info.name}&FIELDS[LAST_NAME]=${this.info.lastName}&FIELDS[PHONE][0][VALUE]=${this.info.phone}&FIELDS[COMMENTS]=${this.info.subject}()${this.info.info}`)
+            .then(res => {
+                console.log(res);
+                Swal.fire(
+                    'Success!',
+                    'We have got your message!',
+                    'success'
+                )
+            })
+            .catch(err => {
+                Swal.fire(
+                    'Error!',
+                    'Sorry, some error occured',
+                    'error'
+                )
+            })
+        }
     }
 }
 </script>

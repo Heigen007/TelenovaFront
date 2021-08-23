@@ -37,11 +37,11 @@
                                             <!-- End Fullscreen Toggle Button -->
 
                                             <!-- Logo -->
-                                            <router-link style='width: 13rem' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
-                                                <img  style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                            <router-link style='width: 11rem;' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
+                                                <img  style='width: 11rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                                             </router-link>
-                                            <router-link style='width: 11rem' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
-                                                <img style='width: 13rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                            <router-link style='width: 10rem; margin-top: 20px; margin-bottom: 20px' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
+                                                <img style='width: 10rem; margin-top: 5px' src='logo.png' alt="Image Description">
                                             </router-link>
                                             <!-- End Logo -->
                                         </nav>
@@ -65,7 +65,7 @@
                                             </div>
                                             <div id="basicsCollapseOne" class="collapse vertical-menu v3 border-top-primary border-top border-width-2">
                                                 <div class="card-body p-0">
-                                                    <nav style='margin-left: 6px' class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
+                                                    <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                                                             <ul style='max-height: 550px; overflow-y: scroll' class="navbar-nav u-header__navbar-nav">
                                                                 <!-- Nav Item MegaMenu -->
@@ -77,7 +77,7 @@
                                                                     <a :id="'basicMegaMenu'+i" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{Object.keys(el)[0]}}</a>
 
                                                                     <!-- Nav Item - Mega Menu -->
-                                                                    <div style="overflow-y: scroll; min-height: 550px; margin-left: -6px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
+                                                                    <div style="overflow-y: scroll; min-height: 550px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
                                                                         <div class="vmm-bg" style="bottom: auto">
                                                                             <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 0.5' alt="Image Description">
                                                                         </div>

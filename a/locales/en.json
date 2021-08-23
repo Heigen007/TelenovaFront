@@ -182,7 +182,8 @@
             "SecondInputLabel": "Last Name",
             "ThirdInputLabel": "Subject",
             "FourthInputLabel": "Your Message",
-            "SendButtonText": "Send Message"
+            "SendButtonText": "Send Message",
+            "PhoneNumber": "Phone number"
         },
         "SecondPart": {
             "Title": "Our Store",
@@ -264,7 +265,9 @@
         "RelatedProductsPartTitle": "Related products",
         "InStockText": "in stock",
         "NotInStockText": "Not in stock",
-        "CreditTitle": "Available in credit"
+        "CreditTitle": "Available in credit",
+        "NoProducts": "There is no similar products!",
+        "Related": "Related"
     },
     "ShopPage": {
         "FirstOptionalTitle": "Searching by key:",

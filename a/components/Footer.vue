@@ -90,10 +90,9 @@
                         <div>
                             <label class="sr-only">Email address</label>
                             <div class="input-group input-group-pill">
-                                <input type="email" class="form-control border-0 height-40" name="email" placeholder="Email address" aria-label="Email address" required
-                                data-msg="Please enter a valid email address.">
+                                <input v-model='email' type="email" class="form-control border-0 height-40" name="email">
                                 <div class="input-group-append">
-                                    <button class="btn btn-dark btn-sm-wide height-40 py-2" style="cursor: pointer">{{localizeFilter('SubmitButton')}}</button>
+                                    <button @click='setEmail' class="btn btn-dark btn-sm-wide height-40 py-2" style="cursor: pointer">{{localizeFilter('SubmitButton')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +159,7 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="row">
-                            <div style='margin-left: 10px' v-if='bestC' class="col-12 col-md mb-4 mb-md-0">
+                            <div v-if='bestC' class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('CategoriesTitle')}}</h6>
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
@@ -169,7 +168,7 @@
                                 <!-- End List Group -->
                             </div>
 
-                            <div style='margin-left: 10px' class="col-12 col-md mb-4 mb-md-0">
+                            <div class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('OtherInfoTitle')}}</h6>
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
@@ -194,7 +193,7 @@
                                 </ul>
                                 <!-- End List Group -->
                             </div>
-                            <div style='margin-left: 10px' class="col-12 col-md mb-4 mb-md-0">
+                            <div class="col-12 col-md mb-4 mb-md-0">
                                 <h6 class="mb-3 font-weight-bold">{{localizeFilter('Language')}}</h6>
                                 <div style='margin-bottom: 90px;' class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                                     <div class="d-flex align-items-center">
@@ -268,10 +267,14 @@ export default {
             Component: 'Footer',
             popularProducts: [],
             bestC: [],
-            lang: true
+            lang: true,
+            email: ''
         }
     },
     methods: {
+        setEmail(){
+
+        },
         localizeFilter(key, key2, key3) {
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },

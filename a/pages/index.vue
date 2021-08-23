@@ -145,14 +145,15 @@
                                           "slidesToShow": 3
                                         }
                                     }, {
-                                      "breakpoint": 460,
-                                      "settings": {
-                                        "slidesToShow": 1
-                                      }
-                                    }, {
                                       "breakpoint": 768,
                                       "settings": {
                                         "slidesToShow": 2
+                                      }
+                                    }, {
+                                      "breakpoint": 460,
+                                      "settings": {
+                                        "slidesToShow": 1,
+                                        "slidesToScroll": 1
                                       }
                                     }]'>
                                     <div class="js-slide products-group" v-for="(el,i) in FilteredNewestProducts" :key='i'>
@@ -300,14 +301,15 @@
                               "slidesToShow": 3
                             }
                         }, {
-                          "breakpoint": 460,
-                          "settings": {
-                            "slidesToShow": 1
-                          }
-                        }, {
                           "breakpoint": 768,
                           "settings": {
                             "slidesToShow": 2
+                          }
+                        }, {
+                          "breakpoint": 460,
+                          "settings": {
+                            "slidesToShow": 1,
+                            "slidesToScroll": 1
                           }
                         }]'>
                             <div  class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,10)" :key='i'>
@@ -402,14 +404,15 @@
                                       "slidesToShow": 3
                                     }
                                 }, {
-                                  "breakpoint": 460,
-                                  "settings": {
-                                    "slidesToShow": 1
-                                  }
-                                }, {
                                   "breakpoint": 768,
                                   "settings": {
                                     "slidesToShow": 2
+                                  }
+                                }, {
+                                  "breakpoint": 460,
+                                  "settings": {
+                                    "slidesToShow": 1,
+                                    "slidesToScroll": 1
                                   }
                                 }]'>
                                 <div class="js-slide products-group" v-for="(el,i) in FilteredPopularProducts" :key='i'>
@@ -475,8 +478,8 @@
                     <NuxtLink to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
                         <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
-                            <div class="space-top-2-md p-4 pt-8 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
-                                <div class="flex-horizontal-center overflow-auto overflow-md-visble">
+                            <div class="space-top-2-md p-4 pt-5 pt-2 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
+                                <div class="flex-horizontal-center overflow-auto overflow-md-visble" style='flex-wrap: wrap'>
                                     <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">{{promoActions4Type[0].bigPromoText}}</h1>
                                     <div class="flex-content-center ml-4 flex-shrink-0">
                                         <div class="bg-primary rounded-lg px-6 py-2">
@@ -519,14 +522,15 @@
                                       "slidesToShow": 3
                                     }
                                 }, {
-                                  "breakpoint": 460,
-                                  "settings": {
-                                    "slidesToShow": 1
-                                  }
-                                }, {
                                   "breakpoint": 768,
                                   "settings": {
                                     "slidesToShow": 2
+                                  }
+                                }, {
+                                  "breakpoint": 460,
+                                  "settings": {
+                                    "slidesToShow": 1,
+                                    "slidesToScroll": 1
                                   }
                                 }]'>
                                 <div  class="js-slide products-group" v-for="(el,i) in FilteredLapProducts" :key='i'>
@@ -614,14 +618,15 @@
                                       "slidesToShow": 3
                                     }
                                 }, {
-                                  "breakpoint": 460,
-                                  "settings": {
-                                    "slidesToShow": 1
-                                  }
-                                }, {
                                   "breakpoint": 768,
                                   "settings": {
                                     "slidesToShow": 2
+                                  }
+                                }, {
+                                  "breakpoint": 460,
+                                  "settings": {
+                                    "slidesToShow": 1,
+                                    "slidesToScroll": 1
                                   }
                                 }]'>
                                 <div class="js-slide products-group" v-for="(el,i) in FilteredTVProducts" :key='i'>
@@ -1031,11 +1036,6 @@ export default {
     border-radius: 0px;
     border-color: #c7c7c7;
 }
-.imgPromo{
-    width: 246px;
-    height: 166px;
-    aspect-ratio: 17 / 10;
-}
 .imgPromo img{
     width: 100%;
     height: 100%;
@@ -1048,9 +1048,16 @@ export default {
     width: 100%;
     height: 150px;
     z-index: -100;
+    left: 0
 }
 .myBg{
     background-color: rgb(250, 250, 250);
+}
+@media (min-width: 580px) {
+    .imgPromo{
+        width: 246px;
+        height: 166px;
+    }
 }
 @media (max-width: 991px) {
     .mr{

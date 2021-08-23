@@ -45,15 +45,15 @@
                                         <div class="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
                                             <div class="js-quantity row align-items-center">
                                                 <div class="col">
-                                                    <input class="js-result form-control h-auto border-0 rounded p-0 shadow-none" type="text" :value="el.offerData.count" :id='i'>
+                                                    <input style='background-color: white' class="form-control h-auto border-0 rounded p-0 shadow-none" readonly :value="el.offerData.count" :id='i'>
                                                 </div>
                                                 <div class="col-auto pr-1">
-                                                    <a @click="$store.commit('cart/AmountCh',[-1,i])" class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
+                                                    <div @click="$store.commit('cart/AmountCh',[-1,i])" class="btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0">
                                                         <small class="fas fa-minus btn-icon__inner"></small>
-                                                    </a>
-                                                    <a @click="$store.commit('cart/AmountCh',[+1,i])" class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
+                                                    </div>
+                                                    <div @click="$store.commit('cart/AmountCh',[+1,i])" class="btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0">
                                                         <small class="fas fa-plus btn-icon__inner"></small>
-                                                    </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

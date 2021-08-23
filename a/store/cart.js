@@ -9,7 +9,8 @@ export default {
     },
     mutations: {
       AmountCh(state, ValueId){
-        if(state.cart[ValueId[1]].offerData.count + ValueId[0] >= 0) {
+        if(state.cart[ValueId[1]].offerData.count + ValueId[0] > 0) {
+          console.log(state.cart[ValueId[1]].offerData.count, ValueId[0] );
           state.cart[ValueId[1]].offerData.count += ValueId[0]
           localStorage.setItem('cart', JSON.stringify(state.cart))
         }
