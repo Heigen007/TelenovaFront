@@ -248,6 +248,7 @@
         "Related": "Похожие продукты"
     },
     "ShopPage": {
+        "CreditTitle": "Доступно в рассрочку",
         "FirstOptionalTitle": "Результаты по: ",
         "FirstOptionalSecondTitle": "Результаты по категории: ",
         "FilterPart": {

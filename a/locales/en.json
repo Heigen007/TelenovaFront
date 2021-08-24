@@ -270,6 +270,7 @@
         "Related": "Related"
     },
     "ShopPage": {
+        "CreditTitle": "Available in credit",
         "FirstOptionalTitle": "Searching by key:",
         "FirstOptionalSecondTitle": "Searching in category:",
         "FilterPart": {

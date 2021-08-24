@@ -1045,10 +1045,9 @@ export default {
 .myPhoto{
     position: absolute;
     object-fit: cover;
-    width: 100%;
+    width: 94%;
     height: 150px;
     z-index: -100;
-    left: 0
 }
 .myBg{
     background-color: rgb(250, 250, 250);

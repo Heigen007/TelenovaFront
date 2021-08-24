@@ -70,6 +70,7 @@ export const mutations = {
           "filters": filters
         }
       }
+      console.log(JSON_Obj);
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))

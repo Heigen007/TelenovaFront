@@ -248,8 +248,30 @@
                                                 <li v-for="(cat,o) in el" :key="o">
                                                     <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;' class="u-header-collapse__submenu-nav-link">
                                                         <div v-for="(fil,y) in cat" :key="y" style='margin: 0.3rem 0 0.3rem 0' class='u-header-collapse__nav-list'>
-                                                            <div @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
-                                                            <div v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
+                                                            <div id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                data-unfold-duration="500" @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
+                                                            <div id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                data-unfold-duration="500" @click='HideA("/shop?" + y)' class='pointer' v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
                                                         </div>
                                                     </div>
                                                 </li>
