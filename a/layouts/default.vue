@@ -100,4 +100,8 @@ export default {
   font-weight: normal;
   font-style: normal;
 }
+.b24-widget-button-wrapper{
+  right: 10px !important;
+  bottom: 10px !important;
+}
 </style>

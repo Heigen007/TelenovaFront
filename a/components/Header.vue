@@ -279,22 +279,94 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/" class="u-header-collapse__nav-link font-weight-bold">Home</NuxtLink>
+                                        <NuxtLink id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                style='color: black'
+                                                data-unfold-duration="500" to="/" class="u-header-collapse__nav-link font-weight-bold">Home</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/cart" class="u-header-collapse__nav-link font-weight-bold">Cart</NuxtLink>
+                                        <NuxtLink id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                style='color: black'
+                                                data-unfold-duration="500" to="/cart" class="u-header-collapse__nav-link font-weight-bold">Cart</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/about" class="u-header-collapse__nav-link font-weight-bold">Adout Us</NuxtLink>
+                                        <NuxtLink id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                style='color: black'
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                data-unfold-duration="500" to="/about" class="u-header-collapse__nav-link font-weight-bold">Adout Us</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/terms" class="u-header-collapse__nav-link font-weight-bold">Terms</NuxtLink>
+                                        <NuxtLink id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                style='color: black'
+                                                data-unfold-duration="500" to="/terms" class="u-header-collapse__nav-link font-weight-bold">Terms</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/faq" class="u-header-collapse__nav-link font-weight-bold">FAQ</NuxtLink>
+                                        <NuxtLink id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                style='color: black'
+                                                data-unfold-duration="500" to="/faq" class="u-header-collapse__nav-link font-weight-bold">FAQ</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/contact" class="u-header-collapse__nav-link font-weight-bold">Contact Us</NuxtLink>
+                                        <NuxtLink id="sidebarHeaderInvoker"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                style='color: black'
+                                                data-unfold-duration="500" to="/contact" class="u-header-collapse__nav-link font-weight-bold">Contact Us</NuxtLink>
                                     </li>
 
                                 </ul>

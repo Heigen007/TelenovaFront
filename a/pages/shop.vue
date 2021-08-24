@@ -125,8 +125,8 @@
                             <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <div class="row products-group ">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item">
-                                        <div class=" h-100 w-100">
-                                            <div class="inner p-3">
+                                        <div class=" h-100 w-100 product-item">
+                                            <div class="product-item__inner inner p-3">
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
@@ -163,6 +163,11 @@
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-item__footer">
+                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                        <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
                                             </div>

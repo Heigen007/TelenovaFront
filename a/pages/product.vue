@@ -125,7 +125,7 @@
                                         <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                                             <a class="nav-link active" id="Specification-tab"  href="#Specification" role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
                                         </li>
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                        <li v-if='Product.similarProducts.length!=0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                                             <a class="nav-link" id="Related-tab"  href="#Related" role="tab" >{{localizeFilter('Related')}}</a>
                                         </li>
                                     </ul>
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="js-scroll-nav">
+                    <div class="js-scroll-nav" v-if='Product.similarProducts.length!=0'>
                         <div class="bg-white py-4 px-xl-11 px-md-5 px-4 mb-6">
                             <div id="Related" aria-labelledby="Related-tab" class="mx-md-2">
                                 <div class="position-relative mb-6">

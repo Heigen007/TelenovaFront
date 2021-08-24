@@ -137,18 +137,8 @@
                                     </NuxtLink>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our google account" to="#">
-                                        <span class="fab fa-google btn-icon__inner"></span>
-                                    </NuxtLink>
-                                </li>
-                                <li class="list-inline-item mr-0">
                                     <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our twitter account" to="#">
-                                        <span class="fab fa-twitter btn-icon__inner"></span>
-                                    </NuxtLink>
-                                </li>
-                                <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our github account" to="#">
-                                        <span class="fab fa-github btn-icon__inner"></span>
+                                        <span class="fab fa-instagram btn-icon__inner"></span>
                                     </NuxtLink>
                                 </li>
                                 <li class="list-inline-item mr-0">

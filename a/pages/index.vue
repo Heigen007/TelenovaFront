@@ -222,7 +222,7 @@
                     <div class="row mr">
                         <div class="col-lg-6 mb-3 ">
                             <div class="banner-bg">
-                                <NuxtLink :to="'/shop?SCat?' + promoActions6Type[0].categoryName" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink v-if='promoActions6Type.length > 0' :to="'/shop?SCat?' + promoActions6Type[0].categoryName" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
                                         <img :src="promoActions6Type[0].promoImages[Math.floor(Math.random() * (promoActions6Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
@@ -242,7 +242,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-bg">
-                                <NuxtLink :to="'/shop?SCat?' + promoActions7Type[0].categoryName" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <NuxtLink v-if='promoActions7Type.length > 0' :to="'/shop?SCat?' + promoActions7Type[0].categoryName" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
                                         <img :src="promoActions7Type[0].promoImages[Math.floor(Math.random() * (promoActions7Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
@@ -475,7 +475,7 @@
                 <!-- End Popular Products -->
                 <!-- Full banner -->
                 <div class="mb-6">
-                    <NuxtLink to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
+                    <NuxtLink v-if='promoActions4Type.length > 0' to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
                         <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
                             <div class="space-top-2-md p-4 pt-5 pt-2 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
@@ -712,7 +712,7 @@
                     <div class="row">
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-17">
-                                <NuxtLink :to='"/product?id=" + promoActions2Type[0].productKaspiId' class="row align-items-center">
+                                <NuxtLink v-if='promoActions2Type.length > 0' :to='"/product?id=" + promoActions2Type[0].productKaspiId' class="row align-items-center">
                                     <div class="col-md-6">
                                         <div class="ml-md-7 mt-6 mt-md-0 ml-4 text-gray-90">
                                             <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[0].bigPromoText}}</h2>
@@ -731,15 +731,15 @@
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
+                                <NuxtLink v-if='promoActions1Type.length > 0' :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink :to='"/product?id=" + promoActions1Type[1].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
+                            <NuxtLink v-if='promoActions1Type.length > 1' :to='"/product?id=" + promoActions1Type[1].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
-                                <NuxtLink to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
+                                <NuxtLink v-if='promoActions2Type.length > 1' to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <img class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * (promoActions2Type[1].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
