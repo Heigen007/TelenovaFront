@@ -305,6 +305,7 @@ export default {
         .then( response => {
             console.log(response)
             self.Product = response.data
+            if(Product.similarProducts.length == 0) this.currentTab = 0
         })
         .catch( error => {
             console.log(error);
