@@ -724,7 +724,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img class="img-fluid MFluid" :src="promoActions2Type[0].promoImages[Math.floor(Math.random() * (promoActions2Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
+                                        <img style='padding-left: 2px' class="img-fluid MFluid" :src="promoActions2Type[0].promoImages[Math.floor(Math.random() * (promoActions2Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                 </NuxtLink>
                             </div>
@@ -741,7 +741,7 @@
                             <div class="bg-gray-1">
                                 <NuxtLink v-if='promoActions2Type.length > 1' to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
-                                        <img class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * (promoActions2Type[1].promoImages.length - 1))].clientPath" alt="Image Description">
+                                        <img style='padding-right: 2px' class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * (promoActions2Type[1].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <div class="ml-md-8 pr-2 mt-6 mt-md-0 ml-4 text-gray-90">
