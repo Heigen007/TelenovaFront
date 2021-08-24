@@ -990,8 +990,18 @@ export default {
     }
 }
 </script>
-
 <style scoped>
+@media (min-width: 1200px) {
+  .product-item:hover .product-item__inner:not(.remove-prodcut-hover) {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    box-shadow: 0px 0px 6px 0px rgba(1, 1, 1, 0.3);
+    background-color: #fff;
+    z-index: 1;
+  }
+}
 @media (max-width: 1200px) {
     .product-item{
         display: flex;

@@ -121,7 +121,7 @@
                         <!-- Shop Body --> 
                         <!-- Tab Content -->
                         <preloader v-if='!IsProducts2' />
-                        <div v-else :style='Products.length == 0 ? "" : "min-height: 330px"' class="" id="pills-tabContent">
+                        <div v-else :style='Products.length == 0 ? "" : "min-height: 350px"' class="" id="pills-tabContent">
                             <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <div class="row products-group ">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item">
@@ -930,8 +930,5 @@ input[type=range]:focus::-ms-fill-upper {
    .tool{
         z-index: 1002 !important;
     } 
-}
-.inner:hover{
-    box-shadow: 0px 0px 6px 0px rgb(1 1 1 / 30%);
 }
 </style>

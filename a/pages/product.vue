@@ -376,6 +376,17 @@ export default {
         justify-content: center;
     }
 }
+@media (min-width: 1200px) {
+  .product-item:hover .product-item__inner:not(.remove-prodcut-hover) {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    box-shadow: 0px 0px 6px 0px rgba(1, 1, 1, 0.3);
+    background-color: #fff;
+    z-index: 1;
+  }
+}
 .FLB{
     float: left;
     color: #717171;
@@ -402,9 +413,6 @@ export default {
     width: 100%;
     max-height: 100%;
     object-fit: contain;
-}
-.inner:hover{
-    box-shadow: 0px 0px 6px 0px rgb(1 1 1 / 30%);
 }
 .customBtn:hover{
     background-color: white !important;
