@@ -68,7 +68,7 @@
                                         <span v-else class="text-red font-weight-bold">{{localizeFilter('NotInStockText')}}</span>
                                     </div>
                                     <div class="mb-3" v-if='Product.salePrice != Product.offerData.price'>
-                                        <ins class="font-size-34 text-red text-decoration-none">{{Product.salePrice.toFixed(0)}}₸</ins>
+                                        <ins style='color: red' class="font-size-34 text-red text-decoration-none">{{Product.salePrice.toFixed(0)}}₸</ins>
                                         <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{Product.offerData.price.toFixed(0)}}₸</del>
                                     </div>
                                     <div class="mb-3" v-else>
@@ -163,9 +163,6 @@
                                 <div v-if='Product.similarProducts.length!=0' class="container">
                                     <!-- Related products -->
                                     <div class="mb-6">
-                                        <div class="border-bottom border-color-1  mb-4">
-                                            <h3 class="section-title mb-0 pb-2 font-size-22">{{localizeFilter('RelatedProductsPartTitle')}}</h3>
-                                        </div>
                                         <client-only>
                                         <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-1 pb-1 px-1"
                                             data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
