@@ -271,7 +271,7 @@
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
                                                 data-unfold-animation-out="fadeOutLeft"
-                                                data-unfold-duration="500" @click='HideA("/shop?" + y)' class='pointer' v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
+                                                data-unfold-duration="500" @click='HideA("/shop?" + fil2)' class='pointer' v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
                                                         </div>
                                                     </div>
                                                 </li>

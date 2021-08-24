@@ -482,11 +482,11 @@ export default {
                                 self.OrderId = response.data._id
                                 self.loaderM = true
                                 self.realAmount = response.data.finishPrice
-                                Swal.fire(
-                                    'Success!',
-                                    'Your order has been created!',
-                                    'success'
-                                )
+                                // Swal.fire(
+                                //     'Success!',
+                                //     'Your order has been created!',
+                                //     'success'
+                                // )
                                 self.PayLink()
                             })
                             .catch(error => {

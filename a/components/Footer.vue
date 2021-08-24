@@ -64,7 +64,7 @@
                     </ul>
                 </div>
                 <div class="col-wd-3 d-none d-wd-block">
-                   <a v-if='promoActions5Type.length > 0 && promoActions5Type[0].promoImages.length > 0 && $store.state.promoActions' :href="'/product?id='+promoActions5Type[0].productKaspiId"><img class="img-fluid d-block img360x330" :src="promoActions5Type[0].promoImages[Math.floor(Math.random() * (promoActions5Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></a>
+                   <a v-if='promoActions5Type.length > 0 && $store.state.promoActions'  :href="promoActions5Type[0].link"><img class="img-fluid d-block img360x330" :src="promoActions5Type[0].promoImages[Math.floor(Math.random() * (promoActions5Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></a>
                    <img v-else class="img-fluid d-block img360x330" src="/img/330X360/img1.jpg" alt="Image Description">
                 </div>
             </div>

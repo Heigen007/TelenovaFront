@@ -253,7 +253,7 @@
                                         <div class="link text-gray-90" to="#">
                                             <span class="font-size-13">{{localizeFilter('fromText')}}</span>
                                             <div class="font-size-30 font-weight-bold text-lh-28">
-                                                {{promoActions7Type[0].minPrice.toFixed(0)}}₸
+                                                {{promoActions7Type[0].customMinPrice}}₸
                                                 <span class="link__icon ml-1">
                                                     <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                                 </span>
@@ -485,7 +485,7 @@
                                         <div class="bg-primary rounded-lg px-6 py-2">
                                             <div class="font-size-13 font-weight-light text-white">{{localizeFilter('StartingAtText')}}</div>
                                             <div class="font-size-30  text-lh-1 text-white">
-                                                <sup class="text-white">{{promoActions4Type[0].minPrice.toFixed(0)}}₸</sup>
+                                                <sup class="text-white">{{promoActions4Type[0].customMinPrice}}₸</sup>
                                             </div>
                                         </div>
                                     </div>
@@ -731,11 +731,11 @@
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <NuxtLink v-if='promoActions1Type.length > 0' :to='"/product?id=" + promoActions1Type[0].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
+                                <a v-if='promoActions1Type.length > 0' :href='promoActions1Type[0].link' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <NuxtLink v-if='promoActions1Type.length > 1' :to='"/product?id=" + promoActions1Type[1].productKaspiId' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></NuxtLink>
+                            <a v-if='promoActions1Type.length > 1' :href='promoActions1Type[1].link' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[1].promoImages.length - 1))].clientPath" alt="Image Description"></a>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
