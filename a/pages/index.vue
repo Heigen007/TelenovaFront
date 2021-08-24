@@ -156,7 +156,7 @@
                                         "slidesToScroll": 1
                                       }
                                     }]'>
-                                    <div class="js-slide products-group" v-for="(el,i) in FilteredNewestProducts" :key='i'>
+                                    <div style='min-height: 340px' class="js-slide products-group" v-for="(el,i) in FilteredNewestProducts" :key='i'>
                                         <div class="product-item">
                                             <div class="product-item__outer h-100" style='width: 100%'>
                                                 <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -312,7 +312,7 @@
                             "slidesToScroll": 1
                           }
                         }]'>
-                            <div  class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,10)" :key='i'>
+                            <div style='min-height: 340px' class="js-slide products-group" v-for="(el,i) in FilteredTrendingProducts.slice(0,10)" :key='i'>
                                 <div class="product-item">
                                     <div class="product-item__outer h-100" style='width: 100%'>
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -415,7 +415,7 @@
                                     "slidesToScroll": 1
                                   }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in FilteredPopularProducts" :key='i'>
+                                <div style='min-height: 340px' class="js-slide products-group" v-for="(el,i) in FilteredPopularProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -475,7 +475,7 @@
                 <!-- End Popular Products -->
                 <!-- Full banner -->
                 <div class="mb-6">
-                    <NuxtLink v-if='promoActions4Type.length > 0' to="/shop?SCat?Мобильные телефоны" class="d-block text-gray-90">
+                    <NuxtLink v-if='promoActions4Type.length > 0' :to="'/shop?SCat?' + promoActions4Type[0].categoryName" class="d-block text-gray-90">
                         <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
                             <div class="space-top-2-md p-4 pt-5 pt-2 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
@@ -533,7 +533,7 @@
                                     "slidesToScroll": 1
                                   }
                                 }]'>
-                                <div  class="js-slide products-group" v-for="(el,i) in FilteredLapProducts" :key='i'>
+                                <div style='min-height: 340px' class="js-slide products-group" v-for="(el,i) in FilteredLapProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
@@ -629,7 +629,7 @@
                                     "slidesToScroll": 1
                                   }
                                 }]'>
-                                <div class="js-slide products-group" v-for="(el,i) in FilteredTVProducts" :key='i'>
+                                <div style='min-height: 340px' class="js-slide products-group" v-for="(el,i) in FilteredTVProducts" :key='i'>
                                     <div class="product-item">
                                         <div class="product-item__outer h-100" style='width: 100%'>
                                             <div class="product-item__inner px-wd-4 p-2 p-md-3">
