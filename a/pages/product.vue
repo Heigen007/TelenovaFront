@@ -152,7 +152,7 @@
                                     <!-- Related products -->
                                     <div class="mb-6">
                                         <client-only>
-                                        <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-1 pb-1 px-1"
+                                        <div :style='Product.similarProducts.length == 0 ? "" : "min-height: 350px"' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-1 pb-1 px-1"
                                             data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                             data-slides-show="4"
                                             data-slides-scroll="2"
