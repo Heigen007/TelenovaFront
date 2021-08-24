@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="mb-3" v-if='Product.salePrice != Product.offerData.price'>
                                         <ins style='color: red' class="font-size-34 text-red text-decoration-none">{{Product.salePrice.toFixed(0)}}₸</ins>
-                                        <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{Product.offerData.price.toFixed(0)}}₸</del>
+                                        <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{Number(Product.offerData.price).toFixed(0)}}₸</del>
                                     </div>
                                     <div class="mb-3" v-else>
                                         <div class="font-size-36">{{Product.offerData.price}} ₸.</div>
@@ -121,16 +121,21 @@
                             <div id="Specification" aria-labelledby="Specification-tab" class="mx-md-2">
                                 <div class="position-relative mb-6">
                                     <ul class="nav nav-classic nav-tab nav-tab-lg justify-content-xl-center mb-6 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-lg-down-bottom-0 pb-1 pb-xl-0 mb-n1 mb-xl-0">
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link active" id="Specification-tab"  href="#Specification" role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
+                                        <li v-if='currentTab == 1' @click='currentTab = 0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                            <a class="nav-link" style='cursor: pointer' id="Specification-tab"  role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
                                         </li>
-                                        <li v-if='Product.similarProducts.length!=0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link" id="Related-tab"  href="#Related" role="tab" >{{localizeFilter('Related')}}</a>
+                                        <li v-else @click='currentTab = 0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                            <a class="nav-link active" style='cursor: pointer' id="Specification-tab"  role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
+                                        </li>
+                                        <li @click='turn' v-if='Product.similarProducts.length!=0 && currentTab == 0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                            <a class="nav-link" style='cursor: pointer' id="Related-tab"  role="tab" >{{localizeFilter('Related')}}</a>
+                                        </li>
+                                        <li @click='turn' v-else-if='Product.similarProducts.length!=0 && currentTab == 1' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                            <a class="nav-link active" style='cursor: pointer' id="Related-tab"  role="tab" >{{localizeFilter('Related')}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div v-for="(el,i) in Product.offerData.additional_properties" :key="i" class="mx-md-5 pt-1">
+                                <div v-show='currentTab == 0' v-for="(el,i) in Product.offerData.additional_properties" :key="i" class="mx-md-5 pt-1">
                                     <h3 class="font-size-18 mb-4">{{i}}</h3>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
@@ -143,24 +148,7 @@
                                         </table>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="js-scroll-nav" v-if='Product.similarProducts.length!=0'>
-                        <div class="bg-white py-4 px-xl-11 px-md-5 px-4 mb-6">
-                            <div id="Related" aria-labelledby="Related-tab" class="mx-md-2">
-                                <div class="position-relative mb-6">
-                                    <ul class="nav nav-classic nav-tab nav-tab-lg justify-content-xl-center mb-6 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-lg-down-bottom-0 pb-1 pb-xl-0 mb-n1 mb-xl-0">
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link" id="Specification-tab"  href="#Specification" role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
-                                        </li>
-                                        <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link active" id="Related-tab"  href="#Related" role="tab" >{{localizeFilter('Related')}}</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div v-if='Product.similarProducts.length!=0' class="container">
+                                <div v-show='Product.similarProducts.length!=0 && currentTab == 1' class="container">
                                     <!-- Related products -->
                                     <div class="mb-6">
                                         <client-only>
@@ -190,10 +178,10 @@
                                                 "slidesToScroll": 1
                                                 }
                                             }]'>
-                                            <div class="js-slide " v-if='el' v-for="(el,i) in Product.similarProducts" :key='i'>
-                                                <div>
-                                                    <div class="h-100">
-                                                        <div class="inner px-wd-4 p-2 p-md-3">
+                                            <div class="js-slide products-group" v-for="(el,i) in Product.similarProducts" :key='i'>
+                                                <div class = "product-item">
+                                                    <div class="h-100 product-item__outer" >
+                                                        <div class="inner px-wd-4 p-2 p-md-3 product-item__inner">
                                                             <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                                 <div class="mb-2"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
                                                                 <h5 class="mb-1 product-item__title"><a :href="'/product?id='+el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</a></h5>
@@ -246,7 +234,6 @@
                                     </div>
                                     <!-- End Related products -->
                                 </div>
-                                <div style='width: 100%; text-align: center; font-size: 2rem' v-else>{{localizeFilter('NoProducts')}}</div>
                             </div>
                         </div>
                     </div>
@@ -273,7 +260,8 @@ export default {
         return{
             Component: 'ProductPage',
             Product: null,
-            id: null
+            id: null,
+            currentTab: 1
         }
     },
     components: {  
@@ -329,6 +317,12 @@ export default {
         }, 1000);
     },
     methods: {
+        turn(){
+            this.currentTab = 1
+            // this.$nextTick(() => {
+            //     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
+            // })
+        },
         SmallT(){
             if(window.innerWidth < 1200) return true
             return false
@@ -377,7 +371,7 @@ export default {
     }
 }
 @media (min-width: 1200px) {
-  .product-item:hover .product-item__inner:not(.remove-prodcut-hover) {
+  .product-item:hover {
     position: absolute;
     width: 100%;
     height: auto;

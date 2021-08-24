@@ -1,11 +1,11 @@
 <template>
   <div class="NUXT_CONTAINER">
         <!-- ========== MAIN CONTENT ========== -->
-        <main v-if='IsC && newestProducts && popularProducts && Categories && TVProducts && LapProducts && $store.state.promoActions.length > 0' id="content" role="main">
+        <main v-if='IsC && Categories' id="content" role="main">
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
-                    <div class="overflow-hidden">
+                    <div v-if="promoActions3Type.length > 0" class="overflow-hidden">
                         <div class="bg-img-hero min-height-420 myBg" >
                             <div id="thumbProgress" class="js-slick-carousel u-slick"
                                 data-autoplay="false"
@@ -105,7 +105,7 @@
             <!-- End Slider Section -->
             <div class="container">
                 <!-- Save Big on Warehouse Cleaning -->
-                <div class="mb-6">
+                <div v-if='IsC && newestProducts.length > 0' class="mb-6">
                     <!-- Nav nav-pills -->
                     <div class="position-relative z-index-2 u-slick__tab">
                         <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
@@ -267,7 +267,7 @@
                 </div>
                 <!-- End Banner -->
                 <!-- Trending products -->
-                <div class="mb-6">
+                <div v-if='IsC && trendingProducts.length > 0' class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</div>
 
@@ -368,7 +368,7 @@
                 </div>
                 <!-- End Trending products -->
                 <!-- Popular Products -->
-                <div class="mb-6">
+                <div v-if='IsC && popularProducts.length > 0' class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</div>
                         <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
@@ -387,7 +387,7 @@
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Apills-tabContent">
                         <div class="tab-pane fade pt-2 show active" id="Apills-one-example1" role="tabpanel">
-                            <div v-if='IsC && popularProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
+                            <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="6"
                                 data-autoplay="true"
@@ -496,7 +496,7 @@
                 </div>
                 <!-- End Full banner -->
                 <!-- Laptops & Computers -->
-                <div class="mb-6">
+                <div v-if='IsC && LapProducts.length > 0' class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
                         <NuxtLink class="d-block text-gray-16" to="shop?FCat?Ноутбуки и аксессуары">{{localizeFilter('LaptopsLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
@@ -592,7 +592,7 @@
                 </div>
                 <!-- End Laptops & Computers -->
                 <!-- Television Entertainment -->
-                <div class="mb-6">
+                <div v-if='IsC && TVProducts.length > 0' class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
                         <NuxtLink class="d-block text-gray-16" to="shop?FCat?Мобильные телефоны и аксессуары">{{localizeFilter('PhonesLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
@@ -786,17 +786,17 @@ export default {
     data(){
         return{
             Component: 'MainPage',
-            popularProducts: null,
-            trendingProducts: null,
-            newestProducts: null,
+            popularProducts: [],
+            trendingProducts: [],
+            newestProducts: [],
             FilteredNewestProducts: null,
             FilteredTrendingProducts: null,
             FilteredPopularProducts: null,
             FilteredLapProducts: null,
             FilteredTVProducts: null,
             IsC: false,
-            TVProducts: null,
-            LapProducts: null,
+            TVProducts: [],
+            LapProducts: [],
             Categories: null
         }
     },
