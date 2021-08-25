@@ -305,7 +305,7 @@ export default {
         .then( response => {
             console.log(response)
             self.Product = response.data
-            if(Product.similarProducts.length == 0) this.currentTab = 0
+            if(self.Product.similarProducts.length == 0) this.currentTab = 0
         })
         .catch( error => {
             console.log(error);
@@ -363,6 +363,7 @@ export default {
 </script>
 
 <style scoped>
+.overflow-auto::-webkit-scrollbar{height: 0px;}
 @media (max-width: 1200px) {
     .product-item{
         display: flex;

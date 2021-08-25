@@ -75,7 +75,7 @@
                                                         <span class="">Already Sold: <strong>{{(el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
                                                     </div>
                                                     <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span class="position-absolute left-0 top-0 bottom-0 rounded-pill w-40 bg-primary"></span>
+                                                        <span style='width: 30%' class="position-absolute left-0 top-0 bottom-0 rounded-pill bg-primary"></span>
                                                     </div>
                                                 </div>
                                             </div>
