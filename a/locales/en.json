@@ -6,7 +6,8 @@
         "SearchInputPlaceholder": "Search Product",
         "ProductAddedTitle": "Product Added!",
         "HeaderBestCategoriesTitle": "Telenova Best Selling:",
-        "Sales": "Sales"
+        "Sales": "Sales",
+        "Search": "Search"
     },
     "Footer": {
         "FirstCategory": "Featured Products",

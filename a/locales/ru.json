@@ -6,7 +6,8 @@
         "SearchInputPlaceholder": "Поиск продукта",
         "ProductAddedTitle": "Продукт добавлен!",
         "HeaderBestCategoriesTitle": "Лучшие категории:",
-        "Sales": "Скидки"
+        "Sales": "Уценка",
+        "Search": "Поиск"
     },
     "Footer": {
         "FirstCategory": "Избранные продукты",

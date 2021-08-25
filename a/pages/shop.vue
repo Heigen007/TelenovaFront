@@ -111,7 +111,7 @@
                                         <option value="one" selected>{{localizeFilter('DefaultSorting')}}</option>
                                         <option value="two">{{localizeFilter('PopularitySorting')}}</option>
                                         <option value="five">{{localizeFilter('SortByPriceLowToHigh')}}</option>
-                                        <option value="six">{{localizeFilter('SortByPriceLowToHigh')}}</option>
+                                        <option value="six">{{localizeFilter('SortByPriceHighToLow')}}</option>
                                     </select>
                                     <!-- End Select -->
                                 </form>
@@ -129,7 +129,7 @@
                                             <div class="product-item__inner inner p-3" style='min-height: 350px'>
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
                                                         <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                     </div>
@@ -148,7 +148,7 @@
                                                 </div>
                                                 <div v-else class="product-item__body pb-xl-2">
                                                     <div class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
                                                         <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                     </div>
@@ -674,7 +674,7 @@ export default {
         SortByPrice(Line){
             var SortedArray = JSON.parse(JSON.stringify(this.Products))
             SortedArray.sort(function(a, b) {
-                return a.offerData.price - b.offerData.price;
+                return a.salePrice - b.salePrice;
             });
             if(Line=='up'){
                 this.$store.commit('SortByPopularity', SortedArray)

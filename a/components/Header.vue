@@ -109,9 +109,9 @@
                             <!-- Search Bar -->
                             <div class="col d-none d-xl-block">
                                 <form @submit='InputSearch' class="js-focus-state">
-                                    <label class="sr-only" for="searchproduct">Search</label>
+                                    <label class="sr-only" for="searchproduct">{{localizeFilter('Search')}}</label>
                                     <div class="input-group">
-                                        <input v-model='InputValue' class="form-control py-2 font-size-15 border-right-0 height-40 ChIn" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct2" style='border-radius: 0; border-width: 2px'>
+                                        <input v-model='InputValue' class="form-control py-2 font-size-15 border-right-0 height-40 ChIn" id="searchproduct-item" aria-describedby="searchProduct2" style='border-radius: 0; border-width: 2px'>
                                         <div class="input-group-append">
                                             <!-- End Select -->
                                             <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct2" style='border-radius: 0'>
@@ -188,7 +188,7 @@
                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                             <ul class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
                                 <!-- Button -->
-                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='color: red; text-decoration: none; font-weight: 700; white-space: nowrap' to='/sales'>{{localizeFilter('Sales')}}</NuxtLink></li>
+                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='color: red; text-decoration: none; font-weight: 700; white-space: nowrap' to='/shop?FCat?Уценка'>{{localizeFilter('Sales')}}</NuxtLink></li>
                                 <li v-for="(el,i) in bestC" :key='i' class="nav-item u-header__nav-item">
                                     <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name'>
                                         {{el.name}}
