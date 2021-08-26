@@ -264,7 +264,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
 import { createPopper } from '@popperjs/core';
 import preloader from '../components/CssPreloader.vue'
 export default {

@@ -271,7 +271,7 @@ export default {
         })
     },
     methods: {
-        Ship(e){
+        async Ship(e){
             if(this.items.cart.length > 0){
                 var self = this
                 var but = document.querySelector('.form-check-input').checked
@@ -298,7 +298,7 @@ export default {
                             creditMonth: this.creditCounter
                         }
                         this.loaderM = true
-                        axios.post('https://textforeva.ru/order', checkout)
+                        await axios.post('https://textforeva.ru/order', checkout)
                         .then(response => {
                             console.log(response);
                             self.loaderM = false

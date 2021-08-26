@@ -472,7 +472,7 @@
                 </div>
                 <!-- End Popular Products -->
                 <!-- Full banner -->
-                <div class="mb-6">
+                <div style='height: 150px' class="mb-6">
                     <a v-if='promoActions4Type.length > 0' :href="promoActions4Type[0].link" class="d-block text-gray-90">
                         <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
@@ -784,67 +784,72 @@ export default {
     data(){
         return{
             Component: 'MainPage',
-            popularProducts: [],
-            trendingProducts: [],
-            newestProducts: [],
+            popularProducts: null,
+            trendingProducts: null,
+            newestProducts: null,
             FilteredNewestProducts: null,
             FilteredTrendingProducts: null,
             FilteredPopularProducts: null,
             FilteredLapProducts: null,
             FilteredTVProducts: null,
             IsC: false,
-            TVProducts: [],
-            LapProducts: [],
+            TVProducts: null,
+            LapProducts: null,
             Categories: null
         }
     },
-    created(){
-        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
+    async created(){
+        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
         .then(response => {
             console.log(response, 'firstLevelCategory": "Мобильные телефоны и аксессуары"');
             this.TVProducts = response.data.products
             this.PopularFilter('MobileProducts')
+            this.Slick()
         })
         .catch(function(error) {
             console.log(error);
         })
 
-        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Ноутбуки и аксессуары", "count": 10 })
+        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Ноутбуки и аксессуары", "count": 10 })
         .then(response => {
             console.log(response, '"firstLevelCategory": "Ноутбуки и аксессуары"');
             this.LapProducts = response.data.products
             this.PopularFilter('NotebooksProducts')
+            this.Slick()
         })
         .catch(function(error) {
             console.log(error);
         })
 
-        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
+        await axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
             console.log(response,'mostPopular/products/20');
             this.trendingProducts = response.data.reverse().slice(0,10)
             this.popularProducts = response.data.reverse().slice(10,20)
             this.PopularFilter('TrendingProducts')
             this.PopularFilter('PopularProducts')
+            this.Slick()
         })
         .catch(function(error) {
             console.log(error);
         })
 
-        axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
+        await axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
         .then(response => {
             console.log(response,'MostPopular/freshProducts/10');
             this.newestProducts = response.data
             this.PopularFilter('NewestProducts')
+            this.Slick()
         })
         .catch(function(error) {
             console.log(error);
         })
 
-        axios.get('https://textforeva.ru/storage/mostPopular/firstLevelCategories/6')
+        await axios.get('https://textforeva.ru/storage/mostPopular/firstLevelCategories/6')
         .then(response => {
             console.log('AAAAAAAAAAAAA',response);
             this.Categories = response.data
+            this.Slick()
         })
         .catch(function(error) {
             console.log(error);
@@ -878,16 +883,13 @@ export default {
             var time3 = new Date(time)
             var time2 = new Date(Date.now())
             time2.setDate(time2.getDate() + 5)
+            
             if(((Date.parse(new Date(time)) - Date.now() ) / 86400000) > 5) return `${time2.getFullYear()}/${time2.getMonth() + 1}/${time2.getDate()}`
             else return `${time3.getFullYear()}/${time3.getMonth() + 1}/${time3.getDate()}`
         },
         Slick(){
-            if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts) {
-                setTimeout(() => $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'), 1000);
-            } else {
-                setTimeout(() => {
-                    this.Slick()
-                }, 100);
+            if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts && process.browser) {
+                this.$nextTick(() => {$.HSCore.components.HSSlickCarousel.init('.js-slick-carousel')});
             }
         },
         localizeFilter(key, key2, key3) {

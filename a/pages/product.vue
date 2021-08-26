@@ -319,9 +319,6 @@ export default {
     methods: {
         turn(){
             this.currentTab = 1
-            // this.$nextTick(() => {
-            //     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
-            // })
         },
         SmallT(){
             if(window.innerWidth < 1200) return true

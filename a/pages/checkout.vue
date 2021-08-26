@@ -340,7 +340,7 @@ export default {
     beforeMount(){
         this.items = this.$store.state.cart
     },
-    mounted(){
+    async mounted(){
         // this.activeCoupon = JSON.parse(localStorage.getItem('coupon')) || ''
         if(new Date(Date.now()) > new Date(this.activeCoupon.date)){
             localStorage.removeItem('coupon')
@@ -361,7 +361,7 @@ export default {
             // initialization of forms
             $.HSCore.components.HSFocusState.init();
         })
-        axios.get('https://textforeva.ru/promoCode/')
+        await axios.get('https://textforeva.ru/promoCode/')
         .then(res => {
             console.log(res.data);
             this.coupons = res.data
@@ -389,7 +389,7 @@ export default {
                 )
             }
         },
-        Ship(e){
+        async Ship(e){
             if(this.items.cart.length > 0){
                 var self = this
                 var but = document.querySelector('.form-check-input').checked
@@ -415,7 +415,7 @@ export default {
                                     promoCode: this.activeCoupon.code || ''
                                 }
                                 this.loaderM = true
-                                axios.post('https://textforeva.ru/order', checkout)
+                                await axios.post('https://textforeva.ru/order', checkout)
                                 .then(response => {
                                     console.log(response)
                                     self.loaderM = false
@@ -474,7 +474,7 @@ export default {
                                 promoCode: this.activeCoupon.code || ''
                             }
                             this.loaderM = true
-                            axios.post('https://textforeva.ru/order', checkout)
+                            await axios.post('https://textforeva.ru/order', checkout)
                             .then(response => {
                                 console.log(response);
                                 self.OrderId = response.data._id

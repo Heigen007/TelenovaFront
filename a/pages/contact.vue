@@ -150,8 +150,8 @@ export default {
         localizeFilter(key, key2, key3) {
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
-        createSub(){
-            axios.get(`https://telenova.bitrix24.kz/rest/51/hhxb82uv6mu8vtyn/crm.lead.add.json?FIELDS[TITLE]=Новый лид&FIELDS[NAME]=${this.info.name}&FIELDS[LAST_NAME]=${this.info.lastName}&FIELDS[PHONE][0][VALUE]=${this.info.phone}&FIELDS[COMMENTS]=${this.info.subject}()${this.info.info}`)
+        async createSub(){
+            await axios.get(`https://telenova.bitrix24.kz/rest/51/hhxb82uv6mu8vtyn/crm.lead.add.json?FIELDS[TITLE]=Новый лид&FIELDS[NAME]=${this.info.name}&FIELDS[LAST_NAME]=${this.info.lastName}&FIELDS[PHONE][0][VALUE]=${this.info.phone}&FIELDS[COMMENTS]=${this.info.subject}()${this.info.info}`)
             .then(res => {
                 console.log(res);
                 Swal.fire(

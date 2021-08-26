@@ -169,12 +169,12 @@ export const mutations = {
 }
 
 export const actions = {
-  FrontInit({ commit, dispatch }) {
+  async FrontInit({ commit, dispatch }) {
     console.log('FrontInit')
 
     dispatch('connect')
 
-    axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
+    await axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
       commit('SetProductsOnly', response.data)
     })
@@ -182,7 +182,7 @@ export const actions = {
       console.log(error);
     })
 
-    axios.get(`https://textforeva.ru/promoAction/`)
+    await axios.get(`https://textforeva.ru/promoAction/`)
     .then(response => {
       commit('SetPromoActions', response.data)
     })
@@ -190,7 +190,7 @@ export const actions = {
       console.log(error);
     })
 
-    axios.get(`https://textforeva.ru/storage/getAllCategories`)
+    await axios.get(`https://textforeva.ru/storage/getAllCategories`)
     .then(response => {
       console.log(response,'Categories');
       commit('SetCategories', response.data)
