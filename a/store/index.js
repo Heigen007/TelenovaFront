@@ -70,7 +70,6 @@ export const mutations = {
           "filters": filters
         }
       }
-      console.log(JSON_Obj);
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
@@ -140,7 +139,6 @@ export const mutations = {
     }
     var send = function(){
       if(state?.ws){
-        console.log(JSON_Obj);
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
         setTimeout(() => send(), 200);
@@ -192,7 +190,6 @@ export const actions = {
 
     await axios.get(`https://textforeva.ru/storage/getAllCategories`)
     .then(response => {
-      console.log(response,'Categories');
       commit('SetCategories', response.data)
     })
     .catch(function (error) {
@@ -204,7 +201,6 @@ export const actions = {
 
     connection.onmessage = async (msg) => {
       let data = JSON.parse(msg.data)
-      console.log(data,'WS Message');
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
       commit('SetPriceRange', data.priceRange)

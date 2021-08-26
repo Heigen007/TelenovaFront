@@ -187,7 +187,8 @@ export default {
     './static/vendor/hs-megamenu/src/hs.megamenu.css',
     './static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
     './static/vendor/fancybox/jquery.fancybox.css',
-    './static/vendor/slick-carousel/slick/slick.css'
+    './static/vendor/slick-carousel/slick/slick.css',
+    './static/css/theme.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
