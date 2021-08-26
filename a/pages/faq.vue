@@ -186,7 +186,7 @@
 export default {
     head() {
         return {
-            title: 'Telenova | FAQ'
+            title: `Telenova | ${this.localizeFilter('Title')}`,
         }
     },
     data: () => {

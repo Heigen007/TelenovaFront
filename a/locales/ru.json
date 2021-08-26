@@ -30,10 +30,12 @@
       "Share": "Поделиться"
     },
     "ErrorPage": {
+      "Title": "Ошибка",
       "ErrorTitle": "404!",
       "ErrorText": "Страница не найдена. Попробуйте перезагрузить страницу."
     },
     "MainPage": {
+      "Title": "Домашняя страница",
       "FirstPartTitle": "Новые товары",
       "SecondPartTitle": "Трендовые товары",
       "ThirdPartTitle": "Популярные товары",
@@ -155,6 +157,7 @@
       }
     },
     "ContactUsPage": {
+      "Title": "Связаться с нами",
       "FirstPart": {
         "Title": "Оставьте нам сообщение",
         "FText": "Оставьте нам сообщение и мы ответим Вам в течении 2 рабочих дней.",
@@ -235,6 +238,7 @@
       "SixthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat."
     },
     "ProductPage": {
+      "Title": "Страница продукта",
       "CardAvailabilityText": "В наличии:",
       "CardQuantityText": "Количество",
       "AddToCartText": "Добавить в корзину",
@@ -250,6 +254,7 @@
       "Related": "Похожие продукты"
     },
     "ShopPage": {
+      "Title": "Магазин",
       "CreditTitle": "Доступно в рассрочку",
       "FirstOptionalTitle": "Результаты по: ",
       "FirstOptionalSecondTitle": "Результаты по категории: ",
@@ -265,10 +270,12 @@
       "FilterButtonText": "Фильтровать"
     },
     "PaymentResultSuccess": {
+      "Title": "Успех",
       "title": "Успех!",
       "text": "Ваш заказ был создан!"
     },
     "PaymentResultError": {
+      "Title": "Ошибка",
       "title": "Ошибка",
       "text": "По каким-то обстоятельствам Ваш заказ не был создан..."
     },

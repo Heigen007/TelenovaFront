@@ -104,4 +104,10 @@ export default {
   right: 10px !important;
   bottom: 10px !important;
 }
+.swal2-styled.swal2-confirm{
+  background-color: #1150a8 !important;
+}
+.swal2-styled.swal2-confirm:focus {
+  box-shadow: 0 0 10px rgb(50, 131, 236) !important;
+}
 </style>

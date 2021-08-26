@@ -252,7 +252,7 @@
 export default {
     head() {
         return {
-            title: 'Telenova | About us',
+            title: `Telenova | ${this.localizeFilter('Title')}`,
             meta: [
                 {
                     hid: 'description',
@@ -271,12 +271,10 @@ export default {
         setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
-
-        $(document).on('ready', function () {
-        });
     },
     methods: {
         localizeFilter(key, key2, key3) {
+            console.log(key, this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3]));
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
     }

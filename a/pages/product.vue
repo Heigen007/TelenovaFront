@@ -252,7 +252,7 @@ import preloader from '../components/CssPreloader.vue'
 export default {
     head() {
         return {
-            title: 'Telenova | Product page'
+            title: `Telenova | ${this.localizeFilter('Title')}`,
         }
     },
     data(){

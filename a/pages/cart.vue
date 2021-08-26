@@ -118,7 +118,7 @@
 export default {
     head() {
         return {
-            title: 'Telenova | Cart'
+            title: `Telenova | ${this.localizeFilter('Title')}`,
         }
     },
     data(){ 

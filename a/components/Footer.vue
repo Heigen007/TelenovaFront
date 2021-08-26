@@ -169,7 +169,7 @@
                                         <NuxtLink to="/cart" class="list-group-item list-group-item-action">Cart</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/about" class="list-group-item list-group-item-action">Adout Us</NuxtLink>
+                                        <NuxtLink to="/about" class="list-group-item list-group-item-action">About Us</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink to="/terms" class="list-group-item list-group-item-action">Terms</NuxtLink>

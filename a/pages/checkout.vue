@@ -302,7 +302,7 @@ import Swal from 'sweetalert2'
 export default {
     head() {
         return {
-            title: 'Telenova | Checkout'
+            title: `Telenova | ${this.localizeFilter('MainTitle')}`,
         }
     },
     data(){
@@ -418,20 +418,18 @@ export default {
                                 axios.post('https://textforeva.ru/order', checkout)
                                 .then(response => {
                                     console.log(response)
-                                    self.loaderM = true
+                                    self.loaderM = false
                                     Swal.fire(
                                         'Success!',
                                         'Your order has been created!',
                                         'success'
                                     )
                                     self.$store.commit('cart/clear')
-                                    self.$router.push('/')
-                                    setTimeout(() => {
-                                        location.reload()
-                                    }, 5000);
+                                    self.$router.push('PaymentResultSuccess')
                                 })
                                 .catch(error => {
                                     console.log(error);
+                                    self.$router.push('PaymentResultError')
                                 })
                             } else {
                                 self.loaderM = true
@@ -480,7 +478,7 @@ export default {
                             .then(response => {
                                 console.log(response);
                                 self.OrderId = response.data._id
-                                self.loaderM = true
+                                self.loaderM = false
                                 self.realAmount = response.data.finishPrice
                                 // Swal.fire(
                                 //     'Success!',

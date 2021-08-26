@@ -29,10 +29,12 @@
         "Share": "Share"
     },
     "ErrorPage": {
+        "Title": "Error",
         "ErrorTitle": "404!",
         "ErrorText": "Nothing was found at this location. Try to reload the page, please."
     },
     "MainPage": {
+        "Title": "Home",
         "FirstPartTitle": "Newest Products",
         "FirstPartSuggestionLink": "Go to Daily Deals Section ",
         "SecondPartTitle": "Trending products",
@@ -176,6 +178,7 @@
         }
     },
     "ContactUsPage": {
+        "Title": "Contact Us",
         "FirstPart": {
             "Title": "Leave us a message",
             "FText": "Leave us a message and we will answer you within 2 business days.",
@@ -256,6 +259,7 @@
         "SixthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat."
     },
     "ProductPage": {
+        "Title": "Product page",
         "CardAvailabilityText": "Availability:",
         "CardQuantityText": "Quantity",
         "AddToCartText": "Add to Cart",
@@ -271,6 +275,7 @@
         "Related": "Related"
     },
     "ShopPage": {
+        "Title": "Shop",
         "CreditTitle": "Available in credit",
         "FirstOptionalTitle": "Searching by key:",
         "FirstOptionalSecondTitle": "Searching in category:",
@@ -291,10 +296,12 @@
         "FilterButtonText": "Filter"
     },
     "PaymentResultSuccess": {
+        "Title": "Error",
         "title": "Success",
         "text": "Your order has been created!"
     },
-    "PaymentResultError": { 
+    "PaymentResultError": {
+        "Title": "Error",
         "title": "Error",
         "text": "Your order has not been created..."
     },

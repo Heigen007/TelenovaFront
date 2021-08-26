@@ -222,13 +222,12 @@
                     <div class="row mr">
                         <div class="col-lg-6 mb-3 ">
                             <div class="banner-bg">
-                                <NuxtLink v-if='promoActions6Type.length > 0' :to="'/shop?SCat?' + promoActions6Type[0].categoryName" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <a v-if='promoActions6Type.length > 0' :href="promoActions6Type[0].link" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
                                         <img :src="promoActions6Type[0].promoImages[Math.floor(Math.random() * (promoActions6Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
-                                        <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                            {{promoActions6Type[0].bigPromoText}}
+                                        <div v-html="promoActions6Type[0].bigPromoText" class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
                                         </div>
                                         <div class="link text-gray-90 font-weight-bold font-size-15" to="#">
                                             Shop now
@@ -237,18 +236,17 @@
                                             </span>
                                         </div>
                                     </div>
-                                </NuxtLink>
+                                </a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-bg">
-                                <NuxtLink v-if='promoActions7Type.length > 0' :to="'/shop?SCat?' + promoActions7Type[0].categoryName" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <a v-if='promoActions7Type.length > 0' :href="promoActions7Type[0].link" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
                                         <img :src="promoActions7Type[0].promoImages[Math.floor(Math.random() * (promoActions7Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
                                     <div class="col-7 col-md-6 pr-xl-15 pr-wd-19">
-                                        <div class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                            {{promoActions7Type[0].bigPromoText}}
+                                        <div v-html="promoActions7Type[0].bigPromoText" class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
                                         </div>
                                         <div class="link text-gray-90" to="#">
                                             <span class="font-size-13">{{localizeFilter('fromText')}}</span>
@@ -260,7 +258,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </NuxtLink>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -475,12 +473,12 @@
                 <!-- End Popular Products -->
                 <!-- Full banner -->
                 <div class="mb-6">
-                    <NuxtLink v-if='promoActions4Type.length > 0' :to="'/shop?SCat?' + promoActions4Type[0].categoryName" class="d-block text-gray-90">
+                    <a v-if='promoActions4Type.length > 0' :href="promoActions4Type[0].link" class="d-block text-gray-90">
                         <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
                             <div class="space-top-2-md p-4 pt-5 pt-2 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
                                 <div class="flex-horizontal-center overflow-auto overflow-md-visble" style='flex-wrap: wrap'>
-                                    <h1 class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">{{promoActions4Type[0].bigPromoText}}</h1>
+                                    <h1 v-html="promoActions4Type[0].bigPromoText" class="text-lh-38 font-size-30 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1"></h1>
                                     <div class="flex-content-center ml-4 flex-shrink-0">
                                         <div class="bg-primary rounded-lg px-6 py-2">
                                             <div class="font-size-13 font-weight-light text-white">{{localizeFilter('StartingAtText')}}</div>
@@ -492,7 +490,7 @@
                                 </div>
                             </div>
                         </div>
-                    </NuxtLink>
+                    </a>
                 </div>
                 <!-- End Full banner -->
                 <!-- Laptops & Computers -->
@@ -715,8 +713,8 @@
                                 <NuxtLink v-if='promoActions2Type.length > 0' :to='"/product?id=" + promoActions2Type[0].productKaspiId' class="row align-items-center">
                                     <div class="col-md-6">
                                         <div class="ml-md-7 mt-6 mt-md-0 ml-4 text-gray-90">
-                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[0].bigPromoText}}</h2>
-                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[0].smallPromoText}}</p>
+                                            <h2 v-html="promoActions2Type[0].bigPromoText" class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2"></h2>
+                                            <p v-html="promoActions2Type[0].smallPromoText" class="font-size-18 font-size-14-lg text-gray-90 font-weight-light"></p>
                                             <div class="text-lh-28">
                                                 <span class="font-size-23 font-size-18-lg font-weight-light">{{localizeFilter('FromText')}}</span>
                                                 <span class="font-size-26 font-weight-semi-bold">{{Number(promoActions2Type[0].newPrice).toFixed(0)}}₸</span>
@@ -745,8 +743,8 @@
                                     </div>
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <div class="ml-md-8 pr-2 mt-6 mt-md-0 ml-4 text-gray-90">
-                                            <h2 class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2">{{promoActions2Type[1].bigPromoText}}</h2>
-                                            <p class="font-size-18 font-size-14-lg text-gray-90 font-weight-light">{{promoActions2Type[1].smallPromoText}}</p>
+                                            <h2 v-html="promoActions2Type[1].bigPromoText" class="font-size-28 font-size-20-lg max-width-270 text-lh-1dot2"></h2>
+                                            <p v-html='promoActions2Type[1].smallPromoText' class="font-size-18 font-size-14-lg text-gray-90 font-weight-light"></p>
                                             <div class="text-lh-28">
                                                 <span class="font-size-23 font-size-18-lg font-weight-light">{{localizeFilter('FromText')}}</span>
                                                 <span class="font-size-26 font-weight-semi-bold">{{Number(promoActions2Type[1].newPrice).toFixed(0)}}₸</span>
@@ -773,7 +771,7 @@ import preloader from '../components/CssPreloader.vue'
 export default {
     head() {
         return {
-            title: 'Telenova | Home',
+            title: `Telenova | ${this.localizeFilter('Title')}`,
             meta: [
                 {
                     hid: 'description',

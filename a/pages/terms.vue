@@ -50,7 +50,7 @@
 export default {
     head() {
         return {
-            title: 'Telenova | Terms and conditions'
+            title: `Telenova | ${this.localizeFilter('Title')}`,
         }
     },
     data(){

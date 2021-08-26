@@ -224,7 +224,7 @@ import Swal from 'sweetalert2'
 export default {
     head() {
         return {
-            title: 'Telenova | Credit'
+            title: `Telenova | ${this.localizeFilter('MainTitle')}`,
         }
     },
     data(){
