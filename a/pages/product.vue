@@ -1,7 +1,7 @@
 <template>
     <div class="ITEM">
         <!-- ========== MAIN CONTENT ========== -->
-        <main v-if="Product" id="content" role="main">
+        <main v-if="Product" id="content">
             <div class="container mt-6" style="margin-top: 20px">
                 <!-- Single Product Body -->
                 <div class="mb-7">
@@ -122,16 +122,16 @@
                                 <div class="position-relative mb-6">
                                     <ul class="nav nav-classic nav-tab nav-tab-lg justify-content-xl-center mb-6 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-lg-down-bottom-0 pb-1 pb-xl-0 mb-n1 mb-xl-0">
                                         <li v-if='currentTab == 1' @click='currentTab = 0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link" style='cursor: pointer' id="Specification-tab"  role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
+                                            <div class="nav-link" style='cursor: pointer' id="Specification-tab">{{localizeFilter('SecondDescriptionPartTitle')}}</div>
                                         </li>
                                         <li v-else @click='currentTab = 0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link active" style='cursor: pointer' id="Specification-tab"  role="tab">{{localizeFilter('SecondDescriptionPartTitle')}}</a>
+                                            <div class="nav-link active" style='cursor: pointer' id="Specification-tab">{{localizeFilter('SecondDescriptionPartTitle')}}</div>
                                         </li>
                                         <li @click='turn' v-if='Product.similarProducts.length!=0 && currentTab == 0' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link" style='cursor: pointer' id="Related-tab"  role="tab" >{{localizeFilter('Related')}}</a>
+                                            <div class="nav-link" style='cursor: pointer' id="Related-tab">{{localizeFilter('Related')}}</div>
                                         </li>
                                         <li @click='turn' v-else-if='Product.similarProducts.length!=0 && currentTab == 1' class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                            <a class="nav-link active" style='cursor: pointer' id="Related-tab"  role="tab" >{{localizeFilter('Related')}}</a>
+                                            <div class="nav-link active" style='cursor: pointer' id="Related-tab">{{localizeFilter('Related')}}</div>
                                         </li>
                                     </ul>
                                 </div>
@@ -278,7 +278,7 @@ export default {
                         self.Product = response.data
                     })
                     .catch( error => {
-                        console.log(error);
+                        ;
                     })
                     this.$forceUpdate()
                     this.$nextTick(() => {
@@ -303,12 +303,11 @@ export default {
         this.id = id
         await axios.get(`${this.$store.state.BackUrl}/storage/kaspi_id/${id}`)
         .then( response => {
-            console.log(response)
             self.Product = response.data
             if(self.Product.similarProducts.length == 0) this.currentTab = 0
         })
         .catch( error => {
-            console.log(error);
+            ;
         })
     },
     mounted(){

@@ -3,7 +3,7 @@
         
 
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main" class="cart-page">
+        <main id="content" class="cart-page">
 
             <div class="container mt-6">
                 <div class="mb-4">

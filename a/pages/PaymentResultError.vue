@@ -1,7 +1,7 @@
 <template>
 <div class="MAINERROR">
     <!-- ========== MAIN CONTENT ========== -->
-    <main id="content" role="main">
+    <main id="content">
 
         <div class="container mt-6">
             <div class="mb-5 text-center pb-3 border-bottom border-color-1">

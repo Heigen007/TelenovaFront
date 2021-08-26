@@ -3,7 +3,7 @@
         
         <loader v-if='loaderM' object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="1.7" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main" class="checkout-page">
+        <main id="content" class="checkout-page">
             <div class="container mt-6">
                 <div class="mb-5">
                     <h1 class="text-center">{{localizeFilter('MainTitle')}}</h1>
@@ -300,7 +300,6 @@ export default {
                         this.loaderM = true
                         await axios.post('https://textforeva.ru/order', checkout)
                         .then(response => {
-                            console.log(response);
                             self.loaderM = false
                             Swal.fire(
                                 'Success!',
@@ -311,7 +310,7 @@ export default {
                             self.$router.push('/')
                         })
                         .catch(error => {
-                            console.log(error);
+                            ;
                         })
                     } else {
                         self.loaderM = false

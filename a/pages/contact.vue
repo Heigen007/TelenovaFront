@@ -3,7 +3,7 @@
         
 
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main">
+        <main id="content">
             <div class="mb-8">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d181.5630859306516!2d76.94496467400876!3d43.272179410689986!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836c20ee65a67b%3A0xf3afbbd9324c39af!2z0L_RgNC-0YHQv9C10LrRgiDQoNCw0LnRi9C80LHQtdC60LAsINCQ0LvQvNCw0YLRiw!5e0!3m2!1sru!2skz!4v1629805475047!5m2!1sru!2skz" width="100%" height="514" style="border:0;" allowfullscreen="false" loading="lazy"></iframe>
             </div>
@@ -153,7 +153,6 @@ export default {
         async createSub(){
             await axios.get(`https://telenova.bitrix24.kz/rest/51/hhxb82uv6mu8vtyn/crm.lead.add.json?FIELDS[TITLE]=Новый лид&FIELDS[NAME]=${this.info.name}&FIELDS[LAST_NAME]=${this.info.lastName}&FIELDS[PHONE][0][VALUE]=${this.info.phone}&FIELDS[COMMENTS]=${this.info.subject}()${this.info.info}`)
             .then(res => {
-                console.log(res);
                 Swal.fire(
                     'Success!',
                     'We have got your message!',

@@ -203,7 +203,7 @@
                 </div>
             </div>
         </header>
-        <aside id="sidebarHeader" class="u-sidebar u-sidebar--left" aria-labelledby="sidebarHeaderInvoker">
+        <aside id="sidebarHeader" class="u-sidebar u-sidebar--left" :aria-labelledby="headers()">
             <div class="u-sidebar__scroller">
                 <div class="u-sidebar__container">
                     <div class="u-header-sidebar__footer-offset" style='padding-bottom: 0'>
@@ -220,7 +220,7 @@
                                 data-unfold-animation-in="fadeInLeft"
                                 data-unfold-animation-out="fadeOutLeft"
                                 data-unfold-duration="500">
-                                <span aria-hidden="true"><i class="ec ec-close-remove text-gray-90 font-size-20"></i></span>
+                                <span><i class="ec ec-close-remove text-gray-90 font-size-20"></i></span>
                             </button>
                         </div>
                         <!-- End Toggle Button -->
@@ -248,30 +248,39 @@
                                                 <li v-for="(cat,o) in el" :key="o">
                                                     <div style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;' class="u-header-collapse__submenu-nav-link">
                                                         <div v-for="(fil,y) in cat" :key="y" style='margin: 0.3rem 0 0.3rem 0' class='u-header-collapse__nav-list'>
-                                                            <div id="sidebarHeaderInvoker"
-                                                aria-controls="sidebarHeader"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                                aria-label="Open sidebar menu"
-                                                data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
-                                                data-unfold-target="#sidebarHeader"
-                                                data-unfold-type="css-animation"
-                                                data-unfold-animation-in="fadeInLeft"
-                                                data-unfold-animation-out="fadeOutLeft"
-                                                data-unfold-duration="500" @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>{{y}}</div>
-                                                            <div id="sidebarHeaderInvoker"
-                                                aria-controls="sidebarHeader"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                                aria-label="Open sidebar menu"
-                                                data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
-                                                data-unfold-target="#sidebarHeader"
-                                                data-unfold-type="css-animation"
-                                                data-unfold-animation-in="fadeInLeft"
-                                                data-unfold-animation-out="fadeOutLeft"
-                                                data-unfold-duration="500" @click='HideA("/shop?" + fil2)' class='pointer' v-for="(fil2,l) in fil" :key='l'><div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>{{fil2}}</div></div>
+                                                            <div
+                                                                id=""
+                                                                aria-controls="sidebarHeader"
+                                                                aria-haspopup="true"
+                                                                aria-expanded="false"
+                                                                aria-label="Open sidebar menu"
+                                                                data-unfold-event="click"
+                                                                data-unfold-hide-on-scroll="false"
+                                                                data-unfold-target="#sidebarHeader"
+                                                                data-unfold-type="css-animation"
+                                                                data-unfold-animation-in="fadeInLeft"
+                                                                data-unfold-animation-out="fadeOutLeft"
+                                                                data-unfold-duration="500"
+                                                                @click='HideA("/shop?SCat?" + y)' class='pointer' style='color: #2f2f2f; font-size: 1.1em'>
+                                                                    {{y}}
+                                                            </div>
+                                                            <div id=""
+                                                                aria-controls="sidebarHeader"
+                                                                aria-haspopup="true"
+                                                                aria-expanded="false"
+                                                                aria-label="Open sidebar menu"
+                                                                data-unfold-event="click"
+                                                                data-unfold-hide-on-scroll="false"
+                                                                data-unfold-target="#sidebarHeader"
+                                                                data-unfold-type="css-animation"
+                                                                data-unfold-animation-in="fadeInLeft"
+                                                                data-unfold-animation-out="fadeOutLeft"
+                                                                data-unfold-duration="500"
+                                                                @click='HideA("/shop?" + fil2)' class='pointer' v-for="(fil2,l) in fil" :key='l'>
+                                                                    <div @click='HideA("/shop?" + fil2)' style='color: #b7b7b7; margin-left: 1rem' class='pointer' v-if='!fil2.includes("not show")'>
+                                                                        {{fil2}}
+                                                                    </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -279,7 +288,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <NuxtLink id="sidebarHeaderInvoker"
+                                        <NuxtLink id="sidebarHeaderInvoker2"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -294,7 +303,7 @@
                                                 data-unfold-duration="500" to="/" class="u-header-collapse__nav-link font-weight-bold">Home</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink id="sidebarHeaderInvoker"
+                                        <NuxtLink id="sidebarHeaderInvoker3"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -309,7 +318,7 @@
                                                 data-unfold-duration="500" to="/cart" class="u-header-collapse__nav-link font-weight-bold">Cart</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink id="sidebarHeaderInvoker"
+                                        <NuxtLink id="sidebarHeaderInvoker4"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -324,7 +333,7 @@
                                                 data-unfold-duration="500" to="/about" class="u-header-collapse__nav-link font-weight-bold">Adout Us</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink id="sidebarHeaderInvoker"
+                                        <NuxtLink id="sidebarHeaderInvoker5"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -339,7 +348,7 @@
                                                 data-unfold-duration="500" to="/terms" class="u-header-collapse__nav-link font-weight-bold">Terms</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink id="sidebarHeaderInvoker"
+                                        <NuxtLink id="sidebarHeaderInvoker6"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -354,7 +363,7 @@
                                                 data-unfold-duration="500" to="/faq" class="u-header-collapse__nav-link font-weight-bold">FAQ</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink id="sidebarHeaderInvoker"
+                                        <NuxtLink id="sidebarHeaderInvoker7"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -390,7 +399,8 @@ export default {
         Component: 'Header',
         InputValue: '',
         bestC: [],
-        PopUp: false
+        PopUp: false,
+        a: 0
     }),
     watch: {
         CartCount: function (val){
@@ -409,7 +419,7 @@ export default {
             self.bestC = res.data
         })
         .catch(err => {
-            console.log(err);
+            ;
         })
     },
     mounted(){
@@ -440,10 +450,6 @@ export default {
     },
     methods: {
         HideA(e){
-            var target = document.getElementById('basicsCollapseOne')
-            console.log(target,$(target));
-            $(target).collapse('hide');
-            $('#sidebarHeader').collapse('hide');
             this.$router.push(e)
         },
         localizeFilter(key, key2, key3) {
@@ -457,6 +463,13 @@ export default {
         },
         InputJustSearch(){
             this.$store.commit('SearchByQuery', this.InputValue)
+        },
+        headers(){
+            var str = ''
+            for (let index = 0; index < 10; index++) {
+                str += 'sidebarHeaderInvoker'+index+' '
+            }
+            return 'sidebarHeaderInvoker '+str
         }
     },
     computed: {

@@ -177,7 +177,7 @@ export const actions = {
       commit('SetProductsOnly', response.data)
     })
     .catch(function (error) {
-      console.log(error);
+      ;
     })
 
     await axios.get(`https://textforeva.ru/promoAction/`)
@@ -185,7 +185,7 @@ export const actions = {
       commit('SetPromoActions', response.data)
     })
     .catch(function (error) {
-      console.log(error);
+      ;
     })
 
     await axios.get(`https://textforeva.ru/storage/getAllCategories`)
@@ -193,7 +193,7 @@ export const actions = {
       commit('SetCategories', response.data)
     })
     .catch(function (error) {
-      console.log(error);
+      ;
     })
   },
   async connect ({ commit, dispatch }) {
@@ -217,7 +217,7 @@ export const actions = {
     }
 
     connection.onerror = (err) => {
-      console.log(err)
+      
     }
 
   }

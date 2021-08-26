@@ -1,7 +1,7 @@
 <template>
     <div class="MAINABOUT">
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main">
+        <main id="content">
             <div class="bg-img-hero mb-14" style="background-image: url(/img/1920x600/img1.jpg);">
                 <div class="container">
                     <div class="flex-content-center max-width-620-lg flex-column mx-auto text-center min-height-564">

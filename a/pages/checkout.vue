@@ -3,7 +3,7 @@
         
         <loader v-if='loaderM' object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="1.7" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main" class="checkout-page">
+        <main id="content" class="checkout-page">
             <div class="container mt-6">
                 <div class="mb-5">
                     <h1 class="text-center">{{localizeFilter('MainTitle')}}</h1>
@@ -12,7 +12,7 @@
                 <div id="shopCartAccordion1" class="accordion rounded mb-6">
                     <!-- Card -->
                     <div class="card border-0">
-                        <div id="shopCartHeadingTwo" class="alert alert-primary mb-0 text-white" role="alert">
+                        <div id="shopCartHeadingTwo" class="alert alert-primary mb-0 text-white">
                             {{localizeFilter('CouponPart', 'Fquestion')}}<a href="#" class="alert-link text-white" data-toggle="collapse" data-target="#shopCartTwo" aria-expanded="false" aria-controls="shopCartTwo">{{localizeFilter('CouponPart', 'FLink')}}</a>
                         </div>
                         <div id="shopCartTwo" class="collapse border border-top-0" aria-labelledby="shopCartHeadingTwo" data-parent="#shopCartAccordion1" style="">
@@ -363,11 +363,10 @@ export default {
         })
         await axios.get('https://textforeva.ru/promoCode/')
         .then(res => {
-            console.log(res.data);
             this.coupons = res.data
         })
         .catch(err => {
-            console.log(err);
+            ;
         })
     },
     methods: {
@@ -417,7 +416,6 @@ export default {
                                 this.loaderM = true
                                 await axios.post('https://textforeva.ru/order', checkout)
                                 .then(response => {
-                                    console.log(response)
                                     self.loaderM = false
                                     Swal.fire(
                                         'Success!',
@@ -428,7 +426,7 @@ export default {
                                     self.$router.push('PaymentResultSuccess')
                                 })
                                 .catch(error => {
-                                    console.log(error);
+                                    ;
                                     self.$router.push('PaymentResultError')
                                 })
                             } else {
@@ -476,19 +474,13 @@ export default {
                             this.loaderM = true
                             await axios.post('https://textforeva.ru/order', checkout)
                             .then(response => {
-                                console.log(response);
                                 self.OrderId = response.data._id
                                 self.loaderM = false
                                 self.realAmount = response.data.finishPrice
-                                // Swal.fire(
-                                //     'Success!',
-                                //     'Your order has been created!',
-                                //     'success'
-                                // )
                                 self.PayLink()
                             })
                             .catch(error => {
-                                console.log(error);
+                                ;
                             })
                         } else {
                             e.preventDefault()
@@ -544,7 +536,6 @@ export default {
                 "pg_salt": this.pg_salt,
                 "MyDataObj": this.objMake()
             };
-            console.log('FIELDS',requestFields);
             //Секретный ключ
             var secretKey = this.getSecretKey(methodName);
 
@@ -617,14 +608,12 @@ export default {
                 name: this.info.FName + ' ' + this.info.SName, // имя
                 paymentMethod: 'cash', // способ оплаты, enum: 'card', 'cash' default: 'cash'
             }
-            console.log('OBJECT', MyObj)
             return JSON.stringify(MyObj)
         },
         objMake2(){ 
             var MyObj = {
                 id: this.OrderId
             }
-            console.log('FINAL', MyObj)
             return JSON.stringify(MyObj)
         }
     },

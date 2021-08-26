@@ -3,7 +3,7 @@
         
 
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" role="main">
+        <main id="content">
             <div class="container mt-6">
                 <preloader v-if='!IsProducts || !Filters' />
                 <div v-else class="row mb-8">
@@ -89,7 +89,7 @@
                         <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1">
                             <div class="d-xl-none">
                                 <!-- Account Sidebar Toggle Button -->
-                                <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;" role="button"
+                                <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;"
                                     aria-controls="sidebarContent1"
                                     aria-haspopup="true"
                                     aria-expanded="false"
@@ -122,7 +122,7 @@
                         <!-- Tab Content -->
                         <preloader v-if='!IsProducts2' />
                         <div v-else :style='Products.length == 0 ? "" : "min-height: 350px"' class="" id="pills-tabContent">
-                            <div class="" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
+                            <div class="" id="pills-one-example1" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <div class="row products-group ">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item">
                                         <div class=" h-100 w-100 product-item">
@@ -207,7 +207,7 @@
                                 data-unfold-animation-in="fadeInLeft"
                                 data-unfold-animation-out="fadeOutLeft"
                                 data-unfold-duration="500">
-                                <span id='AsideSpanControl' aria-hidden="true"><i class="ec ec-close-remove"></i></span>
+                                <span id='AsideSpanControl' ><i class="ec ec-close-remove"></i></span>
                             </button>
                         </div>
                         <!-- End Toggle Button -->
@@ -256,7 +256,7 @@
                 </div>
             </div>
         </aside>
-       <div v-if='IsPopper' id="tooltip" class = 'tool' role="tooltip">
+       <div v-if='IsPopper' id="tooltip" class = 'tool'>
            <button style='color: white' type="submit" class="btn px-4 mt-1 btn-primary-dark-w py-2 rounded-lg" @click='Sort'>{{localizeFilter('FilterButtonText')}}</button>
        </div>
 

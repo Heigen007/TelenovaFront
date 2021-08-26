@@ -88,9 +88,9 @@
                     <div class="col-lg-5">
                         <!-- Subscribe Form -->
                         <div>
-                            <label class="sr-only">Email address</label>
+                            <label for='emHandler' class="sr-only">Email address</label>
                             <div class="input-group input-group-pill">
-                                <input v-model='email' type="email" class="form-control border-0 height-40" name="email">
+                                <input id='emHandler' v-model='email' type="email" class="form-control border-0 height-40" name="email">
                                 <div class="input-group-append">
                                     <button @click='setEmail' class="btn btn-dark btn-sm-wide height-40 py-2" style="cursor: pointer">{{localizeFilter('SubmitButton')}}</button>
                                 </div>
@@ -227,21 +227,11 @@
                 <div class="flex-center-between d-block d-md-flex">
                     <div class="mb-3 mb-md-0">© <a href="#" class="font-weight-bold text-gray-90">Telenova</a>{{localizeFilter('BottomMessage')}}</div>
                     <div class="text-md-right">
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="img/100X60/img1.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="img/100X60/img2.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="img/100X60/img3.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="img/100X60/img4.jpg" alt="Image Description">
-                        </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
-                            <img class="max-width-5" src="img/100X60/img5.jpg" alt="Image Description">
-                        </span>
+                        <span class="d-inline-block bg-white border rounded p-1"></span>
+                        <span class="d-inline-block bg-white border rounded p-1"></span>
+                        <span class="d-inline-block bg-white border rounded p-1"></span>
+                        <span class="d-inline-block bg-white border rounded p-1"></span>
+                        <span class="d-inline-block bg-white border rounded p-1"></span>
                     </div>
                 </div>
             </div>
@@ -277,7 +267,7 @@ export default {
             try {
                 await navigator.share(shareData)
             } catch(err) {
-                console.log(err);
+                ;
             }
         },
         changeLang(lang){
@@ -314,16 +304,13 @@ export default {
             this.popularProducts = response.data.reverse()
         })
         .catch(function(error) {
-            console.log(error);
         })
 
         axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
         .then(res => {
-            console.log(res, 'Footer Categories');
             this.bestC = res.data
         })
         .catch(function(error) {
-            console.log(error);
         })
     },
     mounted(){

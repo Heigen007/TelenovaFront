@@ -1,6 +1,5 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  debug: true,
   head: {
     title: 'intshop',
     meta: [

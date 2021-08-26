@@ -99,7 +99,7 @@ async function generateBundle() {
         }
 
     } catch(error) {
-        console.log(error);
+        ;
     };
 };
 

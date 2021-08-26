@@ -1,7 +1,7 @@
 <template>
   <div class="NUXT_CONTAINER">
         <!-- ========== MAIN CONTENT ========== -->
-        <main v-if='IsC && Categories' id="content" role="main">
+        <main v-if='IsC && Categories' id="content">
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
@@ -75,7 +75,7 @@
                                                         <span class="">Already Sold: <strong>{{(el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
                                                     </div>
                                                     <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
-                                                        <span style='width: 30%' class="position-absolute left-0 top-0 bottom-0 rounded-pill bg-primary"></span>
+                                                        <span style='width: 40%' class="position-absolute left-0 top-0 bottom-0 rounded-pill bg-primary"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,15 +110,15 @@
                     <div class="position-relative z-index-2 u-slick__tab">
                         <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                             <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstPartTitle')}}</div>
-                            <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                            <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3">
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("NewestProducts")'>
-                                    <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
+                                    <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab" data-toggle="pill" to="#Bpills-one-example1">{{localizeFilter('PopularSliderSort')}}</div >
                                 </li>
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("NewestProducts")'>
-                                    <div class="nav-link rounded-pill" id="Bpills-two-example1-tab" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
+                                    <div class="nav-link rounded-pill" id="Bpills-two-example1-tab" data-toggle="pill" to="#Bpills-two-example1">{{localizeFilter('CheapestSliderSort')}}</div >
                                 </li>
                                 <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("NewestProducts")'>
-                                    <div class="nav-link rounded-pill" id="Bpills-three-example1-tab" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
+                                    <div class="nav-link rounded-pill" id="Bpills-three-example1-tab" data-toggle="pill" to="#Bpills-three-example1" >{{localizeFilter('MostExpensiveSliderSort')}}</div >
                                 </li>
                             </ul>
 
@@ -127,7 +127,7 @@
                         <!-- Tab Content -->
                         <client-only>
                         <div class="tab-content" id="Bpills-tabContent">
-                            <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1" role="tabpanel">
+                            <div class="tab-pane fade pt-2 show active" id="Bpills-one-example1">
                                 <div v-if='IsC && newestProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                     data-slides-show="6"
@@ -269,15 +269,15 @@
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</div>
 
-                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3">
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("TrendingProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab2" data-toggle="pill">{{localizeFilter('PopularSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("TrendingProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab2" data-toggle="pill">{{localizeFilter('CheapestSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("TrendingProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab2" data-toggle="pill" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab2" data-toggle="pill">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                             </li>
                         </ul>
                     </div>
@@ -369,22 +369,22 @@
                 <div v-if='IsC && popularProducts.length > 0' class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</div>
-                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3" role="tablist">
+                        <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3">
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='PopularFilter("PopularProducts")'>
-                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab3" data-toggle="pill" to="#Bpills-one-example1" role="tab" aria-controls="Bpills-one-example1" aria-selected="true">{{localizeFilter('PopularSliderSort')}}</div >
+                                <div class="nav-link rounded-pill active" id="Bpills-one-example1-tab3" data-toggle="pill" to="#Bpills-one-example1">{{localizeFilter('PopularSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='CheapestFilter("PopularProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab3" data-toggle="pill" to="#Bpills-two-example1" role="tab" aria-controls="Bpills-two-example1" aria-selected="true">{{localizeFilter('CheapestSliderSort')}}</div >
+                                <div class="nav-link rounded-pill" id="Bpills-two-example1-tab3" data-toggle="pill" to="#Bpills-two-example1">{{localizeFilter('CheapestSliderSort')}}</div >
                             </li>
                             <li class="nav-item flex-shrink-0 flex-lg-shrink-1 MyCatSlider" @click='ExpensiveFilter("PopularProducts")'>
-                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab3" data-toggle="pill" to="#Bpills-three-example1" role="tab" aria-controls="Bpills-three-example1" aria-selected="true">{{localizeFilter('MostExpensiveSliderSort')}}</div >
+                                <div class="nav-link rounded-pill" id="Bpills-three-example1-tab3" data-toggle="pill" to="#Bpills-three-example1">{{localizeFilter('MostExpensiveSliderSort')}}</div >
                             </li>
                         </ul>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Apills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Apills-one-example1" role="tabpanel">
+                        <div class="tab-pane fade pt-2 show active" id="Apills-one-example1">
                             <div class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="6"
@@ -502,7 +502,7 @@
                     <!-- Tab Content -->
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Rpills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel">
+                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1">
                             <div v-if='IsC && LapProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="6"
@@ -598,7 +598,7 @@
                     <!-- Tab Content -->
                     <client-only>
                     <div class="tab-content u-slick__tab" id="Ypills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1" role="tabpanel">
+                        <div class="tab-pane fade pt-2 show active" id="Rpills-one-example1">
                             <div v-if='IsC && TVProducts' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-3 pb-6 px-1"
                                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
                                 data-slides-show="6"
@@ -801,29 +801,26 @@ export default {
     async created(){
         await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
         .then(response => {
-            console.log(response, 'firstLevelCategory": "Мобильные телефоны и аксессуары"');
             this.TVProducts = response.data.products
             this.PopularFilter('MobileProducts')
             this.Slick()
         })
         .catch(function(error) {
-            console.log(error);
+            ;
         })
 
         await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Ноутбуки и аксессуары", "count": 10 })
         .then(response => {
-            console.log(response, '"firstLevelCategory": "Ноутбуки и аксессуары"');
             this.LapProducts = response.data.products
             this.PopularFilter('NotebooksProducts')
             this.Slick()
         })
         .catch(function(error) {
-            console.log(error);
+            ;
         })
 
         await axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
-            console.log(response,'mostPopular/products/20');
             this.trendingProducts = response.data.reverse().slice(0,10)
             this.popularProducts = response.data.reverse().slice(10,20)
             this.PopularFilter('TrendingProducts')
@@ -831,28 +828,26 @@ export default {
             this.Slick()
         })
         .catch(function(error) {
-            console.log(error);
+            ;
         })
 
         await axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
         .then(response => {
-            console.log(response,'MostPopular/freshProducts/10');
             this.newestProducts = response.data
             this.PopularFilter('NewestProducts')
             this.Slick()
         })
         .catch(function(error) {
-            console.log(error);
+            ;
         })
 
         await axios.get('https://textforeva.ru/storage/mostPopular/firstLevelCategories/6')
         .then(response => {
-            console.log('AAAAAAAAAAAAA',response);
             this.Categories = response.data
             this.Slick()
         })
         .catch(function(error) {
-            console.log(error);
+            ;
         })
     },
     mounted(){

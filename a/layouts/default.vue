@@ -50,9 +50,9 @@ export default {
       this.$store.commit('lang/getLang')
     },
     mounted(){
-      // setTimeout(() => {
-      //   $.HSCore.components.HSGoTo.init('.js-go-to');
-      // }, 1000);
+      setTimeout(() => {
+        document.querySelectorAll('.b24-widget-button-social-item')[0].href='#';
+      }, 2000);
       
       this.$store.dispatch("FrontInit")
     },
