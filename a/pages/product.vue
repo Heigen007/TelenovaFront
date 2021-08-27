@@ -62,7 +62,7 @@
                         </div>
                         <div class="mx-md-auto mx-lg-0 col-md-6 col-xl-3">
                             <div class="mb-2">
-                                <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
+                                <div class="card p-5 border-width-2 border-color-1" style='border-radius: 0px'>
                                     <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">{{localizeFilter('CardAvailabilityText')}}
                                         <span v-if='Product.inStock == true' class="text-green font-weight-bold"> {{Product.offerData.product_count}} {{localizeFilter("InStockText")}}</span>
                                         <span v-else class="text-red font-weight-bold">{{localizeFilter('NotInStockText')}}</span>

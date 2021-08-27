@@ -37,10 +37,10 @@
                                             <!-- End Fullscreen Toggle Button -->
 
                                             <!-- Logo -->
-                                            <router-link style='width: 11rem;' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
-                                                <img  style='width: 11rem; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                            <router-link style='width: 13rem;' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
+                                                <img style='width: 11rem; margin-top: 5px' src='logo.svg' alt="Image Description">
                                             </router-link>
-                                            <router-link style='width: 10rem; margin-top: 20px; margin-bottom: 20px' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
+                                            <router-link style='width: 10rem; margin-top: 20px; margin-left: 10px; margin-bottom: 20px' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
                                                 <img style='width: 10rem; margin-top: 5px' src='logo.png' alt="Image Description">
                                             </router-link>
                                             <!-- End Logo -->
@@ -111,7 +111,7 @@
                                 <form @submit='InputSearch' class="js-focus-state">
                                     <label class="sr-only" for="searchproduct">{{localizeFilter('Search')}}</label>
                                     <div class="input-group">
-                                        <input v-model='InputValue' class="form-control py-2 font-size-15 border-right-0 height-40 ChIn" id="searchproduct-item" aria-describedby="searchProduct2" style='border-radius: 0; border-width: 2px'>
+                                        <input v-model='InputValue' :placeholder="localizeFilter('SearchForProducts')" class="form-control py-2 font-size-15 border-right-0 height-40 ChIn" id="searchproduct-item" aria-describedby="searchProduct2" style='border-radius: 0; border-width: 2px'>
                                         <div class="input-group-append">
                                             <!-- End Select -->
                                             <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct2" style='border-radius: 0'>
@@ -450,6 +450,8 @@ export default {
     },
     methods: {
         HideA(e){
+            var target = document.getElementById('basicsCollapseOne')
+            $(target).collapse('hide');
             this.$router.push(e)
         },
         localizeFilter(key, key2, key3) {
@@ -557,7 +559,7 @@ export default {
         background-color: #00449c !important;
     }
 }
-@media (max-width: 330px) {
+@media (max-width: 340px) {
     .hiddenSvg{
         display: none;
     }

@@ -6,7 +6,7 @@
             <div class="mb-8">
                 <div class="container">
                     <div v-if="promoActions3Type.length > 0" class="overflow-hidden">
-                        <div class="bg-img-hero min-height-420 myBg" >
+                        <div class="bg-img-hero min-height-420" style='background-image: url(img/1400X420/img1.jpg);' >
                             <div id="thumbProgress" class="js-slick-carousel u-slick"
                                 data-autoplay="false"
                                 data-nav-for="#thumbProgressNav">
@@ -230,7 +230,7 @@
                                         <div v-html="promoActions6Type[0].bigPromoText" class="mb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
                                         </div>
                                         <div class="link text-gray-90 font-weight-bold font-size-15" to="#">
-                                            Shop now
+                                            {{localizeFilter('ShopNow')}}
                                             <span class="link__icon ml-1">
                                                 <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                             </span>
@@ -799,7 +799,7 @@ export default {
         }
     },
     async created(){
-        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Мобильные телефоны и аксессуары", "count": 10 })
+        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты", "count": 10 })
         .then(response => {
             this.TVProducts = response.data.products
             this.PopularFilter('MobileProducts')
@@ -809,7 +809,7 @@ export default {
             ;
         })
 
-        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Ноутбуки и аксессуары", "count": 10 })
+        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Компьютеры", "count": 10 })
         .then(response => {
             this.LapProducts = response.data.products
             this.PopularFilter('NotebooksProducts')

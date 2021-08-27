@@ -8,7 +8,8 @@
       "ProductAddedTitle": "Продукт добавлен!",
       "HeaderBestCategoriesTitle": "Лучшие категории:",
       "Sales": "Уценка",
-      "Search": "Поиск"
+      "Search": "Поиск",
+      "SearchForProducts": "Искать товары"
     },
     "Footer": {
       "FirstCategory": "Избранные продукты",
@@ -35,6 +36,7 @@
       "ErrorText": "Страница не найдена. Попробуйте перезагрузить страницу."
     },
     "MainPage": {
+      "ShopNow": "Купить сейчас",
       "Title": "Домашняя страница",
       "FirstPartTitle": "Новые товары",
       "SecondPartTitle": "Трендовые товары",
