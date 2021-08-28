@@ -18,162 +18,157 @@ export default {
       {
         type: 'text/javascript',
         src: 'vendor/jquery/dist/jquery.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/jquery-migrate/dist/jquery-migrate.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/popper.js/dist/umd/popper.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/bootstrap/bootstrap.min.js',
-        defer: true
+        defer: true,
       },
 
       {
         type: 'text/javascript',
         src: 'vendor/appear.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/jquery.countdown.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/hs-megamenu/src/hs.megamenu.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/svg-injector/dist/svg-injector.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/jquery-validation/dist/jquery.validate.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/slick-carousel/slick/slick.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/hs.core.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.countdown.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.header.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.hamburgers.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.unfold.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.focus-state.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.malihu-scrollbar.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.validation.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.fancybox.js',
-        defer: true
-      },
-      {
-        type: 'text/javascript',
-        src: 'js/components/hs.onscroll-animation.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.slick-carousel.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.range-slider.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.quantity-counter.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.scroll-nav.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.show-animation.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.svg-injector.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.go-to.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'js/components/hs.selectpicker.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/typed.js/lib/typed.min.js',
-        defer: true
+        defer: true,
       },
       {
         type: 'text/javascript',
         src: 'vendor/ion-rangeslider/js/ion.rangeSlider.min.js',
-        defer: true
+        defer: true,
       },
       {
         src: 'https://cdn-ru.bitrix24.ru/b18297278/crm/site_button/loader_3_gx8l89.js',
-        defer: true
+        defer: true,
       },
     ],
   },
