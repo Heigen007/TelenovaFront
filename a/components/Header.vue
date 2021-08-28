@@ -213,6 +213,7 @@
                                 aria-controls="sidebarHeader"
                                 aria-haspopup="true"
                                 aria-expanded="false"
+                                name='but'
                                 data-unfold-event="click"
                                 data-unfold-hide-on-scroll="false"
                                 data-unfold-target="#sidebarHeader"
