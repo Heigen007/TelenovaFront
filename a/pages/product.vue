@@ -72,7 +72,7 @@
                                         <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{Number(Product.offerData.price).toFixed(0)}}₸</del>
                                     </div>
                                     <div class="mb-3" v-else>
-                                        <div class="font-size-36">{{Product.offerData.price}} ₸.</div>
+                                        <div class="font-size-36">{{Product.offerData.price}} ₸</div>
                                     </div>
                                     
                                     <div class="mb-3">
@@ -150,7 +150,7 @@
                                 </div>
                                 <div v-show='Product.similarProducts.length!=0 && currentTab == 1' class="container">
                                     <!-- Related products -->
-                                    <div class="mb-6">
+                                    <div>
                                         <client-only>
                                         <div :style='Product.similarProducts.length == 0 ? "" : "min-height: 350px"' class="js-slick-carousel u-slick overflow-hidden u-slick-overflow-visble pt-1 pb-1 px-1"
                                             data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4"
@@ -190,10 +190,10 @@
                                                                 </div>
                                                                 <div class="flex-center-between mb-1">
                                                                         <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                                            <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></a>
+                                                                            <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></a>
                                                                         </div>
                                                                         <div class="prodcut-price" v-else>
-                                                                            <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.salePrice).toFixed(0)}} ₸.</div></a></ins>
+                                                                            <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.salePrice).toFixed(0)}} ₸</div></a></ins>
                                                                         </div>
                                                                     <div class="d-xl-block prodcut-add-cart">
                                                                         <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -208,11 +208,11 @@
                                                                 </div>
                                                                 <div class="flex-center-between mb-1">
                                                                     <div class="prodcut-price" v-if='!el.offerData.oldPrice'>
-                                                                        <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></a>
+                                                                        <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></a>
                                                                     </div>
                                                                     <div class="prodcut-price" v-else>
-                                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸.</div></a></ins>
-                                                                        <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸.</div></a></del>
+                                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸</div></a></ins>
+                                                                        <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸</div></a></del>
                                                                     </div>
                                                                     <div class="d-xl-block prodcut-add-cart">
                                                                         <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>

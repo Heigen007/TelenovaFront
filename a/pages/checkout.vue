@@ -118,8 +118,6 @@
                                 <div class="border-bottom border-color-1 mb-5">
                                     <h3 class="section-title mb-0 pb-2 font-size-25">{{localizeFilter('Bill', 'DetailsTitle')}}</h3>
                                 </div>
-                                <!-- End Title -->
-                                <!-- Input -->
                                 <client-only>
                                     <div class="js-form-message mb-6">
                                         <label class="form-label">
@@ -131,21 +129,15 @@
                                         </div>
                                     </div>
                                 </client-only>
-                                <!-- End Input -->
                             </div>
                         </div>
                         <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
                             <div class="pl-lg-3 ">
                                 <div class="bg-gray-1 rounded-lg">
-                                    <!-- Order Summary -->
                                     <div class="p-4 mb-4 checkout-table">
-                                        <!-- Title -->
                                         <div class="border-bottom border-color-1 mb-5">
                                             <h3 class="section-title mb-0 pb-2 font-size-25">{{localizeFilter('Order', 'Title')}}</h3>
                                         </div>
-                                        <!-- End Title -->
-
-                                        <!-- Product Content -->
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -156,7 +148,7 @@
                                             <tbody>
                                                 <tr v-for="(el, i) in $store.state.cart.cart" :key='i' class="cart_item">
                                                     <td class='pr-3'>{{el.offerData.name}}&nbsp;<strong class="product-quantity" style='white-space: nowrap'>× {{el.offerData.count}}</strong></td>
-                                                    <td style='white-space: nowrap'>{{el.salePrice * el.offerData.count}}{{'\xa0'}}₸.</td>
+                                                    <td style='white-space: nowrap'>{{el.salePrice * el.offerData.count}}{{'\xa0'}}₸</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
@@ -166,28 +158,13 @@
                                                 </tr>
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong style='white-space: nowrap'>{{(TotalPrice() * (100 - activeCoupon.sale || 100) / 100).toFixed(0)}} ₸.</strong></td>
+                                                    <td><strong style='white-space: nowrap'>{{(TotalPrice() * (100 - activeCoupon.sale || 100) / 100).toFixed(0)}} ₸</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                        <!-- End Product Content -->
                                         <div class="border-top border-width-3 border-color-1 pt-3 mb-3">
-                                            <!-- Basics Accordion -->
                                             <div id="basicsAccordion1">
-                                                <!-- Card -->
                                                 <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <!-- <div class="p-3" id="basicsHeadingOne">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" id="stylishRadio1" name="stylishRadio" checked>
-                                                            <label class="custom-control-label form-label" for="stylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseOnee"
-                                                                aria-expanded="true"
-                                                                aria-controls="basicsCollapseOnee">
-                                                                {{localizeFilter('Order', 'TransferVariations', 'FirstVariationTitle')}}
-                                                            </label>
-                                                        </div>
-                                                    </div> -->
                                                     <div id="basicsCollapseOnee" class="collapse show border-top border-color-1 border-dotted-top bg-dark-lighter"
                                                         aria-labelledby="basicsHeadingOne"
                                                         data-parent="#basicsAccordion1">
@@ -196,33 +173,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- End Card -->
-
-                                                <!-- Card -->
-                                                <!-- <div class="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div class="p-3" id="basicsHeadingTwo">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="stylishRadio">
-                                                            <label class="custom-control-label form-label" for="secondStylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseTwo"
-                                                                aria-expanded="false"
-                                                                aria-controls="basicsCollapseTwo">
-                                                                {{localizeFilter('Order', 'TransferVariations', 'SecondVariationTitle')}}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="basicsCollapseTwo" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingTwo"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div class="p-4">
-                                                            {{localizeFilter('Order', 'TransferVariations', 'SecondVariationText')}}
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- End Card -->
-
-                                                <!-- Card -->
                                                 <div class="border-bottom border-color-1 border-dotted-bottom">
                                                     <div class="p-3" id="basicsHeadingThree">
                                                         <div class="custom-control custom-radio">
@@ -244,9 +194,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- End Card -->
-
-                                                <!-- Card -->
                                                 <div class="border-bottom border-color-1 border-dotted-bottom">
                                                     <div class="p-3" id="basicsHeadingFour">
                                                         <div class="custom-control custom-radio">

@@ -161,7 +161,7 @@
                                         <NuxtLink to="/cart" class="text-gray-90 position-relative d-flex " title="Cart">
                                             <i class="font-size-22 ec ec-shopping-bag"></i>
                                             <span class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{AmountOfCartProducts}}</span>
-                                            <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost}}{{'\xa0'}}₸.</span>
+                                            <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost}}{{'\xa0'}}₸</span>
                                         </NuxtLink>
                                         </li>
                                         <div v-if='PopUp' class = 'MPopUp'>{{localizeFilter('ProductAddedTitle')}}</div>

@@ -135,11 +135,11 @@
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                        <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
                                                         </div>
                                                         <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div>{{Number(el.salePrice.toFixed(0))}}{{'\xa0'}}₸.</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸.</div></NuxtLink></del>
+                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div>{{Number(el.salePrice.toFixed(0))}}{{'\xa0'}}₸</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -154,11 +154,11 @@
                                                     </div>
                                                     <div class="flex-center-between mb-1">
                                                         <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸.</div></NuxtLink>
+                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
                                                         </div>
                                                         <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div >{{Number(el.salePrice).toFixed(0)}}{{'\xa0'}}₸.</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸.</div></NuxtLink></del>
+                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div >{{Number(el.salePrice).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></ins>
+                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -516,7 +516,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from: ${_this.value} ₸.`;
+            priceFrom.textContent = `from: ${_this.value} ₸`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -531,7 +531,7 @@ export default {
                 max = parseInt(_this.max);
 
             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
-            priceTo.textContent = `to: ${_this.value} ₸.`;
+            priceTo.textContent = `to: ${_this.value} ₸`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -595,7 +595,7 @@ export default {
                 parseInt(_this.value),
                 parseInt(inputRight.value) - 50
             );
-            priceFrom.textContent = `from: ${_this.value} ₸.`;
+            priceFrom.textContent = `from: ${_this.value} ₸`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -610,7 +610,7 @@ export default {
                 max = parseInt(_this.max);
 
             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
-            priceTo.textContent = `to: ${_this.value} ₸.`;
+            priceTo.textContent = `to: ${_this.value} ₸`;
 
             let percent = ((_this.value - min) / (max - min)) * 100;
 

@@ -184,13 +184,13 @@
                                             <tbody>
                                                 <tr v-for="(el, i) in $store.state.cart.cart" :key='i' class="cart_item">
                                                     <td class='pr-3'>{{el.offerData.name}}&nbsp;<strong class="product-quantity" style='white-space: nowrap'>× {{el.offerData.count}}</strong></td>
-                                                    <td style='white-space: nowrap'>{{el.salePrice * el.offerData.count}}{{'\xa0'}}₸.</td>
+                                                    <td style='white-space: nowrap'>{{el.salePrice * el.offerData.count}}{{'\xa0'}}₸</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>{{localizeFilter('Order', 'FourthProductsTitle')}}</th>
-                                                    <td><strong>{{TotalPrice()}}{{'\xa0'}}₸.</strong></td>
+                                                    <td><strong>{{TotalPrice()}}{{'\xa0'}}₸</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
