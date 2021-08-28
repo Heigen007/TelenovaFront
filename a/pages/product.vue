@@ -307,7 +307,6 @@ export default {
             if(self.Product.similarProducts.length == 0) this.currentTab = 0
         })
         .catch( error => {
-            ;
         })
     },
     mounted(){
@@ -410,6 +409,6 @@ export default {
     color: black !important;
 }
 .js-scroll-nav{
-    box-shadow: 0 0 3px rgb(214, 214, 214);
+    border: 2px solid #dddddd;
 }
 </style>
