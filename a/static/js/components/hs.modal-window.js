@@ -22,6 +22,7 @@
 			overlayOpacity: .48,
 			overlayColor: '#000000',
 			speed: 400,
+			type: 'onscroll', // onscroll, beforeunload, hashlink, ontarget, aftersometime
 			effect: 'fadein',
 			modalIsClosingByEsc: true,
 			modalIsClosingByOverlay: true,
@@ -144,6 +145,12 @@
 
 					break;
 
+					case 'onscroll' :
+
+						self.initOnScrollPopup($this, config);
+
+					break;
+
 					case 'beforeunload' :
 
 						self.initBeforeUnloadPopup($this, config);
@@ -218,6 +225,53 @@
 		 *
 		 * @return undefined
 		 */
+		initOnScrollPopup: function(popup, config) {
+
+			var self = this,
+					$window = $(window),
+					breakpoint = popup.data('breakpoint') ? popup.data('breakpoint') : 0,
+					target = $('#' + popup.attr('id'));
+
+
+			$window.on('scroll.popup', function() {
+
+				var scrolled = $window.scrollTop() + $window.height();
+
+				if(scrolled >= breakpoint) {
+
+					new Custombox.modal(
+						{
+							content: {
+								target: '#' + popup.attr('id'),
+								effect: popup.data('effect') || config['effect'],
+								onOpen: function() {
+									config['onOpen'].call($(target));
+								},
+								onClose: function() {
+									config['onClose'].call($(target));
+								},
+								onComplete: function() {
+									config['onComplete'].call($(target));
+								}
+							},
+							overlay: {
+								color: popup.data('overlay-color') || config['overlayColor'],
+								opacity: popup.data('overlay-opacity') || config['overlayOpacity'],
+								speedIn: popup.data('speed') || config['speed'],
+								speedOut: popup.data('speed') || config['speed']
+							}
+						}
+					).open();
+
+					$window.off('scroll.popup');
+
+				}
+
+			});
+
+			$window.trigger('scroll.popup');
+
+		},
 
 		/**
 		 *

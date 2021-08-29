@@ -54,6 +54,13 @@
 			var canvas = document.getElementById('canvas'),
 				circlesCreated = false;
 
+			function onScroll() {
+				if (!circlesCreated && elementInViewport(canvas)) {
+					circlesCreated = true;
+					createCircles();
+				}
+			}
+
 			function elementInViewport(el) {
 		    var rect = el.getBoundingClientRect();
 
@@ -85,6 +92,8 @@
 					circles.push(circle);
 				}
 			}
+
+		  window.onscroll = onScroll;
 
 		})();
 

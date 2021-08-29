@@ -22,6 +22,7 @@
 			unfoldEasing: 'linear',
 			unfoldAnimationIn: 'fadeIn',
 			unfoldAnimationOut: 'fadeOut',
+			unfoldHideOnScroll: true,
 			unfoldHideOnBlur: false,
 			unfoldDelay: 350,
 			unfoldOpenedElement: 'init',
@@ -136,6 +137,26 @@
 					}
 					
 					$(el).data('HSUnfold').config.beforeClose.call(self.target, self.element);
+					
+				});
+				
+			});
+			
+			$(window).on('scroll.HSUnfold', function () {
+				
+				self._pageCollection.each(function (i, el) {
+					
+					var UnFold = $(el).data('HSUnfold');
+					
+					if (UnFold.getOption('unfoldHideOnScroll') && fieldsQty === 0) {
+						
+						UnFold.hide();
+						
+					} else if (UnFold.getOption('unfoldHideOnScroll') && !(/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
+						
+						UnFold.hide();
+						
+					}
 					
 				});
 				
@@ -431,6 +452,11 @@
 			}
 			
 			// vertical axis
+			if (targetOuterGeometry.top + target.outerHeight() - $w.scrollTop() > $w.height()) {
+				
+				target.addClass('u-unfold--reverse-y');
+				
+			}
 			
 		};
 		
