@@ -41,7 +41,7 @@
 
 .fancybox-outer {
   overflow-y: auto;
-   }
+  -webkit-overflow-scrolling: touch; }
 
 .fancybox-bg {
   background: #1e1e1e;
@@ -120,7 +120,7 @@
   box-sizing: border-box;
   text-align: center;
   z-index: 99994;
-  
+  -webkit-overflow-scrolling: touch;
   display: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -673,7 +673,7 @@
     background: #fff;
     word-break: normal;
     -webkit-tap-highlight-color: transparent;
-    
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     box-sizing: border-box;
     z-index: 99995; }

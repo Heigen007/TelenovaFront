@@ -94,7 +94,7 @@
                                     aria-haspopup="true"
                                     aria-expanded="false"
                                     data-unfold-event="click"
-                                    
+                                    data-unfold-hide-on-scroll="false"
                                     data-unfold-target="#sidebarContent1"
                                     data-unfold-type="css-animation"
                                     data-unfold-animation-in="fadeInLeft"
@@ -201,7 +201,7 @@
                                 aria-haspopup="true"
                                 aria-expanded="false"
                                 data-unfold-event="click"
-                                
+                                data-unfold-hide-on-scroll="false"
                                 data-unfold-target="#sidebarContent1"
                                 data-unfold-type="css-animation"
                                 data-unfold-animation-in="fadeInLeft"

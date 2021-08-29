@@ -35,6 +35,12 @@ export default {
         src: 'vendor/bootstrap/bootstrap.min.js',
         defer: true,
       },
+
+      {
+        type: 'text/javascript',
+        src: 'vendor/appear.js',
+        defer: true,
+      },
       {
         type: 'text/javascript',
         src: 'vendor/jquery.countdown.min.js',
@@ -193,37 +199,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    'nuxt-speedkit'
+    '@nuxtjs/axios'
   ],
-  speedkit: {
-    detection: {
-      performance: true,
-      browserSupport: true
-    },
-    performanceMetrics: {
-      device: {
-        hardwareConcurrency: { min: 2, max: 48 },
-        deviceMemory: { min: 2 }
-      },
-      timing: {
-        fcp: 1500,
-        dcl: 2000
-      },
-      lighthouseDetectionByUserAgent: false
-    },
-
-    componentAutoImport: false,
-    componentPrefix: undefined,
-
-    /**
-     * IntersectionObserver rootMargin for Compoennts and Assets
-     */
-    lazyOffset: {
-      component: '0%',
-      asset: '0%'
-    }
-  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
