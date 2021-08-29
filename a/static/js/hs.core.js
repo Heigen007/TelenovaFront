@@ -103,59 +103,9 @@
        */
       bootstrapNavOptions: {
         init: function () {
-          this.mobileHideOnScroll();
+          // this.mobileHideOnScroll();
         },
 
-        mobileHideOnScroll: function () {
-          var $collection = $('.navbar');
-          if (!$collection.length) return;
-
-          var $w = $(window),
-            breakpointsMap = {
-              'sm': 576,
-              'md': 768,
-              'lg': 992,
-              'xl': 1200
-            };
-
-          $('body').on('click.HSMobileHideOnScroll', '.navbar-toggler', function (e) {
-            var $navbar = $(this).closest('.navbar');
-
-            if ($navbar.length) {
-              $navbar.data('mobile-menu-scroll-position', $w.scrollTop());
-            }
-            e.preventDefault();
-          });
-
-          $w.on('scroll.HSMobileHideOnScroll', function (e) {
-            $collection.each(function (i, el) {
-              var $this = $(el), $toggler, $nav, offset, $hamburgers, breakpoint;
-              if ($this.hasClass('navbar-expand-xl')) breakpoint = breakpointsMap['xl'];
-              else if ($this.hasClass('navbar-expand-lg')) breakpoint = breakpointsMap['lg'];
-              else if ($this.hasClass('navbar-expand-md')) breakpoint = breakpointsMap['md'];
-              else if ($this.hasClass('navbar-expand-xs')) breakpoint = breakpointsMap['xs'];
-
-              if ($w.width() > breakpoint) return;
-
-              $toggler = $this.find('.navbar-toggler');
-              $nav = $this.find('.navbar-collapse');
-
-              if (!$nav.data('mobile-scroll-hide')) return;
-
-              if ($nav.length) {
-                offset = $this.data('mobile-menu-scroll-position');
-
-                if (Math.abs($w.scrollTop() - offset) > 40 && $nav.hasClass('show')) {
-                  $toggler.trigger('click');
-                  $hamburgers = $toggler.find('.is-active');
-                  if ($hamburgers.length) {
-                    $hamburgers.removeClass('is-active');
-                  }
-                }
-              }
-            });
-          });
-        }
       }
 
     },

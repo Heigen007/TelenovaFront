@@ -2132,7 +2132,6 @@ and dependencies (minified).
 				onStart:function(){
 					if(options.callbacks && options.onStart && !d.tweenRunning){
 						/* callbacks: onScrollStart */
-						if(_cb("onScrollStart")){_mcs(); o.callbacks.onScrollStart.call(el[0]);}
 						d.tweenRunning=true;
 						_onDragClasses(mCSB_dragger);
 						d.cbOffsets=_cbOffsets();
@@ -2148,7 +2147,6 @@ and dependencies (minified).
 						var t=mCSB_container[0].idleTimer || 0;
 						mCSB_container[0].onCompleteTimeout=setTimeout(function(){
 							/* callbacks: onScroll, onTotalScroll, onTotalScrollBack */
-							if(_cb("onScroll")){_mcs(); o.callbacks.onScroll.call(el[0]);}
 							if(_cb("onTotalScroll") && scrollTo[1]>=limit[1]-totalScrollOffset && d.cbOffsets[0]){_mcs(); o.callbacks.onTotalScroll.call(el[0]);}
 							if(_cb("onTotalScrollBack") && scrollTo[1]<=totalScrollBackOffset && d.cbOffsets[1]){_mcs(); o.callbacks.onTotalScrollBack.call(el[0]);}
 							d.tweenRunning=false;

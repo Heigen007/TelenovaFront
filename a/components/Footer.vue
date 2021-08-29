@@ -198,7 +198,6 @@
                                                 data-unfold-type="css-animation"
                                                 data-unfold-duration="300"
                                                 data-unfold-delay="300"
-                                                data-unfold-hide-on-scroll="true"
                                                 data-unfold-animation-in="slideInUp"
                                                 data-unfold-animation-out="fadeOut">
                                                 <span class="d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
