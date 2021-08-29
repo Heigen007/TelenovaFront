@@ -1,7 +1,7 @@
 <template>
     <div class="CHECKOUTMAIN">
         
-        <loader v-if='loaderM' object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="1.7" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
+        <loader v-if='loaderM' object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="1.7" bg="#343a40" objectbg="#999793" opacity="80" disableing="false" name="dots"></loader>
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content" class="checkout-page">
             <div class="container mt-6">

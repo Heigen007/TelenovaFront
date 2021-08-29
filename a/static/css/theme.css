@@ -2491,7 +2491,7 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    
   }
   .table-responsive-sm > .table-bordered {
     border: 0;
@@ -2503,7 +2503,7 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    
   }
   .table-responsive-md > .table-bordered {
     border: 0;
@@ -2515,7 +2515,7 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    
   }
   .table-responsive-lg > .table-bordered {
     border: 0;
@@ -2527,7 +2527,7 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    
   }
   .table-responsive-xl > .table-bordered {
     border: 0;
@@ -2539,7 +2539,7 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    
   }
   .table-responsive-wd > .table-bordered {
     border: 0;
@@ -2550,7 +2550,7 @@ pre code {
   display: block;
   width: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  
 }
 
 .table-responsive > .table-bordered {
@@ -21296,7 +21296,7 @@ button:focus {
 .u-header__navbar-nav-scroll .u-header__navbar-nav {
   overflow-x: auto;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  
 }
 
 /*------------------------------------

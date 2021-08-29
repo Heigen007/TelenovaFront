@@ -2330,7 +2330,7 @@
   left: 0;
   overflow-y: hidden;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; }
+   }
 
 .cbp-popup-content {
   position: relative;

@@ -24,7 +24,6 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
@@ -67,7 +66,7 @@
                                                 <div class="card-body p-0">
                                                     <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                                            <ul style='max-height: 550px; overflow-y: scroll' class="navbar-nav u-header__navbar-nav">
+                                                            <ul style='max-height: 550px' class="navbar-nav u-header__navbar-nav">
                                                                 <!-- Nav Item MegaMenu -->
                                                                 <li v-for="(el, i) in Categories" :key='i' class="nav-item hs-has-mega-menu u-header__nav-item"
                                                                     data-event="hover"
@@ -77,7 +76,7 @@
                                                                     <a :id="'basicMegaMenu'+i" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{Object.keys(el)[0]}}</a>
 
                                                                     <!-- Nav Item - Mega Menu -->
-                                                                    <div style="overflow-y: scroll; min-height: 550px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
+                                                                    <div style=" min-height: 550px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
                                                                         <div class="vmm-bg" style="bottom: auto">
                                                                             <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 0.5' alt="Image Description">
                                                                         </div>
@@ -137,7 +136,6 @@
                                                 data-unfold-type="css-animation"
                                                 data-unfold-duration="300"
                                                 data-unfold-delay="300"
-                                                data-unfold-hide-on-scroll="true"
                                                 data-unfold-animation-in="slideInUp"
                                                 data-unfold-animation-out="fadeOut">
                                                 <span class="ec ec-search"></span>
@@ -215,7 +213,7 @@
                                 aria-expanded="false"
                                 name='but'
                                 data-unfold-event="click"
-                                data-unfold-hide-on-scroll="false"
+                                
                                 data-unfold-target="#sidebarHeader"
                                 data-unfold-type="css-animation"
                                 data-unfold-animation-in="fadeInLeft"
@@ -256,7 +254,7 @@
                                                                 aria-expanded="false"
                                                                 aria-label="Open sidebar menu"
                                                                 data-unfold-event="click"
-                                                                data-unfold-hide-on-scroll="false"
+                                                                
                                                                 data-unfold-target="#sidebarHeader"
                                                                 data-unfold-type="css-animation"
                                                                 data-unfold-animation-in="fadeInLeft"
@@ -271,7 +269,7 @@
                                                                 aria-expanded="false"
                                                                 aria-label="Open sidebar menu"
                                                                 data-unfold-event="click"
-                                                                data-unfold-hide-on-scroll="false"
+                                                                
                                                                 data-unfold-target="#sidebarHeader"
                                                                 data-unfold-type="css-animation"
                                                                 data-unfold-animation-in="fadeInLeft"
@@ -295,7 +293,7 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
+                                                
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
@@ -310,7 +308,7 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
+                                                
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
@@ -325,7 +323,7 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
+                                                
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
@@ -340,7 +338,7 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
+                                                
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
@@ -355,7 +353,7 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
+                                                
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
@@ -370,7 +368,7 @@
                                                 aria-expanded="false"
                                                 aria-label="Open sidebar menu"
                                                 data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false"
+                                                
                                                 data-unfold-target="#sidebarHeader"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-animation-in="fadeInLeft"
