@@ -35,12 +35,6 @@ export default {
         src: 'vendor/bootstrap/bootstrap.min.js',
         defer: true,
       },
-
-      {
-        type: 'text/javascript',
-        src: 'vendor/appear.js',
-        defer: true,
-      },
       {
         type: 'text/javascript',
         src: 'vendor/jquery.countdown.min.js',
