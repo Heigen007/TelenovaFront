@@ -141,26 +141,7 @@
 				});
 				
 			});
-			
-			$(window).on('scroll.HSUnfold', function () {
-				
-				self._pageCollection.each(function (i, el) {
-					
-					var UnFold = $(el).data('HSUnfold');
-					
-					if (UnFold.getOption('unfoldHideOnScroll') && fieldsQty === 0) {
-						
-						UnFold.hide();
-						
-					} else if (UnFold.getOption('unfoldHideOnScroll') && !(/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
-						
-						UnFold.hide();
-						
-					}
-					
-				});
-				
-			});
+
 			
 			$(window).on('resize.HSUnfold', function () {
 				

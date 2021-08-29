@@ -87,6 +87,11 @@ export default {
       },
       {
         type: 'text/javascript',
+        src: 'js/components/hs.unfold.js',
+        defer: true,
+      },
+      {
+        type: 'text/javascript',
         src: 'js/components/hs.focus-state.js',
         defer: true,
       },
