@@ -198,19 +198,8 @@ export default {
   ],
   speedkit: {
     detection: {
-      performance: true,
+      performance: false,
       browserSupport: true
-    },
-    performanceMetrics: {
-      device: {
-        hardwareConcurrency: { min: 2, max: 48 },
-        deviceMemory: { min: 2 }
-      },
-      timing: {
-        fcp: 1500,
-        dcl: 2000
-      },
-      lighthouseDetectionByUserAgent: false
     },
 
     componentAutoImport: false,

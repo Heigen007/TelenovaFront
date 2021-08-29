@@ -105,7 +105,7 @@
 				
 			});
 			
-			$(document).on('click touchstart', 'body', function (e) {
+			$(document).on('click', 'body', function (e) {
 				
 				if (e.target.id === self._baseConfig.unfoldOpenedElement) return;
 				
@@ -204,7 +204,7 @@
 			var self = this,
 				$unfold = $($invoker.data('unfold-target'));
 			
-			if (eventType === 'hover' && !_isTouch()) {
+			if (eventType === 'hover') {
 				
 				$invoker.on('mouseenter.HSUnfold', function () {
 					
@@ -311,10 +311,6 @@
 			
 		}
 	};
-	
-	function _isTouch() {
-		return 'ontouchstart' in window;
-	}
 	
 	/**
 	 * Abstract Unfold class.

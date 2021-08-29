@@ -47,33 +47,6 @@
       this.element.data('HSHeader', new HSHeader(this.element, this.config, this.observers));
 
       $(window)
-        .on('scroll.uHeader', function (e) {
-
-          if ($(window).scrollTop() < ($(element).data('header-fix-moment') - 100) && $(element).data('effect-compensation') === true) {
-            $(element).css({
-              top: -($(window).scrollTop())
-            })
-              .addClass($(element).data('effect-compensation-start-class'))
-              .removeClass($(element).data('effect-compensation-end-class'));
-          } else if ($(element).data('effect-compensation') === true) {
-            $(element).css({
-              top: 0
-            })
-              .addClass($(element).data('effect-compensation-end-class'))
-              .removeClass($(element).data('effect-compensation-start-class'));
-          }
-
-          if ($(window).scrollTop() > 5 && !$(element).hasClass('.u-scrolled')) {
-            $(element).addClass('u-scrolled')
-          } else {
-            $(element).removeClass('u-scrolled')
-          }
-
-          element
-            .data('HSHeader')
-            .notify();
-
-        })
         .on('resize.uHeader', function (e) {
 
           if (self.resizeTimeOutId) clearTimeout(self.resizeTimeOutId);
