@@ -297,15 +297,15 @@ export default {
             });
         },
     },
-    created() {
-        axios.get('https://textforeva.ru/storage/mostPopular/products/40')
+    async created() {
+        await axios.get('https://textforeva.ru/storage/mostPopular/products/40')
         .then(response => {
             this.popularProducts = response.data.reverse()
         })
         .catch(function(error) {
         })
 
-        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
+        await axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
         .then(res => {
             this.bestC = res.data
         })

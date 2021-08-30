@@ -377,7 +377,7 @@ export default {
                                     self.$router.push('PaymentResultError')
                                 })
                             } else {
-                                self.loaderM = true
+                                self.loaderM = false
                                 Swal.fire(
                                     'Error!',
                                     'Please, agree with Terms And Conditions',

@@ -413,9 +413,9 @@ export default {
             }
         }
     },
-    created(){
+    async created(){
         var self = this
-        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/7')
+        await axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/7')
         .then(res => {
             self.bestC = res.data
         })
