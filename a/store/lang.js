@@ -22,7 +22,7 @@ export default {
   },
   mutations: {
     getLang(state) {
-      state.lang = localStorage.getItem('lang') || 'en-US'
+      state.lang = localStorage.getItem('lang') || 'ru-RU'
     },
     changeLang(state, lang){
       state.lang = lang

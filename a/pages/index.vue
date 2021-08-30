@@ -799,7 +799,7 @@ export default {
         }
     },
     async created(){
-        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Телефоны и гаджеты", "count": 10 })
+        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "secondLevelCategory": "Смартфоны", "count": 10 })
         .then(response => {
             this.TVProducts = response.data.products
             this.PopularFilter('MobileProducts')
@@ -809,7 +809,7 @@ export default {
             ;
         })
 
-        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "firstLevelCategory": "Компьютеры", "count": 10 })
+        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "thirdLevelCategory": "Ноутбуки", "count": 10 })
         .then(response => {
             this.LapProducts = response.data.products
             this.PopularFilter('NotebooksProducts')

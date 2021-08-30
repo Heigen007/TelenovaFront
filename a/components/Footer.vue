@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="col pl-3">
                                     <div class="font-size-15 font-weight-light">{{localizeFilter('FirstQuestion')}}</div>
-                                    <a href="tel:+77073373318" class="font-size-20 text-gray-90">+77073373318</a>
+                                    <a href="tel:+77083343281" class="font-size-20 text-gray-90">+77073373318</a>
                                 </div>
                             </div>
                         </div>
@@ -132,14 +132,14 @@
                         <div class="my-4 my-md-4">
                             <ul class="list-inline mb-0 opacity-7">
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our facebook account" to="#">
+                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our facebook account" href="https://www.facebook.com/telenovafb/">
                                         <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                    </NuxtLink>
+                                    </a>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <NuxtLink class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our twitter account" to="#">
+                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our twitter account" href="https://www.instagram.com/telenova.kz/">
                                         <span class="fab fa-instagram btn-icon__inner"></span>
-                                    </NuxtLink>
+                                    </a>
                                 </li>
                                 <li class="list-inline-item mr-0">
                                     <button type="button" class="btn hoverBtn btn-outline-info" @click='Share'>{{localizeFilter('Share')}}</button>
@@ -193,25 +193,23 @@
                                                 aria-controls="languageDropdown2"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
-                                                data-unfold-event="hover"
+                                                data-unfold-event="click"
                                                 data-unfold-target="#languageDropdown2"
                                                 data-unfold-type="css-animation"
                                                 data-unfold-duration="300"
                                                 data-unfold-delay="300"
-                                                data-unfold-hide-on-scroll="true"
                                                 data-unfold-animation-in="slideInUp"
                                                 data-unfold-animation-out="fadeOut">
-                                                <span class="d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
+                                                <span class="d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : 'Choose your'}}</span>
                                             </a>
 
                                             <div id="languageDropdown2" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker2">
                                                 <div style="cursor: pointer" class="dropdown-item" @click='changeLang("en-US")'>English</div>
                                                 <div style="cursor: pointer" class="dropdown-item" @click='changeLang("ru-RU")'>Russian</div>
-                                                <div style="cursor: pointer" class="dropdown-item" @click='changeLang("kz-KZ")'>Kazakh‎</div>
                                             </div>
                                         </div>
                                         <div v-else class="position-relative">
-                                            <span class="dropdown-toggle d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : this.$store.state.lang.lang == 'kz-KZ' ? 'Kazakh' : 'Choose your'}}</span>
+                                            <span class="dropdown-toggle d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : 'Choose your'}}</span>
                                         </div>
                                         <!-- End Language -->
                                     </div>
@@ -259,6 +257,7 @@ export default {
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
         async Share(){
+            console.log(1);
             const shareData = {
                 title: 'Telenova',
                 text: 'Check Our Site!',
@@ -267,7 +266,7 @@ export default {
             try {
                 await navigator.share(shareData)
             } catch(err) {
-                ;
+                console.log(err);
             }
         },
         changeLang(lang){
