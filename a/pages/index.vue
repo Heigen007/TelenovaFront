@@ -222,7 +222,7 @@
                     <div class="row mr">
                         <div class="col-lg-6 mb-3 ">
                             <div class="banner-bg">
-                                <a v-if='promoActions6Type.length > 0' :href="promoActions6Type[0].link" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <a target='_blank' v-if='promoActions6Type.length > 0' :href="promoActions6Type[0].link" class=" w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
                                         <img :src="promoActions6Type[0].promoImages[Math.floor(Math.random() * (promoActions6Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
@@ -241,7 +241,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-bg">
-                                <a v-if='promoActions7Type.length > 0' :href="promoActions7Type[0].link" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
+                                <a target='_blank' v-if='promoActions7Type.length > 0' :href="promoActions7Type[0].link" class="w-100 min-height-146 py-3 py-xl-3 py-wd-4 my-2 my-wd-1 d-inline-flex align-items-center text-gray-90">
                                     <div class="col-5 col-md-6 pr-0 pl-wd-10 imgPromo">
                                         <img :src="promoActions7Type[0].promoImages[Math.floor(Math.random() * (promoActions7Type[0].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
@@ -473,7 +473,7 @@
                 <!-- End Popular Products -->
                 <!-- Full banner -->
                 <div style='height: 150px' class="mb-6">
-                    <a v-if='promoActions4Type.length > 0' :href="promoActions4Type[0].link" class="d-block text-gray-90">
+                    <a target='_blank' v-if='promoActions4Type.length > 0' :href="promoActions4Type[0].link" class="d-block text-gray-90">
                         <img :src="promoActions4Type[0].promoImages[Math.floor(Math.random() * (promoActions4Type[0].promoImages.length - 1))].clientPath" alt="" class='container myPhoto'>
                         <div>
                             <div class="space-top-2-md p-4 pt-5 pt-2 pt-lg-7 pt-xl-8 pb-lg-4 px-xl-14 px-lg-6">
@@ -729,11 +729,11 @@
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="h-100">
-                                <a v-if='promoActions1Type.length > 0' :href='promoActions1Type[0].link' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></a>
+                                <a target='_blank' v-if='promoActions1Type.length > 0' :href='promoActions1Type[0].link' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[0].promoImages[Math.floor(Math.random() * (promoActions1Type[0].promoImages.length - 1))].clientPath" alt="Image Description"></a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 mb-5">
-                            <a v-if='promoActions1Type.length > 1' :href='promoActions1Type[1].link' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[1].promoImages.length - 1))].clientPath" alt="Image Description"></a>
+                            <a target='_blank' v-if='promoActions1Type.length > 1' :href='promoActions1Type[1].link' class="d-block"><img class="img-fluid MFluid" :src="promoActions1Type[1].promoImages[Math.floor(Math.random() * (promoActions1Type[1].promoImages.length - 1))].clientPath" alt="Image Description"></a>
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
