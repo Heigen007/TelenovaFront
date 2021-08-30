@@ -497,7 +497,7 @@
                 <div v-if='IsC && LapProducts.length > 0' class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
-                        <NuxtLink class="d-block text-gray-16" to="shop?FCat?Ноутбуки и аксессуары">{{localizeFilter('LaptopsLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
+                        <NuxtLink class="d-block text-gray-16" to="shop?Ноутбуки">{{localizeFilter('LaptopsLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
@@ -593,7 +593,7 @@
                 <div v-if='IsC && TVProducts.length > 0' class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
-                        <NuxtLink class="d-block text-gray-16" to="shop?FCat?Мобильные телефоны и аксессуары">{{localizeFilter('PhonesLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
+                        <NuxtLink class="d-block text-gray-16" to="shop?SCat?Смартфоны">{{localizeFilter('PhonesLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
                     </div>
                     <!-- Tab Content -->
                     <client-only>
