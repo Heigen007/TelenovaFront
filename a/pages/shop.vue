@@ -291,6 +291,8 @@ export default {
     },
     watch: {
         $route() {
+            this.minV = 0;
+            this.maxV = 0;
             this.IsProducts = false
             this.IsProducts2 = false
             if(process.browser){

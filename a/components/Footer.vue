@@ -141,9 +141,9 @@
                                         <span class="fab fa-instagram btn-icon__inner"></span>
                                     </a>
                                 </li>
-                                <li class="list-inline-item mr-0">
+                                <!-- <li class="list-inline-item mr-0">
                                     <button type="button" class="btn hoverBtn btn-outline-info" @click='Share'>{{localizeFilter('Share')}}</button>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
