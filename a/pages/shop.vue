@@ -296,15 +296,15 @@ export default {
             this.IsProducts = false
             this.IsProducts2 = false
             if(process.browser){
-            if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
-                this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'first'])
-            } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat') {
-                this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'second'])
-            } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
-                this.$store.commit('SearchByQuery', this.$route.query.query)
-            } else if(Object.keys(this.$route.query).length > 0){
-                this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
-            }
+                if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
+                    this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'first'])
+                } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat') {
+                    this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1],'second'])
+                } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('=')[0] == 'query'){
+                    this.$store.commit('SearchByQuery', this.$route.query.query)
+                } else if(Object.keys(this.$route.query).length > 0){
+                    this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
+                }
             }
         },
         Filters(newV){
@@ -325,7 +325,7 @@ export default {
         }
     },
    updated(){
-        setTimeout(() => {
+        this.$nextTick(() => {
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
                 beforeClose: function () {
                     $('#hamburgerTrigger').removeClass('is-active');
@@ -348,7 +348,7 @@ export default {
             });
             this.RangeInit()
             this.RangeInit2()
-        }, 1000);
+        });
     },
     mounted() {
         document.addEventListener('click', e => {
@@ -374,6 +374,7 @@ export default {
             this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
         }
         $(document).on('ready', function () {
+            console.log(1);
             // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
                 beforeClose: function () {

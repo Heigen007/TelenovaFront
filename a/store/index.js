@@ -172,7 +172,7 @@ export const actions = {
 
     dispatch('connect')
 
-    await axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
+    axios.get(`https://textforeva.ru/storage/mostPopular/freshProducts/30`)
     .then(response => {
       commit('SetProductsOnly', response.data)
     })
@@ -180,7 +180,7 @@ export const actions = {
       ;
     })
 
-    await axios.get(`https://textforeva.ru/promoAction/`)
+    axios.get(`https://textforeva.ru/promoAction/`)
     .then(response => {
       commit('SetPromoActions', response.data)
     })
@@ -188,7 +188,7 @@ export const actions = {
       ;
     })
 
-    await axios.get(`https://textforeva.ru/storage/getAllCategories`)
+    axios.get(`https://textforeva.ru/storage/getAllCategories`)
     .then(response => {
       commit('SetCategories', response.data)
     })

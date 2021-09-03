@@ -238,7 +238,7 @@
                                 <!-- List -->
                                 <ul id="headerSidebarList" class="u-header-collapse__nav">
                                     <li>
-                                        <a :href="'tel:'+localizeFilter('PhoneNumber')" class="font-size-20 text-gray-90">{{localizeFilter("PhoneNumber")}}</a>
+                                        <a href="tel:+77083343281" class="font-size-20 text-gray-90">{{localizeFilter("PhoneNumber")}}</a>
                                     </li>
                                     <li v-for="(el, i) in Categories" :key='i' class="u-has-submenu u-header-collapse__submenu">
                                         <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" :data-target="'#headerSidebarMoviesCollapse'+i" role="button" data-toggle="collapse" aria-expanded="false" :aria-controls="'#headerSidebarMoviesCollapse'+i">
@@ -447,12 +447,30 @@ export default {
                     $(target).collapse('show');
                 }
             })
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                beforeClose: function () {
+                    $('#hamburgerTrigger').removeClass('is-active');
+                },
+                afterClose: function() {
+                    $('#headerSidebarList .collapse.show').collapse('hide');
+                }
+            });
+
+            $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
+                e.preventDefault();
+
+                var target = $(this).data('target');
+
+                if($(this).attr('aria-expanded') === "true") {
+                    $(target).collapse('hide');
+                } else {
+                    $(target).collapse('show');
+                }
+            });
         });
     },
     methods: {
         HideA(e){
-            var target = document.getElementById('basicsCollapseOne')
-            $(target).collapse('hide');
             this.$router.push(e)
         },
         localizeFilter(key, key2, key3) {

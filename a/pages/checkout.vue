@@ -361,7 +361,7 @@ export default {
                                     promoCode: this.activeCoupon.code || ''
                                 }
                                 this.loaderM = true
-                                await axios.post('https://textforeva.ru/order', checkout)
+                                axios.post('https://textforeva.ru/order', checkout)
                                 .then(response => {
                                     self.loaderM = false
                                     Swal.fire(

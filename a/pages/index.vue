@@ -1,7 +1,7 @@
 <template>
   <div class="NUXT_CONTAINER">
         <!-- ========== MAIN CONTENT ========== -->
-        <main v-if='IsC && Categories' id="content">
+        <main v-if='IsC && Categories && $store.state.promoActions && trendingProducts && LapProducts && newestProducts && popularProducts' id="content">
             <!-- Slider Section -->
             <div class="mb-8">
                 <div class="container">
@@ -105,7 +105,7 @@
             <!-- End Slider Section -->
             <div class="container">
                 <!-- Save Big on Warehouse Cleaning -->
-                <div v-if='IsC && newestProducts.length > 0' class="mb-6">
+                <div v-if='IsC && newestProducts' class="mb-6">
                     <!-- Nav nav-pills -->
                     <div class="position-relative z-index-2 u-slick__tab">
                         <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
@@ -265,7 +265,7 @@
                 </div>
                 <!-- End Banner -->
                 <!-- Trending products -->
-                <div v-if='IsC && trendingProducts.length > 0' class="mb-6">
+                <div v-if='IsC && trendingProducts' class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('SecondPartTitle')}}</div>
 
@@ -366,7 +366,7 @@
                 </div>
                 <!-- End Trending products -->
                 <!-- Popular Products -->
-                <div v-if='IsC && popularProducts.length > 0' class="mb-6">
+                <div v-if='IsC && popularProducts' class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('ThirdPartTitle')}}</div>
                         <ul class="w-100 w-lg-auto nav nav-pills nav-tab-pill nav-tab-pill-fill mb-2 pt-3 pt-lg-0 border-top border-color-1 border-lg-top-0 align-items-center font-size-15 font-size-15-lg flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble pr-0" id="pills-tab-3">
@@ -494,7 +494,7 @@
                 </div>
                 <!-- End Full banner -->
                 <!-- Laptops & Computers -->
-                <div v-if='IsC && LapProducts.length > 0' class="mb-6">
+                <div v-if='IsC && LapProducts' class="mb-6">
                     <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FourthPartTitle')}}</div>
                         <NuxtLink class="d-block text-gray-16" to="shop?Ноутбуки">{{localizeFilter('LaptopsLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
@@ -590,7 +590,7 @@
                 </div>
                 <!-- End Laptops & Computers -->
                 <!-- Television Entertainment -->
-                <div v-if='IsC && TVProducts.length > 0' class="mb-6">
+                <div v-if='IsC && TVProducts' class="mb-6">
                     <div class="d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
                         <div class="section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FifthPartTitle')}}</div>
                         <NuxtLink class="d-block text-gray-16" to="shop?SCat?Смартфоны">{{localizeFilter('PhonesLink')}} <i class="ec ec-arrow-right-categproes"></i></NuxtLink>
@@ -737,7 +737,7 @@
                         </div>
                         <div class="col-lg-8 mb-5">
                             <div class="bg-gray-1">
-                                <NuxtLink v-if='promoActions2Type.length > 1' to="/shop?SCat%3FМобильные телефоны" class="row align-items-center">
+                                <NuxtLink v-if='promoActions2Type.length > 1' :to='"/product?id=" + promoActions2Type[1].productKaspiId' class="row align-items-center">
                                     <div class="col-md-6 mb-4 mb-md-0">
                                         <img style='padding-right: 2px' class="img-fluid MFluid" :src="promoActions2Type[1].promoImages[Math.floor(Math.random() * (promoActions2Type[1].promoImages.length - 1))].clientPath" alt="Image Description">
                                     </div>
@@ -798,8 +798,8 @@ export default {
             Categories: null
         }
     },
-    async created(){
-        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "secondLevelCategory": "Смартфоны", "count": 10 })
+    created(){
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "secondLevelCategory": "Смартфоны", "count": 10 })
         .then(response => {
             this.TVProducts = response.data.products
             this.PopularFilter('MobileProducts')
@@ -809,7 +809,7 @@ export default {
             ;
         })
 
-        await axios.post('https://textforeva.ru/storage/getGoods/categories',{ "thirdLevelCategory": "Ноутбуки", "count": 10 })
+        axios.post('https://textforeva.ru/storage/getGoods/categories',{ "thirdLevelCategory": "Ноутбуки", "count": 10 })
         .then(response => {
             this.LapProducts = response.data.products
             this.PopularFilter('NotebooksProducts')
@@ -819,7 +819,7 @@ export default {
             ;
         })
 
-        await axios.get('https://textforeva.ru/storage/mostPopular/products/20')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/20')
         .then(response => {
             this.trendingProducts = response.data.reverse().slice(0,10)
             this.popularProducts = response.data.reverse().slice(10,20)
@@ -831,7 +831,7 @@ export default {
             ;
         })
 
-        await axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
+        axios.get('https://textforeva.ru/storage/mostPopular/freshProducts/10')
         .then(response => {
             this.newestProducts = response.data
             this.PopularFilter('NewestProducts')
@@ -841,7 +841,7 @@ export default {
             ;
         })
 
-        await axios.get('https://textforeva.ru/storage/mostPopular/firstLevelCategories/6')
+        axios.get('https://textforeva.ru/storage/mostPopular/firstLevelCategories/6')
         .then(response => {
             this.Categories = response.data
             this.Slick()
@@ -883,8 +883,12 @@ export default {
             else return `${time3.getFullYear()}/${time3.getMonth() + 1}/${time3.getDate()}`
         },
         Slick(){
-            if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts && process.browser) {
-                this.$nextTick(() => {$.HSCore.components.HSSlickCarousel.init('.js-slick-carousel')});
+            if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts && this.$store.state.promoActions.length > 0) {
+                setTimeout(() => {$.HSCore.components.HSSlickCarousel.init('.js-slick-carousel')}, 300);
+            } else {
+                setTimeout(() => {
+                    this.Slick()
+                }, 200);
             }
         },
         localizeFilter(key, key2, key3) {

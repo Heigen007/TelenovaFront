@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="col pl-3">
                                     <div class="font-size-15 font-weight-light">{{localizeFilter('FirstQuestion')}}</div>
-                                    <a href="tel:+77083343281" class="font-size-20 text-gray-90">+77073373318</a>
+                                    <a href="tel:+77083343281" class="font-size-20 text-gray-90">+77083343281</a>
                                 </div>
                             </div>
                         </div>
@@ -163,22 +163,22 @@
                                 <!-- List Group -->
                                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
                                     <li>
-                                        <NuxtLink to="/" class="list-group-item list-group-item-action">Home</NuxtLink>
+                                        <NuxtLink to="/" class="list-group-item list-group-item-action">{{localizeFilter('Home')}}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/cart" class="list-group-item list-group-item-action">Cart</NuxtLink>
+                                        <NuxtLink to="/cart" class="list-group-item list-group-item-action">{{localizeFilter('Cart')}}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/about" class="list-group-item list-group-item-action">About Us</NuxtLink>
+                                        <NuxtLink to="/about" class="list-group-item list-group-item-action">{{localizeFilter('AboutUs')}}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/terms" class="list-group-item list-group-item-action">Terms</NuxtLink>
+                                        <NuxtLink to="/terms" class="list-group-item list-group-item-action">{{localizeFilter('Terms')}}</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink to="/faq" class="list-group-item list-group-item-action">FAQ</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/contact" class="list-group-item list-group-item-action">Contact Us</NuxtLink>
+                                        <NuxtLink to="/contact" class="list-group-item list-group-item-action">{{localizeFilter('ContactUs')}}</NuxtLink>
                                     </li>
                                 </ul>
                                 <!-- End List Group -->
@@ -298,14 +298,14 @@ export default {
         },
     },
     async created() {
-        await axios.get('https://textforeva.ru/storage/mostPopular/products/40')
+        axios.get('https://textforeva.ru/storage/mostPopular/products/40')
         .then(response => {
             this.popularProducts = response.data.reverse()
         })
         .catch(function(error) {
         })
 
-        await axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
+        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/8')
         .then(res => {
             this.bestC = res.data
         })

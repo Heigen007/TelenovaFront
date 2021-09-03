@@ -28,7 +28,12 @@
       "BottomCompanyName": "Telenova",
       "BottomMessage": " - Все права защищены",
       "Language": "Язык",
-      "Share": "Поделиться"
+      "Share": "Поделиться",
+      "Home": "Домашняя страница",
+      "Cart": "Корзина",
+      "AboutUs": "О нас",
+      "Terms": "Правила",
+      "ContactUs": "Связаться с нами"
     },
     "ErrorPage": {
       "Title": "Ошибка",

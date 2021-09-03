@@ -298,7 +298,7 @@ export default {
                             creditMonth: this.creditCounter
                         }
                         this.loaderM = true
-                        await axios.post('https://textforeva.ru/order', checkout)
+                        axios.post('https://textforeva.ru/order', checkout)
                         .then(response => {
                             self.loaderM = false
                             Swal.fire(

@@ -27,7 +27,12 @@
         "BottomCompanyName": "Telenova",
         "BottomMessage": " - All rights Reserved",
         "Language": "Language",
-        "Share": "Share"
+        "Share": "Share",
+        "Home": "Home",
+        "Cart": "Cart",
+        "AboutUs": "About Us",
+        "Terms": "Terms",
+        "ContactUs": "Contact Us"
     },
     "ErrorPage": {
         "Title": "Error",
