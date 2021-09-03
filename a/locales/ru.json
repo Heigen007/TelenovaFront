@@ -261,6 +261,12 @@
       "Related": "Похожие продукты"
     },
     "ShopPage": {
+      "ShowAllCat": "Показать все категории",
+      "ShowMore": "Показать больше",
+      "ShowLess": "Скрыть",
+      "Showing": "Показ",
+      "Of": "из",
+      "Results": "результатов",
       "Title": "Магазин",
       "CreditTitle": "Доступно в рассрочку",
       "FirstOptionalTitle": "Результаты по: ",

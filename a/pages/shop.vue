@@ -4,23 +4,71 @@
 
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content">
+            <div class="bg-gray-13 bg-md-transparent">
+                <div class="container">
+                    <!-- breadcrumb -->
+                    <div class="my-md-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">{{localizeFilter('Title')}}</a></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
+                                    <div v-if='$route.query.query'>{{$route.query.query}}</div>
+                                    <div v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]'>{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</div>
+                                    <div v-else-if='Object.keys($route.query)[0]'>{{Object.keys($route.query)[0].split('+').join(' ')}}</div>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- End breadcrumb -->
+                </div>
+            </div>
             <div class="container mt-6">
                 <preloader v-if='!IsProducts || !Filters' />
                 <div v-else class="row mb-8">
                     <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
+                        <div class="mb-8 border border-width-2 border-color-3 borders-radius-6">
+                            <!-- List -->
+                            <ul id="sidebarNav" class="list-unstyled mb-0 sidebar-navbar">
+                                <li>
+                                    <a class="dropdown-toggle dropdown-toggle-collapse dropdown-title" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav1Collapse" data-target="#sidebarNav1Collapse">
+                                        {{localizeFilter('ShowAllCat')}}
+                                    </a>
+
+                                    <div id="sidebarNav1Collapse" class="collapse" data-parent="#sidebarNav">
+                                        <ul id="sidebarNav1" class="list-unstyled dropdown-list">
+                                            <!-- Menu List -->
+                                            <li v-for='(el,i, index) in Categories' :key='index'><NuxtLink class="dropdown-item" :to="'/shop?FCat?'+Object.keys(el)[0]">{{Object.keys(el)[0]}}<span class="text-gray-25 font-size-12 font-weight-normal"> ({{Object.keys(el[Object.keys(el)[0]]).length}})</span></NuxtLink></li>
+                                            <!-- End Menu List -->
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li v-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]'>
+                                    <div v-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[0] == "FCat"'>
+                                        <a class="dropdown-current active" href="#">{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}<span class="text-gray-25 font-size-12 font-weight-normal"> </span></a>
+                                    </div>
+
+                                    <ul v-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[0] == "FCat"' class="list-unstyled dropdown-list">
+                                        <!-- Menu List -->
+                                        <li v-for='(el, i) in Categories.filter(el => Object.keys(el)[0] == Object.keys($route.query)[0].split("+").join(" ").split("?")[1])' :key='i'><NuxtLink class="dropdown-item" :to='"/shop?SCat?"+Object.keys(el[Object.keys($route.query)[0].split("+").join(" ").split("?")[1]])[i]'>{{Object.keys(el[Object.keys($route.query)[0].split("+").join(" ").split("?")[1]])[i]}}</NuxtLink></li>
+                                        <!-- End Menu List -->
+                                    </ul>
+                    
+                                    <!-- <div v-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[0] == "SCat"'>
+                                        <a class="dropdown-current active" href="#">{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}<span class="text-gray-25 font-size-12 font-weight-normal"> </span></a>
+                                    </div>
+
+                                    <ul v-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[0] == "SCat"' class="list-unstyled dropdown-list">
+                                        <li v-for='(el, i) in Categories.filter(el => Object.keys(el)[0] == Object.keys($route.query)[0].split("+").join(" ").split("?")[1])' :key='i'><NuxtLink class="dropdown-item" :to='"/shop?SCat?"+Object.keys(el[Object.keys($route.query)[0].split("+").join(" ").split("?")[1]])[i]'>{{Object.keys(el[Object.keys($route.query)[0].split("+").join(" ").split("?")[1]])[i]}}</NuxtLink></li>
+                                    </ul> -->
+                                </li>
+                            </ul>
+                            <!-- End List -->
+                        </div>
                         <div class="mb-6">
                             <div class="border-bottom border-color-1 mb-5" id="basicsHeadingOne">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseOner2"
-                                    aria-expanded="true"
-                                    @click='IsPopper = false'>
+                                <div class="section-title section-title__sm mb-0 pb-2 font-size-18 sectionMA">
                                     {{localizeFilter('FilterPart', 'SecondPartTitle')}}
-
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
+                                </div>
                             </div>
                             <div id="basicsCollapseOner2" class="collapse show">
                                 <h4 class="font-size-14 mb-3 font-weight-bold">{{localizeFilter('FilterPart', 'SecondPartThirdSubTitle')}}</h4>
@@ -40,53 +88,44 @@
                                     </div>
                                 </div>
                                 </client-only>
-                                <div v-for="(el, i) in Filters" :key='i' class="border-bottom pb-4 mb-4">
-                                    <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0 collapsed"
-                                        data-toggle="collapse"
-                                        :data-target="'#basicsCollapseOner3'+i.split(' ').join('')"
-                                        aria-expanded="true"
-                                        @click='IsPopper = false'>
+                                <div v-for="(el, i, index) in Filters" :key='index' class="border-bottom pb-4 mb-4">
+                                    <div type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0">
                                         <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
-
-                                        <span class="card-btn-arrow">
-                                            <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                        </span>
-                                    </button>
-
-                                    <div :id="'basicsCollapseOner3'+i.split(' ').join('')" class="collapse">
-                                        <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                    </div>
+                                        <div v-if='o < 5' v-for="(fil, o) in el" :key='o+"i"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                             <div class="custom-control custom-checkbox">
                                                 <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
                                                 <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
                                             </div>
                                         </div>
-                                    </div>
-
+                                        <div v-if='Object.keys(el).length > 4' class="collapse" :id="'collapseBrand'+index" style="">
+                                            <div v-if='index3 > 4' v-for="(fil, index3) in el" :key='index3+"o"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil2'+fil+i+1">
+                                                    <label @click.capture='Label("Fil2"+fil+i+1)' class="custom-control-label" :for="'Fil2'+fil+i+1">{{fil}}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a v-if='Object.keys(el).length > 4' class="link link-collapse small font-size-13 text-gray-27 d-inline-flex mt-2 collapsed" data-toggle="collapse" :href="'#collapseBrand'+index" role="button" aria-expanded="false" :aria-controls="'collapseBrand'+index">
+                                            <span class="link__icon text-gray-27 bg-white">
+                                                <span class="link__icon-inner">+</span>
+                                            </span>
+                                            <span class="link-collapse__default">{{localizeFilter('ShowMore')}}</span>
+                                            <span class="link-collapse__active" @click='closeModal'>{{localizeFilter('ShowLess')}}</span>
+                                        </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-9 col-wd-9gdot5">
-                        <!-- Recommended Products -->
-                        <div class="mb-6 d-none d-xl-block">
-                            <div class="position-relative">
-                                <div class="border-bottom border-color-1 mb-2">
-                                    <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalTitle')}}{{'\xa0'}}{{$route.query.query}}</h3>
-                                    <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{'\xa0'}}{{localizeFilter('FirstOptionalSecondTitle')}} {{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
-                                    <h3 v-else-if='Object.keys($route.query)[0]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('FirstOptionalSecondTitle')}}{{'\xa0'}}{{Object.keys($route.query)[0].split('+').join(' ')}}</h3>
-                                </div>
-                            </div>
+                        <div class="d-block d-md-flex flex-center-between mb-3">
+                            <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{$route.query.query}}</h3>
+                            <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
+                            <h3 v-else-if='Object.keys($route.query)[0]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{Object.keys($route.query)[0].split('+').join(' ')}}</h3>
+                            <p v-if='Products.length != 0' class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
+                            <p v-else class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
                         </div>
-                        <!-- End Recommended Products -->
-                        <!-- Shop-control-bar Title -->
-                        <div class="flex-center-between mb-3">
-                            <!-- <h3 class="font-size-25 mb-0">{{localizeFilter('SecondTitle')}}</h3> -->
-                            <p v-if='Products.length != 0' class="font-size-14 text-gray-90 mb-0">Showing {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</p>
-                            <p v-else class="font-size-14 text-gray-90 mb-0">Showing 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} of {{Products.length}} results</p>
-                        </div>
-                        <!-- End shop-control-bar Title -->
-                        <!-- Shop-control-bar -->
-                        <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1">
+                        <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1 flex-center-between">
                             <div class="d-xl-none">
                                 <!-- Account Sidebar Toggle Button -->
                                 <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;"
@@ -116,6 +155,14 @@
                                     <!-- End Select -->
                                 </form>
                             </div>
+                            <nav v-if='Products.length != 0' style='justify-content: flex-end' class="px-3 flex-horizontal-center text-gray-20 ">
+                                <div style='cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">←</div>
+                                <form method="post" class="min-width-50 mr-1">
+                                    <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" style="border-radius: 15px" :value="ProductCounter + 1">
+                                    <input v-else @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" style="border-radius: 15px" :value="0">
+                                </form> {{localizeFilter('Of')}} {{Math.ceil(Products.length / 60)}}
+                                <div style="cursor: pointer" class="text-gray-30 font-size-20 ml-2" @click="NextProductsPage">→</div>
+                            </nav>
                         </div>
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body --> 
@@ -124,8 +171,7 @@
                         <div v-else :style='Products.length == 0 ? "" : "min-height: 350px"' class="" id="pills-tabContent">
                             <div class="" id="pills-one-example1" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <div class="row products-group ">
-                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item">
-                                        <div class=" h-100 w-100 product-item">
+                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item h-100 w-100">
                                             <div class="product-item__inner inner p-3" style='min-height: 350px; width: 100%'>
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
                                                     <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
@@ -171,7 +217,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     </li>
                                 </div>
                             </div>
@@ -179,9 +224,9 @@
                         <nav v-if='Products.length != 0' style='justify-content: flex-end' class="px-3 flex-horizontal-center text-gray-20 ">
                             <div style='cursor: pointer' class="text-gray-30 font-size-20 mx-2" @click="PrevProductsPage">←</div>
                             <form method="post" class="min-width-50 mr-1">
-                                <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="ProductCounter + 1">
-                                <input v-else @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" :value="0">
-                            </form> of {{Math.ceil(Products.length / 60)}}
+                                <input v-if=' Products.length != 0' @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" style="border-radius: 15px" :value="ProductCounter + 1">
+                                <input v-else @input="ChProductsCounter" size="2" readonly class="form-control text-center px-2 height-35" style="border-radius: 15px" :value="0">
+                            </form> {{localizeFilter('Of')}} {{Math.ceil(Products.length / 60)}}
                             <div style="cursor: pointer" class="text-gray-30 font-size-20 ml-2" @click="NextProductsPage">→</div>
                         </nav>
                         <!-- End Shop Pagination -->
@@ -242,8 +287,8 @@
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div id='Tipy' class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i">
-                                        <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label" :for="'Fil'+fil+i">{{fil}}</label>
+                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat">
+                                        <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -266,6 +311,7 @@
 <script>
 import { createPopper } from '@popperjs/core';
 import preloader from '../components/CssPreloader.vue'
+import axios from 'axios'
 export default {
     head() {
         return {
@@ -306,6 +352,10 @@ export default {
                     this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
                 }
             }
+            setTimeout(() => {
+                this.RangeInit()
+                this.RangeInit2()
+            }, 1500);
         },
         Filters(newV){
             if(this.IdResult){
@@ -346,11 +396,13 @@ export default {
                     $(target).collapse('show');
                 }
             });
-            this.RangeInit()
-            this.RangeInit2()
         });
     },
     mounted() {
+        setTimeout(() => {
+            this.RangeInit()
+            this.RangeInit2()
+        }, 1500);
         document.addEventListener('click', e => {
             var control = document.getElementById('AsideSpanControl')
             control.addEventListener('click', () => {
@@ -399,9 +451,12 @@ export default {
         });
     },
     methods: {
+        closeModal(){
+            this.IsPopper = false
+        },
         Label(e){
-            this.currentInput = e.id
-            if(!document.getElementById(e).checked || e.id == 'input-left2' || 'input-left' || 'input-right2' || 'input-right') {
+            console.log(e)
+            if(true) {
                 this.IsPopper = true
                 this.$nextTick(() => {
                     const input = document.getElementById(e)
@@ -410,8 +465,6 @@ export default {
                         placement: 'right',
                     });
                 })
-            } else {
-                this.IsPopper = false
             }
             this.currentInput = e
         },
@@ -445,15 +498,6 @@ export default {
                         result.push([element.name.split('/')[0],element.name.split('/')[1]])
                     }
                 });
-
-                // CategoryFilter = this.Products.filter(Product => {
-                //     for (let index = 0; index < result.length; index++) {
-                //     if(Product.CategoryPoints.indexOf(result[index]) == -1) {
-                //         return null
-                //     }
-                //     }
-                //     return Product
-                // })
                 if(window.screen.width >= 1200) {
                     var MinPrice = document.getElementById("input-left").value;
                     var MaxPrice = document.getElementById("input-right").value;
@@ -461,8 +505,6 @@ export default {
                     var MinPrice = document.getElementById("input-left2").value;
                     var MaxPrice = document.getElementById("input-right2").value;
                 }
-                // PriceFilter = this.ProductsCopy.filter(Product => Product.price >= MinPrice && Product.price <= MaxPrice})
-                // this.ProductsCopy = PriceFilter
                 if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'FCat'){
                     this.$store.commit('FilterProducts', [result, [MinPrice, MaxPrice], ['FCat', Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[1]]])
                 } else if(Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?').length > 1 && Object.keys(this.$route.query)[0]?.split('+').join(' ').split('?')[0] == 'SCat'){
@@ -708,7 +750,10 @@ export default {
             if(process.browser) {
                 return this.$store.state.productsFilteredCopyCopy.slice(this.ProductCounter * 60, (this.ProductCounter + 1) * 60)
             }
-        }
+        },
+        Categories(){
+            return this.$store.state.categories
+        },
     }
 }
 </script>

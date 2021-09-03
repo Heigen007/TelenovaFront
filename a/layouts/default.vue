@@ -1,6 +1,6 @@
 <template>
   <div style="z-index:1001;">
-    <div class="u-header-topbar py-2 d-none d-xl-block">
+    <div class="u-header-topbar py-2 d-none d-xl-block" style='background-color: #f5f5f5; border: none'>
         <div class="container">
             <div class="d-flex align-items-center">
                 <div class="topbar-left">
@@ -10,17 +10,32 @@
         </div>
     </div>
     <MyHeader />
+            <div class='container d-none d-xl-block mb-2'>
+                <div class="secondary-menu flex-horizontal-center position-relative pt-2">
+                    <div class="ml-wd-4 flex-shrink-0">
+                        <h6 class="font-weight-bold font-size-13 mb-0 mr-2">{{localizeFilter('HeaderBestCategoriesTitle')}} </h6>
+                    </div>
+                    <!-- Nav -->
+                    <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space position-static">
+                        <!-- Navigation -->
+                        <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                            <ul class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
+                                <!-- Button -->
+                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='color: red; text-decoration: none; font-weight: 700; white-space: nowrap' to='/shop?FCat?Уценка'>{{localizeFilter('Sales')}}</NuxtLink></li>
+                                <li v-for="(el,i) in bestC" :key='i' class="nav-item u-header__nav-item">
+                                    <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name'>
+                                        {{el.name}}
+                                    </NuxtLink>
+                                </li>
+                                <!-- End Button -->
+                            </ul>
+                        </div>
+                        <!-- End Navigation -->
+                    </nav>
+                    <!-- End Nav -->
+                </div>
+            </div>
     <Nuxt id='nuxtMain' />
-    <!-- <div class="js-go-to u-go-to"
-      aria-label='go to top'
-      data-position='{"bottom": 15, "left": 15 }'
-      data-type="fixed"
-      data-offset-top="400"
-      data-compensation="#header"
-      data-show-effect="slideInUp"
-      data-hide-effect="slideOutDown">
-      <span class="fas fa-arrow-up u-go-to__inner"></span>
-    </div> -->
     <MyFooter />
   </div>
 </template>
@@ -31,6 +46,7 @@
 </style>
 
 <script>
+import axios from 'axios'
 import MyHeader from '../components/Header.vue'
 import MyFooter from '../components/Footer.vue'
 
@@ -42,7 +58,8 @@ export default {
     data(){
       return{
         lang: true,
-        Component: 'Header'
+        Component: 'Header',
+        bestC: []
       }
     },
     beforeMount(){
@@ -55,6 +72,16 @@ export default {
       }, 2000);
       
       this.$store.dispatch("FrontInit")
+    },
+    created(){
+        var self = this
+        axios.get('https://textforeva.ru/storage/mostPopular/secondLevelCategories/7')
+        .then(res => {
+            self.bestC = res.data
+        })
+        .catch(err => {
+            ;
+        })
     },
     methods:{
       changeLang(lang){

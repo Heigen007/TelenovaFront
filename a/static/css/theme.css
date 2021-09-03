@@ -34258,7 +34258,7 @@ blockquote:not(.blockquote) p {
   }
 }
 
-.section-title::after {
+.sectionMA::after {
   content: ' ';
   height: 2px;
   width: 114px;

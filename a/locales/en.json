@@ -282,6 +282,12 @@
         "Related": "Related"
     },
     "ShopPage": {
+        "ShowAllCat": "Show All Categories",
+        "Showing": "Showing",
+        "Of": "of",
+        "Results": "results",
+        "ShowMore": "Show more",
+        "ShowLess": "Show less",
         "Title": "Shop",
         "CreditTitle": "Available in credit",
         "FirstOptionalTitle": "Searching by key:",
