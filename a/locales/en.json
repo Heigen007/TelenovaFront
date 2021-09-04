@@ -282,6 +282,8 @@
         "Related": "Related"
     },
     "ShopPage": {
+        "Price": "Price",
+        "LatestProducts": "Latest Products",
         "ShowAllCat": "Show All Categories",
         "Showing": "Showing",
         "Of": "of",

@@ -33360,7 +33360,7 @@ blockquote:not(.blockquote) p {
 
 .sidebar-navbar .dropdown-title {
   padding: 0.938rem 1.75rem;
-  border-bottom: 1px solid #dddddd;
+  /* border-bottom: 1px solid #dddddd; */
 }
 
 .sidebar-navbar .dropdown-toggle {

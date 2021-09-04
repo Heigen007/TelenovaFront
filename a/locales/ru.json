@@ -261,6 +261,8 @@
       "Related": "Похожие продукты"
     },
     "ShopPage": {
+      "Price": "Цена",
+      "LatestProducts": "Новые продукты",
       "ShowAllCat": "Показать все категории",
       "ShowMore": "Показать больше",
       "ShowLess": "Скрыть",
