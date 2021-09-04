@@ -9,7 +9,12 @@
       "HeaderBestCategoriesTitle": "Лучшие категории:",
       "Sales": "Уценка",
       "Search": "Поиск",
-      "SearchForProducts": "Поиск товаров"
+      "SearchForProducts": "Поиск товаров",
+      "Home": "Домашняя страница",
+      "Cart": "Корзина",
+      "AboutUs": "О нас",
+      "Terms": "Правила",
+      "ContactUs": "Связаться с нами"
     },
     "Footer": {
       "FirstCategory": "Избранные продукты",
@@ -261,6 +266,7 @@
       "Related": "Похожие продукты"
     },
     "ShopPage": {
+      "AddToCartText": "Добавить в корзину",
       "Price": "Цена",
       "LatestProducts": "Новые продукты",
       "ShowAllCat": "Показать все категории",

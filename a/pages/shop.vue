@@ -10,7 +10,7 @@
                     <div class="my-md-3">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">{{localizeFilter('Title')}}</a></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><div>{{localizeFilter('Title')}}</div></li>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
                                     <div v-if='$route.query.query'>{{$route.query.query}}</div>
                                     <div v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]'>{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</div>
@@ -262,48 +262,41 @@
                                                         <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                             <div v-if='tab == "pills-two-example1"' class="tab-pane fade pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
-                                <ul class="row products-group ">
-                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item h-100 w-100">
-                                            <div class="product-item__inner inner p-3" style='min-height: 350px; width: 100%'>
-                                                <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                <ul class="row list-unstyled products-group no-gutters" style='padding-left: 35px'>
+                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-6 col-md-3 col-wd-2gdot4 product-item">
+                                        <div class="product-item__outer h-100">
+                                            <div class="product-item__inner px-xl-4 p-3" style='min-height: 500px; width: 100%'>
+                                                <div class="product-item__body pb-xl-2">
+                                                    <div v-if="!el.offerData.category_list[2].includes('not show')" class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                    <div v-else class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+
                                                     <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                     <div class="mb-2">
-                                                        <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
+                                                       <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <a class="d-inline-flex align-items-center small font-size-14" href="#">
+                                                            <div class="text-warning mr-2">
+                                                                <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating/2)" :key='o' class="fas fa-star"></small>
+                                                                <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating/2)" :key='o2+"d"' class="fas fa-star text-muted"></small>
+                                                            </div>
+                                                            <span class="text-secondary">({{el.offerData.product_count}})</span>
+                                                        </a>
+                                                    </div>
+                                                    <ul class="font-size-12 p-0 text-gray-110 mb-4">
+                                                        <li v-if='index < 3' v-for="(prop, o, index) in el.offerData.properties" :key='index+"i"' class="line-clamp-1 mb-1 list-bullet">{{o}}: {{prop}}</li>
+                                                    </ul>
+                                                    <div class="text-gray-20 mb-2 font-size-12">SKU: {{el.offerData.kaspi_id}}</div>
                                                     <div class="flex-center-between mb-1">
-                                                       <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
+                                                        <div class="prodcut-price">
+                                                            <div class="text-gray-100">{{el.salePrice.toFixed(0)}} ₸</div>
                                                         </div>
-                                                        <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div>{{Number(el.salePrice.toFixed(0))}}{{'\xa0'}}₸</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
-                                                        </div>
-                                                        <div class="prodcut-add-cart">
-                                                            <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
-                                                    <div class="mb-2">
-                                                        <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
-                                                    </div>
-                                                    <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
-                                                        </div>
-                                                        <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div >{{Number(el.salePrice).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
-                                                        </div>
-                                                        <div class="prodcut-add-cart">
+                                                        <div class="d-none d-xl-block prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
                                                     </div>
@@ -314,109 +307,102 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                             <div v-if='tab == "pills-three-example1"' class="tab-pane fade pt-2" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example3-tab" data-target-group="groups">
-                                <ul class="row products-group ">
-                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item h-100 w-100">
-                                            <div class="product-item__inner inner p-3" style='min-height: 350px; width: 100%'>
-                                                <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                <ul class="d-block list-unstyled products-group prodcut-list-view">
+                                    <li v-for="(el, i) in ProductsPage" :key="i" class="product-item remove-divider">
+                                        <div class="product-item__outer w-100">
+                                            <div class="product-item__inner remove-prodcut-hover py-4 row">
+                                                <div class="product-item__header col-6 col-md-4">
                                                     <div class="mb-2">
-                                                        <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
-                                                    </div>
-                                                    <div class="flex-center-between mb-1">
-                                                       <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
-                                                        </div>
-                                                        <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div>{{Number(el.salePrice.toFixed(0))}}{{'\xa0'}}₸</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
-                                                        </div>
-                                                        <div class="prodcut-add-cart">
-                                                            <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                        </div>
+                                                       <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                     </div>
                                                 </div>
-                                                <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
-                                                    <div class="mb-2">
-                                                        <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
-                                                    </div>
-                                                    <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
+                                                <div class="product-item__body col-6 col-md-5">
+                                                    <div class="pr-lg-10">
+                                                        <div v-if="!el.offerData.category_list[2].includes('not show')" class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                        <div v-else class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                        <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+
+                                                        <div class="mb-3 d-none d-md-block">
+                                                            <a class="d-inline-flex align-items-center small font-size-14" href="#">
+                                                                <div class="text-warning mr-2">
+                                                                    <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating/2)" :key='o' class="fas fa-star"></small>
+                                                                    <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating/2)" :key='o2+"d"' class="fas fa-star text-muted"></small>
+                                                                </div>
+                                                                <span class="text-secondary">({{el.offerData.product_count}})</span>
+                                                            </a>
                                                         </div>
-                                                        <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div >{{Number(el.salePrice).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
-                                                        </div>
-                                                        <div class="prodcut-add-cart">
-                                                            <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                        </div>
+                                                        <ul class="font-size-12 p-0 text-gray-110 mb-4 d-none d-md-block">
+                                                            <li v-if='index < 3' v-for="(prop, o, index) in el.offerData.properties" :key='index+"i"' class="line-clamp-1 mb-1 list-bullet">{{o}}: {{prop}}</li>
+                                                        </ul>
                                                     </div>
                                                 </div>
-                                                <div class="product-item__footer">
-                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                        <div style>{{localizeFilter('CreditTitle')}}</div>
+                                                <div class="product-item__footer col-md-3 d-md-block">
+                                                    <div class="mb-3">
+                                                        <div class="prodcut-price mb-3">
+                                                            <div class="text-gray-100">{{el.salePrice}} ₸</div>
+                                                        </div>
+                                                        <div class="prodcut-add-cart">
+                                                            <div @click="AddToCartSwiper(el)" class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">{{localizeFilter('AddToCartText')}}</div>
+                                                        </div>
+                                                        <div class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
+                                                            <div style>{{localizeFilter('CreditTitle')}}</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                             <div v-if='tab == "pills-four-example1"' class="tab-pane fade pt-2" id="pills-four-example1" role="tabpanel" aria-labelledby="pills-four-example1-tab" data-target-group="groups">
-                                <ul class="row products-group ">
-                                    ADadADadADadsdfdf
-                                    <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item h-100 w-100">
-                                            <div class="product-item__inner inner p-3" style='min-height: 350px; width: 100%'>
-                                                <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
-                                                    <div class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                <ul class="d-block list-unstyled products-group prodcut-list-view-small">
+                                    <li v-for="(el, i) in ProductsPage" :key="i" class="product-item remove-divider">
+                                        <div class="product-item__outer w-100">
+                                            <div class="product-item__inner remove-prodcut-hover py-4 row">
+                                                <div class="product-item__header col-6 col-md-2">
                                                     <div class="mb-2">
                                                         <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                                     </div>
-                                                    <div class="flex-center-between mb-1">
-                                                       <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
+                                                </div>
+                                                <div class="product-item__body col-6 col-md-7">
+                                                    <div class="pr-lg-10">
+                                                        <div v-if="!el.offerData.category_list[2].includes('not show')" class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                        <div v-else class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                        <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
+                                                        <ul class="font-size-12 p-0 text-gray-110 mb-4 d-none d-md-block">
+                                                            <li v-if='index < 3' v-for="(prop, o, index) in el.offerData.properties" :key='index+"i"' class="line-clamp-1 mb-1 list-bullet">{{o}}: {{prop}}</li>
+                                                        </ul>
+                                                        <div class="mb-3 d-none d-md-block">
+                                                            <a class="d-inline-flex align-items-center small font-size-14" href="#">
+                                                                <div class="text-warning mr-2">
+                                                                    <small v-for="(fil,o) in Math.floor(el.offerData.kaspi_rating/2)" :key='o' class="fas fa-star"></small>
+                                                                    <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating/2)" :key='o2+"d"' class="fas fa-star text-muted"></small>
+                                                                </div>
+                                                                <span class="text-secondary">({{el.offerData.product_count}})</span>
+                                                            </a>
                                                         </div>
-                                                        <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div>{{Number(el.salePrice.toFixed(0))}}{{'\xa0'}}₸</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
+                                                    </div>
+                                                </div>
+                                                <div class="product-item__footer col-md-3 d-md-block">
+                                                    <div class="mb-2 flex-center-between">
+                                                        <div class="prodcut-price">
+                                                            <div class="text-gray-100">{{el.salePrice}} ₸</div>
                                                         </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div v-else class="product-item__body pb-xl-2">
-                                                    <div class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
-                                                    <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
-                                                    <div class="mb-2">
-                                                        <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id" class="d-block text-center"><img class="img-fluid" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
-                                                    </div>
-                                                    <div class="flex-center-between mb-1">
-                                                        <div class="prodcut-price" v-if='el.offerData.price == el.salePrice'>
-                                                            <NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></NuxtLink>
-                                                        </div>
-                                                        <div class="prodcut-price" v-else>
-                                                            <ins class="font-size-18 text-decoration-none"><NuxtLink style='color: red' :to="'/product?id=' + el.offerData.kaspi_id"><div >{{Number(el.salePrice).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></ins>
-                                                            <del class="font-size-12 text-gray-9 ml-2"><NuxtLink :to="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{Number(el.offerData.price).toFixed(0)}}{{'\xa0'}}₸</div></NuxtLink></del>
-                                                        </div>
-                                                        <div class="prodcut-add-cart">
-                                                            <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-item__footer">
-                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                    <div class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
                                                         <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -555,6 +541,7 @@ export default {
     },
     watch: {
         $route() {
+            this.tab = 'pills-one-example1'
             this.IsPopper = false
             this.minV = 0;
             this.maxV = 0;

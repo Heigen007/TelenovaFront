@@ -161,7 +161,7 @@
                                         <NuxtLink to="/cart" class="text-gray-90 position-relative d-flex " title="Cart">
                                             <i class="font-size-22 ec ec-shopping-bag"></i>
                                             <span class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{AmountOfCartProducts}}</span>
-                                            <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost}}{{'\xa0'}}₸</span>
+                                            <span class="Cost font-weight-bold font-size-16 text-gray-90 ml-4">{{Cost.toFixed(0)}}{{'\xa0'}}₸</span>
                                         </NuxtLink>
                                         </li>
                                         <div v-if='PopUp' class = 'MPopUp'>{{localizeFilter('ProductAddedTitle')}}</div>
@@ -276,7 +276,7 @@
                                                 data-unfold-animation-in="fadeInLeft"
                                                 data-unfold-animation-out="fadeOutLeft"
                                                 style='color: black'
-                                                data-unfold-duration="500" to="/" class="u-header-collapse__nav-link font-weight-bold">Home</NuxtLink>
+                                                data-unfold-duration="500" to="/" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('Home')}}</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink id="sidebarHeaderInvoker3"
@@ -291,7 +291,7 @@
                                                 data-unfold-animation-in="fadeInLeft"
                                                 data-unfold-animation-out="fadeOutLeft"
                                                 style='color: black'
-                                                data-unfold-duration="500" to="/cart" class="u-header-collapse__nav-link font-weight-bold">Cart</NuxtLink>
+                                                data-unfold-duration="500" to="/cart" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('Cart')}}</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink id="sidebarHeaderInvoker4"
@@ -306,7 +306,7 @@
                                                 data-unfold-animation-in="fadeInLeft"
                                                 style='color: black'
                                                 data-unfold-animation-out="fadeOutLeft"
-                                                data-unfold-duration="500" to="/about" class="u-header-collapse__nav-link font-weight-bold">Adout Us</NuxtLink>
+                                                data-unfold-duration="500" to="/about" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('AboutUs')}}</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink id="sidebarHeaderInvoker5"
@@ -321,7 +321,7 @@
                                                 data-unfold-animation-in="fadeInLeft"
                                                 data-unfold-animation-out="fadeOutLeft"
                                                 style='color: black'
-                                                data-unfold-duration="500" to="/terms" class="u-header-collapse__nav-link font-weight-bold">Terms</NuxtLink>
+                                                data-unfold-duration="500" to="/terms" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('Terms')}}</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink id="sidebarHeaderInvoker6"
@@ -351,7 +351,7 @@
                                                 data-unfold-animation-in="fadeInLeft"
                                                 data-unfold-animation-out="fadeOutLeft"
                                                 style='color: black'
-                                                data-unfold-duration="500" to="/contact" class="u-header-collapse__nav-link font-weight-bold">Contact Us</NuxtLink>
+                                                data-unfold-duration="500" to="/contact" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('ContactUs')}}</NuxtLink>
                                     </li>
 
                                 </ul>
@@ -411,6 +411,28 @@ export default {
                     $(target).collapse('show');
                 }
             })
+            setTimeout(() => {
+                $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                    beforeClose: function () {
+                        $('#hamburgerTrigger').removeClass('is-active');
+                    },
+                    afterClose: function() {
+                        $('#headerSidebarList .collapse.show').collapse('hide');
+                    }
+                });
+
+                $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
+                    e.preventDefault();
+
+                    var target = $(this).data('target');
+
+                    if($(this).attr('aria-expanded') === "true") {
+                        $(target).collapse('hide');
+                    } else {
+                        $(target).collapse('show');
+                    }
+                });
+            }, 2000);
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
                 beforeClose: function () {
                     $('#hamburgerTrigger').removeClass('is-active');

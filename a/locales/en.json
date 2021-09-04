@@ -8,7 +8,12 @@
         "HeaderBestCategoriesTitle": "Telenova Best Selling:",
         "Sales": "Sales",
         "Search": "Search",
-        "SearchForProducts": "Search for products"
+        "SearchForProducts": "Search for products",
+        "Home": "Home",
+        "Cart": "Cart",
+        "AboutUs": "About Us",
+        "Terms": "Terms",
+        "ContactUs": "Contact Us"
     },
     "Footer": {
         "FirstCategory": "Featured Products",
@@ -282,6 +287,7 @@
         "Related": "Related"
     },
     "ShopPage": {
+        "AddToCartText": "Add to Cart",
         "Price": "Price",
         "LatestProducts": "Latest Products",
         "ShowAllCat": "Show All Categories",
