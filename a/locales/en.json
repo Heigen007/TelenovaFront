@@ -271,6 +271,7 @@
         "SixthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat."
     },
     "ProductPage": {
+        "Shop": "Shop",
         "Title": "Product page",
         "CardAvailabilityText": "Availability:",
         "CardQuantityText": "Quantity",

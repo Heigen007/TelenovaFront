@@ -2,6 +2,23 @@
     <div class="ITEM">
         <!-- ========== MAIN CONTENT ========== -->
         <main v-if="Product" id="content">
+<div class="bg-gray-13 bg-md-transparent">
+                <div class="container">
+                    <!-- breadcrumb -->
+                    <div class="my-md-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1">Shop</li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink :to='"/shop?FCat?"+Product.offerData.category_list[0]'>{{Product.offerData.category_list[0]}}</NuxtLink></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink :to='"/shop?SCat?"+Product.offerData.category_list[1]'>{{Product.offerData.category_list[1]}}</NuxtLink></li>
+                                <li v-if='!Product.offerData.category_list[2].includes("not show")' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink :to='"/shop?"+Product.offerData.category_list[2]'>{{Product.offerData.category_list[2]}}</NuxtLink></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">{{Product.offerData.name}}</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- End breadcrumb -->
+                </div>
+            </div>
             <div class="container mt-6" style="margin-top: 20px">
                 <!-- Single Product Body -->
                 <div class="mb-7">
@@ -9,9 +26,6 @@
                         <div class="col-md-6 col-xl-5 mb-2 mb-4">
                             <div style='color: #c1c1c1' id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
                                 data-infinite="true"
-                                data-arrows-classes="arrowsM d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-                                data-arrow-left-classes="text-secondary fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-                                data-arrow-right-classes="text-secondary fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
                                 data-nav-for="#sliderSyncingThumb">
                                 <div v-for="(el,i) in Product.offerData.images" :key='i' class="js-slide" style="display: flex; justify-content: center;">
                                     <img class="img-fluid MI" :src="el" alt="Image Description">
@@ -56,6 +70,7 @@
                                         <li class = 'BLi' v-for="(el,i) in Product.offerData.properties" :key='i'><div class = 'FLB'>{{i}}:</div>{{el}}</li>
                                     </ul>
                                 </div>
+                                <strong>SKU: 121212</strong>
                                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                                 <p><strong>SKU</strong>: FW511948218</p> -->
                             </div>
@@ -101,8 +116,8 @@
                                     <div class="mb-2">
                                         <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer; border-radius: 0' @click="BuyNow" class="btn btn-block">{{localizeFilter('BuyNowText')}}</div>
                                     </div>
-                                    <div class="mb-2 pb-0dot5">
-                                        <div style='background-color: black; color: white; border: 2px solid black;cursor: pointer;border-radius: 0' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
+                                    <div class="mb-2">
+                                        <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer; border-radius: 0' @click="AddToCartButton" class="btn btn-block customBtn"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
                                     </div>
                                     <div class="mb-3">
                                         <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+Product.offerData.on_kaspi+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer; border-radius: 0' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
@@ -211,8 +226,8 @@
                                                                         <a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.price}} ₸</div></a>
                                                                     </div>
                                                                     <div class="prodcut-price" v-else>
-                                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice}} ₸</div></a></ins>
-                                                                        <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice}} ₸</div></a></del>
+                                                                        <ins class="font-size-15 text-decoration-none"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.oldPrice.toFixed(0)}} ₸</div></a></ins>
+                                                                        <del class="font-size-12 text-gray-9 ml-2"><a :href="'/product?id=' + el.offerData.kaspi_id"><div class="text-gray-100">{{el.offerData.newPrice.toFixed(0)}} ₸</div></a></del>
                                                                     </div>
                                                                     <div class="d-xl-block prodcut-add-cart">
                                                                         <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
@@ -290,11 +305,11 @@ export default {
             }
         },
         Product(newV){
-            this.$nextTick(() => {
+            setTimeout( () => {
                 $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel'); 
                 $.HSCore.components.HSQantityCounter.init('.js-quantity');
                 $.HSCore.components.HSFocusState.init();
-            })
+            },1000)
         }
     },
     async created(){

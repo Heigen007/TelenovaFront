@@ -9,12 +9,24 @@
                     <!-- breadcrumb -->
                     <div class="my-md-3">
                         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><div>{{localizeFilter('Title')}}</div></li>
+                            <ol v-if='$route.query.query' class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                                <li style='user-select: none' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><div>{{localizeFilter('Title')}}</div></li>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
-                                    <div v-if='$route.query.query'>{{$route.query.query}}</div>
-                                    <div v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]'>{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</div>
-                                    <div v-else-if='Object.keys($route.query)[0]'>{{Object.keys($route.query)[0].split('+').join(' ')}}</div>
+                                    <div>{{$route.query.query}}</div>
+                                </li>
+                            </ol>
+                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble" v-else>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1" style='user-select: none'><div>{{localizeFilter('Title')}}</div></li>
+                                <li v-if='!el.includes("not show")' v-for='(el, i) in findCatTree()' :key='i+"index"' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1">
+                                    <div v-if='i == 0'>
+                                        <NuxtLink :to='"shop?FCat?"+el'>{{el}}</NuxtLink>
+                                    </div>
+                                    <div v-else-if='i == 1'>
+                                        <NuxtLink :to='"shop?SCat?"+el'>{{el}}</NuxtLink>
+                                    </div>
+                                    <div v-else-if='i == 2'>
+                                        <NuxtLink :to='"shop?"+el'>{{el}}</NuxtLink>
+                                    </div>
                                 </li>
                             </ol>
                         </nav>
@@ -135,10 +147,10 @@
                                                     </div>
                                                     <div v-if='el.salePrice != el.offerData.price' class="font-weight-bold">
                                                         <del class="font-size-11 text-gray-9 d-block">{{el.offerData.price}}</del>
-                                                        <ins style='font-weight: 700' class="font-size-15 text-red text-decoration-none d-block">{{el.salePrice}}</ins>
+                                                        <ins style='font-weight: 700' class="font-size-15 text-red text-decoration-none d-block">{{el.salePrice.toFixed(0)}}</ins>
                                                     </div>
                                                     <div v-else>
-                                                        <ins style='font-weight: 700' class="font-size-15 text-decoration-none d-block">{{el.salePrice}}</ins>
+                                                        <ins style='font-weight: 700' class="font-size-15 text-decoration-none d-block">{{el.salePrice.toFixed(0)}}</ins>
                                                     </div>
                                                 </div>
                                             </div>
@@ -157,8 +169,8 @@
                             <p v-else class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
                         </div>
                         <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1 flex-center-between">
-                            <div class="px-3 d-none d-xl-block">
-                                <ul class="nav nav-tab-shop" id="pills-tab" role="tablist">
+                            <div class="px-3">
+                                <ul class="nav nav-tab-shop" style='flex-wrap: nowrap' id="pills-tab" role="tablist">
                                     <li class="nav-item">
                                         <a @click='tab="pills-one-example1"' class="nav-link active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="false">
                                             <div class="d-md-flex justify-content-md-center align-items-md-center">
@@ -216,7 +228,7 @@
                         <preloader v-if='!IsProducts2' />
                         <div v-else :style='Products.length == 0 ? "" : "min-height: 350px"' class="mb-3" id="pills-tabContent">
                             <div v-if='tab == "pills-one-example1"' class="tab-pane fade pt-2 active show" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
-                                <ul class="row products-group ">
+                                <ul class="row products-group " style='padding-inline-start: 0;'>
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item h-100 w-100">
                                             <div class="product-item__inner inner p-3" style='min-height: 350px; width: 100%'>
                                                 <div v-if="!el.offerData.category_list[2].includes('not show')" class="product-item__body pb-xl-2">
@@ -267,7 +279,7 @@
                                 </ul>
                             </div>
                             <div v-if='tab == "pills-two-example1"' class="tab-pane fade pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
-                                <ul class="row list-unstyled products-group no-gutters" style='padding-left: 35px'>
+                                <ul class="row list-unstyled products-group no-gutters" style=' padding-inline-start: 0;'>
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-6 col-md-3 col-wd-2gdot4 product-item">
                                         <div class="product-item__outer h-100">
                                             <div class="product-item__inner px-xl-4 p-3" style='min-height: 500px; width: 100%'>
@@ -323,10 +335,12 @@
                                                 </div>
                                                 <div class="product-item__body col-6 col-md-5">
                                                     <div class="pr-lg-10">
-                                                        <div v-if="!el.offerData.category_list[2].includes('not show')" class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                        <div v-else class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                        <div v-if="!el.offerData.category_list[2].includes('not show')" style='height: auto' class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                        <div v-else class="mb-2 catName" style='height: auto'><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                         <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
-
+                                                        <div class="prodcut-price mb-2 d-md-none">
+                                                            <div class="text-gray-100">{{el.salePrice.toFixed(0)}} ₸</div>
+                                                        </div>
                                                         <div class="mb-3 d-none d-md-block">
                                                             <a class="d-inline-flex align-items-center small font-size-14" href="#">
                                                                 <div class="text-warning mr-2">
@@ -341,16 +355,10 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="product-item__footer col-md-3 d-md-block">
+                                                <div class="col-md-3 d-md-block">
                                                     <div class="mb-3">
-                                                        <div class="prodcut-price mb-3">
-                                                            <div class="text-gray-100">{{el.salePrice}} ₸</div>
-                                                        </div>
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">{{localizeFilter('AddToCartText')}}</div>
-                                                        </div>
-                                                        <div class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
-                                                            <div style>{{localizeFilter('CreditTitle')}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -371,8 +379,8 @@
                                                 </div>
                                                 <div class="product-item__body col-6 col-md-7">
                                                     <div class="pr-lg-10">
-                                                        <div v-if="!el.offerData.category_list[2].includes('not show')" class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
-                                                        <div v-else class="mb-2 catName"><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
+                                                        <div v-if="!el.offerData.category_list[2].includes('not show')" style='height: auto' class="mb-2 catName"><NuxtLink :to="'/shop?' + el.offerData.category_list[2]" class="font-size-12 text-gray-5">{{el.offerData.category_list[2]}}</NuxtLink></div>
+                                                        <div v-else class="mb-2 catName" style='height: auto'><NuxtLink :to="'/shop?SCat?' + el.offerData.category_list[1]" class="font-size-12 text-gray-5">{{el.offerData.category_list[1]}}</NuxtLink></div>
                                                         <h5 class="mb-1 product-item__title"><NuxtLink :title='el.offerData.name' :to="'/product?id=' + el.offerData.kaspi_id" class="text-blue font-weight-bold">{{el.offerData.name}}</NuxtLink></h5>
                                                         <ul class="font-size-12 p-0 text-gray-110 mb-4 d-none d-md-block">
                                                             <li v-if='index < 3' v-for="(prop, o, index) in el.offerData.properties" :key='index+"i"' class="line-clamp-1 mb-1 list-bullet">{{o}}: {{prop}}</li>
@@ -388,7 +396,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="product-item__footer col-md-3 d-md-block">
+                                                <div class="col-md-3 d-md-block">
                                                     <div class="mb-2 flex-center-between">
                                                         <div class="prodcut-price">
                                                             <div class="text-gray-100">{{el.salePrice}} ₸</div>
@@ -479,7 +487,7 @@
                                 <h4 class="font-size-14 mb-3 font-weight-bold">{{i}}</h4>
 
                                 <!-- Checkboxes -->
-                                <div v-for="(fil, o) in el" :key='o' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                <div v-for="(fil, o) in el" :key='o+"m"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                     <div id='Tipy' class="custom-control custom-checkbox">
                                         <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat">
                                         <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label">{{fil}}</label>
@@ -657,6 +665,41 @@ export default {
         });
     },
     methods: {
+        findCatTree(){
+            if(process.browser && this.Categories && this.Categories.length > 0) {
+                if(Object.keys((this.$route.query))[0].includes('FCat')) return [Object.keys(this.$route.query)[0].split("+").join(" ").split("?")[1]]
+                if(Object.keys((this.$route.query))[0].includes('SCat')){
+                    for (let index = 0; index < this.Categories.length; index++) {
+                        var count = Object.keys(this.Categories[index])
+                        for (let index2 = 0; index2 < count.length; index2++) {
+                            console.log(this.Categories[index][count[index2]]);
+                            var arr = this.Categories[index][count[index2]]
+                            for (let key in arr) {
+                                if(key == Object.keys(this.$route.query)[0].split("+").join(" ").split("?")[1]){
+                                    return [count[index2],key]
+                                } 
+                            }
+                        }
+                    }
+                }
+                for (let index = 0; index < this.Categories.length; index++) {
+                    var count = Object.keys(this.Categories[index])
+                    for (let index2 = 0; index2 < count.length; index2++) {
+                        console.log(this.Categories[index][count[index2]]);
+                        var arr = this.Categories[index][count[index2]]
+                        for (let key in arr) {
+                            console.log(key);
+                            for(let key2 in arr[key]) {
+                                console.log(key2, '|||||');
+                                if(arr[key][key2] == Object.keys(this.$route.query)[0].split('+').join(' ')){
+                                    return [count[index2], key, Object.keys(this.$route.query)[0].split('+').join(' ')]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         SecCatF(){
             for (let index = 0; index < this.Categories.length; index++) {
                 var count = Object.keys(this.Categories[index])
@@ -668,7 +711,6 @@ export default {
                     }
                 }
             }
-            
         },
         closeModal(){
             this.IsPopper = false

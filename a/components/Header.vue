@@ -37,8 +37,8 @@
                                             <!-- End Fullscreen Toggle Button -->
 
                                             <!-- Logo -->
-                                            <router-link style='width: 160px;' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
-                                                <img style='width: 140px; margin-top: 5px' src='logo.svg' alt="Image Description">
+                                            <router-link style='width: 180px;' class="LogoMob hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
+                                                <img style='width: 180px; margin-top: 5px' src='logo.svg' alt="Image Description">
                                             </router-link>
                                             <router-link style='width: 120px; margin-top: 20px; margin-left: 10px; margin-bottom: 20px' class="LogoComp hiddenSvg navbar-brand u-header__navbar-brand u-header__navbar-brand-center ml-xl-0" to="/" aria-label="Electro">
                                                 <img style='width: 120px; margin-top: 5px' src='logo.png' alt="Image Description">

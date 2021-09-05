@@ -250,6 +250,7 @@
       "SixthText": "In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat."
     },
     "ProductPage": {
+      "Shop": "Магазин",
       "Title": "Страница продукта",
       "CardAvailabilityText": "В наличии:",
       "CardQuantityText": "Количество",
@@ -272,7 +273,7 @@
       "ShowAllCat": "Показать все категории",
       "ShowMore": "Показать больше",
       "ShowLess": "Скрыть",
-      "Showing": "Показ",
+      "Showing": "Показано",
       "Of": "из",
       "Results": "результатов",
       "Title": "Магазин",
@@ -286,8 +287,8 @@
       },
       "DefaultSorting": "По умолчанию",
       "PopularitySorting": "По популярности",
-      "SortByPriceLowToHigh": "По цене: от дешевых к дорогим",
-      "SortByPriceHighToLow": "По цене: от дорогих к дешевым",
+      "SortByPriceLowToHigh": "От дешевых к дорогим",
+      "SortByPriceHighToLow": "От дорогих к дешевым",
       "FilterButtonText": "Фильтровать"
     },
     "PaymentResultSuccess": {
