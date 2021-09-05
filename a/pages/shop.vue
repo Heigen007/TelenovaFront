@@ -61,7 +61,7 @@
 
                                     <ul v-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[0] == "FCat"' class="list-unstyled dropdown-list">
                                         <!-- Menu List -->
-                                        <li v-for='(el, i) in Categories.filter(el => Object.keys(el)[0] == Object.keys($route.query)[0].split("+").join(" ").split("?")[1])' :key='i'><NuxtLink class="dropdown-item" :to='"/shop?SCat?"+Object.keys(el[Object.keys($route.query)[0].split("+").join(" ").split("?")[1]])[i]'>{{Object.keys(el[Object.keys($route.query)[0].split("+").join(" ").split("?")[1]])[i]}}</NuxtLink></li>
+                                        <li v-for='(el, i) in Categories.filter(el => Object.keys(el)[0] == Object.keys($route.query)[0].split("+").join(" ").split("?")[1])[0][Object.keys($route.query)[0].split("+").join(" ").split("?")[1]]' :key='i'><NuxtLink class="dropdown-item" :to='"/shop?SCat?"+i'>{{i}}</NuxtLink></li>
                                         <!-- End Menu List -->
                                     </ul>
                     
@@ -105,14 +105,14 @@
                                     <div type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0">
                                         <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
                                     </div>
-                                        <div v-if='o < 5' v-for="(fil, o) in el" :key='o+"i"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                        <div v-if='o < 5' v-for="(fil, o) in el" :key='o+"index"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                             <div class="custom-control custom-checkbox">
                                                 <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil'+fil+i+1">
                                                 <label @click.capture='Label("Fil"+fil+i+1)' class="custom-control-label" :for="'Fil'+fil+i+1">{{fil}}</label>
                                             </div>
                                         </div>
                                         <div v-if='Object.keys(el).length > 4' class="collapse" :id="'collapseBrand'+index" style="">
-                                            <div v-if='index3 > 4' v-for="(fil, index3) in el" :key='index3+"o"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
+                                            <div v-if='index3 > 4' v-for="(fil, index3) in el" :key='index3+"ondex"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                                                 <div class="custom-control custom-checkbox">
                                                     <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat" :id="'Fil2'+fil+i+1">
                                                     <label @click.capture='Label("Fil2"+fil+i+1)' class="custom-control-label" :for="'Fil2'+fil+i+1">{{fil}}</label>
@@ -168,7 +168,7 @@
                             <p v-if='Products.length != 0' class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
                             <p v-else class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
                         </div>
-                        <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1 flex-center-between">
+                        <div style='display: flex; align-items: center; overflow-x: hidden' class="bg-gray-1 borders-radius-9 py-1 flex-center-between">
                             <div class="d-xl-none" style='float: left'>
                                 <!-- Account Sidebar Toggle Button -->
                                 <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;"
@@ -221,7 +221,7 @@
                             <div class="d-flex ml-2">
                                 <form method="get">
                                     <!-- Select -->
-                                    <select @change="SelectSorting" class="border rounded-pill py-1 height-35 pl-3 border-color-1 border-lg-down-0 bg-lg-down-transparent">
+                                    <select @change="SelectSorting" class="border rounded-pill py-1 height-35 px-2 border-color-1 border-lg-down-0 bg-lg-down-transparent">
                                         <option value="one" selected>{{localizeFilter('DefaultSorting')}}</option>
                                         <option value="two">{{localizeFilter('PopularitySorting')}}</option>
                                         <option value="five">{{localizeFilter('SortByPriceLowToHigh')}}</option>
@@ -502,9 +502,9 @@
 
                                 <!-- Checkboxes -->
                                 <div v-for="(fil, o) in el" :key='o+"m"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
-                                    <div id='Tipy' class="custom-control custom-checkbox">
-                                        <input :name="i +'/'+ fil" type="checkbox" class="custom-control-input chCat">
-                                        <label @click.capture="Label('Fil'+fil+i)" class="custom-control-label">{{fil}}</label>
+                                    <div class="custom-control custom-checkbox">
+                                        <input :name="i +'/'+ fil" type="checkbox" :id="'Fil3'+fil+i+1" class="custom-control-input chCat">
+                                        <label @click.capture="Label('Fil3'+fil+i+1)" :for="'Fil3'+fil+i+1" class="custom-control-label">{{fil}}</label>
                                     </div>
                                 </div>
                                 <!-- End Checkboxes -->
@@ -597,7 +597,6 @@ export default {
             }
         },
         Products(newV){
-            console.log(1);
             window.scrollTo(0,0)
             this.IsProducts = true
             this.IsProducts2 = true
@@ -655,7 +654,6 @@ export default {
             this.$store.commit('CategoryFilter', [Object.keys(this.$route.query)[0]?.split('+').join(' '),'third'])
         }
         $(document).on('ready', function () {
-            console.log(1);
             // initialization of unfold component
             $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
                 beforeClose: function () {
@@ -687,7 +685,6 @@ export default {
                     for (let index = 0; index < this.Categories.length; index++) {
                         var count = Object.keys(this.Categories[index])
                         for (let index2 = 0; index2 < count.length; index2++) {
-                            console.log(this.Categories[index][count[index2]]);
                             var arr = this.Categories[index][count[index2]]
                             for (let key in arr) {
                                 if(key == Object.keys(this.$route.query)[0].split("+").join(" ").split("?")[1]){
@@ -700,12 +697,9 @@ export default {
                 for (let index = 0; index < this.Categories.length; index++) {
                     var count = Object.keys(this.Categories[index])
                     for (let index2 = 0; index2 < count.length; index2++) {
-                        console.log(this.Categories[index][count[index2]]);
                         var arr = this.Categories[index][count[index2]]
                         for (let key in arr) {
-                            console.log(key);
                             for(let key2 in arr[key]) {
-                                console.log(key2, '|||||');
                                 if(arr[key][key2] == Object.keys(this.$route.query)[0].split('+').join(' ')){
                                     return [count[index2], key, Object.keys(this.$route.query)[0].split('+').join(' ')]
                                 }
@@ -719,7 +713,6 @@ export default {
             for (let index = 0; index < this.Categories.length; index++) {
                 var count = Object.keys(this.Categories[index])
                 for (let index2 = 0; index2 < count.length; index2++) {
-                    console.log(this.Categories[index][count[index2]]);
                     var arr = this.Categories[index][count[index2]]
                     for (let key in arr) {
                         if(key == Object.keys(this.$route.query)[0].split("+").join(" ").split("?")[1]) return arr[key]
@@ -731,7 +724,7 @@ export default {
             this.IsPopper = false
         },
         Label(e){
-            console.log(e)
+            console.log(e);
             if(true) {
                 this.IsPopper = true
                 this.$nextTick(() => {
@@ -774,6 +767,7 @@ export default {
                         result.push([element.name.split('/')[0],element.name.split('/')[1]])
                     }
                 });
+                console.log(result);
                 if(window.screen.width >= 1200) {
                     var MinPrice = document.getElementById("input-left").value;
                     var MaxPrice = document.getElementById("input-right").value;
@@ -1269,7 +1263,8 @@ input[type=range]:focus::-ms-fill-upper {
 .overflow-auto2{
     overflow: scroll
 }
-.overflow-auto2::-webkit-scrollbar{height: 5px;}
+.overflow-auto2::-webkit-scrollbar{height: 3px;}
+.overflow-auto2::-webkit-scrollbar-thumb{background: #c9c9c9 !important}
 
 select {
     -webkit-appearance: none;

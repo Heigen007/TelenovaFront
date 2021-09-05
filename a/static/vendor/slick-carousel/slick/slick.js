@@ -228,7 +228,7 @@
       }
     }
 
-    _.$slides = _.$slideTrack.children(this.options.slide);
+    _.$slides = _.$slideTrack.children(this.options.slide) || {};
 
     _.$slideTrack.children(this.options.slide).detach();
 
@@ -1323,14 +1323,14 @@
       tabControlIndexes = _.getNavigableIndexes().filter(function(val) {
         return (val >= 0) && (val < _.slideCount);
       });
-
-    _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
-      'aria-hidden': 'true',
-      'tabindex': '-1'
-    }).find('a, input, button, select').attr({
-      'tabindex': '-1'
-    });
-
+      if(_.$slides) {
+          _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
+          'aria-hidden': 'true',
+          'tabindex': '-1'
+        }).find('a, input, button, select').attr({
+          'tabindex': '-1'
+        });
+      }
     if (_.$dots !== null) {
       _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function(i) {
         var slideControlIndex = tabControlIndexes.indexOf(i);
@@ -1369,11 +1369,11 @@
         'tabindex': '0'
       }).end();
     }
-
-    for (var i=_.currentSlide, max=i+_.options.slidesToShow; i < max; i++) {
-      _.$slides.eq(i).attr('tabindex', 0);
-    }
-
+      if( _.$slides) {
+        for (var i=_.currentSlide, max=i+_.options.slidesToShow; i < max; i++) {
+          _.$slides.eq(i).attr('tabindex', 0);
+        }
+      }
     _.activateADA();
 
   };

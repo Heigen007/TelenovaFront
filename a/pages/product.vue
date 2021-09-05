@@ -8,7 +8,7 @@
                     <div class="my-md-3">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble">
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1">Shop</li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1">{{localizeFilter('Shop')}}</li>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink class='kop' :to='"/shop?FCat?"+Product.offerData.category_list[0]'>{{Product.offerData.category_list[0]}}</NuxtLink></li>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink class='kop' :to='"/shop?SCat?"+Product.offerData.category_list[1]'>{{Product.offerData.category_list[1]}}</NuxtLink></li>
                                 <li v-if='!Product.offerData.category_list[2].includes("not show")' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink class='kop' :to='"/shop?"+Product.offerData.category_list[2]'>{{Product.offerData.category_list[2]}}</NuxtLink></li>
@@ -375,8 +375,8 @@ export default {
 .overflow-auto2{
     overflow: scroll
 }
-.overflow-auto2::-webkit-scrollbar{height: 5px;}
-.overflow-auto::-webkit-scrollbar{height: 0px;}
+.overflow-auto2::-webkit-scrollbar{height: 3px;}
+.overflow-auto2::-webkit-scrollbar-thumb{background: #c9c9c9 !important}
 @media (max-width: 1200px) {
     .product-item{
         display: flex;

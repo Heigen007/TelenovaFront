@@ -227,7 +227,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div v-if="LinkActive" @click='Ship'><button class="text-white btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">{{localizeFilter('Order', 'TransferVariations', 'SuccessButtonText')}}</button></div>
+                                        <div v-if="LinkActive" @click='Ship'><button style='border-radius: 0' class="text-white btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">{{localizeFilter('Order', 'TransferVariations', 'SuccessButtonText')}}</button></div>
                                     </div>
                                     <!-- End Order Summary -->
                                 </div>

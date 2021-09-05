@@ -884,7 +884,7 @@ export default {
         },
         Slick(){
             if(this.newestProducts && this.popularProducts && this.Categories && this.TVProducts && this.LapProducts && this.$store.state.promoActions.length > 0) {
-                setTimeout(() => {$.HSCore.components.HSSlickCarousel.init('.js-slick-carousel')}, 300);
+                setTimeout(() => {$.HSCore.components.HSSlickCarousel.init('.js-slick-carousel')});
             } else {
                 setTimeout(() => {
                     this.Slick()
