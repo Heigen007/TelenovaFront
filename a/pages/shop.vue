@@ -88,7 +88,7 @@
                                 <div class="wrapper" style='margin-bottom: 20px'>
                                     <div class="multi-range-slider">
                                         <input @input="Label('input-right')" @click.capture='Label("input-left")' type="range" id="input-left" :min="$store.state.priceRange[0]" :max="$store.state.priceRange[1]" :value="minV">
-                                        <input @input="Label('input-right')" @click.capture='Label("input-right")' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
+                                        <input @input="Label('input-right')" @click.capture='Label("input-right")' class='custom' type="range" id="input-right" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
                                         <div class="slider">
                                         <div class="track"></div>
                                         <div class="range"></div>
@@ -169,8 +169,25 @@
                             <p v-else class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} 0-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
                         </div>
                         <div style='display: flex; align-items: center' class="bg-gray-1 borders-radius-9 py-1 flex-center-between">
+                            <div class="d-xl-none" style='float: left'>
+                                <!-- Account Sidebar Toggle Button -->
+                                <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;"
+                                    aria-controls="sidebarContent1"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    data-unfold-event="click"
+                                    data-unfold-hide-on-scroll="false"
+                                    data-unfold-target="#sidebarContent1"
+                                    data-unfold-type="css-animation"
+                                    data-unfold-animation-in="fadeInLeft"
+                                    data-unfold-animation-out="fadeOutLeft"
+                                    data-unfold-duration="500">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                            </div>
                             <div class="px-3">
-                                <ul class="nav nav-tab-shop" style='flex-wrap: nowrap' id="pills-tab" role="tablist">
+                                <!-- End Account Sidebar Toggle Button -->
+                                <ul class="nav nav-tab-shop" style='flex-wrap: nowrap;' id="pills-tab" role="tablist">
                                     <li class="nav-item">
                                         <a @click='tab="pills-one-example1"' class="nav-link active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="false">
                                             <div class="d-md-flex justify-content-md-center align-items-md-center">
@@ -227,7 +244,7 @@
                         <!-- Tab Content -->
                         <preloader v-if='!IsProducts2' />
                         <div v-else :style='Products.length == 0 ? "" : "min-height: 350px"' class="mb-3" id="pills-tabContent">
-                            <div v-if='tab == "pills-one-example1"' class="tab-pane fade pt-2 active show" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
+                            <div v-if='tab == "pills-one-example1"' class=" pt-2" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <ul class="row products-group " style='padding-inline-start: 0;'>
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-lg-3 col-md-6 MyCol col-sm-12 product-item h-100 w-100">
                                             <div class="product-item__inner inner p-3" style='min-height: 350px; width: 100%'>
@@ -278,7 +295,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if='tab == "pills-two-example1"' class="tab-pane fade pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
+                            <div v-if='tab == "pills-two-example1"' class=" pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
                                 <ul class="row list-unstyled products-group no-gutters" style=' padding-inline-start: 0;'>
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="col-6 col-md-3 col-wd-2gdot4 product-item">
                                         <div class="product-item__outer h-100">
@@ -323,7 +340,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if='tab == "pills-three-example1"' class="tab-pane fade pt-2" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example3-tab" data-target-group="groups">
+                            <div v-if='tab == "pills-three-example1"' class=" pt-2" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example3-tab" data-target-group="groups">
                                 <ul class="d-block list-unstyled products-group prodcut-list-view">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="product-item remove-divider">
                                         <div class="product-item__outer w-100">
@@ -367,7 +384,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if='tab == "pills-four-example1"' class="tab-pane fade pt-2" id="pills-four-example1" role="tabpanel" aria-labelledby="pills-four-example1-tab" data-target-group="groups">
+                            <div v-if='tab == "pills-four-example1"' class=" pt-2" id="pills-four-example1" role="tabpanel" aria-labelledby="pills-four-example1-tab" data-target-group="groups">
                                 <ul class="d-block list-unstyled products-group prodcut-list-view-small">
                                     <li v-for="(el, i) in ProductsPage" :key="i" class="product-item remove-divider">
                                         <div class="product-item__outer w-100">
@@ -467,7 +484,7 @@
                             <div class="wrapper" style='margin-bottom: 20px'>
                                 <div class="multi-range-slider2">
                                     <input @input="Label('input-right2')" @click.capture='Label("input-left2")' type="range" id="input-left2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="minV">
-                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' type="range" id="input-right2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
+                                    <input @input="Label('input-right2')" @click.capture='Label("input-right2")' class='custom' type="range" id="input-right2" :min="$store.state.priceRange[0]" step="1" :max="$store.state.priceRange[1]"  :value="maxV == 0 ? $store.state.priceRange[1] : maxV" >
                                     <div class="slider2">
                                     <div class="track"></div>
                                     <div class="range"></div>
@@ -580,6 +597,7 @@ export default {
             }
         },
         Products(newV){
+            console.log(1);
             window.scrollTo(0,0)
             this.IsProducts = true
             this.IsProducts2 = true
@@ -1068,10 +1086,21 @@ input[type=range]::-webkit-slider-thumb {
     pointer-events: all;
     -webkit-appearance: none;
     cursor: pointer;
-    border: 0 none;
     width: 15px;
     height: 15px;
     background-color: #0144a3;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(38, 152, 217, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.custom::-webkit-slider-thumb{
+    pointer-events: all;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: #fff !important;
+    border: 3px solid #0144a3;
     border-radius: 50%;
     box-shadow: 0 0 0 0 rgba(38, 152, 217, 0.1);
     transition: box-shadow 0.3s ease-in-out;
@@ -1159,7 +1188,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider > .track,
-.slider2 > .track2 {
+.slider2 > .track {
     position: absolute;
     z-index: 1;
     left: 0;
