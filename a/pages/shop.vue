@@ -221,7 +221,7 @@
                             <div class="d-flex ml-2">
                                 <form method="get">
                                     <!-- Select -->
-                                    <select @change="SelectSorting" class="border rounded-pill py-1  height-35 pl-3 border-color-1 border-lg-down-0 bg-lg-down-transparent">
+                                    <select @change="SelectSorting" class="border rounded-pill py-1 height-35 pl-3 border-color-1 border-lg-down-0 bg-lg-down-transparent">
                                         <option value="one" selected>{{localizeFilter('DefaultSorting')}}</option>
                                         <option value="two">{{localizeFilter('PopularitySorting')}}</option>
                                         <option value="five">{{localizeFilter('SortByPriceLowToHigh')}}</option>
@@ -1270,4 +1270,14 @@ input[type=range]:focus::-ms-fill-upper {
     overflow: scroll
 }
 .overflow-auto2::-webkit-scrollbar{height: 5px;}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+} 
+
+select::-ms-expand {
+    display: none;
+}
 </style>
