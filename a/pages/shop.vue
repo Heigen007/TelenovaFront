@@ -9,13 +9,13 @@
                     <!-- breadcrumb -->
                     <div class="my-md-3">
                         <nav aria-label="breadcrumb">
-                            <ol v-if='$route.query.query' class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                            <ol v-if='$route.query.query' class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble">
                                 <li style='user-select: none' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><div>{{localizeFilter('Title')}}</div></li>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
                                     <div>{{$route.query.query}}</div>
                                 </li>
                             </ol>
-                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble" v-else>
+                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble" v-else>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1" style='user-select: none'><div>{{localizeFilter('Title')}}</div></li>
                                 <li v-if='!el.includes("not show")' v-for='(el, i) in findCatTree()' :key='i+"index"' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1">
                                     <div v-if='i == 0'>
@@ -404,9 +404,6 @@
                                                         <div class="prodcut-add-cart">
                                                             <div @click="AddToCartSwiper(el)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></div>
                                                         </div>
-                                                    </div>
-                                                    <div class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
-                                                        <div style>{{localizeFilter('CreditTitle')}}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1240,4 +1237,8 @@ input[type=range]:focus::-ms-fill-upper {
         z-index: 1002 !important;
     } 
 }
+.overflow-auto2{
+    overflow: scroll
+}
+.overflow-auto2::-webkit-scrollbar{height: 5px;}
 </style>

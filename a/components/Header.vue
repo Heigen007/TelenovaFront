@@ -383,7 +383,7 @@ export default {
                 this.PopUp = true
                 setTimeout(() => {
                     this.PopUp = false
-                }, 2600);
+                }, 3000);
             }
         }
     },
@@ -527,8 +527,6 @@ export default {
     color: rgba(255, 255, 255, 0);
     padding: 7px 14px 7px 14px;
     border-radius: 4px;
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
     box-shadow: 0 0 10px white;
 }
 @keyframes slideLeft {

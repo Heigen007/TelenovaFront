@@ -7,12 +7,11 @@
                     <!-- breadcrumb -->
                     <div class="my-md-3">
                         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble">
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1">Shop</li>
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink :to='"/shop?FCat?"+Product.offerData.category_list[0]'>{{Product.offerData.category_list[0]}}</NuxtLink></li>
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink :to='"/shop?SCat?"+Product.offerData.category_list[1]'>{{Product.offerData.category_list[1]}}</NuxtLink></li>
-                                <li v-if='!Product.offerData.category_list[2].includes("not show")' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink :to='"/shop?"+Product.offerData.category_list[2]'>{{Product.offerData.category_list[2]}}</NuxtLink></li>
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">{{Product.offerData.name}}</li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink class='kop' :to='"/shop?FCat?"+Product.offerData.category_list[0]'>{{Product.offerData.category_list[0]}}</NuxtLink></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink class='kop' :to='"/shop?SCat?"+Product.offerData.category_list[1]'>{{Product.offerData.category_list[1]}}</NuxtLink></li>
+                                <li v-if='!Product.offerData.category_list[2].includes("not show")' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><NuxtLink class='kop' :to='"/shop?"+Product.offerData.category_list[2]'>{{Product.offerData.category_list[2]}}</NuxtLink></li>
                             </ol>
                         </nav>
                     </div>
@@ -70,7 +69,7 @@
                                         <li class = 'BLi' v-for="(el,i) in Product.offerData.properties" :key='i'><div class = 'FLB'>{{i}}:</div>{{el}}</li>
                                     </ul>
                                 </div>
-                                <strong>SKU: 121212</strong>
+                                <p><strong>SKU: </strong>{{Product.offerData.kaspi_id}}</p>
                                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                                 <p><strong>SKU</strong>: FW511948218</p> -->
                             </div>
@@ -373,6 +372,10 @@ export default {
 </script>
 
 <style scoped>
+.overflow-auto2{
+    overflow: scroll
+}
+.overflow-auto2::-webkit-scrollbar{height: 5px;}
 .overflow-auto::-webkit-scrollbar{height: 0px;}
 @media (max-width: 1200px) {
     .product-item{
