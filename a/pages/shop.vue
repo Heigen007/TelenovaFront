@@ -1,6 +1,5 @@
 <template>
     <div class="MAINSHOPDIV">
-        
 
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content">
@@ -9,7 +8,13 @@
                     <!-- breadcrumb -->
                     <div class="my-md-3">
                         <nav aria-label="breadcrumb">
-                            <ol v-if='$route.query.query' class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble">
+                            <ol v-if='Object.keys($route.query)[0] == "Sales"' class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble">
+                                <li style='user-select: none' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><div>{{localizeFilter('Title')}}</div></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
+                                    <div>{{localizeFilter('Sales')}}</div>
+                                </li>
+                            </ol>
+                            <ol v-else-if='$route.query.query' class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto2 overflow-xl-visble">
                                 <li style='user-select: none' class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><div>{{localizeFilter('Title')}}</div></li>
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
                                     <div>{{$route.query.query}}</div>
@@ -76,7 +81,7 @@
                             </ul>
                             <!-- End List -->
                         </div>
-                        <div class="mb-6">
+                        <div class="mb-6" v-if='Object.keys($route.query)[0] != "Sales"'>
                             <div class="border-bottom border-color-1 mb-5" id="basicsHeadingOne">
                                 <div class="section-title section-title__sm mb-0 pb-2 font-size-18 sectionMA">
                                     {{localizeFilter('FilterPart', 'SecondPartTitle')}}
@@ -547,7 +552,9 @@ export default {
             minV: 0,
             maxV: 0,
             popularProducts: [],
-            tab: 'pills-one-example1'
+            tab: 'pills-one-example1',
+            SalesProducts: [],
+            SalesProductsCopy: []
         }
     },
     components: {
@@ -627,6 +634,17 @@ export default {
         });
     },
     mounted() {
+        if(Object.keys(this.$route.query)[0] == "Sales"){
+            axios.get('https://textforeva.ru/storage/saleGoods')
+            .then(res => {
+              console.log(res)
+              this.SalesProducts = res.data
+              this.SalesProductsCopy = res.data
+            })
+            .catch(err => {
+              console.log(err)
+            })
+        }
         setTimeout(() => {
             this.RangeInit()
             this.RangeInit2()
@@ -977,39 +995,54 @@ export default {
             });
         },
         DefaultSorting(){
-            this.$store.commit('DefaultSorting')
+            this.SalesProducts = this.SalesProductsCopy
         },
         SortByPopularity(){
-            var SortedArray = JSON.parse(JSON.stringify(this.Products))
-            SortedArray.sort(function(a, b) {
-                return a.offerData.kaspi_rating - b.offerData.kaspi_rating;
-            });
-            this.$store.commit('SortByPopularity', SortedArray.reverse())
+            if(Object.keys(this.$route.query)[0] != "Sales") {
+                var SortedArray = JSON.parse(JSON.stringify(this.Products))
+                SortedArray.sort(function(a, b) {
+                    return a.offerData.kaspi_rating - b.offerData.kaspi_rating;
+                });
+                this.$store.commit('SortByPopularity', SortedArray.reverse())
+            } else {
+                var SortedArray = JSON.parse(JSON.stringify(this.SalesProducts))
+                SortedArray.sort(function(a, b) {
+                    return a.offerData.kaspi_rating - b.offerData.kaspi_rating;
+                });
+                this.SalesProducts = SortedArray
+            }
         },
         SortByPrice(Line){
-            var SortedArray = JSON.parse(JSON.stringify(this.Products))
-            SortedArray.sort(function(a, b) {
-                return a.salePrice - b.salePrice;
-            });
-            if(Line=='up'){
-                this.$store.commit('SortByPopularity', SortedArray)
+            if(Object.keys(this.$route.query)[0] != "Sales") {
+                var SortedArray = JSON.parse(JSON.stringify(this.Products))
+                SortedArray.sort(function(a, b) {
+                    return a.salePrice - b.salePrice;
+                });
+                if(Line=='up'){
+                    this.$store.commit('SortByPopularity', SortedArray)
+                } else {
+                    this.$store.commit('SortByPopularity', SortedArray.reverse())
+                }
             } else {
-                this.$store.commit('SortByPopularity', SortedArray.reverse())
+                var SortedArray = JSON.parse(JSON.stringify(this.SalesProducts))
+                SortedArray.sort(function(a, b) {
+                    return a.salePrice - b.salePrice;
+                });
+                if(Line=='up'){
+                    this.SalesProducts = SortedArray
+                } else {
+                    this.SalesProducts = SortedArray.reverse
+                }
             }
             
         }
     },
     computed:{
-        SliderProducts(){
-            if(process.browser && this.$store.state.products) {
-                var a = JSON.parse(JSON.stringify(this.$store.state.products))
-                a = a.splice(7,17)
-                return a.reverse()
-            }
-        },
         Products(){
-            if(process.browser) {
+            if(process.browser && Object.keys(this.$route.query)[0] != 'Sales') {
                 return this.$store.state.productsFilteredCopyCopy
+            } else {
+                return this.SalesProducts
             }
         },
         Filters(){
@@ -1018,8 +1051,10 @@ export default {
             }
         },
         ProductsPage(){
-            if(process.browser) {
+            if(process.browser && Object.keys(this.$route.query)[0] != 'Sales') {
                 return this.$store.state.productsFilteredCopyCopy.slice(this.ProductCounter * 60, (this.ProductCounter + 1) * 60)
+            } else {
+                return this.SalesProducts.slice(this.ProductCounter * 60, (this.ProductCounter + 1) * 60)
             }
         },
         Categories(){
