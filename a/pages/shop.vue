@@ -167,7 +167,8 @@
                     </div>
                     <div class="col-xl-9 col-wd-9gdot5">
                         <div class="d-block d-md-flex flex-center-between mb-3">
-                            <h3 v-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{$route.query.query}}</h3>
+                            <h3 v-if='Object.keys($route.query)[0] == "Sales"' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{localizeFilter('Sales')}}</h3>
+                            <h3 v-else-if='$route.query.query' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{$route.query.query}}</h3>
                             <h3 v-else-if='Object.keys($route.query)[0].split("+").join(" ").split("?")[1]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{Object.keys($route.query)[0].split("+").join(" ").split("?")[1]}}</h3>
                             <h3 v-else-if='Object.keys($route.query)[0]' class="d-inline-block section-title section-title__full mb-0 pb-2 font-size-22">{{Object.keys($route.query)[0].split('+').join(' ')}}</h3>
                             <p v-if='Products.length != 0' class="font-size-14 text-gray-90 mb-0">{{localizeFilter('Showing')}} {{ProductCounter*60 + 1}}-{{(ProductCounter + 1) * 60 > Products.length ? Products.length : (ProductCounter + 1) * 60}} {{localizeFilter('Of')}} {{Products.length}} {{localizeFilter('Results')}}</p>
@@ -570,6 +571,18 @@ export default {
     },
     watch: {
         $route() {
+            if(Object.keys(this.$route.query)[0] == "Sales" && this.SalesProducts.length == 0){
+                axios.get('https://textforeva.ru/storage/saleGoods')
+                .then(res => {
+                    console.log(res)
+                    this.SalesProducts = res.data
+                    this.SalesProductsCopy = res.data
+                    this.IsProducts2 = true
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            }
             this.tab = 'pills-one-example1'
             this.IsPopper = false
             this.minV = 0;
