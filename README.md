@@ -1,3 +1,3 @@
 # TelenovaFront
 
-Site for Telenova internet shop
+Site for Telenova shop
