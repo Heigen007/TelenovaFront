@@ -574,13 +574,11 @@ export default {
             if(Object.keys(this.$route.query)[0] == "Sales" && this.SalesProducts.length == 0){
                 axios.get('https://textforeva.ru/storage/saleGoods')
                 .then(res => {
-                    console.log(res)
                     this.SalesProducts = res.data
                     this.SalesProductsCopy = res.data
                     this.IsProducts2 = true
                 })
                 .catch(err => {
-                    console.log(err)
                 })
             }
             this.tab = 'pills-one-example1'
@@ -650,12 +648,10 @@ export default {
         if(Object.keys(this.$route.query)[0] == "Sales"){
             axios.get('https://textforeva.ru/storage/saleGoods')
             .then(res => {
-              console.log(res)
               this.SalesProducts = res.data
               this.SalesProductsCopy = res.data
             })
             .catch(err => {
-              console.log(err)
             })
         }
         setTimeout(() => {
@@ -755,7 +751,6 @@ export default {
             this.IsPopper = false
         },
         Label(e){
-            console.log(e);
             if(true) {
                 this.IsPopper = true
                 this.$nextTick(() => {
@@ -798,7 +793,6 @@ export default {
                         result.push([element.name.split('/')[0],element.name.split('/')[1]])
                     }
                 });
-                console.log(result);
                 if(window.screen.width >= 1200) {
                     var MinPrice = document.getElementById("input-left").value;
                     var MaxPrice = document.getElementById("input-right").value;
