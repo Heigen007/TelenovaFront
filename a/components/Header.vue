@@ -148,7 +148,18 @@
                                                 <form @submit='InputSearch' class="js-focus-state input-group px-3">
                                                     <input v-model="InputValue" class="form-control ChIn" type="search" :placeholder="localizeFilter('SearchInputPlaceholder')">
                                                     <div class="input-group-append">
-                                                        <button class="btn btn-primary px-3" style='background-color: #1869de; border-color: #1869de' type="submit"><i class="font-size-20 ec ec-search text-white"></i></button>
+                                                        <button @click='InputSearch' class="btn btn-primary px-3" style='background-color: #1869de; border-color: #1869de' type="submit"
+                                                title="Search"
+                                                aria-controls="searchClassic"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                data-unfold-target="#searchClassic"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-duration="300"
+                                                data-unfold-delay="300"
+                                                data-unfold-hide-on-scroll="true"
+                                                data-unfold-animation-in="slideInUp"
+                                                data-unfold-animation-out="fadeOut"><i class="font-size-20 ec ec-search text-white"></i></button>
                                                     </div>
                                                 </form>
                                             </div>

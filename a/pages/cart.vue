@@ -3,7 +3,7 @@
         
 
         <!-- ========== MAIN CONTENT ========== -->
-        <main id="content" class="cart-page">
+        <main v-if='items' id="content" class="cart-page">
 
             <div class="container mt-6">
                 <div class="mb-4">
@@ -31,15 +31,15 @@
                                         <NuxtLink :to="'/product?id='+el.offerData.kaspi_id"><img class="img-fluid max-width-100 p-1 border border-color-1" :src="el.offerData.images[0]" alt="Image Description"></NuxtLink>
                                     </td>
 
-                                    <td data-title="Product">
+                                    <td :data-title="localizeFilter('FirstOptionTitle')">
                                         <NuxtLink :to="'/product?id='+el.offerData.kaspi_id" class="text-gray-90">{{el.offerData.name}}</NuxtLink>
                                     </td>
 
-                                    <td data-title="Price">
+                                    <td :data-title="localizeFilter('SecondOptionTitle')">
                                         <span class="">{{el.salePrice}}{{'\xa0'}}₸</span>
                                     </td>
 
-                                    <td data-title="Quantity">
+                                    <td :data-title="localizeFilter('ThirdOptionTitle')">
                                         <span class="sr-only">{{localizeFilter('ThirdOptionTitle')}}</span>
                                         <!-- Quantity -->
                                         <div class="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
@@ -60,8 +60,8 @@
                                         <!-- End Quantity -->
                                     </td>
 
-                                    <td data-title="Total">
-                                        <span class="">{{el.offerData.count * el.salePrice}}{{'\xa0'}}₸</span>
+                                    <td :data-title="localizeFilter('FourthOptionTitle')">
+                                        <span >{{el.offerData.count * el.salePrice}}{{'\xa0'}}₸</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -69,7 +69,7 @@
                                         <div class="pt-md-3">
                                             <div class="d-block d-md-flex flex-center-between">
                                                 <div class="d-md-flex">
-                                                    <button @click='forceUpdate' type="button" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">{{localizeFilter('UpdateCartButton')}}</button>
+                                                    <button @click='forceUpdate2' type="button" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">{{localizeFilter('UpdateCartButton')}}</button>
                                                 </div>
                 <div class="cart-total">
                     <div class="row">
@@ -84,8 +84,8 @@
                                         <td data-title="Subtotal"><span class="amount">{{TotalPrice()}} ₸</span></td>
                                     </tr> -->
                                     <tr class="order-total" style="border-bottom: 1px solid #dcdcdc">
-                                        <th>{{localizeFilter('CartConcludedThirdSubTitle')}}</th>
-                                        <td data-title="Total"><strong><span class="amount">{{TotalPrice()}}{{'\xa0'}}₸</span></strong></td>
+                                        <th class="s">{{localizeFilter('CartConcludedThirdSubTitle')}}</th>
+                                        <td :data-title="localizeFilter('FourthOptionTitle')"><strong><span class="amount">{{TotalPrice()}}{{'\xa0'}}₸</span></strong></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -129,10 +129,8 @@ export default {
             ISCART: true
         }
     },
-    created(){
-        this.items = this.$store.state.cart.cart
-    },
     mounted(){
+        this.items = this.$store.state.cart.cart
         setTimeout(() => {
             window.scrollTo(0, 0)
         }, 1000);
@@ -143,7 +141,7 @@ export default {
     },
     methods: {
         TotalPrice(){
-            if(process.browser){
+            if(process.browser && this.items){
                 var total = this.items?.reduce((accumulator, item) => accumulator + Number(item.salePrice) * Number(item.offerData.count),0)
                 return total || 0
             }
@@ -161,9 +159,21 @@ export default {
                 })
             })
         },
-        forceUpdate(){
+        forceUpdate2(){
             this.$store.commit('cart/getCart')
         }
     },
 }
 </script>
+
+<style>
+@media (max-width: 764px) {
+    .s{
+        display: none;
+    }
+}
+.s{
+    padding-top: 1.5rem !important;
+}
+
+</style>

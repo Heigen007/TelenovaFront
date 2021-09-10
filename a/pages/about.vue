@@ -273,8 +273,7 @@ export default {
         }, 1000);
     },
     methods: {
-        localizeFilter(key, key2, key3) {
-            console.log(key, this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3]));
+        localizeFilter(key, key2, key3) { 
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
     }
