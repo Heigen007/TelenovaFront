@@ -151,11 +151,11 @@
                                                         <small v-for="(fil,o2) in 5 - Math.floor(el.offerData.kaspi_rating/2)" :key='o2+"d"' class="fas fa-star text-muted"></small>
                                                     </div>
                                                     <div v-if='el.salePrice != el.offerData.price' class="font-weight-bold">
-                                                        <del class="font-size-11 text-gray-9 d-block">{{el.offerData.price}}</del>
-                                                        <ins style='font-weight: 700' class="font-size-15 text-red text-decoration-none d-block">{{el.salePrice.toFixed(0)}}</ins>
+                                                        <del class="font-size-11 text-gray-9 d-block">{{el.offerData.price}}₸</del>
+                                                        <ins style='font-weight: 700' class="font-size-15 text-red text-decoration-none d-block">{{el.salePrice.toFixed(0)}}₸</ins>
                                                     </div>
                                                     <div v-else>
-                                                        <ins style='font-weight: 700' class="font-size-15 text-decoration-none d-block">{{el.salePrice.toFixed(0)}}</ins>
+                                                        <ins style='font-weight: 700' class="font-size-15 text-decoration-none d-block">{{el.salePrice.toFixed(0)}}₸</ins>
                                                     </div>
                                                 </div>
                                             </div>
@@ -608,7 +608,7 @@ export default {
             setTimeout(() => {
                 this.RangeInit()
                 this.RangeInit2()
-            }, 1500);
+            }, 1000);
         },
         Filters(newV){
             if(this.IdResult){
@@ -621,10 +621,22 @@ export default {
                 });
             }
         },
+        '$store.state.counter'(newV){
+            this.minV = 0;
+            this.maxV = 0;
+            setTimeout(() => {
+                this.RangeInit()
+                this.RangeInit2()
+            }, 100);
+        },
         Products(newV){
             window.scrollTo(0,0)
             this.IsProducts = true
             this.IsProducts2 = true
+            setTimeout(() => {
+                this.RangeInit()
+                this.RangeInit2()
+            }, 100);
         }
     },
    updated(){
@@ -849,7 +861,6 @@ export default {
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
         RangeInit(){
-            var self = this
             let inputLeft = document.getElementById("input-left");
             let inputRight = document.getElementById("input-right");
             let range = document.querySelector(".slider > .range");

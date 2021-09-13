@@ -9,7 +9,8 @@ export const state = () => ({
   BackUrl: 'https://textforeva.ru',
   ws: null,
   filters: [],
-  priceRange: [0,1500000]
+  priceRange: [0,1500000],
+  counter: 0
 })
 export const mutations = {
   SetPromoActions(state, promoActions){
@@ -25,9 +26,11 @@ export const mutations = {
     state.categories = response
   },
   SetPriceRange(state, range){
-    if(range[0] != range[1]) return state.priceRange = [range[0].toFixed(0), range[1].toFixed(0)]
+    if(range[0] != range[1]) return state.priceRange = [Number(range[0].toFixed(0)), Number(range[1].toFixed(0))]
+    if(range[0] == range[1] && range[0] == 0) {state.counter++; return state.priceRange = [0,1500000]}
 
-    state.priceRange = [0,1500000]
+    state.priceRange = [Number(range[0].toFixed(0)) - 50, Number(range[1].toFixed(0))]
+    console.log(state.priceRange, range[1]);
   },
   SetWs(state, ws){
     state.ws = ws
