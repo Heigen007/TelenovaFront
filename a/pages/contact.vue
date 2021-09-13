@@ -119,6 +119,13 @@ export default {
     head() {
         return {
             title: `Telenova | ${this.localizeFilter('Title')}`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Интернет-магазин Теленова. Свяжитесь с нами'
+                }
+            ]
         }
     },
     data() {

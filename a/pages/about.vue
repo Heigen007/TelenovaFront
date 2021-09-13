@@ -257,7 +257,7 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Telenova online shop. Here you can find information about our company and production'
+                    content: 'Интернет-магазин Telenova. Здесь вы можете найти информацию о нашей компании и продукции.'
                 }
             ]
         }

@@ -250,6 +250,13 @@ export default {
     head() {
         return {
             title: `Telenova | ${this.localizeFilter('MainTitle')}`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Интернет-магазин Теленова. Страница оплаты'
+                }
+            ]
         }
     },
     data(){

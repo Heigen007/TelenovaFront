@@ -267,6 +267,13 @@ export default {
     head() {
         return {
             title: `Telenova | ${this.localizeFilter('Title')}`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: `Интернет-магазин Теленова. Страница продукта${(' ' + this?.Product?.offerData?.name) || '.'}`
+                }
+            ]
         }
     },
     data(){

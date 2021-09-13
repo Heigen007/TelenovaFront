@@ -776,7 +776,7 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Welcome to our home page! Here you can find all popular categories and discounts.'
+                    content: 'Добро пожаловать на нашу домашнюю страницу! Здесь вы найдете все популярные категории и скидки.'
                 }
             ]
         }

@@ -5,6 +5,7 @@ export const state = () => ({
   products: null,
   productsFilteredCopy: null,
   productsFilteredCopyCopy: null,
+  productsMyCopy: null,
   BackUrl: 'https://textforeva.ru',
   ws: null,
   filters: [],
@@ -24,7 +25,7 @@ export const mutations = {
     state.categories = response
   },
   SetPriceRange(state, range){
-    if(range[0] != range[1]) return state.priceRange = range
+    if(range[0] != range[1]) return state.priceRange = [range[0].toFixed(0), range[1].toFixed(0)]
 
     state.priceRange = [0,1500000]
   },
@@ -39,8 +40,9 @@ export const mutations = {
   },
   FilterProducts(state, MyArray){
     var ExceptionsArray = []
+    console.log(MyArray);
     var filters = {
-      priceRange: MyArray[1],
+      priceRange: [Number(MyArray[1][0])-1,Number(MyArray[1][1])+1],
       exceptions: ExceptionsArray,
     }
     MyArray[0].forEach(element => {
@@ -72,6 +74,7 @@ export const mutations = {
       }
     var send = function(){
       if(state?.ws){
+        console.log(JSON_Obj);
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
         setTimeout(() => send(), 200);
@@ -96,7 +99,7 @@ export const mutations = {
         "data": {
           "query": MyArray[2],
           "filters": {
-            "priceRange": MyArray[1],
+            "priceRange": [Number(MyArray[1][0])-1,Number(MyArray[1][1])+1],
             "exceptions": ExceptionsArray
           }
         }
@@ -139,6 +142,7 @@ export const mutations = {
     }
     var send = function(){
       if(state?.ws){
+        console.log(JSON_Obj);
         state.ws.send(JSON.stringify(JSON_Obj))
       } else {
         setTimeout(() => send(), 200);
@@ -204,6 +208,7 @@ export const actions = {
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
       commit('SetPriceRange', data.priceRange)
+      console.log(data.priceRange);
     }
 
     connection.onopen = function () {
@@ -214,10 +219,6 @@ export const actions = {
     connection.onclose = async e => {
       console.log('CLOSE WEBSOCKET CONNECTION')
       setTimeout(() => dispatch('connect'), 1)
-    }
-
-    connection.onerror = (err) => {
-      
     }
 
   }

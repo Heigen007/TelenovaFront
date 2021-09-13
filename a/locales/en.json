@@ -319,7 +319,7 @@
         "FilterButtonText": "Filter"
     },
     "PaymentResultSuccess": {
-        "Title": "Error",
+        "Title": "Success",
         "title": "Success",
         "text": "Your order has been created!"
     },
