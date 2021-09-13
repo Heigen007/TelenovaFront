@@ -271,7 +271,7 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: `Интернет-магазин Теленова. Страница продукта${(' ' + this?.Product?.offerData?.name) || '.'}`
+                    content: `Интернет-магазин Теленова. Страница продукта.`
                 }
             ]
         }
