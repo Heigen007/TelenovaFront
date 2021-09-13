@@ -578,6 +578,7 @@ export default {
     },
     watch: {
         $route() {
+            this.$store.commit('clCounter')
             if(Object.keys(this.$route.query)[0] == "Sales" && this.SalesProducts.length == 0){
                 axios.get('https://textforeva.ru/storage/saleGoods')
                 .then(res => {

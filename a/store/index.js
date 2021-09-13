@@ -10,9 +10,15 @@ export const state = () => ({
   ws: null,
   filters: [],
   priceRange: [0,1500000],
-  counter: 0
+  counter: 0,
+  isCh: true,
+  sCounter: 0
 })
 export const mutations = {
+  clCounter(state){
+    state.sCounter = 0;
+    state.isCh = true
+  },
   SetPromoActions(state, promoActions){
     state.promoActions = promoActions
   },
@@ -26,6 +32,7 @@ export const mutations = {
     state.categories = response
   },
   SetPriceRange(state, range){
+    if(!state.isCh) return state.isCh = true
     if(range[0] != range[1]) return state.priceRange = [Number(range[0].toFixed(0)), Number(range[1].toFixed(0))]
     if(range[0] == range[1] && range[0] == 0) {state.counter++; return state.priceRange = [0,1500000]}
 
@@ -86,6 +93,8 @@ export const mutations = {
     send()
   },
   FilterProductsQuery(state, MyArray){
+    if(state.sCounter > 0) state.isCh = false
+      state.sCounter++
     var ExceptionsArray = []
     MyArray[0].forEach(element => {
       ExceptionsArray.push(
@@ -107,6 +116,7 @@ export const mutations = {
           }
         }
       }
+      console.log(JSON_Obj);
     var send = function(){
       if(state?.ws){
         state.ws.send(JSON.stringify(JSON_Obj))
@@ -154,6 +164,8 @@ export const mutations = {
     send()
   },
   SearchByQuery(state, query){
+    if(state.sCounter > 0) state.isCh = false
+      state.sCounter++
     var obj = 
     {
       "action": "search",
@@ -211,7 +223,7 @@ export const actions = {
       commit('ChFilters', data.filterKeys)
       commit('ChProductsCopy', data.products)
       commit('SetPriceRange', data.priceRange)
-      console.log(data.priceRange);
+      console.log(data);
     }
 
     connection.onopen = function () {
