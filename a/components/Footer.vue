@@ -132,12 +132,12 @@
                         <div class="my-4 my-md-4">
                             <ul class="list-inline mb-0 opacity-7">
                                 <li class="list-inline-item mr-0">
-                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our facebook account" href="https://www.facebook.com/telenovafb/">
+                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" target='_blank' aria-label="Check our facebook account" href="https://www.facebook.com/telenovafb/">
                                         <span class="fab fa-facebook-f btn-icon__inner"></span>
                                     </a>
                                 </li>
                                 <li class="list-inline-item mr-0">
-                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" aria-label="Check our twitter account" href="https://www.instagram.com/telenova.kz/">
+                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" target='_blank' aria-label="Check our twitter account" href="https://www.instagram.com/telenova.kz/">
                                         <span class="fab fa-instagram btn-icon__inner"></span>
                                     </a>
                                 </li>
