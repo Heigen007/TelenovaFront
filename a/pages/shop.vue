@@ -621,6 +621,12 @@ export default {
                     })
                 });
             }
+            setTimeout(() => {
+                var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
+                Checkboxes.forEach(element => {
+                    element.checked = false
+                });
+            }, 100);
         },
         '$store.state.counter'(newV){
             this.minV = 0;
@@ -665,6 +671,10 @@ export default {
         });
     },
     mounted() {
+            var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
+            Checkboxes.forEach(element => {
+                element.checked = false
+            });
         if(Object.keys(this.$route.query)[0] == "Sales"){
             axios.get('https://textforeva.ru/storage/saleGoods')
             .then(res => {
