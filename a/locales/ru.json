@@ -7,7 +7,7 @@
     "SearchInputPlaceholder": "Поиск продукта",
     "ProductAddedTitle": "Продукт добавлен!",
     "HeaderBestCategoriesTitle": "Лучшие категории:",
-    "Sales": "Скидки",
+    "Sales": "Акции и скидки",
     "Search": "Поиск",
     "SearchForProducts": "Поиск товаров",
     "Home": "Домашняя страница",
@@ -21,7 +21,7 @@
     "SecondCategory": "Часто продаваемые продукты",
     "ThirdCategory": "Самые популярные продукты",
     "SignOnLetterTitle": "Подписаться на рассылку",
-    "SignOnLetterEnding": "...и получить промокод на скидку 5%. на следующую покупку.",
+    "SignOnLetterEnding": "...и получить промокод на скидку 5%. на первую покупку.",
     "SubmitButton": "Подписаться",
     "FirstQuestion": "Есть вопросы? Звоните нам с 9:00 до 20:00!",
     "FNumber": "+77083343281",
@@ -46,6 +46,8 @@
     "ErrorText": "Страница не найдена. Попробуйте перезагрузить страницу."
   },
   "MainPage": {
+    "Avaible": "Доступно: ",
+    "AlreadySold": "Продано: ",
     "ShopNow": "Купить сейчас",
     "Title": "Домашняя страница",
     "FirstPartTitle": "Новые товары",
@@ -80,6 +82,16 @@
     "CartConcludedThirdSubTitle": "Итого"
   },
   "CheckoutPage": {
+    "ErrorVariant":"Пожалуйста, выберите вид платежа!",
+    "ErrorProductsEmpty": "Вы забыли добавить продукт в Вашу корзину!",
+    "PromoAdded": "Промокод был добавлен!",
+    "PromoIncorrect": "Извините, промокод неверен",
+    "Promo": "Извините, срок действия промокода закончился!",
+    "Error": "Ошибка!",
+    "ErrorInfo": "Пожалуйста, заполните всю информацию!",
+    "ErrorTerms": "Пожалуйста, согласитесь с правилами сайта!",
+    "Success": "ОК!",
+    "SucInfo": "Ваш заказ успешно оформлен!",
     "MainTitle": "Оплата",
     "CouponPart": {
       "Fquestion": "У Вас есть промокод? ",
@@ -129,18 +141,18 @@
       "FirstCardTitle": "Что мы делаем?",
       "FirstCardText": "Telenova, компания основанная 10 лет назад обеспечивает клиентов лучшим сервисом с 2010 года!",
       "SecondCardTitle": "Наше виденье",
-      "SecondCardText": "Мы всгда готовы ответить на все ваши вопросы и проконсультировать по любому продукту, обращайтесь к нам!",
+      "SecondCardText": "Мы всегда готовы ответить на все ваши вопросы и проконсультировать по любому продукту, обращайтесь к нам!",
       "ThirdCardTitle": "История начала",
       "ThirdCardText": "Telenova, компания основанная 10 лет назад обеспечивает клиентов лучшим сервисом с 2010 года!",
-      "FirstWorkerName": "Vishant Dahake",
+      "FirstWorkerName": "Вишант Дахак",
       "FirstWorkerProfession": "CEO/Founder",
-      "SecondWorkerName": "Anna Baranov",
+      "SecondWorkerName": "Анна Баранова",
       "SecondWorkerProfession": "Менеджер заботы о клиентах",
-      "ThirdWorkerName": "Andre Kowalsy",
+      "ThirdWorkerName": "Андрэ Ковальский",
       "ThirdWorkerProfession": "Глава поддержки",
-      "FourthWorkerName": "Pamela Doe",
+      "FourthWorkerName": "Памела Дое",
       "FourthWorkerProfession": "Глава отдела доставки",
-      "FifthWorkerName": "Susan McCain",
+      "FifthWorkerName": "Сьюзен МакКейн",
       "FifthWorkerProfession": "Глава отдела сборки заказов",
       "LastCircleTitle": "Детали"
     },
@@ -164,7 +176,7 @@
       "ThirdText": "Мы Используем лучшие практики в курьерском сервисе для вашего комфорта и получения удовольствия от нашего сервиса.",
       "FourthTitle": "Забота о клиентах",
       "FourthText": "Мы всгда готовы ответить на все ваши вопросы и проконсультировать по любому продукту, обращайтесь к нам!",
-      "FifthTitle": "Более 1000 клиентов реккомендуют нас",
+      "FifthTitle": "Более 1000 клиентов рекомендуют нас",
       "FifthText": "Мы одна из лучших рейтинговых компаний 2gis и Kaspi.kz Тысячи пользователей доверяют нам."
     }
   },
@@ -187,23 +199,23 @@
       "Address3Line": "",
       "WorkingHoursTitle": "Часы работы",
       "1dayTitle": "Понедельник:",
-      "1dayTime": "12-6 PM",
+      "1dayTime": "9:00 - 20:00",
       "2dayTitle": "Вторник:",
-      "2dayTime": "12-6 PM",
+      "2dayTime": "9:00 - 20:00",
       "3dayTitle": "Среда:",
-      "3dayTime": "12-6 PM",
+      "3dayTime": "9:00 - 20:00",
       "4dayTitle": "Четверг:",
-      "4dayTime": "12-6 PM",
+      "4dayTime": "9:00 - 20:00",
       "5dayTitle": "Пятница:",
-      "5dayTime": "12-6 PM",
+      "5dayTime": "9:00 - 20:00",
       "6dayTitle": "Суббота:",
-      "6dayTime": "12-6 PM",
+      "6dayTime": "9:00 - 20:00",
       "7dayTitle": "Воскресенье:",
       "7dayTime": "Выходной день"
     }
   },
   "TermsPage": {
-    "Title": "Предмет политики конфиденциальности",
+    "Title": "Предмет политики конфи<wbr/>де<wbr/>нци<wbr/>аль<wbr/>нос<wbr/>ти",
     "SubTitle": "Обновлено 27 Августа 2021 года",
     "FirstPart": {
       "MainTitle": "Сбор персональных данных",
@@ -267,7 +279,7 @@
     "Related": "Похожие продукты"
   },
   "ShopPage": {
-    "Sales": "Скидки",
+    "Sales": "Акции и скидки",
     "AddToCartText": "Добавить в корзину",
     "Price": "Цена",
     "LatestProducts": "Новые продукты",
@@ -295,14 +307,19 @@
   "PaymentResultSuccess": {
     "Title": "Успех",
     "title": "Успех!",
-    "text": "Ваш заказ был создан!"
+    "text": "Вскоре с вами свяжется оператор для подтверждения заказа."
   },
   "PaymentResultError": {
     "Title": "Ошибка",
     "title": "Ошибка",
-    "text": "По каким-то обстоятельствам Ваш заказ не был создан..."
+    "text": "По каким-то причинам Ваш заказ не был создан..."
   },
   "CreditPage": {
+    "Error": "Ошибка!",
+    "ErrorInfo": "Пожалуйста, заполните всю информацию!",
+    "ErrorTerms": "Пожалуйста, согласитесь с правилами сайта!",
+    "Success": "ОК!",
+    "SucInfo": "Ваш заказ успешно оформлен!",
     "MainTitle": "Оплата в рассрочку",
     "MonthShortTitle": "месяцев",
     "MonthCreditAmountTitle": "В месяц:",

@@ -2,9 +2,12 @@
   <div style="z-index:1001;">
     <div class="u-header-topbar py-2 d-none d-xl-block" style='background-color: #f5f5f5; border: none'>
         <div class="container">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center" style='justify-content: space-between'>
                 <div class="topbar-left">
                     <div class="text-gray-110 font-size-13 hover-on-dark" style='user-select: none'>{{localizeFilter('Greeting')}}</div>
+                </div>
+                <div class="topbar-left">
+                  <a href="tel:+77083343281" class="font-size-15 text-gray-110 ">+77083343281</a>
                 </div>
             </div>
         </div>
@@ -21,9 +24,9 @@
                         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                             <ul class="navbar-nav u-header__navbar-nav u-header__navbar-nav-divider flex-wrap">
                                 <!-- Button -->
-                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink class = 'CatLink' style='color: red; text-decoration: none; font-weight: 700; white-space: nowrap' to='/shop?Sales'>{{localizeFilter('Sales')}}</NuxtLink></li>
+                                <li v-if='bestC.length > 0' class="nav-item u-header__nav-item"><NuxtLink style='color: red; text-decoration: none; font-weight: 700; white-space: nowrap' to='/shop?Sales'>{{localizeFilter('Sales')}}</NuxtLink></li>
                                 <li v-for="(el,i) in bestC" :key='i' class="nav-item u-header__nav-item">
-                                    <NuxtLink class = 'CatLink' style='text-decoration: none; white-space: nowrap; color: black' :to='"/shop?SCat?" + el.name'>
+                                    <NuxtLink class = 'CatLink' :to='"/shop?SCat?" + el.name'>
                                         {{el.name}}
                                     </NuxtLink>
                                 </li>
@@ -109,7 +112,7 @@ export default {
         },0);
       },
       localizeFilter(key, key2, key3) {
-          return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
+        return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
       },
     }
 }
@@ -135,5 +138,13 @@ export default {
 }
 .swal2-styled.swal2-confirm:focus {
   box-shadow: 0 0 10px rgb(50, 131, 236) !important;
+}
+.CatLink{
+  text-decoration: none;
+  white-space: nowrap;
+  color: rgb(126, 126, 126);
+}
+.CatLink:hover{
+  color: black;
 }
 </style>

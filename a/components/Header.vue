@@ -7,7 +7,7 @@
                 <!-- End Topbar -->
 
                 <!-- Logo-Vertical-menu-Search-header-icons -->
-                <div style='position: sticky; width: 100%; top: 0; z-index: 1000; background-color: #1869de' class="border-bottom border-lg-down-0 bg-xl-transparent min-height-64 flex-horizontal-center">
+                <div style='position: sticky; width: 100%; top: 0; z-index: 1000; background-color: #0144a3' class="border-bottom border-lg-down-0 bg-xl-transparent min-height-64 flex-horizontal-center">
                     <div class="container">
                         <div class="row align-items-center justify-content-between justify-content-xl-start">
                             <!-- Logo -->
@@ -79,7 +79,7 @@
                                                                     <!-- Nav Item - Mega Menu -->
                                                                     <div style="overflow-y: scroll; min-height: 550px; " class="hs-mega-menu vmm-tfw u-header__sub-menu" :aria-labelledby="'basicMegaMenu'+i" >
                                                                         <div class="vmm-bg" style="bottom: auto">
-                                                                            <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 0.5' alt="Image Description">
+                                                                            <img class="img-fluid" :src="'https://textforeva.ru/categoryTree/download/' + Object.keys(el)[0]" style='width: 400px; height: 300px; opacity: 1' alt="Image Description">
                                                                         </div>
                                                                         <div class="row u-header__mega-menu-wrapper">
                                                                             <div v-for="(cat,o) in el" :key="o">
@@ -211,7 +211,6 @@
                             </button>
                         </div>
                         <!-- End Toggle Button -->
-
                         <!-- Content -->
                         <div class="js-scrollbar u-sidebar__body">
                             <div id="headerSidebarContent" class="u-sidebar__content u-header-sidebar__content">
@@ -364,7 +363,6 @@
                                                 style='color: black'
                                                 data-unfold-duration="500" to="/contact" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('ContactUs')}}</NuxtLink>
                                     </li>
-
                                 </ul>
                                 <!-- End List -->
                             </div>
@@ -379,7 +377,6 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import axios from 'axios'
 export default {
     name: 'Header',
     data: () => ({
@@ -572,7 +569,7 @@ export default {
         color: white
     }
     .rounded-circle{
-        background-color: #00449c !important;
+        background-color: #2f81f5 !important;
     }
 }
 @media (max-width: 340px) {

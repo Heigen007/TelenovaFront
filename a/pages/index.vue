@@ -71,8 +71,8 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <span class="">Availavle: <strong>{{el.productKaspiIdData.offerData.product_count}}</strong></span>
-                                                        <span class="">Already Sold: <strong>{{(el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
+                                                        <span class="">{{localizeFilter('Avaible')}} <strong>{{el.productKaspiIdData.offerData.product_count}}</strong></span>
+                                                        <span class="">{{localizeFilter('AlreadySold')}} <strong>{{(el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
                                                     </div>
                                                     <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
                                                         <span style='width: 40%' class="position-absolute left-0 top-0 bottom-0 rounded-pill bg-primary"></span>

@@ -2,7 +2,7 @@
     <div class="MAINABOUT">
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content">
-            <div class="bg-img-hero mb-14" style="">
+            <div class="bg-img-hero " style="">
                 <div class="container">
                     <div class="flex-content-center max-width-620-lg flex-column mx-auto text-center min-height-564">
                         <h1 class="h1 font-weight-bold">{{localizeFilter('Title')}}</h1>

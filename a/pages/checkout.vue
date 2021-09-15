@@ -300,8 +300,8 @@ export default {
             localStorage.removeItem('coupon')
             this.activeCoupon = {}
             Swal.fire(
-                'Ouch!',
-                'Sorry, your promocode term expired',
+                this.localizeFilter('Error'),
+                this.localizeFilter('Promo'),
                 'error'
             )
         }
@@ -330,14 +330,14 @@ export default {
                 // localStorage.setItem('coupon',JSON.stringify(arr[0]))
                 this.activeCoupon = arr[0]
                 Swal.fire(
-                    'Success!',
-                    'Promocode has been added!',
+                    this.localizeFilter('Success'),
+                    this.localizeFilter('PromoAdded'),
                     'success'
                 )
             } else {
                 Swal.fire(
-                    'Error!',
-                    'Sorry, your promocode is incorrect',
+                    this.localizeFilter('Error'),
+                    this.localizeFilter('PromoIncorrect'),
                     'error'
                 )
             }
@@ -372,8 +372,8 @@ export default {
                                 .then(response => {
                                     self.loaderM = false
                                     Swal.fire(
-                                        'Success!',
-                                        'Your order has been created!',
+                                        this.localizeFilter('Success'),
+                                        this.localizeFilter('SucInfo'),
                                         'success'
                                     )
                                     self.$store.commit('cart/clear')
@@ -386,15 +386,15 @@ export default {
                             } else {
                                 self.loaderM = false
                                 Swal.fire(
-                                    'Error!',
-                                    'Please, agree with Terms And Conditions',
+                                    this.localizeFilter('Error'),
+                                    this.localizeFilter('ErrorTerms'),
                                     'error'
                                 )
                             }
                         } else {
                             Swal.fire(
-                                'Error!',
-                                'Please, write down all the information!',
+                                this.localizeFilter('Error'),
+                                this.localizeFilter('ErrorInfo'),
                                 'error'
                             )
                         }
@@ -402,8 +402,8 @@ export default {
                         if(!but) {
                             e.preventDefault()
                             Swal.fire(
-                                'Error!',
-                                'Please, agree with Terms And Conditions',
+                                this.localizeFilter('Error'),
+                                this.localizeFilter('ErrorTerms'),
                                 'error'
                             )
                             return
@@ -439,8 +439,8 @@ export default {
                         } else {
                             e.preventDefault()
                             Swal.fire(
-                                'Error!',
-                                'Please, write down all the information!',
+                                this.localizeFilter('Error'),
+                                this.localizeFilter('ErrorInfo'),
                                 'error'
                             )
                         }
@@ -448,16 +448,16 @@ export default {
                 } else {
                     e.preventDefault()
                     Swal.fire(
-                        'Error!',
-                        'Please, choose the paying variant!',
+                        this.localizeFilter('Error'),
+                        this.localizeFilter('ErrorVariant'),
                         'error'
                     )
                 }
             } else {
                 e.preventDefault()
                 Swal.fire(
-                    'Error!',
-                    'You forgot to add products to your cart!',
+                    this.localizeFilter('Error'),
+                    this.localizeFilter('ErrorProductsEmpty'),
                     'error'
                 )
             }
@@ -573,3 +573,10 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.form-control::-webkit-input-placeholder { color: rgb(100, 100, 100) !important }
+.form-control{
+    color: rgb(68, 68, 68) !important
+}
+</style>

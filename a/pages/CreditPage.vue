@@ -132,6 +132,7 @@
                                                         <option value="kaspi">Kaspi</option>
                                                         <option value="center-credit">Center Credit</option>
                                                         <option value="jusan">Jusan</option>
+                                                        <option value="homecredit">Homecredit</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -309,8 +310,8 @@ export default {
                         .then(response => {
                             self.loaderM = false
                             Swal.fire(
-                                'Success!',
-                                'Your order has been created!',
+                                this.localizeFilter('Success'),
+                                this.localizeFilter('SucInfo'),
                                 'success'
                             )
                             self.$store.commit('cart/clear')
@@ -322,15 +323,15 @@ export default {
                     } else {
                         self.loaderM = false
                         Swal.fire(
-                            'Error!',
-                            'Please, agree with Terms And Conditions',
+                            this.localizeFilter('Error'),
+                            this.localizeFilter('ErrorTerms'),
                             'error'
                         )
                     }
                 } else {
                     Swal.fire(
-                        'Error!',
-                        'Please, write down all the information!',
+                        this.localizeFilter('Error'),
+                        this.localizeFilter('ErrorInfo'),
                         'error'
                     )
                 }
@@ -338,8 +339,8 @@ export default {
                 if(!but) {
                     e.preventDefault()
                     Swal.fire(
-                        'Error!',
-                        'Please, agree with Terms And Conditions',
+                        this.localizeFilter('Error'),
+                        this.localizeFilter('ErrorTerms'),
                         'error'
                     )
                     return
@@ -348,8 +349,8 @@ export default {
                 } else {
                     e.preventDefault()
                     Swal.fire(
-                        'Error!',
-                        'Please, write down all the information!',
+                        this.localizeFilter('Error'),
+                        this.localizeFilter('ErrorInfo'),
                         'error'
                     )
                 }
@@ -432,7 +433,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .credits{
     width: 100%;
     padding: 5px 8px 5px 8px;
@@ -472,5 +473,9 @@ export default {
 .credits div:hover{
     color: white !important;
     background-color: #858585;
+}
+.form-control::-webkit-input-placeholder { color: rgb(100, 100, 100) !important }
+.form-control{
+    color: rgb(68, 68, 68) !important
 }
 </style>

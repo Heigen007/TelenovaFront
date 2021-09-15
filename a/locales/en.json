@@ -6,7 +6,7 @@
         "SearchInputPlaceholder": "Search Product",
         "ProductAddedTitle": "Product Added!",
         "HeaderBestCategoriesTitle": "Telenova Best Selling:",
-        "Sales": "Sales",
+        "Sales": "Promotions and discounts",
         "Search": "Search",
         "SearchForProducts": "Search for products",
         "Home": "Home",
@@ -45,6 +45,8 @@
         "ErrorText": "Nothing was found at this location. Try to reload the page, please."
     },
     "MainPage": {
+        "Avaible": "Availavle: ",
+        "AlreadySold": "Already Sold: ",
         "ShopNow": "Shop now",
         "Title": "Home",
         "FirstPartTitle": "Newest Products",
@@ -85,6 +87,16 @@
         "CartConcludedThirdSubTitle": "Total"
     },
     "CheckoutPage": {
+        "ErrorVariant":"Please, choose the paying variant!",
+        "ErrorProductsEmpty": "You forgot to add products in your cart!",
+        "PromoAdded": "Promocode has been added!",
+        "PromoIncorrect": "Sorry, your promocode is incorrect",
+        "Promo": "Sorry, your promocode term expired",
+        "Error": "Error!",
+        "ErrorInfo": "Please, write down all the information!",
+        "ErrorTerms": "Please, agree with Terms And Conditions",
+        "Success": "Success",
+        "SucInfo": "Your order has been created!",
         "MainTitle": "Checkout",
         "CouponPart": {
             "Fquestion": "Have a coupon? ",
@@ -208,17 +220,17 @@
             "Address3Line": "",
             "WorkingHoursTitle": "Hours of Operation",
             "1dayTitle": "Monday:",
-            "1dayTime": "12-6 PM",
+            "1dayTime": "9:00 - 20:00",
             "2dayTitle": "Tuesday:",
-            "2dayTime": "12-6 PM",
+            "2dayTime": "9:00 - 20:00",
             "3dayTitle": "Wednesday:",
-            "3dayTime": "12-6 PM",
+            "3dayTime": "9:00 - 20:00",
             "4dayTitle": "Thursday:",
-            "4dayTime": "12-6 PM",
+            "4dayTime": "9:00 - 20:00",
             "5dayTitle": "Friday:",
-            "5dayTime": "12-6 PM",
+            "5dayTime": "9:00 - 20:00",
             "6dayTitle": "Saturday:",
-            "6dayTime": "12-6 PM",
+            "6dayTime": "9:00 - 20:00",
             "7dayTitle": "Sunday:",
             "7dayTime": "Closed"
         }
@@ -288,7 +300,7 @@
         "Related": "Related"
     },
     "ShopPage": {
-        "Sales": "Sales",
+        "Sales": "Promotions and discounts",
         "AddToCartText": "Add to Cart",
         "Price": "Price",
         "LatestProducts": "Latest Products",
@@ -321,7 +333,7 @@
     "PaymentResultSuccess": {
         "Title": "Success",
         "title": "Success",
-        "text": "Your order has been created!"
+        "text": "An operator will contact you shortly to confirm your order."
     },
     "PaymentResultError": {
         "Title": "Error",
@@ -329,6 +341,11 @@
         "text": "Your order has not been created..."
     },
     "CreditPage": {
+        "Error": "Error!",
+        "ErrorInfo": "Please, write down all the information!",
+        "ErrorTerms": "Please, agree with Terms And Conditions",
+        "Success": "Success",
+        "SucInfo": "Your order has been created!",
         "MainTitle": "Checkout - Credit",
         "MonthShortTitle": "months",
         "MonthCreditAmountTitle": "In month:",

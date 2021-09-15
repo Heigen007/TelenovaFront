@@ -7,7 +7,7 @@
 
             <div class="container mt-6">
                 <div class="mb-12 text-center">
-                    <h1>{{localizeFilter('Title')}}</h1>
+                    <h1 v-html="localizeFilter('Title')"></h1>
                     <p class="text-gray-44">{{localizeFilter('SubTitle')}}</p>
                 </div>
                 <div class="mb-10">

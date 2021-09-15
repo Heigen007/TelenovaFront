@@ -200,16 +200,16 @@
                                                 data-unfold-delay="300"
                                                 data-unfold-animation-in="slideInUp"
                                                 data-unfold-animation-out="fadeOut">
-                                                <span class="d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : 'Choose your'}}</span>
+                                                <span class="d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Русский' : 'Choose your'}}</span>
                                             </a>
 
                                             <div id="languageDropdown2" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker2">
                                                 <div style="cursor: pointer" class="dropdown-item" @click='changeLang("en-US")'>English</div>
-                                                <div style="cursor: pointer" class="dropdown-item" @click='changeLang("ru-RU")'>Russian</div>
+                                                <div style="cursor: pointer" class="dropdown-item" @click='changeLang("ru-RU")'>Русский</div>
                                             </div>
                                         </div>
                                         <div v-else class="position-relative">
-                                            <span class="dropdown-toggle d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Russian' : 'Choose your'}}</span>
+                                            <span class="dropdown-toggle d-none d-sm-inline-flex align-items-center">{{this.$store.state.lang.lang == 'en-US' ? 'English' : this.$store.state.lang.lang == 'ru-RU' ? 'Русский' : 'Choose your'}}</span>
                                         </div>
                                         <!-- End Language -->
                                     </div>

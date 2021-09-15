@@ -107,7 +107,7 @@
                                 </div>
                                 </client-only>
                                 <div v-for="(el, i, index) in Filters" :key='index' class="border-bottom pb-4 mb-4">
-                                    <div type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0">
+                                    <div class="px-0 d-flex justify-content-between py-3 font-size-25 border-0">
                                         <h4 class="font-size-14 FLB mb-3 font-weight-bold">{{i}}</h4>
                                     </div>
                                         <div v-if='o < 5' v-for="(fil, o) in el" :key='o+"index"' class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
@@ -578,6 +578,12 @@ export default {
     },
     watch: {
         $route() {
+            setTimeout(() => {
+                var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
+                Checkboxes.forEach(element => {
+                    element.checked = false
+                });
+            }, 100);
             this.$store.commit('clCounter')
             if(Object.keys(this.$route.query)[0] == "Sales" && this.SalesProducts.length == 0){
                 axios.get('https://textforeva.ru/storage/saleGoods')
@@ -621,12 +627,6 @@ export default {
                     })
                 });
             }
-            setTimeout(() => {
-                var Checkboxes = Array.prototype.slice.call(document.querySelectorAll(".chCat"));
-                Checkboxes.forEach(element => {
-                    element.checked = false
-                });
-            }, 100);
         },
         '$store.state.counter'(newV){
             this.minV = 0;

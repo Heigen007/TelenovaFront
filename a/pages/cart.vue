@@ -36,7 +36,7 @@
                                     </td>
 
                                     <td :data-title="localizeFilter('SecondOptionTitle')">
-                                        <span class="">{{el.salePrice}}{{'\xa0'}}₸</span>
+                                        <span class="">{{el.salePrice.toFixed(0)}}{{'\xa0'}}₸</span>
                                     </td>
 
                                     <td :data-title="localizeFilter('ThirdOptionTitle')">
@@ -61,7 +61,7 @@
                                     </td>
 
                                     <td :data-title="localizeFilter('FourthOptionTitle')">
-                                        <span >{{el.offerData.count * el.salePrice}}{{'\xa0'}}₸</span>
+                                        <span >{{(el.offerData.count * el.salePrice).toFixed(0)}}{{'\xa0'}}₸</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -85,7 +85,7 @@
                                     </tr> -->
                                     <tr class="order-total" style="border-bottom: 1px solid #dcdcdc">
                                         <th class="s">{{localizeFilter('CartConcludedThirdSubTitle')}}</th>
-                                        <td :data-title="localizeFilter('FourthOptionTitle')"><strong><span class="amount">{{TotalPrice()}}{{'\xa0'}}₸</span></strong></td>
+                                        <td :data-title="localizeFilter('FourthOptionTitle')"><strong><span class="amount">{{TotalPrice().toFixed(0)}}{{'\xa0'}}₸</span></strong></td>
                                     </tr>
                                 </tbody>
                             </table>
