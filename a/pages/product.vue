@@ -116,7 +116,7 @@
                                         <div style='background-color: white; color: black; border: 2px solid black;cursor: pointer; border-radius: 0' @click="BuyNow" class="btn btn-block"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyNowText')}}</div>
                                     </div>
                                     <div class="mb-2">
-                                        <div style='background-color: #c5c5c5; color: black; border: 2px solid #c5c5c5;cursor: pointer; border-radius: 0' @click="AddToCartButton" class="btn btn-block customBtn grB"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
+                                        <div style='background-color: #c5c5c5; color: white; border: 2px solid #c5c5c5;cursor: pointer; border-radius: 0' @click="AddToCartButton" class="btn btn-block customBtn grB"><i class="ec ec-add-to-cart mr-2 font-size-20"></i>{{localizeFilter('BuyRassrochkaText')}}</div>
                                     </div>
                                     <div class="mb-3">
                                         <a v-if='Product.offerData.on_kaspi' :href="'https://kaspi.kz/shop/kaspibutton?masterSKU='+Product.offerData.on_kaspi+'&merchantCode=TeleNova&city=750000000'" target="_blank" rel="nofollow noopener noreferrer"><div style='background-color: #de4437; color: white; cursor: pointer; border-radius: 0' class="btn btn-block">{{localizeFilter('BuyKaspiText')}}</div></a>
