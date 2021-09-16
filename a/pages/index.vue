@@ -34,10 +34,14 @@
                                             data-scs-animation-delay="600">
                                             <div class="mr-xl-14">
                                                 <NuxtLink :to='"/product?id=" + el.productKaspiId'><h5 class="mb-3 font-size-17 product-item__title text-lh-default"><a href="#" class="text-blue font-weight-bold">{{el.productKaspiIdData.offerData.name}}</a></h5></NuxtLink>
-                                                <div class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
+                                                <div v-if='el.newPrice.toFixed(0) != el.oldPrice.toFixed(0)' class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
                                                     <ins class="font-size-34 text-red text-decoration-none">{{el.newPrice.toFixed(0)}}₸</ins>
                                                     <del class="font-size-18 tex-gray-6 mb-1 ml-2">{{el.oldPrice.toFixed(0)}}₸</del>
                                                 </div>
+                                                <div v-else class="prodcut-price d-flex align-items-end position-relative text-lh-1 mb-5">
+                                                    <ins class="font-size-34 text-red text-decoration-none">{{el.newPrice.toFixed(0)}}₸</ins>
+                                                </div>
+                                                
                                                 <div class="js-countdown d-flex mx-n2 justify-content-center justify-content-md-start mb-5"
                                                     :data-end-date="chDate(el.timeOfPromoEnding)"
                                                     data-days-format="%D"
@@ -72,7 +76,7 @@
                                                 <div class="mb-3">
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <span class="">{{localizeFilter('Avaible')}} <strong>{{el.productKaspiIdData.offerData.product_count}}</strong></span>
-                                                        <span class="">{{localizeFilter('AlreadySold')}} <strong>{{(el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
+                                                        <span class="">{{localizeFilter('AlreadySold')}} <strong>{{(el.productKaspiIdData.offerData.product_count.length == 1 ? 2 : el.productKaspiIdData.offerData.product_count * 1.3).toFixed(0)}}</strong></span>
                                                     </div>
                                                     <div class="rounded-pill bg-gray-3 height-wd-14 height-xl-20 position-relative">
                                                         <span style='width: 40%' class="position-absolute left-0 top-0 bottom-0 rounded-pill bg-primary"></span>
