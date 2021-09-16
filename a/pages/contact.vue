@@ -5,7 +5,7 @@
         <!-- ========== MAIN CONTENT ========== -->
         <main id="content">
             <div class="mb-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d181.5630859306516!2d76.94496467400876!3d43.272179410689986!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836c20ee65a67b%3A0xf3afbbd9324c39af!2z0L_RgNC-0YHQv9C10LrRgiDQoNCw0LnRi9C80LHQtdC60LAsINCQ0LvQvNCw0YLRiw!5e0!3m2!1sru!2skz!4v1629805475047!5m2!1sru!2skz" width="100%" height="514" style="border:0;" allowfullscreen="false" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.9415664762523!2d76.94323631548548!3d43.27359997913606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zNDPCsDE2JzI1LjAiTiA3NsKwNTYnNDMuNSJF!5e0!3m2!1sru!2skz!4v1631751970571!5m2!1sru!2skz"  width="100%" height="514" style="border:0;" allowfullscreen="false" loading="lazy"></iframe>
             </div>
 
             <div class="container">

@@ -393,18 +393,23 @@ export default {
                     this.PopUp = false
                 }, 3000);
             }
-        }
-    },
-    mounted(){
-        $(window).on('load', function () {
-            // initialization of HSMegaMenu component
+        },
+        Categories: (newV) => {
+            setTimeout(() => {
             $('.js-mega-menu').HSMegaMenu({
                 event: 'hover',
                 direction: 'horizontal',
                 pageContainer: $('.container'),
                 breakpoint: 767.98,
                 hideTimeOut: 0,
-            });
+            });                
+            }, 200);
+
+        }
+    },
+    mounted(){
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
         });
 
         $(document).on('ready', function () {

@@ -433,7 +433,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .credits{
     width: 100%;
     padding: 5px 8px 5px 8px;
