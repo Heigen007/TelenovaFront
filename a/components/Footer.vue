@@ -175,6 +175,9 @@
                                         <NuxtLink to="/terms" class="list-group-item list-group-item-action">{{localizeFilter('Terms')}}</NuxtLink>
                                     </li>
                                     <li>
+                                        <NuxtLink to="/policy" class="list-group-item list-group-item-action">{{localizeFilter('MainPol')}}</NuxtLink>
+                                    </li>
+                                    <li>
                                         <NuxtLink to="/faq" class="list-group-item list-group-item-action">FAQ</NuxtLink>
                                     </li>
                                     <li>

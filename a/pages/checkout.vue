@@ -125,7 +125,7 @@
                                         </label>
 
                                         <div class="input-group">
-                                            <textarea class="form-control p-5" rows="4" name="text" :placeholder="localizeFilter('Bill', 'TwelfthInputPlaceholder')"></textarea>
+                                            <textarea v-model='info.Comments' class="form-control p-1" rows="4" name="text" :placeholder="localizeFilter('Bill', 'TwelfthInputPlaceholder')"></textarea>
                                         </div>
                                     </div>
                                 </client-only>
@@ -223,7 +223,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox">
                                                 <label class="form-check-label form-label">
-                                                    {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsTitle')}}<NuxtLink to="/terms" class="text-blue"> {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsLinkToTermsPage')}}</NuxtLink>{{'\xa0'}}<span class="text-danger">*</span>
+                                                    {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsTitle')}}<NuxtLink to="/policy" class="text-blue"> {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsLinkToTermsPage')}}</NuxtLink>{{'\xa0'}}<span class="text-danger">*</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -279,7 +279,8 @@ export default {
                 City: '',
                 Postcode: '',
                 Email: '',
-                Phone: ''
+                Phone: '',
+                Comments: ''
             },
             loaderM: false,
             coupons: [],
@@ -365,7 +366,8 @@ export default {
                                     goods: filteredCart,
                                     name: this.info.FName + ' ' + this.info.SName, // имя
                                     paymentMethod: 'cash',
-                                    promoCode: this.activeCoupon.code || ''
+                                    promoCode: this.activeCoupon.code || '',
+                                    comment: this.info.Comments
                                 }
                                 this.loaderM = true
                                 axios.post('https://textforeva.ru/order', checkout)
@@ -423,7 +425,8 @@ export default {
                                 goods: filteredCart,
                                 name: this.info.FName + ' ' + this.info.SName, // имя
                                 paymentMethod: 'card', // способ оплаты, enum: 'card', 'cash' default: 'cash'
-                                promoCode: this.activeCoupon.code || ''
+                                promoCode: this.activeCoupon.code || '',
+                                comment: this.info.Comments
                             }
                             this.loaderM = true
                             await axios.post('https://textforeva.ru/order', checkout)

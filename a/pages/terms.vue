@@ -55,7 +55,7 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: `Интернет-магазин Теленова. Правила сайта`
+                    content: `Интернет-магазин Теленова. Политика конфиденциальности`
                 }
             ]
         }

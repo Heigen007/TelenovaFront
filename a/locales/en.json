@@ -12,7 +12,8 @@
         "Home": "Home",
         "Cart": "Cart",
         "AboutUs": "About Us",
-        "Terms": "Terms",
+        "Terms": "Privacy Policy",
+        "MainPol": "General Terms and Conditions",
         "ContactUs": "Contact Us"
     },
     "Footer": {
@@ -36,7 +37,8 @@
         "Home": "Home",
         "Cart": "Cart",
         "AboutUs": "About Us",
-        "Terms": "Terms",
+        "Terms": "Privacy Policy",
+        "MainPol": "General terms and conditions",
         "ContactUs": "Contact Us"
     },
     "ErrorPage": {
@@ -94,7 +96,7 @@
         "Promo": "Sorry, your promocode term expired",
         "Error": "Error!",
         "ErrorInfo": "Please, write down all the information!",
-        "ErrorTerms": "Please, agree with Terms And Conditions",
+        "ErrorTerms": "Please, agree with General Terms and Conditions",
         "Success": "Success",
         "SucInfo": "Your order has been created!",
         "MainTitle": "Checkout",
@@ -150,7 +152,7 @@
                  "FourthVariationQuestion": "What Is PayBox?",
                  "FourthVariationText": "Pay via PayBox; you can pay with your credit card if you don’t have a PayBox account.",
                  "AgreedTermsTitle": "I have read and agree to the website",
-                 "AgreedTermsLinkToTermsPage": "terms and conditions ",
+                 "AgreedTermsLinkToTermsPage": "General Terms and Conditions ",
                  "SuccessButtonText": "Place order"
              }
         }
@@ -343,7 +345,8 @@
     "CreditPage": {
         "Error": "Error!",
         "ErrorInfo": "Please, write down all the information!",
-        "ErrorTerms": "Please, agree with Terms And Conditions",
+        "ErrorTerms": "Please, agree with General Terms and Conditions",
+        "ErrorProducts": "You forgot to add products in your cart!",
         "Success": "Success",
         "SucInfo": "Your order has been created!",
         "MainTitle": "Checkout - Credit",
@@ -383,7 +386,7 @@
                  "FourthVariationQuestion": "What Is PayBox?",
                  "FourthVariationText": "Pay via PayBox; you can pay with your credit card if you don’t have a PayBox account.",
                  "AgreedTermsTitle": "I have read and agree to the website",
-                 "AgreedTermsLinkToTermsPage": "terms and conditions ",
+                 "AgreedTermsLinkToTermsPage": "General Terms and Conditions ",
                  "SuccessButtonText": "Place order"
              }
         }

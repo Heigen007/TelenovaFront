@@ -334,6 +334,21 @@
                                                 data-unfold-duration="500" to="/terms" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('Terms')}}</NuxtLink>
                                     </li>
                                     <li>
+                                        <NuxtLink id="sidebarHeaderInvoker5"
+                                                aria-controls="sidebarHeader"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-label="Open sidebar menu"
+                                                data-unfold-event="click"
+                                                data-unfold-hide-on-scroll="false"
+                                                data-unfold-target="#sidebarHeader"
+                                                data-unfold-type="css-animation"
+                                                data-unfold-animation-in="fadeInLeft"
+                                                data-unfold-animation-out="fadeOutLeft"
+                                                style='color: black'
+                                                data-unfold-duration="500" to="/policy" class="u-header-collapse__nav-link font-weight-bold">{{localizeFilter('MainPol')}}</NuxtLink>
+                                    </li>
+                                    <li>
                                         <NuxtLink id="sidebarHeaderInvoker6"
                                                 aria-controls="sidebarHeader"
                                                 aria-haspopup="true"

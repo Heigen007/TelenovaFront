@@ -156,7 +156,7 @@
                                         </label>
 
                                         <div class="input-group">
-                                            <textarea class="form-control p-5" rows="4" name="text" :placeholder="localizeFilter('Bill', 'TwelfthInputPlaceholder')"></textarea>
+                                            <textarea class="form-control p-5" v-model='info.comment' rows="4" name="text" :placeholder="localizeFilter('Bill', 'TwelfthInputPlaceholder')"></textarea>
                                         </div>
                                     </div>
                                 </client-only>
@@ -199,7 +199,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox">
                                                 <label class="form-check-label form-label">
-                                                    {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsTitle')}}<NuxtLink to="/terms" class="text-blue"> {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsLinkToTermsPage')}}</NuxtLink>{{'\xa0'}}<span class="text-danger">*</span>
+                                                    {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsTitle')}}<NuxtLink to="/policy" class="text-blue"> {{localizeFilter('Order', 'TransferVariations', 'AgreedTermsLinkToTermsPage')}}</NuxtLink>{{'\xa0'}}<span class="text-danger">*</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -254,7 +254,8 @@ export default {
                 Email: '',
                 Phone: '',
                 IIN: '',
-                Bank: ''
+                Bank: '',
+                comment: ''
             },
             loaderM: false,
             creditCounter: 3
@@ -303,7 +304,8 @@ export default {
                             bank: this.info.Bank,
                             iin: this.info.IIN,
                             credit: true,
-                            creditMonth: this.creditCounter
+                            creditMonth: this.creditCounter,
+                            comment: this.info.comment
                         }
                         this.loaderM = true
                         axios.post('https://textforeva.ru/order', checkout)
@@ -340,12 +342,12 @@ export default {
                     e.preventDefault()
                     Swal.fire(
                         this.localizeFilter('Error'),
-                        this.localizeFilter('ErrorTerms'),
+                        this.localizeFilter('ErrorProducts'),
                         'error'
                     )
                     return
                 }
-                if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName) {
+                if(this.info.Adress && this.info.Phone && this.info.Email && this.info.FName && this.info.SName && this.info.TName && this.info.IIN && this.info.Bank) {
                 } else {
                     e.preventDefault()
                     Swal.fire(
