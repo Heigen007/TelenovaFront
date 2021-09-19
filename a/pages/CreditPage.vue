@@ -129,9 +129,6 @@
                                                 <div class="dropdown bootstrap-select js-select dropdown-select" style='padding: 0'>
                                                     <select v-model='info.Bank' class="form-control js-select selectpicker dropdown-select" required="" data-msg="Please select country." data-error-class="u-has-error" data-success-class="u-has-success" data-live-search="true" data-style="form-control border-color-1 font-weight-normal" tabindex="-98">
                                                         <option value="">{{localizeFilter('SelectBankTitle')}}</option>
-                                                        <option value="kaspi">Kaspi</option>
-                                                        <option value="center-credit">Center Credit</option>
-                                                        <option value="jusan">Jusan</option>
                                                         <option value="homecredit">Homecredit</option>
                                                     </select>
                                                 </div>
