@@ -138,7 +138,9 @@ export default {
     },
     mounted(){
         this.items = this.$store.state.cart.cart
-        
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
         $.HSCore.components.HSQantityCounter.init('.js-quantity');
 
         // initialization of forms

@@ -76,7 +76,7 @@
                                                     {{localizeFilter('Bill', 'ThirdInputLabel')}}
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input v-model="message" type="text"  @keypress="isNumber($event)" class="form-control" name="lastName" aria-label="Wayley" required="" data-msg="Please enter your IIN" data-error-class="u-has-error" data-success-class="u-has-success">
+                                                <input v-model='info.IIN' type="text" class="form-control" name="lastName" aria-label="Wayley" required="" data-msg="Please enter your IIN" data-error-class="u-has-error" data-success-class="u-has-success">
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -265,7 +265,9 @@ export default {
         this.items = this.$store.state.cart
     },
     mounted(){
-        
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 1000);
         setTimeout(() => {
             this.LinkActive = true
         }, 100);
@@ -275,8 +277,6 @@ export default {
         })
     },
     methods: {
-        
-  
         async Ship(e){
             if(this.items.cart.length > 0){
                 var self = this
@@ -355,16 +355,6 @@ export default {
                 }
             }
         },
-        
-        isNumber(evt) {
-            evt = (evt) ? evt : window.event;
-            var charCode = (evt.which) ? evt.which : evt.keyCode;
-            if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
-                evt.preventDefault();;
-            } else {
-                return true;
-                    }
-                },
         localizeFilter(key, key2, key3) {
             return this.$store.getters[`lang/getWord`]([this.Component,key,key2,key3])
         },
