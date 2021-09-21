@@ -124,7 +124,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a v-if='Object.keys(el).length > 4' class="link link-collapse small font-size-13 text-gray-27 d-inline-flex mt-2 collapsed" data-toggle="collapse" :href="'#collapseBrand'+index" role="button" aria-expanded="false" :aria-controls="'collapseBrand'+index">
+                                        <a v-if='Object.keys(el).length > 5' class="link link-collapse small font-size-13 text-gray-27 d-inline-flex mt-2 collapsed" data-toggle="collapse" :href="'#collapseBrand'+index" role="button" aria-expanded="false" :aria-controls="'collapseBrand'+index">
                                             <span class="link__icon text-gray-27 bg-white">
                                                 <span class="link__icon-inner">+</span>
                                             </span>
